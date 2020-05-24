@@ -1,0 +1,651 @@
+	     Member('PF16')
+Rpt_Espec    PROCEDURE
+Salvar	     Screen	  Window(25,80),Hue(7,0)
+	     .
+Confirma     Screen	  Window(5,39),At(11,21),Hue(15,4)
+	       Row(1,1)	  String('ÉÍ{37}»')
+	       Row(2,1)	  Repeat(3);String('º<0{37}>º') .
+	       Row(5,1)	  String('ÈÍ{37}¼')
+	       Row(2,7)	  String('Pulse [ENTER] para imprimir')
+	       Row(4,11)  String('o [ESC] para abortar')
+	     .
+Abortar	     Screen	  Window(5,39),At(11,21),Hue(15,4)
+	       Row(1,1)	  String('ÉÍ{37}»')
+	       Row(2,1)	  Repeat(3);String('º<0{37}>º') .
+	       Row(5,1)	  String('ÈÍ{37}¼')
+	       Row(3,5)	  String('Pulse [CTRL] [ESC] para abortar')
+	     .
+TITLE	     Report	  Length(60),Width(117),Pre(TTL),Device(MEM:DEVICE)
+RPT_HEAD		  Detail
+	     .		  .
+REPORT	     Report	  Length(60),Width(117),Page(MEM:PAGE),Line(MEM:LINE),Pre(RPT),Device(MEM:DEVICE)
+PAGE_HEAD		  Header
+		 Col(1)	    Ctl('<15>') String(' {39}Estadisticas por especialidad de origen')
+	       Row(+1,1)    String('Ä{117}')
+	       Row(+1,53)   String('Maestr¡a {10}Finanzas {9}Org. Empr. {9}Mercadeo')
+	       Row(+1,1)    String('Especialidad de Origen {28}Nro.    Prom. {5}Nro.    Prom. {5}Nro.    Prom.'	    |
+			      & ' {5}Nro.    Prom.')
+	       Row(+1,1)    String('Ä{117}') Ctl(@LF)
+			  .
+GRP_HEAD1		  Detail
+			  .
+DETAIL			  Detail
+			  .
+GRP_FOOT1		  Detail
+		 Col(1)	    String(5),Use(Tes:Espec_Origen)
+		 Col(6)	    String('-')
+Descripcion	 Col(7)	    String(40)
+c_d1		 Col(52)    String(@N3)
+t_d1		 Col(57)    String(@N7.2~%~)
+c_d2		 Col(70)    String(@N3)
+t_d2		 Col(75)    String(@N7.2~%~)
+c_d3		 Col(88)    String(@N3)
+t_d3		 Col(93)    String(@N7.2~%~)
+c_d4		 Col(106)   String(@N3)
+t_d4		 Col(111)   String(@N7.2~%~) Ctl(@LF)
+			  .
+RPT_FOOT		  Detail
+			  .
+PAGE_FOOT		  Footer
+		 Col(55)    String('P gina:')
+		 Col(62)    String(@N3),Use(MEM:PAGE) Ctl(@LF)
+			    Ctl(@FF)
+	     .		  .
+	     GROUP,PRE(kkk)
+d1		 String(@n7.2~%~)
+d2		 String(@n7.2~%~)
+d3		 String(@n7.2~%~)
+d4		 String(@n7.2~%~)
+	     .
+	     GROUP,PRE(SAV)
+Espec_Origen   String(5)
+	     .
+  code
+  open(Confirma)
+  loop until keycode() = enter_key
+    ask
+    IF KEYCODE() = REJECT_KEY or KEYCODE() = esc_KEY
+       THEN RETURN.				   !RETURN ON SCREEN REJECT KEY
+  .
+  close(confirma)
+  open(Abortar)
+  if upper(clip(mem:Device)) = 'CON' then open(Salvar).
+
+  DONE# = 0					 !TURN OFF DONE FLAG
+  CLEAR(Tes:RECORD,-1)				 !MAKE SURE RECORD CLEARED
+  PRINT(TTL:RPT_HEAD)				 !PRINT TITLE PAGE
+  CLOSE(TITLE)					 !CLOSE TITLE REPORT
+  SET(Tes:Por_Carrera)				 !  POINT TO FIRST RECORD
+  DO NEXT_RECORD				 !READ FIRST RECORD
+  APPEND# = FALSE				 !TURN OFF APPEND FLAG
+  IF SUB(MEM:DEVICE,1,1) <> '+'			 !NOT ALREADY APPENDING REPORTS
+    MEM:DEVICE = '+' & MEM:DEVICE		 !  APPEND DISK RPT TO TITLE
+    APPEND# = TRUE				 !  SET FLAG TO TURN OFF APPEND
+  .
+  OPEN(REPORT)					 !OPEN THE REPORT
+  BRK_FLAG# = 0					 !CLEAR BREAK LEVEL FLAG
+  DO PRT_BRK_HDRS				 !PRINT GROUP HEADER(S)
+  LOOP UNTIL DONE#				 !READ ALL RECORDS IN FILE
+    SAVE_LINE# = MEM:LINE			 !  SAVE LINE NUMBER
+    LAST_REC# = POINTER(Test)
+ !  PRINT(RPT:DETAIL)				 !?????????? PRINT DETAIL LINES
+    DO CHECK_PAGE				 !  DO PAGE BREAK IF NEEDED
+    IF tes:perfil = 1				 !EVALUATE CONDITION
+      RPT:c_d1 += 1
+      t_d1# += 1
+      t_d1$ += kkk:d1
+    .
+      RPT:t_d1 = t_d1$ / t_d1#
+    IF tes:perfil = 2				 !EVALUATE CONDITION
+      RPT:c_d2 += 1
+      t_d2# += 1
+      t_d2$ += kkk:d2
+    .
+      RPT:t_d2 = t_d2$ / t_d2#
+    IF tes:perfil = 3				 !EVALUATE CONDITION
+      RPT:c_d3 += 1
+      t_d3# += 1
+      t_d3$ += kkk:d3
+    .
+      RPT:t_d3 = t_d3$ / t_d3#
+    IF tes:perfil = 4				 !EVALUATE CONDITION
+      RPT:c_d4 += 1
+      t_d4# += 1
+      t_d4$ += kkk:d4
+    .
+      RPT:t_d4 = t_d4$ / t_d4#
+    DO NEXT_RECORD				 !  GET NEXT RECORD
+    IF NOT DONE# THEN DO CHECK_BREAK.		 !  CHECK FOR GROUP BREAK
+  .						 !
+  BRK_FLAG# = 0					 !CLEAR BREAK LEVEL FLAG
+  DO PRT_BRK_FTRS				 !PRINT GROUP FOOTER(S)
+  PRINT(RPT:RPT_FOOT)				 !PRINT GRAND TOTALS
+  DO CHECK_PAGE					 !  DO PAGE BREAK IF NEEDED
+  CLOSE(REPORT)					 !CLOSE REPORT
+  IF APPEND#					 !IF REPORT WAS APPENDED
+    MEM:DEVICE = SUB(MEM:DEVICE,2,LEN(MEM:DEVICE)-1)!TURN OFF APPEND REPORT
+  .
+  if upper(clip(mem:Device)) = 'CON' then
+     show(25, 1, 'Pulse alguna tecla', @S30)
+     ask
+  .
+  RETURN					 !RETURN TO CALLER
+
+NEXT_RECORD ROUTINE				 !GET NEXT RECORD
+  LOOP UNTIL EOF(Test)				 !  READ UNTIL END OF FILE
+    NEXT(Test)					 !    READ NEXT RECORD
+    IF tes:perfil = 1				 !EVALUATE CONDITION
+      kkk:d1 = 100 - tes:desviacion		 !  CONDITION IS TRUE
+    ELSE					 !OTHERWISE
+      kkk:d1 = ''				 !  CONDITION IS FALSE
+    .
+    IF tes:perfil = 2				 !EVALUATE CONDITION
+      kkk:d2 = 100 - tes:desviacion		 !  CONDITION IS TRUE
+    ELSE					 !OTHERWISE
+      kkk:d2 = ''				 !  CONDITION IS FALSE
+    .
+    IF tes:perfil = 3				 !EVALUATE CONDITION
+      kkk:d3 = 100 - tes:desviacion		 !  CONDITION IS TRUE
+    ELSE					 !OTHERWISE
+      kkk:d3 = ''				 !  CONDITION IS FALSE
+    .
+    IF tes:perfil = 4				 !EVALUATE CONDITION
+      kkk:d4 = 100 - tes:desviacion		 !  CONDITION IS TRUE
+    ELSE					 !OTHERWISE
+      kkk:d4 = ''				 !  CONDITION IS FALSE
+    .
+    IF ~(tes:desviacion < 100) THEN CYCLE.	 !    IF FILTERED OUT, GET NEXT
+    EXIT					 !    EXIT THE ROUTINE
+  .						 !
+  DONE# = 1					 !  ON EOF, SET DONE FLAG
+
+CHECK_PAGE ROUTINE				 !CHECK FOR NEW PAGE
+  IF MEM:LINE <= SAVE_LINE#			 !  ON PAGE OVERFLOW
+    SAVE_LINE# = MEM:LINE			 !    RESET LINE NUMBER
+  .
+  LOOP UNTIL NOT KEYBOARD()			 !LOOK FOR KEYSTROKE
+    ASK						 !GET KEYCODE
+    IF KEYCODE() = REJECT_KEY			 !ON CTRL-ESC
+      IF APPEND#				 !IF REPORT WAS APPENDED
+	MEM:DEVICE = SUB(MEM:DEVICE,2,LEN(MEM:DEVICE)-1)!TURN OFF APPEND REPORT
+      .
+      CLOSE(REPORT)				 !  CLOSE REPORT
+      RETURN					 !  ABORT PRINT
+  . .
+
+CHECK_BREAK  ROUTINE				 !CHECK FOR GROUP BREAK
+  IF Tes:Espec_Origen <> SAV:Espec_Origen	 !BREAK ON NEW GROUP
+    BRK_FLAG# = 1				 !SET BREAK LEVEL
+    DO PRT_BRK_FTRS				 !PRINT FOOTERS FOR THIS LEVEL
+    DO PRT_BRK_HDRS				 !PRINT HEADERS FOR THIS LEVEL
+    EXIT					 !RETURN TO REPORT
+  .
+
+PRT_BRK_HDRS ROUTINE				 !DO GROUP HEADERS
+  IF BRK_FLAG# <= 1				 !CHECK BREAK LEVEL
+    RPT:c_d1 = 0
+    t_d1# = 0
+    t_d1$ = 0
+    RPT:c_d2 = 0
+    t_d2# = 0
+    t_d2$ = 0
+    RPT:c_d3 = 0
+    t_d3# = 0
+    t_d3$ = 0
+    RPT:c_d4 = 0
+    t_d4# = 0
+    t_d4$ = 0
+    PRINT(GRP_HEAD1)				 ! PRINT GROUP HEADER
+    DO CHECK_PAGE				 ! DO PAGE BREAK IF NEEDED
+  .
+  SAV:Espec_Origen = Tes:Espec_Origen		 !SAVE BREAK FIELD
+
+PRT_BRK_FTRS ROUTINE				 !DO GROUP FOOTERS
+  GET(Test,LAST_REC#)				 !REREAD PREVIOUS RECORD
+  IF BRK_FLAG# <= 1				 !CHECK BREAK LEVEL
+    Esp:Codigo = Tes:Espec_Origen		 !MOVE RELATED KEY FIELDS
+    GET(Espec,Esp:Por_Codigo)			 !READ THE RECORD
+    IF ERROR() THEN
+       CLEAR(Esp:RECORD)		  !IF NOT FOUND, CLEAR RECORD
+       RPT:Descripcion = '****' & Tes:nombre
+    else
+       RPT:Descripcion = Esp:Descripcion	 !DISPLAY LOOKUP FIELD
+    .
+    PRINT(GRP_FOOT1)				 ! PRINT GROUP FOOTER
+    DO CHECK_PAGE				 ! DO PAGE BREAK IF NEEDED
+  .
+  SKIP(Test,-1)					 !BACKUP ONE RECORD
+  NEXT(Test)					 !AND REREAD IT
+
+
+
+
+RPT_EDAD     PROCEDURE
+Salvar	     Screen	  Window(25,80),Hue(7,0)
+	     .
+Confirma     Screen	  Window(5,39),At(11,21),Hue(15,4)
+	       Row(1,1)	  String('ÉÍ{37}»')
+	       Row(2,1)	  Repeat(3);String('º<0{37}>º') .
+	       Row(5,1)	  String('ÈÍ{37}¼')
+	       Row(2,7)	  String('Pulse [ENTER] para imprimir')
+	       Row(4,11)  String('o [ESC] para abortar')
+	     .
+Abortar	     Screen	  Window(5,39),At(11,21),Hue(15,4)
+	       Row(1,1)	  String('ÉÍ{37}»')
+	       Row(2,1)	  Repeat(3);String('º<0{37}>º') .
+	       Row(5,1)	  String('ÈÍ{37}¼')
+	       Row(3,5)	  String('Pulse [CTRL] [ESC] para abortar')
+	     .
+TITLE	     Report	  Length(60),Width(80),Pre(TTL),Device(MEM:DEVICE)
+RPT_HEAD		  Detail
+	     .		  .
+REPORT	     Report	  Length(60),Width(80),Page(MEM:PAGE),Line(MEM:LINE),Pre(RPT),Device(MEM:DEVICE)
+PAGE_HEAD		  Header
+		 Col(24)    String('Estad¡sticas por edad del aspirante')
+	       Row(+1,1)    String('Ä{80}')
+	       Row(+1,13)   String('Maestr¡a {10}Finanzas {9}Org. Empr. {9}Mercadeo')
+	       Row(+1,1)    String('Edad {6}Nro.    Prom. {5}Nro.    Prom. {5}Nro.    Prom. {5}Nro.    Prom.')
+	       Row(+1,1)    String('Ä{80}') Ctl(@LF)
+			  .
+GRP_HEAD1		  Detail
+			  .
+DETAIL			  Detail
+			  .
+GRP_FOOT1		  Detail
+		 Col(1)	    String(@N3),Use(Tes:Anos)
+c_d1		 Col(12)    String(@N3)
+t_d1		 Col(17)    String(@N7.2~%~)
+c_d2		 Col(30)    String(@N3)
+t_d2		 Col(35)    String(@N7.2~%~)
+c_d3		 Col(48)    String(@N3)
+t_d3		 Col(53)    String(@N7.2~%~)
+c_d4		 Col(66)    String(@N3)
+t_d4		 Col(71)    String(@N7.2~%~) Ctl(@LF)
+			  .
+RPT_FOOT		  Detail
+			  .
+PAGE_FOOT		  Footer
+		 Col(36)    String('P gina:')
+		 Col(43)    String(@N3),Use(MEM:PAGE) Ctl(@LF)
+			    Ctl(@FF)
+	     .		  .
+	     GROUP,PRE(kkk)
+d1			    String(@n7.2~%~)
+d2			    String(@n7.2~%~)
+d3			    String(@n7.2~%~)
+d4			    String(@n7.2~%~)
+	     .
+	     GROUP,PRE(SAV)
+Anos	       Byte
+	     .
+  code
+  open(Confirma)
+  loop until keycode() = enter_key
+    ask
+    IF KEYCODE() = REJECT_KEY or KEYCODE() = esc_KEY
+       THEN RETURN.				   !RETURN ON SCREEN REJECT KEY
+  .
+  close(confirma)
+  open(Abortar)
+  if upper(clip(mem:Device)) = 'CON' then open(Salvar).
+
+  DONE# = 0					 !TURN OFF DONE FLAG
+  CLEAR(Tes:RECORD,-1)				 !MAKE SURE RECORD CLEARED
+  PRINT(TTL:RPT_HEAD)				 !PRINT TITLE PAGE
+  CLOSE(TITLE)					 !CLOSE TITLE REPORT
+  SET(Tes:Por_edad)				 !  POINT TO FIRST RECORD
+  DO NEXT_RECORD				 !READ FIRST RECORD
+  APPEND# = FALSE				 !TURN OFF APPEND FLAG
+  IF SUB(MEM:DEVICE,1,1) <> '+'			 !NOT ALREADY APPENDING REPORTS
+    MEM:DEVICE = '+' & MEM:DEVICE		 !  APPEND DISK RPT TO TITLE
+    APPEND# = TRUE				 !  SET FLAG TO TURN OFF APPEND
+  .
+  OPEN(REPORT)					 !OPEN THE REPORT
+  BRK_FLAG# = 0					 !CLEAR BREAK LEVEL FLAG
+  DO PRT_BRK_HDRS				 !PRINT GROUP HEADER(S)
+  LOOP UNTIL DONE#				 !READ ALL RECORDS IN FILE
+    SAVE_LINE# = MEM:LINE			 !  SAVE LINE NUMBER
+    LAST_REC# = POINTER(Test)
+   ! PRINT(RPT:DETAIL)				 !  PRINT DETAIL LINES
+    DO CHECK_PAGE				 !  DO PAGE BREAK IF NEEDED
+    IF tes:perfil = 1				 !EVALUATE CONDITION
+      RPT:c_d1 += 1
+      t_d1# += 1
+      t_d1$ += kkk:d1
+    .
+    RPT:t_d1 = t_d1$ / t_d1#
+    IF tes:perfil = 2				 !EVALUATE CONDITION
+      RPT:c_d2 += 1
+      t_d2# += 1
+      t_d2$ += kkk:d2
+    .
+    RPT:t_d2 = t_d2$ / t_d2#
+    IF tes:perfil = 3				 !EVALUATE CONDITION
+      RPT:c_d3 += 1
+      t_d3# += 1
+      t_d3$ += kkk:d3
+    .
+    RPT:t_d3 = t_d3$ / t_d3#
+    IF tes:perfil = 4				 !EVALUATE CONDITION
+      RPT:c_d4 += 1
+      t_d4# += 1
+      t_d4$ += kkk:d4
+    .
+    RPT:t_d4 = t_d4$ / t_d4#
+    DO NEXT_RECORD				 !  GET NEXT RECORD
+    IF NOT DONE# THEN DO CHECK_BREAK.		 !  CHECK FOR GROUP BREAK
+  .						 !
+  BRK_FLAG# = 0					 !CLEAR BREAK LEVEL FLAG
+  DO PRT_BRK_FTRS				 !PRINT GROUP FOOTER(S)
+  PRINT(RPT:RPT_FOOT)				 !PRINT GRAND TOTALS
+  DO CHECK_PAGE					 !  DO PAGE BREAK IF NEEDED
+  CLOSE(REPORT)					 !CLOSE REPORT
+  IF APPEND#					 !IF REPORT WAS APPENDED
+    MEM:DEVICE = SUB(MEM:DEVICE,2,LEN(MEM:DEVICE)-1)!TURN OFF APPEND REPORT
+  .
+  if upper(clip(mem:Device)) = 'CON' then
+     show(25, 1, 'Pulse alguna tecla', @S30)
+     ask
+  .
+  RETURN					 !RETURN TO CALLER
+
+NEXT_RECORD ROUTINE				 !GET NEXT RECORD
+  LOOP UNTIL EOF(Test)				 !  READ UNTIL END OF FILE
+    NEXT(Test)					 !    READ NEXT RECORD
+    IF tes:perfil = 1				 !EVALUATE CONDITION
+      kkk:d1 = 100 - tes:desviacion		 !  CONDITION IS TRUE
+    ELSE					 !OTHERWISE
+      kkk:d1 = ''				 !  CONDITION IS FALSE
+    .
+    IF tes:perfil = 2				 !EVALUATE CONDITION
+      kkk:d2 = 100 - tes:desviacion		 !  CONDITION IS TRUE
+    ELSE					 !OTHERWISE
+      kkk:d2 = ''				 !  CONDITION IS FALSE
+    .
+    IF tes:perfil = 3				 !EVALUATE CONDITION
+      kkk:d3 = 100 - tes:desviacion		 !  CONDITION IS TRUE
+    ELSE					 !OTHERWISE
+      kkk:d3 = ''				 !  CONDITION IS FALSE
+    .
+    IF tes:perfil = 4				 !EVALUATE CONDITION
+      kkk:d4 = 100 - tes:desviacion		 !  CONDITION IS TRUE
+    ELSE					 !OTHERWISE
+      kkk:d4 = ''				 !  CONDITION IS FALSE
+    .
+    IF ~(tes:desviacion < 100) THEN CYCLE.	 !    IF FILTERED OUT, GET NEXT
+    EXIT					 !    EXIT THE ROUTINE
+  .						 !
+  DONE# = 1					 !  ON EOF, SET DONE FLAG
+
+CHECK_PAGE ROUTINE				 !CHECK FOR NEW PAGE
+  IF MEM:LINE <= SAVE_LINE#			 !  ON PAGE OVERFLOW
+    SAVE_LINE# = MEM:LINE			 !    RESET LINE NUMBER
+  .
+  LOOP UNTIL NOT KEYBOARD()			 !LOOK FOR KEYSTROKE
+    ASK						 !GET KEYCODE
+    IF KEYCODE() = REJECT_KEY			 !ON CTRL-ESC
+      IF APPEND#				 !IF REPORT WAS APPENDED
+	MEM:DEVICE = SUB(MEM:DEVICE,2,LEN(MEM:DEVICE)-1)!TURN OFF APPEND REPORT
+      .
+      CLOSE(REPORT)				 !  CLOSE REPORT
+      RETURN					 !  ABORT PRINT
+  . .
+
+CHECK_BREAK  ROUTINE				 !CHECK FOR GROUP BREAK
+  IF Tes:Anos <> SAV:Anos			 !BREAK ON NEW GROUP
+    BRK_FLAG# = 1				 !SET BREAK LEVEL
+    DO PRT_BRK_FTRS				 !PRINT FOOTERS FOR THIS LEVEL
+    DO PRT_BRK_HDRS				 !PRINT HEADERS FOR THIS LEVEL
+    EXIT					 !RETURN TO REPORT
+  .
+
+PRT_BRK_HDRS ROUTINE				 !DO GROUP HEADERS
+  IF BRK_FLAG# <= 1				 !CHECK BREAK LEVEL
+    RPT:c_d1 = 0
+    t_d1# = 0
+    t_d1$ = 0
+    RPT:c_d2 = 0
+    t_d2# = 0
+    t_d2$ = 0
+    RPT:c_d3 = 0
+    t_d3# = 0
+    t_d3$ = 0
+    RPT:c_d4 = 0
+    t_d4# = 0
+    t_d4$ = 0
+    PRINT(GRP_HEAD1)				 ! PRINT GROUP HEADER
+    DO CHECK_PAGE				 ! DO PAGE BREAK IF NEEDED
+  .
+  SAV:Anos = Tes:Anos				 !SAVE BREAK FIELD
+
+PRT_BRK_FTRS ROUTINE				 !DO GROUP FOOTERS
+  GET(Test,LAST_REC#)				 !REREAD PREVIOUS RECORD
+  IF BRK_FLAG# <= 1				 !CHECK BREAK LEVEL
+    PRINT(GRP_FOOT1)				 ! PRINT GROUP FOOTER
+    DO CHECK_PAGE				 ! DO PAGE BREAK IF NEEDED
+  .
+  SKIP(Test,-1)					 !BACKUP ONE RECORD
+  NEXT(Test)					 !AND REREAD IT
+
+
+
+
+RPT_UNIV     PROCEDURE
+Salvar	     Screen	  Window(25,80),Hue(7,0)
+	     .
+Confirma     Screen	  Window(5,39),At(11,21),Hue(15,4)
+	       Row(1,1)	  String('ÉÍ{37}»')
+	       Row(2,1)	  Repeat(3);String('º<0{37}>º') .
+	       Row(5,1)	  String('ÈÍ{37}¼')
+	       Row(2,7)	  String('Pulse [ENTER] para imprimir')
+	       Row(4,11)  String('o [ESC] para abortar')
+	     .
+Abortar	     Screen	  Window(5,39),At(11,21),Hue(15,4)
+	       Row(1,1)	  String('ÉÍ{37}»')
+	       Row(2,1)	  Repeat(3);String('º<0{37}>º') .
+	       Row(5,1)	  String('ÈÍ{37}¼')
+	       Row(3,5)	  String('Pulse [CTRL] [ESC] para abortar')
+	     .
+TITLE	     Report	  Length(60),Width(117),Pre(TTL),Device(MEM:DEVICE)
+RPT_HEAD		  Detail
+	     .		  .
+REPORT	     Report	  Length(60),Width(117),Page(MEM:PAGE),Line(MEM:LINE),Pre(RPT),Device(MEM:DEVICE)
+PAGE_HEAD		  Header
+		 Col(1)	    Ctl('<15>') String(' {39}Estadisticas por universidad de origen')
+	       Row(+1,1)    String('Ä{117}')
+	       Row(+1,53)   String('Maestr¡a {10}Finanzas {9}Org. Empr. {9}Mercadeo')
+	       Row(+1,1)    String('Universidad de Origen {29}Nro.    Prom. {5}Nro.    Prom. {5}Nro.    Prom. {5}'  |
+			      & 'Nro.    Prom.')
+	       Row(+1,1)    String('Ä{117}') Ctl(@LF)
+			  .
+GRP_HEAD1		  Detail
+			  .
+DETAIL			  Detail
+			  .
+GRP_FOOT1		  Detail
+		 Col(1)	    String(5),Use(Tes:Univ)
+		 Col(6)	    String('-')
+Nombre		 Col(7)	    String(35)
+c_d1		 Col(52)    String(@N3)
+t_d1		 Col(57)    String(@N7.2~%~)
+c_d2		 Col(70)    String(@N3)
+t_d2		 Col(75)    String(@N7.2~%~)
+c_d3		 Col(88)    String(@N3)
+t_d3		 Col(93)    String(@N7.2~%~)
+c_d4		 Col(106)   String(@N3)
+t_d4		 Col(111)   String(@N7.2~%~) Ctl(@LF)
+			  .
+RPT_FOOT		  Detail
+			  .
+PAGE_FOOT		  Footer
+		 Col(55)    String('P gina:')
+		 Col(62)    String(@N3),Use(MEM:PAGE) Ctl(@LF)
+			    Ctl(@FF)
+	     .		  .
+	     GROUP,PRE(kkk)
+d1			    String(@n7.2~%~)
+d2			    String(@n7.2~%~)
+d3			    String(@n7.2~%~)
+d4			    String(@n7.2~%~)
+	     .
+	     GROUP,PRE(SAV)
+Univ	       String(5)
+	     .
+  code
+  open(Confirma)
+  loop until keycode() = enter_key
+    ask
+    IF KEYCODE() = REJECT_KEY or KEYCODE() = esc_KEY
+       THEN RETURN.				   !RETURN ON SCREEN REJECT KEY
+  .
+  close(confirma)
+  open(Abortar)
+  if upper(clip(mem:Device)) = 'CON' then open(Salvar).
+
+  DONE# = 0					 !TURN OFF DONE FLAG
+  CLEAR(Tes:RECORD,-1)				 !MAKE SURE RECORD CLEARED
+  PRINT(TTL:RPT_HEAD)				 !PRINT TITLE PAGE
+  CLOSE(TITLE)					 !CLOSE TITLE REPORT
+  SET(Tes:Por_Univ)				 !  POINT TO FIRST RECORD
+  DO NEXT_RECORD				 !READ FIRST RECORD
+  APPEND# = FALSE				 !TURN OFF APPEND FLAG
+  IF SUB(MEM:DEVICE,1,1) <> '+'			 !NOT ALREADY APPENDING REPORTS
+    MEM:DEVICE = '+' & MEM:DEVICE		 !  APPEND DISK RPT TO TITLE
+    APPEND# = TRUE				 !  SET FLAG TO TURN OFF APPEND
+  .
+  OPEN(REPORT)					 !OPEN THE REPORT
+  BRK_FLAG# = 0					 !CLEAR BREAK LEVEL FLAG
+  DO PRT_BRK_HDRS				 !PRINT GROUP HEADER(S)
+  LOOP UNTIL DONE#				 !READ ALL RECORDS IN FILE
+    SAVE_LINE# = MEM:LINE			 !  SAVE LINE NUMBER
+    LAST_REC# = POINTER(Test)
+    ! PRINT(RPT:DETAIL)				 !???????? PRINT DETAIL LINES
+    DO CHECK_PAGE				 !  DO PAGE BREAK IF NEEDED
+    IF tes:perfil = 1
+    RPT:c_d1 += 1
+    t_d1# += 1
+    t_d1$ += kkk:d1
+    .
+    RPT:t_d1 = t_d1$ / t_d1#
+    IF tes:perfil = 2
+      RPT:c_d2 += 1
+      t_d2# += 1
+      t_d2$ += kkk:d2
+    .
+    RPT:t_d2 = t_d2$ / t_d2#
+    IF tes:perfil = 3
+      RPT:c_d3 += 1
+      t_d3# += 1
+      t_d3$ += kkk:d3
+    .
+    RPT:t_d3 = t_d3$ / t_d3#
+    IF tes:perfil = 4
+      RPT:c_d4 += 1
+      t_d4# += 1
+      t_d4$ += kkk:d4
+    .
+    RPT:t_d4 = t_d4$ / t_d4#
+    DO NEXT_RECORD				 !  GET NEXT RECORD
+    IF NOT DONE# THEN DO CHECK_BREAK.		 !  CHECK FOR GROUP BREAK
+  .						 !
+  BRK_FLAG# = 0					 !CLEAR BREAK LEVEL FLAG
+  DO PRT_BRK_FTRS				 !PRINT GROUP FOOTER(S)
+  PRINT(RPT:RPT_FOOT)				 !PRINT GRAND TOTALS
+  DO CHECK_PAGE					 !  DO PAGE BREAK IF NEEDED
+  CLOSE(REPORT)					 !CLOSE REPORT
+  IF APPEND#					 !IF REPORT WAS APPENDED
+    MEM:DEVICE = SUB(MEM:DEVICE,2,LEN(MEM:DEVICE)-1)!TURN OFF APPEND REPORT
+  .
+  if upper(clip(mem:Device)) = 'CON' then
+     show(25, 1, 'Pulse alguna tecla', @S30)
+     ask
+  .
+  RETURN					 !RETURN TO CALLER
+
+NEXT_RECORD ROUTINE				 !GET NEXT RECORD
+  LOOP UNTIL EOF(Test)				 !  READ UNTIL END OF FILE
+    NEXT(Test)					 !    READ NEXT RECORD
+    IF tes:perfil = 1				 !EVALUATE CONDITION
+      kkk:d1 = 100 - tes:desviacion		 !  CONDITION IS TRUE
+    ELSE					 !OTHERWISE
+      kkk:d1 = ''				 !  CONDITION IS FALSE
+    .
+    IF tes:perfil = 2				 !EVALUATE CONDITION
+      kkk:d2 = 100 - tes:desviacion		 !  CONDITION IS TRUE
+    ELSE					 !OTHERWISE
+      kkk:d2 = ''				 !  CONDITION IS FALSE
+    .
+    IF tes:perfil = 3				 !EVALUATE CONDITION
+      kkk:d3 = 100 - tes:desviacion		 !  CONDITION IS TRUE
+    ELSE					 !OTHERWISE
+      kkk:d3 = ''				 !  CONDITION IS FALSE
+    .
+    IF tes:perfil = 4				 !EVALUATE CONDITION
+      kkk:d4 = 100 - tes:desviacion		 !  CONDITION IS TRUE
+    ELSE					 !OTHERWISE
+      kkk:d4 = ''				 !  CONDITION IS FALSE
+    .
+    IF ~(tes:desviacion < 100) THEN CYCLE.	 !    IF FILTERED OUT, GET NEXT
+    EXIT					 !    EXIT THE ROUTINE
+  .						 !
+  DONE# = 1					 !  ON EOF, SET DONE FLAG
+
+CHECK_PAGE ROUTINE				 !CHECK FOR NEW PAGE
+  IF MEM:LINE <= SAVE_LINE#			 !  ON PAGE OVERFLOW
+    SAVE_LINE# = MEM:LINE			 !    RESET LINE NUMBER
+  .
+  LOOP UNTIL NOT KEYBOARD()			 !LOOK FOR KEYSTROKE
+    ASK						 !GET KEYCODE
+    IF KEYCODE() = REJECT_KEY			 !ON CTRL-ESC
+      IF APPEND#				 !IF REPORT WAS APPENDED
+	MEM:DEVICE = SUB(MEM:DEVICE,2,LEN(MEM:DEVICE)-1)!TURN OFF APPEND REPORT
+      .
+      CLOSE(REPORT)				 !  CLOSE REPORT
+      RETURN					 !  ABORT PRINT
+  . .
+
+CHECK_BREAK  ROUTINE				 !CHECK FOR GROUP BREAK
+  IF Tes:Univ <> SAV:Univ			 !BREAK ON NEW GROUP
+    BRK_FLAG# = 1				 !SET BREAK LEVEL
+    DO PRT_BRK_FTRS				 !PRINT FOOTERS FOR THIS LEVEL
+    DO PRT_BRK_HDRS				 !PRINT HEADERS FOR THIS LEVEL
+    EXIT					 !RETURN TO REPORT
+  .
+
+PRT_BRK_HDRS ROUTINE				 !DO GROUP HEADERS
+  IF BRK_FLAG# <= 1				 !CHECK BREAK LEVEL
+    RPT:c_d1 = 0
+    t_d1# = 0
+    t_d1$ = 0
+    RPT:c_d2 = 0
+    t_d2# = 0
+    t_d2$ = 0
+    RPT:c_d3 = 0
+    t_d3# = 0
+    t_d3$ = 0
+    RPT:c_d4 = 0
+    t_d4# = 0
+    t_d4$ = 0
+    PRINT(GRP_HEAD1)				 ! PRINT GROUP HEADER
+    DO CHECK_PAGE				 ! DO PAGE BREAK IF NEEDED
+  .
+  SAV:Univ = Tes:Univ				 !SAVE BREAK FIELD
+
+PRT_BRK_FTRS ROUTINE				 !DO GROUP FOOTERS
+  GET(Test,LAST_REC#)				 !REREAD PREVIOUS RECORD
+  IF BRK_FLAG# <= 1				 !CHECK BREAK LEVEL
+    Uni:Codigo = Tes:Univ			 !MOVE RELATED KEY FIELDS
+    GET(Universi,Uni:Por_codigo)		 !READ THE RECORD
+    IF ERROR() THEN
+       CLEAR(Uni:RECORD)	     !IF NOT FOUND, CLEAR RECORD
+       RPT:Nombre =  '****' & Tes:nombre
+    else
+       RPT:Nombre = Uni:Nombre			 !DISPLAY LOOKUP FIELD
+    .
+    PRINT(GRP_FOOT1)				 ! PRINT GROUP FOOTER
+    DO CHECK_PAGE				 ! DO PAGE BREAK IF NEEDED
+  .
+  SKIP(Test,-1)					 !BACKUP ONE RECORD
+  NEXT(Test)					 !AND REREAD IT
+
+

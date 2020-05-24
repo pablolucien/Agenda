@@ -1,0 +1,12 @@
+Uso: java Dw -help | -f <file> | <URL>
+ -help: Se muestra esta ayuda.
+ -f: sigue un archivo que contiene los URL a bajar.
+   formato del archivo de datos:
+   base del url                                 desde hasta extension [prefix].
+   http://ftp.ddj.com/download/docs/java/threads 1      20    .txt     pepito
+   donde desde y hasta pueden ser numericos o letras. 
+     Si comienzan con 0's se ajusta el nombre
+   Un siguiente parametro opcional prefix es como se va a
+     prefijar los archivos locales
+     (puede ser "<directorio>/" si "<directorio>" existe
+ <URL>: la URL a descargar

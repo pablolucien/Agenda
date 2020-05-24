@@ -1,0 +1,5 @@
+var motd = "Este es un ejemplo \n"
++ "del archivo 'motd.txt'";
+
+
+

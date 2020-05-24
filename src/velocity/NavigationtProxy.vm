@@ -1,0 +1,49 @@
+/**
+ * Paquet de definition
+ */
+package sopra.immobilier.navigation.${domain};
+
+import sopra.navigation.NavigationFunction;
+import sopra.navigation.ULIS.AbstractPorteFunctionCall;
+
+
+/**
+ * Description :
+ * Contrat function de ${fonction} proxy.
+ *
+#foreach($variable in $variables) 
+ *  ${variable} = "" 
+#end
+ * <TABLE>
+ *   <TR>
+ *     <TD><B>Attributs SVN :</B></TD>
+ *     <TD>&nbsp;</TD>
+ *   </TR>
+ *   <TR>
+ *     <TD><I>Nom du fichier :</I></TD>
+ *     <TD>$HeadURL:   O:/Kernel5 Livraison/archives/kernel/tools/eclipse/config/ArchitectureImmobilierCodeTemplates.xml-arc  $</TD>
+ *   </TR>
+ *   <TR>
+ *     <TD><I>Modifie le :</I></TD>
+ *     <TD>$Date: 2012/06/23 08:01:17 $</TD>
+ *   </TR>
+ * </TABLE>
+ *
+ * @version : $Revision: 1.1 $
+ * @author  : SOPRA Group - $Author: pablo $author  $
+ *
+ */
+@NavigationFunction("${domain}/${fonction}_${description}")
+public class ${fonction}_${description}Function extends AbstractPorteFunctionCall {
+  
+  /** Version extraite du gestionnaire de configuration */
+  @SuppressWarnings("hiding")
+  public static final String CLASS_VERSION = "$Revision: 1.1 $";
+
+  /**
+   * Constructeur de ${fonction}_${description}Function 
+   */
+  public ${fonction}_${description}Function() {
+    super();
+  }  
+}

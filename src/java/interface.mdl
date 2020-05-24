@@ -1,0 +1,15 @@
+// ******************************** package
+
+// ******************************** imports
+/**
+	#CLASSNAME#
+	@author #AUTHOR#
+	@version #DATE#
+*/
+public interface #CLASSNAME# {
+	// ******************************** Constantes
+
+
+	// ******************************** Metodos de instancia
+
+}

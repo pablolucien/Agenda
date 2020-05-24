@@ -1,0 +1,48 @@
+#Jars, directories or files needed in the classpath
+#delimited by | (spaces are not trimmed)
+classpathEntries=derby.jar
+
+#The JDCB driver.
+driverName=org.apache.derby.jdbc.EmbeddedDriver
+
+#The URL to connect to the database
+dbURL=jdbc:derby:C:/home/databases/FileDataBase;create=true
+#dbURL=jdbc:derby:memory:FileDataBase;create=true
+
+#Database user and password
+user=CompDel
+pwd=obscure
+
+supportsCompactTable=true
+
+# Indica que debemos crear las tablas 'from scratch'
+createTables=true
+
+#Las sentencias para crear las tablas
+#(las relaciones mejor no en prod, por performance)
+createDirectorios=CREATE TABLE Directorios (\
+	Codigo  INTEGER GENERATED ALWAYS AS IDENTITY PRIMARY KEY,\
+	Camino  VARCHAR(255) NOT NULL,\
+	Padre	INTEGER\
+)
+
+createExtensiones=CREATE TABLE Extensiones (\
+	Codigo     INTEGER GENERATED ALWAYS AS IDENTITY PRIMARY KEY,\
+	Extension  VARCHAR(128) NOT NULL\
+)
+
+createArchivos=CREATE TABLE Archivos (\
+	Camino             INTEGER NOT NULL,\
+	Nombre             VARCHAR(255) NOT NULL,\
+	Tamanho            INTEGER NOT NULL,\
+	FechaModificacion  DATE  NOT NULL,\
+	Extension          INTEGER NOT NULL,\
+	Digest             VARCHAR(40) NOT NULL,\
+	FechaIngreso       DATE NOT NULL\
+)
+
+createSeries=CREATE TABLE Series (\
+	Directorio   INTEGER NOT NULL,\
+	NombreSerie  varchar(255) NOT NULL,\
+	Thumbnail    varchar(20)\
+)

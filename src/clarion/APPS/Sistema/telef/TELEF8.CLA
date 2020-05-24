@@ -1,0 +1,9 @@
+	     Member('TELEF')
+  ! Reconstrucci¢n de todos los archivos
+Rebuild	     PROCEDURE
+  Code
+    savact# = action
+    action = 99
+    g_openfiles	       ! Llamar a G_openfiles con par metro de reconstrucci¢n
+    action = savact#
+    return

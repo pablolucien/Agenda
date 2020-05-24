@@ -1,0 +1,89 @@
+/**
+ * Paquet de definition
+ */
+package sopra.immobilier.navigation.${domain};
+
+import sopra.navigation.NavigationFunction;
+import sopra.navigation.ULIS.AbstractPorteFunctionCall;
+import sopra.navigation.connectors.porte.OperationParameter;
+
+
+/**
+ * Description :
+ * ${fonction} proxy/function.
+ *
+ * <TABLE>
+ *   <TR>
+ *     <TD><B>Attributs SVN :</B></TD>
+ *     <TD>&nbsp;</TD>
+ *   </TR>
+ *   <TR>
+ *     <TD><I>Nom du fichier :</I></TD>
+ *     <TD>$HeadURL:   O:/Kernel5 Livraison/archives/kernel/tools/eclipse/config/ArchitectureImmobilierCodeTemplates.xml-arc  $</TD>
+ *   </TR>
+ *   <TR>
+ *     <TD><I>Modifie le :</I></TD>
+ *     <TD>$Date: 2012/06/23 08:01:17 $</TD>
+ *   </TR>
+ * </TABLE>
+ *
+ * @version : $Revision: 1.1 $
+ * @author  : SOPRA Group - $Author: pablo $author  $
+ *
+ *
+ */
+@NavigationFunction("${domain}/${fonction}")
+public class ${fonction}Function extends AbstractPorteFunctionCall {
+  
+  /** Version extraite du gestionnaire de configuration */
+  public static final String CLASS_VERSION = "$Revision: 1.1 $";
+  
+  /**
+   * Constructeur de ${fonction} 
+   */
+  public ${fonction}Function() {
+   super();
+  }
+#foreach($variable in $variables) 
+	#set( $variableUp = ${variable.toUpperCase()} )
+
+  /** Critere de navigation contenant le parametre ${variableUp}"*/
+  public static final String ${variableUp} = "${variableUp}";
+  
+  /**
+   * @param ${variable} la valeur a positionner dans la variable.
+   */
+  public void setIn${variable}(String ${variable}) {
+    getInParameters().put(${variableUp}, ${variable});
+  }
+  
+  /**
+   * @return la valeur positionnee dans la variable.
+   */
+  public String getIn${variable}() {
+    return (String) getInParameters().get(${variableUp});
+  }  
+#end
+#foreach($param in $params) 
+	#set( $paramUp = ${param.toUpperCase()} )
+	#set( $paramMix = ${paramUp.charAt(0)} + ${param.substring(1)})
+
+  /** Critere de navigation contenant le parametre ${paramUp}"*/
+  public static final String ${paramUp} = "${paramUp}";
+  
+  /**
+   * @param ${param} la valeur a positionner dans le parametre.
+   */
+  public void setIn${paramMix}(String ${param}) {
+    getInParameters().put(${paramUp}, ${param});
+  }
+  
+  /**
+   * @return la valeur positionnee dans le parametre.
+   */
+  @OperationParameter(position=$foreach.count)
+  public String getIn${paramMix}() {
+    return (String) getInParameters().get(${paramUp});
+  }  
+#end
+}

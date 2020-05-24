@@ -1,0 +1,52 @@
+DROP TABLE IF EXISTS PAISES;
+CREATE TABLE PAISES (
+  CODIGO VARCHAR(3) PRIMARY KEY,
+  NOMBRE VARCHAR(40)
+);
+
+INSERT INTO PAISES VALUES
+	('058','Venezuela'),
+	('033','France'),
+	('034','España'),
+	('044','England'),
+	('046','Sverige'),
+	('001','USA'),
+	('049','Deutschland'),
+	('055','Brasil'),
+	('054','Argentina'),
+	('052','Mexico'),
+	('043','Österreich');
+
+DROP TABLE IF EXISTS CONTACTOS;
+CREATE TABLE CONTACTOS (
+	Clave INTEGER NOT NULL,
+	Version INTEGER NOT NULL,
+	Deleted BOOLEAN,
+	Nombre VARCHAR(20),
+	Apellido VARCHAR(20),
+	Direccion VARCHAR(50),
+	Imagen VARCHAR(15),
+	Sexo VARCHAR(1),
+	Pais VARCHAR(3),
+	VersionTelefono INTEGER NOT NULL,
+	Email VARCHAR(50),
+	Dia INTEGER,
+	Mes INTEGER,
+	Ano INTEGER,
+	Marca VARCHAR(2),
+	FechaActualizacion DATE,
+	FechaCreacion DATE,
+	Listar BOOLEAN,
+	Notas VARCHAR(150)
+);
+
+ALTER TABLE CONTACTOS ADD CONSTRAINT PK_CONTACTOS PRIMARY KEY (CLAVE, VERSION);
+
+DROP TABLE IF EXISTS TELEFONOS;
+CREATE TABLE TELEFONOS (
+    Clave INTEGER NOT NULL,
+	Version INTEGER NOT NULL,
+    Secuencia INTEGER NOT NULL,
+	Numero VARCHAR(15) NOT NULL,
+    PRIMARY KEY (Clave, Version, Secuencia)
+);

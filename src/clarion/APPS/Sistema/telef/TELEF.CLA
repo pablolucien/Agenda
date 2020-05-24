@@ -1,0 +1,197 @@
+TELEF	     Program
+ omit('fin')
+    Modificaciones:
+      crea fondo tipo NetWare
+      archivo de control y rutina para modificarlo (F5)
+      Hora
+      Obtiene nombre del programa en ejecucion
+      Confirma impresion
+      Pide password
+      Funciones sin Hacer
+      Modificacion en form para no verificar modificaciones
+      Nombres de los meses y dias
+      Marca la opcion de menu escogida
+      Reconstruccion de indices
+      Salida por ALT-F10 y ESC desde el primer campo
+      Calendario (F4)
+      15-6-92 Procedimiento Rebuild (reindexar archivos)
+      01-07-92 Modulo NETWARE.UTL
+      08-07-92 InitProc y LastProc (Inicializacion y fin)
+      17-12-93 MsgForm: despliega un mensaje y retorna
+      07-10-94 Capitalize: Capitaliza un nombre
+      21-12-94 G_CloseFiles: Cierra todos los archivos
+      02-02-95 Modificadas LOOKUPS y LOOKUPSCROLL para poner '*' si not found
+ fin
+
+	     INCLUDE('c:\pablo\clarion\modelos\ALL_KEYS.CLA')
+REJECT_KEY   EQUATE(CTRL_ESC)
+ACCEPT_KEY   EQUATE(CTRL_ENTER)
+TRUE	     EQUATE(1)
+FALSE	     EQUATE(0)
+
+	     MAP
+	       PROC(G_OPENFILES)
+	       PROC(G_CloseFILES)
+	       Proc(InitProc)			 ! Inicializar
+	       Proc(LastProc)			 ! Finalizar
+	       Proc(Get_Pass)			 ! Obtener PassWord
+	       Proc(Hora)			 ! Poner Fecha y Hora
+	       Proc(ConfSalida)			 ! Confirmar la salida del sistema
+	       Proc(Salida)			 ! Salida del sistema
+	       Proc(xxcontr)			 ! Modificar archivo de control
+	       Proc(Calendario)
+	       Proc(Sin_Hacer)			 ! Procedimientos que no estan hechos
+	       Proc(Capitalize)			 ! Capitaliza un nombre
+	       Module('TELEF1')
+		 Proc(P_NOMBRES)		 !Lista por nombres
+	       .
+	       Module('TELEF2')
+		 Proc(P_FECHAS)			 !Lista por fechas
+	       .
+	       Module('TELEF3')
+		 Proc(UPD_TABLE)		 !Actualizaci¢n de datos
+	       .
+	       Module('TELEF4')
+		 Proc(ESPECIAL)			 !Lista por Marcas
+	       .
+	       Module('TELEF5')
+		 Proc(UPD_TABLE_SP)		 !Modificaci¢n de la tabla
+	       .
+	       Module('TELEF6')
+		 Proc(MENU_Inicial)		 !Men£ General
+		 Proc(Memoria)			 !Variables de Memoria
+	       .
+	       Module('TELEF7')
+		 Proc(Menu_Telef)
+	       .
+	       Module('TELEF8')
+		 Proc(Rebuild)			 !Reconstruccion de Archivos
+	       .
+	       Module('Telef00')
+		 Proc(Initius)			 !Inicializaci¢n y llama a menu
+		 Proc(L_Telefonos)		 !Listado de Tel‚fonos
+		 Proc(MoreControl)		 !Modificar archivo de control
+		 Proc(GetRndRec)		 !Obtiene un registro al azar
+		 Proc(L_Telefono2)		 !Listado para la laserjet
+	       .
+	       MODULE('getname'),BINARY		 ! Obtener el nombre del
+		 FUNC(getname),STRING		 !    programa en ejecuci¢n
+	       .
+	     .
+	     EJECT('FILE LAYOUTS')
+Fechas	     File,Pre(Dat),Create
+	       Owner('Sauron'),Encrypt
+POR_NOMBRE     Key(Dat:NOMBRE),Dup,Nocase
+POR_FECHA      Key(Dat:MES,Dat:DIA),Dup,Nocase
+POR_MARCA      Key(Dat:MARCA),Dup,Nocase,Opt
+Notas	       Memo(150)
+RECORD	       Record
+Nombre		 String(20)
+Apellido	 String(20)
+Sexo		 String(1)			 !Femina, Maschio, Empresa
+Telefono_1	 String(15)
+Telefono_2	 String(15)
+Telefono_3	 String(15)
+email		 String(40)			 !Direccion de email
+Fecha		 Group
+Dia		   Byte
+Mes		   Byte
+Ano		   Byte
+		 .
+Marca		 String(2)
+F_Actualiz	 Long				 !Ultima actualizaci¢n
+Listar		 String(1)			 !¨Sacar en el listado tefonico?
+	     . .
+	     Group,over(Dat:Notas)
+Dat_MEMO_ROW   String(50),Dim(3)
+	     .
+
+	     EJECT('GLOBAL MEMORY VARIABLES')
+	     INCLUDE('c:\pablo\clarion\modelos\globals.h')
+	     Group,Pre(MEM)
+MESSAGE	       String(30)			 !Global Message Area
+PAGE	       Short				 !Report Page Number
+LINE	       Short				 !Report Line Number
+rpt_len96      Byte(96)				 !Longitud de reporte de telef
+rpt_len90      Byte(90)
+DEVICE	       String('CON {27}')
+EMPRESA	       String(60)
+Seleccion      String(20)			 !String a buscar en el archivo
+Defaults       Group				 !Defaults en ingreso de articu.
+Cod_Rev		 Byte				 !Codigo de la revista a ingres
+Mes		 Byte
+Ano		 Byte
+Numero		 Short
+	       .
+Controles      Group				 !Controles de Impresora
+Normal		 String('<18>')
+Comprimido	 String('<15>')
+Expandido	 String('<27>W1')
+UnOctavo	 String('<27>0')		 !espacio entre lineas 1/8"
+UnSexto		 String('<27>2')		 !espacio entre lineas 1/6"
+	       .
+HP_Control     Group				 !Controles de la LaserJet
+HPReset		 String('<27>E')
+HPComprimido	 String('<27>&k2S')
+HPManual	 String('<27>&l2H')		 !Manual feed
+HPLegal		 String('<27>&l3A')		 !Papel extraoficio
+HPLineas	 String('<27>&l96P')		 !Numero de lineas por pagina
+HPUnOctavo	 String('<27>&l8D')
+HPSymbolSet	 String('<27>(10U')		 !Symbol set = PC-8
+	       .
+	     .
+	     EJECT('CODE SECTION')
+  CODE
+  SETHUE(7,0)					 !SET WHITE ON BLACK
+  BLANK						 !  AND BLANK
+  SETHUE()					 !    THE SCREEN
+  open(background)
+  InitProc
+  salir = 0
+  loop until salir = 1
+    INITIUS					 !Inicializaci¢n y llama a menu
+    ConfSalida
+  .
+  LastProc
+  RETURN					 !EXIT TO DOS
+
+  INCLUDE('c:\pablo\clarion\modelos\netware.utl')
+
+G_CLOSEFILES  PROCEDURE				  !Close FILES
+  CODE
+  savact# = action
+  action = 98
+  g_openfiles	     ! Llamar a G_openfiles con par metro de cierre
+  action = savact#
+
+G_OPENFILES  PROCEDURE				 !OPEN FILES & CHECK FOR ERROR
+SCREEN	     Screen	  Window(1,80),At(25,1),Hue(0,7)
+	     .
+  CODE
+  open(screen)	    !Salvar la Pantalla
+  if ACTION = 99
+				    ! Hay que reconstruir
+      SHOW(25,1,CENTER('Reconstruyendo Fechas ('& records(Fechas) &' registros)',80))
+      pack(Fechas)
+      open(Fechas)
+      BLANK(25,1,1,80)
+  elsif action = 98	  ! Cerrar archivos
+      SHOW(25,1,CENTER('Cerrando: ' & 'Fechas',80)) !DISPLAY FILE NAME
+      CLOSE(Fechas)
+  else
+				    ! Procedimiento original
+     SHOW(25,1,CENTER('Abriendo: ' & 'Fechas',80)) !DISPLAY FILE NAME
+     OPEN(Fechas)				    !OPEN THE FILE
+     IF ERROR()					    !OPEN RETURNED AN ERROR
+       CASE ERRORCODE()				    ! CHECK FOR SPECIFIC ERROR
+       OF 46					    !  KEYS NEED TO BE REBUILT
+       orof 27					    ! nomatch_err
+	 SHOW(25,1,CENTER('Reconstruyendo Fechas',80)) !INDICATE MSG
+	 BUILD(Fechas)				    !  CALL THE BUILD PROCEDURE
+	 BLANK(25,1,1,80)			    !  BLANK THE MESSAGE
+       OF 2					 !IF NOT FOUND,
+	 CREATE(Fechas)				 ! CREATE
+       ELSE					    ! ANY OTHER ERROR
+	 LOOP;STOP('Fechas: ' & ERROR()).	    !  STOP EXECUTION
+     . .
+  .

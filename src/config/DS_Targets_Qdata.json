@@ -1,0 +1,12 @@
+{
+  "targets": [
+    {
+      "dirs": [
+        "${ROOT_C_home}/quickenw/qdata",
+        "${ROOT_F}/home/quickenw/qdata",
+        "${ROOT_E}/home/quickenw/qdata",
+        "${ROOT_L}/home/quickenw/qdata"
+      ]
+    }
+  ]
+}

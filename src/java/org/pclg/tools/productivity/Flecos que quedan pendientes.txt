@@ -1,0 +1,5 @@
+Flecos que quedan pendientes:
+Cuando est n con blanks. ¨¨¨¨ Vale la pena hacer una regex ??
+	(CnafDate
+							.isDateInferieure
+

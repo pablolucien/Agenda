@@ -1,0 +1,1487 @@
+!Type:Class
+NAmelia
+DCuentas con Amelia
+^^
+NAna
+DAna Isabel
+^^
+NAna Rosa
+DMi prima
+^^
+NAnnie
+DAnny Cudisevich
+^^
+NAsier
+DAsier Morales
+^^
+NAsintec
+DAsintec Gestion
+^^
+NAubay
+DAubay
+^^
+NCALEV
+DC.A. Luz Electrica de Ven
+^^
+NCarmen Lucien
+DCarmen Lucien
+^^
+NCarro
+DPa' moverse
+^^
+NCasero
+DJavier Casero
+^^
+NChari
+DChari
+^^
+NChelo
+DChelo Ramos
+^^
+NCine
+DFabricantes de ilusiones
+^^
+NClases
+DYo como profesor
+^^
+NComputadores
+DPa' trabajar?
+^^
+NCondominio
+DEl condominio
+^^
+NFlia Milich
+DFamilia Milich
+^^
+NGardi
+DCuentas con gardi
+^^
+NGerardito
+D"Neno"
+^^
+NGraná
+DViaje a Granada
+^^
+NInes
+DInes de Diego
+^^
+NIngedigit
+DIngedigit
+^^
+NInternacionales
+DViajes Internacionales
+^^
+NIrium
+DIrium consulting
+^^
+NJeanette
+^^
+NJose Luis
+DJose Luis Lucien
+^^
+NJosele
+DJuanjo
+^^
+NJuan
+DJuan Guevara
+^^
+NJuani
+DCuentas con Juani
+^^
+NLaura
+DLaura Gonzalez
+^^
+NLaurence
+^^
+NLivia
+DLiiva
+^^
+NLola
+DGastos relacionados con L
+^^
+NMartha
+DCuentas con Martha
+^^
+NMaureen
+DMaureen Emilia del Soc...
+^^
+NMiguel
+DMiguel Milich
+^^
+NOscar
+DOscar Ordaz Jr.
+^^
+NOtros
+DVanidad de vanidades
+^^
+NPuri
+DPuri
+^^
+NRafa
+DRafael Gomez
+^^
+NRaffaele
+DRaffaele Bello
+^^
+NSopra
+DAsuntos con Sopra
+^^
+NSun
+DSun Microsystems
+^^
+NTelefonica
+DEl Monopolio
+^^
+NULA
+DUniversidad de los Andes
+^^
+NYo
+DYo mismo soy
+^^
+!Type:Cat
+NAyudas Estado
+DAyudas del Estado Español
+I
+^^
+NBonus
+DTigres varios
+T
+I
+^^
+NClases
+DPedagogia paga
+T
+I
+^^
+NDietas
+DSueldo en especie
+I
+^^
+NDietas:Parné
+DDietas en efectivo
+E
+^^
+NDietas:Tickets
+DDietas en tickets
+B         0.00
+B        90.00
+B        96.00
+B        96.00
+B        96.00
+B       102.00
+B        42.00
+B         0.00
+B         0.00
+B        54.00
+B        90.00
+B       192.00
+E
+^^
+NExchange
+Dcambios de moneda
+I
+^^
+NIngresos Azar
+I
+^^
+NIntereses
+DEl valor del dinero
+B        75.00
+B        75.00
+B        75.00
+B        75.00
+B        75.00
+B        75.00
+B        75.00
+B        75.00
+B        75.00
+B        75.00
+B        75.00
+B        75.00
+T
+I
+^^
+NOther Inc
+D*Other Income
+T
+I
+^^
+NPer contra
+DCuentas per contra
+I
+^^
+NPromociones
+DPromociones para joderte
+I
+^^
+NSueldo
+DSalary Income
+T
+I
+^^
+NSueldo Euros
+DSueldo en España
+B     2,643.00
+B     2,643.00
+B     2,643.00
+B     2,643.00
+B     2,643.00
+B     2,643.00
+B     5,285.00
+B     2,643.00
+B     2,643.00
+B     2,643.00
+B     2,643.00
+B     5,285.00
+T
+I
+^^
+N_DivInc
+DDividend
+T
+R4576
+I
+^^
+N_IntInc
+DInvestment Interest Inc
+T
+R4592
+I
+^^
+N_LT CapGnDst
+DLong Term Cap Gain Dist
+T
+R7808
+I
+^^
+N_RlzdGain
+DRealized Gain/Loss
+T
+I
+^^
+N_ST CapGnDst
+DShort Term Cap Gain Dist
+T
+R4576
+I
+^^
+N_UnrlzdGain
+DUnrealized Gain/Loss
+I
+^^
+NAlquiler
+B      -640.00
+B      -640.00
+B      -640.00
+B      -640.00
+B      -640.00
+B      -640.00
+B      -640.00
+B      -640.00
+B      -640.00
+B      -640.00
+B      -640.00
+B      -640.00
+E
+^^
+NAuto Fuel
+DAutomobile Fuel
+E
+^^
+NAuto Other
+DAutomobile Expense
+E
+^^
+NBank Chrg
+DBank Charge
+E
+^^
+NBusquedaCasa
+DBusqueda de Sietch
+E
+^^
+NBusquedaEmpleo
+DBusqueda de Empleo
+E
+^^
+NChucherias
+DPa'los chamos
+E
+^^
+NClothing
+DClothing
+B       -12.00
+B       -12.00
+B       -12.00
+B       -12.00
+B       -12.00
+B       -12.00
+B       -12.00
+B       -12.00
+B       -12.00
+B       -12.00
+B       -12.00
+B       -12.00
+E
+^^
+NCondominio
+E
+^^
+NDining
+DDining Out
+B       -96.00
+B       -90.00
+B       -96.00
+B       -96.00
+B       -96.00
+B      -102.00
+B       -42.00
+B         0.00
+B         0.00
+B       -54.00
+B       -90.00
+B       -96.00
+E
+^^
+NEducation
+D*Education
+E
+^^
+NEgresos Azar
+E
+^^
+NEntertain
+E
+^^
+NEntertain:Cine
+DFabricantes de ilusiones
+E
+^^
+NEntertain:Deporte
+DMens sana in corpore sano
+B       -31.00
+B       -31.00
+B       -31.00
+B       -31.00
+B       -31.00
+B       -31.00
+B       -31.00
+B       -42.00
+B       -31.00
+B       -31.00
+B       -31.00
+B       -31.00
+E
+^^
+NEntertain:Espectaculos
+DTeatro, danza, música
+E
+^^
+NEntertain:Museos
+E
+^^
+NEstacionamiento
+E
+^^
+NExtraviado
+DDinero Extraviado
+E
+^^
+NGastos legales
+DGastos de abog., notarios
+E
+^^
+NGroceries
+DGroceries
+B      -104.00
+B      -104.00
+B      -104.00
+B      -104.00
+B      -104.00
+B      -104.00
+B      -104.00
+B      -104.00
+B      -104.00
+B      -104.00
+B      -104.00
+B      -104.00
+E
+^^
+NHome Rpair
+DHome Repair & Maint.
+E
+^^
+NHoteles
+DMataderos
+E
+^^
+NHousehold
+DHousehold Misc. Exp
+E
+^^
+NI.S.L.R
+T
+E
+^^
+NImp. Deb. Banc.
+T
+E
+^^
+NImpuestos
+DImpuestos varios
+T
+E
+^^
+NImpuestos:IRPF
+DImpuesto S/Renta
+B      -474.00
+B      -474.00
+B      -474.00
+B      -474.00
+B      -474.00
+B      -474.00
+B      -948.00
+B      -474.00
+B      -474.00
+B      -474.00
+B      -474.00
+B      -948.00
+T
+E
+^^
+NImpuestos:SeguridSocial
+DSeguridad Social
+B      -196.00
+B      -196.00
+B      -196.00
+B      -196.00
+B      -196.00
+B      -196.00
+B      -196.00
+B      -196.00
+B      -196.00
+B      -196.00
+B      -196.00
+B      -196.00
+T
+E
+^^
+NImpuestos:Tasas Aeroport
+DTasas Aeroportuarias
+E
+^^
+NINCE
+DINCE
+T
+E
+^^
+NInsurance
+DInsurance
+E
+^^
+Ninversiones
+E
+^^
+NLiteratura
+DLibros y Revistas
+E
+^^
+NLiteratura:porn
+DPorno
+E
+^^
+NMantenimiento
+DMantenimiento de Equipos
+E
+^^
+NMedical
+DMedical & Dental
+E
+^^
+NMedical:Dientes
+DCuidado de los dientes
+E
+^^
+NMedical:Masajes
+DFisioterápia
+B        -6.00
+B        -6.00
+B        -6.00
+B        -6.00
+B        -6.00
+B        -6.00
+B        -6.00
+B        -6.00
+B        -6.00
+B        -6.00
+B        -6.00
+B        -6.00
+E
+^^
+NMedical:Medicinas
+E
+^^
+NMedical:Ojos
+DCuidado de la vista
+E
+^^
+NMedical:Peso
+E
+^^
+NMedical:Tension
+DTensión
+E
+^^
+NOther Exp
+DOther Expenses
+T
+E
+^^
+NParo Forzoso
+T
+E
+^^
+NPerrillas
+E
+^^
+NPersonal
+DMantenimiento personal
+B         0.00
+B       -11.00
+B         0.00
+B       -11.00
+B         0.00
+B       -11.00
+B         0.00
+B       -11.00
+B         0.00
+B       -11.00
+B         0.00
+B       -11.00
+E
+^^
+NPol. Habit.
+T
+E
+^^
+NPropinas
+E
+^^
+NRecreation
+DRecreation Expense
+E
+^^
+NRecreation:Sana
+DSana recreacion
+E
+^^
+NRegalos
+DNavidad, Aniversarios, et
+B         0.00
+B         0.00
+B         0.00
+B         0.00
+B         0.00
+B         0.00
+B       -30.00
+B         0.00
+B         0.00
+B         0.00
+B       -60.00
+B         0.00
+E
+^^
+NS.S.O.
+DSocial Security Tax
+T
+E
+^^
+NSolidaridad
+DSolidaridad con el mundo
+B       -45.00
+B       -45.00
+B       -45.00
+B       -45.00
+B       -45.00
+B       -45.00
+B       -45.00
+B       -45.00
+B       -45.00
+B       -45.00
+B       -45.00
+B       -45.00
+T
+E
+^^
+NSubscriptions
+D*Subscriptions
+E
+^^
+NSupplies
+D*Supplies
+T
+E
+^^
+NTransporte
+E
+^^
+NTransporte:Autobus
+DAutobuses locales
+E
+^^
+NTransporte:Correos
+DCorreos, españoles
+E
+^^
+NTransporte:EMT
+DEmpr Munic de Transportes
+E
+^^
+NTransporte:Internacional
+DTransporte en "el extanj
+E
+^^
+NTransporte:Metromadrid
+DMetro de Madrid
+B        -9.00
+B        -9.00
+B        -9.00
+B        -9.00
+B        -9.00
+B        -9.00
+B        -9.00
+B        -9.00
+B        -9.00
+B        -9.00
+B        -9.00
+B        -9.00
+E
+^^
+NTransporte:Metros varios
+DMetro en otras ciudades
+E
+^^
+NTransporte:Peaje
+DPeajes
+E
+^^
+NTransporte:RATP
+DMetro de Paris
+E
+^^
+NTransporte:RENFE
+DCercanias de RENFE
+E
+^^
+NTransporte:Taxi
+DLos Kami Kaze
+E
+^^
+NTravel
+D*Travel Expenses
+E
+^^
+NTravel:Internac
+DViajes Internacionales
+B         0.00
+B         0.00
+B         0.00
+B         0.00
+B         0.00
+B         0.00
+B         0.00
+B         0.00
+B         0.00
+B      -500.00
+B         0.00
+B         0.00
+E
+^^
+NTravel:Nacionales
+DViajes en España
+E
+^^
+NTravel:Nacionales:España
+DViajes en España
+E
+^^
+NTravel:Nacionales:Venezuela
+DViajes en Venezuela
+E
+^^
+NUtilities
+DTelefono, Gas, Electricid
+E
+^^
+NUtilities:Agua
+DEl liquido elemento
+B       -14.00
+B         0.00
+B       -14.00
+B         0.00
+B       -14.00
+B         0.00
+B       -14.00
+B         0.00
+B       -14.00
+B         0.00
+B       -14.00
+B         0.00
+E
+^^
+NUtilities:Basura
+DGarbage collector
+E
+^^
+NUtilities:Electricidad
+E
+^^
+NUtilities:Electricidad:CALEV
+DC.A. Luz Electrica de Ven
+E
+^^
+NUtilities:Electricidad:Fenosa
+DUnion Fenosa
+B       -28.00
+B       -28.00
+B       -28.00
+B       -28.00
+B       -28.00
+B       -28.00
+B       -28.00
+B       -28.00
+B       -28.00
+B       -28.00
+B       -28.00
+B       -28.00
+E
+^^
+NUtilities:Electricidad:Iberdro
+DIberdrola
+E
+^^
+NUtilities:Gas
+B         0.00
+B       -25.00
+B         0.00
+B       -25.00
+B         0.00
+B       -25.00
+B         0.00
+B       -25.00
+B         0.00
+B       -25.00
+B         0.00
+B       -25.00
+E
+^^
+NUtilities:Telefono
+DTelefono
+E
+^^
+NUtilities:Telefono:CANTV
+E
+^^
+NUtilities:Telefono:Internacion
+DTarjetas de llam. intern.
+E
+^^
+NUtilities:Telefono:Jazztel
+DJazztel
+E
+^^
+NUtilities:Telefono:Lebara
+DLebara Movil
+E
+^^
+NUtilities:Telefono:Movistar
+DTelefónica Móviles
+B        -5.00
+B         0.00
+B         0.00
+B         0.00
+B         0.00
+B         0.00
+B        -5.00
+B         0.00
+B         0.00
+B         0.00
+B         0.00
+B         0.00
+E
+^^
+NUtilities:Telefono:Telefónica
+DEl Monopolio
+B       -54.00
+B         0.00
+B       -54.00
+B         0.00
+B       -54.00
+B         0.00
+B       -54.00
+B         0.00
+B       -54.00
+B         0.00
+B       -54.00
+B         0.00
+E
+^^
+NUtilities:TV
+DTV de pago
+E
+^^
+NVicios
+DVicios
+E
+^^
+NVicios:Alcohol
+E
+^^
+NVicios:Baretos
+DSalidas a Bares
+E
+^^
+NVicios:Cafes
+DCafes
+E
+^^
+NVicios:Tabaco
+E
+^^
+NVino
+DIn vino veritas
+E
+^^
+N_Accrued Int
+DAccrued Interest
+T
+E
+^^
+N_IntExp
+DInvestment Interest Exp
+T
+R6816
+E
+^^
+!Option:AutoSwitch
+!Account
+NCC Provincial
+TBank
+D01080002000200069081
+^^
+NAmex
+TCCard
+DNunca salgo sin ella
+L0.00
+^^
+NItalo C. Ahorro
+TBank
+^^
+NCA Provincial
+TBank
+^^
+NFAL Provincial
+TBank
+DFAL con Crest
+^^
+NEfectivo
+TCash
+DEfectivo chamo
+^^
+NMaster Provinc.
+TCCard
+DMaster of the game
+L600,000.00
+^^
+NVisa Provincial
+TCCard
+DVisa de turista
+L600,000.00
+^^
+NReserva
+TCash
+DBajo el colchon
+^^
+NChase
+TInvst
+D343-427175
+^^
+NPor cobrar
+TOth A
+DPor cobrar varios
+^^
+NPuyas
+TCash
+DPa' goza un puyero
+^^
+NLPH
+TBank
+DPolitica Habitacional
+^^
+NDivisas
+TInvst
+DDivisas en efectivo
+^^
+NNomina
+TBank
+DEl reposo del remero
+^^
+NCaja de Ahorros
+TBank
+^^
+NBienes Muebles
+TOth A
+DMuebles, equipos, etc
+^^
+NFondo Consolida
+TBank
+DSiempre Azulado
+^^
+NCA Central
+TBank
+^^
+NViaticos
+TOth L
+DControl de Viaticos
+^^
+NIncobrable
+TOth A
+DOlvidar estas deudas
+^^
+NCA BBV
+TBank
+^^
+NPesetas
+TCash
+DLas perrillas
+^^
+NCACC
+TBank
+D20170252810000000602
+^^
+NAsintec
+TInvst
+DAcciones en Asintec
+^^
+NWechsel
+TCash
+DCambios de moneda
+^^
+NVisa CACC
+TCCard
+D4568-3900-1310-8106
+L610.00
+^^
+NFrancos
+TCash
+DEfectivo en Francos
+^^
+NCineClub
+TCash
+DCine Club
+^^
+NMenudo
+TCash
+DPesetillas
+^^
+NVisa Barclay
+TCCard
+DBarclayCard
+L500,000.00
+^^
+NCA Deutsche
+TBank
+DDeutsche Bank
+^^
+NTickets
+TCash
+DTicket Restaurant
+^^
+NCitibank CC
+TBank
+D01220090110090125200
+^^
+NCaja Madrid
+TBank
+D20381142033001474137
+^^
+NCitibank Visa
+TCCard
+D4909-4304-8146-4009
+L2,420.00
+^^
+NCiti Fondo
+TInvst
+DEspero ganar
+^^
+NCiti Plazo Fijo
+TBank
+DPlazo Fijo CitiBanc
+^^
+NCaixa Catalu CA
+TBank
+D20131646140200141616
+^^
+NCaixa Plazo
+TBank
+D20131646100700019033
+^^
+NiberCaja CA
+TBank
+D20858079830330234232
+^^
+NCiti Fdo. Indio
+TInvst
+DFondo de inversiones
+^^
+NiberCaja Plazo
+TBank
+DPlazo fijo iberCaja
+^^
+Nuno-e CC
+TBank
+^^
+Nuno-e Plazo
+TBank
+^^
+NING CC
+TBank
+^^
+NCitibank CA
+TBank
+D01220090190220453063
+^^
+NCiti Eurostoxx
+TInvst
+^^
+NBankinter Plazo
+TBank
+^^
+NBankinter CC
+TBank
+^^
+NING Plazo
+TBank
+DPlazo fijo al 3.5
+^^
+NiberCaja Invest
+TInvst
+DInveersiones en iberC
+^^
+NING Impuesto 0
+TBank
+^^
+NPor cobrar Pts
+TOth A
+DPor cobrar en pesetas
+^^
+NEuros
+TCash
+^^
+!Clear:AutoSwitch
+!Type:Memorized
+NReinvDiv
+YUS$
+Q3.64
+MIntereses
+KI
+^^
+T-29.60
+PAbastos
+Mcasa Milich
+LGroceries
+KP
+^^
+PAhorraMas
+LGroceries
+KP
+^^
+PAlCampo
+LGroceries
+KP
+^^
+T20,000.00
+C*
+PAmelia
+MElectricidad
+LUtilities:Electricidad:CALEV
+KD
+^^
+T-6.15
+PAmerico
+LGroceries
+KP
+^^
+T-521.38
+PAna Isabel Cámara Izquierdo
+MAlquiler: febrero
+LAlquiler
+SAlquiler
+EFebrero
+$-600.00
+SUtilities:Gas
+EGas correspondiente a ana
+$7.71
+SUtilities:Electricidad:Fenosa
+EElect correspondiente a ana
+$55.91
+SAlquiler
+EComunidad
+$15.00
+KP
+^^
+T-1.10
+PBar Camarero
+MUna cañita
+LVicios:Baretos
+KP
+^^
+T-2.10
+C*
+PBares varios
+MVinos
+LVicios:Baretos
+KP
+^^
+T-5.00
+PBoulangerie
+MMenu sandwitch
+LDining
+KP
+^^
+T-2.00
+PCafeteria
+MDesayuno
+LDining
+KP
+^^
+T-3.55
+C*
+PCafeteria Julio's
+MPincho de tortilla y café
+LDining
+KP
+^^
+T-0.11
+PCamionetica
+LTransporte
+KP
+^^
+T-7.32
+PCaprabo
+MBdy Soberano
+LVicios:Alcohol
+KP
+^^
+PCarnicería
+MDe la viande
+LGroceries
+KP
+^^
+PCarrefour
+KP
+^^
+T-4.55
+PCasino
+Mun Michon ~ &/é barra
+LGroceries
+KP
+^^
+T-0.45
+PChinos
+M1 Barra
+LGroceries
+KP
+^^
+T-1.36
+PChiringuito
+MEmpanadas y malta
+LDining
+KP
+^^
+T-0.50
+C*
+PComision por retiro en otro banco
+LBank Chrg
+KP
+^^
+T-15.00
+PCondominio
+MFeb
+LAlquiler
+KP
+^^
+PCorreos y Telegrafos
+LTransporte:Correos
+KP
+^^
+PCruz Roja
+MMucha pasta de la lotería
+KP
+^^
+T-6.00
+PDaniel Marquina
+MMasajes
+LMedical:Masajes
+KP
+^^
+T-5.21
+PDia
+MBrandy
+LVicios:Alcohol
+KP
+^^
+T-33,660.00
+PDiferencia de la operacion
+LExchange
+KP
+^^
+T-60.60
+PEMT
+MAbono menstrual
+LTransporte:EMT
+KP
+^^
+PEroski Center
+LGroceries
+KP
+^^
+T-62.92
+C*
+PEscuela Oficial de Idiomas
+MInscripcion
+LEducation
+KP
+^^
+T-9.20
+PFarmacia
+M2 Colutorio
+LMedical:Dientes
+KP
+^^
+T-5,958.00
+PFNAC
+MDiscos
+LLiteratura
+KP
+^^
+T-2.47
+PFranPrix
+LGroceries
+KP
+^^
+PFrutería
+LGroceries
+KP
+^^
+PFrutería del mercado
+MFrutas y vegetales
+LGroceries
+KP
+^^
+PFrutería del árabe
+MFrutas y vegetales
+LGroceries
+KP
+^^
+T-21.38
+PGas Natural SDG SA
+LUtilities:Gas
+KP
+^^
+T-1.00
+PGitano
+MPapas
+LGroceries
+KP
+^^
+PHacienda
+MDevolucion por pela bolas
+LImpuestos:IRPF
+KP
+^^
+T9.00
+PiberCaja
+MDevolución de la comisión
+LBank Chrg
+KD
+^^
+PIl Forchettone
+LDining
+KP
+^^
+T-0.24
+PING Direct
+LImpuestos:IRPF
+KP
+^^
+T0.12
+PIntereses
+LIntereses
+KD
+^^
+T-0.02
+PIRPF
+Mal 19%
+LImpuestos:IRPF
+KP
+^^
+T-13.00
+PLa Española
+MAnterior: XXXX   Actual: XXXX
+LUtilities:Agua
+KP
+^^
+T-14.88
+PLa Fogata
+Mrest colombiano
+LDining
+KP
+^^
+T-6.69
+PLeader Price
+LGroceries
+KP
+^^
+PLidl
+LGroceries
+KP
+^^
+PMercado de San Blas
+LGroceries
+KP
+^^
+PMercadona
+LGroceries
+KP
+^^
+T-0.82
+PMetro
+MMultiviaje
+LTransporte:Metros varios
+KP
+^^
+T-9.00
+PMetro de Madrid
+MBono de 10
+LTransporte:Metromadrid
+KP
+^^
+T-4.00
+PPanaderia
+MDulces Puri
+LGroceries
+KP
+^^
+PPida Provincial
+MAutomatico
+L[Visa Provincial]
+KP
+^^
+PPQC
+KP
+^^
+T-24.10
+PRATP
+MCarte Hebdo 1-4
+LTransporte:RATP
+KP
+^^
+T-118.00
+PRENFE
+MTalgo Madrid-Paris-Madrid
+LTravel:Internac
+KP
+^^
+T-7.85
+PRENFE - Cercanías
+MAravaca-Las Rozas o viceversa
+LTransporte:RENFE
+KP
+^^
+T-8.50
+PRestaurante
+LDining
+KP
+^^
+T-700.00
+PRetiro de Telecajero
+L[Euros]
+KP
+^^
+PRetiro por taquilla
+L[Euros]
+KP
+^^
+T-6.65
+PSabeco
+MEsplendido
+LVicios:Alcohol
+KP
+^^
+T-16.10
+PSimply
+LVicios:Alcohol
+SVicios:Alcohol
+Ebdy * 2
+$-10.60
+SGroceries
+E
+$-5.50
+KP
+^^
+T96.00
+PSopra
+MTickets restaurant
+LDietas:Tickets
+KD
+^^
+T-2.97
+PSuper Alcalá
+M#13 y #83
+LGroceries
+KP
+^^
+PSuperSol
+LGroceries
+KP
+^^
+T-6.00
+PTarjeta de Teleservicios
+LBank Chrg
+KP
+^^
+PTaxi
+LTransporte:Taxi
+KP
+^^
+PTelefonica
+Mdel 13/01/10 al 12/03/10
+LUtilities:Telefono:Telefónica
+KP
+^^
+T-5.00
+PTelefono movil
+MRecarga
+LUtilities:Telefono:Movistar
+KP
+^^
+PTransferencia
+L[Euros]
+KP
+^^
+T-2.56
+PUnion Fenosa
+LUtilities:Electricidad:Fenosa
+KP
+^^
+T-26.00
+PVIPS
+LDining
+KP
+^^
+T-174.86
+PVisa Citibank
+L[Citibank Visa]
+KP
+^^

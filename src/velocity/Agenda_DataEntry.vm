@@ -1,0 +1,33 @@
+#Genera con Velocity los metodos repetitivos.
+
+-- lista de campos de la tabla -> fieldName
+
+	public AgendaRecord getData() {
+		final AgendaRecord record = new AgendaRecord();
+		String strClave = tfClave.getText();
+		if (strClave == null || strClave.trim().length() == 0) {
+			strClave = "1";
+		}
+		record.clave = Integer.parseInt(strClave);
+#foreach($fieldName in $fieldNames) 
+	#set( $fieldNameLow = ${fieldName.toLowerCase()} )
+	#set( $fieldNameMix = ${fieldNameLow.charAt(0)} + ${fieldName.substring(1)})
+		record.${fieldNameMix} = tf${fieldName}.getText();
+#end
+		return record;
+	}
+
+	public void setData(final AgendaRecord record) {
+#foreach($fieldName in $fieldNames) 
+	#set( $fieldNameLow = ${fieldName.toLowerCase()} )
+	#set( $fieldNameMix = ${fieldNameLow.charAt(0)} + ${fieldName.substring(1)})
+		tf${fieldName}.setText(String.valueOf(record.${fieldNameMix}));
+#end
+	}
+
+	public void clear() {
+#foreach($fieldName in $fieldNames) 
+		tf${fieldName}.setText("");
+#end
+		imageFile = null;
+	}

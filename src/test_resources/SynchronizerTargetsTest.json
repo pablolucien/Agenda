@@ -1,0 +1,38 @@
+{
+    "targets" : [
+        {
+            "A": "C:/home/quickenw/qdata/Inversiones/Cartera ING.xls",
+            "B": "C:/tmp/sync_test/Cartera ING.xls"
+        },
+        {
+            "A": "C:/_Reise/horas.xls",
+            "B": "C:/tmp/sync_test/horas.xls"
+        },
+        {
+            "A": "C:/home/development/dist/Alles_src.zip",
+            "B": "C:/tmp/sync_test/dev/Alles_src.zip"
+        },
+        {
+            "A": "C:/home/development/dist",
+            "B": "C:/tmp/sync_test/bin",
+            "Include": "*.jar:*.properties",
+            "Exclude": "*_custom.properties"
+        },
+        {
+            "A": "C:/home/development/modules/src/test_resources",
+            "B": "C:/tmp/sync_test/Projects/Alles/src/test_resources",
+            "Exclude": "CVS/:.#*"
+
+        },
+        {
+            "A": "C:/home/databases/",
+            "B": "C:/tmp/sync_test/_DB/",
+            "files": [
+                "Datos vitales.xls",
+                "MainView_ACME.qdr",
+                "MainView_Minerva.qdr",
+                "MainView_Regus.qdr"
+            ]
+        }
+    ]
+}

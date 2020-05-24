@@ -1,0 +1,242 @@
+<start>
+	<files>
+#foreach($version in $versions)
+		<file name="V${version} RAD MVNSVN">
+			<path>C:\IBM\SDP\eclipse.exe</path>
+			<parameters>-product com.ibm.rational.rad.product.v75.ide -Data C:\C${version}.1 -nl en_US</parameters>
+			<directory>C:\IBM\SDP</directory>
+			<icon>iconoEclipse${foreach.count}.ico</icon>
+			<runcount>192</runcount>
+			<rundate>2011/03/17 09:02:00</rundate>
+		</file>
+		<file name="V${version} Testeur">
+			<path>testeur.bat</path>
+			<parameters>C${version}.1</parameters>
+			<icon>iconoTesteur${foreach.count}.ico</icon>
+			<runcount>437</runcount>
+			<rundate>2011/03/16 14:07:40</rundate>
+		</file>
+		<file name="V${version} Iniciar el servidor">
+			<path>C:\IBM\WebSphere\AppServer7.0\profiles\C${version}.1\bin\startServer.bat</path>
+			<parameters>server1</parameters>
+			<directory>C:\IBM\WebSphere\AppServer7.0\profiles\C${version}.1\bin</directory>
+			<icon>iconoLevantar${foreach.count}.ico</icon>
+			<runcount>7</runcount>
+			<rundate>2010/06/23 10:29:23</rundate>
+		</file>
+		<file name="V${version} Detener el servidor">
+			<path>C:\IBM\WebSphere\AppServer7.0\profiles\C${version}.1\bin\stopServer.bat</path>
+			<parameters>server1</parameters>
+			<directory>C:\IBM\WebSphere\AppServer7.0\profiles\C${version}.1\bin</directory>
+			<icon>iconoTirar${foreach.count}.ico</icon>
+			<runcount>12</runcount>
+			<rundate>2010/09/29 16:24:36</rundate>
+		</file>
+		<separator>
+		</separator>
+#end
+		<file name="Tuer Testeur">
+			<path>D:\AtelierCristalin\bin\KillIW.bat</path>
+			<icon>iconoTuerTesteur.ico</icon>
+			<runcount>703</runcount>
+			<rundate>2011/03/16 14:08:39</rundate>
+		</file>
+		<separator>
+		</separator>
+		<file name="Mordor">
+			<path>D:\AtelierCristalin\bin\Explorer.bat</path>
+			<parameters>http://wma.cnaf.ext.sopra/wma/wma.asp</parameters>
+			<icon>D:\AtelierCristalin\atelierMVN\Arms of Mordor.ico</icon>
+			<runcount>128</runcount>
+			<rundate>2011/03/16 14:04:33</rundate>
+		</file>
+		<file name="BureauADistanceCaen">
+			<path>D:\AtelierCristalin\bin\BureauADistanceCaen.bat</path>
+			<icon>D:\AtelierCristalin\tools\mstsc\mstsc.exe</icon>
+			<runcount>129</runcount>
+			<rundate>2011/03/15 10:03:07</rundate>
+		</file>
+		<file name="FTPCaen">
+			<path>D:\AtelierCristalin\bin\FTPCaen.bat</path>
+			<icon>D:\AtelierCristalin\tools\FileZilla\FileZillaPortable.exe</icon>
+			<runcount>22</runcount>
+			<rundate>2011/03/02 09:32:49</rundate>
+		</file>
+		<file name="BUGS">
+			<path>D:\AtelierCristalin\bin\Explorer.bat</path>
+			<parameters>http://bugs.cnaf.ext.sopra:8081/national/bugs.nsf</parameters>
+			<icon>D:\AtelierCristalin\bin\icones\BUGS.ico</icon>
+			<runcount>35</runcount>
+			<rundate>2011/03/08 17:40:05</rundate>
+		</file>
+		<separator>
+		</separator>
+		<file name="Ouvrir Suivi Hebdo">
+			<path>C:\Archivos de programa\Java\jre6\bin\javaw.exe</path>
+			<parameters>-jar d:\plucien\bin\OuvrirSuivi.jar</parameters>
+			<icon>C:\pagedfrg.exe</icon>
+			<runcount>131</runcount>
+			<rundate>2011/03/18 13:33:31</rundate>
+		</file>
+		<file name="horas2011">
+			<path>d:\plucien\horas2011.xls</path>
+			<runcount>138</runcount>
+			<rundate>2011/03/18 08:37:58</rundate>
+		</file>
+		<file name="Trucs et astuces">
+			<path>G:\CSMD_3-NIMS2\PRJ-P-1-CRISTALIN\PRJ-P3-Capitalisation\P33-Documentation Technique\P33-NIMS2-CRISTALIN - Trucs et astuces.doc</path>
+			<runcount>2</runcount>
+			<rundate>2011/03/09 09:29:34</rundate>
+		</file>
+		<file name="Probl&#xE8;mes Code D&#xE9;tect&#xE9;s">
+			<path>G:\CSMD_3-NIMS2\PRJ-P-1-CRISTALIN\PRJ-P4-Release\P40-Cristalin_GLOBAL\07_CRISTALIN_Probl&#xE8;mes Code D&#xE9;tect&#xE9;s.xls</path>
+		</file>
+	</files>
+	<notes>
+	</notes>
+	<colors>
+		<color name="0">
+			<value>A0A0FFh</value>
+		</color>
+		<color name="1">
+			<value>A0C0FFh</value>
+		</color>
+		<color name="2">
+			<value>A0FFFFh</value>
+		</color>
+		<color name="3">
+			<value>A0FFA0h</value>
+		</color>
+		<color name="4">
+			<value>FFA0A0h</value>
+		</color>
+	</colors>
+	<configurationfile>
+		<backupmode>pbmTemporary</backupmode>
+	</configurationfile>
+	<execution>
+		<count>197</count>
+		<overalltime>1342:37:51.494</overalltime>
+	</execution>
+	<general>
+		<executionaction>0</executionaction>
+		<language>auto</language>
+		<singleclick>False</singleclick>
+	</general>
+	<history>
+		<usernames>
+		</usernames>
+	</history>
+	<info>
+		<visible>True</visible>
+	</info>
+	<menu>
+		<hotkeysvisible>True</hotkeysvisible>
+	</menu>
+	<mouse>
+		<sensors>
+			<bottom>
+				<leftaction>0</leftaction>
+				<rightaction>0</rightaction>
+			</bottom>
+			<bottomleft>
+				<leftaction>0</leftaction>
+				<rightaction>0</rightaction>
+			</bottomleft>
+			<bottomright>
+				<leftaction>0</leftaction>
+				<rightaction>0</rightaction>
+			</bottomright>
+			<cornersize>20</cornersize>
+			<left>
+				<leftaction>0</leftaction>
+				<rightaction>0</rightaction>
+			</left>
+			<monitor>1</monitor>
+			<right>
+				<leftaction>0</leftaction>
+				<rightaction>0</rightaction>
+			</right>
+			<top>
+				<leftaction>0</leftaction>
+				<rightaction>0</rightaction>
+			</top>
+			<topleft>
+				<leftaction>0</leftaction>
+				<rightaction>0</rightaction>
+			</topleft>
+			<topright>
+				<leftaction>0</leftaction>
+				<rightaction>0</rightaction>
+			</topright>
+		</sensors>
+	</mouse>
+	<note>
+		<alarm>
+			<notify>
+				<autoclose>False</autoclose>
+				<duration>10</duration>
+				<sound></sound>
+			</notify>
+			<recenttime>2010/06/09 16:25:15</recenttime>
+		</alarm>
+		<defaultcolor>A0FFFFh</defaultcolor>
+		<style>0</style>
+		<visible>True</visible>
+		<wordbreak>1</wordbreak>
+	</note>
+	<panel>
+		<closemode>0</closemode>
+		<hotkey>False</hotkey>
+		<hotkeyclose>True</hotkeyclose>
+		<hotkeycode>15</hotkeycode>
+		<hotkeymodifier>7</hotkeymodifier>
+		<pageindex>0</pageindex>
+		<position>0</position>
+		<showonstartup>False</showonstartup>
+		<staticsize>False</staticsize>
+		<title>Atelier MVN</title>
+	</panel>
+	<search>
+		<allusersstartmenu>True</allusersstartmenu>
+		<colorize>True</colorize>
+		<colors>
+			<allusersstartmenu>0080FFh</allusersstartmenu>
+			<currentuserstartmenu>40A000h</currentuserstartmenu>
+			<pstart>FF4040h</pstart>
+		</colors>
+		<currentuserstartmenu>True</currentuserstartmenu>
+		<includemode>0</includemode>
+		<pstart>True</pstart>
+		<sort>0</sort>
+	</search>
+	<style>
+		<additionaltextcolor>000000h</additionaltextcolor>
+		<backgroundimage></backgroundimage>
+		<captioncolor>000000h</captioncolor>
+		<iconsize>1</iconsize>
+		<iteminfomode>2</iteminfomode>
+	</style>
+	<tray>
+		<doubleclick>1</doubleclick>
+		<hotkey>False</hotkey>
+		<hotkeycode>12</hotkeycode>
+		<hotkeymodifier>7</hotkeymodifier>
+		<hover>0</hover>
+		<iconimage>4</iconimage>
+		<iconvisibility>0</iconvisibility>
+		<leftclick>2</leftclick>
+	</tray>
+	<window>
+		<main>
+			<position>
+				<x>730</x>
+				<y>242</y>
+			</position>
+			<size>
+				<x>225</x>
+				<y>570</y>
+			</size>
+		</main>
+	</window>
+</start>

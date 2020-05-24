@@ -1,0 +1,556 @@
+             member('telef')
+
+Initius      Procedure
+
+Initial      screen       window(1,80),at(25,1),hue(1,3)
+               row(1,1)   string('F1:Ayuda F2:Revistas F3:Memoria F4:Calendario F5:Control ALT-F10:Salir')
+             .
+
+S1           screen       window(10,16),at(9,33),pre(SCR),hue(14,1)
+               row(1,1)   string('…Õ{14}ª')
+               row(2,1)   repeat(8);string('∫<0{14}>∫') .
+               row(10,1)  string('»Õ{14}º')
+             .
+S2           screen       window(8,14),at(10,34),pre(SCR),hue(14,1)
+               row(1,1)   string('…Õ{12}ª')
+               row(2,1)   repeat(6);string('∫<0{12}>∫') .
+               row(8,1)   string('»Õ{12}º')
+             .
+S3           screen       window(6,12),at(11,35),pre(SCR),hue(14,1)
+               row(1,1)   string('…Õ{10}ª')
+               row(2,1)   repeat(4);string('∫<0{10}>∫') .
+               row(6,1)   string('»Õ{10}º')
+             .
+S4           screen       window(4,8),at(13,37),pre(SCR),hue(14,1)
+               row(1,1)   string('…Õ{6}ª')
+               row(2,1)   repeat(2);string('∫<0{6}>∫') .
+               row(4,1)   string('»Õ{6}º')
+             .
+i       short
+
+  Code
+   ! Aqui habria que meter los datos de quien y porque
+    Open(Initial)
+    open(s4)
+    loop i = 1 to 5000.
+    close(s4)
+    open(s3)
+    loop i = 1 to 5000.
+    close(s3)
+    open(s2)
+    loop i = 1 to 5000.
+    close(s2)
+    open(s1)
+    loop i = 1 to 5000.
+    close(s1)
+    Menu_Inicial
+
+
+MoreControl      PROCEDURE
+SCREEN       screen       window(9,74),at(16,4),pre(SCR),hue(7,0)
+               row(1,1)   string('…Õ{72}ª')
+               row(2,1)   repeat(7);string('∫<0{72}>∫') .
+               row(9,1)   string('»Õ{72}º')
+               row(2,25)  string('Modificar archivo de control')
+               row(3,54)  entry,use(?FIRST_FIELD)
+               row(4,4)   string('Empresa :')
+                 col(13)  entry(@S60),use(xxc:EMPRESA),lft
+               row(5,4)   string('Sistema :')
+                 col(13)  entry(@S60),use(xxc:SISTEMA),lft
+               row(6,4)   string('DataDisk:')
+                 col(13)  entry(@S1),use(xxc:DATADISK),lft
+               row(7,4)   string('DataPath:')
+                 col(13)  entry(@S60),use(xxc:DATAPATH),lft
+               row(8,4)   string('PassWord:')
+                 col(13)  entry(@S10),use(xxc:PassWord),lft
+               row(7,73)  entry,use(?LAST_FIELD)
+                 col(73)  pause(''),use(?DELETE_FIELD)
+             .
+TABLE        TABLE,PRE(SAV)
+SAVE_RECORD    GROUP;BYTE,DIM(SIZE(xxc:RECORD)).
+             .
+  EJECT
+  CODE
+  get(xxcontr, 1)
+  OPEN(SCREEN)                                   !OPEN THE SCREEN
+  SETCURSOR                                      !TURN OFF ANY CURSOR
+  SAVE_RECORD = xxc:RECORD                       !SAVE THE ORIGINAL
+  ADD(TABLE,1)                                   !STORE IN MEMORY TABLE
+  IF ACTION = 5                                  !AUTONUMBER ACTION
+    DISK_ACTN# = 2                               !  SET FOR PHYSICAL ACTION
+    ACTION = 1                                   !  SET FOR LOGICAL ACTION
+  ELSE                                           !OTHERWISE
+    DISK_ACTN# = ACTION                          !  SET ACTION FOR DISK WRITE
+  .
+  DISPLAY                                        !DISPLAY THE FIELDS
+
+  EXECUTE DISK_ACTN#                             !SET THE CURRENT RECORD POINTER
+    POINTER# = 0                                 !  NO RECORD FOR ADD
+    POINTER# = POINTER(xxcoNTR)                  !  CURRENT RECORD FOR CHANGE
+    POINTER# = POINTER(xxcontr)                  !  CURRENT RECORD FOR CHANGE
+  .
+  ACTION# = ACTION                               !STORE REQUIRED ACTION
+  LOOP                                           !LOOP THRU ALL THE FIELDS
+    MEM:MESSAGE = CENTER(MEM:MESSAGE,SIZE(MEM:MESSAGE)) !DISPLAY ACTION MESSAGE
+    DO CALCFIELDS                                !CALCULATE DISPLAY FIELDS
+    ALERT                                        !RESET ALERTED KEYS
+    ALERT(ACCEPT_KEY)                            !ALERT SCREEN ACCEPT KEY
+    ALERT(REJECT_KEY)                            !ALERT SCREEN REJECT KEY
+    ACCEPT                                       !READ A FIELD
+    IF KEYCODE() = REJECT_KEY THEN BREAK.        !RETURN ON SCREEN REJECT KEY
+    EXECUTE ACTION                               !SET MESSAGE
+      MEM:MESSAGE = 'Se agregar† el registro'    !
+      MEM:MESSAGE = 'Se modificar† el registro'  !
+      MEM:MESSAGE = 'Se borrar† el registro'     !
+    .
+    IF KEYCODE() = ACCEPT_KEY                    !ON SCREEN ACCEPT KEY
+      UPDATE                                     !  MOVE ALL FIELDS FROM SCREEN
+      SELECT(?)                                  !  START WITH CURRENT FIELD
+      SELECT                                     !  EDIT ALL FIELDS
+      CYCLE                                      !  GO TO TOP OF LOOP
+    .
+    CASE FIELD()                                 !JUMP TO FIELD EDIT ROUTINE
+    OF ?FIRST_FIELD                              !FROM THE FIRST FIELD
+      IF KEYCODE() = ESC_KEY THEN BREAK.         !  RETURN ON ESC KEY
+      IF ACTION = 3 THEN SELECT(?DELETE_FIELD).!    OR CONFIRM FOR DELETE
+
+    OF ?LAST_FIELD                               !FROM THE LAST FIELD
+      IF ACTION = 2 OR ACTION = 3                !IF UPDATING RECORD
+        SAVE_RECORD = xxc:RECORD                 !  SAVE CURRENT CHANGES
+        ADD(TABLE,2)                             !  STORE IN MEMORY TABLE
+        GET(TABLE,1)                             !  RETRIEVE ORIGINAL RECORD
+        HOLD(xxcontr)                            !  HOLD FILE
+        GET(xxcontr,POINTER#)                    !  RE-READ SAME RECORD
+        IF ERRORCODE() = 35                      !  IF RECORD WAS DELETED
+          IF DISK_ACTN# = 2                      !  IF TRYING TO UPDATE
+             DISK_ACTN# = 1                      !    THEN ADD IT BACK
+          ELSE                                   !
+             RELEASE(xxcontr)                    !  RELEASE FILE
+             ACTION = 0                          !  TURN OFF ACTION
+          .
+        ELSIF |                                  !OTHERWISE
+          xxc:RECORD <> SAVE_RECORD              !    BY ANOTHER STATION
+          MEM:MESSAGE = 'Cambiado por otra estaci¢n' !INFORM USER
+          SELECT(2)                              !  GO BACK TO TOP OF FORM
+          BEEP                                   !  SOUND ALARM
+          RELEASE(xxcontr)                       !  RELEASE FILE
+          SAVE_RECORD = xxc:RECORD               !  SAVE RECORD
+          DISPLAY                                !  DISPLAY THE FIELDS
+          PUT(TABLE)                             !  FREE SAVED CHANGES
+          CYCLE                                  !  AND CONTINUE
+        .
+        GET(TABLE,2)                             !  READ CURRENT (CHANGED) REC
+        xxc:RECORD = SAVE_RECORD                 !  MOVE RECORD
+        DELETE(TABLE)                            !  DELETE MEMORY TABLE ITEM
+      .
+      EXECUTE DISK_ACTN#                         !  UPDATE THE FILE
+        ADD(xxcontr)                             !    ADD NEW RECORD
+        PUT(xxcontr)                             !    CHANGE EXISTING RECORD
+        DELETE(xxcontr)                          !    DELETE EXISTING RECORD
+      .
+      IF ERRORCODE() = 40                        !  DUPLICATE KEY ERROR
+        MEM:MESSAGE = ERROR()                    !    DISPLAY ERR MESSAGE
+        SELECT(2)                                !    POSITION TO TOP OF FORM
+        IF ACTION = 2 THEN RELEASE(xxcontr). !        RELEASE HELD RECORD
+        CYCLE                                    !    GET OUT OF EDIT LOOP
+      ELSIF ERROR()                              !  CHECK FOR UNEXPECTED ERROR
+        STOP(ERROR())                            !    HALT EXECUTION
+      .
+      IF ACTION = 1 THEN POINTER# = POINTER(xxcontr). !POINT TO RECORD
+      SAVE_RECORD = xxc:RECORD                   !  NEW ORIGINAL
+      ACTION = ACTION#                           !  RETRIEVE ORIGINAL OPERATION
+      ACTION = 0                                 !  SET ACTION TO COMPLETE
+      BREAK                                      !  AND RETURN TO CALLER
+
+    OF ?DELETE_FIELD                             !FROM THE DELETE FIELD
+      IF KEYCODE() = ENTER_KEY |                 !  ON ENTER KEY
+      OR KEYCODE() = ACCEPT_KEY                  !  OR CTRL-ENTER KEY
+        SELECT(?LAST_FIELD)                      !    DELETE THE RECORD
+      ELSE                                       !  OTHERWISE
+        BEEP                                     !    BEEP AND ASK AGAIN
+  . . .
+  FREE(TABLE)                                    !  RELEASE MEMORY TABLE
+  put(xxcontr)
+  RETURN                                         !  AND RETURN TO CALLER
+
+CALCFIELDS   ROUTINE
+  IF FIELD() > ?FIRST_FIELD                      !BEYOND FIRST_FIELD?
+    IF KEYCODE() = 0 AND SELECTED() > FIELD() THEN EXIT. !GET OUT IF NOT NONSTOP
+  .
+
+L_Telefonos  PROCEDURE
+Salvar       Screen       Window(25,80),Hue(7,0)
+             .
+Confirma     Screen       Window(5,39),At(11,21),Hue(15,4)
+               Row(1,1)   String('…Õ{37}ª')
+               Row(2,1)   Repeat(3);String('∫<0{37}>∫') .
+               Row(5,1)   String('»Õ{37}º')
+               Row(2,7)   String('Pulse [ENTER] para imprimir')
+               Row(4,11)  String('o [ESC] para abortar')
+             .
+Abortar      Screen       Window(5,39),At(11,21),Hue(15,4)
+               Row(1,1)   String('…Õ{37}ª')
+               Row(2,1)   Repeat(3);String('∫<0{37}>∫') .
+               Row(5,1)   String('»Õ{37}º')
+               Row(3,5)   String('Pulse [CTRL] [ESC] para abortar')
+             .
+TITLE        Report       Length(78),Width(91),Pre(TTL),Device(MEM:DEVICE)
+RPT_HEAD                  Detail
+             .            .
+REPORT       report       length(78),width(130),page(MEM:PAGE),line(MEM:LINE),pre(RPT),device(MEM:DEVICE)
+PAGE_HEAD                 header
+                 col(34)    string('Guia Telef¢nica')
+                 col(68)    control(1),use(MEM:Comprimido)
+                            control(2),use(MEM:UnOctavo)
+               row(+1,10)   string('⁄ƒ{57}ø   ⁄ƒ{57}ø')
+               row(+1,10)   string('≥Nombre {15}Apellido {13}Tel<130>fonos {6}≥   ≥Nombre {15}Apellido {13}Tel<130>fonos {6}≥')
+               row(+1,10)   string('¿ƒ{57}Ÿ   ¿ƒ{57}Ÿ') ctl(@LF)
+                          .
+DETAIL                    detail
+                 col(11)    string(20),use(Izq:NOMBRE)
+                 col(32)    string(20),use(Izq:APELLIDO)
+                 col(53)    string(15),use(Izq:Telefono_1)
+                 col(70)    string('≥')
+                 col(73)    string(20),use(Der:NOMBRE)
+                 col(94)    string(20),use(Der:APELLIDO)
+                 col(115)   string(15),use(Der:Telefono_1) ctl(@LF)
+                          .
+det2                      detail
+                 col(37)    string(15),use(Izq:Telefono_3)
+                 col(53)    string(15),use(Izq:Telefono_2)
+                 col(70)    string('≥')
+                 col(99)    string(15),use(Der:Telefono_3)
+                 col(115)   string(15),use(Der:Telefono_2) ctl(@LF)
+                          .
+RPT_FOOT                  detail
+                          .
+PAGE_FOOT                 footer
+                 col(1)     control(2),use(MEM:UnSexto)
+                            control(1),use(MEM:Normal)
+                            ctl(@FF)
+             .            .
+
+Izquierda      group,pre(Izq)
+Nombre           string(20)
+Apellido         string(20)
+Telefono_1       string(15)
+Telefono_2       string(15)
+Telefono_3       string(15)
+               .
+Derecha        group,pre(Der)
+Nombre           string(20)
+Apellido         string(20)
+Telefono_1       string(15)
+Telefono_2       string(15)
+Telefono_3       string(15)
+               .
+  code
+  OPEN(Confirma)                                 !OPEN THE SCREEN
+  ask
+  IF KEYCODE() = REJECT_KEY |
+  or KEYCODE() = esc_KEY    |
+     THEN RETURN        !RETURN ON SCREEN REJECT KEY
+  .
+  close(confirma)
+  open(Abortar)
+  if upper(clip(mem:Device)) = 'CON' then open(Salvar).
+  ok# = 1
+  DONE# = 0                                      !TURN OFF DONE FLAG
+  CLEAR(Dat:RECORD,-1)                           !MAKE SURE RECORD CLEARED
+  PRINT(TTL:RPT_HEAD)                            !PRINT TITLE PAGE
+  CLOSE(TITLE)                                   !CLOSE TITLE REPORT
+  SET(Dat:POR_NOMBRE)                            !  POINT TO FIRST RECORD
+  DO NEXT_RECORD                                 !READ FIRST RECORD
+  APPEND# = FALSE                                !TURN OFF APPEND FLAG
+  IF SUB(MEM:DEVICE,1,1) <> '+'                  !NOT ALREADY APPENDING REPORTS
+    MEM:DEVICE = '+' & MEM:DEVICE                !  APPEND DISK RPT TO TITLE
+    APPEND# = TRUE                               !  SET FLAG TO TURN OFF APPEND
+  .
+  OPEN(REPORT)                                   !OPEN THE REPORT
+  LOOP UNTIL DONE#                               !READ ALL RECORDS IN FILE
+    SAVE_LINE# = MEM:LINE                        !  SAVE LINE NUMBER
+    LAST_REC#  = POINTER(Fechas)
+    do SiVa
+    if ok# then
+      PRINT(RPT:DETAIL)                            !  PRINT DETAIL LINES
+      DO CHECK_PAGE                                !  DO PAGE BREAK IF NEEDED
+    .
+    if clip(izq:telefono_2) <> '' or clip(der:telefono_2) <> '' |
+    or clip(izq:telefono_3) <> '' or clip(der:telefono_3) <> ''
+      do SiVa
+      if ok# then
+        PRINT(RPT:DET2)                            !  PRINT DETAIL LINES
+        DO CHECK_PAGE                                !  DO PAGE BREAK IF NEEDED
+      .
+    .
+    DO NEXT_RECORD                               !  GET NEXT RECORD
+  .                                              !
+  PRINT(RPT:RPT_FOOT)                            !PRINT GRAND TOTALS
+  DO CHECK_PAGE                                  !  DO PAGE BREAK IF NEEDED
+  CLOSE(REPORT)                                  !CLOSE REPORT
+  IF APPEND#                                     !IF REPORT WAS APPENDED
+    MEM:DEVICE = SUB(MEM:DEVICE,2,LEN(MEM:DEVICE)-1)!TURN OFF APPEND REPORT
+  .
+  RETURN                                         !RETURN TO CALLER
+
+NEXT_RECORD ROUTINE                              !GET NEXT RECORD
+  Clear(Izquierda,0); Clear(Derecha,0)               !Limpiar los buffers
+  LOOP UNTIL EOF(Fechas)                         !  READ UNTIL END OF FILE
+    NEXT(Fechas)                                 !    READ NEXT RECORD
+    IF ~(Clip(Dat:Telefono_1&Dat:Telefono_2&Dat:Telefono_3) <> '') THEN CYCLE.!IF FILTERED OUT, GET NEXT
+    if Dat:Listar = 'N' then cycle.   ! No queremos listarlo
+    do FillName
+    Izq:Nombre     = Dat:Nombre
+    Izq:Apellido   = Dat:Apellido
+    Izq:Telefono_1 = Dat:Telefono_1
+    Izq:Telefono_2 = Dat:Telefono_2
+    Izq:Telefono_3 = Dat:Telefono_3
+      LOOP UNTIL EOF(Fechas)                         !  READ UNTIL END OF FILE
+        NEXT(Fechas)                                 !    READ NEXT RECORD
+        IF ~(Clip(Dat:Telefono_1&Dat:Telefono_2&Dat:Telefono_3) <> '') THEN CYCLE.!IF FILTERED OUT, GET NEXT
+        if Dat:Listar = 'N' then cycle. ! No queremos listarlo
+        do FillName
+        Der:Nombre     = Dat:Nombre
+        Der:Apellido   = Dat:Apellido
+        Der:Telefono_1 = Dat:Telefono_1
+        Der:Telefono_2 = Dat:Telefono_2
+        Der:Telefono_3 = Dat:Telefono_3
+        EXIT                                         !    EXIT THE ROUTINE
+      .                                              !
+    EXIT                                         !    EXIT THE ROUTINE
+  .                                              !
+  DONE# = 1                                      !  ON EOF, SET DONE FLAG
+
+CHECK_PAGE ROUTINE                               !CHECK FOR NEW PAGE
+  IF MEM:LINE <= SAVE_LINE#                      !  ON PAGE OVERFLOW
+    SAVE_LINE# = MEM:LINE                        !    RESET LINE NUMBER
+  .
+  LOOP UNTIL NOT KEYBOARD()                      !LOOK FOR KEYSTROKE
+    ASK
+    IF KEYCODE() = REJECT_KEY                    !ON CTRL-ESC
+      IF APPEND#                                 !IF REPORT WAS APPENDED
+        MEM:DEVICE = SUB(MEM:DEVICE,2,LEN(MEM:DEVICE)-1)!TURN OFF APPEND REPORT
+      .
+      CLOSE(REPORT)                              !  CLOSE REPORT
+      RETURN                                     !  ABORT PRINT
+  . .
+
+FillName Routine       ! Rellena con '.' el apellido
+  if clip(Dat:Apellido) <> '' then
+     Dat:Apellido = clip(Dat:Apellido)&' '&all('.',len(Dat:Apellido) - len(clip(Dat:Apellido)) - 1)
+  else
+     Dat:Apellido = all('.',len(Dat:Apellido))
+     Dat:Nombre   = clip(Dat:Nombre)&' '&all('.',len(Dat:Nombre) - len(clip(Dat:Nombre)) - 1)
+  .
+
+SiVa       Routine    ! Determina si esta pagina se imprime
+ ! if mem:page = 1
+     ok# = 1
+ ! else
+ !   ok# = 0
+ !   mem:line += 1
+ !   if mem:line > 63
+ !      mem:line = 1
+ !      mem:page += 1
+ !   .
+ ! .
+
+
+GetRndRec   Procedure
+  code
+    if memory() < 4000 then return.
+    get(fechas, int(random(1, records(fechas))))
+    loop until ((clip(mem:Seleccion)='' and clip(dat:Marca)<>'') or Dat:sexo = upper(clip(mem:Seleccion)) or clip(mem:Seleccion) = '')
+       get(fechas, int(random(1, records(fechas))))
+    .
+    action = 0
+
+
+
+
+L_Telefono2 PROCEDURE
+Salvar       Screen       Window(25,80),Hue(7,0)
+             .
+Confirma     Screen       Window(5,39),At(11,21),Hue(15,4)
+               Row(1,1)   String('…Õ{37}ª')
+               Row(2,1)   Repeat(3);String('∫<0{37}>∫') .
+               Row(5,1)   String('»Õ{37}º')
+               Row(2,7)   String('Pulse [ENTER] para imprimir')
+               Row(4,11)  String('o [ESC] para abortar')
+             .
+Abortar      Screen       Window(5,39),At(11,21),Hue(15,4)
+               Row(1,1)   String('…Õ{37}ª')
+               Row(2,1)   Repeat(3);String('∫<0{37}>∫') .
+               Row(5,1)   String('»Õ{37}º')
+               Row(3,5)   String('Pulse [CTRL] [ESC] para abortar')
+             .
+TITLE        Report   Length(90),Width(91),Pre(TTL),Device(MEM:DEVICE)
+RPT_HEAD                  Detail
+             .            .
+REPORT       Report       Length(96),Width(130),Page(MEM:PAGE),Line(MEM:LINE),Pre(RPT),Device(MEM:DEVICE)
+PAGE_HEAD                 Header
+                 Col(1)     Control(2),Use(mem:HPReset)
+                            String(' ')
+                            Control(5),Use(mem:HPSymbolSet)
+                 Col(2)     Control(6),Use(mem:HPLineas)
+                            String(' {31}Guia Telef¢nica {20}')
+                            Control(5),Use(MEM:HPUnOctavo)
+                 Col(68)    Control(5),Use(MEM:HPComprimido)
+               Row(+1,7)    String('⁄ƒ{57}ø   ⁄ƒ{57}ø')
+               Row(+1,7)    String('≥Nombre {15}Apellido {13}Tel<130>fonos {6}≥   ≥Nombre {15}Apellido {13}Tel<130>fonos {6}≥')
+               Row(+1,7)    String('¿ƒ{57}Ÿ   ¿ƒ{57}Ÿ') Ctl(@LF)
+                          .
+DETAIL                    Detail
+                 Col(8)     String(20),Use(Izq:NOMBRE)
+                 Col(29)    String(20),Use(Izq:APELLIDO)
+                 Col(50)    String(15),Use(Izq:Telefono_1)
+                 Col(67)    String('≥')
+                 Col(70)    String(20),Use(Der:NOMBRE)
+                 Col(91)    String(20),Use(Der:APELLIDO)
+                 Col(112)   String(15),Use(Der:Telefono_1) Ctl(@LF)
+                          .
+det2                      Detail
+                 Col(34)    String(15),Use(Izq:Telefono_3)
+                 Col(50)    String(15),Use(Izq:Telefono_2)
+                 Col(67)    String('≥')
+                 Col(96)    String(15),Use(Der:Telefono_3)
+                 Col(112)   String(15),Use(Der:Telefono_2) Ctl(@LF)
+                          .
+det3                      Detail
+                 Col(24)    String(40),Use(Izq:email)
+                 Col(67)    String('≥')
+                 Col(86)    String(40),Use(Der:email) Ctl(@LF)
+                          .
+RPT_FOOT                  Detail
+                          .
+PAGE_FOOT                 Footer
+                 Col(1)     Control(2),Use(MEM:HPReset) Ctl(@LF)
+             .            .
+
+Izquierda      group,pre(Izq)
+Nombre           string(20)
+Apellido         string(20)
+Telefono_1       string(15)
+Telefono_2       string(15)
+Telefono_3       string(15)
+email            string(40)
+               .
+Derecha        group,pre(Der)
+Nombre           string(20)
+Apellido         string(20)
+Telefono_1       string(15)
+Telefono_2       string(15)
+Telefono_3       string(15)
+email            string(40)
+               .
+  code
+  OPEN(Confirma)                                 !OPEN THE SCREEN
+  ask
+  IF KEYCODE() = REJECT_KEY |
+  or KEYCODE() = esc_KEY    |
+     THEN RETURN        !RETURN ON SCREEN REJECT KEY
+  .
+  close(confirma)
+  open(Abortar)
+  if upper(clip(mem:Device)) = 'CON' then open(Salvar).
+  ok# = 1
+  DONE# = 0                                      !TURN OFF DONE FLAG
+  CLEAR(Dat:RECORD,-1)                           !MAKE SURE RECORD CLEARED
+  PRINT(TTL:RPT_HEAD)                            !PRINT TITLE PAGE
+  CLOSE(TITLE)                                   !CLOSE TITLE REPORT
+  SET(Dat:POR_NOMBRE)                            !  POINT TO FIRST RECORD
+  DO NEXT_RECORD                                 !READ FIRST RECORD
+  APPEND# = FALSE                                !TURN OFF APPEND FLAG
+  IF SUB(MEM:DEVICE,1,1) <> '+'                  !NOT ALREADY APPENDING REPORTS
+    MEM:DEVICE = '+' & MEM:DEVICE                !  APPEND DISK RPT TO TITLE
+    APPEND# = TRUE                               !  SET FLAG TO TURN OFF APPEND
+  .
+  OPEN(REPORT)                                   !OPEN THE REPORT
+  LOOP UNTIL DONE#                               !READ ALL RECORDS IN FILE
+    SAVE_LINE# = MEM:LINE                        !  SAVE LINE NUMBER
+    LAST_REC#  = POINTER(Fechas)
+    do SiVa
+    if ok# then
+      PRINT(RPT:DETAIL)                            !  PRINT DETAIL LINES
+      if clip(izq:telefono_2) <> '' or clip(der:telefono_2) <> '' |
+      or clip(izq:telefono_3) <> '' or clip(der:telefono_3) <> ''
+          PRINT(RPT:DET2)       ! print telefonos secundarios
+          if clip(izq:email) <> '' or clip(der:email) <> ''
+              PRINT(RPT:DET3)   ! print email
+          .
+      .
+      DO CHECK_PAGE                                !  DO PAGE BREAK IF NEEDED
+    .
+    DO NEXT_RECORD                               !  GET NEXT RECORD
+  .                                              !
+  PRINT(RPT:RPT_FOOT)                            !PRINT GRAND TOTALS
+  DO CHECK_PAGE                                  !  DO PAGE BREAK IF NEEDED
+  CLOSE(REPORT)                                  !CLOSE REPORT
+  IF APPEND#                                     !IF REPORT WAS APPENDED
+    MEM:DEVICE = SUB(MEM:DEVICE,2,LEN(MEM:DEVICE)-1)!TURN OFF APPEND REPORT
+  .
+  RETURN                                         !RETURN TO CALLER
+
+NEXT_RECORD ROUTINE                              !GET NEXT RECORD
+  Clear(Izquierda,0); Clear(Derecha,0)               !Limpiar los buffers
+  LOOP UNTIL EOF(Fechas)                         !  READ UNTIL END OF FILE
+    NEXT(Fechas)                                 !    READ NEXT RECORD
+    IF ~(Clip(Dat:Telefono_1&Dat:Telefono_2&Dat:Telefono_3) <> '') THEN CYCLE.!IF FILTERED OUT, GET NEXT
+    if Dat:Listar = 'N' then cycle. ! No queremos listarlo
+    do FillName
+    Izq:Nombre     = Dat:Nombre
+    Izq:Apellido   = Dat:Apellido
+    Izq:Telefono_1 = Dat:Telefono_1
+    Izq:Telefono_2 = Dat:Telefono_2
+    Izq:Telefono_3 = Dat:Telefono_3
+    Izq:email      = Dat:email
+      LOOP UNTIL EOF(Fechas)                         !  READ UNTIL END OF FILE
+        NEXT(Fechas)                                 !    READ NEXT RECORD
+        IF ~(Clip(Dat:Telefono_1&Dat:Telefono_2&Dat:Telefono_3) <> '') THEN CYCLE.!IF FILTERED OUT, GET NEXT
+        if Dat:Listar = 'N' then cycle.   ! No queremos listarlo
+        do FillName
+        Der:Nombre     = Dat:Nombre
+        Der:Apellido   = Dat:Apellido
+        Der:Telefono_1 = Dat:Telefono_1
+        Der:Telefono_2 = Dat:Telefono_2
+        Der:Telefono_3 = Dat:Telefono_3
+        Der:email      = Dat:email
+        EXIT                                         !    EXIT THE ROUTINE
+      .                                              !
+    EXIT                                         !    EXIT THE ROUTINE
+  .                                              !
+  DONE# = 1                                      !  ON EOF, SET DONE FLAG
+
+CHECK_PAGE ROUTINE                               !CHECK FOR NEW PAGE
+  IF MEM:LINE <= SAVE_LINE#                      !  ON PAGE OVERFLOW
+    SAVE_LINE# = MEM:LINE                        !    RESET LINE NUMBER
+  .
+  LOOP UNTIL NOT KEYBOARD()                      !LOOK FOR KEYSTROKE
+    ASK
+    IF KEYCODE() = REJECT_KEY                    !ON CTRL-ESC
+      IF APPEND#                                 !IF REPORT WAS APPENDED
+        MEM:DEVICE = SUB(MEM:DEVICE,2,LEN(MEM:DEVICE)-1)!TURN OFF APPEND REPORT
+      .
+      CLOSE(REPORT)                              !  CLOSE REPORT
+      RETURN                                     !  ABORT PRINT
+  . .
+
+FillName Routine       ! Rellena con '.' el apellido
+  if clip(Dat:Apellido) <> '' then
+     Dat:Apellido = clip(Dat:Apellido)&' '&all('.',len(Dat:Apellido) - len(clip(Dat:Apellido)) - 1)
+  else
+     Dat:Apellido = all('.',len(Dat:Apellido))
+     Dat:Nombre   = clip(Dat:Nombre)&' '&all('.',len(Dat:Nombre) - len(clip(Dat:Nombre)) - 1)
+  .
+
+SiVa       Routine    ! Determina si esta pagina se imprime
+ ! if mem:page = 1
+     ok# = 1
+ ! else
+ !   ok# = 0
+ !   mem:line += 1
+ !   if mem:line > 63
+ !      mem:line = 1
+ !      mem:page += 1
+ !   .
+ ! .

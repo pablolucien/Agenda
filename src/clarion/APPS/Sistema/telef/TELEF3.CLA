@@ -1,0 +1,179 @@
+	     Member('TELEF')
+UPD_TABLE    PROCEDURE
+
+SCREEN	     SCREEN	  PRE(SCR),Window(14,71),At(11,10),Hue(15,1)
+	       Row(1,1)	  String('ÉÍ{69}»')
+	       Row(2,1)	  String('º<0{31}>¢<0{37}>º')
+	       Row(3,1)	  String('ÇÄ{69}¶')
+	       Row(4,1)	  Repeat(3),Every(3);STRING('º<0{69}>º') .
+	       Row(5,1)	  Repeat(2),Every(4);STRING('º<0{69}>º') .
+	       Row(6,1)	  String('º<0{4},130,0{64}>º')
+	       Row(8,1)	  String('º<0>¨<0{67}>º')
+	       Row(11,71) Repeat(3);STRING('º') .
+	       Row(14,1)  String('ÈÍ{69}¼')
+	       Row(11,1)  Repeat(3);STRING('º') .
+	       Row(2,22)  String('Actualizaci')
+		 Col(34)  String('n de datos')
+	       Row(4,3)	  String('Nombre  :')
+		 Col(33)  String('Apellido:')
+	       Row(5,3)	  String('Sexo    :')
+		 Col(20)  String('Fecha:')
+		 Col(29)  String('/')
+		 Col(32)  String('/')
+		 Col(36)  String('(')
+		 Col(40)  String(')  Edad :')
+		 Col(55)  String('Dias:')
+	       Row(6,3)	  String('Tel')
+		 Col(7)	  String('fonos :')
+	       Row(7,3)	  String('E-mail:')
+	       Row(8,4)	  String('Listar telefono?:')
+		 Col(36)  String('Marca :')
+	       Row(9,3)	  String('Notas   :')
+	       Row(12,11) String('Registro :')
+		 Col(25)  String('/')
+		 Col(41)  String('Actualizado:')
+dia	       Row(5,37)  String(@s3)
+edad		 Col(49)  String(@P<<<#P)
+kk		 Col(61)  String(@n7),Enh
+recno	       Row(12,21) String(@n4)
+recs		 Col(26)  String(@n5)
+F_Actualiz	 Col(53)  String(@d5)
+MESSAGE	       Row(13,18) String(30),Enh
+			  ENTRY,USE(?FIRST_FIELD)
+	       Row(4,12)  Entry(@s20),Use(DAT:NOMBRE),Lft
+		 Col(42)  Entry(@s20),Use(DAT:APELLIDO),Lft
+	       Row(5,12)  Menu(@s1),Use(Dat:Sexo),Imm,Req,Sel(0,7)
+		 Col(14)    String('F'),Sel(0,7)
+		 Col(16)    String('M'),Sel(0,7)
+		 Col(18)    String('E'),Sel(0,7)
+			  .
+		 Col(27)  Entry(@p##p),Use(DAT:DIA),Imm,Num,Ins
+		 Col(30)  Entry(@p##p),Use(DAT:MES),Imm,Num,Ins
+		 Col(33)  Entry(@p##p),Use(DAT:ANO),Imm,Num,Ins
+	       Row(6,14)  Entry(@s15),Use(Dat:Telefono_1),Lft
+		 Col(30)  Entry(@s15),Use(Dat:Telefono_2),Lft
+		 Col(46)  Entry(@s15),Use(Dat:Telefono_3),Lft
+	       Row(7,10)  Entry(@s40),Use(Dat:email),Lft,Enh
+	       Row(8,21)  Menu(@s1),Use(Dat:Listar),Imm,Req,Enh
+		 Col(24)    String('S')
+		 Col(26)    String('N')
+			  .
+		 Col(43)  Entry(@s2),Use(DAT:MARCA),Imm,Num,Ovr
+	       Row(9,12)  Text(3,50),Use(DAT:NOTAS)
+			  ENTRY,USE(?LAST_FIELD)
+			  PAUSE(''),USE(?DELETE_FIELD)
+	     .
+
+  EJECT
+  CODE
+  OPEN(SCREEN)					 !OPEN THE SCREEN
+  SETCURSOR					 !TURN OFF ANY CURSOR
+  DISPLAY					 !DISPLAY THE FIELDS
+  LOOP						 !LOOP THRU ALL THE FIELDS
+    MEM:MESSAGE = CENTER(MEM:MESSAGE,SIZE(MEM:MESSAGE)) !DISPLAY ACTION MESSAGE
+    DO CALCFIELDS				 !CALCULATE DISPLAY FIELDS
+    ALERT					 !RESET ALERTED KEYS
+    ALERT(ACCEPT_KEY)				 !ALERT SCREEN ACCEPT KEY
+    ALERT(REJECT_KEY)				 !ALERT SCREEN REJECT KEY
+    alert(f4_key)
+    alert(f5_key)
+    alert(alt_f10)
+    ACCEPT					 !READ A FIELD
+    if keycode() = f4_key   ! calendario
+      Calendario
+      SELECT(?)			   ! SELECT THIS ENTRY
+      CYCLE  ! ¨ hace falta esto ???
+    .
+    if keycode() = f5_key   ! control
+      xxcontr
+      SELECT(?)		    ! SELECT THIS ENTRY
+      CYCLE  ! ¨ hace falta esto ???
+    .
+    if keycode() = alt_f10	   ! ¨ Salir del sistema ?
+      ConfSalida
+      SELECT(?)			   ! SELECT THIS ENTRY
+      CYCLE
+    .
+    IF KEYCODE() = REJECT_KEY THEN RETURN.	 !RETURN ON SCREEN REJECT KEY
+    EXECUTE ACTION				 !SET MESSAGE
+      MEM:MESSAGE = 'Se agregar  el registro'	 !
+      MEM:MESSAGE = 'Se modificar  el registro'	 !
+      MEM:MESSAGE = 'Se borrar  el registro'	 !
+    .
+    IF KEYCODE() = ACCEPT_KEY			 !ON SCREEN ACCEPT KEY
+      UPDATE					 !  MOVE ALL FIELDS FROM SCREEN
+      SELECT(?)					 !  START WITH CURRENT FIELD
+      SELECT					 !  EDIT ALL FIELDS
+      CYCLE					 !  GO TO TOP OF LOOP
+    .
+    CASE FIELD()				 !JUMP TO FIELD EDIT ROUTINE
+    OF ?FIRST_FIELD				 !FROM THE FIRST FIELD
+      IF KEYCODE() = ESC_KEY THEN RETURN.	 !  RETURN ON ESC KEY
+      IF ACTION = 3 THEN SELECT(?DELETE_FIELD).!    OR CONFIRM FOR DELETE
+
+    OF ?DAT:NOMBRE
+      Capitalize(Dat:Nombre)
+
+    OF ?DAT:APELLIDO
+      Capitalize(Dat:Apellido)
+
+    OF ?Dat:Sexo				 !Femina, Maschio, Empresa
+      if(Dat:sexo = 'E') then select(?+4).
+
+    OF ?DAT:DIA
+      IF ~INRANGE(DAT:DIA,0,31)			 !IF FIELD IS OUT OF RANGE
+	BEEP					 !  SOUND KEYBOARD ALARM
+	SELECT(?DAT:DIA)			 !  AND STAY ON THIS FIELD
+	CYCLE					 !  GO TO TOP OF LOOP
+      .
+
+    OF ?DAT:MES
+      IF ~INRANGE(DAT:MES,0,12)			 !IF FIELD IS OUT OF RANGE
+	BEEP					 !  SOUND KEYBOARD ALARM
+	SELECT(?DAT:MES)			 !  AND STAY ON THIS FIELD
+	CYCLE					 !  GO TO TOP OF LOOP
+      .
+
+    OF ?DAT:MARCA
+      dat:F_Actualiz = today()
+
+    OF ?LAST_FIELD				 !FROM THE LAST FIELD
+      EXECUTE ACTION				 !  UPDATE THE FILE
+	ADD(Fechas)				 !    ADD NEW RECORD
+	PUT(Fechas)				 !    CHANGE EXISTING RECORD
+	DELETE(Fechas)				 !    DELETE EXISTING RECORD
+      .
+      IF ERRORCODE() = 40			 !  DUPLICATE KEY ERROR
+	MEM:MESSAGE = ERROR()			 !    DISPLAY ERR MESSAGE
+	SELECT(2)				 !    POSITION TO TOP OF FORM
+	CYCLE					 !    GET OUT OF EDIT LOOP
+      ELSIF ERROR()				 !  CHECK FOR UNEXPECTED ERROR
+	STOP(ERROR())				 !    HALT EXECUTION
+      .
+      ACTION = 0				 !  SET ACTION TO COMPLETE
+      RETURN					 !  AND RETURN TO CALLER
+
+    OF ?DELETE_FIELD				 !FROM THE DELETE FIELD
+      IF KEYCODE() = ENTER_KEY |		 !  ON ENTER KEY
+      OR KEYCODE() = ACCEPT_KEY			 !  OR CTRL-ENTER KEY
+	SELECT(?LAST_FIELD)			 !    DELETE THE RECORD
+      ELSE					 !  OTHERWISE
+	BEEP					 !    BEEP AND ASK AGAIN
+  . . .
+
+CALCFIELDS   ROUTINE
+  IF FIELD() > ?FIRST_FIELD			 !BEYOND FIRST_FIELD?
+    IF KEYCODE() = 0 AND SELECTED() > FIELD() THEN EXIT. !GET OUT IF NOT NONSTOP
+  .
+  SCR:F_Actualiz = Dat:F_Actualiz
+  SCR:MESSAGE = MEM:MESSAGE
+  SCR:dia = nombre_dia[date(dat:mes, dat:dia, dat:ano) % 7 + 1]
+  IF dat:dia*dat:mes*dat:ano = 0		 !EVALUATE CONDITION
+    SCR:edad = 0				 !  CONDITION IS TRUE
+  ELSE						 !OTHERWISE
+    SCR:edad = age(date(dat:mes, dat:dia, dat:ano), today())!CONDITION IS FALSE
+  .
+  SCR:kk = today() - date(dat:mes, dat:dia, dat:ano)
+  SCR:recno = pointer(fechas)
+  SCR:recs = records(fechas)
+

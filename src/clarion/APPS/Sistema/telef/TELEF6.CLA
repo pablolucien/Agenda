@@ -1,0 +1,179 @@
+	     Member('TELEF')
+MENU_Inicial PROCEDURE
+SCREEN	     SCREEN	  PRE(SCR),Window(10,16),At(9,33),Hlp('nada'),Hue(14,1)
+	       Row(1,1)	  String('…Õ{14}ª')
+	       Row(2,1)	  String('∫<0{4}>£<0{9}>∫')
+	       Row(3,1)	  String('∫Õ{14}π')
+	       Row(4,1)	  Repeat(5);STRING('∫<0>≥<0{12}>∫') .
+	       Row(9,1)	  String('∫<0{14}>∫')
+	       Row(10,1)  String('»Õ{14}º')
+	       Row(9,3)	  String('≥')
+	       Row(2,3)	  String('Men')
+		 Col(8)	  String('General')
+			  ENTRY,USE(?FIRST_FIELD)
+			  ENTRY,USE(?PRE_MENU)
+			  MENU,USE(MENU_FIELD"),REQ
+	       Row(4,4)	    String('Por Fechas  '),Sel(0,7)
+	       Row(5,4)	    String('Por Nombres '),Sel(0,7)
+	       Row(7,4)	    String('Listado {5}'),Sel(0,7)
+	       Row(8,4)	    String('Reorganizar '),Sel(0,7)
+	       Row(9,4)	    String('M†s control '),Sel(0,7)
+	     .		  .
+
+  EJECT
+  CODE
+  OPEN(SCREEN)					 !OPEN THE MENU SCREEN
+  SETCURSOR					 !TURN OFF ANY CURSOR
+  MENU_FIELD" = ''				 !START MENU WITH FIRST ITEM
+  LOOP						 !LOOP UNTIL USER EXITS
+    ALERT					 !TURN OFF ALL ALERTED KEYS
+    ALERT(REJECT_KEY)				 !ALERT SCREEN REJECT KEY
+    ALERT(ACCEPT_KEY)				 !ALERT SCREEN ACCEPT KEY
+    ALERT(F3_KEY)				 !ALERT HOT KEY
+    alert(f4_key)
+    alert(f5_key)
+    alert(alt_f10)
+    ACCEPT					 !READ A FIELD OR MENU CHOICE
+    IF KEYCODE() = F3_KEY			 !ON HOT KEY
+      UPDATE(?)					 !  RETRIEVE FIELD
+      SAVACTN# = ACTION				 !  SAVE ACTION
+      Memoria					 !  CALL HOT KEY PROCEDURE
+      ACTION = SAVACTN#				 !  RESTORE ACTION
+      SELECT(?)					 !  DO SAME FIELD AGAIN
+      CYCLE					 !  AND LOOP AGAIN
+    .
+    if keycode() = f4_key   ! calendario
+      Calendario
+      SELECT(?)			   ! SELECT THIS ENTRY
+      CYCLE  ! ® hace falta esto ???
+    .
+    if keycode() = f5_key   ! control
+      xxcontr
+      SELECT(?)		    ! SELECT THIS ENTRY
+      CYCLE  ! ® hace falta esto ???
+    .
+    if keycode() = alt_f10	   ! ® Salir del sistema ?
+      ConfSalida
+      SELECT(?)			   ! SELECT THIS ENTRY
+      CYCLE
+    .
+    IF KEYCODE() = REJECT_KEY THEN RETURN.	 !RETURN ON SCREEN REJECT
+
+    IF KEYCODE() = ACCEPT_KEY or keycode() = enter_key !ON SCREEN ACCEPT KEY
+      UPDATE					 !  MOVE ALL FIELDS FROM SCREEN
+      SELECT(?)					 !  START WITH CURRENT FIELD
+      SELECT					 !  EDIT ALL FIELDS
+      CYCLE					 !  GO TO TOP OF LOOP
+    .						 !
+
+    CASE FIELD()				 !JUMP TO FIELD EDIT ROUTINE
+    OF ?FIRST_FIELD				 !FROM THE FIRST FIELD
+      IF KEYCODE() = ESC_KEY THEN RETURN.	 !  RETURN ON ESC KEY
+
+    OF ?PRE_MENU				 !PRE MENU FIELD CONDITION
+      IF KEYCODE() = ESC_KEY			 !  BACKING UP?
+	SELECT(?-1)				 !    SELECT PREVIOUS FIELD
+      ELSE					 !  GOING FORWARD
+	SELECT(?+1)				 !    SELECT MENU FIELD
+      .
+    OF ?MENU_FIELD"				 !FROM THE MENU FIELD
+      fila# = row()
+      coln# = col() - 1
+      look(fila#, coln#, sav", @S1)
+      show(fila#, coln#, '', @S1)
+      EXECUTE CHOICE()				 !  CALL THE SELECTED PROCEDURE
+	P_fechas				 !  Lista por fechas
+	P_nombres				 !  Lista por nombres
+	menu_telef				 !
+	Rebuild					 !  Reconstruccion de Archivos
+	MoreControl				 !  Modificar archivo de control
+      .
+      show(fila#, coln#, sav", @S1)
+    .
+  .
+	     Eject ('Variables de Memoria')
+Memoria	     PROCEDURE
+
+SCREEN	     SCREEN	  PRE(SCR),Window(17,51),At(6,16),Hue(14,3)
+	       Row(1,1)	  String('…Õ{49}ª')
+	       Row(2,1)	  String('∫<0{49}>∫')
+	       Row(3,1)	  String('«ƒ{49}∂')
+	       Row(4,1)	  Repeat(13);STRING('∫<0{49}>∫') .
+	       Row(17,1)  String('»Õ{49}º')
+	       Row(2,17)  String('Variables en Memoria')
+	       Row(4,4)	  String('Imprimir en :')
+	       Row(5,4)	  String('Normal {6}:')
+	       Row(6,4)	  String('Comprimido  :')
+	       Row(7,4)	  String('Expandido   :')
+	       Row(8,4)	  String('UnOctavo    :')
+	       Row(9,4)	  String('UnSexto {5}:')
+	       Row(10,4)  String('HPReset {5}:')
+	       Row(11,4)  String('HPComprimido:')
+	       Row(12,4)  String('HPManual    :')
+	       Row(13,4)  String('HPLegal {5}:')
+	       Row(14,4)  String('HPLineas    :')
+	       Row(15,4)  String('HPUnOctavo  :')
+	       Row(16,4)  String('HPSymbolSet :')
+			  ENTRY,USE(?FIRST_FIELD)
+	       Row(4,17)  Entry(@s30),Use(MEM:DEVICE),Lft
+	       Row(5,17)  Entry(@s1),Use(MEM:Normal),Lft
+	       Row(6,17)  Entry(@s1),Use(MEM:Comprimido),Lft
+	       Row(7,17)  Entry(@s3),Use(MEM:Expandido),Lft
+	       Row(8,17)  Entry(@s2),Use(MEM:UnOctavo),Lft
+	       Row(9,17)  Entry(@s2),Use(MEM:UnSexto),Lft
+	       Row(10,17) Entry(@s2),Use(MEM:HPReset),Lft
+	       Row(11,17) Entry(@s5),Use(MEM:HPComprimido),Lft
+	       Row(12,17) Entry(@s5),Use(MEM:HPManual),Lft
+	       Row(13,17) Entry(@s5),Use(MEM:HPLegal),Lft
+	       Row(14,17) Entry(@s6),Use(MEM:HPLineas),Lft
+	       Row(15,17) Entry(@s5),Use(MEM:HPUnOctavo),Lft
+	       Row(16,17) Entry(@s5),Use(MEM:HPSymbolSet),Lft
+			  ENTRY,USE(?LAST_FIELD)
+	     .
+
+  EJECT
+  CODE
+  OPEN(SCREEN)					 !OPEN THE SCREEN
+  SETCURSOR					 !TURN OFF ANY CURSOR
+  DISPLAY					 !DISPLAY THE FIELDS
+  LOOP						 !LOOP THRU ALL THE FIELDS
+    ALERT					 !RESET ALERTED KEYS
+    ALERT(ACCEPT_KEY)				 !ALERT SCREEN ACCEPT KEY
+    ALERT(REJECT_KEY)				 !ALERT SCREEN REJECT KEY
+    alert(f4_key)
+    alert(f5_key)
+    alert(alt_f10)
+    ACCEPT					 !READ A FIELD
+    if keycode() = f4_key   ! calendario
+      Calendario
+      SELECT(?)			   ! SELECT THIS ENTRY
+      CYCLE  ! ® hace falta esto ???
+    .
+    if keycode() = f5_key   ! control
+      xxcontr
+      SELECT(?)		    ! SELECT THIS ENTRY
+      CYCLE  ! ® hace falta esto ???
+    .
+    if keycode() = alt_f10	   ! ® Salir del sistema ?
+      ConfSalida
+      SELECT(?)			   ! SELECT THIS ENTRY
+      CYCLE
+    .
+    IF KEYCODE() = REJECT_KEY THEN RETURN.	 !RETURN ON SCREEN REJECT KEY
+
+    IF KEYCODE() = ACCEPT_KEY			 !ON SCREEN ACCEPT KEY
+      UPDATE					 !  MOVE ALL FIELDS FROM SCREEN
+      SELECT(?)					 !  START WITH CURRENT FIELD
+      SELECT					 !  EDIT ALL FIELDS
+      CYCLE					 !  GO TO TOP OF LOOP
+    .						 !
+
+    CASE FIELD()				 !JUMP TO FIELD EDIT ROUTINE
+    OF ?FIRST_FIELD				 !FROM THE FIRST FIELD
+      IF KEYCODE() = ESC_KEY THEN RETURN.	 !  RETURN ON ESC KEY
+
+    OF ?LAST_FIELD				 !FROM THE LAST FIELD
+      ACTION = 0				 !  SET ACTION TO COMPLETE
+      RETURN					 !  AND RETURN TO CALLER
+  . .
+

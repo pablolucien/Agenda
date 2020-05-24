@@ -1,0 +1,15 @@
+{
+    "import": [
+        "DS_Targets_light.json",
+        "DS_Targets_projects_quarantine.json"
+    ],
+    "targets": [
+        {
+            "dirs": [
+                "${ROOT_C_home}/img/fotos/",
+                "${ROOT_F}/home/img/fotos/"
+            ],
+            "Exclude": "WhatsAppProfiles/"
+        }
+    ]
+}

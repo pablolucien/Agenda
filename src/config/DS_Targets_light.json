@@ -1,0 +1,86 @@
+{
+    "import": [
+        "DS_Targets_development.json",
+        "DS_Targets_Finance.json",
+        "DS_Targets_Tlf_movil.json"
+    ],
+    "targets": [
+        {
+            "dirs": [
+                "${ROOT_C}/_Reise/",
+                "${ROOT_L}/home/",
+                "${ROOT_E}/home/"
+            ],
+            "files": [
+                "Backlog.txt",
+                "Bank.txt",
+                "Discworld.xls",
+                "horas.xls",
+                "passwords.txt",
+                "PStart.xml",
+                "Leer fuera o en casa.txt",
+                "Downloads Ubuntu.txt"
+            ]
+        },
+        {
+            "unidirectional": true,
+            "dirs": [
+                "${ROOT_C_home}/",
+                "${ROOT_L}/dev/",
+                "${ROOT_E}/home/"
+            ],
+            "files": [
+                "cvs-repository.tgz",
+                "git-repository.tgz"
+            ]
+        },
+        {
+            "dirs": [
+                "${ROOT_C_home}/security",
+                "${ROOT_F}/home/security",
+                "${ROOT_E}/home/security",
+                "${ROOT_L}/home/security"
+            ]
+        },
+        {
+            "unidirectional": true,
+            "dirs": [
+                "${ROOT_F}/Películas/___Mobile-phone-files/Images/WhatsAppProfiles",
+                "${ROOT_C_home}/img/fotos/WhatsAppProfiles"
+            ],
+            "Exclude": "Sent/"
+
+        },
+        {
+            "unidirectional": true,
+            "dirs": [
+                "${ROOT_F}/Películas/___Mobile-phone-files",
+                "${ROOT_E}/home/___Mobile-phone-files"
+            ]
+        },
+        {
+            "dirs": [
+                "${ROOT_C}/usr/local/Q-Dir/",
+                "${ROOT_C_home}/databases/"
+            ],
+            "files": [
+                "MainView_ACME.qdr",
+                "MainView_Minerva.qdr"
+            ]
+        },
+        {
+            "dirs": [
+                "${ROOT_C_home}/databases/",
+                "${ROOT_E}/home/databases",
+                "${ROOT_F}/home/databases",
+                "${ROOT_L}/_DB/"
+            ],
+            "files": [
+                "Datos vitales.xls",
+                "MainView_ACME.qdr",
+                "MainView_Minerva.qdr",
+                "MainView_Regus.qdr"
+            ]
+        }
+    ]
+}

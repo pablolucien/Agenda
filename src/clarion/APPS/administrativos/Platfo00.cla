@@ -1,0 +1,154 @@
+             Member('PLATFORM')
+Tarifa       Function(monto)
+monto        real
+  code
+    if     monto > 4250000
+        return(.30)
+    elsif  monto > 3375000
+        return(.255)
+    elsif  monto > 2500000
+        return(.215)
+    elsif  monto > 2000000
+        return(.180)
+    elsif  monto > 1500000
+        return(.150)
+    elsif  monto > 1000000
+        return(.125)
+    elsif  monto >  300000
+        return(.100)
+    else
+        return(00.0)
+    .
+Descuento    Function(monto)
+monto        real
+  code
+    if     monto > 4250000
+        return(566250)
+    elsif  monto > 3375000
+        return(375000)
+    elsif  monto > 2500000
+        return(240000)
+    elsif  monto > 2000000
+        return(152500)
+    elsif  monto > 1500000
+        return(92500)
+    elsif  monto > 1000000
+        return(55000)
+    elsif  monto >  300000
+        return(30000)
+    else
+        return(00.0)
+    .
+Entretien    Procedure
+i            short
+hora         string(8)
+  code
+    hora = clock()
+    show(3, 69, hora, @t4)
+
+
+
+Calc_ARI     PROCEDURE
+
+SCREEN       Screen       Window(22,80),At(3,1),Pre(SCR),Hue(8,2)
+               Row(1,1)   String('ÉÍ{78}»')
+               Row(2,1)   String('º<0{48}> <0{29}>º')
+               Row(3,1)   String('ÌÍ{78}¹')
+               Row(4,1)   Repeat(4);String('º<0{78}>º') .
+               Row(8,1)   String('º<0{21}>¢<0{56}>º')
+               Row(9,1)   String('º<0{52}>¡<0{25}>º')
+               Row(10,1)  String('º<0{47}>¢<0{30}>º')
+               Row(11,1)  Repeat(2);String('º<0{78}>º') .
+               Row(13,1)  String('ÇÄ{78}¶')
+               Row(14,1)  Repeat(8);String('º<0{78}>º') .
+               Row(22,1)  String('ÈÍ{78}¼')
+               Row(14,10) String(' '),Hue(14,2)
+               Row(2,26)  String('Remuneraciones y Desgrav')
+                 Col(51)  String('menes')
+               Row(4,3)   String('Remuneraciones'),Hue(14,2)
+               Row(5,3)   String('Sueldos y salarios    :')
+                 Col(43)  String('Obvenciones {9}:')
+               Row(6,3)   String('Dietas {16}: {17}Emolumentos {9}:')
+               Row(7,3)   String('Primas {16}: {17}Habilitaciones {6}:')
+               Row(8,3)   String('Gastos de Alimentaci')
+                 Col(24)  String('n: {17}Bono Vacacional {5}:')
+               Row(9,3)   String('Horas Extra {11}: {17}Bono de Est')
+                 Col(55)  String('mulo    :')
+               Row(10,3)  String('Vacaciones no disfrut.: {17}Comisi')
+                 Col(50)  String('n por Venta  :')
+               Row(11,3)  String('Remuneraciones esp.   : {17}Pensiones {11}:')
+               Row(12,3)  String('Utilidades, aguinaldos: {17}Otras {15}:')
+               Row(14,3)  String('D'),Hue(14,2)
+                 Col(4)   String('esgr'),Hue(14,2)
+                 Col(8)   String('a'),Hue(14,2)
+                 Col(9)   String('v'),Hue(14,2)
+                 Col(11)  String('menes'),Hue(14,2)
+               Row(15,3)  String('S.S.O {17}:')
+                 Col(43)  String('Serv. medico-odont. :')
+               Row(16,3)  String('Imp. munic. y estat.  : {17}Medicinas con '  |
+                            & 'recipe:')
+               Row(17,3)  String('Electricidad, agua,etc: {17}Donaciones {10}:')
+               Row(18,3)  String('Intereses por prest.  : {17}Cajas de Ahorro' |
+                            & ' {5}:')
+               Row(19,3)  String('Alquiler vivienda {5}: {17}Reparacion '      |
+                            & 'vehiculo :')
+               Row(20,3)  String('Inst. docentes {8}: {17}Honorarios {10}:')
+               Row(21,3)  String('Seguros vida HCM auto : {17}Otros {15}:')
+               Row(16,14) Entry,Use(?FIRST_FIELD)
+                          Repeat(8,2),Every(1,37),Index(index)
+               Row(5,28)    Entry(@N-13`2),Use(ingresos),Sel(14,7),Ins,Num
+                          .
+                          Repeat(7,2),Every(1,37),Index(index)
+               Row(15,28)   Entry(@N13`2),Use(egresos),Sel(14,7),Ins
+                          .
+               Row(8,42)  Entry,Use(?LAST_FIELD)
+             .
+index        byte
+Ingresos       Real,Dim(16)                      !Diversos ingresos para el AR-I
+Egresos        Real,Dim(14)                      !Diversos egresos para el AR-I
+
+  EJECT
+  CODE
+  OPEN(SCREEN)                                   !OPEN THE SCREEN
+  SETCURSOR                                      !TURN OFF ANY CURSOR
+  DISPLAY                                        !DISPLAY THE FIELDS
+  LOOP                                           !LOOP THRU ALL THE FIELDS
+    ALERT                                        !RESET ALERTED KEYS
+    ALERT(ACCEPT_KEY)                            !ALERT SCREEN ACCEPT KEY
+    ALERT(REJECT_KEY)                            !ALERT SCREEN REJECT KEY
+    ACCEPT                                       !READ A FIELD
+    IF KEYCODE() = REJECT_KEY THEN RETURN.       !RETURN ON SCREEN REJECT KEY
+
+    IF KEYCODE() = ACCEPT_KEY                    !ON SCREEN ACCEPT KEY
+      UPDATE                                     !  MOVE ALL FIELDS FROM SCREEN
+      SELECT(?)                                  !  START WITH CURRENT FIELD
+      SELECT                                     !  EDIT ALL FIELDS
+      CYCLE                                      !  GO TO TOP OF LOOP
+    .                                            !
+
+    CASE FIELD()                                 !JUMP TO FIELD EDIT ROUTINE
+    OF ?FIRST_FIELD                              !FROM THE FIRST FIELD
+      IF KEYCODE() = ESC_KEY THEN RETURN.        !  RETURN ON ESC KEY
+
+    OF ?LAST_FIELD                               !FROM THE LAST FIELD
+      IF ACTION <> 3                             !IF THIS IS NOT A DELETE
+        ACTION = 2                               !  SET ACTION TO CHANGE MODE
+        mem:monto_1 =0
+        mem:monto_2 =0
+        loop index = 1 to 16
+          mem:monto_1 += ingresos[index]
+        .
+        loop index = 1 to 14
+          mem:monto_2 += egresos[index]
+        .
+        Calculo_ARI                              !  CALL NEXT FORM PROCEDURE
+        IF ACTION                                !  IF RECORD WAS NOT CHANGED
+          SELECT(?LAST_FIELD - 1)                !    SELECT THE LAST ENTRY
+          CYCLE                                  !    AND LOOP AGAIN
+      . .
+      ACTION = 0                                 !  SET ACTION TO COMPLETE
+      RETURN                                     !  AND RETURN TO CALLER
+  . .
+
+Calc_ARC     PROCEDURE
+  code

@@ -1,0 +1,66 @@
+Uso: java DbUpdate <script>, donde <script> es algo así:
+
+# Script de actualizacion de la base de datos
+# Las lineas que comienzan con '#' son comentarios
+# Las lineas que comienzan con '--' son comentarios
+# Se aceptan comentarios en bloque estilo C con la restriccion de que el par
+# de caracteres de apertura deben ser los primeros caracteres no blancos de
+# una linea y los de cierre los ultimos.
+# Las lineas en blanco no son consideradas
+# Las lineas que terminan con '|' indican que la siguiente es
+# continuacion de esta.
+# El resto de las lineas deben ser instrucciones SQL válidas, salvo las 
+# siguentes directivas (una por línea)
+# <CLASSPATH>        La lista, separada por '|' de los archivos o directorios a 
+#                    agregar al classpath the la aplicación.
+# <DRIVER>           Driver de la base de datos
+# <URL>              URL de conexion a la base de datos
+# <USER> user        Establece el nombre de usuario de la base de datos.
+#                    Si no se proporciona, lo pide en stdin.
+# <PWD> pwd          Establece la contrasenha de la base de datos.
+#                    Si no se proporciona, la pide en stdin.
+# <EXIT>             Finaliza la ejecucion
+# <SKIP>             No procesa el script hasta que se encuentre un <CONTINUE>
+# <CONTINUE>         Continúa el procesamiento del Script
+# <ZAP_DATA>         Elimina todos los registros de todas las tablas salvo las 
+#                    META_*, REPO_* y SYS_*
+# <ZAP_DATABASE>     Elimina todos los registros de todas las tablas INCUYENDO 
+#                    las META_*, REPO_* y SYS_*
+# <DROP_TABLES>      Elimina todas las tablas de datos de usuario
+# <DROP_ALL_TABLES>  Elimina todas las tablas INCUYENDO las META_*, REPO_* 
+#                    y SYS_*
+# <VERSION> n.nn     Numero de version a insertar en la base de datos
+# <COMPACT>          Compacta la base de datos (NO IMPLEMENTADO)
+# <DO_BACKUP>        Hace el respaldo inicial (Bases de datos Access)
+# <NO_ASK>           No pide confirmacion en las instrucciones ZAP y DROP 
+#                    (NO IMPLEMENTADO)
+# <ASK>              Pide nuevamante confirmacion en las instrucciones 
+#                    ZAP y DROP (NO IMPLEMENTADO)
+#
+# El Classpath, Driver y URL de la base de datos deben ser las primeras líneas
+# que no sean comentario salvo las instrucciones <DO_BACKUP> <USER> y <PWD>
+#
+#<DO_BACKUP>
+#
+<CLASSPATH>C:\home\development\lib/derby.jar
+<DRIVER>org.apache.derby.jdbc.EmbeddedDriver
+<URL>jdbc:derby:C:/tmp/fortunesDB;create=true
+#<CLASSPATH>
+#<DRIVER>sun.jdbc.odbc.JdbcOdbcDriver
+#<URL>jdbc:odbc:Driver={Microsoft Access Driver (*.mdb)};DBQ=C:/tmp/Test.mdb;UID=user;PWD=pwd
+#
+<SKIP>
+DROP TABLE _Usuarios
+#
+<CONTINUE>
+#CREATE TABLE META_VERSION (mayor INTEGER, menor INTEGER, fecha TIMESTAMP,|
+#     PRIMARY KEY (mayor, menor))
+#<VERSION> 3.5
+#INSERT INTO Usuarios (Codigo, nombre) VALUES (1, 'Generico')
+CREATE TABLE FORTUNES (|
+	Clave INTEGER PRIMARY KEY GENERATED ALWAYS AS IDENTITY (START WITH 0 ,INCREMENT BY 1),|
+	Fortune LONG VARCHAR NOT NULL|
+)
+
+INSERT INTO FORTUNES (FORTUNE) VALUES ('Soldier of fortune')
+#

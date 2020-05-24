@@ -1,0 +1,239 @@
+thead {
+	color:green;
+}
+
+caption {
+	color:green;
+	font-weight:bold;
+}
+
+a {
+	color:black;
+	font-weight:bold;
+}
+
+a:hover {
+	color:green;
+//	background-color: blue;
+//	font-weight:200;
+}
+
+a:active {
+	color:green;
+}
+
+table {
+    table-layout: fixed;
+}
+
+.sameColumnWidth20 td:nth-child(1),
+.sameColumnWidth20 td:nth-child(2),
+.sameColumnWidth20 td:nth-child(3),
+.sameColumnWidth20 td:nth-child(4),
+.sameColumnWidth20 td:nth-child(5) {
+  width: 20%;
+}
+
+.sameColumnWidth33 td:nth-child(1),
+.sameColumnWidth33 td:nth-child(2),
+.sameColumnWidth33 td:nth-child(3) {
+  width: 33%;
+}
+
+.sameColumnWidth50 td:nth-child(1),
+.sameColumnWidth50 td:nth-child(2) {
+  width: 50%;
+}
+
+.Wichtig {
+	color:SeaGreen;
+	font-weight:bold;
+}
+
+
+.SectionHeader {
+    border: 0px solid;
+    border-color:#AAAAAA;
+    margin-top: 3;
+    margin-bottom: 3;
+}
+
+.SuperSecret {
+	color: #AEAEAE;
+}
+
+.NewItem {
+	color: #FFFF00;
+	font-style: italic;
+	font-weight:bold;
+}
+
+.Satiricon {
+	color: #11AACD;
+}
+
+.DesdeDentro {
+	color: #FF3333;
+	font-style: italic;
+	font-weight:bold;
+}
+
+.DesdeParici {
+	color: #007070;
+	font-style: italic;
+	font-weight:bold;
+}
+
+.Aviones {
+	color: #0099FF;
+	font-weight:bold;
+}
+
+.Hobby {
+	color: #9900FF;
+	font-style: italic;
+}
+
+div#NewItems {
+	background-color: #FFFFAA;
+	font-style: italic;
+	font-weight:bold;
+}
+
+div#menu {
+	float:left;
+	width:100px;
+	height:100px;
+	background-color:#FF6699;
+	clear:both;
+}
+
+.SiteProfessional {
+	#background: #E4EAF6;
+}
+
+.Sobre {
+	color: #555555;
+}
+
+span.color_h1 {color:#92B901;}
+
+/* Inspiré carrement de l'appli. */
+.toggle h4 {
+	background: url(toggle_off.gif) no-repeat right 1px;
+	width: 45px;
+	cursor: pointer;
+}
+.toggle h4.assure {
+	width: 70px;
+	display: block;
+}
+.toggle h4.affiliation {
+	width: 100px;
+}
+.toggle h4.beneficiaire {
+	width: 115px;
+}
+.LienToggle a {
+	background: url(toggle_off.gif) no-repeat right 1px;
+	cursor: pointer;
+	display: block;
+	width: 13px;
+	height: 16px;
+	cursor: default;
+}
+.focus .Cont .LienToggle a {
+	background: url("toggle_off.gif") no-repeat scroll right 1px transparent;
+}
+.focus .LienToggle a , .focus  .focus .LienToggle a {
+	background: url("toggle_on.gif") no-repeat scroll right 1px transparent;
+}
+.toggle  .LienToggle {
+	float: left;
+	display: block;
+	width: 15px;
+	height: 16px;
+	margin-top: 10px;
+}
+.Cont {
+	float: left;
+	width: 97%;
+}
+.focus h4 {
+	background: url(toggle_on.gif) no-repeat right 1px;
+	width: 45px;
+	cursor: pointer;
+}
+
+.box-1 {
+	border-right: 5px red dotted;
+	border-left: 3px red solid;
+
+	padding-left: 3px;
+	padding-right: 3px;
+
+	margin-left: 30px;
+}
+
+.eco {
+	color: #AAE800;
+	letter-spacing: 0.2em;
+	word-spacing: 1em;
+	padding: 5px;
+	border: 3px dotted #ccc;
+	margin: 20px;
+}
+
+.laws {
+	color: #555555;
+	border: 1px solid #ccc;
+	border-radius: 15px;
+	padding: 10px;
+	margin: 20px;
+}
+
+.laws h4 {
+	text-align: center;
+}
+
+.bloque {
+	float: left;
+	width: 30%;
+	border: 1px solid #fff;
+	border-radius: 15px;
+	padding: 10px;
+	margin: 10px;
+	box-sizing: border-box;
+}
+
+.button {
+	background-color: #333;
+	color: #fff;
+	padding: 10px 15px;
+	border: none;
+}
+
+.button:hover {
+	color:red;
+}
+
+.fix-me {
+	position: fixed;
+	top: 400px;
+    right: 10px;
+}
+
+.links-list {
+//	list-style: none;
+}
+
+.links-list li:nth-child(even) {
+	list-style: square;
+//	background: white;
+}
+
+.clr {
+    clear: both;
+}
+
+

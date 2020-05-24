@@ -1,0 +1,19 @@
+{
+  "targets": [
+    {
+      "A": "/pepito",
+      "B": "/luisito"
+    },
+    {
+      "A": "/mariita",
+      "B": "/anita"
+    },
+    {
+      "dirs": [
+        "/tmp/DirectorySynchronizer_Test_dirA",
+        "/tmp/DirectorySynchronizer_Test_dirB",
+        "/tmp/DirectorySynchronizer_Test_dirC"
+      ]
+    }
+  ]
+}

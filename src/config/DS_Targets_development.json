@@ -1,0 +1,92 @@
+{
+  "targets": [
+    {
+      "A": "${ROOT_C_home}/development/dist/Alles_src.zip",
+      "B": "${ROOT_L}/dev/Alles_src.zip"
+    },
+    {
+      "dirs": [
+        "${ROOT_C_home}/development/dist",
+        "${ROOT_E}/bin",
+        "${ROOT_L}/bin"
+      ],
+      "Include": "*.jar:*.properties",
+      "Exclude": "*_custom.properties:*_technical.properties:Fortunes.properties"
+    },
+    {
+      "dirs": [
+        "${ROOT_C_home}/development/modules/src/java",
+        "${ROOT_E}/Projects/Alles/src/java"
+      ],
+      "Exclude": "CVS/:.#*"
+    },
+    {
+      "dirs": [
+        "${ROOT_C_home}/development/modules/src/test",
+        "${ROOT_E}/Projects/Alles/src/test"
+      ],
+      "Exclude": "CVS/:.#**"
+    },
+    {
+      "dirs": [
+        "${ROOT_C_home}/development/modules/resources",
+        "${ROOT_E}/Projects/Alles/resources"
+      ],
+      "Exclude": "CVS/:.#**"
+    },
+    {
+      "dirs": [
+        "${ROOT_C_home}/development/modules/src/test_resources",
+        "${ROOT_E}/Projects/Alles/src/test_resources"
+      ],
+      "Exclude": "CVS/:.#**"
+    },
+    {
+      "dirs": [
+        "${ROOT_C_home}/development/modules/src/html",
+        "${ROOT_E}/Projects/Alles/src/html"
+      ],
+      "Exclude": "CVS/:.#**"
+    },
+    {
+      "dirs": [
+        "${ROOT_C_home}/development/modules/src/sql",
+        "${ROOT_E}/Projects/Alles/src/sql"
+      ],
+      "Exclude": "CVS/:.#**"
+    },
+    {
+      "dirs": [
+        "${ROOT_C_home}/development/modules/src/config",
+        "${ROOT_E}/Projects/Alles/src/config"
+      ],
+      "Exclude": "CVS/:.#**:test-output/"
+    },
+    {
+      "dirs": [
+        "${ROOT_C_home}/development/modules/src/html",
+        "${ROOT_E}/links",
+        "${ROOT_L}/links"
+      ],
+      "Exclude": "CVS/:.#**"
+    },
+    {
+      "dirs": [
+        "${ROOT_C_home}/development/modules/src/config",
+        "${ROOT_L}/home/",
+        "${ROOT_E}/home/"
+      ],
+      "files": [
+        "Forex.postman_collection.json",
+        "Forex.postman_environment.json"
+      ]
+    },
+    {
+        "dirs": [
+            "${ROOT_C_home}/development/projects/quotes",
+            "${ROOT_E}/home/development/projects/quotes"
+        ],
+        "Exclude": "CVS/:.idea/:.git/:.github/:target/:out/:.git*:.#*"
+    }
+  ]
+}

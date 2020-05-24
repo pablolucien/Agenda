@@ -1,0 +1,25 @@
+{
+  "targets": [
+    {
+      "dirs": [
+        "${ROOT_C_home}/Finance/",
+        "${ROOT_E}/home/Finance/",
+        "${ROOT_F}/home/Finance/",
+        "${ROOT_L}/home/Finance/"
+      ],
+      "Exclude": "*.log:*.gnucash.*.gnucash"
+    },
+    {
+      "dirs": [
+        "${USER_PROFILE_DIR}/.gnucash/",
+        "${ROOT_E}/home/Finance/GnuCashData/",
+        "${ROOT_F}/home/Finance/GnuCashData/",
+        "${ROOT_L}/home/Finance/GnuCashData/"
+      ],
+      "files": [
+        "saved-reports-2.4",
+        "stylesheets-2.0"
+      ]
+    }
+  ]
+}

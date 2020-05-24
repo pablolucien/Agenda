@@ -1,0 +1,33 @@
+#Indica los nombres de los archivos o directorios a borrar.
+# Si una entrada termina en /*.* se borra el contenido, pero no el directorio
+
+#C:/recycler/*.*
+#D:/recycler/*.*
+
+
+#d:/winnt/Netscape Wallpaper.bmp
+#d:/winnt/memory.dmp
+#d:/winnt/profiles/pablo/recent
+#d:/RECYCLER
+#E:/RECYCLED
+#C:/WINDOWS/Recent
+#C:/WINDOWS/Archivos temporales de Internet
+#C:/Documents and Settings/pablo/Configuración local/Datos de programa/Microsoft/Internet Explorer
+#C:/Documents and Settings/pablo/Configuración local/Archivos temporales de Internet
+
+#C:/tmp/olbap/kk
+#C:/tmp/kk/
+#C:/winzip.log
+#C:/Aplicaciones Guay/DRAE/drae.ini
+
+C:/tmp/kkk
+#C:/Documents and Settings/X52192LU/Cookies
+#C:/Documents and Settings/X52192LU/Recent
+#C:/Documents and Settings/X52192LU/Configuración local/Temp/*.*
+#C:/Documents and Settings/X52192LU/Configuración local/Archivos temporales de Internet/*.*
+
+#D:/Documents and Settings/paceLucien/Cookies
+#D:/Documents and Settings/paceLucien/Recent
+#D:/Documents and Settings/paceLucien/Configuraci¢n local/Temp
+#D:/Documents and Settings/paceLucien/Configuraci¢n local/Archivos temporales de Internet/*.*
+

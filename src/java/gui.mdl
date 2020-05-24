@@ -1,0 +1,156 @@
+redirigir las salidas a consolas
+// ******************************** package
+
+// ******************************** imports
+import org.pclg.tools.ToolBox;						// Utilities ad hoc
+import org.pclg.tools.SortedProperties;
+import java.io.*;
+import java.awt.Rectangle;
+import java.awt.event.*;
+import javax.swing.*;
+
+/**
+	#CLASSNAME# <BR>
+	@author #AUTHOR#
+	@version #DATE#
+*/
+public class #CLASSNAME# extends JFrame {
+	// ******************************** Variables de clase
+
+	// ******************************** Variables de instancia
+
+	// ******************************** Variables transitorias (no serializables)
+
+	/**
+		Propiedades persistentes
+		--author #AUTHOR#
+		--version #DATE#
+	*/
+	private SortedProperties applicationProps = new SortedProperties();
+	private Rectangle bounds;
+
+	// ******************************** Inicializacion estática
+	
+	// ******************************** Constructores
+
+	/**
+		Constructor por omision
+		--author #AUTHOR#
+		--version #DATE#
+	*/
+	public #CLASSNAME#() {
+		setDefaultCloseOperation(DO_NOTHING_ON_CLOSE);  // La accion por omision es HIDE_ON_CLOSE
+		addWindowListener(new WindowAdapter() {
+			public void windowClosing(WindowEvent ev) {
+				saveProperties();
+				ToolBox.exitApplication(ev.getWindow(), false);
+			}
+		});
+
+		// Cargamos las propiedades persistentes
+		loadProperties();
+
+		// Antes de salir de la aplicacion salvamos las propiedades persistentes
+		Runtime.getRuntime().addShutdownHook(new Thread() {
+			public void run() {
+				saveProperties();
+			}
+		});
+
+		// Mostramos la ventana
+		if(bounds == null) {
+			System.err.println("centrando la ventana por omision");
+			pack();
+			ToolBox.center(this, null);   // Centrar en la pantalla
+		}
+		else {
+			setBounds(bounds);            // Ultima posicion guardada de la pantalla
+		}
+		setVisible(true);
+	}
+
+	// ******************************** Metodos de instancia
+
+	/**
+		Carga todas propiedades de la aplicacion
+		--author #AUTHOR#
+		--version #DATE#
+	*/
+	private void loadProperties() {
+		try {
+			FileInputStream in = new FileInputStream(getClass().getName() + ".properties");
+			applicationProps.load(in);
+			in.close();
+			try {
+				bounds = new Rectangle(
+				Integer.parseInt(applicationProps.getProperty("bounds.x")),
+				Integer.parseInt(applicationProps.getProperty("bounds.y")),
+				Integer.parseInt(applicationProps.getProperty("bounds.w")),
+				Integer.parseInt(applicationProps.getProperty("bounds.h"))
+				);
+			}
+			catch(NumberFormatException ex) {
+				bounds = null;
+			}
+		}
+		catch(FileNotFoundException ex) {
+			return;		// No me importa: tomaré los valores por omisión
+		}
+		catch(IOException ex) {
+			ToolBox.showInfo(ex);
+		}
+	}
+
+	/**
+		Guarda todas propiedades en el archivo de configuracion
+		--author #AUTHOR#
+		--version #DATE#
+	*/
+	private void saveProperties() {
+		bounds = getBounds();
+		if(!bounds.equals(new Rectangle())) {		// Si no está todo en cero
+			applicationProps.setProperty("bounds.x", String.valueOf(bounds.x));
+			applicationProps.setProperty("bounds.y", String.valueOf(bounds.y));
+			applicationProps.setProperty("bounds.w", String.valueOf(bounds.width));
+			applicationProps.setProperty("bounds.h", String.valueOf(bounds.height));
+		}
+
+		try {
+			FileOutputStream out = new FileOutputStream(getClass().getName() + ".properties");
+			applicationProps.store(out, "Configuracion de " + getClass().getName());
+			out.close();
+		}
+		catch(IOException ex) {
+			ToolBox.showInfo(ex);
+		}
+	}
+
+	// ******************************** Metodos estaticos
+
+	/**
+		Ayuda al usuario
+		Al ser un método publico, puede ser llamado por cualquier otra clase, en particular un sistema de ayuda
+		en este caso, abortRun debería ser 'false'
+		@param args Los parametros que se pasaron al programa
+		param abortRun Indica si se debe abortar el programa
+		--author #AUTHOR#
+		--version #DATE#
+	*/
+	public static String usage(final String[] args, boolean abortRun) {
+		String msg = "Usage: java #CLASSNAME# " +  "";
+		System.err.println(msg);
+		if(abortRun) {
+			System.exit(1);
+		}
+		return(msg);
+	}
+
+	/**
+		Ejecuta la aplicación
+		--author #AUTHOR#
+		--version #DATE#
+	*/
+	public static void main(final String[] args) {
+		new #CLASSNAME#();
+	}
+}
