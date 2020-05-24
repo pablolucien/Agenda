@@ -66,7 +66,7 @@ START		0		string	/**								Fuente de Java
 START		0		string	GIF89								Imagen GIF version 1989
 START		0		string	GIF87								Imagen GIF version 1987
 
-START		0		BYTES		ff-d8-ff-e0-00-10-4a-46		Imagen JPEG
+START		0	BYTES		ff-d8-ff-e0-00-10-4a-46		    Imagen JPEG
 START		0	BYTES		ff-d8-ff						Imagen JPEG
 &END		2	BYTES		ff-d9
 
@@ -125,6 +125,15 @@ START		0	BYTES	ff-fa			MP3
 START		0	BYTES	ff-fb			MP3
 
 START		0	BYTES	49-44-33		MP3 file with an ID3v2 container
+
+#opus segun yo
+START		0	BYTES	4f-67-67-53		opus (OggS) en mi opinion
+
+#colornote segun yo
+START		0	BYTES	00-4e-00-4f-00-54-00-45		colornote
+
+#colornote segun yo
+START		0	BYTES	00-00-00-1c-66-74-79	Audio MP4
 
 #RAR segun yo
 START		0	BYTES	52-61-72-21-1a-07-00-cf		RAR en mi opinion

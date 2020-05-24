@@ -18,7 +18,6 @@ import java.awt.HeadlessException;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.sql.Connection;
-import java.util.List;
 
 /**
  * @author Un autor en busca de personajes.
@@ -38,7 +37,7 @@ class FormSinonimos extends JDialog implements ActionListener {
      * @throws java.awt.HeadlessException
      */
     public FormSinonimos(final Frame owner, final Connection conn) throws HeadlessException {
-        super(owner, "Sinónimos", true);
+        super(owner, "Sinï¿½nimos", true);
         this.conn = conn;
         final Container container = getContentPane();
         container.add(textField, BorderLayout.NORTH);
@@ -56,7 +55,7 @@ class FormSinonimos extends JDialog implements ActionListener {
      */
     @Override
 	public void actionPerformed(final ActionEvent event) {
-	    final List sinónimos = DictionaryDB.obtenerSinonimos(conn, textField.getText());
-	    //list.getModel().
+//	    final List sinonimos = DictionaryDB.obtenerSinonimos(conn, textField.getText());
+//	    list.getModel().
     }
 }

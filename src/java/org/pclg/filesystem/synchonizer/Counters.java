@@ -31,6 +31,10 @@ final class Counters {
         filesWithSameContent++;
     }
 
+    public int filesWithSameContent() {
+        return filesWithSameContent;
+    }
+
     void clear() {
         dirsCreated = filesCreated = filesUpdated = filesWithSameContent = 0;
     }

@@ -1,5 +1,13 @@
 package org.pclg.filesystem.synchonizer;
 
+import org.apache.log4j.Appender;
+import org.apache.log4j.Level;
+import org.apache.log4j.Logger;
+import org.pclg.log.LoggerFactory;
+import org.pclg.tools.ArrayTools;
+import org.pclg.tools.FileTools;
+import org.pclg.tools.PropertiesHelper;
+
 import java.io.ByteArrayOutputStream;
 import java.io.File;
 import java.io.IOException;
@@ -14,14 +22,6 @@ import java.util.Arrays;
 import java.util.Date;
 import java.util.List;
 import java.util.Properties;
-import org.apache.log4j.Appender;
-import org.apache.log4j.Level;
-import org.apache.log4j.Logger;
-import org.pclg.log.LoggerFactory;
-import org.pclg.tools.ArrayTools;
-import org.pclg.tools.FileTools;
-import org.pclg.tools.PropertiesHelper;
-
 
 import static java.nio.file.StandardCopyOption.COPY_ATTRIBUTES;
 import static java.nio.file.StandardCopyOption.REPLACE_EXISTING;
@@ -43,6 +43,8 @@ public class DirectorySynchronizer {
 	static final String DOESN_T_EXIST_CREATING_IT = " doesn't exist; creating it";
 	private static final String THREE_STRINGS_FORMAT = "%s%s - %s";
     private final Counters counters;
+    private File duplicatedFilesLogFile;
+
 
     /** Some little modification time to suppose that the files may have been modified; 2 sec means we suppose they are not. */
     static final int INSIGNIFICANT_DETAIL = 2_000;
@@ -55,11 +57,9 @@ public class DirectorySynchronizer {
         counters = new Counters(PropertiesHelper.getStringFromProperties(properties, "DirectorySynchronizer.status.msg"));
 	}
 
-private File tempLogFile;
-
 	void synchronize(final File targetsFile) {
 		try {
-tempLogFile = File.createTempFile("DirSync", ".log");
+            duplicatedFilesLogFile = File.createTempFile("DirSync", ".log");
 			final List<TargetDef> targets = TargetDef.readTargetsFile(targetsFile, new PropertiesMap(properties));
 			for (final TargetDef targetDef : targets) {
 				TargetDef.FilePair filePair;
@@ -87,8 +87,12 @@ tempLogFile = File.createTempFile("DirSync", ".log");
 				}
 			}
 			LOGGER.log(Level.OFF, counters);
-LOGGER.log(Level.OFF, "tempLogFile = " + tempLogFile.getAbsolutePath());
-		} catch (final Exception ex) {
+            if (counters.filesWithSameContent() == 0) {
+                Files.delete(duplicatedFilesLogFile.toPath());
+            } else {
+                LOGGER.log(Level.OFF, "tempLogFile = " + duplicatedFilesLogFile.getAbsolutePath());
+            }
+        } catch (final Exception ex) {
 			LOGGER.error(LoggerFactory.ERROR_TAG, ex);
 		}
 	}
@@ -165,7 +169,7 @@ LOGGER.log(Level.OFF, "tempLogFile = " + tempLogFile.getAbsolutePath());
                     LOGGER.log(Level.OFF, String.format("%s%s", MODIF_FILE_PAD, targetFile));
                 } else {
                     counters.incrementFilesWithSameContent();
-logInTempLogFile(srcFile, targetFile);
+                    logDuplicatedFiles(srcFile, targetFile);
                 	// Set the same time, so the next time the comparison must not be done.
 					final boolean timesModified;
 					if (unidirectional) {
@@ -191,20 +195,20 @@ logInTempLogFile(srcFile, targetFile);
         return false;
 	}
 
-    private void logInTempLogFile(final File srcFile, final File tgtFile) {
+    private void logDuplicatedFiles(final File srcFile, final File tgtFile) {
         final long tgtFileLastModified = tgtFile.lastModified();
         final long srcFileLastModified = srcFile.lastModified();
         final Date tgtDate = new Date(tgtFileLastModified);
         final Date srcDate = new Date(srcFileLastModified);
         final LocalDateTime tgtLocalDateTimeUTC = LocalDateTime.ofEpochSecond(tgtFileLastModified / 1000, 0, ZoneOffset.UTC);
         final LocalDateTime srcLocalDateTimeUTC = LocalDateTime.ofEpochSecond(srcFileLastModified / 1000, 0, ZoneOffset.UTC);
-        try (RandomAccessFile randomAccessFile = new RandomAccessFile(tempLogFile, "rw")) {
-            randomAccessFile.seek(tempLogFile.length());
+        try (RandomAccessFile randomAccessFile = new RandomAccessFile(duplicatedFilesLogFile, "rw")) {
+            randomAccessFile.seek(duplicatedFilesLogFile.length());
             randomAccessFile.writeBytes(String.format("Source: %s, lastModified: %d, date: %s date UTC: %s%n", srcFile.getAbsolutePath(), srcFileLastModified, srcDate, srcLocalDateTimeUTC));
             randomAccessFile.writeBytes(String.format("Target: %s, lastModified: %d, date: %s date UTC: %s%n", tgtFile.getAbsolutePath(), tgtFileLastModified, tgtDate, tgtLocalDateTimeUTC));
             randomAccessFile.writeBytes(String.format("%n"));
         } catch (final IOException ex) {
-            LOGGER.error("ERROR logging in " + tempLogFile, ex);
+            LOGGER.error("ERROR logging in " + duplicatedFilesLogFile, ex);
         }
     }
 

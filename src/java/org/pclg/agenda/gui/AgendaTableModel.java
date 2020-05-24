@@ -140,9 +140,9 @@ final class AgendaTableModel extends AbstractTableModel {
 			result.append(monthNames[mes - 1]).append(' ');
 		}
 
-        final int año = record.getYear();
-        if (año != 0) {
-			result.append(año);
+        final int year = record.getYear();
+        if (year != 0) {
+			result.append(year);
 		}
 		return result.toString().trim();
 	}
