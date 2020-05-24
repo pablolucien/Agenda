@@ -1,12 +1,14 @@
 package org.pclg.security;
 
-import org.junit.Test;
+import org.testng.annotations.Test;
 
 import java.io.File;
 import java.io.FileWriter;
 import java.io.IOException;
 
-import static org.junit.Assert.*;
+import static org.testng.Assert.assertEquals;
+import static org.testng.Assert.assertTrue;
+import static org.testng.Assert.fail;
 
 public class DigestTest {
 
@@ -26,10 +28,10 @@ public class DigestTest {
 			createFile(dir, tmpFile, "sha-256", "ec896b0ea6561852bf63bd1b102f3a8c8fb0d17e3920dc55d44bf101cc399d39");
 			createFile(dir, tmpFile, "sha-512", "e4a991379ddf12f1ca24b85323c400f7778dd2b69c6e322587c67aa2ed8562ceb54f4bfbdd15999dcd1679173e973e6850dca0ea58e02b671457a16324b9dbad");
 
-			assertTrue("md5Digest", Digest.verifyDigest(tmpFile.getAbsolutePath(), "md5"));
-			assertTrue("sha1Digest", Digest.verifyDigest(tmpFile.getAbsolutePath(), "sha1"));
-			assertTrue("sha_256Digest", Digest.verifyDigest(tmpFile.getAbsolutePath(), "sha-256"));
-			assertTrue("sha_512Digest", Digest.verifyDigest(tmpFile.getAbsolutePath(), "sha-512"));
+			assertTrue(Digest.verifyDigest(tmpFile.getAbsolutePath(), "md5"), "md5Digest");
+			assertTrue(Digest.verifyDigest(tmpFile.getAbsolutePath(), "sha1"), "sha1Digest");
+			assertTrue(Digest.verifyDigest(tmpFile.getAbsolutePath(), "sha-256"), "sha_256Digest");
+			assertTrue(Digest.verifyDigest(tmpFile.getAbsolutePath(), "sha-512"), "sha_512Digest");
 		} catch (final IOException ex) {
 			fail("Could not test: " + ex);
 		}

@@ -1,17 +1,22 @@
 package org.pclg.filesystem;
 
-import junit.framework.TestCase;
+import org.testng.annotations.BeforeMethod;
+import org.testng.annotations.Test;
 
 import java.io.File;
 import java.util.Properties;
 
-public final class DirQueueTest extends TestCase {
+import static org.testng.Assert.assertEquals;
+import static org.testng.Assert.assertFalse;
+import static org.testng.Assert.assertNull;
+import static org.testng.Assert.assertTrue;
+
+public final class DirQueueTest {
     private Properties properties;
     private final File cwd = new File(".").getAbsoluteFile();
 
-    @Override
-    public void setUp() throws Exception {
-        super.setUp();
+    @BeforeMethod
+    public void setUp() {
         properties = new Properties();
         final String canonicalName = DirQueue.class.getCanonicalName();
         properties.setProperty(canonicalName + ".queueSize", String.valueOf(1));
@@ -19,24 +24,28 @@ public final class DirQueueTest extends TestCase {
         properties.setProperty(canonicalName + ".dir0", cwd.getAbsolutePath());
     }
 
+    @Test
     public void testCurrentDir() {
         final DirQueue queue = new DirQueue(properties);
         assertEquals(1, queue.size());
         assertEquals(cwd, queue.cwd());
     }
 
+    @Test
     public void testCurrentDirNull() {
         final DirQueue queue = new DirQueue(new Properties());
         assertEquals(0, queue.size());
-        assertEquals(null, queue.cwd());
+        assertNull(queue.cwd());
     }
 
+    @Test
     public void testCreateDirQueue() {
         final DirQueue queue = new DirQueue(properties);
         assertEquals(1, queue.size());
         assertEquals(cwd, queue.cwd());
     }
-    
+
+    @Test
     public void testFwd() {
         final DirQueue queue = new DirQueue(properties);
         assertEquals(cwd, queue.fwd());
@@ -50,7 +59,8 @@ public final class DirQueueTest extends TestCase {
         tmpDir2.deleteOnExit();
         assertEquals(tmpDir2, queue.fwd(tmpDir2));
     }
-    
+
+    @Test
     public void testBack() {
         final DirQueue queue = new DirQueue(properties);
         final File tmpDir1 = new File(cwd, "tmpDir1");
@@ -66,7 +76,8 @@ public final class DirQueueTest extends TestCase {
         assertEquals(cwd, queue.back());
         assertEquals(cwd, queue.back());
     }
-    
+
+    @Test
     public void testBackAndForth() {
         final DirQueue queue = new DirQueue(properties);
         final File tmpDir1 = new File(cwd, "tmpDir1");
@@ -94,7 +105,8 @@ public final class DirQueueTest extends TestCase {
         assertEquals(tmpDir3, queue.fwd());
         assertEquals(tmpDir3, queue.fwd());
     }
-    
+
+    @Test
     public void testTruncate() {
         final DirQueue queue = new DirQueue(properties);
         final File tmpDir1 = new File(cwd, "tmpDir1");
@@ -132,7 +144,8 @@ public final class DirQueueTest extends TestCase {
         assertEquals(2, queue.size());
     }
 
-	public void testCanGo() {
+    @Test
+    public void testCanGo() {
         final DirQueue queue = new DirQueue(properties);
         assertFalse(queue.canGoBack());
         assertFalse(queue.canGoForth());

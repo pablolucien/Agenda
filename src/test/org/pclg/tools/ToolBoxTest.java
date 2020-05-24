@@ -1,10 +1,10 @@
 package org.pclg.tools;
 
-import org.junit.Test;
+import org.testng.annotations.Test;
 
-import static org.junit.Assert.assertEquals;
-import static org.junit.Assert.assertFalse;
-import static org.junit.Assert.assertTrue;
+import static org.testng.Assert.assertEquals;
+import static org.testng.Assert.assertFalse;
+import static org.testng.Assert.assertTrue;
 
 /**
  * @author Pablo
@@ -13,7 +13,7 @@ import static org.junit.Assert.assertTrue;
 @SuppressWarnings({"ClassWithoutLogger"})
 public class ToolBoxTest {
 	@Test
-	public void testLeftPad() throws Exception {
+	public void testLeftPad() {
 		final String testStr = "la cantante calva";
 		final String expectedStr = "XXXXXla cantante calva";
 		assertEquals(expectedStr,
@@ -22,7 +22,7 @@ public class ToolBoxTest {
 	}
 
 	@Test
-	public void testPad() throws Exception {
+	public void testPad() {
 		final String testStr = "la cantante calva";
 		final String expectedStr = "la cantante calvaXXXXX";
 		assertEquals(expectedStr,
@@ -31,7 +31,7 @@ public class ToolBoxTest {
 	}
 
 	@Test
-	public void testPadAndClip() throws Exception {
+	public void testPadAndClip() {
 		final String testStr = "la cantante calva";
 		final String expectedStr1 = "la cantante calvaXXXXX";
 		final String expectedStr2 = "la cantante";
@@ -50,19 +50,19 @@ public class ToolBoxTest {
 
 	@Test
 	public void testIsInteger() {
-		assertTrue("123 es entero", ToolBox.isInteger("123"));
-		assertFalse("12.3 no es entero", ToolBox.isInteger("12.3"));
-		assertFalse("1.abc no es entero", ToolBox.isInteger("abc"));
-		assertFalse("abc no es entero", ToolBox.isInteger("abc"));
+		assertTrue(ToolBox.isInteger("123"), "123 es entero");
+		assertFalse(ToolBox.isInteger("12.3"), "12.3 no es entero");
+		assertFalse(ToolBox.isInteger("abc"), "1.abc no es entero");
+		assertFalse(ToolBox.isInteger("abc"), "abc no es entero");
 	}
 
 
 	@Test
 	public void testIsNumber() {
-		assertTrue("123 es número", ToolBox.isNumber("123"));
-		assertTrue("12.3 es número", ToolBox.isNumber("12.3"));
-		assertFalse("1.abc no es número", ToolBox.isNumber("abc"));
-		assertFalse("abc no es número", ToolBox.isNumber("abc"));
+		assertTrue(ToolBox.isNumber("123"), "123 es número");
+		assertTrue(ToolBox.isNumber("12.3"), "12.3 es número");
+		assertFalse(ToolBox.isNumber("abc"), "1.abc no es número");
+		assertFalse(ToolBox.isNumber("abc"), "abc no es número");
 	}
 	
 //	@Test

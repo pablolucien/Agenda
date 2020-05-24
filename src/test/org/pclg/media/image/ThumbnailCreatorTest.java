@@ -1,11 +1,11 @@
 package org.pclg.media.image;
 
 import org.apache.log4j.Logger;
-import org.junit.AfterClass;
-import org.junit.BeforeClass;
-import org.junit.Test;
 import org.pclg.log.LoggerFactory;
 import org.pclg.tools.FileTools;
+import org.testng.annotations.AfterClass;
+import org.testng.annotations.BeforeClass;
+import org.testng.annotations.Test;
 
 import javax.imageio.ImageIO;
 import java.io.File;
@@ -13,7 +13,9 @@ import java.io.IOException;
 import java.net.URISyntaxException;
 import java.nio.file.Files;
 
-import static junit.framework.TestCase.*;
+import static org.testng.Assert.assertEquals;
+import static org.testng.Assert.assertNotNull;
+import static org.testng.Assert.assertTrue;
 
 /**
  * @since 16/03/2018.
@@ -28,7 +30,7 @@ public class ThumbnailCreatorTest {
 		final File resourcesDir = new File(RESOURCES_DIR);
 		if (resourcesDir.exists() || resourcesDir.mkdirs()) {
 			final File source = new File(Runtime.getRuntime().getClass()
-				.getResource("/images/unknown-man.png").toURI());
+				.getResource("/unknown-man.jpg").toURI());
 			final File target = new File(resourcesDir, source.getName());
 			if (!target.exists()) {
 				Files.copy(source.toPath(), target.toPath());
@@ -39,7 +41,7 @@ public class ThumbnailCreatorTest {
 	/**
 	 * Not really a test, but a means to know the available formats.
 	 */
-//	@Test
+	@Test(enabled = false)
 	public void printFormats() {
 		for (final String name : ImageIO.getWriterFormatNames()) {
 			LOGGER.error(name);
@@ -50,8 +52,8 @@ public class ThumbnailCreatorTest {
 	public void createThumbnail_success() {
 		final File dir = new File(RESOURCES_DIR);
 		final File[] files = dir.listFiles();
-		assertNotNull("Should have something to test.", files);
-		assertTrue("Should have something to test.", files.length > 0);
+		assertNotNull(files, "Should have something to test.");
+		assertTrue(files.length > 0, "Should have something to test.");
 		for (final File file : files) {
 			final String path = file.getAbsolutePath();
 			LOGGER.debug("Creating thumbnail for " + path);
@@ -65,18 +67,18 @@ public class ThumbnailCreatorTest {
 		final File thumbnail = new ThumbnailCreator().getThumbnailAsFile(originalImageFile);
 		if (thumbnail != null) {    // Can be null if ImageIO can't obtain an image
 			final FileTools.SplittedName splittedName = FileTools.splittName(fileName);
-			assertTrue("Thumbnail should exist.", thumbnail.exists());
+			assertTrue(thumbnail.exists(), "Thumbnail should exist.");
 			assertEquals(
 				THUMBNAIL_PREFIX + splittedName.base + '.' + "jpg",
 				thumbnail.getName());
-			assertTrue("Size should be greater than 0.", thumbnail.length() > 0);
-			assertTrue("Size should be lesser.", thumbnail.length() < originalImageFile.length());
+			assertTrue(thumbnail.length() > 0, "Size should be greater than 0.");
+			assertTrue(thumbnail.length() < originalImageFile.length(), "Size should be lesser.");
 		}
 	}
 
-	@Test(expected = ThumbnailCreator.ThumbnailCreatorException.class)
+	@Test(expectedExceptions = ThumbnailCreator.ThumbnailCreatorException.class)
 	public void createThumbnail_fail1() {
-		final String pathname = RESOURCES_DIR + "NöXel.png";
+		final String pathname = RESOURCES_DIR + "Nï¿½Xel.png";
 		final File originalImageFile = new File(pathname);
 		new ThumbnailCreator().getThumbnailAsFile(originalImageFile);
 	}

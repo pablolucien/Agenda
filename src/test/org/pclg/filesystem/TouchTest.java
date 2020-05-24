@@ -1,15 +1,17 @@
 package org.pclg.filesystem;
 
-import org.junit.Test;
+import org.testng.annotations.Test;
 
 import java.io.File;
 import java.nio.file.Files;
 import java.util.Calendar;
 import java.util.Date;
 
-import static org.junit.Assert.*;
 import static org.pclg.filesystem.Touch.INCREMENT_TIME;
-
+import static org.testng.Assert.assertEquals;
+import static org.testng.Assert.assertFalse;
+import static org.testng.Assert.assertTrue;
+import static org.testng.FileAssert.assertLength;
 /**
  * @since 27/07/2017.
  */
@@ -20,12 +22,13 @@ public class TouchTest {
         dir.deleteOnExit();
         final File testFile = new File(dir, "testFile");
         testFile.deleteOnExit();
-        assertFalse("It shouldn't exist yet", testFile.exists());
+        assertFalse(testFile.exists(), "It shouldn't exist yet");
         final Calendar calendar = Calendar.getInstance();
         final String testFilePath = testFile.getAbsolutePath();
         Touch.main(new String[] {testFilePath});
-        assertTrue("Now it should exist", testFile.exists());
-        assertEquals("Should have same date (to second)", testFile.lastModified() / 10000, calendar.getTime().getTime() / 10000);
+        assertTrue(testFile.exists(), "Now it should exist");
+        assertLength(testFile, 0, "It should be empty.");
+        assertEquals(testFile.lastModified() / 10000, calendar.getTime().getTime() / 10000, "Should have same date (to second)");
         calendar.set(Calendar.DAY_OF_MONTH, 1);
         calendar.set(Calendar.MONTH, 0);
         calendar.set(Calendar.YEAR, 1980);
@@ -34,8 +37,8 @@ public class TouchTest {
         calendar.set(Calendar.SECOND, 56);
         calendar.set(Calendar.MILLISECOND, 0);
         Touch.main(new String[] {"-d", "01/01/1980", "-t", "13:34:56", testFilePath});
-        assertEquals("Should have same date (to millisecond): " + new Date(testFile.lastModified()) + " <> " + calendar.getTime(),
-            testFile.lastModified(), calendar.getTime().getTime());
+        assertEquals(testFile.lastModified(), calendar.getTime().getTime(),
+                "Should have same date (to millisecond): " + new Date(testFile.lastModified()) + " <> " + calendar.getTime());
     }
 
     @Test
@@ -46,11 +49,10 @@ public class TouchTest {
         final File testFile2 = new File(dir, "testFile2");
         testFile1.deleteOnExit();
         testFile2.deleteOnExit();
-        final Calendar calendar = Calendar.getInstance();
         final String testFile1Path = testFile1.getAbsolutePath();
         final String testFile2Path = testFile2.getAbsolutePath();
         Touch.main(new String[] {testFile1Path, testFile2Path});
-        assertEquals("Should have same date", testFile1.lastModified(), testFile2.lastModified());
+        assertEquals(testFile1.lastModified(), testFile2.lastModified(), "Should have same date");
     }
 
     @Test
@@ -61,21 +63,20 @@ public class TouchTest {
         final File testFile2 = new File(dir, "testFile2");
         testFile1.deleteOnExit();
         testFile2.deleteOnExit();
-        final Calendar calendar = Calendar.getInstance();
         final String testFile1Path = testFile1.getAbsolutePath();
         final String testFile2Path = testFile2.getAbsolutePath();
         Touch.main(new String[] {"-i", testFile1Path, testFile2Path});
-        assertEquals("Dates should differ by INCREMENT_TIME", testFile1.lastModified() + INCREMENT_TIME, testFile2.lastModified());
+        assertEquals(testFile1.lastModified() + INCREMENT_TIME, testFile2.lastModified(), "Dates should differ by INCREMENT_TIME");
     }
 
-    //@Test
+    @Test(enabled = false)
     public void touchFile() throws Exception {
         final File dir = Files.createTempDirectory(null).toFile();
         dir.deleteOnExit();
-        final File testFile = new File("D:\\Profiles\\PACELU~1\\AppData\\Local\\Temp\\___", "Pan sin horno hecho en sarte?n ¡Solo 2 ingredientes!");
+        final File testFile = new File("D:\\Profiles\\PACELU~1\\AppData\\Local\\Temp\\___", "Pan sin horno hecho en sarte?n ï¿½Solo 2 ingredientes!");
         testFile.deleteOnExit();
         final String testFilePath = testFile.getAbsolutePath();
         Touch.main(new String[] {testFilePath});
-        assertTrue("Now it should exist", testFile.exists());
+        assertTrue(testFile.exists(), "Now it should exist");
     }
 }

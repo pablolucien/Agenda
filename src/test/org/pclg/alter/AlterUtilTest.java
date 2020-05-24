@@ -1,12 +1,15 @@
 package org.pclg.alter;
 
-import junit.framework.TestCase;
+import org.testng.annotations.Test;
+
+import static org.testng.Assert.assertEquals;
 
 /**
  * @since 09/01/2018.
  */
-public class AlterUtilTest extends TestCase {
-    public void testInsertCharBeforeExtension() throws Exception {
+public class AlterUtilTest {
+    @Test
+    public void testInsertCharBeforeExtension() {
         assertEquals("name_.java", AlterUtil.insertCharsBeforeExtension("name.java", "_"));
         assertEquals("name_.gif", AlterUtil.insertCharsBeforeExtension("name.gif", "_"));
         assertEquals("name_.ts", AlterUtil.insertCharsBeforeExtension("name.ts", "_"));

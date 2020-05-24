@@ -1,25 +1,26 @@
 package org.pclg.tools;
 
+import org.testng.annotations.BeforeMethod;
+import org.testng.annotations.DataProvider;
+import org.testng.annotations.Test;
+
 import java.io.File;
 import java.io.IOException;
 import java.nio.file.Files;
 import java.util.List;
 import java.util.function.BiConsumer;
-import org.junit.Before;
-import org.junit.Test;
-
 
 import static java.io.File.separator;
-import static org.junit.Assert.assertArrayEquals;
-import static org.junit.Assert.assertEquals;
-import static org.junit.Assert.assertFalse;
-import static org.junit.Assert.assertTrue;
 import static org.pclg.filesystem.FileCreator.createFile;
 import static org.pclg.tools.FileTools.compareContents;
 import static org.pclg.tools.FileTools.copyFile;
 import static org.pclg.tools.FileTools.readFromFile;
 import static org.pclg.tools.FileTools.splitInComponents;
 import static org.pclg.tools.FileTools.writeToFile;
+import static org.testng.Assert.assertEquals;
+import static org.testng.Assert.assertFalse;
+import static org.testng.Assert.assertTrue;
+import static org.testng.internal.junit.ArrayAsserts.assertArrayEquals;
 
 /**
  * @since 31/07/2017.
@@ -29,7 +30,7 @@ public class FileToolsTest {
 	private static File goodCopy;
 	private static File badCopy;
 
-	@Before
+	@BeforeMethod
 	public void setUp() throws IOException {
 		final File dir = Files.createTempDirectory(null).toFile();
 		dir.deleteOnExit();
@@ -66,32 +67,32 @@ public class FileToolsTest {
 
 	@Test
 	public void sonIguales() {
-		assertTrue("Should be equal.", compareContents(originalFile, goodCopy));
-		assertFalse("Shouldn't be equal.", compareContents(originalFile, badCopy));
+		assertTrue(compareContents(originalFile, goodCopy), "Should be equal.");
+		assertFalse(compareContents(originalFile, badCopy), "Shouldn't be equal.");
 	}
 
-	@Test
-	public void splittName() {
-		FileTools.SplittedName splittedName = FileTools.splittName("kkk.data");
-		assertEquals("Should be equal.", "kkk", splittedName.base);
-		assertEquals("Should be equal.", "data", splittedName.extension);
-		splittedName = FileTools.splittName("kkk");
-		assertEquals("Should be equal.", "kkk", splittedName.base);
-		assertEquals("Should be equal.", "", splittedName.extension);
-		splittedName = FileTools.splittName("kkk.");
-		assertEquals("Should be equal.", "kkk.", splittedName.base);
-		assertEquals("Should be equal.", "", splittedName.extension);
-		splittedName = FileTools.splittName(".kkk");
-		assertEquals("Should be equal.", ".kkk", splittedName.base);
-		assertEquals("Should be equal.", "", splittedName.extension);
+	@DataProvider
+	public Object[][] names() {
+		return new Object[][] {
+				{"kkk.data", "kkk", "data"},
+				{"kkk", "kkk", ""} ,
+				{"kkk.", "kkk.", ""} ,
+				{".kkk", ".kkk", ""} ,
+		};
+	}
+
+	@Test(dataProvider = "names")
+	public void splittName(final String name, final String base, final String ext) {
+		final FileTools.SplittedName splittedName = FileTools.splittName(name);
+		assertEquals(base, splittedName.base, "Should be equal.");
+		assertEquals(ext, splittedName.extension, "Should be equal.");
 	}
 
 	@Test
 	public void sanitizeWindowsFilename() {
 		final String invalidWindowsFilename = "*file\"name\"?";
-		assertEquals("Should be equal.", "filename", FileTools.sanitizeWindowsFilename(invalidWindowsFilename, ""));
-		assertEquals("Should be equal.", "_file_name__", FileTools.sanitizeWindowsFilename(
-			invalidWindowsFilename, "_"));
+		assertEquals("filename", FileTools.sanitizeWindowsFilename(invalidWindowsFilename, ""), "Should be equal.");
+		assertEquals("_file_name__", FileTools.sanitizeWindowsFilename(invalidWindowsFilename, "_"), "Should be equal.");
 	}
 
 	@Test

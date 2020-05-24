@@ -1,26 +1,25 @@
 package org.pclg.agenda.crypto;
+
+import org.testng.annotations.BeforeMethod;
+import org.testng.annotations.Test;
+
+import static org.testng.Assert.assertEquals;
+import static org.testng.Assert.assertNotEquals;
+
 /**
  * Premature optimization is the root of all evil.
- * —Donald E. Knuth
+ * ï¿½Donald E. Knuth
  *
  * @author El Coyote Cojo
  * @since 22-oct-2007 18:32:45
  */
-
-
-import org.junit.Before;
-import org.junit.Test;
-
-import static org.junit.Assert.assertEquals;
-import static org.junit.Assert.assertFalse;
-
 @SuppressWarnings({"ClassWithoutLogger"})
 public class AgendaCryptoTest {
 	private AgendaCrypto agendaCrypto;
 	private static final String PLAINTEXT = "Erase un hombre a una nariz pegado";
 	private static final String PWD = "password";
 
-	@Before
+	@BeforeMethod
 	public void setUp() throws Exception {
 		agendaCrypto = new AgendaCrypto(AgendaCrypto.TRANSFORMATION.Blowfish, PWD);
 	}
@@ -30,7 +29,7 @@ public class AgendaCryptoTest {
 		final String cipherText = agendaCrypto.cifrar(PLAINTEXT);
 //		System.out.println(cipherText);
 		final String obscureText = new String(cipherText);
-		assertFalse(obscureText.equals(PLAINTEXT));
+		assertNotEquals(PLAINTEXT, obscureText);
 	}
 
 	@Test

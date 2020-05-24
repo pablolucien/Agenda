@@ -1,8 +1,8 @@
 package org.pclg.filesystem;
 
-import org.junit.AfterClass;
-import org.junit.Before;
-import org.junit.Test;
+import org.testng.annotations.AfterClass;
+import org.testng.annotations.BeforeMethod;
+import org.testng.annotations.Test;
 
 import java.io.File;
 import java.io.IOException;
@@ -11,15 +11,17 @@ import java.nio.file.Path;
 import java.util.ArrayList;
 import java.util.List;
 
+import static org.hamcrest.MatcherAssert.assertThat;
 import static org.hamcrest.core.Is.is;
-import static org.junit.Assert.*;
+import static org.testng.Assert.assertFalse;
+import static org.testng.Assert.assertTrue;
 
 public class DirectoryCleanerTest {
 	private File emptyRootDir;
 	private File nonEmptyRootDir;
 	private static List<File> createdDirs = new ArrayList<>();
 
-	@Before
+	@BeforeMethod
 	public void createTree() throws IOException {
 		emptyRootDir = Files.createTempDirectory("DirectoryCleanerTest").toFile();
 		nonEmptyRootDir = Files.createTempDirectory("DirectoryCleanerTest").toFile();
@@ -37,7 +39,7 @@ public class DirectoryCleanerTest {
 	}
 
 	@Test
-	public void testCleanDirsDeletingRoot() throws Exception {
+	public void testCleanDirsDeletingRoot() {
 
 		//FIXME: standarizar con FileTools.delTree()
 
@@ -46,19 +48,19 @@ public class DirectoryCleanerTest {
 	}
 
 	@Test
-	public void testCleanDirsKeepingRoot() throws Exception {
+	public void testCleanDirsKeepingRoot() {
 		assertThat("", DirectoryCleaner.cleanDirs(emptyRootDir, false), is(12));
 		assertTrue(emptyRootDir.exists());
 	}
 
 	@Test
-	public void testCleanNonEmptyDir1() throws Exception {
+	public void testCleanNonEmptyDir1() {
 		assertThat("", DirectoryCleaner.cleanDirs(nonEmptyRootDir, true), is(6));
 		assertTrue(nonEmptyRootDir.exists());
 	}
 
 	@Test
-	public void testCleanNonEmptyDir2() throws Exception {
+	public void testCleanNonEmptyDir2() {
 		assertThat("", DirectoryCleaner.cleanDirs(nonEmptyRootDir, false), is(6));
 		assertTrue(nonEmptyRootDir.exists());
 	}

@@ -1,9 +1,9 @@
 package org.pclg.tools;
 
 import org.apache.log4j.Logger;
-import org.junit.Test;
 import org.pclg.filesystem.DirectoryCleaner;
 import org.pclg.log.LoggerFactory;
+import org.testng.annotations.Test;
 
 import java.io.File;
 import java.io.IOException;
@@ -11,8 +11,8 @@ import java.nio.file.Files;
 import java.nio.file.Path;
 import java.util.Collections;
 
-import static org.junit.Assert.assertNotNull;
-import static org.junit.Assert.assertTrue;
+import static org.testng.Assert.assertNotNull;
+import static org.testng.Assert.assertTrue;
 
 public class DirTest {
 	/** Logger for this class. */

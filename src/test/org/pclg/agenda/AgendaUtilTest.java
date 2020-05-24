@@ -17,7 +17,10 @@ import java.util.ArrayList;
 import java.util.Calendar;
 import java.util.List;
 
-import static org.testng.Assert.*;
+import static org.testng.Assert.assertEquals;
+import static org.testng.Assert.assertNotNull;
+import static org.testng.Assert.assertNotSame;
+import static org.testng.Assert.assertTrue;
 
 /**
  * @author Pablo
@@ -59,18 +62,18 @@ public class AgendaUtilTest {
         record.setMonth(9);
         record.setYear(2001);
         record.addEmail("pepe@isv.com");
-        record.addEmail("DonJosé@mail_provider.com");
+        record.addEmail("DonJosï¿½@mail_provider.com");
         final List<Telefono> telephones = new ArrayList<>(2);
         telephones.add(new Telefono("34", "1234567", 0));     // usando 0 porque el lector de vCards no tiene el tipo (de Agenda)
         telephones.add(new Telefono("58", "9876543", 0));
         record.setTelephones(telephones);
         final List<Grupo> grupos = new ArrayList<>(2);
         grupos.add(new Grupo(-1, "Abeliano"));          // usando -1 porque el lector de vCards no tiene la clave
-        grupos.add(new Grupo(-1, "De simetrías"));
+        grupos.add(new Grupo(-1, "De simetrï¿½as"));
         record.setGroups(grupos);
         record.setMark("42");
         record.setAddress("Calle Luna, calle Sol");
-        final String path = getClass().getResource("/images/unknown-man.png").getPath();
+        final String path = getClass().getResource("/unknown-man.jpg").getPath();
         record.setImagePath(path);
         record.setCountry(Pais.getUnknownCountry());
         return record;
@@ -116,7 +119,7 @@ public class AgendaUtilTest {
 	}
 
 	@Test(enabled = false)
-	public void testDeleteDatabaseBackups() throws IOException {
+	public void testDeleteDatabaseBackups() {
 		AgendaUtil.deleteDatabaseBackups("/some path/_Agenda/agendaDB", 5);
 	}
 }

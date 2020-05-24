@@ -1,8 +1,8 @@
 package org.pclg.tools;
 
-import junit.framework.TestCase;
+import static org.testng.Assert.assertEquals;
 
-public class GUIToolsTest extends TestCase {
+public class GUIToolsTest {
 
 //	//@Test
 //	public void testAdd2LAFMenu() {
@@ -14,7 +14,7 @@ public class GUIToolsTest extends TestCase {
 //    }
 
     //@Test
-	public void testFormatNumberWithMask() throws Exception {
+	public void testFormatNumberWithMask() {
 		assertEquals("628.87.90.11", GUITools.formatNumberWithMask("628879011", "###.##.##.##"));
 		assertEquals("913.57.44.94", GUITools.formatNumberWithMask("913574494", "###.##.##.##"));
 		assertEquals("4127.32.19.14", GUITools.formatNumberWithMask("4127321914", "###.##.##.##"));

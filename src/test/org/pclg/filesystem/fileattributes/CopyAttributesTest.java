@@ -1,6 +1,5 @@
 package org.pclg.filesystem.fileattributes;
 
-
 import org.testng.annotations.Test;
 
 import java.io.File;
@@ -13,8 +12,8 @@ import java.util.Map;
 
 import static java.nio.file.StandardCopyOption.COPY_ATTRIBUTES;
 import static java.nio.file.StandardCopyOption.REPLACE_EXISTING;
-import static org.junit.Assert.assertEquals;
-import static org.junit.Assert.assertFalse;
+import static org.testng.Assert.assertEquals;
+import static org.testng.Assert.assertNotEquals;
 
 /**
  * @since 29/12/2017.
@@ -47,7 +46,7 @@ public class CopyAttributesTest {
 
             Files.setLastModifiedTime(targetFiles[ii], FileTime.fromMillis(1000L * ii));
             targetAttributes = Files.readAttributes(targetFiles[ii], "lastModifiedTime");
-            assertFalse(sourceAttributes.equals(targetAttributes));
+            assertNotEquals(targetAttributes, sourceAttributes);
         }
 
         final File undoFile = CopyAttributes.copyAttributes(targetDir.toFile(), sourceDir.toFile());
@@ -56,7 +55,7 @@ public class CopyAttributesTest {
         for (int ii = 0; ii < count; ii++) {
             final Map<String, Object> sourceAttributes = Files.readAttributes(sourceFiles[ii], "lastModifiedTime");
             final Map<String, Object> targetAttributes = Files.readAttributes(targetFiles[ii], "lastModifiedTime");
-            assertEquals("File" + ii, sourceAttributes, targetAttributes);
+            assertEquals(sourceAttributes, targetAttributes, "File" + ii);
         }
 
         CopyAttributes.main(new String[] {"-undo", undoFile.getAbsolutePath()});

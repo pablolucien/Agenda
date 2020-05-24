@@ -1,13 +1,17 @@
 package org.pclg.tools;
 
-import junit.framework.TestCase;
+import org.testng.annotations.Test;
 
 import java.io.File;
 import java.io.IOException;
 import java.nio.file.Files;
 
-public class FileComparatorTest extends TestCase {
+import static org.testng.Assert.assertEquals;
+import static org.testng.Assert.assertTrue;
 
+public class FileComparatorTest {
+
+	@Test
 	public void testCompareAlphabetic() throws IOException {
 		final FileComparator comparator = new FileComparator();
 		final File dir0 = Files.createTempDirectory("ttmmpp").toFile();
@@ -20,7 +24,7 @@ public class FileComparatorTest extends TestCase {
 		final File file5 = createFile(dir0, "xyz.sql");
 
 		comparator.setSortCritery(FileComparator.SortCriterium.ALPHABETIC);
-		assertTrue(comparator.compare(file1, file0) == 0);
+		assertEquals(comparator.compare(file1, file0), 0);
 		assertTrue(comparator.compare(file1, file2) < 0);
 		assertTrue(comparator.compare(file2, file1) > 0);
 		assertTrue(comparator.compare(file2, file3) > 0);
@@ -28,7 +32,7 @@ public class FileComparatorTest extends TestCase {
 		assertTrue(comparator.compare(dir0, file5) < 0);
 
 		comparator.setSortCritery(FileComparator.SortCriterium.REVERSE_ALPHABETIC);
-		assertTrue(comparator.compare(file1, file0) == 0);
+		assertEquals(comparator.compare(file1, file0), 0);
 		assertTrue(comparator.compare(file1, file2) > 0);
 		assertTrue(comparator.compare(file2, file1) < 0);
 		assertTrue(comparator.compare(file2, file3) < 0);
@@ -36,7 +40,7 @@ public class FileComparatorTest extends TestCase {
         assertTrue(comparator.compare(dir0, file5) < 0);
 
 		comparator.setSortCritery(FileComparator.SortCriterium.ALPHABETIC_EXTENSIONS_APART);
-		assertTrue(comparator.compare(file1, file0) == 0);
+		assertEquals(comparator.compare(file1, file0), 0);
 		assertTrue(comparator.compare(file1, file2) < 0);
 		assertTrue(comparator.compare(file2, file1) > 0);
 		assertTrue(comparator.compare(file2, file3) < 0);
@@ -44,7 +48,7 @@ public class FileComparatorTest extends TestCase {
         assertTrue(comparator.compare(dir0, file5) < 0);
 
 		comparator.setSortCritery(FileComparator.SortCriterium.REVERSE_ALPHABETIC_EXTENSIONS_APART);
-		assertTrue(comparator.compare(file1, file0) == 0);
+		assertEquals(comparator.compare(file1, file0), 0);
 		assertTrue(comparator.compare(file1, file2) > 0);
 		assertTrue(comparator.compare(file2, file1) < 0);
 		assertTrue(comparator.compare(file2, file3) > 0);

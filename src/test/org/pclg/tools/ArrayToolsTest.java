@@ -1,12 +1,12 @@
 package org.pclg.tools;
 
-import org.junit.Test;
+import org.testng.annotations.Test;
 
 import java.io.ByteArrayOutputStream;
 import java.io.PrintStream;
 
-import static org.junit.Assert.assertEquals;
 import static org.pclg.Globals.THE_ANSWER_TO_THE_ULTIMATE_QUESTION_OF_LIFE_THE_UNIVERSE_AND_EVERYTHING;
+import static org.testng.Assert.assertEquals;
 
 public class ArrayToolsTest {
     private Object[] nullObjectArray;

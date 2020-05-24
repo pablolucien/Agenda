@@ -1,9 +1,11 @@
 package org.pclg.gui;
 
-import java.util.Properties;
-import org.junit.Test;
+import org.testng.annotations.Test;
 
-import static org.junit.Assert.*;
+import java.util.Properties;
+
+import static org.testng.Assert.assertNotSame;
+import static org.testng.Assert.assertSame;
 
 /**
  * @since 11/10/2018.

@@ -1,13 +1,13 @@
 package org.pclg.media.id3;
 
-import org.junit.Before;
-import org.junit.Test;
+import org.testng.annotations.BeforeMethod;
+import org.testng.annotations.Test;
 
-import static org.junit.Assert.assertEquals;
+import static org.testng.Assert.assertEquals;
 
 /**
  * Premature optimization is the root of all evil.
- * —Donald E. Knuth
+ * ï¿½Donald E. Knuth
  *
  * @author El Coyote Cojo
  * @since 22-abr-2011 5:33:17
@@ -19,11 +19,11 @@ public class ID3TagTest {
 	private static final String SONG = "Revolution nr. 9";
 	private static final int GENRE = ID3Genre.getGenreId("Synthpop");
 	private static final String YEAR = "1969";
-	private static final String COMMENT = "El album molón";
+	private static final String COMMENT = "El album molï¿½n";
 	private static final byte TRACK  = 6;
 
-	@Before
-	public void setUp() throws Exception {
+	@BeforeMethod
+	public void setUp() {
 		id3Tag = new ID3Tag();
 		id3Tag.setAlbum(ALBUM);
 		id3Tag.setArtist(ARTIST);

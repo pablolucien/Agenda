@@ -1,8 +1,11 @@
 package org.pclg.media.id3;
 
-import org.junit.Test;
+import org.testng.annotations.Test;
 
-import static org.junit.Assert.*;
+import static org.testng.Assert.assertEquals;
+import static org.testng.Assert.assertNotNull;
+import static org.testng.Assert.assertNotSame;
+import static org.testng.Assert.assertTrue;
 
 /**
  * @author paceLucien
@@ -28,11 +31,11 @@ public class ID3GenreTest {
 	@Test
 	public void testGetGenreList() {
 		final String[] genreList1 = ID3Genre.getGenreList();
-		assertNotNull("Genre List should not be null", genreList1);
-		assertTrue("Genre List should contain something", genreList1.length > 0);
+		assertNotNull(genreList1, "Genre List should not be null");
+		assertTrue(genreList1.length > 0, "Genre List should contain something");
 		final String[] genreList2 = ID3Genre.getGenreList();
-		assertNotNull("Genre List should not be null", genreList2);
-		assertTrue("Genre List should contain something", genreList2.length > 0);
+		assertNotNull(genreList2, "Genre List should not be null");
+		assertTrue(genreList2.length > 0, "Genre List should contain something");
 		assertNotSame(genreList1, genreList2);
 	}
 }

@@ -1,11 +1,11 @@
 package org.pclg.gui;
 
+import javax.swing.ImageIcon;
 import java.awt.Color;
 import java.awt.event.MouseAdapter;
 import java.awt.event.MouseEvent;
 import java.io.BufferedReader;
 import java.io.InputStreamReader;
-import javax.swing.ImageIcon;
 
 public class SplashWindowTest {
     private static final String[] messages = {
@@ -20,7 +20,7 @@ public class SplashWindowTest {
 
     public static void main(final String[] args) throws Exception {
         final SplashWindow splashWindow = new SplashWindow(
-            new ImageIcon(SplashWindowTest.class.getResource("/images/unknown-man.png")),
+            new ImageIcon(SplashWindowTest.class.getResource("/unknown-man.jpg")),
             "/sounds/success_sound.wav"
         );
         splashWindow.setStatusColor(Color.red);

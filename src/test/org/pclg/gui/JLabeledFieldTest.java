@@ -1,40 +1,17 @@
 package org.pclg.gui;
 
-import junit.framework.TestCase;
+import org.testng.annotations.Test;
 
 import javax.swing.text.Document;
 
-public class JLabeledFieldTest extends TestCase {
+import static org.testng.Assert.assertEquals;
+import static org.testng.Assert.assertFalse;
+import static org.testng.Assert.assertTrue;
 
-	public void testGetLabel() throws Exception {
+public class JLabeledFieldTest {
 
-	}
-
-	public void testSetLabel() throws Exception {
-
-	}
-
-	public void testGetText() throws Exception {
-
-	}
-
-	public void testSetText() throws Exception {
-
-	}
-
-	public void testSetText1() throws Exception {
-
-	}
-
-	public void testSetText2() throws Exception {
-
-	}
-
-	public void testSetText3() throws Exception {
-
-	}
-
-	public void testSetNumeric() throws Exception {
+	@Test
+	public void testSetNumeric() {
 		final JLabeledField field = new JLabeledField("Test label");
 		field.setNumeric();
 		field.setText("1234567890");
@@ -53,7 +30,8 @@ public class JLabeledFieldTest extends TestCase {
 		assertEquals("971364582.", field.getText());
 	}
 
-	public void testSetInteger() throws Exception {
+	@Test
+	public void testSetInteger() {
 		final JLabeledField field = new JLabeledField("Test label");
 		field.setInteger();
 		field.setText("1234567890");
@@ -64,21 +42,24 @@ public class JLabeledFieldTest extends TestCase {
 		assertEquals("971364582", field.getText());
 	}
 
-	public void testSetLowerCase() throws Exception {
+	@Test
+	public void testSetLowerCase() {
 		final JLabeledField field = new JLabeledField("Test label");
 		field.setLowerCase();
 		field.setText("TEST");
 		assertEquals("test", field.getText());
 	}
 
-	public void testSetUpperCase() throws Exception {
+	@Test
+	public void testSetUpperCase() {
 		final JLabeledField field = new JLabeledField("Test label");
 		field.setUpperCase();
 		field.setText("test");
 		assertEquals("TEST", field.getText());
 	}
 
-	public void testSetPlainCase() throws Exception {
+	@Test
+	public void testSetPlainCase() {
 		final JLabeledField field = new JLabeledField("Test label");
 		final String test = "Test";
 		field.setUpperCase();
@@ -91,11 +72,8 @@ public class JLabeledFieldTest extends TestCase {
 		assertEquals(test, field.getText());
 	}
 
-	public void testSetMaxLength() throws Exception {
-
-	}
-
-	public void testIsValid() throws Exception {
+	@Test
+	public void testIsValid() {
         final JLabeledField field = new JLabeledField("testTextValueChanged");
         final String stringValue = "abc";
         final String numericValue = "123.7";
@@ -123,7 +101,8 @@ public class JLabeledFieldTest extends TestCase {
         assertTrue(field.isValid(stringValue));
 	}
 
-	public void testGetDocument() throws Exception {
+	@Test
+	public void testGetDocument() {
 		final JLabeledField field = new JLabeledField("test");
 		final Document doc = field.getDocument();
 		assertTrue (doc instanceof JLabeledField.JLabeledFieldDocument);

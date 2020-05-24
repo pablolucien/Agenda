@@ -1,20 +1,22 @@
 package org.pclg.filesystem;
 
-import org.junit.Before;
-import org.junit.Test;
 import org.pclg.tools.FileTools;
+import org.testng.annotations.BeforeMethod;
+import org.testng.annotations.Test;
 
 import java.io.File;
 import java.io.IOException;
 import java.nio.file.Files;
 
-import static org.junit.Assert.*;
-
+import static org.testng.Assert.assertEquals;
+import static org.testng.Assert.assertFalse;
+import static org.testng.Assert.assertTrue;
+import static org.testng.Assert.fail;
 
 public class FileCreatorTest {
     private File dir;
 
-    @Before
+    @BeforeMethod
     public void setUp() throws IOException {
         dir = Files.createTempDirectory(null).toFile();
         dir.deleteOnExit();

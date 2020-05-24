@@ -1,9 +1,10 @@
 package org.pclg.tools;
 
+import org.testng.annotations.Test;
 
-import org.junit.Test;
-
-import static org.junit.Assert.*;
+import static org.testng.Assert.assertEquals;
+import static org.testng.Assert.assertFalse;
+import static org.testng.Assert.assertTrue;
 
 public class StringToolsTest {
 	private static final String LONG_TEXT = "There were three of us--Mary, Eliza, and myself. I was approaching fifteen, Mary was about a year younger, and Eliza between twelve and thirteen years of age. Mamma treated us all as children, and was blind to the fact that I was no longer what I had been.";
@@ -42,7 +43,7 @@ public class StringToolsTest {
 	public static final int WRAP_LEN = 20;
 
 	@Test
-	public void testValidEmail() throws Exception {
+	public void testValidEmail() {
 		assertTrue(StringTools.validEmail("a@b.c"));
 		assertTrue(StringTools.validEmail("pepito.lito@babew.com"));
 		assertFalse(StringTools.validEmail("pepito.lito@bab@w.com"));
@@ -52,8 +53,8 @@ public class StringToolsTest {
 	}
 
 	@Test
-	public void testStartsWithIgnoreCase() throws Exception {
-		final String line = "La cantante calva se está peinando";
+	public void testStartsWithIgnoreCase() {
+		final String line = "La cantante calva se estï¿½ peinando";
 		final String begin = "La cantante calva";
 		assertTrue(StringTools.startsWithIgnoreCase(line, begin.toLowerCase()));
 		assertTrue(StringTools.startsWithIgnoreCase(line, begin.toUpperCase()));

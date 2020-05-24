@@ -1,7 +1,7 @@
 package org.pclg.media.id3;
 
-import org.junit.Before;
-import org.junit.Test;
+import org.testng.annotations.BeforeMethod;
+import org.testng.annotations.Test;
 
 import java.io.File;
 import java.io.IOException;
@@ -13,22 +13,21 @@ import java.io.IOException;
 public class ID3Test {
 	private File testFileName;
 
-    @Before
+    @BeforeMethod
 	public void setUp() throws Exception {
 		testFileName = File.createTempFile("test", ".mp3");
 		testFileName.deleteOnExit();
 	}
 
 	@Test
-	public void writeId3()
-			throws IOException, ID3NoTagException {
+	public void writeId3() throws IOException {
 		System.out.println("Testing = " + testFileName);
 		final ID3Tag id3Tag = new ID3Tag();
 		id3Tag.setAlbum("El Album");
 		id3Tag.setArtist("El Artista");
 		id3Tag.setComment("El comentario");
 		id3Tag.setGenre((byte) 45);
-		id3Tag.setSong("La canción");
+		id3Tag.setSong("La canciï¿½n");
 		id3Tag.setTrackNr((byte) 200);
 		id3Tag.setYear("1234");
 		ID3Util.writeID3(testFileName, id3Tag);
