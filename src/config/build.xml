@@ -15,10 +15,10 @@
     <property name="test_resources" location="${basedir}/src/test_resources"/>
     <property name="img_dir" location="${resources}/images"/>
     <property name="java_home" location="C:/usr/local/Java/jdk/current"/>
-    <property name="build" location="${basedir}/../build"/>
-    <property name="build_tests" location="${basedir}/../classes_tests"/>
-    <property name="dist" location="${basedir}/../dist"/>
-    <property name="docs_dir" location="${basedir}/../docs"/>
+    <property name="build" location="${basedir}/../../build"/>
+    <property name="build_tests" location="${basedir}/../../classes_tests"/>
+    <property name="dist" location="${basedir}/../../dist"/>
+    <property name="docs_dir" location="${basedir}/../../docs"/>
     <property name="JDK_API_dir" location="${java_home}/docs/api"/>
     <property name="clear_lukas_jar_name" value="${dist}/Lukas.jar"/>
     <property name="clear_migrator_jar_name" value="${dist}/Migrator.jar"/>
@@ -180,7 +180,8 @@
 
     <property name="build.test.results.dir" value="/tmp/test_results"/>
     <target name="_tests" depends="_compile_tests">
-        <testng mode="mixed" failureProperty="test.failed" dumpCommand="true" outputdir="${build.test.results.dir}">
+<!--        <testng failureProperty="test.failed" dumpCommand="true" outputdir="${build.test.results.dir}" haltOnfailure="false" configFailurePolicy="true">-->
+        <testng failureProperty="test.failed" dumpCommand="true" outputdir="${build.test.results.dir}">
             <classpath>
                 <path path="${test_resources} : ${classpath} : ${build} : ${dist}"/>
             </classpath>
@@ -485,10 +486,15 @@
     <target name="DirectorySynchronizer_jar" depends="_compile" description="generar DirectorySynchronizer">
         <jar destfile="${clear_directorysynchronizer_jar_name}"
              basedir="${build}"
-             includes="org/pclg/filesystem/synchonizer/**.class">
+             includes="org/pclg/filesystem/synchonizer/**/**.class">
             <!-- Clases auxiliares -->
             <fileset dir="${build}"
                      includes="
+                        org/pclg/dbutil/DbManager*.class
+                        org/pclg/dbutil/VersatileConnection*.class
+                        org/pclg/dbutil/VersatilePreparedStatement*.class
+                        org/pclg/dbutil/VersatileStatement*.class
+                        org/pclg/dbutil/VersatileProcessor*.class
                         org/pclg/gui/FancyButtonPanel*.class
                         org/pclg/gui/JLabeledField*.class
                         org/pclg/gui/Kaleidoscope*.class

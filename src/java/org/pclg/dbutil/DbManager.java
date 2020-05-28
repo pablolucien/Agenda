@@ -30,11 +30,11 @@ public final class DbManager {
 	/**
 	 * @param clientId prefix to be used when getting information of the properties.
 	 */
-	public DbManager(String clientId) {
+	public DbManager(final String clientId) {
 		this.clientId = clientId;
 	}
 
-	public Connection getConnection(String driverClassName, String connectString, String user, String pwd)
+	public Connection getConnection(final String driverClassName, final String connectString, final String user, final String pwd)
 			throws SQLException, ClassNotFoundException, IllegalAccessException, InstantiationException {
 		final Driver driver = (Driver) Class.forName(driverClassName).newInstance();
 		LOGGER.warn(String.format("driver = %s -- %d.%d%n", driver.toString(), driver.getMajorVersion(), driver.getMinorVersion()));
