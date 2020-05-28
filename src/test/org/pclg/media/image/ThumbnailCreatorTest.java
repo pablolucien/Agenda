@@ -30,7 +30,7 @@ public class ThumbnailCreatorTest {
 		final File resourcesDir = new File(RESOURCES_DIR);
 		if (resourcesDir.exists() || resourcesDir.mkdirs()) {
 			final File source = new File(Runtime.getRuntime().getClass()
-				.getResource("/unknown-man.jpg").toURI());
+				.getResource("/images/unknown-man.jpg").toURI());
 			final File target = new File(resourcesDir, source.getName());
 			if (!target.exists()) {
 				Files.copy(source.toPath(), target.toPath());

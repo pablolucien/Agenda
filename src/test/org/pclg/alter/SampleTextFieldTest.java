@@ -17,7 +17,7 @@ public class SampleTextFieldTest {
         assertEquals("Should be empty", "", startField.getText());
         assertEquals("Should be empty", "", lenField.getText());
 
-        sampleTextField.setText("La donna � mobile");
+        sampleTextField.setText("La donna e mobile");
 
         assertEquals("Should be empty", "", startField.getText());
         assertEquals("Should be empty", "", lenField.getText());

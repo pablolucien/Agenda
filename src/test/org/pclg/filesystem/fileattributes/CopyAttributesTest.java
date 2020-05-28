@@ -44,9 +44,10 @@ public class CopyAttributesTest {
             Map<String, Object> targetAttributes = Files.readAttributes(targetFiles[ii], "lastModifiedTime");
             assertEquals(sourceAttributes, targetAttributes);
 
-            Files.setLastModifiedTime(targetFiles[ii], FileTime.fromMillis(1000L * ii));
+            Files.setLastModifiedTime(targetFiles[ii],
+                FileTime.fromMillis(Files.getLastModifiedTime(targetFiles[ii]).toMillis() + 1000L));
             targetAttributes = Files.readAttributes(targetFiles[ii], "lastModifiedTime");
-            assertNotEquals(targetAttributes, sourceAttributes);
+            assertNotEquals(targetAttributes, sourceAttributes, "Should differ!");
         }
 
         final File undoFile = CopyAttributes.copyAttributes(targetDir.toFile(), sourceDir.toFile());
