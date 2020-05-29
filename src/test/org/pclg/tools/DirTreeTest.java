@@ -23,6 +23,7 @@ public final class DirTreeTest {
     @Test(enabled = false)
     public void testDirTree() {
         final JDialog parent = new JDialog(new JFrame(), Dialog.ModalityType.APPLICATION_MODAL);
+        parent.setAlwaysOnTop(true);
         GUITools.center(parent, null);
         final DirTree dirTree = new DirTree(parent);
         dirTree.setFile(new File(System.getProperty("user.dir")));
