@@ -176,21 +176,12 @@ public class DirectorySynchronizer {
                         LOGGER.log(Level.OFF, String.format("%s%s", MODIF_FILE_PAD, tgtFile));
                     } else {
                         counters.incrementFilesWithSameContent();
-                        dataAccess.saveInformation(srcFile, tgtFile);
+                        dataAccess.saveInformation(srcFile);
+                        dataAccess.saveInformation(tgtFile);
                         logDuplicatedFiles(srcFile, tgtFile);
-                        // Set the same time, so the next time the comparison must not be done.
-                        final boolean timesModified;
-                        if (unidirectional) {
-                            // Don't want to touch the source
-                            timesModified = tgtFile.setLastModified(srcFileLastModified);
-                        } else {
-                            // Set the older, so not to lose history
-                            // Yes, both files, because the value can have a slight difference
-                            timesModified = tgtFile.setLastModified(targetFileLastModified) & srcFile.setLastModified(targetFileLastModified);
-                        }
                         if (LOGGER.isDebugEnabled()) {
-                            LOGGER.debug(String.format("%s%s. targetFileLastModified = %d, srcFileLastModified = %d, Times %s modified",
-                                    "NOT UPDATED SINCE NOT MODIFIED ---> ", tgtFile, targetFileLastModified, srcFileLastModified, timesModified ? "" : "Not"));
+                            LOGGER.debug(String.format("%s%s. targetFileLastModified = %d, srcFileLastModified = %d.",
+                                "NOT UPDATED SINCE NOT MODIFIED ---> ", tgtFile, targetFileLastModified, srcFileLastModified));
                         }
                     }
                     return true;

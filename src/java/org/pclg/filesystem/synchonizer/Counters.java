@@ -12,6 +12,10 @@ final class Counters {
     private int filesWithSameContent;
     private int filesNotModified;
 
+    /**
+     * @param msgFormat must provide placeholders for 5 ints
+     *     (dirsCreated, filesCreated, filesUpdated, filesWithSameContent, filesNotModified;).
+     */
     Counters(final String msgFormat) {
         this.msgFormat = msgFormat;
     }
@@ -41,7 +45,7 @@ final class Counters {
     }
 
     void clear() {
-        dirsCreated = filesCreated = filesUpdated = filesWithSameContent = 0;
+        dirsCreated = filesCreated = filesUpdated = filesWithSameContent = filesNotModified = 0;
     }
 
     @Override
