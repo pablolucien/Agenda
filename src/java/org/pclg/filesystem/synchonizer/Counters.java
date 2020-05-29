@@ -10,6 +10,7 @@ final class Counters {
     private int filesCreated;
     private int filesUpdated;
     private int filesWithSameContent;
+    private int filesNotModified;
 
     Counters(final String msgFormat) {
         this.msgFormat = msgFormat;
@@ -31,6 +32,10 @@ final class Counters {
         filesWithSameContent++;
     }
 
+    void incrementFilesNotModified() {
+        filesNotModified++;
+    }
+
     public int filesWithSameContent() {
         return filesWithSameContent;
     }
@@ -41,6 +46,6 @@ final class Counters {
 
     @Override
     public String toString() {
-        return String.format(msgFormat, dirsCreated, filesCreated, filesUpdated, filesWithSameContent);
+        return String.format(msgFormat, dirsCreated, filesCreated, filesUpdated, filesWithSameContent, filesNotModified);
     }
 }

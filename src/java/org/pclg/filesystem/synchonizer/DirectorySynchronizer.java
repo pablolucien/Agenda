@@ -159,48 +159,52 @@ public class DirectorySynchronizer {
         }
     }
 
-    private boolean updateFiles(final File srcFile, final File targetFile, final boolean unidirectional) {
-        final long targetFileLastModified = targetFile.lastModified();
+    private boolean updateFiles(final File srcFile, final File tgtFile, final boolean unidirectional) {
+        final long targetFileLastModified = tgtFile.lastModified();
         final long srcFileLastModified = srcFile.lastModified();
         if (srcFileLastModified - targetFileLastModified > INSIGNIFICANT_DETAIL) {
-            try {
-                // Do the copy only if the files are really different.
-                if (!FileTools.compareContents(srcFile, targetFile)) {
-                    final Path sourcePath = srcFile.toPath();
-                    final Path targetPath = targetFile.toPath();
-                    Files.copy(sourcePath, targetPath, REPLACE_EXISTING, COPY_ATTRIBUTES);
-                    counters.incrementFilesUpdated();
-                    LOGGER.log(Level.OFF, String.format("%s%s", MODIF_FILE_PAD, targetFile));
-                } else {
-                    counters.incrementFilesWithSameContent();
-                    logDuplicatedFiles(srcFile, targetFile);
-                    // Set the same time, so the next time the comparison must not be done.
-                    final boolean timesModified;
-                    if (unidirectional) {
-                        // Don't want to touch the source
-                        timesModified = targetFile.setLastModified(srcFileLastModified);
+            if (dataAccess.areNotModified(srcFile, tgtFile)) {
+                counters.incrementFilesNotModified();
+            } else {
+                try {
+                    // Do the copy only if the files are really different.
+                    if (!FileTools.compareContents(srcFile, tgtFile)) {
+                        final Path sourcePath = srcFile.toPath();
+                        final Path targetPath = tgtFile.toPath();
+                        Files.copy(sourcePath, targetPath, REPLACE_EXISTING, COPY_ATTRIBUTES);
+                        counters.incrementFilesUpdated();
+                        LOGGER.log(Level.OFF, String.format("%s%s", MODIF_FILE_PAD, tgtFile));
                     } else {
-                        // Set the older, so not to lose history
-                        // Yes, both files, because the value can have a slight difference
-                        timesModified = targetFile.setLastModified(targetFileLastModified) & srcFile.setLastModified(targetFileLastModified);
+                        counters.incrementFilesWithSameContent();
+                        dataAccess.saveInformation(srcFile, tgtFile);
+                        logDuplicatedFiles(srcFile, tgtFile);
+                        // Set the same time, so the next time the comparison must not be done.
+                        final boolean timesModified;
+                        if (unidirectional) {
+                            // Don't want to touch the source
+                            timesModified = tgtFile.setLastModified(srcFileLastModified);
+                        } else {
+                            // Set the older, so not to lose history
+                            // Yes, both files, because the value can have a slight difference
+                            timesModified = tgtFile.setLastModified(targetFileLastModified) & srcFile.setLastModified(targetFileLastModified);
+                        }
+                        if (LOGGER.isDebugEnabled()) {
+                            LOGGER.debug(String.format("%s%s. targetFileLastModified = %d, srcFileLastModified = %d, Times %s modified",
+                                    "NOT UPDATED SINCE NOT MODIFIED ---> ", tgtFile, targetFileLastModified, srcFileLastModified, timesModified ? "" : "Not"));
+                        }
                     }
-                    if (LOGGER.isDebugEnabled()) {
-                        LOGGER.debug(String.format("%s%s. targetFileLastModified = %d, srcFileLastModified = %d, Times %s modified",
-                                "NOT UPDATED SINCE NOT MODIFIED ---> ", targetFile, targetFileLastModified, srcFileLastModified, timesModified ? "" : "Not"));
-                    }
+                    return true;
+                } catch (final AccessDeniedException ade) {
+                    LOGGER.error("ERROR. I've got this: " + ade + ". Check the rights of the file.");
+                } catch (final IOException ex) {
+                    LOGGER.error("ERROR. Nevertheless going ahead.", ex);
                 }
-                return true;
-            } catch (final AccessDeniedException ade) {
-                LOGGER.error("ERROR. I've got this: " + ade + ". Check the rights of the file.");
-            } catch (final IOException ex) {
-                LOGGER.error("ERROR. Nevertheless going ahead.", ex);
             }
         }
         return false;
     }
 
     private void logDuplicatedFiles(final File srcFile, final File tgtFile) {
-        saveInfoForUlteriorChecks(srcFile, tgtFile);
         final long tgtFileLastModified = tgtFile.lastModified();
         final long srcFileLastModified = srcFile.lastModified();
         final Date tgtDate = new Date(tgtFileLastModified);
@@ -215,11 +219,6 @@ public class DirectorySynchronizer {
         } catch (final IOException ex) {
             LOGGER.error("ERROR logging in " + duplicatedFilesLogFile, ex);
         }
-    }
-
-    private void saveInfoForUlteriorChecks(final File srcFile, final File tgtFile) {
-//        dataAccess.saveInformation(srcFile);
- //       dataAccess.saveInformation(tgtFile);
     }
 
     private static boolean isNotWorkable(final File dir) {
