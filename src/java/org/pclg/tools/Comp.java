@@ -81,7 +81,7 @@ System.out.println(s);
 		);
 
         try {
-            ClassPathHacker.addFile("C:/home/development/lib/lib_L&F");
+            ClassPathHacker.addFile("C:/home/development/projects/lib/lib_L&F");
             LnFController.setLAF(this, "com.incors.plaf.kunststoff.KunststoffLookAndFeel", "org.pclg.gui.temas.MonoTheme");
         } catch (IOException e) {
             LOGGER.error(LoggerFactory.ERROR_TAG, e);
