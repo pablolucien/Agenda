@@ -5,10 +5,10 @@ import org.apache.log4j.Level;
 import org.apache.log4j.Logger;
 import org.pclg.filesystem.synchonizer.persistence.DataAccess;
 import org.pclg.log.LoggerFactory;
-import org.pclg.runtime.RuntimeControl;
 import org.pclg.tools.ArrayTools;
 import org.pclg.tools.FileTools;
 import org.pclg.tools.PropertiesHelper;
+import org.pclg.xtras.ClassPathHacker;
 
 import java.io.ByteArrayOutputStream;
 import java.io.File;
@@ -18,7 +18,6 @@ import java.io.RandomAccessFile;
 import java.nio.file.AccessDeniedException;
 import java.nio.file.Files;
 import java.nio.file.Path;
-import java.sql.SQLException;
 import java.time.LocalDateTime;
 import java.time.ZoneOffset;
 import java.util.Arrays;
@@ -28,6 +27,7 @@ import java.util.Properties;
 
 import static java.nio.file.StandardCopyOption.COPY_ATTRIBUTES;
 import static java.nio.file.StandardCopyOption.REPLACE_EXISTING;
+import static org.pclg.tools.StringTools.isEmptyOrBlank;
 
 /**
  * @since 27/07/2018.
@@ -54,12 +54,26 @@ public class DirectorySynchronizer {
 
     private final Properties properties;
 
-    public DirectorySynchronizer() {
+    public DirectorySynchronizer() throws IOException {
         properties = new Properties();
         PropertiesHelper.loadProperties(properties, BASENAME);
+
+		// First thing to do: make sure we have all we need in the classpath.
+		updateClassPath();
+
         counters = new Counters(PropertiesHelper.getStringFromProperties(properties, "DirectorySynchronizer.status.msg"));
         dataAccess = new DataAccess(properties);
     }
+
+    private void updateClassPath() throws IOException {
+   		final String applicationClassPath =
+   			properties.getProperty("Application.ClassPath");
+   		//noinspection HardCodedStringLiteral
+   		LOGGER.debug("Application.ClassPath = " + applicationClassPath);
+   		if (!isEmptyOrBlank(applicationClassPath)) {
+   			ClassPathHacker.addFiles(applicationClassPath.split("\\|"));
+   		}
+   	}
 
     void synchronize(final File targetsFile) {
         try {

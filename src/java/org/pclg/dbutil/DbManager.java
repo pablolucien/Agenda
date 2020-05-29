@@ -2,10 +2,13 @@ package org.pclg.dbutil;
 
 import org.apache.log4j.Level;
 import org.apache.log4j.Logger;
-import org.pclg.agenda.AuditPostprocessor;
 import org.pclg.log.LoggerFactory;
 
-import java.sql.*;
+import java.sql.Connection;
+import java.sql.Driver;
+import java.sql.DriverManager;
+import java.sql.SQLException;
+import java.sql.Statement;
 import java.util.Properties;
 
 public final class DbManager {

@@ -495,6 +495,7 @@
             <!-- Clases auxiliares -->
             <fileset dir="${build}"
                      includes="
+                        org/pclg/dbutil/AuditPostprocessor*.class
                         org/pclg/dbutil/DbManager*.class
                         org/pclg/dbutil/VersatileConnection*.class
                         org/pclg/dbutil/VersatilePreparedStatement*.class
@@ -522,6 +523,7 @@
                         org/pclg/tools/PropertiesHelper*.class
                         org/pclg/tools/StringTools*.class
                         org/pclg/tools/VariableSubstitutionHelper*.class
+                        org/pclg/xtras/ClassPathHacker*.class
                      "
                      excludes="**/*Test*.class"/>
 
@@ -816,7 +818,8 @@
              excludes="**">
             <fileset dir="${build}"
                      includes=
-                             "org/pclg/agenda/**/**.class
+                     "org/pclg/agenda/**/**.class
+                      org/pclg/dbutil/AuditPostprocessor*.class
                       org/pclg/dbutil/DbManager*.class
                       org/pclg/dbutil/VersatileConnection*.class
                       org/pclg/dbutil/VersatilePreparedStatement*.class
