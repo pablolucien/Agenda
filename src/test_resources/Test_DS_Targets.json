@@ -23,8 +23,8 @@
         },
         {
             "dirs": [
-                "C:/tmp",
-                "C:/usr"
+                "C:/tmpXXX",
+                "C:/usrXXX"
             ],
             "Include": "include this:include that",
             "Exclude": "Exclude this:Exclude that"
