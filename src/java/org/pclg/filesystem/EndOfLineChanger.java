@@ -25,13 +25,7 @@ public class EndOfLineChanger {
     public static void convertFiles(final String baseDirectory, final TypeOfConversion direction) throws Exception {
         try (final Stream<Path> paths = Files.walk(Paths.get(baseDirectory))) {
             paths.filter(Files::isRegularFile)
-                .filter(path -> {
-                    final String name = path.toFile().getName();
-                    return name.endsWith(".txt") || name.endsWith(".properties") || name.endsWith(".java")
-                        || name.endsWith(".magic") || name.endsWith(".info") || name.endsWith(".conf")
-                        || name.endsWith(".xml") || name.endsWith(".json") || name.endsWith(".js")
-                        || name.endsWith(".css") || name.endsWith(".html");
-                })
+                .filter(EndOfLineChanger::isPossiblyTextFile)
                 .forEach(path -> {
                     final File in = path.toFile();
                     final File out = new File(in.getParent(), "out-" + in.getName());
@@ -48,6 +42,22 @@ public class EndOfLineChanger {
                     }
                 });
         }
+    }
+
+    private static boolean isPossiblyTextFile(final Path path) {
+        final String name = path.toFile().getName();
+        return name.endsWith(".java")
+            || name.endsWith(".properties")
+            || name.endsWith(".txt")
+            || name.endsWith(".magic")
+            || name.endsWith(".info")
+            || name.endsWith(".conf")
+            || name.endsWith(".xml")
+            || name.endsWith(".json")
+            || name.endsWith(".js")
+            || name.endsWith(".css")
+            || name.endsWith(".html")
+            || name.endsWith(".yaml");
     }
 
     private static void convertCRLF2LF(final File in, final File out) throws Exception {
