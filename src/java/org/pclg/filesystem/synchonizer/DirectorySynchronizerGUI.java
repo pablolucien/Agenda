@@ -1,26 +1,5 @@
 package org.pclg.filesystem.synchonizer;
 
-import java.awt.BorderLayout;
-import java.awt.Component;
-import java.awt.event.ComponentAdapter;
-import java.awt.event.ComponentEvent;
-import java.awt.event.WindowAdapter;
-import java.awt.event.WindowEvent;
-import java.io.File;
-import java.util.Arrays;
-import java.util.Date;
-import java.util.Properties;
-import javax.swing.JButton;
-import javax.swing.JCheckBox;
-import javax.swing.JFileChooser;
-import javax.swing.JFrame;
-import javax.swing.JPanel;
-import javax.swing.JTabbedPane;
-import javax.swing.JTextArea;
-import javax.swing.SwingConstants;
-import javax.swing.SwingUtilities;
-import javax.swing.WindowConstants;
-import javax.swing.filechooser.FileNameExtensionFilter;
 import org.apache.log4j.Logger;
 import org.pclg.gui.FancyButtonPanel;
 import org.pclg.gui.Kaleidoscope;
@@ -34,6 +13,28 @@ import org.pclg.tools.GUITools;
 import org.pclg.tools.ImageTools;
 import org.pclg.tools.PropertiesHelper;
 
+import javax.swing.JButton;
+import javax.swing.JCheckBox;
+import javax.swing.JFileChooser;
+import javax.swing.JFrame;
+import javax.swing.JPanel;
+import javax.swing.JTabbedPane;
+import javax.swing.JTextArea;
+import javax.swing.SwingConstants;
+import javax.swing.SwingUtilities;
+import javax.swing.WindowConstants;
+import javax.swing.filechooser.FileNameExtensionFilter;
+import java.awt.BorderLayout;
+import java.awt.Component;
+import java.awt.event.ComponentAdapter;
+import java.awt.event.ComponentEvent;
+import java.awt.event.WindowAdapter;
+import java.awt.event.WindowEvent;
+import java.io.File;
+import java.io.IOException;
+import java.util.Arrays;
+import java.util.Date;
+import java.util.Properties;
 
 import static java.awt.BorderLayout.CENTER;
 import static java.awt.BorderLayout.NORTH;
@@ -66,7 +67,7 @@ final class DirectorySynchronizerGUI {
     private String lastDir;
     private String lastFile;
 
-    DirectorySynchronizerGUI() {
+    DirectorySynchronizerGUI() throws IOException {
         final Properties properties = new Properties();
         PropertiesHelper.loadProperties(properties, DirectorySynchronizer.BASENAME);
         final JFrame frame = new JFrame(DirectorySynchronizer.BASENAME);
