@@ -26,21 +26,28 @@ public class EndOfLineChanger {
         try (final Stream<Path> paths = Files.walk(Paths.get(baseDirectory))) {
             paths.filter(Files::isRegularFile)
                 .filter(EndOfLineChanger::isPossiblyTextFile)
-                .forEach(path -> {
-                    final File in = path.toFile();
-                    final File out = new File(in.getParent(), "out-" + in.getName());
-                    try {
-                        if (direction == TypeOfConversion.CRLF2LF) {
-                            convertCRLF2LF(in, out);
-                        } else {
-                            convertLF2CRLF(in, out);
-                        }
-                        Files.delete(in.toPath());
-                        Files.move(out.toPath(), in.toPath());
-                    } catch (final Exception ex) {
-                        LOGGER.error(LoggerFactory.ERROR_TAG, ex);
-                    }
-                });
+                .forEach(path -> convertFileEOL(path.toFile(), direction));
+        }
+    }
+
+    public static void convertFileEOL(final File in, final TypeOfConversion typeOfConversion) {
+        try {
+            final File out = File.createTempFile("out-", ".tmp", in.getParentFile());
+            final boolean somethingDone;
+            if (typeOfConversion == TypeOfConversion.CRLF2LF) {
+                somethingDone = convertCRLF2LF(in, out);
+            } else {
+                somethingDone = convertLF2CRLF(in, out);
+            }
+            if (somethingDone) {
+                out.setLastModified(in.lastModified());
+                Files.delete(in.toPath());
+                Files.move(out.toPath(), in.toPath());
+            } else {
+                Files.delete(out.toPath());
+            }
+        } catch (final Exception ex) {
+            LOGGER.error(LoggerFactory.ERROR_TAG, ex);
         }
     }
 
@@ -53,14 +60,17 @@ public class EndOfLineChanger {
             || name.endsWith(".info")
             || name.endsWith(".conf")
             || name.endsWith(".xml")
+            || name.endsWith(".fxml")
             || name.endsWith(".json")
             || name.endsWith(".js")
             || name.endsWith(".css")
             || name.endsWith(".html")
-            || name.endsWith(".yaml");
+            || name.endsWith(".yaml")
+            || name.endsWith(".bat")
+            ;
     }
 
-    private static void convertCRLF2LF(final File in, final File out) throws Exception {
+    private static boolean convertCRLF2LF(final File in, final File out) throws Exception {
         try (final FileOutputStream fos = new FileOutputStream(out);
              final FileInputStream fin = new FileInputStream(in)) {
             int car1;
@@ -82,12 +92,13 @@ public class EndOfLineChanger {
                 fos.write(car1);
             }
             if (somethingDone) {
-                LOGGER.log(Level.OFF, "Converted to CRLF: " + in);
+                LOGGER.log(Level.OFF, "Converted to LF: " + in);
             }
+            return somethingDone;
         }
     }
 
-    private static void convertLF2CRLF(final File in, final File out) throws Exception {
+    private static boolean convertLF2CRLF(final File in, final File out) throws Exception {
         try (final FileOutputStream fos = new FileOutputStream(out);
              final FileInputStream fin = new FileInputStream(in)) {
             int car;
@@ -107,13 +118,14 @@ public class EndOfLineChanger {
                 lastWasCR = car == '\r';
             }
             if (somethingDone) {
-                LOGGER.log(Level.OFF, "Converted to LF: " + in);
+                LOGGER.log(Level.OFF, "Converted to CRLF: " + in);
             }
+            return somethingDone;
         }
     }
 
     public static void main(final String[] args) throws Exception {
-        convertFiles("/home/pablo/development/projects/Alles/src/test_resources/scratch", TypeOfConversion.LF2CRLF);
-        convertFiles("/media/pablo/MERCURIO/home/development/projects/Alles/src", TypeOfConversion.CRLF2LF);
+        //convertFiles("E:/home/development/projects/Alles/src", TypeOfConversion.LF2CRLF);
+        //convertFiles("/media/pablo/MERCURIO/home/development/projects/Alles/src", TypeOfConversion.CRLF2LF);
     }
 }
