@@ -123,13 +123,16 @@ public class DataAccess {
         if (!initialized) {
             return false;
         }
-        final String sql = "SELECT lastModified FROM Files WHERE path IN (?, ?)";
+        final String sql = "SELECT lastModified FROM Files WHERE path = ?";
         try (final PreparedStatement pstmt = dbConnection.prepareStatement(sql)) {
             pstmt.setString(1, file1.getAbsolutePath());
-            pstmt.setString(2, file2.getAbsolutePath());
-            final ResultSet resultSet = pstmt.executeQuery();
-            final long storedLastModified1 = resultSet.next() ? resultSet.getLong(1) : -1;
-            final long storedLastModified2 = resultSet.next() ? resultSet.getLong(1) : -1;
+            final ResultSet resultSet1 = pstmt.executeQuery();
+            final long storedLastModified1 = resultSet1.next() ? resultSet1.getLong(1) : -1;
+
+            pstmt.setString(1, file2.getAbsolutePath());
+            final ResultSet resultSet2 = pstmt.executeQuery();
+            final long storedLastModified2 = resultSet2.next() ? resultSet2.getLong(1) : -1;
+
             return storedLastModified1 == file1.lastModified() && storedLastModified2 == file2.lastModified();
         } catch (final SQLException se) {
             final String sqlState = se.getSQLState();

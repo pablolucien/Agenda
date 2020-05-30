@@ -90,8 +90,8 @@ public class DirectorySynchronizer {
                         synchronizeDirectories(targetDef);
                     } else if (fileA.isFile() && fileB.isFile()) {
                         LOGGER.log(Level.OFF, String.format(THREE_STRINGS_FORMAT, UPDATING_FILES_TAG, fileA, fileB));
-                        if (!updateFiles(fileA, fileB, false)) {
-                            updateFiles(fileB, fileA, false);
+                        if (!updateFiles(fileA, fileB)) {
+                            updateFiles(fileB, fileA);
                         }
                     } else if (fileA.isFile() && !fileB.exists()) {
                         LOGGER.log(Level.OFF, String.format(THREE_STRINGS_FORMAT, UPDATING_FILES_TAG, fileA, fileB));
@@ -141,7 +141,7 @@ public class DirectorySynchronizer {
                     final File srcFile = files[0];
                     final File targetFile = files[1];
                     if (targetFile.exists()) {
-                        updateFiles(srcFile, targetFile, unidirectional);
+                        updateFiles(srcFile, targetFile);
                     } else {
                         createTargetFile(srcFile, targetFile);
                     }
@@ -173,7 +173,7 @@ public class DirectorySynchronizer {
         }
     }
 
-    private boolean updateFiles(final File srcFile, final File tgtFile, final boolean unidirectional) {
+    private boolean updateFiles(final File srcFile, final File tgtFile) {
         final long targetFileLastModified = tgtFile.lastModified();
         final long srcFileLastModified = srcFile.lastModified();
         if (srcFileLastModified - targetFileLastModified > INSIGNIFICANT_DETAIL) {
