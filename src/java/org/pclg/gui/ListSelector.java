@@ -41,7 +41,7 @@ public class ListSelector<E extends Comparable<E>> extends JPanel {
         toolbar.setFloatable(false);
 
 		final Action actionAddElement = new AbstractAction("<", ImageTools.getImageIcon(
-    			"/resources/images/16x16/go-previous-6.png").orElse(null)) {
+    			"/images/16x16/go-previous-6.png").orElse(null)) {
             private static final long serialVersionUID = 3883626389293608349L;
 
             @Override
@@ -51,7 +51,7 @@ public class ListSelector<E extends Comparable<E>> extends JPanel {
         };
 
 		final Action actionRemoveElement = new AbstractAction(">", ImageTools.getImageIcon(
-				"/resources/images/16x16/go-next-6.png").orElse(null)) {
+				"/images/16x16/go-next-6.png").orElse(null)) {
             private static final long serialVersionUID = 8634236785711973431L;
 
             @Override
@@ -60,7 +60,7 @@ public class ListSelector<E extends Comparable<E>> extends JPanel {
 			}
         };
 		final Action actionAddAllElements = new AbstractAction("<<", ImageTools.getImageIcon(
-				"/resources/images/16x16/arrow-left-double-2.png").orElse(null)) {
+				"/images/16x16/arrow-left-double-2.png").orElse(null)) {
             private static final long serialVersionUID = 8861297840651875692L;
 
             @Override
@@ -79,7 +79,7 @@ public class ListSelector<E extends Comparable<E>> extends JPanel {
         };
 
 		final Action actionRemoveAllElements = new AbstractAction(">>", ImageTools.getImageIcon(
-				"/resources/images/16x16/arrow-right-double-2.png").orElse(null)) {
+				"/images/16x16/arrow-right-double-2.png").orElse(null)) {
             private static final long serialVersionUID = -4990162720788527775L;
 
             @Override

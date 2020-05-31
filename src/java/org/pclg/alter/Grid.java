@@ -103,8 +103,8 @@ final class Grid extends JPanel {
 
             @Override
             public Component getTableCellRendererComponent(final JTable table, final Object value, final boolean isSelected, final boolean hasFocus, final int row, final int column) {
-                final ImageIcon okIcon = ImageTools.getImageIcon("/resources/images/16x16/icons8-checkmark-16.png").orElse(null);
-                final ImageIcon koIcon = ImageTools.getImageIcon("/resources/images/16x16/icons8-delete-16.png").orElse(null);
+                final ImageIcon okIcon = ImageTools.getImageIcon("/images/16x16/icons8-checkmark-16.png").orElse(null);
+                final ImageIcon koIcon = ImageTools.getImageIcon("/images/16x16/icons8-delete-16.png").orElse(null);
                 rendererComponent.setIcon(((Boolean) value).booleanValue() ? okIcon : koIcon);
                 return rendererComponent;
             }
