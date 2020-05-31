@@ -942,7 +942,7 @@
     <target name="Sounds_jar">
         <jar destfile="${dist}/${Sounds_jar_name}"
              excludes="**">
-            <fileset dir="${basedir}" includes="resources/sounds/sbcdrop.wav"/>
+            <fileset dir="${basedir}/resources" includes="sounds/sbcdrop.wav"/>
 
             <manifest>
                 <attribute name="Built-By" value="${user.name}"/>
