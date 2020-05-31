@@ -278,9 +278,9 @@ public final class DirTree extends JPanel {
         scrollView = new JScrollPane(tree);
 		add(scrollView, BorderLayout.CENTER);
 		final DefaultTreeCellRenderer renderer = new DefaultTreeCellRenderer();
-        getImageIcon("/resources/images/16x16/folder-grey.png").ifPresent(renderer::setLeafIcon);
-        getImageIcon("/resources/images/16x16/folder-cyan_open.png").ifPresent(renderer::setOpenIcon);
-        getImageIcon("/resources/images/16x16/folder-cyan.png").ifPresent(renderer::setClosedIcon);
+        getImageIcon("/images/16x16/folder-grey.png").ifPresent(renderer::setLeafIcon);
+        getImageIcon("/images/16x16/folder-cyan_open.png").ifPresent(renderer::setOpenIcon);
+        getImageIcon("/images/16x16/folder-cyan.png").ifPresent(renderer::setClosedIcon);
 		tree.setCellRenderer(renderer);
         tree.setEditable(true);
         populateTree();

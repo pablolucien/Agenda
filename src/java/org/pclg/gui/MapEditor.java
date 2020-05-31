@@ -30,7 +30,7 @@ import static org.pclg.tools.GUITools.setDialogResizable;
  */
 public class MapEditor {
 	private static final String ICON_PATH
-		= "/resources/images/32x32/abiword.png";
+		= "/images/32x32/abiword.png";
 	private final JLabel[] labels;
 	private final JComponent[] fields;
 	private final Component parent;

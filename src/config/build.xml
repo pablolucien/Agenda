@@ -912,14 +912,14 @@
     <target name="Icons_jar">
         <jar destfile="${dist}/${Icons_jar_name}"
              excludes="**">
-            <fileset dir="${basedir}" includes="resources/images/Please_stand_by_2.png"/>
-            <fileset dir="${basedir}" includes="resources/images/Please_stand_by.png"/>
-            <fileset dir="${basedir}" includes="resources/images/unknown-**"/>
-            <fileset dir="${basedir}" includes="resources/images/128x128/**"/>
-            <fileset dir="${basedir}" includes="resources/images/48x48/**"/>
-            <fileset dir="${basedir}" includes="resources/images/32x32/**"/>
-            <fileset dir="${basedir}" includes="resources/images/24x24/**"/>
-            <fileset dir="${basedir}" includes="resources/images/16x16/**"/>
+            <fileset dir="${basedir}/resources" includes="images/Please_stand_by_2.png"/>
+            <fileset dir="${basedir}/resources" includes="images/Please_stand_by.png"/>
+            <fileset dir="${basedir}/resources" includes="images/unknown-**"/>
+            <fileset dir="${basedir}/resources" includes="images/128x128/**"/>
+            <fileset dir="${basedir}/resources" includes="images/48x48/**"/>
+            <fileset dir="${basedir}/resources" includes="images/32x32/**"/>
+            <fileset dir="${basedir}/resources" includes="images/24x24/**"/>
+            <fileset dir="${basedir}/resources" includes="images/16x16/**"/>
 
             <fileset dir="${img_dir}"
                 includes="

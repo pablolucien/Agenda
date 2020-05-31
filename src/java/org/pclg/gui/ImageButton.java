@@ -60,15 +60,15 @@ public class ImageButton extends JButton {
     private final JMenuItem manageImageMenuItem;
 
 	/**
-     * Crea un ImageButton configurado según las properties. 
+     * Crea un ImageButton configurado segï¿½n las properties. 
      * @param properties
      * Debe contener los siguientes valores:
      * <code>
      * ImageButton.select         = Clic para elegir Imagen
      * ImageButton.restore        = Bot\u00F3n derecho para restaurar
      * ImageButton.clear          = Bot\u00F3n derecho para limpiar
-     * ImageButton.image          = /resources/images/128x128/image-x-pentax-pef.png
-     * ImageButton.image.notFound = /resources/images/128x128/edit-bomb.png
+     * ImageButton.image          = /images/128x128/image-x-pentax-pef.png
+     * ImageButton.image.notFound = /images/128x128/edit-bomb.png
      * <code>
      */
     public ImageButton(final Properties properties) {
@@ -84,7 +84,7 @@ public class ImageButton extends JButton {
         addMenuItem(null, popupMenu, "-");
         manageImageMenuItem = addMenuItem(event -> manageImage(),
             popupMenu, PropertiesHelper.getStringFromProperties(properties, "ImageButton.clear"));
-        addMenuItem(null, popupMenu, "-");      // TODO: crear método  addSeparator();
+        addMenuItem(null, popupMenu, "-");      // TODO: crear mï¿½todo  addSeparator();
 
 		addMouseListener(new MouseAdapter() {
 			@Override
@@ -274,7 +274,7 @@ public class ImageButton extends JButton {
 	}
 
 	/**
-	 * Imagen a mostrar si no hay ninguna válida.
+	 * Imagen a mostrar si no hay ninguna vï¿½lida.
 	 * @param imageIcon la imagen.
 	 */
 	public void setVoidIcon(final ImageIcon imageIcon) {
