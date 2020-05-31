@@ -921,15 +921,15 @@
             <fileset dir="${basedir}/resources" includes="images/24x24/**"/>
             <fileset dir="${basedir}/resources" includes="images/16x16/**"/>
 
-            <fileset dir="${img_dir}"
+            <fileset dir="${basedir}/resources"
                 includes="
-					create.gif
-					mars.gif
-					question.gif
-					romb-cyan.gif
-					romb-red.gif
-					romb-violet.gif
-					zero.gif
+					images/create.gif
+					images/mars.gif
+					images/question.gif
+					images/romb-cyan.gif
+					images/romb-red.gif
+					images/romb-violet.gif
+					images/zero.gif
 				"/>
 
             <manifest>
