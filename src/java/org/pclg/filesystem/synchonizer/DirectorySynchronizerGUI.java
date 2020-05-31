@@ -18,7 +18,9 @@ import javax.swing.JCheckBox;
 import javax.swing.JFileChooser;
 import javax.swing.JFrame;
 import javax.swing.JPanel;
+import javax.swing.JSplitPane;
 import javax.swing.JTabbedPane;
+import javax.swing.JTable;
 import javax.swing.JTextArea;
 import javax.swing.SwingConstants;
 import javax.swing.SwingUtilities;
@@ -62,7 +64,6 @@ final class DirectorySynchronizerGUI {
     private static final String DIALOG_IMAGE_KEY = DirectorySynchronizer.BASENAME + ".dialogImage";
     private final JButton lastFileButton = new JButton();
     private final JTextArea msgTextArea = new JTextArea();
-    private final JTextArea cleanupTextArea = new JTextArea();
     private final JCheckBox testCheckBox = new JCheckBox("Test!", true);
     private String lastDir;
     private String lastFile;
@@ -86,7 +87,7 @@ final class DirectorySynchronizerGUI {
         final JPanel actionPane = createActionPane(properties, directorySynchronizer, frame);
         tabbedPane.addTab("Synchronize", actionPane);
         tabbedPane.addTab("Cleanup", createCleanupPane(properties, frame));
-
+//tabbedPane.setSelectedIndex(1);
         frame.add(tabbedPane, CENTER);
 
         if (PropertiesHelper.getBooleanFromProperties(properties, "DirectorySynchronizer.showKaleidoscope", false)) {
@@ -149,25 +150,30 @@ final class DirectorySynchronizerGUI {
     }
 
     private JPanel createCleanupPane(final Properties properties, final JFrame frame) {
+        final JTextArea cleanupTextArea = new JTextArea();
         final JPanel panel = new JPanel(new BorderLayout());
         final FancyButtonPanel buttonPane = new FancyButtonPanel(
-                createCleanupButton(properties, frame),
+                createCleanupButton(properties, frame, cleanupTextArea),
                 createClearButton(properties, cleanupTextArea),
                 createExitButton(properties));
         EraserHead.addAppender(new TextAreaAppender(cleanupTextArea));
         panel.add(testCheckBox, NORTH);
-        panel.add(new ManagedScrollPane(cleanupTextArea, BOTTOM), CENTER);
+        final JSplitPane jSplitPane = new JSplitPane(JSplitPane.VERTICAL_SPLIT,
+                new JTable(5, 1),
+                new ManagedScrollPane(cleanupTextArea, BOTTOM));
+        jSplitPane.setDividerLocation(-1);
+        panel.add(jSplitPane, CENTER);
         panel.add(buttonPane, SOUTH);
         return  panel;
     }
 
-    private JButton createCleanupButton(final Properties properties, final JFrame frame) {
+    private JButton createCleanupButton(final Properties properties, final JFrame frame, final JTextArea textArea) {
         final JButton button = new JButton(PropertiesHelper.getStringFromProperties(properties, CLEANUP_BUTTON_TEXT_KEY));
         button.setToolTipText("What could possibly go wrong, eh?");
         final String[] baseDirs = properties.getProperty("DirectorySynchronizer.cleanup.baseDirs", "").split("\\|");
         button.addActionListener(e -> GUITools.executeWithWaitCursor(frame,
             () -> EraserHead.processStream(
-                Arrays.stream(cleanupTextArea.getText().split("\\r?\\n")), baseDirs,
+                Arrays.stream(textArea.getText().split("\\r?\\n")), baseDirs,
                 testCheckBox.isSelected())));
         return button;
     }
