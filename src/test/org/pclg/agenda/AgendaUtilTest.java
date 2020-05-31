@@ -73,7 +73,7 @@ public class AgendaUtilTest {
         record.setGroups(grupos);
         record.setMark("42");
         record.setAddress("Calle Luna, calle Sol");
-        final String path = getClass().getResource("/images/unknown-man.jpg").getPath();
+        final String path = getClass().getResource("/images/unknown-man.png").getPath();
         record.setImagePath(path);
         record.setCountry(Pais.getUnknownCountry());
         return record;

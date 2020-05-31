@@ -1,5 +1,7 @@
 package org.pclg.gui;
 
+import org.testng.annotations.Test;
+
 import javax.swing.ImageIcon;
 import java.awt.Color;
 import java.awt.event.MouseAdapter;
@@ -15,12 +17,10 @@ public class SplashWindowTest {
     };
     private static int ii;
 
-    private SplashWindowTest() {
-    }
-
-    public static void main(final String[] args) throws Exception {
+    @Test
+    public void testSplashWindow() throws Exception {
         final SplashWindow splashWindow = new SplashWindow(
-            new ImageIcon(SplashWindowTest.class.getResource("/unknown-man.jpg")),
+            new ImageIcon(SplashWindowTest.class.getResource("/images/unknown-man.png")),
             "/sounds/success_sound.wav"
         );
         splashWindow.setStatusColor(Color.red);
@@ -35,8 +35,8 @@ public class SplashWindowTest {
         });
 
         splashWindow.setVisible(true);
-        try (BufferedReader d = new BufferedReader(new InputStreamReader(System.in))) {
-            while (d.readLine() != null) {
+        try (final BufferedReader reader = new BufferedReader(new InputStreamReader(System.in))) {
+            while (reader.readLine() != null) {
                 if (!cycleStatus(splashWindow)) {
                     System.exit(0);
                 }
@@ -50,6 +50,5 @@ public class SplashWindowTest {
         }
         splashWindow.setStatus(messages[ii++]);
         return true;
-
     }
 }
