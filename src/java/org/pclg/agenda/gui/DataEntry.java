@@ -7,11 +7,11 @@ import org.pclg.agenda.AgendaUtil;
 import org.pclg.agenda.entities.AgendaRecord;
 import org.pclg.agenda.entities.AgendaRecordImpl;
 import org.pclg.agenda.entities.Pais;
+import org.pclg.gui.DirTree;
 import org.pclg.gui.FancyButtonPanel;
 import org.pclg.gui.I18NManager;
 import org.pclg.gui.ImageButton;
 import org.pclg.log.LoggerFactory;
-import org.pclg.tools.DirTree;
 import org.pclg.tools.GUITools;
 import org.pclg.tools.ObservableProperties;
 import org.pclg.tools.PropertiesHelper;
@@ -163,9 +163,9 @@ public final class DataEntry extends JPanel implements ActionListener {
 				if (version == 1) {
 					return;
 				}
-				// Comparando las versiones para saber si estamos en la última sin
-				// necesidad de ir a la base de datos. Sólo consideramos los cambios
-				// en el caso de la última versión.
+				// Comparando las versiones para saber si estamos en la ï¿½ltima sin
+				// necesidad de ir a la base de datos. Sï¿½lo consideramos los cambios
+				// en el caso de la ï¿½ltima versiï¿½n.
 				if (version == this.originalRecord.getVersion()
 						&& !currentData.equals(this.originalRecord)) {
 					editedRecord = currentData;
@@ -390,7 +390,7 @@ public final class DataEntry extends JPanel implements ActionListener {
         }
 		final JFileChooser fileChooser = new JFileChooser();
 		{
-			// FIXME: Esto está repe en ImageButton
+			// FIXME: Esto estï¿½ repe en ImageButton
 			final FileFilter FILE_FILTER = new FileNameExtensionFilter(
 				"Imagenes",	"gif", "jpg", "jpeg", "png");
 			fileChooser.setFileFilter(FILE_FILTER);
@@ -420,7 +420,7 @@ public final class DataEntry extends JPanel implements ActionListener {
 			JOptionPane.ERROR_MESSAGE);
 	}
 
-	/** Action a ejecutar por el botón 'Cancelar' o el aspa del TabPanel. */
+	/** Action a ejecutar por el botï¿½n 'Cancelar' o el aspa del TabPanel. */
 	@Override
 	public void actionPerformed(final ActionEvent e) {
 		if (willClose()) {
@@ -530,7 +530,7 @@ public final class DataEntry extends JPanel implements ActionListener {
 			.setListable(record.isListTelephones())
 			.setNotas(record.getNotes())
 			.setGroups(record.getGroups())
-			.setThumbnail(record.getThumbnail())	// Esto tiene que ir antes de setImagePath() para que esté cargada la thumbnail
+			.setThumbnail(record.getThumbnail())	// Esto tiene que ir antes de setImagePath() para que estï¿½ cargada la thumbnail
 			.setImagePath(record.getImagePath(), sexo)
 			.setTemporaryImagePath(record.getTemporaryImage())
 			.setEmails(record.getEmails())

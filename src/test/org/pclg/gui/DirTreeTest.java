@@ -1,6 +1,7 @@
-package org.pclg.tools;
+package org.pclg.gui;
 
 import org.pclg.log.LoggerFactory;
+import org.pclg.tools.GUITools;
 import org.testng.annotations.Test;
 
 import javax.swing.JDialog;

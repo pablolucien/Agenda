@@ -1,6 +1,8 @@
-package org.pclg.tools;
+package org.pclg.gui;
 
 import org.pclg.log.LoggerFactory;
+import org.pclg.tools.Chrono;
+import org.pclg.tools.FileTools;
 
 import javax.swing.Icon;
 import javax.swing.JButton;

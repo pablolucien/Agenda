@@ -380,6 +380,7 @@
                 org/pclg/filelist/SortSelector*.class
                 org/pclg/filesystem/DirQueue*.class
                 org/pclg/gui/ColorChangerDocumentListener**.class
+                org/pclg/gui/DirTree*.class
                 org/pclg/gui/JLabeledField**.class
                 org/pclg/gui/LnFController**.class
                 org/pclg/gui/VersatileComboBox*.class
@@ -397,7 +398,6 @@
                 org/pclg/tools/DatabaseTools.class
                 org/pclg/tools/DigestTools*.class
                 org/pclg/tools/Dir*.class
-                org/pclg/tools/DirTree*.class
                 org/pclg/tools/FileComparator*.class
                 org/pclg/tools/FileTools*.class
                 org/pclg/tools/GUITools**.class
@@ -441,6 +441,7 @@
     				org/pclg/filesystem/fileattributes/*.class
                     org/pclg/gui/ColorChangerDocumentListener*.class
                     org/pclg/gui/DirSelectorField*.class
+                    org/pclg/gui/DirTree*.class
                     org/pclg/gui/FancyButtonPanel*.class
                     org/pclg/gui/JLabeledField*.class
                     org/pclg/gui/ManagedScrollPane*.class
@@ -460,7 +461,6 @@
                     org/pclg/tools/DatabaseTools.class
                     org/pclg/tools/DigestTools*.class
                     org/pclg/tools/Dir*.class
-                    org/pclg/tools/DirTree*.class
                     org/pclg/tools/FileTools*.class
                     org/pclg/tools/GUITools**.class
                     org/pclg/tools/ImageTools**.class
@@ -784,13 +784,13 @@
                     org/pclg/filesystem/fileattributes/*.class
                     org/pclg/gui/ColorChangerDocumentListener**.class
                     org/pclg/gui/DirSelectorField**.class
+                    org/pclg/gui/DirTree*.class
                     org/pclg/gui/JLabeledField**.class
                     org/pclg/gui/VersatileJMenu**.class
                     org/pclg/log/*.class
                     org/pclg/runtime/RuntimeControl*.class
                     org/pclg/tools/BoundsInfo*.class
                     org/pclg/tools/Chrono**.class
-                    org/pclg/tools/DirTree**.class
                     org/pclg/tools/Consola**.class
                     org/pclg/tools/ConsoleOutputStream**.class
                     org/pclg/tools/Dir**.class
@@ -863,7 +863,7 @@
                       org/pclg/tools/Chrono*.class
                       org/pclg/tools/Command*.class
                       org/pclg/tools/CompositeKey*.class
-                      org/pclg/tools/DirTree*.class
+                      org/pclg/gui/DirTree*.class
                       org/pclg/tools/EmptyArrays*.class
                       org/pclg/tools/ImageTools*.class
                       org/pclg/tools/ObservableProperties*.class

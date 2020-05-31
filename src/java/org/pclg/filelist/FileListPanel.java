@@ -2,10 +2,10 @@ package org.pclg.filelist;
 
 import org.apache.log4j.Logger;
 import org.pclg.filesystem.DirQueue;
+import org.pclg.gui.DirTree;
 import org.pclg.gui.JLabeledField;
 import org.pclg.gui.VersatileComboBox;
 import org.pclg.log.LoggerFactory;
-import org.pclg.tools.DirTree;
 import org.pclg.tools.FileComparator;
 import org.pclg.tools.PropertiesHelper;
 import org.pclg.tools.RegexFilter;
@@ -80,7 +80,7 @@ public class FileListPanel extends JPanel {
 	private VersatileComboBox versatileComboBox;
 
 	/**
-	 * Mantiene la historia de los directorios que hemos visitado. ¿Hacerlo persistente?
+	 * Mantiene la historia de los directorios que hemos visitado. ï¿½Hacerlo persistente?
 	 */
 	private final DirQueue dirList;
 
@@ -102,19 +102,19 @@ public class FileListPanel extends JPanel {
 	/**
 	 * Se dispara si es modificado el directorio o su contenido:
 	 * (crear o eliminar archivos, cambiarle el nombre, etc.)
-	 * ... solo que la puta mierda no funciona en windoze 98 (sí en NT)
+	 * ... solo que la puta mierda no funciona en windoze 98 (sï¿½ en NT)
 	 */
 	private final Timer timer = new Timer(1000, new ActionListener() {
 		@Override
 		public void actionPerformed(final ActionEvent ev) {
-			if (currentDirectory != null && lastModified != currentDirectory.lastModified()) {  // lastModified() parece que funciona sólo en algunas máquinas :(
+			if (currentDirectory != null && lastModified != currentDirectory.lastModified()) {  // lastModified() parece que funciona sï¿½lo en algunas mï¿½quinas :(
 				// Este proceso puede ser largo, por lo tanto es mejor no reentrar
 				timer.stop();
 				lastModified = currentDirectory.lastModified();
 				scan();
 				timer.start();
 			}
-			//parent.updateMemoryStatus();    // esto es un flechazo, pero se podría usar un callback...
+			//parent.updateMemoryStatus();    // esto es un flechazo, pero se podrï¿½a usar un callback...
 		}
 	});
 
@@ -286,7 +286,7 @@ public class FileListPanel extends JPanel {
             final FileComparator.SortCriterium sortOption = sortSelector.getSortOption();
 
             if (sortOption != null) {
-                // en realidad FileListModel debería tener un método sort();
+                // en realidad FileListModel deberï¿½a tener un mï¿½todo sort();
                 fileListModel.setSortCritery(sortOption);
                 setCursor(new Cursor(Cursor.WAIT_CURSOR));
                 fileListModel.setListItems(currentDirectory,

@@ -3,7 +3,6 @@ package org.pclg.gui;
 
 // ******************************** imports
 
-import org.pclg.tools.DirTree;
 import org.pclg.tools.LabeledComponent;
 import org.pclg.tools.LengthControlledField;
 

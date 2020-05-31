@@ -1,12 +1,12 @@
 package org.pclg.agenda.gui.actions;
 
 import org.apache.log4j.Logger;
-import org.pclg.agenda.entities.AgendaRecord;
 import org.pclg.agenda.AgendaUtil;
+import org.pclg.agenda.entities.AgendaRecord;
 import org.pclg.agenda.gui.AgendaGUI;
 import org.pclg.agenda.gui.ListadoPanel;
+import org.pclg.gui.DirTree;
 import org.pclg.log.LoggerFactory;
-import org.pclg.tools.DirTree;
 import org.pclg.tools.GUITools;
 
 import javax.swing.AbstractAction;
