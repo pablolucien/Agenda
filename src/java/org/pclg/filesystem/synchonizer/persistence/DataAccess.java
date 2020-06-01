@@ -1,5 +1,6 @@
 package org.pclg.filesystem.synchonizer.persistence;
 
+import org.apache.log4j.Appender;
 import org.apache.log4j.Level;
 import org.apache.log4j.Logger;
 import org.pclg.dbutil.DbManager;
@@ -42,6 +43,10 @@ public class DataAccess {
         }
     }
 
+    public static void addAppender(final Appender appender) {
+        LOGGER.addAppender(appender);
+    }
+
     private void init(final Properties properties) throws Exception {
         final DbManager dbManager = new DbManager("DirectorySynchronizer");
         final String connectString = properties.getProperty("DirectorySynchronizer.url")
@@ -63,8 +68,9 @@ public class DataAccess {
         }
         try {
             final String shutdownUrl = properties.getProperty("DirectorySynchronizer.shutdown.url")
-                    .replace(PATH_PLACEHOLDER, properties.getProperty("DirectorySynchronizer.path"));;
+                    .replace(PATH_PLACEHOLDER, properties.getProperty("DirectorySynchronizer.path"));
             if (!isEmptyOrBlank(shutdownUrl)) {
+                //noinspection EmptyTryBlock
                 try (final Connection ignored = DriverManager.getConnection(shutdownUrl)) {
                     // Just need the call to close the database.
                 }

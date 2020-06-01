@@ -505,6 +505,7 @@
                         org/pclg/dbutil/VersatilePreparedStatement*.class
                         org/pclg/dbutil/VersatileStatement*.class
                         org/pclg/dbutil/VersatileProcessor*.class
+                        org/pclg/dbutil/VersatileResultSet*.class
                         org/pclg/gui/FancyButtonPanel*.class
                         org/pclg/gui/JLabeledField*.class
                         org/pclg/gui/Kaleidoscope*.class
@@ -829,6 +830,7 @@
                       org/pclg/dbutil/VersatilePreparedStatement*.class
                       org/pclg/dbutil/VersatileStatement*.class
                       org/pclg/dbutil/VersatileProcessor*.class
+                      org/pclg/dbutil/VersatileResultSet*.class
                       org/pclg/fortunes/FortuneTeller*.class
                       org/pclg/fortunes/Manager*.class
                       org/pclg/gui/BooleanChooser*.class

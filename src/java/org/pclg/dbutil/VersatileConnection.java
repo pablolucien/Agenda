@@ -29,8 +29,8 @@ public class VersatileConnection implements Connection {
 	private static final Logger LOGGER = LoggerFactory.makeLog4J();
 	private static final String PREPARING_SQL = "Preparing SQL: ";
 	private final Connection delegate;
-	private VersatileProcessor preprocessor;
-	private VersatileProcessor postprocessor;
+	private final VersatileProcessor preprocessor;
+	private final VersatileProcessor postprocessor;
 
 	@CommandPattern.ConcreteCommand
 	@NullObjectPattern.NullObject
@@ -44,7 +44,7 @@ public class VersatileConnection implements Connection {
 	private static final NullProcessor nullProcessor = new NullProcessor();
 
 	public VersatileConnection(final Connection delegate) {
-		this.delegate = delegate;
+		this(delegate, null, null);
 	}
 
 	public VersatileConnection(final Connection delegate, final VersatileProcessor preprocessor, final VersatileProcessor postprocessor) {
