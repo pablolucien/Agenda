@@ -68,8 +68,7 @@ public class DirectorySynchronizer {
     private void updateClassPath() throws IOException {
    		final String applicationClassPath =
    			properties.getProperty("Application.ClassPath");
-   		//noinspection HardCodedStringLiteral
-   		LOGGER.debug("Application.ClassPath = " + applicationClassPath);
+        LOGGER.debug("Application.ClassPath = " + applicationClassPath);
    		if (!isEmptyOrBlank(applicationClassPath)) {
    			ClassPathHacker.addFiles(applicationClassPath.split("\\|"));
    		}
@@ -230,8 +229,9 @@ public class DirectorySynchronizer {
         return !(dir.isDirectory() && dir.canExecute() && dir.canRead() && dir.canWrite());
     }
 
-    static void addAppender(final Appender textAreaAppender) {
-        LOGGER.addAppender(textAreaAppender);
+    static void addAppender(final Appender appender) {
+        LOGGER.addAppender(appender);
+        DataAccess.addAppender(appender);
     }
 
     public void resetCounters() {

@@ -78,8 +78,8 @@ final class DirectorySynchronizerGUI {
         frame.setDefaultCloseOperation(WindowConstants.EXIT_ON_CLOSE);
         ImageTools.getImageIcon(getStringFromProperties(properties, DIALOG_IMAGE_KEY))
             .ifPresent(icon -> frame.setIconImage(icon.getImage()));
-        final DirectorySynchronizer directorySynchronizer = new DirectorySynchronizer();
         DirectorySynchronizer.addAppender(newAppender);
+        final DirectorySynchronizer directorySynchronizer = new DirectorySynchronizer();
         lastFileButton.setText(getStringFromProperties(properties, LAST_FILE_KEY));
         createLastFileButton(properties, directorySynchronizer, frame);
 
