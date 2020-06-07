@@ -1,18 +1,19 @@
-<project name="Alle Projekte" default="_dist" basedir="../..">
+<project name="Alle Projekte" default="_dist" basedir="../../..">
     <description>
         Construye todos los proyectos.
     </description>
 
     <!-- set global properties for this build -->
-    <property name="src" location="${basedir}/src/java"/>
-    <property name="tests_dir" value="${basedir}/src/test"/>
-    <property name="config_dir" location="${basedir}/src/config"/>
+    <property name="module_pclg_apps" location="${basedir}/pclg-apps"/>
+    <property name="src" location="${module_pclg_apps}/src/java"/>
+    <property name="tests_dir" value="${module_pclg_apps}/src/test"/>
+    <property name="config_dir" location="${module_pclg_apps}/src/config"/>
     <property name="properties" value="Agenda*.properties Alter*.properties MP3Update*.properties Chrono.properties ProcessLauncher*.properties
         Fortunes.properties CompDel*.properties FileView.properties pclg.default.logging.properties DirectorySynchronizer*.properties LoggerFactory.properties
         LoggerFactory_messages.properties"/>
     <property name="lib_dir" value="${basedir}/../lib"/>
-    <property name="resources" location="${basedir}/resources"/>
-    <property name="test_resources" location="${basedir}/src/test_resources"/>
+    <property name="resources" location="${module_pclg_apps}/resources"/>
+    <property name="test_resources" location="${module_pclg_apps}/src/test_resources"/>
     <property name="img_dir" location="${resources}/images"/>
     <property name="java_home" location="C:/usr/local/Java/jdk/current"/>
     <property name="build" location="${basedir}/../../build"/>
@@ -914,16 +915,16 @@
     <target name="Icons_jar">
         <jar destfile="${dist}/${Icons_jar_name}"
              excludes="**">
-            <fileset dir="${basedir}/resources" includes="images/Please_stand_by_2.png"/>
-            <fileset dir="${basedir}/resources" includes="images/Please_stand_by.png"/>
-            <fileset dir="${basedir}/resources" includes="images/unknown-**"/>
-            <fileset dir="${basedir}/resources" includes="images/128x128/**"/>
-            <fileset dir="${basedir}/resources" includes="images/48x48/**"/>
-            <fileset dir="${basedir}/resources" includes="images/32x32/**"/>
-            <fileset dir="${basedir}/resources" includes="images/24x24/**"/>
-            <fileset dir="${basedir}/resources" includes="images/16x16/**"/>
+            <fileset dir="${resources}" includes="images/Please_stand_by_2.png"/>
+            <fileset dir="${resources}" includes="images/Please_stand_by.png"/>
+            <fileset dir="${resources}" includes="images/unknown-**"/>
+            <fileset dir="${resources}" includes="images/128x128/**"/>
+            <fileset dir="${resources}" includes="images/48x48/**"/>
+            <fileset dir="${resources}" includes="images/32x32/**"/>
+            <fileset dir="${resources}" includes="images/24x24/**"/>
+            <fileset dir="${resources}" includes="images/16x16/**"/>
 
-            <fileset dir="${basedir}/resources"
+            <fileset dir="${resources}"
                 includes="
 					images/create.gif
 					images/mars.gif
@@ -944,7 +945,7 @@
     <target name="Sounds_jar">
         <jar destfile="${dist}/${Sounds_jar_name}"
              excludes="**">
-            <fileset dir="${basedir}/resources" includes="sounds/sbcdrop.wav"/>
+            <fileset dir="${resources}" includes="sounds/sbcdrop.wav"/>
 
             <manifest>
                 <attribute name="Built-By" value="${user.name}"/>
