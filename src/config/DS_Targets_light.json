@@ -1,6 +1,5 @@
 {
     "import": [
-        "DS_Targets_development.json",
         "DS_Targets_Finance.json",
         "DS_Targets_Tlf_movil.json"
     ],
@@ -32,7 +31,8 @@
             ],
             "files": [
                 "cvs-repository.tgz",
-                "git-repository.tgz"
+                "git-repository.tgz",
+                "launchers.tar"
             ]
         },
         {
