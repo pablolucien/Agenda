@@ -68,10 +68,8 @@ class VersatilePreparedStatement extends VersatileStatement implements PreparedS
 	@Override
 	public ResultSet executeQuery() throws SQLException {
 		LOGGER.debug(String.format(MESSAGE, sql, params));
-		preprocessor.go();
-		final ResultSet resultSet = new VersatileResultSet(delegate.executeQuery());
-		postprocessor.go();
-		return resultSet;
+		// WARNING: Do not use the pre and postprocessor here!
+		return new VersatileResultSet(delegate.executeQuery());
 	}
 
 	@Override
