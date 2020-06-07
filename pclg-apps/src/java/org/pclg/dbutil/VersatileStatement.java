@@ -27,10 +27,8 @@ class VersatileStatement implements Statement {
 	@Override
 	public ResultSet executeQuery(final String sql) throws SQLException {
         LOGGER.debug(String.format(MESSAGE, sql));
-        preprocessor.go();
-		final ResultSet resultSet = new VersatileResultSet(delegate.executeQuery(sql));
-		postprocessor.go();
-		return resultSet;
+        // WARNING: Do not use the pre and postprocessor here!
+		return new VersatileResultSet(delegate.executeQuery(sql));
 	}
 
 	@Override
