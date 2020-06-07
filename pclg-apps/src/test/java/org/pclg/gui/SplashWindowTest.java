@@ -15,9 +15,9 @@ public class SplashWindowTest {
         "corta",
         "Etiqueta larga larga y extensa wide estilo aleman con muchas letras inutiles"
     };
-    private static int ii;
+    private int ii;
 
-    @Test
+    @Test(enabled = false)
     public void testSplashWindow() throws Exception {
         final SplashWindow splashWindow = new SplashWindow(
             new ImageIcon(SplashWindowTest.class.getResource("/images/unknown-man.png")),
@@ -44,7 +44,7 @@ public class SplashWindowTest {
         }
     }
 
-    private static boolean cycleStatus(final SplashWindow splashWindow) {
+    private boolean cycleStatus(final SplashWindow splashWindow) {
         if (ii >= messages.length) {
             return false;
         }

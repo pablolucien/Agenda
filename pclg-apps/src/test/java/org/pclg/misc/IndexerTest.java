@@ -27,13 +27,13 @@ public class IndexerTest {
         final Map<String, Integer> frequencies = Indexer.createIndex(source);
         assertNotNull(frequencies);
         assertEquals(frequencies.size(), 46);
-        assertEquals(frequencies.get("sombr�o"), Integer.valueOf(3));
-        assertEquals(frequencies.get("sonre�a"), Integer.valueOf(2));
+        assertEquals(frequencies.get("agua"), Integer.valueOf(3));
+        assertEquals(frequencies.get("viejo"), Integer.valueOf(2));
         assertEquals(frequencies.get("divierte"), Integer.valueOf(1));
         assertEquals(frequencies.get("el"), Integer.valueOf(7));
         assertEquals(frequencies.get("es"), Integer.valueOf(1));
         assertNull(frequencies.get("savonarola"));
 		assertTrue(new File(myClass.getResource(testFileName + Indexer.INDEX_FILENAME_SUFFIX).toURI())
-                        .delete(),"Deber�a haberlo borrado");
+                        .delete(),"Should have been deleted");
     }
 }

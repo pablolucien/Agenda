@@ -3,14 +3,14 @@
         {
             "unidirectional": true,
             "dirs": [
-                "${ROOT_D}/DCIM/Camera",
+                "${ROOT_G}/DCIM/Camera",
                 "${ROOT_F}/Películas/___Mobile-phone-files/Camera"
             ]
         },
         {
             "unidirectional": true,
             "dirs": [
-                "${ROOT_D}/",
+                "${ROOT_G}/",
                 "${ROOT_F}/Películas/___Mobile-phone-files/VCF cards"
             ],
             "Include": "*.vcf"

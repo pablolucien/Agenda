@@ -904,10 +904,7 @@
     <target name="Alles_src_zip" description="fuentes de la Alles">
         <jar destfile="${dist}/${Alles_src_zip_name}" basedir="${build}"
              excludes="**">
-            <!-- Los fuentes -->
-            <fileset dir="${basedir}" includes="src/**"/>
-            <!-- Los recursos -->
-            <fileset dir="${basedir}" includes="resources/**"/>
+            <fileset dir="${module_pclg_apps}" includes="src/**"/>
         </jar>
     </target>
 
