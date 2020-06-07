@@ -35,7 +35,7 @@ public final class Steganograph {
 			+ "mensaje ({0}) es demasiado grande. Sólo se procesarán {1} bytes.";
 	private static final String MSG_IMAGE_DIMENSION = "width = {0}, "
 			+ "height = {1}. grabbed = {2}";
-	private static final String MSG_LONGITUD_MÁXIMA = "Longitud máxima = {0}. Longitud del mensaje = {1}";
+	private static final String MSG_MESSAGE_MAX_LENGTH = "Longitud máxima = {0}. Longitud del mensaje = {1}";
 	private static final String MSG_MESSAGE_LENGTH = "Message length = {0}";
 	private static final int MASK_BIT_0_SET = 0x00000001;
 	private static final int MASK_BIT_0_CLEAR = 0xFFFFFFFE;
@@ -121,7 +121,7 @@ LOGGER.info("Son iguales " + Arrays.equals(pixels, pixels1));
 			final File msgFile = new File(msgFileName);
 			textIn = new DataInputStream(new FileInputStream(msgFile));
 			int msgLength = (int) msgFile.length();
-			LOGGER.info(MessageFormat.format(MSG_LONGITUD_MÁXIMA, maxMsgLen,
+			LOGGER.info(MessageFormat.format(MSG_MESSAGE_MAX_LENGTH, maxMsgLen,
                     msgLength));
 			if (msgLength > maxMsgLen) {
 				LOGGER.severe(MessageFormat.format(MSG_LONGITUD_EXCESIVA,
