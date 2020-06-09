@@ -66,7 +66,7 @@ public class PropertiesHelper {
 
 	public static void loadProperties(final Properties properties, final String baseName) {
 		loadPropertiesFromFileIfExists(properties, baseName + TECHNICAL_SUFFIX);
-		// _custom cargarla despu�s de _technical para que sus valores tengan preferencia.
+		// _custom cargarla despu?s de _technical para que sus valores tengan preferencia.
 		loadCustomProperties(properties, baseName);
 		loadPropertiesFromFileIfExists(properties, baseName + SQL_SUFFIX);
 		final String forcedLanguage = properties.getProperty("Application.ForceLanguage");
@@ -112,7 +112,7 @@ public class PropertiesHelper {
     /**
 	 * Obtiene un String de las properties. Si no la encuentra, devuelve la key.
 	 *
-	 * @param properties d�nde se van a buscar los recursos.
+	 * @param properties d?nde se van a buscar los recursos.
 	 * @param key        La clave para buscar.
 	 * @return El valor asociado a la clave o esta si aquel no existe.
 	 */
@@ -133,7 +133,7 @@ public class PropertiesHelper {
 	/**
 	 * Obtiene un String de las properties. Si no la encuentra, devuelve el defaultValue.
 	 *
-	 * @param properties d�nde se van a buscar los recursos.
+	 * @param properties d?nde se van a buscar los recursos.
 	 * @param key        La clave para buscar.
 	 * @param defaultValue El valor por defecto.
 	 * @return El valor asociado a la clave o esta si aquel no existe.
@@ -155,7 +155,7 @@ public class PropertiesHelper {
 	/**
 	 * Obtiene un boolean de las properties. Si no lo encuentra, devuelve el defaultValue.
 	 *
-	 * @param properties d�nde se van a buscar los recursos.
+	 * @param properties d?nde se van a buscar los recursos.
 	 * @param key        La clave para buscar.
 	 * @param defaultValue El valor por defecto.
 	 * @return El valor asociado a la clave o esta si aquel no existe.
@@ -177,7 +177,7 @@ public class PropertiesHelper {
 	/**
 	 * Obtiene un int de las properties. Si no lo encuentra, devuelve el defaultValue.
 	 *
-	 * @param properties d�nde se van a buscar los recursos.
+	 * @param properties d?nde se van a buscar los recursos.
 	 * @param key        La clave para buscar.
 	 * @param defaultValue El valor por defecto.
 	 * @return El valor asociado a la clave o esta si aquel no existe.
@@ -283,7 +283,7 @@ public class PropertiesHelper {
 	 */
 	public static void saveBounds(final BoundsInfo boundsInfo, final Properties properties, final String prefix) {
 		final Rectangle bounds = boundsInfo.getBounds();
-		if (!bounds.equals(BoundsInfo.NULL_RECTANGLE)) {        // Si no est�n todos en cero
+		if (!bounds.equals(BoundsInfo.NULL_RECTANGLE)) {        // Si no est?n todos en cero
             properties.setProperty(prefix + BOUNDS_X, String.valueOf(bounds.x));
             properties.setProperty(prefix + BOUNDS_Y, String.valueOf(bounds.y));
             properties.setProperty(prefix + BOUNDS_W, String.valueOf(bounds.width));

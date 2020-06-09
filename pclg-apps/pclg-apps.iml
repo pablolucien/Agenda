@@ -2,10 +2,10 @@
 <module type="JAVA_MODULE" version="4">
   <component name="FacetManager">
     <facet type="Python" name="Python">
-      <configuration sdkName="Python 2.7 (Quotes)" />
+      <configuration sdkName="" />
     </facet>
   </component>
-  <component name="NewModuleRootManager">
+  <component name="NewModuleRootManager" inherit-compiler-output="false">
     <output url="file://$MODULE_DIR$/../../build/production/Alles" />
     <output-test url="file://$MODULE_DIR$/../../build/test/Alles" />
     <exclude-output />
@@ -20,7 +20,8 @@
     </content>
     <orderEntry type="inheritedJdk" />
     <orderEntry type="sourceFolder" forTests="false" />
-    <orderEntry type="library" name="Python 2.7 (Quotes) interpreter library" level="application" />
     <orderEntry type="library" name="lib" level="project" />
+    <orderEntry type="module" module-name="pclg-tools" />
   </component>
 </module>
+

@@ -18,7 +18,7 @@ public final class LoggerFactory {
 	private static final Logger LOGGER = make();
 
 	public static final String ERROR_TAG = "Whitney, we have a problem!";
-	public static final String WARN_TAG = "�Como vaya yo y lo encuentre...!";
+	public static final String WARN_TAG = "?Como vaya yo y lo encuentre...!";
     public static final String ENTER_METHOD = "Enter method";
     public static final String EXIT_METHOD = "Exit method";
 	private static final String MSG_CREATE = "Creando logger para: ";
@@ -51,10 +51,10 @@ public final class LoggerFactory {
 	}
 
 	/**
-	 * Crea un logger adecuado para la clase que llama a este m�todo.
+	 * Crea un logger adecuado para la clase que llama a este m?todo.
 	 * @return un logger.
      *
-     * @deprecated Este m�todo es demasiado costoso. Usar make()
+     * @deprecated Este m?todo es demasiado costoso. Usar make()
 	 */
     @Deprecated
 	public static Logger make2() {
@@ -66,7 +66,7 @@ public final class LoggerFactory {
 	}
 
     /**
-	 * Crea un logger adecuado para la clase que llama a este m�todo.
+	 * Crea un logger adecuado para la clase que llama a este m?todo.
 	 * @return un logger.
 	 */
 	public static Logger make() {
@@ -75,7 +75,7 @@ public final class LoggerFactory {
 	}
 
 	/**
-	 * Crea un logger (de Log4j) adecuado para la clase que llama a este m�todo.
+	 * Crea un logger (de Log4j) adecuado para la clase que llama a este m?todo.
 	 *
 	 * @return un logger.
 	 */
@@ -85,7 +85,7 @@ public final class LoggerFactory {
 	}
 
 	/**
-	 * Crea un logger simple para la clase que llama a este m�todo.
+	 * Crea un logger simple para la clase que llama a este m?todo.
 	 * @return un logger.
 	 * @deprecated utilizar <code>make()</code> y <code>configure()</code>
 	 */
@@ -139,7 +139,7 @@ public final class LoggerFactory {
 	 *
 	 */
 	public static void configure() throws IOException {
-        // TODO: ver si deber�a ser llamado en un bloque static.
+        // TODO: ver si deber?a ser llamado en un bloque static.
       	// TODO: intentarlo tambien con un recurso en el classpath.
 		final String logPropertiesFile = "pclg.default.logging.properties";
 		try {

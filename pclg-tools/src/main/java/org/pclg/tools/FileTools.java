@@ -39,7 +39,7 @@ import java.util.function.BiConsumer;
  * Provee algunas funciones de uso comun para manejo de archivos
  *
  * @author El Coyote Cojo
- * @version 2002.04.01    (D�a de los inocentes y cumplea�os del Chema y Rita Elisa)
+ * @version 2002.04.01    (D?a de los inocentes y cumplea?os del Chema y Rita Elisa)
  */
 public final class FileTools {
     @SuppressWarnings("HardcodedFileSeparator")
@@ -97,7 +97,7 @@ public final class FileTools {
 	 *
 	 * @param data     Los datos a escribir
 	 * @param offset   Desde donde comenzar
-	 * @param length   Cu�nto escribir
+	 * @param length   Cu?nto escribir
 	 * @param filename El nombre del archivo donde escribir
 	 * @param force    Indica si hay que sobreescribir un archivo existente
 	 *
@@ -136,7 +136,7 @@ public final class FileTools {
 	 *
 	 * @param data    Los datos a escribir
 	 * @param offset  Desde donde comenzar
-	 * @param length  Cu�nto escribir
+	 * @param length  Cu?nto escribir
 	 * @param outFile El archivo donde escribir
 	 * @param force   Indica si hay que sobreescribir un archivo existente
 	 *
@@ -162,7 +162,7 @@ public final class FileTools {
 	 *
 	 * @param filename El nombre del archivo desde donde leer
 	 *
-	 * @return Adivina qu�
+	 * @return Adivina qu?
 	 *
 	 * @throws IOException Si hay problemas
 	 */
@@ -177,7 +177,7 @@ public final class FileTools {
 	 *
 	 * @param inFile El archivo desde donde leer
 	 *
-	 * @return Adivina qu�
+	 * @return Adivina qu?
 	 *
 	 * @throws IOException Si hay problemas
 	 * @since 2004.08.19
@@ -260,16 +260,16 @@ public final class FileTools {
 	}
 
 	/**
-	 * lee una l�nea del archivo de entrada, descartando los comentarios
+	 * lee una l?nea del archivo de entrada, descartando los comentarios
 	 * si hay comentarios o lineas en blanco sigue leyendo hasta que se acabe
 	 * lo que se daba.
 	 *
-	 * @param in de d�nde leer.
+	 * @param in de d?nde leer.
 	 *
-	 * @return la l�nea le�da.
+	 * @return la l?nea le?da.
 	 *
 	 * @throws IOException Si hay problemas
-	 * @since 2003.06.21 00:25 cumplea�os de Lizana
+	 * @since 2003.06.21 00:25 cumplea?os de Lizana
 	 */
 	public static String readLine(final BufferedReader in) throws IOException {
 		String line;
@@ -310,7 +310,7 @@ public final class FileTools {
 
 	/**
 	 * Overwrites a file with random bytes.
-	 * �Sirve esto para algo, escribe en la misma posicion f�sica en el disco?
+	 * ?Sirve esto para algo, escribe en la misma posicion f?sica en el disco?
 	 *
 	 * @param file the file to overwrite.
 	 *
@@ -333,7 +333,7 @@ public final class FileTools {
 			while (bytesToWrite > 0) {
 				final int count = (int) Math.min(BUFFER_SIZE, bytesToWrite);
 				fos.write(buffer, 0, count);
-				// OJO: modificar si lo saco a un m�todo utilidad, para que conserve todos los
+				// OJO: modificar si lo saco a un m?todo utilidad, para que conserve todos los
 				// atributos del archivo original.
 				bytesToWrite -= count;
 			}
@@ -346,7 +346,7 @@ public final class FileTools {
 	}
 
 	/**
-	 * TODO: Comparar este m�todo y el siguiente. �Son necesarios ambos?
+	 * TODO: Comparar este m?todo y el siguiente. ?Son necesarios ambos?
 	 * Obtenemos un archivo que no exista basado en otro archivo.
 	 *
 	 * @param inFile el archivo existente.
@@ -657,7 +657,7 @@ public final class FileTools {
 
 	/**
 	 * Obtiene un archivo con el nombre basado en el nombre de archivo
-	 * pasado como par�metro y un numero consecutivo.
+	 * pasado como par?metro y un numero consecutivo.
 	 *
 	 * @param file el archivo.
 	 *
@@ -669,11 +669,11 @@ public final class FileTools {
 
 	/**
 	 * Obtiene un archivo con el nombre basado en el nombre de archivo
-	 * pasado como par�metro y un numero consecutivo con tantos ceros iniciales
-	 * para tener un tama�o de al menos <code>padSize</code>.
+	 * pasado como par?metro y un numero consecutivo con tantos ceros iniciales
+	 * para tener un tama?o de al menos <code>padSize</code>.
 	 *
 	 * @param file    el archivo.
-	 * @param padSize el ancho m�nimo del n�mero
+	 * @param padSize el ancho m?nimo del n?mero
 	 *
 	 * @return el archivo alternativo.
 	 */
@@ -726,7 +726,7 @@ public final class FileTools {
 
 		if (file1.equals(file2)) {
 			LOGGER.warn(
-				"Siendo el mismo archivo, me niego a compararlo consigo mismo. �Faltar�a mas!");
+				"Siendo el mismo archivo, me niego a compararlo consigo mismo. ?Faltar?a mas!");
 			return true;
 		}
 
@@ -734,11 +734,11 @@ public final class FileTools {
 			"PCLGTools.compareContents(): Comparando. " + file1.getAbsolutePath() + " y " + file2
 				.getAbsolutePath());
 		if (file1.length() != file2.length()) {
-			LOGGER.debug("Tama�os distintos indican archivos distintos.");
+			LOGGER.debug("Tama?os distintos indican archivos distintos.");
 			return false;
 		}
 
-		// Suponemos archivos de 500 Kb o menos. Si es as�, ya tenemos preparados los buffers para
+		// Suponemos archivos de 500 Kb o menos. Si es as?, ya tenemos preparados los buffers para
 		// posteriores llamadas
 		if (readBuffer1 == null) {
 			readBuffer1 = new byte[READ_BUFFER_LEN];
@@ -749,7 +749,7 @@ public final class FileTools {
 
 		try {
 //			if (file1.length() > readBuffer1.length || file2.length() > readBuffer2.length) {
-//				// ??? no deberia ser necesario que sean del mismo tama�o
+//				// ??? no deberia ser necesario que sean del mismo tama?o
 //				readBuffer1 = new byte[(int) file1.length()];
 //				readBuffer2 = new byte[(int) file2.length()];	// file2.length() == file1.length() por la comprobacion anterior
 //			}
@@ -762,15 +762,15 @@ public final class FileTools {
 			System.err.println(ex);
 			// Como el problema fue falta de memoria
 			System.err.println("Voy a ntentar con un buffer menor");
-			readBuffer1 = new byte[READ_BUFFER_LEN];    // Este tama�o no deber�a dar errores
-			readBuffer2 = new byte[READ_BUFFER_LEN];    // Este tama�o no deber�a dar errores
+			readBuffer1 = new byte[READ_BUFFER_LEN];    // Este tama?o no deber?a dar errores
+			readBuffer2 = new byte[READ_BUFFER_LEN];    // Este tama?o no deber?a dar errores
 			return doTheComparation(file1, file2);
 		}
 	}
 
 	/**
 	 * Compara dos archivos es
-	 * un metodo privado que presume que los tama�os de los archivos son
+	 * un metodo privado que presume que los tama?os de los archivos son
 	 * iguales
 	 *
 	 * @param arch1 primer archivo a comparar.
@@ -780,8 +780,8 @@ public final class FileTools {
 	 *
 	 * @see #compareContents
 	 * @since 2002.03.08  Dia Internacional de la Mujer
-	 * Trabajadora (o noche, porque son las 22.52 y es viernes. �Qu� co�o
-	 * hago yo aqu�?)
+	 * Trabajadora (o noche, porque son las 22.52 y es viernes. ?Qu? co?o
+	 * hago yo aqu??)
 	 */
 	private static boolean doTheComparation(final File arch1, final File arch2) {
 		try (final BufferedInputStream fis1 = new BufferedInputStream(new FileInputStream(arch1));

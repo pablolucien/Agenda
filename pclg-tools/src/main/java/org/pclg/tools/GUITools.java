@@ -72,7 +72,7 @@ public final class GUITools {
 	/** El logger. */
 	private static final Logger LOGGER = LoggerFactory.makeLog4J();
 
-	/** Tama�o por defecto de las fuentes. */
+	/** Tama?o por defecto de las fuentes. */
 	private static final int FONT_SIZE = 12;
 
 	/** Tipo de fuente por defecto. */
@@ -98,7 +98,7 @@ public final class GUITools {
 	 * @param titles Los titulos de los paneles a mostrar
 	 * @param fields Los campos de cada panel (un set por cada panel)
 	 *
-     * @return Adivina qu�
+     * @return Adivina qu?
 	 *
      * @since 2002.05.16
      */
@@ -221,11 +221,11 @@ public final class GUITools {
      * Metodo de utilidad para agregrar items a un menu
      *
      * @param listener El encargado de procesar los eventos de este objeto
-     * @param parent   El menu donde yace este se�or
+     * @param parent   El menu donde yace este se?or
      * @param group    El grupo de botones al que pertenece
      * @param label    guess...
 	 *
-     * @return Una referencia al JRadioButtonMenuItem agregado al men�
+     * @return Una referencia al JRadioButtonMenuItem agregado al men?
      */
     public static JRadioButtonMenuItem addRadioButtonMenuItem(final ActionListener listener,
             final JMenu parent, final ButtonGroup group, final String label) {
@@ -236,12 +236,12 @@ public final class GUITools {
      * Metodo de utilidad para agregrar items a un menu
      *
      * @param listener El encargado de procesar los eventos de este objeto
-     * @param parent   El menu donde yace este se�or
+     * @param parent   El menu donde yace este se?or
      * @param group    El grupo de botones al que pertenece
      * @param label    guess...
      * @param icon     guess...
 	 *
-     * @return Una referencia al JRadioButtonMenuItem agregado al men�
+     * @return Una referencia al JRadioButtonMenuItem agregado al men?
      */
     public static JRadioButtonMenuItem addRadioButtonMenuItem(final ActionListener listener, final JMenu parent,
             final ButtonGroup group, final String label, final Icon icon) {
@@ -252,13 +252,13 @@ public final class GUITools {
      * Metodo de utilidad para agregrar items a un menu
      *
      * @param listener El encargado de procesar los eventos de este objeto
-     * @param parent   El menu donde yace este se�or
+     * @param parent   El menu donde yace este se?or
      * @param group    El grupo de botones al que pertenece
      * @param label    guess...
      * @param icon     guess...
      * @param mi       the MenuItem to be added.
 	 *
-     * @return Una referencia al JRadioButtonMenuItem agregado al men�
+     * @return Una referencia al JRadioButtonMenuItem agregado al men?
      */
     public static JRadioButtonMenuItem addRadioButtonMenuItem(final ActionListener listener, final MenuElement parent,
             final ButtonGroup group, String label, final Icon icon, final JRadioButtonMenuItem mi) {
@@ -342,7 +342,7 @@ public final class GUITools {
         final Icon icon) {
         if (label.length() > 0 && label.charAt(0) == '-') {
             parent.addSeparator();
-            if (label.length() == 1)            // S�lo el separador
+            if (label.length() == 1)            // S?lo el separador
             {
                 return null;
             }
@@ -378,7 +378,7 @@ public final class GUITools {
                                         String label, final Icon icon) {
         if (label.length() > 0 && label.charAt(0) == '-') {
             parent.addSeparator();
-            if (label.length() == 1)        // S�lo el separador
+            if (label.length() == 1)        // S?lo el separador
             {
                 return null;
             }
@@ -463,7 +463,7 @@ public final class GUITools {
             String label, final Icon icon, final JMenuItem mi) {
         if (label.length() > 0 && label.charAt(0) == '-') {
             parent.addSeparator();
-            if (label.length() == 1)    // S�lo el separador
+            if (label.length() == 1)    // S?lo el separador
             {
                 return null;
             }
@@ -653,8 +653,8 @@ public final class GUITools {
 
         if (askBefore) {
             final Object[] options = {"OK", "Cancelar"};
-            final String msg = "Pulse OK para cerrar la aplicaci�n";
-            final String title = "Atenci�n";
+            final String msg = "Pulse OK para cerrar la aplicaci?n";
+            final String title = "Atenci?n";
             choice = JOptionPane.showOptionDialog(parent, msg, title,
                 JOptionPane.DEFAULT_OPTION,
                 JOptionPane.WARNING_MESSAGE,
@@ -669,14 +669,14 @@ public final class GUITools {
     }
 
     /**
-     * Muestra un di�logo de mensaje con diferentes opciones. La primera opci�n
+     * Muestra un di?logo de mensaje con diferentes opciones. La primera opci?n
      * es la seleccionada por defecto.
      *
      * @param msg     El mensaje a mostrar.
-     * @param title   El t�tulo del di�logo.
+     * @param title   El t?tulo del di?logo.
      * @param options Un array con las opciones a mostrar.
 	 *
-     * @return El �ndice de la opci�n seleccionada.
+     * @return El ?ndice de la opci?n seleccionada.
      */
     public static int showMessage(final String msg, final String title,
                                   final Object[] options) {
@@ -738,7 +738,7 @@ public final class GUITools {
 //    }
 
     /**
-     * Formatea un numero seg�n una mascara.
+     * Formatea un numero seg?n una mascara.
      *
      * @param originalNumber guess.
 	 * @param mask guess.
@@ -765,7 +765,7 @@ public final class GUITools {
             }
         }
 
-        // FIXME:  && builder.charAt(0) != '(' est� puesto s�lo para que pase el test (y los casos correspondientes. Buscar una soluci�n de verd�
+        // FIXME:  && builder.charAt(0) != '(' est? puesto s?lo para que pase el test (y los casos correspondientes. Buscar una soluci?n de verd?
         while (builder.length() > 0 && !Character.isLetterOrDigit(builder.charAt(0)) && builder.charAt(0) != '(') {
             builder.deleteCharAt(0);
         }
@@ -1009,10 +1009,10 @@ public final class GUITools {
     }
 
     /**
-     * Gesti�n de la ocultaci�n de las columnas de una tabla.
+     * Gesti?n de la ocultaci?n de las columnas de una tabla.
      *
-	 * @param parent parent Component para los di�logos.
-	 * @param dataTable la tabla a la que se le agregar� el men�.
+	 * @param parent parent Component para los di?logos.
+	 * @param dataTable la tabla a la que se le agregar? el men?.
      * @param i18nProperties debe contener las etiquetas a mostrar:
 	 *     GUITools.OcultarColumna, GUITools.MostrarColumna y GUITools.Escojer
      */
@@ -1122,7 +1122,7 @@ public final class GUITools {
         final TableColumnModel columnModel = table.getColumnModel();
         // OJO, esto puede dar algo distinto a super.getColumnCount();
         // puesto que considera todas las columnas, independientemente de
-        // que est�n visibles o no.
+        // que est?n visibles o no.
         final int columnCount = table.getModel().getColumnCount();
         for (int ii = 0; ii < columnCount; ii++) {
             final int columnIndex = table.convertColumnIndexToView(ii);
