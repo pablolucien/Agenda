@@ -1,10 +1,11 @@
 package tests;
 
 import org.pclg.log.LoggerFactory;
-import org.pclg.security.Steganograph;
 
 import java.io.IOException;
 import java.util.logging.Logger;
+
+//import org.pclg.security.Steganograph;
 
 /**
  * Premature optimization is the root of all evil.
@@ -34,7 +35,7 @@ final class Stega {
 				|| action.charAt(1) == 'G' && args.length != 3) {
 			usage();
 		} else {
-			Steganograph.process(args);
+			//Steganograph.process(args);
 		}
 	}
 }
