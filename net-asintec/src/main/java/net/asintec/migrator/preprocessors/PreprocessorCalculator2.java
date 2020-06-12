@@ -1,6 +1,6 @@
 package net.asintec.migrator.preprocessors;
 
-import org.pclg.xtras.Parser;
+import net.asintec.xtras.Parser;
 
 /**
 	Realiza calculos matematicos sobre el objeto que se le pasa

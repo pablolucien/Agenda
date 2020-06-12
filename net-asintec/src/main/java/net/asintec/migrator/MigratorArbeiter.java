@@ -49,7 +49,7 @@ abstract class MigratorArbeiter extends Thread implements MigratorConstants {
 	/** La conexion a la base de datos destino */
 	private DataSource dataSink;
 
-	/** La conexion con la base de datos. No es usada aqu�, pero seguramente s� por quien extienda esta clase */
+	/** La conexion con la base de datos. No es usada aqu?, pero seguramente s? por quien extienda esta clase */
 	Connection targetConn;
 
 	/** La tabla origen */
@@ -98,7 +98,7 @@ abstract class MigratorArbeiter extends Thread implements MigratorConstants {
 	/** Una banderita para saber si hubo errores */
 	boolean errors;
 
-	/** Posibles formas de decir que si (debr�a ser un Set o algo parecido) */
+	/** Posibles formas de decir que si (debr?a ser un Set o algo parecido) */
 	private static final Collection<String> afirmaciones = new HashSet<>();
 
 	/** Inicializacion del vector de afirmaciones */
@@ -106,7 +106,7 @@ abstract class MigratorArbeiter extends Thread implements MigratorConstants {
 		afirmaciones.add("true");
 		afirmaciones.add("s");
 		afirmaciones.add("si");
-		afirmaciones.add("s�");
+		afirmaciones.add("s?");
 		afirmaciones.add("oui");
 		afirmaciones.add("yes");
 		afirmaciones.add("ja");
@@ -122,7 +122,7 @@ abstract class MigratorArbeiter extends Thread implements MigratorConstants {
 	MigratorUserInterface parentComponent;
 
 	/**
-		Determina de un modo bastante na�f si un texto es una afirmacion
+		Determina de un modo bastante na?f si un texto es una afirmacion
 		@author El Coyote Cojo
 		@version 2001.ago.01 14:09:50, CEST
 	*/
@@ -136,8 +136,8 @@ abstract class MigratorArbeiter extends Thread implements MigratorConstants {
 
 
 	/**
-		Hace toda la preparaci�n necesaria para una migraci�n (asignaci�n de variables, construccion de las sentencias SQL, etc.)
-		<br>????? este metodo y run deber�an ser synchronized
+		Hace toda la preparaci?n necesaria para una migraci?n (asignaci?n de variables, construccion de las sentencias SQL, etc.)
+		<br>????? este metodo y run deber?an ser synchronized
 	*/
 	public void migrate(final MigratorUserInterface parentComponent,
 			final DataSource sourceDataSource, final DataSource targetDataSource,
@@ -145,7 +145,7 @@ abstract class MigratorArbeiter extends Thread implements MigratorConstants {
 			final int[] tiposOrg, final boolean[] isUnique,
 			final MigrationInfo migrationInfo) {
 		this.parentComponent = parentComponent;
-//Ojo: revisar el comportamiento de esto cuando es una migracion en batch (aunque ahora los batch los deber�a hacer MigratorDaemon)
+//Ojo: revisar el comportamiento de esto cuando es una migracion en batch (aunque ahora los batch los deber?a hacer MigratorDaemon)
 		if(migrating) {
 			parentComponent.showInfo("Hay una migracion en proceso");
 			return;
@@ -163,7 +163,7 @@ abstract class MigratorArbeiter extends Thread implements MigratorConstants {
 //		debug(this.tiposOrg);
 		// FIXME: los campos unicos que se toman en cuenta, son los de la tabla
 		// destino, pero Migrator no los crea unicos, de modo que tiene que
-		// hacerse a mano cuando se hace una duplicaci�n
+		// hacerse a mano cuando se hace una duplicaci?n
 		this.isUnique = isUnique;
 
 		errors = false;		// En principio todo debe ir como una seda
@@ -218,7 +218,7 @@ abstract class MigratorArbeiter extends Thread implements MigratorConstants {
 				selectSentence += "'" + autoIncrementValue + "'";
 				sourceFields.add("'" + autoIncrementValue + "'");
 			} else {
-				// 2002.05.20 Access permite espacios el los nombres y tambien permite el gui�n
+				// 2002.05.20 Access permite espacios el los nombres y tambien permite el gui?n
 				if(sourceTable.indexOf(' ') == -1 && sourceTable.indexOf('-') == -1) {
 					selectSentence += srcField;
 				}
@@ -232,13 +232,13 @@ abstract class MigratorArbeiter extends Thread implements MigratorConstants {
 			if(!isUnique[i]) {		// Si no es clave primaria, es posible el UPDATE
 				updateSentence += trgField + " = ?, ";
 			}
-			else {						// Si s� lo es, va en el WHERE
+			else {						// Si s? lo es, va en el WHERE
 				whereClause += trgField + " = ? AND ";
 				nrIndexes++;
 			}
 			tipos[nrFields] = this.tiposOrg[i];
 // FIXME: Lo de los tipos hay que arreglarlo porque no funciona si los
-//campos de la migracion est�n en un �rden distinto a la bd. por
+//campos de la migracion est?n en un ?rden distinto a la bd. por
 //ejemplo: C:\home\development\modules\src\java\org\pclg\migrator\MySQL-MySQL_Cifrar_contactos.conf
 			// Agregamos los preprocesadores donde haga falta
 			final String preprocessorName = migrationInfo.getPreprcessorName(i);
@@ -251,7 +251,7 @@ abstract class MigratorArbeiter extends Thread implements MigratorConstants {
 			} else
 			if (preprocessorName != null && !preprocessorName.equals("")) {
 				try {
-					final Preprocessor preprocessor = (Preprocessor) Class.forName(preprocessorName).newInstance();		// ??? aqui deber�a haber una factory
+					final Preprocessor preprocessor = (Preprocessor) Class.forName(preprocessorName).newInstance();		// ??? aqui deber?a haber una factory
 					if(preprocessorParam != null && !preprocessorParam.equals("")) {
 						preprocessor.setParameters(preprocessorParam);
 					}
@@ -315,7 +315,7 @@ abstract class MigratorArbeiter extends Thread implements MigratorConstants {
 		debug(updateSentence);
 		debug(selectForUpdateSentence);
 
-		// Ahora que est� todo armado, comenzamos la migraci�n
+		// Ahora que est? todo armado, comenzamos la migraci?n
 		start();
 	}
 
@@ -326,7 +326,7 @@ abstract class MigratorArbeiter extends Thread implements MigratorConstants {
 	/** Este es el metodo que hay que implementar para abortar una migracion */
 	public abstract void abort();
 
-	/** informa de lo que es capaz de hacer este se�or */
+	/** informa de lo que es capaz de hacer este se?or */
 	public abstract String getDescription();
 
 
@@ -339,7 +339,7 @@ abstract class MigratorArbeiter extends Thread implements MigratorConstants {
 		debug("fillStatement(): Preparando " + index + " " + columna + " = " + data);
 
 		if(data == null) {
-			//logError("Valor nulo en la posici�n " + index + " (" + columna + ")");
+			//logError("Valor nulo en la posici?n " + index + " (" + columna + ")");
 			pstmt.setNull(index, tipo);
 			return;
 		}

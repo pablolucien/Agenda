@@ -1,5 +1,5 @@
 //// Este es un paquete ad hoc para poner cosas que he obtenido de otras fuentes
-package org.pclg.xtras;
+package net.asintec.xtras;
 
 /******************************************************************************/
 /******************************************************************************/
