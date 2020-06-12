@@ -73,14 +73,14 @@ public final class AgendaDbJDBC implements AgendaDb, ChangeObserver<ObservablePr
             + "VersionImagen, DIA, MES, ANO, "
             + "MARCA, FechaActualizacion, FechaCreacion, LISTAR, VersionNotas, DELETED ";
 
-	/** Sentencia de selecci�n de registros en la tabla sin condiciones ni orden. */
+	/** Sentencia de selecci?n de registros en la tabla sin condiciones ni orden. */
 	static final String BASE_SELECT_RECORDS_SENTENCE =
 		"SELECT " + CONTACTO_FIELDS_LIST + "FROM ROOT.CONTACTO CTOS ";
 
     private static final String GROUP_BY_CLAUSE =
         " GROUP BY " + CONTACTO_FIELDS_LIST;
 
-    /** Cl�usula having para seleccionar la �ltima version de cada registro. */
+    /** Cl?usula having para seleccionar la ?ltima version de cada registro. */
 	private static final String BASE_HAVING_CLAUSE =
         " HAVING VERSION = (SELECT MAX(VERSION) FROM ROOT.CONTACTO CTOS2 "
             + " WHERE CTOS2.CLAVE = CTOS.CLAVE) ";
@@ -97,7 +97,7 @@ public final class AgendaDbJDBC implements AgendaDb, ChangeObserver<ObservablePr
             + BASE_HAVING_CLAUSE;
 
 	/** Sentencia para listarlos buscando el que tenga mayor numero de version,
-	 * pero s�lo los marcados. */
+	 * pero s?lo los marcados. */
 	private static final String SELECT_PREVAILING_SPECIAL_RECORD_SENTENCE =
 		BASE_SELECT_RECORDS_SENTENCE
             + "WHERE marca IS NOT NULL AND marca > ''"
@@ -105,15 +105,15 @@ public final class AgendaDbJDBC implements AgendaDb, ChangeObserver<ObservablePr
             + BASE_HAVING_CLAUSE;
 
 	/** Sentencia para listarlos buscando el que tenga mayor numero de version,
-	 * pero s�lo los borrados. */
+	 * pero s?lo los borrados. */
 	private static final String SELECT_PREVAILING_DELETED_RECORD_SENTENCE =
 		BASE_SELECT_RECORDS_SENTENCE
     		+ "WHERE Deleted"
             + GROUP_BY_CLAUSE
 	    	+ BASE_HAVING_CLAUSE;
 
-	/** Sentencia para listarlos buscando el que tenga mayor n�mero de version,
-	 * pero s�lo los que tienen cumplea�os. */
+	/** Sentencia para listarlos buscando el que tenga mayor n?mero de version,
+	 * pero s?lo los que tienen cumplea?os. */
 	private static final String SELECT_PREVAILING_BY_DATE_RECORD_SENTENCE =
 		BASE_SELECT_RECORDS_SENTENCE
 		    + "WHERE NOT Deleted AND dia > 0 AND mes > 0 "
@@ -122,7 +122,7 @@ public final class AgendaDbJDBC implements AgendaDb, ChangeObserver<ObservablePr
             + ORDER_BY_DATE_CLAUSE;
 
 	/** Sentencia para listarlos buscando el que tenga mayor numero de version,
-	 * pero s�lo los que tienen cumplea�os cercanos cuando el rango de fechas est�
+	 * pero s?lo los que tienen cumplea?os cercanos cuando el rango de fechas est?
 	 * todo en el mismo mes.
 	 */
 	private static final String SELECT_PREVAILING_BY_NEAR_DATE_SAME_MONTH_RECORD_SENTENCE =
@@ -133,8 +133,8 @@ public final class AgendaDbJDBC implements AgendaDb, ChangeObserver<ObservablePr
             + ORDER_BY_DATE_CLAUSE;
 
 	/** Sentencia para listarlos buscando el que tenga mayor numero de version,
-	 * pero s�lo los que tienen cumplea�os cercanos cuando el rango de fechas 
-	 * abarca diferentes meses pero est�n en el mismo a�o (M0 < M1). */
+	 * pero s?lo los que tienen cumplea?os cercanos cuando el rango de fechas 
+	 * abarca diferentes meses pero est?n en el mismo a?o (M0 < M1). */
 	private static final String SELECT_PREVAILING_BY_NEAR_DATE_DIFF_MONTH_SAME_YEAR_RECORD_SENTENCE =
 		BASE_SELECT_RECORDS_SENTENCE
 	    	+ "WHERE NOT Deleted AND dia > 0 AND mes > 0 AND ((dia >= ? AND mes = ?) OR (dia <= ? AND mes = ?) OR (mes > ? AND mes < ?)) "
@@ -143,8 +143,8 @@ public final class AgendaDbJDBC implements AgendaDb, ChangeObserver<ObservablePr
             + ORDER_BY_DATE_CLAUSE;
 
 	/** Sentencia para listarlos buscando el que tenga mayor numero de version,
-	 * pero s�lo los que tienen cumplea�os cercanos cuando el rango de fechas 
-	 * abarca diferentes meses pero est�n en diferentes a�os (M1 < M0). */
+	 * pero s?lo los que tienen cumplea?os cercanos cuando el rango de fechas 
+	 * abarca diferentes meses pero est?n en diferentes a?os (M1 < M0). */
 	private static final String SELECT_PREVAILING_BY_NEAR_DATE_DIFF_MONTH_DIFF_YEAR_RECORD_SENTENCE =
 		BASE_SELECT_RECORDS_SENTENCE
 	    	+ "WHERE NOT Deleted AND dia > 0 AND mes > 0 AND ((dia >= ? AND mes = ?) OR (dia <= ? AND mes = ?) OR (mes > ? OR mes < ?)) "
@@ -153,7 +153,7 @@ public final class AgendaDbJDBC implements AgendaDb, ChangeObserver<ObservablePr
             + ORDER_BY_DATE_CLAUSE;
 
 	/** Sentencia para listarlos buscando el que tenga mayor numero de version,
-	 * pero s�lo los que han sido creados o modificados a partir de cierta fecha. */
+	 * pero s?lo los que han sido creados o modificados a partir de cierta fecha. */
 	private static final String SELECT_PREVAILING_RECENTLY_MODIFIED_RECORDS_SENTENCE =
 		BASE_SELECT_RECORDS_SENTENCE
             + ", "
@@ -166,7 +166,7 @@ public final class AgendaDbJDBC implements AgendaDb, ChangeObserver<ObservablePr
     		+ BASE_HAVING_CLAUSE
 		    + "ORDER BY T2.Fecha DESC";
 
-	/** Sentencia para listarlos seg�n un filtro. */
+	/** Sentencia para listarlos seg?n un filtro. */
 	private static final String SELECT_FILTERED_RECORDS_SENTENCE =
 		BASE_SELECT_RECORDS_SENTENCE
 			+ "WHERE NOT Deleted AND ("
@@ -286,7 +286,7 @@ public final class AgendaDbJDBC implements AgendaDb, ChangeObserver<ObservablePr
     }
 
 	/**
-	 * Muestra informaci�n sobre la conexi�n.
+	 * Muestra informaci?n sobre la conexi?n.
 	 * @throws SQLException si hay errores de acceso a la base de datos.
 	 */
 	@Override
@@ -599,7 +599,7 @@ public final class AgendaDbJDBC implements AgendaDb, ChangeObserver<ObservablePr
 	/**
 	 * Inserta un registro
 	 *
-	 * La clave, la version y la fecha de creaci�n de record se modifican.
+	 * La clave, la version y la fecha de creaci?n de record se modifican.
 
 	 * @param record El registro a insertar.
 	 * @throws SQLException si problemas haber
@@ -636,7 +636,7 @@ public final class AgendaDbJDBC implements AgendaDb, ChangeObserver<ObservablePr
 
 	/**
 	 * No debe haber un borrado; simplemente se debe marcar como tal (aplicado
-	 * a todo el hist�rico del registro)
+	 * a todo el hist?rico del registro)
 	 * @param key la clave del registro a borrar
 	 * @throws SQLException si hay problemas
 	 */
@@ -703,7 +703,7 @@ public final class AgendaDbJDBC implements AgendaDb, ChangeObserver<ObservablePr
         try {
             nextKey = generalHelper.obtainNextKey(AgendaDb.CONTACTO_TABLE);
         } catch (final SQLException ex) {
-            LOGGER.log(Level.WARN, "Error tratando de obtener el n�mero de registros", ex);
+            LOGGER.log(Level.WARN, "Error tratando de obtener el n?mero de registros", ex);
         }
         return nextKey - 1;
     }
@@ -717,11 +717,11 @@ public final class AgendaDbJDBC implements AgendaDb, ChangeObserver<ObservablePr
 	private final Timestamp theEpoch = new Timestamp(0L);
 
     /**
-     * Verifica la fecha de �ltima actulizaci�n compar�ndola con la del backup y
+     * Verifica la fecha de ?ltima actulizaci?n compar?ndola con la del backup y
      * hace la copia si es necesario.
      * 
-     * @param properties Las propiedades de la aplicaci�n.
-     * @param parent El padre de los di�logos que se muestren.
+     * @param properties Las propiedades de la aplicaci?n.
+     * @param parent El padre de los di?logos que se muestren.
      * @return <code>true</code> Either if the database was copied or not,
      * but the operation was not disregarded. <code>false</code> if the 
      * operation was cancelled; useful to determine the subsequent behaviour
@@ -787,7 +787,7 @@ public final class AgendaDbJDBC implements AgendaDb, ChangeObserver<ObservablePr
             setNewDbParameters(properties, parent);
             initDb(properties, true, false);
 
-            // FIXME: C�digo repetido en Agenda::initDbPhase2
+            // FIXME: C?digo repetido en Agenda::initDbPhase2
             Pais.setUnknownCountry(properties.getProperty("AgendaGUI.paisDesconocido"));
             loadCountries();
             Pais.setDefaultCountry(Pais.getInstance(getStringFromProperties(properties, "Agenda.default.country")));
@@ -858,13 +858,13 @@ public final class AgendaDbJDBC implements AgendaDb, ChangeObserver<ObservablePr
     }
 
     /**
-	 * Busca los registros cuyas fechas de nacimiento tengan alg�na
-	 * caracter�stica "interesante". De momento las que tengan un m�ltiplo de
-	 * 1.000 d�as a la fecha de ejecuci�n + o - <code>daysFork4InterestingDates</code>
-	 * en los �ltimos 40.000 d�as.
+	 * Busca los registros cuyas fechas de nacimiento tengan alg?na
+	 * caracter?stica "interesante". De momento las que tengan un m?ltiplo de
+	 * 1.000 d?as a la fecha de ejecuci?n + o - <code>daysFork4InterestingDates</code>
+	 * en los ?ltimos 40.000 d?as.
 	 *
-	 * @return los registros cuyas fechas de nacimiento tengan alg�na
-	 * caracter�stica "interesante".
+	 * @return los registros cuyas fechas de nacimiento tengan alg?na
+	 * caracter?stica "interesante".
 	 *
 	 * @throws SQLException Si hay problemas.
 	 */
@@ -884,7 +884,7 @@ public final class AgendaDbJDBC implements AgendaDb, ChangeObserver<ObservablePr
 		final String inDatesClause = "(dia = ? AND mes = ? AND ano = ?) OR ";
 		final int builderCapacity = BASE_SELECT_RECORDS_SENTENCE.length()
 			+ whereClause.length()
-			+ inDatesClause.length() * limit - 3	// El �ltimo "OR "
+			+ inDatesClause.length() * limit - 3	// El ?ltimo "OR "
 	        + GROUP_BY_CLAUSE.length()
 			+ 1										// el ") "
 			+ BASE_HAVING_CLAUSE.length()
@@ -934,7 +934,7 @@ public final class AgendaDbJDBC implements AgendaDb, ChangeObserver<ObservablePr
 		}
 	}
 
-/////////////////////////////////////// M�todos delegados a clases auxiliares ///////////////////////////////////////////////////////
+/////////////////////////////////////// M?todos delegados a clases auxiliares ///////////////////////////////////////////////////////
 
     @Override
    	public void loadCountries() throws SQLException {
@@ -975,16 +975,16 @@ public final class AgendaDbJDBC implements AgendaDb, ChangeObserver<ObservablePr
 
     /** Graba los grupos de un contacto.
    	 * @param record el registro a actualizar.
-   	 * @return el nuevo nro de version de los grupos o 0 si no hay actualizaci�n.
+   	 * @return el nuevo nro de version de los grupos o 0 si no hay actualizaci?n.
    	 */
    	@Override
    	public int saveGrupos(final AgendaRecord record) throws SQLException {
            return groupHelper.persist(record);
    	}
 
-	/** Graba los tel�fonos de un contacto.
+	/** Graba los tel?fonos de un contacto.
 	 * @param record el registro a actualizar.
-	 * @return el nuevo nro de version de los telefonos o 0 si no hay actualizaci�n.
+	 * @return el nuevo nro de version de los telefonos o 0 si no hay actualizaci?n.
 	 */
 	@Override
 	public int saveTelephones(final AgendaRecord record)
@@ -994,7 +994,7 @@ public final class AgendaDbJDBC implements AgendaDb, ChangeObserver<ObservablePr
 
 	/** Graba las direcciones de un contacto.
 	 * @param record el registro a actualizar.
-	 * @return el nuevo nro de version de las direcciones o 0 si no hay actualizaci�n.
+	 * @return el nuevo nro de version de las direcciones o 0 si no hay actualizaci?n.
 	 */
 	@Override
 	public int saveDirecciones(final AgendaRecord record)
@@ -1004,7 +1004,7 @@ public final class AgendaDbJDBC implements AgendaDb, ChangeObserver<ObservablePr
 
 	/** Graba los emails de un contacto.
 	 * @param record el registro a actualizar.
-	 * @return el nuevo nro de version de los emails o 0 si no hay actualizaci�n.
+	 * @return el nuevo nro de version de los emails o 0 si no hay actualizaci?n.
 	 */
 	@Override
 	public int saveEmails(final AgendaRecord record)
@@ -1014,7 +1014,7 @@ public final class AgendaDbJDBC implements AgendaDb, ChangeObserver<ObservablePr
 
 	/** Graba las Notas de un contacto.
 	 * @param record el registro a actualizar.
-	 * @return el nuevo nro de version de las Notas o 0 si no hay actualizaci�n.
+	 * @return el nuevo nro de version de las Notas o 0 si no hay actualizaci?n.
 	 */
 	@Override
 	public int saveNotes(final AgendaRecord record)
@@ -1022,9 +1022,9 @@ public final class AgendaDbJDBC implements AgendaDb, ChangeObserver<ObservablePr
         return noteHelper.persist(record);
 	}
 
-	/** Graba las im�genes de un contacto.
+	/** Graba las im?genes de un contacto.
 	 * @param record el registro a actualizar.
-	 * @return el nuevo nro de version de las im�genes o 0 si no hay actualizaci�n.
+	 * @return el nuevo nro de version de las im?genes o 0 si no hay actualizaci?n.
 	 */
 	@Override
 	public int saveImages(final AgendaRecord record) {

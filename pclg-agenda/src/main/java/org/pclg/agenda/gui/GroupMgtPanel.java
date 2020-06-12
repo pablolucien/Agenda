@@ -28,7 +28,7 @@ public class GroupMgtPanel extends JPanel {
 	private static final Logger LOGGER = LoggerFactory.makeLog4J();
     private static final long serialVersionUID = -2084657209309564903L;
 	private final EditableJList<Grupo> listaGrupos = new EditableJList<>(Grupo.NULL_VALUE);
-	private final AgendaDb agendaDb; // FIXME: no se si esto debe estar aqu� o en Grupo o d�nde
+	private final AgendaDb agendaDb; // FIXME: no se si esto debe estar aqu? o en Grupo o d?nde
     private long lastUpdated;
 
     public GroupMgtPanel(final Properties properties, final AgendaDb agendaDb) {

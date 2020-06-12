@@ -181,7 +181,7 @@ public final class AgendaGUI extends JFrame {
 		setSize(FRAME_WIDTH, FRAME_HEIGHT);
 		createMenu();
         loadCustomProperties();
-		/* posicion y tama�o de la ventana de la aplicacion. */
+		/* posicion y tama?o de la ventana de la aplicacion. */
  		final BoundsInfo applicationBounds = PropertiesHelper.getBounds(guiCustomProperties, "application");
 		GUITools.setBounds(this, applicationBounds);
 
@@ -258,7 +258,7 @@ public final class AgendaGUI extends JFrame {
 			public void actionPerformed(final ActionEvent event) {
 		        for (final Component component : tabbedPane.getComponents()) {
 		            if (component instanceof DataEntry) {
-		                // El fucking compilator deber�a saber que no tengo que hacer el cast
+		                // El fucking compilator deber?a saber que no tengo que hacer el cast
 		                ((DataEntry) component).saveData();
 		            }
 		        }
@@ -355,7 +355,7 @@ public final class AgendaGUI extends JFrame {
 		boolean allAreClosed = true;
 		for (final Component component : tabbedPane.getComponents()) {
             if (component instanceof DataEntry) {
-                // El fucking compilator deber�a saber que no tengo que hacer el cast
+                // El fucking compilator deber?a saber que no tengo que hacer el cast
                 final DataEntry dataEntry = (DataEntry) component;
                 tabbedPane.setSelectedComponent(dataEntry);
                 if (dataEntry.willClose()) {
@@ -456,7 +456,7 @@ public final class AgendaGUI extends JFrame {
     }
 
     void showRecord(final AgendaRecord record) {
-        // Si el registro ya est� en alguna pesta�a, seleccionamos esta.
+        // Si el registro ya est? en alguna pesta?a, seleccionamos esta.
         for (int ii = 0, tabCount = tabbedPane.getTabCount(); ii < tabCount; ii++) {
             final Component component = tabbedPane.getComponentAt(ii);
             if (component instanceof DataEntry) {
@@ -468,7 +468,7 @@ public final class AgendaGUI extends JFrame {
             }
         }
 
-        // Si no est�, lo agregamos.
+        // Si no est?, lo agregamos.
         final DataEntry dataEntry = new DataEntry(properties, agendaDb,
             tabbedPane, this, record);
         final String title = beautify(record.getFirstname()) + ' ' + beautify(record.getLastname());

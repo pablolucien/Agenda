@@ -56,8 +56,8 @@ public final class Agenda {
 		// First thing to do: make sure we have all we need in the classpath.
 		updateClassPath();
 
-		// Necesitamos un frame para hacer de padre putativo de los di�logos
-		// hasta que se cree el la ventana de verdad. SplashWindow cumple esa funci�n
+		// Necesitamos un frame para hacer de padre putativo de los di?logos
+		// hasta que se cree el la ventana de verdad. SplashWindow cumple esa funci?n
         final SplashWindow splashWindow = new SplashWindow(
             ImageTools.getImageIcon(getStringFromProperties(properties, "Agenda.SplashWindow.image")).orElse(null),
             "/sounds/sbcdrop.wav"
@@ -143,7 +143,7 @@ public final class Agenda {
 		try {
             final boolean createTables = Boolean.parseBoolean(appProperties.getProperty("AgendaDb.createTables"));
             if (createTables && showConfirmDialog(parent,
-                "�Borrar las tablas?", "Cuidaito compae gallo",
+                "?Borrar las tablas?", "Cuidaito compae gallo",
                 YES_NO_OPTION, WARNING_MESSAGE)
                     == OK_OPTION) {
                 agendaDb.initDb(appProperties, true, true);

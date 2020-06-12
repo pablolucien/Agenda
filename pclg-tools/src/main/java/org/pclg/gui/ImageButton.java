@@ -60,7 +60,7 @@ public class ImageButton extends JButton {
     private final JMenuItem manageImageMenuItem;
 
 	/**
-     * Crea un ImageButton configurado seg�n las properties. 
+     * Crea un ImageButton configurado seg?n las properties. 
      * @param properties
      * Debe contener los siguientes valores:
      * <code>
@@ -84,7 +84,7 @@ public class ImageButton extends JButton {
         addMenuItem(null, popupMenu, "-");
         manageImageMenuItem = addMenuItem(event -> manageImage(),
             popupMenu, PropertiesHelper.getStringFromProperties(properties, "ImageButton.clear"));
-        addMenuItem(null, popupMenu, "-");      // TODO: crear m�todo  addSeparator();
+        addMenuItem(null, popupMenu, "-");      // TODO: crear m?todo  addSeparator();
 
 		addMouseListener(new MouseAdapter() {
 			@Override
@@ -274,7 +274,7 @@ public class ImageButton extends JButton {
 	}
 
 	/**
-	 * Imagen a mostrar si no hay ninguna v�lida.
+	 * Imagen a mostrar si no hay ninguna v?lida.
 	 * @param imageIcon la imagen.
 	 */
 	public void setVoidIcon(final ImageIcon imageIcon) {

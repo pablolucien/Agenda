@@ -163,9 +163,9 @@ public final class DataEntry extends JPanel implements ActionListener {
 				if (version == 1) {
 					return;
 				}
-				// Comparando las versiones para saber si estamos en la �ltima sin
-				// necesidad de ir a la base de datos. S�lo consideramos los cambios
-				// en el caso de la �ltima versi�n.
+				// Comparando las versiones para saber si estamos en la ?ltima sin
+				// necesidad de ir a la base de datos. S?lo consideramos los cambios
+				// en el caso de la ?ltima versi?n.
 				if (version == this.originalRecord.getVersion()
 						&& !currentData.equals(this.originalRecord)) {
 					editedRecord = currentData;
@@ -390,7 +390,7 @@ public final class DataEntry extends JPanel implements ActionListener {
         }
 		final JFileChooser fileChooser = new JFileChooser();
 		{
-			// FIXME: Esto est� repe en ImageButton
+			// FIXME: Esto est? repe en ImageButton
 			final FileFilter FILE_FILTER = new FileNameExtensionFilter(
 				"Imagenes",	"gif", "jpg", "jpeg", "png");
 			fileChooser.setFileFilter(FILE_FILTER);
@@ -420,7 +420,7 @@ public final class DataEntry extends JPanel implements ActionListener {
 			JOptionPane.ERROR_MESSAGE);
 	}
 
-	/** Action a ejecutar por el bot�n 'Cancelar' o el aspa del TabPanel. */
+	/** Action a ejecutar por el bot?n 'Cancelar' o el aspa del TabPanel. */
 	@Override
 	public void actionPerformed(final ActionEvent e) {
 		if (willClose()) {
@@ -530,7 +530,7 @@ public final class DataEntry extends JPanel implements ActionListener {
 			.setListable(record.isListTelephones())
 			.setNotas(record.getNotes())
 			.setGroups(record.getGroups())
-			.setThumbnail(record.getThumbnail())	// Esto tiene que ir antes de setImagePath() para que est� cargada la thumbnail
+			.setThumbnail(record.getThumbnail())	// Esto tiene que ir antes de setImagePath() para que est? cargada la thumbnail
 			.setImagePath(record.getImagePath(), sexo)
 			.setTemporaryImagePath(record.getTemporaryImage())
 			.setEmails(record.getEmails())

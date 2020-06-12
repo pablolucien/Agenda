@@ -58,7 +58,7 @@ import static org.pclg.tools.StringTools.isEmptyOrBlank;
 
 /**
  * Premature optimization is the root of all evil.
- * �Donald E. Knuth
+ * ?Donald E. Knuth
  *
  * @author El Coyote Cojo
  * @since 02-oct-2007 13:57:59
@@ -283,7 +283,7 @@ public final class AgendaUtil {
 	 * Lee los datos de un fichero de VCards y los agrega a una lista de
 	 * AgendaRecord.
 	 *
-	 * @param file el fichero de d�nde leer.
+	 * @param file el fichero de d?nde leer.
 	 * @return una lista de AgendaRecord.
 	 */
 	public static List<AgendaRecord> readVCards(final File file) {
@@ -321,8 +321,8 @@ public final class AgendaUtil {
 	/**
 	 * Lee el nombre de una VCard y los agrega al AgendaRecord.
 	 *
-   	 * @param vcard de d�nde leer los datos.
-	 * @param record d�nde poner los datos.
+   	 * @param vcard de d?nde leer los datos.
+	 * @param record d?nde poner los datos.
 	 */
 	private static void readName(final VCard vcard, final AgendaRecord record) {
 		final StructuredName structuredName = vcard.getStructuredName();
@@ -341,13 +341,13 @@ public final class AgendaUtil {
 	}
 
 	/**
-	 * Lee los tel�fonos de una VCard y los agrega al AgendaRecord.
+	 * Lee los tel?fonos de una VCard y los agrega al AgendaRecord.
 	 * WARNING: readTelephones() usa record.getCountry(), de modo que
-	 * debe ser llamado despu�s de readAddresses() o al menos despues de que
+	 * debe ser llamado despu?s de readAddresses() o al menos despues de que
 	 * record.pais tenga un valor.
 	 *
-	 * @param vcard de d�nde leer los datos.
-	 * @param record d�nde poner los datos.
+	 * @param vcard de d?nde leer los datos.
+	 * @param record d?nde poner los datos.
 	 */
 	private static void readTelephones(final VCard vcard, final AgendaRecord record) {
 		final List<Telephone> telephoneNumbers = vcard.getTelephoneNumbers();
@@ -376,7 +376,7 @@ public final class AgendaUtil {
 	}
 
     /**
-     * verifica si un telefono est� realmente contenido en la lista aunque separado en pa�s y n�mero formateado.
+     * verifica si un telefono est? realmente contenido en la lista aunque separado en pa?s y n?mero formateado.
      * @param telephoneText
      * @param telefonos
      * @return
@@ -395,8 +395,8 @@ public final class AgendaUtil {
     /**
 	 * Lee los emails de una VCard y los agrega al AgendaRecord.
 	 *
-   	 * @param vcard de d�nde leer los datos.
-	 * @param record d�nde poner los datos.
+   	 * @param vcard de d?nde leer los datos.
+	 * @param record d?nde poner los datos.
 	 */
 	private static void readEmails(final VCard vcard, final AgendaRecord record) {
         record.setEmails(vcard.getEmails().stream().map(SimpleProperty::getValue).collect(Collectors.toList()));
@@ -405,13 +405,13 @@ public final class AgendaUtil {
 	/**
 	 * Lee las fotos de una VCard y los agrega al AgendaRecord.
 	 *
-   	 * @param vcard de d�nde leer los datos.
-	 * @param record d�nde poner los datos.
+   	 * @param vcard de d?nde leer los datos.
+	 * @param record d?nde poner los datos.
 	 */
 	private static void readPhotos(final VCard vcard, final AgendaRecord record) {
 		final List<Photo> photos = vcard.getPhotos();
 		if (!photos.isEmpty()) {
-    		// Si hay varias fotos predomina la �ltima (todas son escritas en HD)
+    		// Si hay varias fotos predomina la ?ltima (todas son escritas en HD)
 			for (final Photo photo : photos) {
 				final byte[] data = photo.getData();
 				try {
@@ -431,8 +431,8 @@ public final class AgendaUtil {
 	/**
 	 * Lee las direcciones de una VCard y los agrega al AgendaRecord.
 	 *
-   	 * @param vcard de d�nde leer los datos.
-	 * @param record d�nde poner los datos.
+   	 * @param vcard de d?nde leer los datos.
+	 * @param record d?nde poner los datos.
 	 */
 	private static void readAddresses(final VCard vcard, final AgendaRecord record) {
 		record.setCountry(Pais.getUnknownCountry());
@@ -453,10 +453,10 @@ public final class AgendaUtil {
 	}
 
 	/**
-	 * Lee el cumplea�os de una VCard y los agrega al AgendaRecord.
+	 * Lee el cumplea?os de una VCard y los agrega al AgendaRecord.
 	 *
-   	 * @param vcard de d�nde leer los datos.
-	 * @param record d�nde poner los datos.
+   	 * @param vcard de d?nde leer los datos.
+	 * @param record d?nde poner los datos.
 	 */
 	@SuppressWarnings("deprecation")
 	private static void readBirthday(final VCard vcard, final AgendaRecord record) {
@@ -483,10 +483,10 @@ public final class AgendaUtil {
 	}
 
 	/**
-	 * Lee la opci�n de listar de una VCard y los agrega al AgendaRecord.
+	 * Lee la opci?n de listar de una VCard y los agrega al AgendaRecord.
 	 *
-   	 * @param vcard de d�nde leer los datos.
-	 * @param record d�nde poner los datos.
+   	 * @param vcard de d?nde leer los datos.
+	 * @param record d?nde poner los datos.
 	 */
 	private static void readListar(final VCard vcard, final AgendaRecord record) {
 		final RawProperty listar = vcard.getExtendedProperty(EXTENDED_LISTAR);
@@ -494,10 +494,10 @@ public final class AgendaUtil {
 	}
 
 	/**
-	 * Lee la fecha de creaci�n de una VCard y los agrega al AgendaRecord.
+	 * Lee la fecha de creaci?n de una VCard y los agrega al AgendaRecord.
 	 *
-   	 * @param vcard de d�nde leer los datos.
-	 * @param record d�nde poner los datos.
+   	 * @param vcard de d?nde leer los datos.
+	 * @param record d?nde poner los datos.
 	 */
 	private static void readFechaCreacion(final VCard vcard, final AgendaRecord record) {
 		final RawProperty fechaCreacion = vcard.getExtendedProperty(EXTENDED_F_CREACION);
@@ -509,8 +509,8 @@ public final class AgendaUtil {
 	/**
 	 * Lee la fecha de actualizacion de una VCard y los agrega al AgendaRecord.
 	 *
-   	 * @param vcard de d�nde leer los datos.
-	 * @param record d�nde poner los datos.
+   	 * @param vcard de d?nde leer los datos.
+	 * @param record d?nde poner los datos.
 	 */
 	private static void readFechaActualizacion(final VCard vcard, final AgendaRecord record) {
 		final RawProperty fechaActualizacion = vcard.getExtendedProperty(EXTENDED_F_ACTUALIZACION);
@@ -522,8 +522,8 @@ public final class AgendaUtil {
 	/**
 	 * Lee la imagen de una VCard y los agrega al AgendaRecord.
 	 *
-   	 * @param vcard de d�nde leer los datos.
-	 * @param record d�nde poner los datos.
+   	 * @param vcard de d?nde leer los datos.
+	 * @param record d?nde poner los datos.
 	 */
 	private static void readImagen(final VCard vcard, final AgendaRecord record) {
 		final RawProperty imagen = vcard.getExtendedProperty(EXTENDED_IMAGEN);
@@ -535,8 +535,8 @@ public final class AgendaUtil {
 	/**
 	 * Lee la marca de una VCard y los agrega al AgendaRecord.
 	 *
-   	 * @param vcard de d�nde leer los datos.
-	 * @param record d�nde poner los datos.
+   	 * @param vcard de d?nde leer los datos.
+	 * @param record d?nde poner los datos.
 	 */
 	private static void readMarca(final VCard vcard, final AgendaRecord record) {
 		final RawProperty marca = vcard.getExtendedProperty(EXTENDED_MARCA);
@@ -548,8 +548,8 @@ public final class AgendaUtil {
 	/**
 	 * Lee el sexo de una VCard y los agrega al AgendaRecord.
 	 *
-   	 * @param vcard de d�nde leer los datos.
-	 * @param record d�nde poner los datos.
+   	 * @param vcard de d?nde leer los datos.
+	 * @param record d?nde poner los datos.
 	 */
 	private static void readGender(final VCard vcard, final AgendaRecord record) {
 		final Gender gender = vcard.getGender();
@@ -564,8 +564,8 @@ public final class AgendaUtil {
 	/**
 	 * Lee las notas de una VCard y los agrega al AgendaRecord.
 	 *
-   	 * @param vcard de d�nde leer los datos.
-	 * @param record d�nde poner los datos.
+   	 * @param vcard de d?nde leer los datos.
+	 * @param record d?nde poner los datos.
 	 */
 	private static void readNotas(final VCard vcard, final AgendaRecord record) {
 		final int length;
@@ -583,8 +583,8 @@ public final class AgendaUtil {
 	/**
 	 * Lee los grupos de una VCard y los agrega al AgendaRecord.
 	 *
-   	 * @param vcard de d�nde leer los datos.
-	 * @param record d�nde poner los datos.
+   	 * @param vcard de d?nde leer los datos.
+	 * @param record d?nde poner los datos.
 	 */
 	private static void readCategories(final VCard vcard, final AgendaRecord record) {
 		final Categories categories = vcard.getCategories();
@@ -604,8 +604,8 @@ public final class AgendaUtil {
 	 * Copia la base de datos dejando la antigua como backup.
 	 *
 	 * @param appProperties para obtener los mensajes i18n.
-	 * @param srcPath de d�nde copiar.
-	 * @param tgtPath a d�nde copiar.
+	 * @param srcPath de d?nde copiar.
+	 * @param tgtPath a d?nde copiar.
 	 * @param dbDate la fecha de la bd antigua (para el nombre a usar).
 	 * @throws IOException si se producen errores en la copia.
 	 */
@@ -635,9 +635,9 @@ public final class AgendaUtil {
 	}
 
 	/**
-	 * Elimina los backups m�s antiguos, dejando a lo sumo la cantidad pedida.
+	 * Elimina los backups m?s antiguos, dejando a lo sumo la cantidad pedida.
 	 *
-	 * @param tgtPath a d�nde copiar.
+	 * @param tgtPath a d?nde copiar.
 	 * @param maxBackupHistory la fecha de la bd antigua (para el nombre a usar).
 	 */
 	public static void deleteDatabaseBackups(final String tgtPath, final int maxBackupHistory) {

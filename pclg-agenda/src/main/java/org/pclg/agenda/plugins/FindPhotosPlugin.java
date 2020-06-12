@@ -29,7 +29,7 @@ public class FindPhotosPlugin implements Plugin {
 	@Override
 	public void execute(final Properties properties, final Connection conn, final String... args)
 			throws SQLException {
-		// org.pclg.agenda.plugins.FindPhotosPlugin U:
+		// FindPhotosPlugin U:
 		LOGGER.info("FindPhotosPlugin.execute() " + (args.length > 0 ? args[0] : ""));
 		try (final PreparedStatement stmt = conn.prepareStatement(
 				SELECT_FROM_IMAGEN_SENTENCE)) {
