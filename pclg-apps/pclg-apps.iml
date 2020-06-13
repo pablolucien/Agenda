@@ -5,7 +5,7 @@
       <configuration sdkName="" />
     </facet>
   </component>
-  <component name="NewModuleRootManager" inherit-compiler-output="false">
+  <component name="NewModuleRootManager">
     <output url="file://$MODULE_DIR$/../../build/production/Alles" />
     <output-test url="file://$MODULE_DIR$/../../build/test/Alles" />
     <exclude-output />
@@ -24,4 +24,3 @@
     <orderEntry type="module" module-name="pclg-tools" />
   </component>
 </module>
-
