@@ -2,7 +2,6 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="ca6eb6b6-6419-4d0e-a6aa-4254ec1c5806" name="Default" comment="Modularization (add Idea configuration files to version control)">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/modules.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="Alles.iws" />
@@ -29,8 +28,8 @@
       <file leaf-file-name="pclg-apps.iml" pinned="false" current="true" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/pclg-apps/pclg-apps.iml">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.3443038" vertical-offset="0" max-vertical-offset="561">
-              <caret line="8" column="32" selection-start-line="8" selection-start-column="32" selection-end-line="8" selection-end-column="32" />
+            <state vertical-scroll-proportion="0.5164557" vertical-offset="0" max-vertical-offset="561">
+              <caret line="12" column="34" selection-start-line="12" selection-start-column="34" selection-end-line="12" selection-end-column="34" />
               <folding />
             </state>
           </provider>
@@ -1645,8 +1644,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/pclg-apps/pclg-apps.iml">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.3443038" vertical-offset="0" max-vertical-offset="561">
-          <caret line="8" column="32" selection-start-line="8" selection-start-column="32" selection-end-line="8" selection-end-column="32" />
+        <state vertical-scroll-proportion="0.5164557" vertical-offset="0" max-vertical-offset="561">
+          <caret line="12" column="34" selection-start-line="12" selection-start-column="34" selection-end-line="12" selection-end-column="34" />
           <folding />
         </state>
       </provider>
