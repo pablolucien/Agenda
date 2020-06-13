@@ -2,44 +2,15 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="ca6eb6b6-6419-4d0e-a6aa-4254ec1c5806" name="Default" comment="Modularization (add Idea configuration files to version control)">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" afterPath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/libraries/lib.xml" afterPath="$PROJECT_DIR$/.idea/libraries/lib.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/inspectionProfiles/profiles_settings.xml" afterPath="$PROJECT_DIR$/.idea/inspectionProfiles/profiles_settings.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/scopes/scope_settings.xml" afterPath="$PROJECT_DIR$/.idea/scopes/scope_settings.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
     </list>
-    <ignored path="Alles.iws" />
-    <ignored path=".idea/workspace.xml" />
-    <option name="TRACKING_ENABLED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
-  <component name="ChangesViewManager" flattened_view="true" show_ignored="false" />
   <component name="CreatePatchCommitExecutor">
     <option name="PATCH_PATH" value="" />
-  </component>
-  <component name="DaemonCodeAnalyzer">
-    <disable_hints />
-  </component>
-  <component name="ExecutionTargetManager" SELECTED_TARGET="default_target" />
-  <component name="FavoritesManager">
-    <favorites_list name="Alles" />
-  </component>
-  <component name="FileEditorManager">
-    <leaf>
-      <file leaf-file-name="pclg-apps.iml" pinned="false" current="true" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/pclg-apps/pclg-apps.iml">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.7316456" vertical-offset="0" max-vertical-offset="561">
-              <caret line="17" column="22" selection-start-line="17" selection-start-column="22" selection-end-line="17" selection-end-column="22" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-    </leaf>
   </component>
   <component name="FindManager">
     <FindUsagesManager>
@@ -54,69 +25,7 @@
       </map>
     </option>
   </component>
-  <component name="IdeDocumentHistory">
-    <option name="changedFiles">
-      <list>
-        <option value="$PROJECT_DIR$/src/java/org/pclg/tools/DirTree.java" />
-        <option value="$PROJECT_DIR$/src/test/org/pclg/tools/DirTreeTest.java" />
-        <option value="$PROJECT_DIR$/src/test_resources/Test_DS_Targets.json" />
-        <option value="$PROJECT_DIR$/src/java/org/pclg/filesystem/EndOfLineChanger.java" />
-        <option value="$PROJECT_DIR$/src/java/org/pclg/filesystem/synchonizer/DirectorySynchronizerGUIXX.java" />
-        <option value="$PROJECT_DIR$/src/java/org/pclg/tools/DirTreeNodeXX.java" />
-        <option value="$PROJECT_DIR$/src/java/org/pclg/tools/DirTreeXX.java" />
-        <option value="$PROJECT_DIR$/src/html/css/style.css" />
-        <option value="$PROJECT_DIR$/src/config/Agenda.properties" />
-        <option value="$PROJECT_DIR$/src/java/org/pclg/dbutil/AuditPostprocessor.java" />
-        <option value="$PROJECT_DIR$/src/java/org/pclg/dbutil/VersatileResultSet.java" />
-        <option value="$PROJECT_DIR$/src/config/build.xml" />
-        <option value="$PROJECT_DIR$/src/config/log4j.properties" />
-        <option value="$PROJECT_DIR$/src/java/org/pclg/filesystem/synchonizer/persistence/DataAccess.java" />
-        <option value="$PROJECT_DIR$/pclg.apps/src/java/org/pclg/filesystem/synchonizer/persistence/DataAccess.java" />
-        <option value="$PROJECT_DIR$/src/java/org/pclg/filesystem/synchonizer/DirectorySynchronizerGUI.java" />
-        <option value="$PROJECT_DIR$/src/config/DirectorySynchronizer_technical-ACME-II.properties" />
-        <option value="$PROJECT_DIR$/src/java/org/pclg/filesystem/synchonizer/DirectorySynchronizer.java" />
-        <option value="$PROJECT_DIR$/pclg-apps/src/test/java/org/pclg/gui/SplashWindowTest.java" />
-        <option value="$PROJECT_DIR$/pclg-apps/src/test/java/org/pclg/misc/IndexerTest.java" />
-        <option value="$PROJECT_DIR$/pclg-apps/src/main/config/build.xml" />
-        <option value="$PROJECT_DIR$/pclg-apps/src/main/config/DS_Targets_Tlf_movil.json" />
-        <option value="$PROJECT_DIR$/runant.bat" />
-        <option value="$PROJECT_DIR$/pclg-tools/src/main/java/org/pclg/filesystem/fileattributes/CopyAttributes.java" />
-        <option value="$PROJECT_DIR$/pclg-tools/src/main/java/org/pclg/tools/PropertiesHelper.java" />
-        <option value="$PROJECT_DIR$/pclg-tools/src/main/java/org/pclg/log/LoggerFactory.java" />
-        <option value="$PROJECT_DIR$/pclg-tools/src/test/java/org/pclg/tools/FileToolsTest.java" />
-        <option value="$PROJECT_DIR$/pclg-misc/src/java/tests/Stega.java" />
-        <option value="$PROJECT_DIR$/pclg-agenda/src/main/java/org/pclg/agenda/crypto/PreprocessorCryptString.java" />
-        <option value="$PROJECT_DIR$/pclg-agenda/src/main/java/org/pclg/agenda/crypto/PreprocessorClipAndCryptString.java" />
-        <option value="$PROJECT_DIR$/pclg-agenda/src/main/java/org/pclg/agenda/jdbc/AgendaDbJDBC.java" />
-        <option value="$PROJECT_DIR$/pclg-apps/src/main/config/log4j.properties" />
-        <option value="$PROJECT_DIR$/pclg-apps/src/main/config/Agenda_custom.properties" />
-        <option value="$PROJECT_DIR$/pclg-agenda/src/main/java/org/pclg/agenda/Agenda.java" />
-        <option value="$PROJECT_DIR$/pclg-agenda/src/main/java/org/pclg/agenda/AgendaUtil.java" />
-        <option value="$PROJECT_DIR$/pclg-tools/src/main/java/org/pclg/gui/ImageButton.java" />
-        <option value="$PROJECT_DIR$/pclg-tools/src/main/java/org/pclg/gui/ListSelector.java" />
-        <option value="$PROJECT_DIR$/pclg-apps/src/main/java/org/pclg/migrator/MySQL-MySQL_Cifrar_telefonos.conf" />
-        <option value="$PROJECT_DIR$/pclg-apps/src/main/java/org/pclg/migrator/MySQL-MySQL_Cifrar_contactos.conf" />
-        <option value="$PROJECT_DIR$/pclg-apps/src/main/java/org/pclg/migrator/Fechas-contactos_Derby_cifrando.conf" />
-        <option value="$PROJECT_DIR$/pclg-apps/src/main/java/org/pclg/migrator/Fechas-contactos_cifrando.conf" />
-        <option value="$PROJECT_DIR$/pclg-apps/src/main/java/net/asintec/migrator/MigratorGrid.java" />
-        <option value="$PROJECT_DIR$/pclg-agenda/src/main/java/org/pclg/agenda/gui/GroupMgtPanel.java" />
-        <option value="$PROJECT_DIR$/pclg-agenda/src/main/java/org/pclg/agenda/gui/DataEntry.java" />
-        <option value="$PROJECT_DIR$/pclg-agenda/src/main/java/org/pclg/agenda/gui/AgendaGUI.java" />
-        <option value="$PROJECT_DIR$/net-asintec/src/main/java/asintec/migrator/DatabaseFileChooser.java" />
-        <option value="$PROJECT_DIR$/pclg-apps/src/main/java/net/asintec/migrator/DatabaseFileChooser.java" />
-        <option value="$PROJECT_DIR$/net-asintec/src/main/java/net/asintec/migrator/MigratorArbeiter.java" />
-        <option value="$PROJECT_DIR$/net-asintec/src/main/java/net/asintec/xtras/Function.java" />
-        <option value="$PROJECT_DIR$/net-asintec/src/main/java/net/asintec/xtras/Parser.java" />
-        <option value="$PROJECT_DIR$/net-asintec/src/main/java/net/asintec/migrator/preprocessors/PreprocessorCalculator.java" />
-      </list>
-    </option>
-  </component>
-  <component name="ProjectFrameBounds">
-    <option name="x" value="-4" />
-    <option name="y" value="-4" />
-    <option name="width" value="1032" />
-    <option name="height" value="578" />
-  </component>
+  <component name="ProjectId" id="1dGR5T6zfui34Fi3zHyNVNEEKlF" />
   <component name="ProjectInspectionProfilesVisibleTreeState">
     <entry key="Project Default">
       <profile-state>
@@ -395,16 +304,7 @@
       </profile-state>
     </entry>
   </component>
-  <component name="ProjectLevelVcsManager" settingsEditedManually="true">
-    <OptionsSetting value="true" id="Add" />
-    <OptionsSetting value="true" id="Remove" />
-    <OptionsSetting value="true" id="Checkout" />
-    <OptionsSetting value="true" id="Update" />
-    <OptionsSetting value="true" id="Status" />
-    <OptionsSetting value="true" id="Edit" />
-    <ConfirmationsSetting value="0" id="Add" />
-    <ConfirmationsSetting value="0" id="Remove" />
-  </component>
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="ProjectReloadState">
     <option name="STATE" value="0" />
   </component>
@@ -413,72 +313,52 @@
       <problem id="unused-library(library:project:toolbarButtonGraphics)" />
     </ignored-problems>
   </component>
-  <component name="ProjectView">
-    <navigator currentView="ProjectPane" proportions="" version="1">
-      <flattenPackages />
-      <showMembers />
-      <showModules />
-      <showLibraryContents />
-      <hideEmptyPackages />
-      <abbreviatePackageNames />
-      <autoscrollToSource />
-      <autoscrollFromSource />
-      <sortByType />
-    </navigator>
-    <panes>
-      <pane id="Scope" />
-      <pane id="ProjectPane">
-        <subPane>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="Alles" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-          </PATH>
-        </subPane>
-      </pane>
-      <pane id="PackagesPane" />
-    </panes>
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
   </component>
   <component name="PropertiesComponent">
+    <property name="FileHistory.git4idea.history.GitHistoryProvider_flatOrder0" value="0" />
+    <property name="FileHistory.git4idea.history.GitHistoryProvider_flatOrder1" value="1" />
+    <property name="FileHistory.git4idea.history.GitHistoryProvider_flatOrder2" value="2" />
+    <property name="FileHistory.git4idea.history.GitHistoryProvider_flatOrder3" value="3" />
+    <property name="FileHistory.git4idea.history.GitHistoryProvider_flatWidth0" value="123" />
+    <property name="FileHistory.git4idea.history.GitHistoryProvider_flatWidth1" value="123" />
+    <property name="FileHistory.git4idea.history.GitHistoryProvider_flatWidth2" value="123" />
+    <property name="FileHistory.git4idea.history.GitHistoryProvider_flatWidth3" value="583" />
+    <property name="FileHistory.git4idea.history.GitHistoryProvider_treeOrder0" value="0" />
+    <property name="FileHistory.git4idea.history.GitHistoryProvider_treeOrder1" value="1" />
+    <property name="FileHistory.git4idea.history.GitHistoryProvider_treeOrder2" value="2" />
+    <property name="FileHistory.git4idea.history.GitHistoryProvider_treeOrder3" value="3" />
+    <property name="FileHistory.git4idea.history.GitHistoryProvider_treeWidth0" value="156" />
+    <property name="FileHistory.git4idea.history.GitHistoryProvider_treeWidth1" value="150" />
+    <property name="FileHistory.git4idea.history.GitHistoryProvider_treeWidth2" value="154" />
+    <property name="FileHistory.git4idea.history.GitHistoryProvider_treeWidth3" value="492" />
+    <property name="FullScreen" value="false" />
     <property name="GoToClass.includeLibraries" value="false" />
     <property name="GoToClass.toSaveIncludeLibraries" value="false" />
     <property name="GoToFile.includeJavaFiles" value="false" />
-    <property name="MemberChooser.sorted" value="false" />
-    <property name="MemberChooser.showClasses" value="true" />
+    <property name="LayoutCode.rearrangeEntriesJava" value="false" />
     <property name="MemberChooser.copyJavadoc" value="false" />
+    <property name="MemberChooser.showClasses" value="true" />
+    <property name="MemberChooser.sorted" value="false" />
+    <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
+    <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="aspect.path.notification.shown" value="true" />
+    <property name="dynamic.classpath" value="false" />
+    <property name="extract.method.default.visibility" value="private" />
+    <property name="last_directory_selection" value="$PROJECT_DIR$/pclg-tools/src/main/java" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/pclg-agenda/src/main/resources" />
     <property name="options.lastSelected" value="editor" />
-    <property name="options.splitter.main.proportions" value="0.3" />
-    <property name="options.splitter.details.proportions" value="0.2" />
     <property name="options.searchVisible" value="true" />
+    <property name="options.splitter.details.proportions" value="0.2" />
+    <property name="options.splitter.main.proportions" value="0.3" />
     <property name="project.structure.last.edited" value="Modules" />
     <property name="project.structure.proportion" value="0.15" />
     <property name="project.structure.side.proportion" value="0.24941725" />
     <property name="recentsLimit" value="5" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/pclg-agenda/src/main/resources" />
-    <property name="dynamic.classpath" value="false" />
-    <property name="FullScreen" value="false" />
     <property name="restartRequiresConfirmation" value="true" />
-    <property name="LayoutCode.rearrangeEntriesJava" value="false" />
-    <property name="extract.method.default.visibility" value="private" />
-    <property name="FileHistory.git4idea.history.GitHistoryProvider_flatWidth0" value="123" />
-    <property name="FileHistory.git4idea.history.GitHistoryProvider_flatOrder0" value="0" />
-    <property name="FileHistory.git4idea.history.GitHistoryProvider_flatWidth1" value="123" />
-    <property name="FileHistory.git4idea.history.GitHistoryProvider_flatOrder1" value="1" />
-    <property name="FileHistory.git4idea.history.GitHistoryProvider_flatWidth2" value="123" />
-    <property name="FileHistory.git4idea.history.GitHistoryProvider_flatOrder2" value="2" />
-    <property name="FileHistory.git4idea.history.GitHistoryProvider_flatWidth3" value="583" />
-    <property name="FileHistory.git4idea.history.GitHistoryProvider_flatOrder3" value="3" />
-    <property name="FileHistory.git4idea.history.GitHistoryProvider_treeWidth0" value="156" />
-    <property name="FileHistory.git4idea.history.GitHistoryProvider_treeOrder0" value="0" />
-    <property name="FileHistory.git4idea.history.GitHistoryProvider_treeWidth1" value="150" />
-    <property name="FileHistory.git4idea.history.GitHistoryProvider_treeOrder1" value="1" />
-    <property name="FileHistory.git4idea.history.GitHistoryProvider_treeWidth2" value="154" />
-    <property name="FileHistory.git4idea.history.GitHistoryProvider_treeOrder2" value="2" />
-    <property name="FileHistory.git4idea.history.GitHistoryProvider_treeWidth3" value="492" />
-    <property name="FileHistory.git4idea.history.GitHistoryProvider_treeOrder3" value="3" />
-    <property name="last_directory_selection" value="$PROJECT_DIR$/pclg-tools/src/main/java" />
   </component>
   <component name="PyConsoleOptionsProvider">
     <option name="myPythonConsoleState">
@@ -486,9 +366,6 @@
     </option>
   </component>
   <component name="RecentsManager">
-    <key name="CopyFile.RECENT_KEYS">
-      <recent name="C:\home\development\projects\Alles\src\test_resources\images\16x16" />
-    </key>
     <key name="MoveFile.RECENT_KEYS">
       <recent name="C:\home\development\projects\Alles\pclg-tools\src\main\resources" />
       <recent name="C:\home\development\projects\Alles\pclg-tools\src\main\sql" />
@@ -503,284 +380,11 @@
       <recent name="org.pclg.migrator.preprocessors" />
       <recent name="net.asintec" />
     </key>
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\home\development\projects\Alles\src\test_resources\images\16x16" />
+    </key>
   </component>
   <component name="RunManager" selected="Application.Migrator">
-    <configuration default="false" name="EndOfLineChanger" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea">
-        <pattern>
-          <option name="PATTERN" value="org.pclg.filesystem.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <option name="MAIN_CLASS_NAME" value="org.pclg.filesystem.EndOfLineChanger" />
-      <option name="VM_PARAMETERS" />
-      <option name="PROGRAM_PARAMETERS" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
-      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
-      <option name="ALTERNATIVE_JRE_PATH" />
-      <option name="ENABLE_SWING_INSPECTOR" value="false" />
-      <option name="ENV_VARIABLES" />
-      <option name="PASS_PARENT_ENVS" value="true" />
-      <module name="pclg-apps" />
-      <envs />
-      <RunnerSettings RunnerId="Debug">
-        <option name="DEBUG_PORT" value="" />
-        <option name="TRANSPORT" value="0" />
-        <option name="LOCAL" value="true" />
-      </RunnerSettings>
-      <RunnerSettings RunnerId="Run" />
-      <ConfigurationWrapper RunnerId="Debug" />
-      <ConfigurationWrapper RunnerId="Run" />
-      <method />
-    </configuration>
-    <configuration default="false" name="TestLoggerFactory" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea">
-        <pattern>
-          <option name="PATTERN" value="org.pclg.log.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <option name="MAIN_CLASS_NAME" value="org.pclg.log.TestLoggerFactory" />
-      <option name="VM_PARAMETERS" />
-      <option name="PROGRAM_PARAMETERS" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
-      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
-      <option name="ALTERNATIVE_JRE_PATH" />
-      <option name="ENABLE_SWING_INSPECTOR" value="false" />
-      <option name="ENV_VARIABLES" />
-      <option name="PASS_PARENT_ENVS" value="true" />
-      <module name="pclg-tools" />
-      <envs />
-      <RunnerSettings RunnerId="Run" />
-      <ConfigurationWrapper RunnerId="Run" />
-      <method />
-    </configuration>
-    <configuration default="false" name="DirTreeTest" type="TestNG" factoryName="TestNG" temporary="true" nameIsGenerated="true">
-      <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea">
-        <pattern>
-          <option name="PATTERN" value="org.pclg.tools.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <module name="pclg-apps" />
-      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
-      <option name="ALTERNATIVE_JRE_PATH" />
-      <option name="SUITE_NAME" />
-      <option name="PACKAGE_NAME" value="org.pclg.tools" />
-      <option name="MAIN_CLASS_NAME" value="org.pclg.tools.DirTreeTest" />
-      <option name="METHOD_NAME" />
-      <option name="GROUP_NAME" />
-      <option name="TEST_OBJECT" value="CLASS" />
-      <option name="VM_PARAMETERS" />
-      <option name="PARAMETERS" />
-      <option name="WORKING_DIRECTORY" />
-      <option name="OUTPUT_DIRECTORY" />
-      <option name="ANNOTATION_TYPE" />
-      <option name="ENV_VARIABLES" />
-      <option name="PASS_PARENT_ENVS" value="true" />
-      <option name="TEST_SEARCH_SCOPE">
-        <value defaultName="moduleWithDependencies" />
-      </option>
-      <option name="USE_DEFAULT_REPORTERS" value="false" />
-      <option name="PROPERTIES_FILE" />
-      <envs />
-      <properties />
-      <listeners />
-      <RunnerSettings RunnerId="Debug">
-        <option name="DEBUG_PORT" value="1900" />
-        <option name="TRANSPORT" value="0" />
-        <option name="LOCAL" value="true" />
-      </RunnerSettings>
-      <RunnerSettings RunnerId="Run" />
-      <ConfigurationWrapper RunnerId="Debug" />
-      <ConfigurationWrapper RunnerId="Run" />
-      <method />
-    </configuration>
-    <configuration default="false" name="SplashWindowTest.testSplashWindow" type="TestNG" factoryName="TestNG" temporary="true" nameIsGenerated="true">
-      <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea">
-        <pattern>
-          <option name="PATTERN" value="org.pclg.gui.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <module name="pclg-apps" />
-      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
-      <option name="ALTERNATIVE_JRE_PATH" />
-      <option name="SUITE_NAME" />
-      <option name="PACKAGE_NAME" value="org.pclg.gui" />
-      <option name="MAIN_CLASS_NAME" value="org.pclg.gui.SplashWindowTest" />
-      <option name="METHOD_NAME" value="testSplashWindow" />
-      <option name="GROUP_NAME" />
-      <option name="TEST_OBJECT" value="METHOD" />
-      <option name="VM_PARAMETERS" value="-ea" />
-      <option name="PARAMETERS" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
-      <option name="OUTPUT_DIRECTORY" />
-      <option name="ANNOTATION_TYPE" />
-      <option name="ENV_VARIABLES" />
-      <option name="PASS_PARENT_ENVS" value="true" />
-      <option name="TEST_SEARCH_SCOPE">
-        <value defaultName="moduleWithDependencies" />
-      </option>
-      <option name="USE_DEFAULT_REPORTERS" value="false" />
-      <option name="PROPERTIES_FILE" />
-      <envs />
-      <properties />
-      <listeners />
-      <RunnerSettings RunnerId="Run" />
-      <ConfigurationWrapper RunnerId="Run" />
-      <method />
-    </configuration>
-    <configuration default="false" name="SplashWindowTest" type="TestNG" factoryName="TestNG" temporary="true" nameIsGenerated="true">
-      <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea">
-        <pattern>
-          <option name="PATTERN" value="org.pclg.gui.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <module name="pclg-apps" />
-      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
-      <option name="ALTERNATIVE_JRE_PATH" />
-      <option name="SUITE_NAME" />
-      <option name="PACKAGE_NAME" value="org.pclg.gui" />
-      <option name="MAIN_CLASS_NAME" value="org.pclg.gui.SplashWindowTest" />
-      <option name="METHOD_NAME" />
-      <option name="GROUP_NAME" />
-      <option name="TEST_OBJECT" value="CLASS" />
-      <option name="VM_PARAMETERS" value="-ea" />
-      <option name="PARAMETERS" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
-      <option name="OUTPUT_DIRECTORY" />
-      <option name="ANNOTATION_TYPE" />
-      <option name="ENV_VARIABLES" />
-      <option name="PASS_PARENT_ENVS" value="true" />
-      <option name="TEST_SEARCH_SCOPE">
-        <value defaultName="moduleWithDependencies" />
-      </option>
-      <option name="USE_DEFAULT_REPORTERS" value="false" />
-      <option name="PROPERTIES_FILE" />
-      <envs />
-      <properties />
-      <listeners />
-      <RunnerSettings RunnerId="Run" />
-      <ConfigurationWrapper RunnerId="Run" />
-      <method />
-    </configuration>
-    <configuration default="true" type="DjangoTestsConfigurationType" factoryName="Django tests">
-      <option name="INTERPRETER_OPTIONS" value="" />
-      <option name="PARENT_ENVS" value="true" />
-      <envs>
-        <env name="PYTHONUNBUFFERED" value="1" />
-      </envs>
-      <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="" />
-      <option name="IS_MODULE_SDK" value="false" />
-      <option name="ADD_CONTENT_ROOTS" value="true" />
-      <option name="ADD_SOURCE_ROOTS" value="true" />
-      <module name="pclg-apps" />
-      <EXTENSION ID="PythonCoverageRunConfigurationExtension" enabled="false" sample_coverage="true" runner="coverage.py" />
-      <option name="TARGET" value="" />
-      <option name="SETTINGS_FILE" value="" />
-      <option name="CUSTOM_SETTINGS" value="false" />
-      <option name="USE_OPTIONS" value="false" />
-      <option name="OPTIONS" value="" />
-      <method />
-    </configuration>
-    <configuration default="true" type="tests" factoryName="py.test">
-      <option name="INTERPRETER_OPTIONS" value="" />
-      <option name="PARENT_ENVS" value="true" />
-      <envs />
-      <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="" />
-      <option name="IS_MODULE_SDK" value="false" />
-      <option name="ADD_CONTENT_ROOTS" value="true" />
-      <option name="ADD_SOURCE_ROOTS" value="true" />
-      <module name="pclg-apps" />
-      <EXTENSION ID="PythonCoverageRunConfigurationExtension" enabled="false" sample_coverage="true" runner="coverage.py" />
-      <option name="SCRIPT_NAME" value="" />
-      <option name="CLASS_NAME" value="" />
-      <option name="METHOD_NAME" value="" />
-      <option name="FOLDER_NAME" value="" />
-      <option name="TEST_TYPE" value="TEST_SCRIPT" />
-      <option name="PATTERN" value="" />
-      <option name="USE_PATTERN" value="false" />
-      <option name="testToRun" value="" />
-      <option name="keywords" value="" />
-      <option name="params" value="" />
-      <option name="USE_PARAM" value="false" />
-      <option name="USE_KEYWORD" value="false" />
-      <method />
-    </configuration>
-    <configuration default="true" type="tests" factoryName="Nosetests">
-      <option name="INTERPRETER_OPTIONS" value="" />
-      <option name="PARENT_ENVS" value="true" />
-      <envs />
-      <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="" />
-      <option name="IS_MODULE_SDK" value="false" />
-      <option name="ADD_CONTENT_ROOTS" value="true" />
-      <option name="ADD_SOURCE_ROOTS" value="true" />
-      <module name="pclg-apps" />
-      <EXTENSION ID="PythonCoverageRunConfigurationExtension" enabled="false" sample_coverage="true" runner="coverage.py" />
-      <option name="SCRIPT_NAME" value="" />
-      <option name="CLASS_NAME" value="" />
-      <option name="METHOD_NAME" value="" />
-      <option name="FOLDER_NAME" value="" />
-      <option name="TEST_TYPE" value="TEST_SCRIPT" />
-      <option name="PATTERN" value="" />
-      <option name="USE_PATTERN" value="false" />
-      <option name="PARAMS" value="" />
-      <option name="USE_PARAM" value="false" />
-      <method />
-    </configuration>
-    <configuration default="true" type="Remote" factoryName="Remote">
-      <option name="USE_SOCKET_TRANSPORT" value="true" />
-      <option name="SERVER_MODE" value="false" />
-      <option name="SHMEM_ADDRESS" value="javadebug" />
-      <option name="HOST" value="localhost" />
-      <option name="PORT" value="5005" />
-      <method />
-    </configuration>
-    <configuration default="true" type="PythonConfigurationType" factoryName="Python">
-      <option name="INTERPRETER_OPTIONS" value="" />
-      <option name="PARENT_ENVS" value="true" />
-      <envs>
-        <env name="PYTHONUNBUFFERED" value="1" />
-      </envs>
-      <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="" />
-      <option name="IS_MODULE_SDK" value="false" />
-      <option name="ADD_CONTENT_ROOTS" value="true" />
-      <option name="ADD_SOURCE_ROOTS" value="true" />
-      <module name="pclg-apps" />
-      <EXTENSION ID="PythonCoverageRunConfigurationExtension" enabled="false" sample_coverage="true" runner="coverage.py" />
-      <option name="SCRIPT_NAME" value="" />
-      <option name="PARAMETERS" value="" />
-      <method />
-    </configuration>
-    <configuration default="true" type="tests" factoryName="Unittests">
-      <option name="INTERPRETER_OPTIONS" value="" />
-      <option name="PARENT_ENVS" value="true" />
-      <envs />
-      <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="" />
-      <option name="IS_MODULE_SDK" value="false" />
-      <option name="ADD_CONTENT_ROOTS" value="true" />
-      <option name="ADD_SOURCE_ROOTS" value="true" />
-      <module name="pclg-apps" />
-      <EXTENSION ID="PythonCoverageRunConfigurationExtension" enabled="false" sample_coverage="true" runner="coverage.py" />
-      <option name="SCRIPT_NAME" value="" />
-      <option name="CLASS_NAME" value="" />
-      <option name="METHOD_NAME" value="" />
-      <option name="FOLDER_NAME" value="" />
-      <option name="TEST_TYPE" value="TEST_SCRIPT" />
-      <option name="PATTERN" value="" />
-      <option name="USE_PATTERN" value="false" />
-      <option name="PUREUNITTEST" value="true" />
-      <option name="PARAMS" value="" />
-      <option name="USE_PARAM" value="false" />
-      <method />
-    </configuration>
     <configuration default="true" type="Applet" factoryName="Applet">
       <module name="" />
       <option name="MAIN_CLASS_NAME" />
@@ -794,108 +398,9 @@
       <option name="ALTERNATIVE_JRE_PATH" />
       <method />
     </configuration>
-    <configuration default="true" type="TestNG" factoryName="TestNG">
-      <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea" />
-      <module name="" />
-      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
-      <option name="ALTERNATIVE_JRE_PATH" />
-      <option name="SUITE_NAME" />
-      <option name="PACKAGE_NAME" />
-      <option name="MAIN_CLASS_NAME" />
-      <option name="METHOD_NAME" />
-      <option name="GROUP_NAME" />
-      <option name="TEST_OBJECT" value="CLASS" />
-      <option name="VM_PARAMETERS" value="-ea" />
-      <option name="PARAMETERS" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
-      <option name="OUTPUT_DIRECTORY" />
-      <option name="ANNOTATION_TYPE" />
-      <option name="ENV_VARIABLES" />
-      <option name="PASS_PARENT_ENVS" value="true" />
-      <option name="TEST_SEARCH_SCOPE">
-        <value defaultName="moduleWithDependencies" />
-      </option>
-      <option name="USE_DEFAULT_REPORTERS" value="false" />
-      <option name="PROPERTIES_FILE" />
-      <envs />
-      <properties />
-      <listeners />
-      <method />
-    </configuration>
-    <configuration default="true" type="CucumberJavaRunConfigurationType" factoryName="Cucumber java">
-      <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea" />
-      <option name="myFilePath" />
-      <option name="GLUE" />
-      <option name="myNameFilter" />
-      <option name="myGeneratedName" />
-      <option name="MAIN_CLASS_NAME" />
-      <option name="VM_PARAMETERS" />
-      <option name="PROGRAM_PARAMETERS" />
-      <option name="WORKING_DIRECTORY" />
-      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
-      <option name="ALTERNATIVE_JRE_PATH" />
-      <option name="ENABLE_SWING_INSPECTOR" value="false" />
-      <option name="ENV_VARIABLES" />
-      <option name="PASS_PARENT_ENVS" value="true" />
-      <module name="" />
-      <envs />
-      <method />
-    </configuration>
-    <configuration default="true" type="Application" factoryName="Application">
-      <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea" />
-      <option name="MAIN_CLASS_NAME" />
-      <option name="VM_PARAMETERS" />
-      <option name="PROGRAM_PARAMETERS" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
-      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
-      <option name="ALTERNATIVE_JRE_PATH" />
-      <option name="ENABLE_SWING_INSPECTOR" value="false" />
-      <option name="ENV_VARIABLES" />
-      <option name="PASS_PARENT_ENVS" value="true" />
-      <module name="" />
-      <envs />
-      <method />
-    </configuration>
-    <configuration default="true" type="tests" factoryName="Doctests">
-      <option name="INTERPRETER_OPTIONS" value="" />
-      <option name="PARENT_ENVS" value="true" />
-      <envs />
-      <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="" />
-      <option name="IS_MODULE_SDK" value="false" />
-      <option name="ADD_CONTENT_ROOTS" value="true" />
-      <option name="ADD_SOURCE_ROOTS" value="true" />
-      <module name="pclg-apps" />
-      <EXTENSION ID="PythonCoverageRunConfigurationExtension" enabled="false" sample_coverage="true" runner="coverage.py" />
-      <option name="SCRIPT_NAME" value="" />
-      <option name="CLASS_NAME" value="" />
-      <option name="METHOD_NAME" value="" />
-      <option name="FOLDER_NAME" value="" />
-      <option name="TEST_TYPE" value="TEST_SCRIPT" />
-      <option name="PATTERN" value="" />
-      <option name="USE_PATTERN" value="false" />
-      <method />
-    </configuration>
-    <configuration default="true" type="JUnit" factoryName="JUnit">
-      <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea" />
-      <module name="" />
-      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
-      <option name="ALTERNATIVE_JRE_PATH" />
-      <option name="PACKAGE_NAME" />
-      <option name="MAIN_CLASS_NAME" />
-      <option name="METHOD_NAME" />
-      <option name="TEST_OBJECT" value="class" />
-      <option name="VM_PARAMETERS" value="-ea" />
-      <option name="PARAMETERS" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
-      <option name="ENV_VARIABLES" />
-      <option name="PASS_PARENT_ENVS" value="true" />
-      <option name="TEST_SEARCH_SCOPE">
-        <value defaultName="moduleWithDependencies" />
-      </option>
-      <envs />
-      <patterns />
-      <method />
+    <configuration name="&lt;template&gt;" type="WebApp" default="true" selected="false">
+      <Host>localhost</Host>
+      <Port>5050</Port>
     </configuration>
     <configuration default="true" type="tests" factoryName="Attests">
       <option name="INTERPRETER_OPTIONS" value="" />
@@ -917,19 +422,11 @@
       <option name="USE_PATTERN" value="false" />
       <method />
     </configuration>
-    <configuration default="false" name="Agenda" type="Application" factoryName="Application">
-      <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea" />
+    <configuration name="Agenda" type="Application" factoryName="Application">
       <option name="MAIN_CLASS_NAME" value="org.pclg.agenda.Agenda" />
-      <option name="VM_PARAMETERS" value="-splash:&quot;$PROJECT_DIR$/../../dist/Please_stand_by.png&quot;" />
-      <option name="PROGRAM_PARAMETERS" value="" />
-      <option name="WORKING_DIRECTORY" value="file://$PROJECT_DIR$/../../dist" />
-      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
-      <option name="ALTERNATIVE_JRE_PATH" value="" />
-      <option name="ENABLE_SWING_INSPECTOR" value="false" />
-      <option name="ENV_VARIABLES" />
-      <option name="PASS_PARENT_ENVS" value="true" />
       <module name="pclg-agenda" />
-      <envs />
+      <option name="VM_PARAMETERS" value="-splash:&quot;$PROJECT_DIR$/../../dist/Please_stand_by.png&quot;" />
+      <option name="WORKING_DIRECTORY" value="file://$PROJECT_DIR$/../../dist" />
       <RunnerSettings RunnerId="Debug">
         <option name="DEBUG_PORT" value="" />
         <option name="TRANSPORT" value="0" />
@@ -938,21 +435,14 @@
       <RunnerSettings RunnerId="Run" />
       <ConfigurationWrapper RunnerId="Debug" />
       <ConfigurationWrapper RunnerId="Run" />
-      <method />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
     </configuration>
-    <configuration default="false" name="Alter" type="Application" factoryName="Application">
-      <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea" />
+    <configuration name="Alter" type="Application" factoryName="Application">
       <option name="MAIN_CLASS_NAME" value="org.pclg.alter.Alter" />
-      <option name="VM_PARAMETERS" value="" />
-      <option name="PROGRAM_PARAMETERS" value="" />
-      <option name="WORKING_DIRECTORY" value="file://$PROJECT_DIR$/../../dist" />
-      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
-      <option name="ALTERNATIVE_JRE_PATH" value="" />
-      <option name="ENABLE_SWING_INSPECTOR" value="false" />
-      <option name="ENV_VARIABLES" />
-      <option name="PASS_PARENT_ENVS" value="true" />
       <module name="pclg-apps" />
-      <envs />
+      <option name="WORKING_DIRECTORY" value="file://$PROJECT_DIR$/../../dist" />
       <RunnerSettings RunnerId="Debug">
         <option name="DEBUG_PORT" value="1031" />
         <option name="TRANSPORT" value="0" />
@@ -961,38 +451,25 @@
       <RunnerSettings RunnerId="Run" />
       <ConfigurationWrapper RunnerId="Debug" />
       <ConfigurationWrapper RunnerId="Run" />
-      <method />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
     </configuration>
-    <configuration default="false" name="BigFileCreator" type="Application" factoryName="Application">
-      <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea" />
+    <configuration name="BigFileCreator" type="Application" factoryName="Application">
       <option name="MAIN_CLASS_NAME" value="BigFileCreator" />
-      <option name="VM_PARAMETERS" value="" />
+      <module name="pclg-apps" />
       <option name="PROGRAM_PARAMETERS" value="5m c:\kk.kk" />
       <option name="WORKING_DIRECTORY" value="file://$PROJECT_DIR$" />
-      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
-      <option name="ALTERNATIVE_JRE_PATH" value="" />
-      <option name="ENABLE_SWING_INSPECTOR" value="false" />
-      <option name="ENV_VARIABLES" />
-      <option name="PASS_PARENT_ENVS" value="true" />
-      <module name="pclg-apps" />
-      <envs />
       <RunnerSettings RunnerId="Run" />
       <ConfigurationWrapper RunnerId="Run" />
-      <method />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
     </configuration>
-    <configuration default="false" name="CompDel" type="Application" factoryName="Application">
-      <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea" />
+    <configuration name="CompDel" type="Application" factoryName="Application">
       <option name="MAIN_CLASS_NAME" value="org.pclg.compdel.CompDel" />
-      <option name="VM_PARAMETERS" value="" />
-      <option name="PROGRAM_PARAMETERS" value="" />
-      <option name="WORKING_DIRECTORY" value="file://$PROJECT_DIR$/../../dist" />
-      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
-      <option name="ALTERNATIVE_JRE_PATH" value="" />
-      <option name="ENABLE_SWING_INSPECTOR" value="false" />
-      <option name="ENV_VARIABLES" />
-      <option name="PASS_PARENT_ENVS" value="true" />
       <module name="pclg-apps" />
-      <envs />
+      <option name="WORKING_DIRECTORY" value="file://$PROJECT_DIR$/../../dist" />
       <RunnerSettings RunnerId="Debug">
         <option name="DEBUG_PORT" value="1031" />
         <option name="TRANSPORT" value="0" />
@@ -1001,21 +478,14 @@
       <RunnerSettings RunnerId="Run" />
       <ConfigurationWrapper RunnerId="Debug" />
       <ConfigurationWrapper RunnerId="Run" />
-      <method />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
     </configuration>
-    <configuration default="false" name="Migrator" type="Application" factoryName="Application">
-      <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea" />
-      <option name="MAIN_CLASS_NAME" value="net.asintec.migrator.Migrator" />
-      <option name="VM_PARAMETERS" value="" />
-      <option name="PROGRAM_PARAMETERS" value="" />
+    <configuration name="DatabaseEncrypter" type="Application" factoryName="Application">
+      <option name="MAIN_CLASS_NAME" value="org.pclg.agenda.crypto.DatabaseEncrypter" />
+      <module name="pclg-apps" />
       <option name="WORKING_DIRECTORY" value="file://$PROJECT_DIR$/../../dist" />
-      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
-      <option name="ALTERNATIVE_JRE_PATH" value="" />
-      <option name="ENABLE_SWING_INSPECTOR" value="false" />
-      <option name="ENV_VARIABLES" />
-      <option name="PASS_PARENT_ENVS" value="true" />
-      <module name="net-asintec" />
-      <envs />
       <RunnerSettings RunnerId="Debug">
         <option name="DEBUG_PORT" value="" />
         <option name="TRANSPORT" value="0" />
@@ -1024,21 +494,15 @@
       <RunnerSettings RunnerId="Run" />
       <ConfigurationWrapper RunnerId="Debug" />
       <ConfigurationWrapper RunnerId="Run" />
-      <method />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
     </configuration>
-    <configuration default="false" name="DbUpdate" type="Application" factoryName="Application">
-      <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea" />
+    <configuration name="DbUpdate" type="Application" factoryName="Application">
       <option name="MAIN_CLASS_NAME" value="DbUpdate" />
-      <option name="VM_PARAMETERS" value="" />
+      <module name="pclg-apps" />
       <option name="PROGRAM_PARAMETERS" value="C:\home\development\_dist\FileDataBase_Access.sql" />
       <option name="WORKING_DIRECTORY" value="file://$PROJECT_DIR$" />
-      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
-      <option name="ALTERNATIVE_JRE_PATH" value="" />
-      <option name="ENABLE_SWING_INSPECTOR" value="false" />
-      <option name="ENV_VARIABLES" />
-      <option name="PASS_PARENT_ENVS" value="true" />
-      <module name="pclg-apps" />
-      <envs />
       <RunnerSettings RunnerId="Debug">
         <option name="DEBUG_PORT" value="1031" />
         <option name="TRANSPORT" value="0" />
@@ -1047,72 +511,88 @@
       <RunnerSettings RunnerId="Run" />
       <ConfigurationWrapper RunnerId="Debug" />
       <ConfigurationWrapper RunnerId="Run" />
-      <method />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
     </configuration>
-    <configuration default="false" name="Tutor" type="Application" factoryName="Application">
-      <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea" />
-      <option name="MAIN_CLASS_NAME" value="Tutor" />
-      <option name="VM_PARAMETERS" value="" />
-      <option name="PROGRAM_PARAMETERS" value="" />
-      <option name="WORKING_DIRECTORY" value="file://$PROJECT_DIR$" />
-      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
-      <option name="ALTERNATIVE_JRE_PATH" value="" />
-      <option name="ENABLE_SWING_INSPECTOR" value="false" />
-      <option name="ENV_VARIABLES" />
-      <option name="PASS_PARENT_ENVS" value="true" />
+    <configuration name="DirectorySynchronizer (GUI)" type="Application" factoryName="Application">
+      <option name="MAIN_CLASS_NAME" value="org.pclg.filesystem.synchonizer.DirectorySynchronizer" />
       <module name="pclg-apps" />
-      <envs />
-      <RunnerSettings RunnerId="Run" />
-      <ConfigurationWrapper RunnerId="Run" />
-      <method />
-    </configuration>
-    <configuration default="false" name="OuvrirSuivi" type="Application" factoryName="Application">
-      <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea" />
-      <option name="MAIN_CLASS_NAME" value="misc.sopra.OuvrirSuivi" />
-      <option name="VM_PARAMETERS" value="" />
-      <option name="PROGRAM_PARAMETERS" value="" />
-      <option name="WORKING_DIRECTORY" value="file://$PROJECT_DIR$" />
-      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
-      <option name="ALTERNATIVE_JRE_PATH" value="" />
-      <option name="ENABLE_SWING_INSPECTOR" value="false" />
-      <option name="ENV_VARIABLES" />
-      <option name="PASS_PARENT_ENVS" value="true" />
-      <module name="pclg-apps" />
-      <envs />
-      <RunnerSettings RunnerId="Run" />
-      <ConfigurationWrapper RunnerId="Run" />
-      <method />
-    </configuration>
-    <configuration default="false" name="VelocityDriver" type="Application" factoryName="Application">
-      <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea" />
-      <option name="MAIN_CLASS_NAME" value="org.pclg.tools.velocity.VelocityDriver" />
-      <option name="VM_PARAMETERS" value="" />
-      <option name="PROGRAM_PARAMETERS" value="Atelier.properties" />
-      <option name="WORKING_DIRECTORY" value="file://$PROJECT_DIR$/../../development/modules/src/config" />
-      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
-      <option name="ALTERNATIVE_JRE_PATH" value="" />
-      <option name="ENABLE_SWING_INSPECTOR" value="false" />
-      <option name="ENV_VARIABLES" />
-      <option name="PASS_PARENT_ENVS" value="true" />
-      <module name="pclg-apps" />
-      <envs />
-      <RunnerSettings RunnerId="Run" />
-      <ConfigurationWrapper RunnerId="Run" />
-      <method />
-    </configuration>
-    <configuration default="false" name="MP3Update" type="Application" factoryName="Application">
-      <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea" />
-      <option name="MAIN_CLASS_NAME" value="org.pclg.media.mp3.MP3Update" />
-      <option name="VM_PARAMETERS" value="" />
-      <option name="PROGRAM_PARAMETERS" value="" />
       <option name="WORKING_DIRECTORY" value="file://$PROJECT_DIR$/../../dist" />
-      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
-      <option name="ALTERNATIVE_JRE_PATH" value="" />
-      <option name="ENABLE_SWING_INSPECTOR" value="false" />
-      <option name="ENV_VARIABLES" />
-      <option name="PASS_PARENT_ENVS" value="true" />
+      <RunnerSettings RunnerId="Debug">
+        <option name="DEBUG_PORT" value="" />
+        <option name="TRANSPORT" value="0" />
+        <option name="LOCAL" value="true" />
+      </RunnerSettings>
+      <RunnerSettings RunnerId="Run" />
+      <ConfigurationWrapper RunnerId="Debug" />
+      <ConfigurationWrapper RunnerId="Run" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="DirectorySynchronizer (full)" type="Application" factoryName="Application">
+      <option name="MAIN_CLASS_NAME" value="org.pclg.filesystem.synchonizer.DirectorySynchronizer" />
       <module name="pclg-apps" />
-      <envs />
+      <option name="PROGRAM_PARAMETERS" value="C:\home\development\modules\src\config\DS_Targets_full.json" />
+      <option name="WORKING_DIRECTORY" value="file://$PROJECT_DIR$/../../dist" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="DirectorySynchronizer (light)" type="Application" factoryName="Application">
+      <option name="MAIN_CLASS_NAME" value="org.pclg.filesystem.synchonizer.DirectorySynchronizer" />
+      <module name="pclg-apps" />
+      <option name="PROGRAM_PARAMETERS" value="C:\home\development\modules\src\config\DS_Targets_light.json" />
+      <option name="WORKING_DIRECTORY" value="file://$PROJECT_DIR$/../../dist" />
+      <RunnerSettings RunnerId="Run" />
+      <ConfigurationWrapper RunnerId="Run" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="EndOfLineChanger" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="org.pclg.filesystem.EndOfLineChanger" />
+      <module name="pclg-apps" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="org.pclg.filesystem.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <RunnerSettings RunnerId="Debug">
+        <option name="DEBUG_PORT" value="" />
+        <option name="TRANSPORT" value="0" />
+        <option name="LOCAL" value="true" />
+      </RunnerSettings>
+      <RunnerSettings RunnerId="Run" />
+      <ConfigurationWrapper RunnerId="Debug" />
+      <ConfigurationWrapper RunnerId="Run" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="JavaShellFX" type="Application" factoryName="Application">
+      <option name="MAIN_CLASS_NAME" value="org.pclg.runtime.JavaShell" />
+      <module name="pclg-apps" />
+      <option name="WORKING_DIRECTORY" value="file://$PROJECT_DIR$" />
+      <RunnerSettings RunnerId="Debug">
+        <option name="DEBUG_PORT" value="" />
+        <option name="TRANSPORT" value="0" />
+        <option name="LOCAL" value="true" />
+      </RunnerSettings>
+      <RunnerSettings RunnerId="Run" />
+      <ConfigurationWrapper RunnerId="Debug" />
+      <ConfigurationWrapper RunnerId="Run" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="MP3Update" type="Application" factoryName="Application">
+      <option name="MAIN_CLASS_NAME" value="org.pclg.media.mp3.MP3Update" />
+      <module name="pclg-apps" />
+      <option name="WORKING_DIRECTORY" value="file://$PROJECT_DIR$/../../dist" />
       <RunnerSettings RunnerId="Debug">
         <option name="DEBUG_PORT" value="1657" />
         <option name="TRANSPORT" value="0" />
@@ -1121,61 +601,15 @@
       <RunnerSettings RunnerId="Run" />
       <ConfigurationWrapper RunnerId="Debug" />
       <ConfigurationWrapper RunnerId="Run" />
-      <method />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
     </configuration>
-    <configuration default="false" name="Splitter" type="Application" factoryName="Application">
-      <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea" />
-      <option name="MAIN_CLASS_NAME" value="Splitter" />
-      <option name="VM_PARAMETERS" value="" />
-      <option name="PROGRAM_PARAMETERS" value="-size 30k Alles.iws" />
-      <option name="WORKING_DIRECTORY" value="file://$PROJECT_DIR$" />
-      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
-      <option name="ALTERNATIVE_JRE_PATH" value="" />
-      <option name="ENABLE_SWING_INSPECTOR" value="false" />
-      <option name="ENV_VARIABLES" />
-      <option name="PASS_PARENT_ENVS" value="true" />
-      <module name="pclg-apps" />
-      <envs />
-      <RunnerSettings RunnerId="Run" />
-      <ConfigurationWrapper RunnerId="Run" />
-      <method />
-    </configuration>
-    <configuration default="false" name="UpdateFundsExcel" type="Application" factoryName="Application">
-      <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea" />
-      <option name="MAIN_CLASS_NAME" value="org.pclg.finance.funds.UpdateFundsExcel" />
-      <option name="VM_PARAMETERS" value="" />
-      <option name="PROGRAM_PARAMETERS" value="C:\tmp\china.txt C:\tmp\china.xls" />
-      <option name="WORKING_DIRECTORY" value="file://$PROJECT_DIR$" />
-      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
-      <option name="ALTERNATIVE_JRE_PATH" value="" />
-      <option name="ENABLE_SWING_INSPECTOR" value="false" />
-      <option name="ENV_VARIABLES" />
-      <option name="PASS_PARENT_ENVS" value="true" />
-      <module name="pclg-apps" />
-      <envs />
-      <RunnerSettings RunnerId="Debug">
-        <option name="DEBUG_PORT" value="" />
-        <option name="TRANSPORT" value="0" />
-        <option name="LOCAL" value="true" />
-      </RunnerSettings>
-      <RunnerSettings RunnerId="Run" />
-      <ConfigurationWrapper RunnerId="Debug" />
-      <ConfigurationWrapper RunnerId="Run" />
-      <method />
-    </configuration>
-    <configuration default="false" name="Magic" type="Application" factoryName="Application">
-      <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea" />
+    <configuration name="Magic" type="Application" factoryName="Application">
       <option name="MAIN_CLASS_NAME" value="Magic" />
-      <option name="VM_PARAMETERS" value="" />
+      <module name="pclg-apps" />
       <option name="PROGRAM_PARAMETERS" value="-d C:\tmp H:\_Reise" />
       <option name="WORKING_DIRECTORY" value="file://$PROJECT_DIR$" />
-      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
-      <option name="ALTERNATIVE_JRE_PATH" value="" />
-      <option name="ENABLE_SWING_INSPECTOR" value="false" />
-      <option name="ENV_VARIABLES" />
-      <option name="PASS_PARENT_ENVS" value="true" />
-      <module name="pclg-apps" />
-      <envs />
       <RunnerSettings RunnerId="Debug">
         <option name="DEBUG_PORT" value="" />
         <option name="TRANSPORT" value="0" />
@@ -1184,116 +618,40 @@
       <RunnerSettings RunnerId="Run" />
       <ConfigurationWrapper RunnerId="Debug" />
       <ConfigurationWrapper RunnerId="Run" />
-      <method />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
     </configuration>
-    <configuration default="false" name="Touch" type="Application" factoryName="Application">
-      <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea" />
-      <option name="MAIN_CLASS_NAME" value="Touch" />
-      <option name="VM_PARAMETERS" value="" />
-      <option name="PROGRAM_PARAMETERS" value="" />
+    <configuration name="Migrator" type="Application" factoryName="Application">
+      <option name="MAIN_CLASS_NAME" value="net.asintec.migrator.Migrator" />
+      <module name="net-asintec" />
+      <option name="WORKING_DIRECTORY" value="file://$PROJECT_DIR$/../../dist" />
+      <RunnerSettings RunnerId="Debug">
+        <option name="DEBUG_PORT" value="" />
+        <option name="TRANSPORT" value="0" />
+        <option name="LOCAL" value="true" />
+      </RunnerSettings>
+      <RunnerSettings RunnerId="Run" />
+      <ConfigurationWrapper RunnerId="Debug" />
+      <ConfigurationWrapper RunnerId="Run" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="OuvrirSuivi" type="Application" factoryName="Application">
+      <option name="MAIN_CLASS_NAME" value="misc.sopra.OuvrirSuivi" />
+      <module name="pclg-apps" />
       <option name="WORKING_DIRECTORY" value="file://$PROJECT_DIR$" />
-      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
-      <option name="ALTERNATIVE_JRE_PATH" value="" />
-      <option name="ENABLE_SWING_INSPECTOR" value="false" />
-      <option name="ENV_VARIABLES" />
-      <option name="PASS_PARENT_ENVS" value="true" />
-      <module name="pclg-apps" />
-      <envs />
       <RunnerSettings RunnerId="Run" />
       <ConfigurationWrapper RunnerId="Run" />
-      <method />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
     </configuration>
-    <configuration default="false" name="DatabaseEncrypter" type="Application" factoryName="Application">
-      <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea" />
-      <option name="MAIN_CLASS_NAME" value="org.pclg.agenda.crypto.DatabaseEncrypter" />
-      <option name="VM_PARAMETERS" value="" />
-      <option name="PROGRAM_PARAMETERS" value="" />
-      <option name="WORKING_DIRECTORY" value="file://$PROJECT_DIR$/../../dist" />
-      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
-      <option name="ALTERNATIVE_JRE_PATH" value="" />
-      <option name="ENABLE_SWING_INSPECTOR" value="false" />
-      <option name="ENV_VARIABLES" />
-      <option name="PASS_PARENT_ENVS" value="true" />
-      <module name="pclg-apps" />
-      <envs />
-      <RunnerSettings RunnerId="Debug">
-        <option name="DEBUG_PORT" value="" />
-        <option name="TRANSPORT" value="0" />
-        <option name="LOCAL" value="true" />
-      </RunnerSettings>
-      <RunnerSettings RunnerId="Run" />
-      <ConfigurationWrapper RunnerId="Debug" />
-      <ConfigurationWrapper RunnerId="Run" />
-      <method />
-    </configuration>
-    <configuration default="false" name="DirectorySynchronizer (GUI)" type="Application" factoryName="Application">
-      <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea" />
-      <option name="MAIN_CLASS_NAME" value="org.pclg.filesystem.synchonizer.DirectorySynchronizer" />
-      <option name="VM_PARAMETERS" value="" />
-      <option name="PROGRAM_PARAMETERS" value="" />
-      <option name="WORKING_DIRECTORY" value="file://$PROJECT_DIR$/../../dist" />
-      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
-      <option name="ALTERNATIVE_JRE_PATH" value="" />
-      <option name="ENABLE_SWING_INSPECTOR" value="false" />
-      <option name="ENV_VARIABLES" />
-      <option name="PASS_PARENT_ENVS" value="true" />
-      <module name="pclg-apps" />
-      <envs />
-      <RunnerSettings RunnerId="Debug">
-        <option name="DEBUG_PORT" value="" />
-        <option name="TRANSPORT" value="0" />
-        <option name="LOCAL" value="true" />
-      </RunnerSettings>
-      <RunnerSettings RunnerId="Run" />
-      <ConfigurationWrapper RunnerId="Debug" />
-      <ConfigurationWrapper RunnerId="Run" />
-      <method />
-    </configuration>
-    <configuration default="false" name="DirectorySynchronizer (light)" type="Application" factoryName="Application">
-      <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea" />
-      <option name="MAIN_CLASS_NAME" value="org.pclg.filesystem.synchonizer.DirectorySynchronizer" />
-      <option name="VM_PARAMETERS" value="" />
-      <option name="PROGRAM_PARAMETERS" value="C:\home\development\modules\src\config\DS_Targets_light.json" />
-      <option name="WORKING_DIRECTORY" value="file://$PROJECT_DIR$/../../dist" />
-      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
-      <option name="ALTERNATIVE_JRE_PATH" value="" />
-      <option name="ENABLE_SWING_INSPECTOR" value="false" />
-      <option name="ENV_VARIABLES" />
-      <option name="PASS_PARENT_ENVS" value="true" />
-      <module name="pclg-apps" />
-      <envs />
-      <RunnerSettings RunnerId="Run" />
-      <ConfigurationWrapper RunnerId="Run" />
-      <method />
-    </configuration>
-    <configuration default="false" name="DirectorySynchronizer (full)" type="Application" factoryName="Application">
-      <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea" />
-      <option name="MAIN_CLASS_NAME" value="org.pclg.filesystem.synchonizer.DirectorySynchronizer" />
-      <option name="VM_PARAMETERS" value="" />
-      <option name="PROGRAM_PARAMETERS" value="C:\home\development\modules\src\config\DS_Targets_full.json" />
-      <option name="WORKING_DIRECTORY" value="file://$PROJECT_DIR$/../../dist" />
-      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
-      <option name="ALTERNATIVE_JRE_PATH" value="" />
-      <option name="ENABLE_SWING_INSPECTOR" value="false" />
-      <option name="ENV_VARIABLES" />
-      <option name="PASS_PARENT_ENVS" value="true" />
-      <module name="pclg-apps" />
-      <envs />
-      <method />
-    </configuration>
-    <configuration default="false" name="ProcessLauncher -&gt; GnuCash" type="Application" factoryName="Application">
-      <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea" />
+    <configuration name="ProcessLauncher -&gt; GnuCash" type="Application" factoryName="Application">
       <option name="MAIN_CLASS_NAME" value="org.pclg.runtime.ProcessLauncher" />
-      <option name="VM_PARAMETERS" value="" />
-      <option name="PROGRAM_PARAMETERS" value="" />
+      <module name="pclg-apps" />
       <option name="WORKING_DIRECTORY" value="file://$PROJECT_DIR$/../../dist" />
-      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
-      <option name="ALTERNATIVE_JRE_PATH" value="" />
-      <option name="ENABLE_SWING_INSPECTOR" value="false" />
-      <option name="ENV_VARIABLES" />
-      <option name="PASS_PARENT_ENVS" value="true" />
-      <module name="pclg-apps" />
-      <envs />
       <RunnerSettings RunnerId="Debug">
         <option name="DEBUG_PORT" value="" />
         <option name="TRANSPORT" value="0" />
@@ -1302,21 +660,62 @@
       <RunnerSettings RunnerId="Run" />
       <ConfigurationWrapper RunnerId="Debug" />
       <ConfigurationWrapper RunnerId="Run" />
-      <method />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
     </configuration>
-    <configuration default="false" name="JavaShellFX" type="Application" factoryName="Application">
-      <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea" />
-      <option name="MAIN_CLASS_NAME" value="org.pclg.runtime.JavaShell" />
-      <option name="VM_PARAMETERS" value="" />
-      <option name="PROGRAM_PARAMETERS" value="" />
+    <configuration name="Splitter" type="Application" factoryName="Application">
+      <option name="MAIN_CLASS_NAME" value="Splitter" />
+      <module name="pclg-apps" />
+      <option name="PROGRAM_PARAMETERS" value="-size 30k Alles.iws" />
       <option name="WORKING_DIRECTORY" value="file://$PROJECT_DIR$" />
-      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
-      <option name="ALTERNATIVE_JRE_PATH" value="" />
-      <option name="ENABLE_SWING_INSPECTOR" value="false" />
-      <option name="ENV_VARIABLES" />
-      <option name="PASS_PARENT_ENVS" value="true" />
+      <RunnerSettings RunnerId="Run" />
+      <ConfigurationWrapper RunnerId="Run" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="TestLoggerFactory" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="org.pclg.log.TestLoggerFactory" />
+      <module name="pclg-tools" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="org.pclg.log.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <RunnerSettings RunnerId="Run" />
+      <ConfigurationWrapper RunnerId="Run" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="Touch" type="Application" factoryName="Application">
+      <option name="MAIN_CLASS_NAME" value="Touch" />
       <module name="pclg-apps" />
-      <envs />
+      <option name="WORKING_DIRECTORY" value="file://$PROJECT_DIR$" />
+      <RunnerSettings RunnerId="Run" />
+      <ConfigurationWrapper RunnerId="Run" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="Tutor" type="Application" factoryName="Application">
+      <option name="MAIN_CLASS_NAME" value="Tutor" />
+      <module name="pclg-apps" />
+      <option name="WORKING_DIRECTORY" value="file://$PROJECT_DIR$" />
+      <RunnerSettings RunnerId="Run" />
+      <ConfigurationWrapper RunnerId="Run" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="UpdateFundsExcel" type="Application" factoryName="Application">
+      <option name="MAIN_CLASS_NAME" value="org.pclg.finance.funds.UpdateFundsExcel" />
+      <module name="pclg-apps" />
+      <option name="PROGRAM_PARAMETERS" value="C:\tmp\china.txt C:\tmp\china.xls" />
+      <option name="WORKING_DIRECTORY" value="file://$PROJECT_DIR$" />
       <RunnerSettings RunnerId="Debug">
         <option name="DEBUG_PORT" value="" />
         <option name="TRANSPORT" value="0" />
@@ -1325,13 +724,54 @@
       <RunnerSettings RunnerId="Run" />
       <ConfigurationWrapper RunnerId="Debug" />
       <ConfigurationWrapper RunnerId="Run" />
-      <method />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
     </configuration>
-    <configuration default="false" name="Tests JUnit en general" type="JUnit" factoryName="JUnit">
-      <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea" />
+    <configuration name="VelocityDriver" type="Application" factoryName="Application">
+      <option name="MAIN_CLASS_NAME" value="org.pclg.tools.velocity.VelocityDriver" />
       <module name="pclg-apps" />
-      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
-      <option name="ALTERNATIVE_JRE_PATH" value="" />
+      <option name="PROGRAM_PARAMETERS" value="Atelier.properties" />
+      <option name="WORKING_DIRECTORY" value="file://$PROJECT_DIR$/../../development/modules/src/config" />
+      <RunnerSettings RunnerId="Run" />
+      <ConfigurationWrapper RunnerId="Run" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration default="true" type="Application" factoryName="Application">
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration default="true" type="CucumberJavaRunConfigurationType" factoryName="Cucumber java">
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration default="true" type="DjangoTestsConfigurationType">
+      <module name="pclg-apps" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="" />
+      <option name="IS_MODULE_SDK" value="false" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
+      <option name="TARGET" value="" />
+      <option name="SETTINGS_FILE" value="" />
+      <option name="CUSTOM_SETTINGS" value="false" />
+      <option name="USE_OPTIONS" value="false" />
+      <option name="OPTIONS" value="" />
+      <method v="2" />
+    </configuration>
+    <configuration name="Tests JUnit en general" type="JUnit" factoryName="JUnit">
+      <module name="pclg-apps" />
       <option name="PACKAGE_NAME" value="" />
       <option name="MAIN_CLASS_NAME" value="" />
       <option name="METHOD_NAME" value="" />
@@ -1339,22 +779,125 @@
       <option name="VM_PARAMETERS" value="" />
       <option name="PARAMETERS" value="" />
       <option name="WORKING_DIRECTORY" value="file://$PROJECT_DIR$" />
-      <option name="ENV_VARIABLES" />
-      <option name="PASS_PARENT_ENVS" value="true" />
       <option name="TEST_SEARCH_SCOPE">
         <value defaultName="wholeProject" />
       </option>
-      <envs />
-      <patterns />
       <RunnerSettings RunnerId="Run" />
       <ConfigurationWrapper RunnerId="Run" />
-      <method />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
     </configuration>
-    <configuration default="false" name="Tests NG en general" type="TestNG" factoryName="TestNG">
-      <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea" />
-      <module name="" />
-      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
-      <option name="ALTERNATIVE_JRE_PATH" value="" />
+    <configuration default="true" type="JUnit" factoryName="JUnit">
+      <option name="TEST_OBJECT" value="class" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <option name="TEST_SEARCH_SCOPE">
+        <value defaultName="moduleWithDependencies" />
+      </option>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration default="true" type="PythonConfigurationType" factoryName="Python">
+      <module name="pclg-apps" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="" />
+      <option name="IS_MODULE_SDK" value="false" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
+      <option name="SCRIPT_NAME" value="" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
+    <configuration name="DirTreeTest" type="TestNG" temporary="true" nameIsGenerated="true">
+      <module name="pclg-apps" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="org.pclg.tools.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="org.pclg.tools" />
+      <option name="MAIN_CLASS_NAME" value="org.pclg.tools.DirTreeTest" />
+      <option name="TEST_OBJECT" value="CLASS" />
+      <option name="VM_PARAMETERS" />
+      <option name="WORKING_DIRECTORY" />
+      <option name="TEST_SEARCH_SCOPE">
+        <value defaultName="moduleWithDependencies" />
+      </option>
+      <properties />
+      <listeners />
+      <RunnerSettings RunnerId="Debug">
+        <option name="DEBUG_PORT" value="1900" />
+        <option name="TRANSPORT" value="0" />
+        <option name="LOCAL" value="true" />
+      </RunnerSettings>
+      <RunnerSettings RunnerId="Run" />
+      <ConfigurationWrapper RunnerId="Debug" />
+      <ConfigurationWrapper RunnerId="Run" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="SplashWindowTest" type="TestNG" temporary="true" nameIsGenerated="true">
+      <module name="pclg-apps" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="org.pclg.gui.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="org.pclg.gui" />
+      <option name="MAIN_CLASS_NAME" value="org.pclg.gui.SplashWindowTest" />
+      <option name="TEST_OBJECT" value="CLASS" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <option name="TEST_SEARCH_SCOPE">
+        <value defaultName="moduleWithDependencies" />
+      </option>
+      <properties />
+      <listeners />
+      <RunnerSettings RunnerId="Run" />
+      <ConfigurationWrapper RunnerId="Run" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="SplashWindowTest.testSplashWindow" type="TestNG" temporary="true" nameIsGenerated="true">
+      <module name="pclg-apps" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="org.pclg.gui.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="org.pclg.gui" />
+      <option name="MAIN_CLASS_NAME" value="org.pclg.gui.SplashWindowTest" />
+      <option name="METHOD_NAME" value="testSplashWindow" />
+      <option name="TEST_OBJECT" value="METHOD" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <option name="TEST_SEARCH_SCOPE">
+        <value defaultName="moduleWithDependencies" />
+      </option>
+      <properties />
+      <listeners />
+      <RunnerSettings RunnerId="Run" />
+      <ConfigurationWrapper RunnerId="Run" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="Tests NG en general" type="TestNG">
       <option name="SUITE_NAME" value="" />
       <option name="PACKAGE_NAME" value="" />
       <option name="MAIN_CLASS_NAME" value="" />
@@ -1365,120 +908,165 @@
       <option name="PARAMETERS" value="" />
       <option name="WORKING_DIRECTORY" value="" />
       <option name="OUTPUT_DIRECTORY" value="" />
-      <option name="ANNOTATION_TYPE" />
-      <option name="ENV_VARIABLES" />
-      <option name="PASS_PARENT_ENVS" value="true" />
       <option name="TEST_SEARCH_SCOPE">
         <value defaultName="wholeProject" />
       </option>
-      <option name="USE_DEFAULT_REPORTERS" value="false" />
       <option name="PROPERTIES_FILE" value="" />
-      <envs />
       <properties />
       <listeners />
       <RunnerSettings RunnerId="Run" />
       <ConfigurationWrapper RunnerId="Run" />
-      <method />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
     </configuration>
-    <list size="27">
-      <item index="0" class="java.lang.String" itemvalue="Application.Agenda" />
-      <item index="1" class="java.lang.String" itemvalue="Application.Alter" />
-      <item index="2" class="java.lang.String" itemvalue="Application.BigFileCreator" />
-      <item index="3" class="java.lang.String" itemvalue="Application.CompDel" />
-      <item index="4" class="java.lang.String" itemvalue="Application.Migrator" />
-      <item index="5" class="java.lang.String" itemvalue="Application.DbUpdate" />
-      <item index="6" class="java.lang.String" itemvalue="Application.Tutor" />
-      <item index="7" class="java.lang.String" itemvalue="Application.OuvrirSuivi" />
-      <item index="8" class="java.lang.String" itemvalue="Application.VelocityDriver" />
-      <item index="9" class="java.lang.String" itemvalue="Application.MP3Update" />
-      <item index="10" class="java.lang.String" itemvalue="Application.Splitter" />
-      <item index="11" class="java.lang.String" itemvalue="Application.UpdateFundsExcel" />
-      <item index="12" class="java.lang.String" itemvalue="Application.Magic" />
-      <item index="13" class="java.lang.String" itemvalue="Application.Touch" />
-      <item index="14" class="java.lang.String" itemvalue="Application.DatabaseEncrypter" />
-      <item index="15" class="java.lang.String" itemvalue="Application.DirectorySynchronizer (GUI)" />
-      <item index="16" class="java.lang.String" itemvalue="Application.DirectorySynchronizer (light)" />
-      <item index="17" class="java.lang.String" itemvalue="Application.DirectorySynchronizer (full)" />
-      <item index="18" class="java.lang.String" itemvalue="Application.ProcessLauncher -&gt; GnuCash" />
-      <item index="19" class="java.lang.String" itemvalue="Application.JavaShellFX" />
-      <item index="20" class="java.lang.String" itemvalue="JUnit.Tests JUnit en general" />
-      <item index="21" class="java.lang.String" itemvalue="TestNG.Tests NG en general" />
-      <item index="22" class="java.lang.String" itemvalue="Application.EndOfLineChanger" />
-      <item index="23" class="java.lang.String" itemvalue="Application.TestLoggerFactory" />
-      <item index="24" class="java.lang.String" itemvalue="TestNG.DirTreeTest" />
-      <item index="25" class="java.lang.String" itemvalue="TestNG.SplashWindowTest.testSplashWindow" />
-      <item index="26" class="java.lang.String" itemvalue="TestNG.SplashWindowTest" />
+    <configuration default="true" type="TestNG">
+      <option name="TEST_OBJECT" value="CLASS" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <option name="TEST_SEARCH_SCOPE">
+        <value defaultName="moduleWithDependencies" />
+      </option>
+      <properties />
+      <listeners />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration default="true" type="#org.jetbrains.idea.devkit.run.PluginConfigurationType">
+      <module name="" />
+      <option name="VM_PARAMETERS" value="-Xmx512m -Xms256m -XX:MaxPermSize=250m -ea" />
+      <option name="PROGRAM_PARAMETERS" />
+      <predefined_log_file enabled="true" id="idea.log" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration default="true" type="tests" factoryName="Doctests">
+      <module name="pclg-apps" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="" />
+      <option name="IS_MODULE_SDK" value="false" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
+      <option name="SCRIPT_NAME" value="" />
+      <option name="CLASS_NAME" value="" />
+      <option name="METHOD_NAME" value="" />
+      <option name="FOLDER_NAME" value="" />
+      <option name="TEST_TYPE" value="TEST_SCRIPT" />
+      <option name="PATTERN" value="" />
+      <option name="USE_PATTERN" value="false" />
+      <method v="2" />
+    </configuration>
+    <configuration default="true" type="tests" factoryName="Nosetests">
+      <module name="pclg-apps" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="" />
+      <option name="IS_MODULE_SDK" value="false" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
+      <option name="_new_regexPattern" value="&quot;&quot;" />
+      <option name="_new_additionalArguments" value="&quot;&quot;" />
+      <option name="_new_target" value="&quot;&quot;" />
+      <option name="_new_targetType" value="&quot;PATH&quot;" />
+      <method v="2" />
+    </configuration>
+    <configuration default="true" type="tests" factoryName="Unittests">
+      <module name="pclg-apps" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="" />
+      <option name="IS_MODULE_SDK" value="false" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
+      <option name="_new_additionalArguments" value="&quot;&quot;" />
+      <option name="_new_target" value="&quot;&quot;" />
+      <option name="_new_targetType" value="&quot;PATH&quot;" />
+      <method v="2" />
+    </configuration>
+    <configuration default="true" type="tests" factoryName="py.test">
+      <module name="pclg-apps" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="" />
+      <option name="IS_MODULE_SDK" value="false" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
+      <option name="_new_keywords" value="&quot;&quot;" />
+      <option name="_new_parameters" value="&quot;&quot;" />
+      <option name="_new_additionalArguments" value="&quot;&quot;" />
+      <option name="_new_target" value="&quot;&quot;" />
+      <option name="_new_targetType" value="&quot;PATH&quot;" />
+      <method v="2" />
+    </configuration>
+    <list>
+      <item itemvalue="Application.Agenda" />
+      <item itemvalue="Application.Alter" />
+      <item itemvalue="Application.BigFileCreator" />
+      <item itemvalue="Application.CompDel" />
+      <item itemvalue="Application.Migrator" />
+      <item itemvalue="Application.DbUpdate" />
+      <item itemvalue="Application.Tutor" />
+      <item itemvalue="Application.OuvrirSuivi" />
+      <item itemvalue="Application.VelocityDriver" />
+      <item itemvalue="Application.MP3Update" />
+      <item itemvalue="Application.Splitter" />
+      <item itemvalue="Application.UpdateFundsExcel" />
+      <item itemvalue="Application.Magic" />
+      <item itemvalue="Application.Touch" />
+      <item itemvalue="Application.DatabaseEncrypter" />
+      <item itemvalue="Application.DirectorySynchronizer (GUI)" />
+      <item itemvalue="Application.DirectorySynchronizer (light)" />
+      <item itemvalue="Application.DirectorySynchronizer (full)" />
+      <item itemvalue="Application.ProcessLauncher -&gt; GnuCash" />
+      <item itemvalue="Application.JavaShellFX" />
+      <item itemvalue="Application.EndOfLineChanger" />
+      <item itemvalue="Application.TestLoggerFactory" />
+      <item itemvalue="JUnit.Tests JUnit en general" />
+      <item itemvalue="TestNG.Tests NG en general" />
+      <item itemvalue="TestNG.DirTreeTest" />
+      <item itemvalue="TestNG.SplashWindowTest.testSplashWindow" />
+      <item itemvalue="TestNG.SplashWindowTest" />
     </list>
     <recent_temporary>
-      <list size="5">
-        <item index="0" class="java.lang.String" itemvalue="Application.TestLoggerFactory" />
-        <item index="1" class="java.lang.String" itemvalue="TestNG.SplashWindowTest" />
-        <item index="2" class="java.lang.String" itemvalue="TestNG.SplashWindowTest.testSplashWindow" />
-        <item index="3" class="java.lang.String" itemvalue="Application.EndOfLineChanger" />
-        <item index="4" class="java.lang.String" itemvalue="TestNG.DirTreeTest" />
+      <list>
+        <item itemvalue="Application.TestLoggerFactory" />
+        <item itemvalue="TestNG.SplashWindowTest" />
+        <item itemvalue="TestNG.SplashWindowTest.testSplashWindow" />
+        <item itemvalue="Application.EndOfLineChanger" />
+        <item itemvalue="TestNG.DirTreeTest" />
       </list>
     </recent_temporary>
-    <configuration name="&lt;template&gt;" type="#org.jetbrains.idea.devkit.run.PluginConfigurationType" default="true" selected="false">
-      <option name="VM_PARAMETERS" value="-Xmx512m -Xms256m -XX:MaxPermSize=250m -ea" />
-    </configuration>
-    <configuration name="&lt;template&gt;" type="WebApp" default="true" selected="false">
-      <Host>localhost</Host>
-      <Port>5050</Port>
-    </configuration>
   </component>
-  <component name="ShelveChangesManager" show_recycled="false" />
   <component name="SliceManager">
     <option name="analysisUIOptions">
       <AnalysisUIOptions />
     </option>
   </component>
-  <component name="TodoView" selected-index="4">
-    <todo-panel id="selected-file">
-      <are-packages-shown value="false" />
-      <are-modules-shown value="false" />
-      <flatten-packages value="false" />
-      <is-autoscroll-to-source value="true" />
-    </todo-panel>
-    <todo-panel id="all">
-      <are-packages-shown value="true" />
-      <are-modules-shown value="false" />
-      <flatten-packages value="false" />
-      <is-autoscroll-to-source value="true" />
-    </todo-panel>
-    <todo-panel id="default-changelist">
-      <are-packages-shown value="false" />
-      <are-modules-shown value="false" />
-      <flatten-packages value="false" />
-      <is-autoscroll-to-source value="false" />
-    </todo-panel>
+  <component name="SvnConfiguration">
+    <configuration />
   </component>
-  <component name="ToolWindowManager">
-    <frame x="-4" y="-4" width="1032" height="578" extended-state="6" />
-    <editor active="true" />
-    <layout>
-      <window_info id="Changes" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32932165" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32932165" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.11022364" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.39934355" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
-      <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
-      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4953917" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.26958525" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
-      <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32932165" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
-      <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
-      <window_info id="Application Servers" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.30855396" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.30525163" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
-      <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
-      <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
-      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.45076588" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
-      <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
-    </layout>
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <created>1592049259464</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1592049259464</updated>
+      <workItem from="1592049262647" duration="489000" />
+    </task>
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="2" />
   </component>
   <component name="Vcs.Log.UiProperties">
     <option name="RECENTLY_FILTERED_USER_GROUPS">
@@ -1488,17 +1076,9 @@
       <collection />
     </option>
   </component>
-  <component name="VcsContentAnnotationSettings">
-    <option name="myLimit" value="2678400000" />
-  </component>
   <component name="VcsManagerConfiguration">
-    <option name="OFFER_MOVE_TO_ANOTHER_CHANGELIST_ON_PARTIAL_COMMIT" value="false" />
     <option name="CHECK_CODE_SMELLS_BEFORE_PROJECT_COMMIT" value="false" />
     <option name="CHECK_NEW_TODO" value="false" />
-    <option name="myTodoPanelSettings">
-      <TodoPanelSettings />
-    </option>
-    <confirmMoveToFailedCommit value="1" />
     <MESSAGE value="DirectorySynchronizer: store file modification info to avoid excesive comparisons" />
     <MESSAGE value="Various unrelated changes" />
     <MESSAGE value="Store file modification info to avoid superfluous comparisons" />
@@ -1523,225 +1103,45 @@
     <option name="LAST_COMMIT_MESSAGE" value="Modularization (add Idea configuration files to version control)" />
     <option name="OPTIMIZE_IMPORTS_BEFORE_PROJECT_COMMIT" value="true" />
   </component>
+  <component name="WindowStateProjectService">
+    <state x="445" y="210" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1592049480739">
+      <screen x="55" y="27" width="1865" height="1053" />
+    </state>
+    <state x="445" y="210" key="#com.intellij.execution.impl.EditConfigurationsDialog/55.27.1865.1053@55.27.1865.1053" timestamp="1592049480739" />
+    <state x="155" y="125" width="1665" height="855" key="DiffContextDialog" timestamp="1592049751004">
+      <screen x="55" y="27" width="1865" height="1053" />
+    </state>
+    <state x="155" y="125" width="1665" height="855" key="DiffContextDialog/55.27.1865.1053@55.27.1865.1053" timestamp="1592049751004" />
+    <state width="1819" height="269" key="GridCell.Tab.0.bottom" timestamp="1592048489530">
+      <screen x="55" y="27" width="1865" height="1053" />
+    </state>
+    <state width="1819" height="269" key="GridCell.Tab.0.bottom/55.27.1865.1053@55.27.1865.1053" timestamp="1592048489530" />
+    <state width="1819" height="269" key="GridCell.Tab.0.center" timestamp="1592048489530">
+      <screen x="55" y="27" width="1865" height="1053" />
+    </state>
+    <state width="1819" height="269" key="GridCell.Tab.0.center/55.27.1865.1053@55.27.1865.1053" timestamp="1592048489530" />
+    <state width="1819" height="269" key="GridCell.Tab.0.left" timestamp="1592048489529">
+      <screen x="55" y="27" width="1865" height="1053" />
+    </state>
+    <state width="1819" height="269" key="GridCell.Tab.0.left/55.27.1865.1053@55.27.1865.1053" timestamp="1592048489529" />
+    <state width="1819" height="269" key="GridCell.Tab.0.right" timestamp="1592048489530">
+      <screen x="55" y="27" width="1865" height="1053" />
+    </state>
+    <state width="1819" height="269" key="GridCell.Tab.0.right/55.27.1865.1053@55.27.1865.1053" timestamp="1592048489530" />
+    <state x="650" y="257" width="672" height="678" key="search.everywhere.popup" timestamp="1592049504279">
+      <screen x="55" y="27" width="1865" height="1053" />
+    </state>
+    <state x="650" y="257" width="672" height="678" key="search.everywhere.popup/55.27.1865.1053@55.27.1865.1053" timestamp="1592049504279" />
+  </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
       <breakpoints>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/pclg.apps/src/java/org/pclg/filesystem/EndOfLineChanger.java</url>
           <line>34</line>
-          <properties />
           <option name="timeStamp" value="6" />
         </line-breakpoint>
       </breakpoints>
-      <option name="time" value="17" />
     </breakpoint-manager>
   </component>
-  <component name="antWorkspaceConfiguration">
-    <option name="IS_AUTOSCROLL_TO_SOURCE" value="false" />
-    <option name="FILTER_TARGETS" value="false" />
-    <buildFile url="file://$PROJECT_DIR$/pclg-apps/src/main/config/build.xml">
-      <targetFilters>
-        <filter targetName="_info" isVisible="false" />
-        <filter targetName="_init" isVisible="false" />
-        <filter targetName="_compile" isVisible="true" />
-        <filter targetName="_compile_tests" isVisible="true" />
-        <filter targetName="_tests" isVisible="false" />
-        <filter targetName="_clean_dist" isVisible="true" />
-        <filter targetName="_dist" isVisible="true" />
-        <filter targetName="_dist_unsafe" isVisible="true" />
-        <filter targetName="Lukas_jar" isVisible="true" />
-        <filter targetName="_docs" isVisible="true" />
-        <filter targetName="_clean" isVisible="true" />
-        <filter targetName="_cleanAll" isVisible="true" />
-        <filter targetName="Alter_jar" isVisible="true" />
-        <filter targetName="CompDel_jar" isVisible="true" />
-        <filter targetName="DirectorySynchronizer_jar" isVisible="true" />
-        <filter targetName="Condominio_jar" isVisible="true" />
-        <filter targetName="Migrator_jar" isVisible="true" />
-        <filter targetName="Finance" isVisible="true" />
-        <filter targetName="OuvrirSuivi_jar" isVisible="false" />
-        <filter targetName="ProcessLauncher_jar" isVisible="false" />
-        <filter targetName="JavaShellSwing_Deprecated_jar" isVisible="false" />
-        <filter targetName="JavaShell_jar" isVisible="false" />
-        <filter targetName="MP3Update_jar" isVisible="true" />
-        <filter targetName="Agenda_jar" isVisible="true" />
-        <filter targetName="Alles_src_zip" isVisible="true" />
-        <filter targetName="Icons_jar" isVisible="false" />
-        <filter targetName="Sounds_jar" isVisible="false" />
-      </targetFilters>
-      <expanded value="true" />
-    </buildFile>
-  </component>
-  <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/pclg-apps/src/main/java/org/pclg/dbutil/DbInfo.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.10625" vertical-offset="0" max-vertical-offset="640">
-          <caret line="7" column="12" selection-start-line="7" selection-start-column="12" selection-end-line="7" selection-end-column="12" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/pclg-apps/src/main/java/org/pclg/dbutil/DbUpdate.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-5.9625" vertical-offset="5142" max-vertical-offset="10965">
-          <caret line="102" column="19" selection-start-line="102" selection-start-column="19" selection-end-line="102" selection-end-column="19" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/pclg-apps/src/main/config/Alter_icons.properties">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="587">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/pclg-apps/src/main/config/build.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.32578397" vertical-offset="0" max-vertical-offset="16286">
-          <caret line="11" column="48" selection-start-line="11" selection-start-column="48" selection-end-line="11" selection-end-column="48" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/pclg-apps/src/main/java/org/pclg/migrator/MySQL-MySQL_Cifrar_telefonos.conf">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="566">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/pclg-apps/src/main/java/org/pclg/migrator/MySQL-MySQL_Cifrar_contactos.conf">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="131" max-vertical-offset="697">
-          <caret line="30" column="0" selection-start-line="30" selection-start-column="0" selection-end-line="30" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/pclg-apps/src/main/java/org/pclg/migrator/Fechas-contactos_Derby_cifrando.conf">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="182" max-vertical-offset="748">
-          <caret line="26" column="9" selection-start-line="26" selection-start-column="9" selection-end-line="26" selection-end-column="9" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/pclg-apps/src/main/java/org/pclg/migrator/Fechas-contactos_cifrando.conf">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="748">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/pclg-apps/src/main/java/org/pclg/dbutil/VersatileResultSet.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.3443038" vertical-offset="119" max-vertical-offset="13974">
-          <caret line="44" column="32" selection-start-line="44" selection-start-column="13" selection-end-line="44" selection-end-column="13" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/pclg-apps/src/main/java/org/pclg/dbutil/VersatileStatement.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.25405404" vertical-offset="25" max-vertical-offset="3655">
-          <caret line="14" column="14" selection-start-line="14" selection-start-column="14" selection-end-line="14" selection-end-column="14" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/pclg-apps/pclg-apps.iml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.7316456" vertical-offset="0" max-vertical-offset="561">
-          <caret line="17" column="22" selection-start-line="17" selection-start-column="22" selection-end-line="17" selection-end-column="22" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-  </component>
-  <component name="masterDetails">
-    <states>
-      <state key="ArtifactsStructureConfigurable.UI">
-        <settings>
-          <artifact-editor />
-          <splitter-proportions>
-            <option name="proportions">
-              <list>
-                <option value="0.17365967" />
-              </list>
-            </option>
-          </splitter-proportions>
-        </settings>
-      </state>
-      <state key="FacetStructureConfigurable.UI">
-        <settings>
-          <last-edited>Python</last-edited>
-          <splitter-proportions>
-            <option name="proportions">
-              <list>
-                <option value="0.17365967" />
-              </list>
-            </option>
-          </splitter-proportions>
-        </settings>
-      </state>
-      <state key="GlobalLibrariesConfigurable.UI">
-        <settings>
-          <splitter-proportions>
-            <option name="proportions">
-              <list>
-                <option value="0.17365967" />
-              </list>
-            </option>
-          </splitter-proportions>
-        </settings>
-      </state>
-      <state key="JdkListConfigurable.UI">
-        <settings>
-          <last-edited>1.8</last-edited>
-          <splitter-proportions>
-            <option name="proportions">
-              <list>
-                <option value="0.17365967" />
-              </list>
-            </option>
-          </splitter-proportions>
-        </settings>
-      </state>
-      <state key="ModuleStructureConfigurable.UI">
-        <settings>
-          <last-edited>net-asintec</last-edited>
-          <splitter-proportions>
-            <option name="proportions">
-              <list>
-                <option value="0.24941725" />
-                <option value="0.6" />
-              </list>
-            </option>
-          </splitter-proportions>
-        </settings>
-      </state>
-      <state key="ProjectJDKs.UI">
-        <settings>
-          <last-edited>1.8</last-edited>
-          <splitter-proportions>
-            <option name="proportions">
-              <list>
-                <option value="0.2" />
-              </list>
-            </option>
-          </splitter-proportions>
-        </settings>
-      </state>
-      <state key="ProjectLibrariesConfigurable.UI">
-        <settings>
-          <last-edited>lib</last-edited>
-          <splitter-proportions>
-            <option name="proportions">
-              <list>
-                <option value="0.24941725" />
-              </list>
-            </option>
-          </splitter-proportions>
-        </settings>
-      </state>
-    </states>
-  </component>
 </project>
-
