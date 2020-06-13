@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ProjectModuleManager">
+    <modules>
+      <module fileurl="file://$PROJECT_DIR$/net-asintec/net-asintec.iml" filepath="$PROJECT_DIR$/net-asintec/net-asintec.iml" />
+      <module fileurl="file://$PROJECT_DIR$/pclg-agenda/pclg-agenda.iml" filepath="$PROJECT_DIR$/pclg-agenda/pclg-agenda.iml" />
+      <module fileurl="file://$PROJECT_DIR$/pclg-apps/pclg-apps.iml" filepath="$PROJECT_DIR$/pclg-apps/pclg-apps.iml" />
+      <module fileurl="file://$PROJECT_DIR$/pclg-misc/pclg-misc.iml" filepath="$PROJECT_DIR$/pclg-misc/pclg-misc.iml" />
+      <module fileurl="file://$PROJECT_DIR$/pclg-tools/pclg-tools.iml" filepath="$PROJECT_DIR$/pclg-tools/pclg-tools.iml" />
+    </modules>
+  </component>
+</project>
+

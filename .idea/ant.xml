@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="AntConfiguration">
+    <buildFile url="file://$PROJECT_DIR$/pclg-apps/src/main/config/build.xml">
+      <antReference name="Apache Ant version 1.10.8" />
+      <properties>
+        <property name="DirectorySynchronizer_technical.properties" value="DirectorySynchronizer_technical-Minerva.properties" />
+        <property name="Agenda_technical.properties" value="Agenda_technical-Minerva.properties" />
+        <property name="ProcessLauncher_technical.properties" value="ProcessLauncher_technical-Minerva.properties" />
+      </properties>
+    </buildFile>
+  </component>
+</project>
+
