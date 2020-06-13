@@ -1,22 +1,23 @@
 // ******************************** package
-package org.pclg.migrator.clarion;
+package org.pclg.migrator.preprocessors.clarion;
 
 // ******************************** imports
 
 //import net.asintec.migrator.*;
 import net.asintec.migrator.preprocessors.Preprocessor;
+import org.pclg.migrator.clarion.ClarionTools;
 
 /**
  * Este preprocesador convierte en java.util.Date un LONG de Clarion.
  *
  * @author El Coyote Cojo
  * @version 2001.13.11
- * @see Migrator
+ * @see Preprocessor
  */
 public final class PreprocessorClarionDate implements Preprocessor {
     /**
-     * informa de lo que es capaz de hacer este señor.
-     * @return una descripcion de o que es capaz de hacer este señor.
+     * informa de lo que es capaz de hacer este seï¿½or.
+     * @return una descripcion de o que es capaz de hacer este seï¿½or.
      */
     @Override
 	public String getDescription() {
@@ -24,7 +25,7 @@ public final class PreprocessorClarionDate implements Preprocessor {
     }
 
     /**
-     * Obtiene los posibles parametros que utilizará este preprocesador
+     * Obtiene los posibles parametros que utilizarï¿½ este preprocesador
      * En esta clase no tiene utilidad.
      *
      * @param param Los parametros.

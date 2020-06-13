@@ -1,4 +1,4 @@
-package org.pclg.migrator.clarion;
+package org.pclg.migrator.preprocessors.clarion;
 
 import net.asintec.migrator.preprocessors.Preprocessor;
 

@@ -11,7 +11,7 @@ import java.util.Date;
  * @author El Coyote Cojo
  * @version 2002.feb.06 20:15:07, CEST
  */
-final class ClarionTools {
+public final class ClarionTools {
     /**
      * Avoids instantiation.
      */
