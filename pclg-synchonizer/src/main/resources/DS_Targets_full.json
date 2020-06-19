@@ -1,15 +1,9 @@
 {
     "import": [
-        "DS_Targets_medium.json"
+        "DS_Targets_medium.json",
+        "DS_Targets_repository.json"
     ],
     "targets": [
-        {
-            "dirs": [
-                "${ROOT_E}/m2_repository",
-                "${LOCAL_M2_REPOSITORY_DIR}"
-            ],
-            "Exclude": "pclg/:ebu/"
-        },
         {
             "unidirectional": true,
             "dirs": [

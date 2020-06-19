@@ -1,25 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
-  <component name="Encoding">
-    <file url="file://$PROJECT_DIR$/net-asintec/src/main/java/org/pclg/migrator/clarion/ClarionField.java" charset="ISO-8859-1" />
-    <file url="file://$PROJECT_DIR$/net-asintec/src/main/java/org/pclg/migrator/clarion/ClarionMemoField.java" charset="ISO-8859-1" />
-    <file url="file://$PROJECT_DIR$/net-asintec/src/main/java/org/pclg/migrator/clarion/ClarionRecord.java" charset="ISO-8859-1" />
-    <file url="file://$PROJECT_DIR$/net-asintec/src/main/java/org/pclg/migrator/clarion/DataSourceClarion.java" charset="ISO-8859-1" />
-    <file url="file://$PROJECT_DIR$/net-asintec/src/main/java/org/pclg/migrator/clarion/DataSourceClarion.java" charset="ISO-8859-1" />
-    <file url="file://$PROJECT_DIR$/net-asintec/src/main/java/org/pclg/migrator/preprocessors/PreprocessorAddCentury.java" charset="ISO-8859-1" />
-    <file url="file://$PROJECT_DIR$/net-asintec/src/main/java/org/pclg/migrator/preprocessors/PreprocessorYesNo2OneZero.java" charset="ISO-8859-1" />
-    <file url="file://$PROJECT_DIR$/net-asintec/src/main/java/org/pclg/migrator/preprocessors/clarion/PreprocessorClarionMemo.java" charset="ISO-8859-1" />
-    <file url="file://$PROJECT_DIR$/net-asintec/src/main/java/org/pclg/migrator/preprocessors/clarion/PreprocessorClarionMemo.java" charset="ISO-8859-1" />
-    <file url="file://$PROJECT_DIR$/net-asintec/src/main/java/org/pclg/migrator/preprocessors/clarion/PreprocessorClarionMemo.java" charset="ISO-8859-1" />
+  <component name="Encoding" useUTFGuessing="false" native2AsciiForPropertiesFiles="false">
     <file url="file://$PROJECT_DIR$/pclg-apps/src/main/java/misc/sopra/eci/LectorRemedy.java" charset="ISO-8859-1" />
     <file url="file://$PROJECT_DIR$/pclg-apps/src/test/java/org/pclg/misc/IndexerTest.java" charset="ISO-8859-1" />
-    <file url="file://$PROJECT_DIR$/pclg-synchonizer/src/main/java/org/pclg/filesystem/synchonizer/DirectorySynchronizer.java" charset="ISO-8859-1" />
-    <file url="file://$PROJECT_DIR$/pclg-synchonizer/src/main/java/org/pclg/filesystem/synchonizer/DirectorySynchronizer.java" charset="ISO-8859-1" />
-    <file url="file://$PROJECT_DIR$/pclg-synchonizer/src/main/java/org/pclg/filesystem/synchonizer/TargetDefFileFilter.java" charset="ISO-8859-1" />
-    <file url="file://$PROJECT_DIR$/pclg-synchonizer/src/main/resources/DS_Targets_Tlf_movil.json" charset="ISO-8859-1" />
-    <file url="file://$PROJECT_DIR$/pclg-synchonizer/src/main/resources/DS_Targets_light.json" charset="ISO-8859-1" />
-    <file url="file://$PROJECT_DIR$/pclg-synchonizer/src/test/java/org/pclg/filesystem/synchonizer/DirectorySynchronizerTest.java" charset="ISO-8859-1" />
-    <file url="file://$PROJECT_DIR$/pclg-tools/src/main/java/org/pclg/tools/Dir.java" charset="ISO-8859-1" />
-    <file url="file://$PROJECT_DIR$/pclg-tools/src/test/java/org/pclg/filesystem/DirectoryCleanerTest.java" charset="ISO-8859-1" />
   </component>
 </project>
+

@@ -14,63 +14,6 @@
       "Exclude": "*_custom.properties:*_technical.properties:Fortunes.properties"
     },
     {
-      "dirs": [
-        "${ROOT_C_home}/development/projects/Alles/src/java",
-        "${ROOT_E}/home/development/projects/Alles/src/java"
-      ],
-      "Exclude": "CVS/:.#*"
-    },
-    {
-      "dirs": [
-        "${ROOT_C_home}/development/projects/Alles/src/test",
-        "${ROOT_E}/home/development/projects/Alles/src/test"
-      ],
-      "Exclude": "CVS/:.#**"
-    },
-    {
-      "dirs": [
-        "${ROOT_C_home}/development/projects/Alles/resources",
-        "${ROOT_E}/home/development/projects/Alles/resources"
-      ],
-      "Exclude": "CVS/:.#**"
-    },
-    {
-      "dirs": [
-        "${ROOT_C_home}/development/projects/Alles/src/test_resources",
-        "${ROOT_E}/home/development/projects/Alles/src/test_resources"
-      ],
-      "Exclude": "CVS/:.#**"
-    },
-    {
-      "dirs": [
-        "${ROOT_C_home}/development/projects/Alles/src/html",
-        "${ROOT_E}/home/development/projects/Alles/src/html"
-      ],
-      "Exclude": "CVS/:.#**"
-    },
-    {
-      "dirs": [
-        "${ROOT_C_home}/development/projects/Alles/src/sql",
-        "${ROOT_E}/home/development/projects/Alles/src/sql"
-      ],
-      "Exclude": "CVS/:.#**"
-    },
-    {
-      "dirs": [
-        "${ROOT_C_home}/development/projects/Alles/src/config",
-        "${ROOT_E}/home/development/projects/Alles/src/config"
-      ],
-      "Exclude": "CVS/:.#**:test-output/"
-    },
-    {
-      "dirs": [
-        "${ROOT_C_home}/development/projects/Alles/src/html",
-        "${ROOT_E}/links",
-        "${ROOT_L}/links"
-      ],
-      "Exclude": "CVS/:.#**"
-    },
-    {
         "dirs": [
             "${ROOT_C_home}/development/projects/quotes",
             "${ROOT_E}/home/development/projects/quotes"
