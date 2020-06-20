@@ -9,6 +9,6 @@
         <property name="ProcessLauncher_technical.properties" value="ProcessLauncher_technical-Minerva.properties" />
       </properties>
     </buildFile>
+    <buildFile url="file://$PROJECT_DIR$/pclg-tools/src/main/resources/build.xml" />
   </component>
 </project>
-
