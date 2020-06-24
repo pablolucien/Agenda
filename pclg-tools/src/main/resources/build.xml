@@ -17,7 +17,6 @@
         ${lib_dir}/javaee.jar:${lib_dir}/log4j-1.2.15.jar:
         ${lib_dir}/ez-vcard-0.9.5.jar:
         ${lib_dir}/jcommander-1.27.jar:
-        ${lib_dir}/:
         ${lib_dir}/docx4j-3.3.1.jar:
         ${lib_dir}/serializer-2.7.2.jar:
         ${lib_dir}/guava-18.0.jar:
@@ -56,10 +55,8 @@
     <target name="pclg-tools_jar" depends="_compile">
         <jar destfile="${dist}/${pclg-tools_jar_name}" basedir="${build}" excludes="**">
             <fileset dir="${build}" includes="**/*.class"/>
-<!--            <fileset dir="${img_dir}" includes="dialog-question.png"/>-->
             <manifest>
                 <attribute name="Built-By" value="${user.name}"/>
-<!--                <attribute name="Main-Class" value="misc.sopra.pclg-tools"/>-->
                 <attribute name="Class-Path" value=". : log4j-1.2.15.jar"/>
             </manifest>
         </jar>

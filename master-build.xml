@@ -1,0 +1,6 @@
+<project name="Master build" basedir="." default="all">
+    <include file="pclg-tools/src/main/resources/build.xml"/>
+    <include file="pclg-synchonizer/src/main/resources/build.xml"/>
+
+    <target name="all" depends="pclg-tools.pclg-tools, pclg-synchonizer.pclg-synchonizer"/>
+</project>

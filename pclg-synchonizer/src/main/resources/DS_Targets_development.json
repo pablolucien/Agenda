@@ -1,24 +1,35 @@
 {
-  "targets": [
-    {
-      "A": "${ROOT_C_home}/development/dist/Alles_src.zip",
-      "B": "${ROOT_L}/dev/Alles_src.zip"
-    },
-    {
-      "dirs": [
-        "${ROOT_C_home}/development/dist",
-        "${ROOT_E}/bin",
-        "${ROOT_L}/bin"
-      ],
-      "Include": "*.jar:*.properties",
-      "Exclude": "*_custom.properties:*_technical.properties:Fortunes.properties"
-    },
-    {
-        "dirs": [
-            "${ROOT_C_home}/development/projects/quotes",
-            "${ROOT_E}/home/development/projects/quotes"
-        ],
-        "Exclude": "CVS/:.idea/:.git/:.github/:target/:out/:.git*:.#*"
-    }
-  ]
+    "targets": [
+        {
+            "A": "${ROOT_C_home}/development/dist/Alles_src.zip",
+            "B": "${ROOT_L}/dev/Alles_src.zip"
+        },
+        {
+            "A": "${ROOT_C_home}/development/dist/quotes_src.zip",
+            "B": "${ROOT_L}/dev/quotes_src.zip"
+        },
+        {
+            "dirs": [
+                "${ROOT_C_home}/development/dist",
+                "${ROOT_E}/bin",
+                "${ROOT_L}/bin"
+            ],
+            "Include": "*.jar:*.properties",
+            "Exclude": "*_custom.properties:*_technical.properties:Fortunes.properties"
+        },
+        {
+            "dirs": [
+                "${ROOT_C_home}/development/projects/Alles",
+                "${ROOT_E}/home/development/projects/Alles"
+            ],
+            "Exclude": "CVS/:.idea/:.git/:.github/:target/:out/:.git*:.#*"
+        },
+        {
+            "dirs": [
+                "${ROOT_C_home}/development/projects/quotes",
+                "${ROOT_E}/home/development/projects/quotes"
+            ],
+            "Exclude": "CVS/:.idea/:.git/:.github/:target/:out/:.git*:.#*"
+        }
+    ]
 }
