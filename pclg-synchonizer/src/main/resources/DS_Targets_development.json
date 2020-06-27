@@ -30,6 +30,12 @@
                 "${ROOT_E}/home/development/projects/quotes"
             ],
             "Exclude": "CVS/:.idea/:.git/:.github/:target/:out/:.git*:.#*"
+        },
+        {
+            "dirs": [
+                "${ROOT_C_home}/development/projects/TestsKotlin",
+                "${ROOT_E}/home/development/projects/TestsKotlin"
+            ]
         }
     ]
 }

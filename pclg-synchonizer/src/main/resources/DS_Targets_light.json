@@ -75,7 +75,7 @@
                 "${ROOT_C_home}/databases/",
                 "${ROOT_E}/home/databases",
                 "${ROOT_F}/home/databases",
-                "${ROOT_L}/_DB/"
+                "${ROOT_L}/home/databases"
             ],
             "files": [
                 "Datos vitales.xls",
