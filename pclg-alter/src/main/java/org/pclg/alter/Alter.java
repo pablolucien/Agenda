@@ -84,10 +84,10 @@ public final class Alter extends JFrame {
 	/** Ultimo filtro usado. */
 	private String lastFilter;
 
-	/** posicion y tamaño de la ventana. */
+	/** posicion y tama?o de la ventana. */
 //	private BoundsInfo applicationBounds;
 
-	/** posicion y tamaño de la consola de errores. */
+	/** posicion y tama?o de la consola de errores. */
 	private BoundsInfo errConsoleBounds;
 
 	private JLabeledField prefixPattern;
@@ -701,7 +701,7 @@ public final class Alter extends JFrame {
 		myGrid.clear();
 	}
 
-	/** Actualiza la línea de estado. */
+	/** Actualiza la l?nea de estado. */
 	private void updateStatusLine() {
 		statusLine.updateStatus(fileListPanel.dirQty(), fileListPanel.fileQty(),
 			fileListPanel.otherQty(), fileListPanel.getSelectedValues().size());
@@ -726,7 +726,7 @@ public final class Alter extends JFrame {
 	private void saveProperties(final Properties customProperties) {
 
         //PropertiesHelper.loadCustomProperties(customProperties, customPropertiesBaseName);
-        // FIXME: Tengo que guardar aquí applicationBounds para no sobrescribir con el valor antiguo el que guarda fancy...
+        // FIXME: Tengo que guardar aqu? applicationBounds para no sobrescribir con el valor antiguo el que guarda fancy...
 		errConsoleBounds.setBounds(errConsole.getBounds());
 		PropertiesHelper.saveBounds(errConsoleBounds, customProperties, "errConsole");
 		customProperties.setProperty("lastFilter", lastFilter);

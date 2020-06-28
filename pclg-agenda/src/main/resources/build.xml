@@ -1,0 +1,71 @@
+<project name="pclg-agenda" default="pclg-agenda" basedir="../../../..">
+
+    <description>Builds pclg agenda</description>
+
+    <property name="module_pclg_agenda" location="${basedir}/pclg-agenda"/>
+    <property name="src" location="${module_pclg_agenda}/src/main/java"/>
+    <property name="lib_dir" value="${basedir}/../lib"/>
+    <property name="build" location="${basedir}/../../build-agenda"/>
+    <property name="dist" location="${basedir}/../../dist"/>
+    <property name="pclg-agenda_jar_name" value="pclg-agenda.jar"/>
+    <property name="classpath" value="
+        ${lib_dir}/velocity-1.7-dep.jar:
+        ${lib_dir}/kunststoff.jar:
+        ${lib_dir}/gnu.getopt.jar:${lib_dir}/jdom-1.0.jar:
+        ${lib_dir}/jpatterns-0.1.jar:${lib_dir}/itextpdf-5.3.4.jar:
+        ${lib_dir}/jxl.jar:${lib_dir}/jid3lib-0.5.4.jar:
+        ${lib_dir}/javaee.jar:${lib_dir}/log4j-1.2.15.jar:
+        ${lib_dir}/ez-vcard-0.9.5.jar:
+        ${lib_dir}/jcommander-1.27.jar:
+        ${lib_dir}/docx4j-3.3.1.jar:
+        ${lib_dir}/serializer-2.7.2.jar:
+        ${lib_dir}/guava-18.0.jar:
+        ${lib_dir}/docx4j-3.3.1.jar:
+        ${lib_dir}/commons-io-1.3.2.jar:
+        ${lib_dir}/slf4j-api-1.7.7.jar:
+        ${lib_dir}/testng-6.8.8.jar:
+        ${lib_dir}/hamcrest-all-1.3.jar:
+        ${lib_dir}/awaitility-3.1.6.jar:
+        ${lib_dir}/json-20180130.jar:
+
+        ${dist}/pclg-tools.jar:
+        "/>
+
+    <target name="_init">
+        <tstamp/>
+        <mkdir dir="${build}"/>
+        <mkdir dir="${dist}"/>
+    </target>
+
+    <target name="_compile" depends="_init" description="Compile the sources">
+        <javac
+                classpath="${classpath}"
+                includeantruntime="false"
+                srcdir="${src}"
+                destdir="${build}"
+                deprecation="on"
+                debug="true"
+                verbose="no"
+                listfiles="yes"
+                source="1.8"
+                target="1.8"
+                encoding="ISO-8859-1">
+            <compilerarg value="-Xlint"/>
+        </javac>
+    </target>
+
+    <target name="pclg-agenda_jar" depends="_compile">
+        <jar destfile="${dist}/${pclg-agenda_jar_name}" basedir="${build}" excludes="**">
+            <fileset dir="${build}" includes="**/*.class"/>
+            <manifest>
+                <attribute name="Built-By" value="${user.name}"/>
+                <attribute name="Main-Class" value="org.pclg.agenda.Agenda"/>
+                <attribute name="Class-Path" value=". : pclg-tools.jar : Icons.jar : Sounds.jar : toolbarButtonGraphics.jar : log4j-1.2.15.jar"/>
+            </manifest>
+        </jar>
+    </target>
+
+    <target name="pclg-agenda" depends="pclg-agenda_jar">
+
+    </target>
+</project>

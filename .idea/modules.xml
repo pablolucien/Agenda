@@ -4,6 +4,7 @@
     <modules>
       <module fileurl="file://$PROJECT_DIR$/net-asintec/net-asintec.iml" filepath="$PROJECT_DIR$/net-asintec/net-asintec.iml" />
       <module fileurl="file://$PROJECT_DIR$/pclg-agenda/pclg-agenda.iml" filepath="$PROJECT_DIR$/pclg-agenda/pclg-agenda.iml" />
+      <module fileurl="file://$PROJECT_DIR$/pclg-alter/pclg-alter.iml" filepath="$PROJECT_DIR$/pclg-alter/pclg-alter.iml" />
       <module fileurl="file://$PROJECT_DIR$/pclg-apps/pclg-apps.iml" filepath="$PROJECT_DIR$/pclg-apps/pclg-apps.iml" />
       <module fileurl="file://$PROJECT_DIR$/pclg-misc/pclg-misc.iml" filepath="$PROJECT_DIR$/pclg-misc/pclg-misc.iml" />
       <module fileurl="file://$PROJECT_DIR$/pclg-python/pclg-python.iml" filepath="$PROJECT_DIR$/pclg-python/pclg-python.iml" />
@@ -12,4 +13,3 @@
     </modules>
   </component>
 </project>
-

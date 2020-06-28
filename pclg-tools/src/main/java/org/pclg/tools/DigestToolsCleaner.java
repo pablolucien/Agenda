@@ -17,7 +17,7 @@ import java.util.logging.Logger;
  * @since 22-jul-2006 10:59:31
  */
 final class DigestToolsCleaner extends Thread {
-    /** Para el utilísimo "logueado". */
+    /** Para el util?simo "logueado". */
     private static final Logger LOGGER = Logger.getLogger("DigestToolsCleaner");
 
     /** El nombre de la tabla de archivos. */
@@ -26,7 +26,7 @@ final class DigestToolsCleaner extends Thread {
     /** El nombre de la tabla de directorios. */
     private static final String DIRECTORIOS_TABLE_NAME = "Directorios";
 
-    /** La conexión con la db. */
+    /** La conexi?n con la db. */
     private final Connection conn;
 
     /** Usado para seleccionar todos los archivos. */
@@ -73,8 +73,8 @@ final class DigestToolsCleaner extends Thread {
             final boolean compactar = cleanFilesTable(showWeAreWorking);
             cleanDirectoriesTable(showWeAreWorking);
 
-            // ??? Esto de momento sólo funciona en MySQL
-            // ??? Una opción portable es crear una tabla temporal, copiar los registros y cambiarle en nombre
+            // ??? Esto de momento s?lo funciona en MySQL
+            // ??? Una opci?n portable es crear una tabla temporal, copiar los registros y cambiarle en nombre
             if (compactar && supportsCompactTable) {
                 LOGGER.log(Level.WARNING, "Estoy compactando la DB");
                 conn.createStatement().execute(optimizeTableSentence);
@@ -92,8 +92,8 @@ final class DigestToolsCleaner extends Thread {
     }
 
     /**
-     * Borra registros de la tabla de directorios que no están en el disco.
-     * @param showWeAreWorking indica si debemos dar algún feedback de que
+     * Borra registros de la tabla de directorios que no est?n en el disco.
+     * @param showWeAreWorking indica si debemos dar alg?n feedback de que
      * no estamos colgaos.
      * @throws SQLException Si hay problemas con la base de datos.
      */
@@ -132,9 +132,9 @@ final class DigestToolsCleaner extends Thread {
     /**
      * Borra registros de la tabla de archivos que no representa un archivo
      * en disco.
-     * @param showWeAreWorking indica si debemos dar algún feedback de que
+     * @param showWeAreWorking indica si debemos dar alg?n feedback de que
      * no estamos colgaos.
-     * @return  true si ha borrado más del 10% de los registros.
+     * @return  true si ha borrado m?s del 10% de los registros.
      * @throws SQLException Si hay problemas con la base de datos.
      */
     private boolean cleanFilesTable(final boolean showWeAreWorking)
