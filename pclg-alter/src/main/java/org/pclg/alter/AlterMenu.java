@@ -2,6 +2,7 @@ package org.pclg.alter;
 
 import org.pclg.gui.LnFController;
 import org.pclg.tools.GUITools;
+import org.pclg.tools.ImageTools;
 import org.pclg.tools.PropertiesHelper;
 
 import javax.swing.ButtonGroup;
@@ -26,9 +27,8 @@ final class AlterMenu extends JMenuBar {
 		final JMenu fileMenu = new JMenu(
 			PropertiesHelper.getStringFromProperties(properties, "menu.file"));
 		GUITools.addMenuItem(e -> listenerHelper.notifyEvent(e, AlterCommand.EXIT), fileMenu,
-				PropertiesHelper.getStringFromProperties(properties, "exitLbl"),
-				new ImageIcon(myClass.getResource(
-					PropertiesHelper.getStringFromProperties(properties, "stop.image"))));
+			PropertiesHelper.getStringFromProperties(properties, "exitLbl"),
+			ImageTools.getImageIcon(PropertiesHelper.getStringFromProperties(properties, "stop.image")).orElse(null));
 
 		/* Menu 'Lenguaje'. */
 		final ButtonGroup localeGroup = new ButtonGroup();
