@@ -1,6 +1,7 @@
 package org.pclg.filesystem.synchonizer;
 
 import org.pclg.filesystem.DirectoryCleaner;
+import org.pclg.tools.Pair;
 import org.testng.annotations.AfterMethod;
 import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Test;
@@ -78,13 +79,13 @@ public class TargetDefTest {
         assertEquals(targets.size(), 5);
 		TargetDef targetDef = targets.get(0);
 		checkTarget1(targetDef);
-		final TargetDef.FilePair filePair;
+        final Pair<File, File> filePair;
 
-		targetDef = targets.get(1);
-		assertTrue(targetDef.isRecurse());
+        targetDef = targets.get(1);
+        assertTrue(targetDef.isRecurse());
 		filePair = targetDef.getFilePair();
-        assertEquals(filePair.getFileA(), new File("C:/home/databases/MainView_ACME.qdr"));
-        assertEquals(filePair.getFileB(), new File("L:/_DB/MainView_ACME.qdr"));
+        assertEquals(filePair.first(), new File("C:/home/databases/MainView_ACME.qdr"));
+        assertEquals(filePair.second(), new File("L:/_DB/MainView_ACME.qdr"));
         assertEquals(targetDef.getExcludePattern(), "Program files/");
         assertEquals(targetDef.getIncludePattern(), "include this");
 
@@ -110,20 +111,20 @@ public class TargetDefTest {
 		final List<TargetDef> targets = TargetDef.readTargetsFile(targetsFile, Collections.emptyMap());
         assertEquals(targets.size(), 5);
 		final TargetDef targetDef = targets.get(0);
-        TargetDef.FilePair  filePair = targetDef.getFilePair();
+        Pair<File, File> filePair = targetDef.getFilePair();
         assertNotNull(filePair);
-        assertEquals(new File(testDirA), filePair.getFileA());
-        assertEquals(new File(testDirB), filePair.getFileB());
+        assertEquals(new File(testDirA), filePair.first());
+        assertEquals(new File(testDirB), filePair.second());
 
         filePair = targetDef.getFilePair();
         assertNotNull(filePair);
-        assertEquals(new File(testDirB), filePair.getFileA());
-        assertEquals(new File(testDirC), filePair.getFileB());
+        assertEquals(new File(testDirB), filePair.first());
+        assertEquals(new File(testDirC), filePair.second());
 
         filePair = targetDef.getFilePair();
         assertNotNull(filePair);
-        assertEquals(new File(testDirC), filePair.getFileA());
-        assertEquals(new File(testDirA), filePair.getFileB());
+        assertEquals(new File(testDirC), filePair.first());
+        assertEquals(new File(testDirA), filePair.second());
 
         filePair = targetDef.getFilePair();
         assertNull(filePair);
@@ -137,15 +138,15 @@ public class TargetDefTest {
 		assertFalse(targets.get(0).isUnidirectional());
 		final TargetDef targetDef = targets.get(1);
 		assertTrue(targetDef.isUnidirectional());
-        TargetDef.FilePair  filePair = targetDef.getFilePair();
+        Pair<File, File> filePair = targetDef.getFilePair();
         assertNotNull(filePair);
-        assertEquals(new File(testDirA), filePair.getFileA());
-        assertEquals(new File(testDirB), filePair.getFileB());
+        assertEquals(new File(testDirA), filePair.first());
+        assertEquals(new File(testDirB), filePair.second());
 
         filePair = targetDef.getFilePair();
         assertNotNull(filePair);
-        assertEquals(new File(testDirB), filePair.getFileA());
-        assertEquals(new File(testDirC), filePair.getFileB());
+        assertEquals(new File(testDirB), filePair.first());
+        assertEquals(new File(testDirC), filePair.second());
 
         filePair = targetDef.getFilePair();
         assertNull(filePair);
@@ -259,10 +260,10 @@ public class TargetDefTest {
 
 	private void checkTarget1(final TargetDef targetDef) {
 		assertFalse(targetDef.isRecurse());
-		final TargetDef.FilePair filePair = targetDef.getFilePair();
+		final Pair<File, File> filePair = targetDef.getFilePair();
         assertNotNull(filePair);
-		assertEquals(new File(testDirA), filePair.getFileA());
-		assertEquals(new File(testDirB), filePair.getFileB());
+		assertEquals(new File(testDirA), filePair.first());
+		assertEquals(new File(testDirB), filePair.second());
 		assertEquals("target/", targetDef.getExcludePattern());
 		assertEquals("includeThis", targetDef.getIncludePattern());
 	}
@@ -270,7 +271,7 @@ public class TargetDefTest {
 	@Test
 	public void testGetFilePair2() {
 		final TargetDef targetDef = new TargetDef(false, false, null, null, null, file1, file2);
-		final TargetDef.FilePair filePair = targetDef.getFilePair();
+		final Pair<File, File> filePair = targetDef.getFilePair();
 		assertNotNull(filePair);
 	}
 

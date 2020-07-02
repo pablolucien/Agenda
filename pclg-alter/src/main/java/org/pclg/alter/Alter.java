@@ -668,7 +668,7 @@ public final class Alter extends JFrame {
             updateUndoRedoActionsEnabledStatus();
         }
         pairRepository.forEach(pair -> {
-            myGrid.addRow(new Grid.RowInfo(pair.sourceFile.getName(), pair.targetFile.getName(), pair.renamed));
+            myGrid.addRow(new Grid.RowInfo(pair.first().getName(), pair.second().getName(), pair.renamed));
             if (!testing && !pair.renamed) {
                 errorIndicator.activate();
             }

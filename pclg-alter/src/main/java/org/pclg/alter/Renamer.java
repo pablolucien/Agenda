@@ -7,6 +7,6 @@ package org.pclg.alter;
  */
 final class Renamer {
     void rename(final PairRepository pairRepository) {
-        pairRepository.forEach(pair -> pair.renamed = pair.sourceFile.renameTo(pair.targetFile));
+        pairRepository.forEach(pair -> pair.renamed = pair.first().renameTo(pair.second()));
     }
 }

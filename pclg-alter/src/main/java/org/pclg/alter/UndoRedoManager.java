@@ -13,8 +13,8 @@ final class UndoRedoManager {
     private int undoPointer = -1;
     private final BiConsumer<File, File> consumer;
 
-    UndoRedoManager(final BiConsumer<File, File> function) {
-        this.consumer = function;
+    UndoRedoManager(final BiConsumer<File, File> consumer) {
+        this.consumer = consumer;
     }
 
     void startBatch(final PairRepository pairRepository) {
@@ -27,7 +27,7 @@ final class UndoRedoManager {
         if (undoPointer >= 0) {
             final PairRepository undoPairRepository = queue.get(undoPointer--);
             undoPairRepository.stream().filter(filePair -> filePair.renamed)
-                .forEach(pair -> consumer.accept(pair.targetFile, pair.sourceFile));
+                .forEach(pair -> consumer.accept(pair.second(), pair.first()));
         }
     }
 
@@ -36,7 +36,7 @@ final class UndoRedoManager {
         if (redoPointer < queue.size()) {
             undoPointer++;
             final PairRepository redoPairRepository = queue.get(redoPointer);
-            redoPairRepository.forEach(pair -> consumer.accept(pair.sourceFile, pair.targetFile));
+            redoPairRepository.forEach(pair -> consumer.accept(pair.first(), pair.second()));
         }
     }
 

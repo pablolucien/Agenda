@@ -7,6 +7,7 @@ import org.pclg.filesystem.synchonizer.persistence.DataAccess;
 import org.pclg.log.LoggerFactory;
 import org.pclg.tools.ArrayTools;
 import org.pclg.tools.FileTools;
+import org.pclg.tools.Pair;
 import org.pclg.tools.PropertiesHelper;
 import org.pclg.xtras.ClassPathHacker;
 
@@ -78,10 +79,10 @@ public class DirectorySynchronizer {
             duplicatedFilesLogFile = File.createTempFile("DirSync", ".log");
             final List<TargetDef> targets = TargetDef.readTargetsFile(targetsFile, new PropertiesMap(properties));
             for (final TargetDef targetDef : targets) {
-                TargetDef.FilePair filePair;
+                Pair<File, File> filePair;
                 while ((filePair = targetDef.getFilePair()) != null) {
-                    final File fileA = filePair.getFileA();
-                    final File fileB = filePair.getFileB();
+                    final File fileA = filePair.first();
+                    final File fileB = filePair.second();
                     if (fileA.isDirectory() && fileB.isDirectory()) {
                         LOGGER.log(Level.OFF, String.format(THREE_STRINGS_FORMAT, UPDATING_DIRS_TAG,
                                 Arrays.toString(targetDef.getDirectories()), targetDef.isUnidirectional() ? "Unidirectional" : ""));
@@ -115,10 +116,10 @@ public class DirectorySynchronizer {
 
     void synchronizeDirectories(final TargetDef targetDef) {
         targetDef.resetPairsCounter(); // chapucilla temporal (que como todo lo "temporal", durará para siempre :(
-        TargetDef.FilePair filePair;
+        Pair<File, File> filePair;
         while ((filePair = targetDef.getFilePair()) != null) {    // FIXME: Repensar esto: no hay que darle más vueltas :) (al getFilePair())
-            final File dir1 = filePair.getFileA();
-            final File dir2 = filePair.getFileB();
+            final File dir1 = filePair.first();
+            final File dir2 = filePair.second();
             if (dir1.equals(dir2)) {
                 LOGGER.warn("It's not useful to synchronize with oneself: " + dir1);
                 continue;

@@ -1,5 +1,7 @@
 package org.pclg.alter;
 
+import org.pclg.tools.Pair;
+
 import java.io.File;
 import java.util.ArrayList;
 import java.util.function.Consumer;
@@ -25,22 +27,11 @@ final class PairRepository {
         return pairs.stream();
     }
 
-    static final class FilePair {
-		final File sourceFile;
-		final File targetFile;
+    static final class FilePair extends Pair<File, File> {
 		boolean renamed;
 
 		FilePair(final File sourceFile, final File targetFile) {
-			this.sourceFile = sourceFile;
-			this.targetFile = targetFile;
-		}
-
-		@Override
-		public String toString() {
-			return "FilePair { " +
-				"sourceFile = " + sourceFile +
-				", targetFile = " + targetFile +
-				" }";
+            super(sourceFile, targetFile);
 		}
 	}
 

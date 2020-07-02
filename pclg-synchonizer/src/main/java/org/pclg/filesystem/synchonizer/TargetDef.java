@@ -6,6 +6,7 @@ import org.json.JSONObject;
 import org.pclg.log.LoggerFactory;
 import org.pclg.tools.Dir;
 import org.pclg.tools.FileTools;
+import org.pclg.tools.Pair;
 import org.pclg.tools.VariableSubstitutionHelper;
 
 import java.io.File;
@@ -44,37 +45,11 @@ final class TargetDef implements Iterator<File[]> {
     private static final String DIRS_TAG = "dirs";
     private final String[] includedFileNames;
 
-    static class FilePair {
-        private final File fileA;
-        private final File fileB;
-
-        FilePair(final File fileA, final File fileB) {
-            this.fileA = fileA;
-            this.fileB = fileB;
-        }
-
-        File getFileA() {
-            return fileA;
-        }
-
-        File getFileB() {
-            return fileB;
-        }
-
-        @Override
-        public String toString() {
-            return "FilePair{" +
-                "fileA=" + fileA +
-                ", fileB=" + fileB +
-                '}';
-        }
-    }
-
     private final String excludePattern;
     private final String includePattern;
     private final boolean recurse;
     private boolean unidirectional;
-    private FilePair filePair;
+    private Pair<File, File> filePair;
     private final File[] files;
     private int filesPointer;
     private Iterator<File[]> iterator;
@@ -117,14 +92,14 @@ final class TargetDef implements Iterator<File[]> {
     }
 
     private Iterator<File[]> createDirContentIterator() {
-        if (filePair == null || filePair.fileA == null || filePair.fileB == null) {
+        final File dirA;
+        final File dirB;
+        if (filePair == null || (dirA = filePair.first()) == null || (dirB = filePair.second()) == null) {
             return FileTools.NULL_FILE_ITERATOR;
         }
-        if (!filePair.fileA.isDirectory() || !filePair.fileB.isDirectory()) {
+        if (!dirA.isDirectory() || !dirB.isDirectory()) {
             throw new IllegalStateException();
         }
-        final File dirA = filePair.fileA;
-        final File dirB = filePair.fileB;
         final List<File> filesA;
         final List<File> filesB;
         if (recurse) {
@@ -293,11 +268,11 @@ final class TargetDef implements Iterator<File[]> {
         filesPointer = 0;
     }
 
-    FilePair getFilePair() {
+    Pair<File, File> getFilePair() {
         if (filesPointer < files.length - 1) {
-            filePair = new FilePair(files[filesPointer], files[filesPointer + 1]);
+            filePair = new Pair<>(files[filesPointer], files[filesPointer + 1]);
         } else if (filesPointer < files.length && !unidirectional) {
-            filePair = new FilePair(files[filesPointer], files[0]);
+            filePair = new Pair<>(files[filesPointer], files[0]);
         } else {
             filePair = null;
         }
