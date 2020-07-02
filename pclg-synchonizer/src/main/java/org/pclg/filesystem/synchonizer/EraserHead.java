@@ -12,7 +12,6 @@ import java.util.Arrays;
 import java.util.stream.Stream;
 
 import static org.pclg.filesystem.synchonizer.DirectorySynchronizer.ADD_FILE_PAD;
-import static org.pclg.filesystem.synchonizer.DirectorySynchronizer.DOESN_T_EXIST_CREATING_IT;
 
 /**
  * Class to delete things that DirectorySynchronizer has copied by error. Deletes in various targets.
@@ -26,8 +25,8 @@ final class EraserHead {
 	}
 
 	static void processStream(final Stream<String> lines, final String[] baseDirs, final boolean onlyTest) {
-        lines.filter(line -> line.contains(ADD_FILE_PAD) && line.contains(DOESN_T_EXIST_CREATING_IT))
-                .map(line -> line.replace(ADD_FILE_PAD, "").replace(DOESN_T_EXIST_CREATING_IT, ""))
+        lines.filter(line -> line.contains(ADD_FILE_PAD))
+                .map(line -> line.replace(ADD_FILE_PAD, ""))
                 .forEach(line -> deleteFileAndSiblings(line, baseDirs, onlyTest));
     }
 

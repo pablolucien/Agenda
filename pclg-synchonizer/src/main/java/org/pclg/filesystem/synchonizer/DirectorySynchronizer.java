@@ -43,7 +43,6 @@ public class DirectorySynchronizer {
     private static final String UPDATING_FILES_TAG = "------ Updating {Files} ";
     private static final String NOT_UPDATING_FILE = SPACES_PAD + "Can't update: ";
     private static final String DIRECTORIO_NO_TRABAJABLE_MSG = "Este directorio no es trabajable: [%s]";
-    static final String DOESN_T_EXIST_CREATING_IT = " doesn't exist; creating it";
     private static final String THREE_STRINGS_FORMAT = "%s%s - %s";
     private final Counters counters;
     private File duplicatedFilesLogFile;
@@ -134,7 +133,6 @@ public class DirectorySynchronizer {
             }
             try {
                 targetDef.resetIterator(); // chapucilla temporal
-                final boolean unidirectional = targetDef.isUnidirectional();
                 while (targetDef.hasNext()) {
                     final File[] files = targetDef.next();
                     final File srcFile = files[0];
@@ -145,9 +143,6 @@ public class DirectorySynchronizer {
                         createTargetFile(srcFile, targetFile);
                     }
                 }
-//                LOGGER.log(Level.OFF, String.format(PropertiesHelper
-//                        .getStringFromProperties(properties, "DirectorySynchronizer.status.msg"),
-//                    dirsCreated, filesCreated, filesUpdated));
             } catch (final Exception ex) {
                 throw new DirectorySynchronizerException(ex);
             }
@@ -161,11 +156,11 @@ public class DirectorySynchronizer {
             final File parentFile = targetFile.getParentFile();
             if (!parentFile.exists()) {
                 Files.createDirectories(parentFile.toPath());
-                LOGGER.log(Level.OFF, ADD_DIR_PAD + parentFile + DOESN_T_EXIST_CREATING_IT);
+                LOGGER.log(Level.OFF, ADD_DIR_PAD + parentFile);
                 counters.incrementDirsCreated();
             }
             Files.copy(sourcePath, targetPath);
-            LOGGER.log(Level.OFF, ADD_FILE_PAD + targetFile + DOESN_T_EXIST_CREATING_IT);
+            LOGGER.log(Level.OFF, ADD_FILE_PAD + targetFile);
             counters.incrementFilesCreated();
         } catch (final IOException ex) {
             LOGGER.warn(SPACES_PAD + "Could not create " + targetFile + ": " + ex);

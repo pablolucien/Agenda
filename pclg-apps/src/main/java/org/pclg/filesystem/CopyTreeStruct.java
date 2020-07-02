@@ -36,7 +36,7 @@ public class CopyTreeStruct {
     /**
      * Copia directorios recursivamente
      */
-    private void copyDirs(final File from, final File to) {
+    private static void copyDirs(final File from, final File to) {
         final File[] files = from.listFiles(File::isDirectory);
         if (files != null) {
             for (final File file : files) {
@@ -55,22 +55,22 @@ public class CopyTreeStruct {
         final String src;
         final String target;
         switch (args.length) {
-            case 1:
-                src = ".";
-                target = args[0];
-                break;
-            case 2:
-                src = args[0];
-                target = args[1];
-                break;
-            default:
-//			src = "C:\\home\\development\\projects\\Alles\\pclg-template-tree";
-//			target = "C:\\home\\development\\projects\\Alles\\pclg-condominio";
-//			target = "C:\\home\\development\\projects\\Alles\\pclg-compdel";
-//			target = "C:\\home\\development\\projects\\Alles\\pclg-mp3updater";
-//			target = "C:\\home\\development\\projects\\Alles\\pclg-new-module";
-                usage();
-                return;
+        case 1:
+            src = ".";
+            target = args[0];
+            break;
+        case 2:
+            src = args[0];
+            target = args[1];
+            break;
+        default:
+//			src = "C:/home/development/projects/Alles/pclg-template-tree";
+//			target = "C:/home/development/projects/Alles/pclg-condominio";
+//			target = "C:/home/development/projects/Alles/pclg-compdel";
+//			target = "C:/home/development/projects/Alles/pclg-mp3updater";
+//			target = "C:/home/development/projects/Alles/pclg-new-module";
+            usage();
+            return;
         }
         new CopyTreeStruct(new File(src), new File(target));
     }
