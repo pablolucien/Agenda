@@ -28,15 +28,9 @@ final class ImageFilter extends FileFilter {
         }
 
 		final String extension = FileTools.splittName(file).extension.toLowerCase();
-        return extension != null && (
-            extension.equals(Utils.TIFF)
-                || extension.equals(Utils.TIF)
-                || extension.equals(Utils.GIF)
-                || extension.equals(Utils.BMP)
-                || extension.equals(Utils.JPEG)
-                || extension.equals(Utils.JPG)
-                || extension.equals(Utils.PNG)
-        );
+        return extension.equals(Utils.TIFF) || extension.equals(Utils.TIF) || extension.equals(Utils.GIF)
+            || extension.equals(Utils.BMP) || extension.equals(Utils.JPEG) || extension.equals(Utils.JPG)
+            || extension.equals(Utils.PNG);
     }
 
     /**
