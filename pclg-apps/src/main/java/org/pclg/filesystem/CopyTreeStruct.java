@@ -16,7 +16,10 @@ public class CopyTreeStruct {
     private static final String NO_ES_UN_DIRECTORIO = "[%s] NO es un directorio";
     private static final String NO_EXISTE_Y_NO_PUDE_CREARLO = "[%s] no existe y no pude crearlo.";
 
-    private CopyTreeStruct(final File from, final File to) {
+    private CopyTreeStruct() {
+    }
+
+    private static void copyTreeStruct(final File from, final File to) {
         if (!from.isDirectory()) {
             LOGGER.error(String.format(NO_ES_UN_DIRECTORIO, from.getAbsolutePath()));
             System.exit(-1);
@@ -64,15 +67,17 @@ public class CopyTreeStruct {
             target = args[1];
             break;
         default:
-//			src = "C:/home/development/projects/Alles/pclg-template-tree";
-//			target = "C:/home/development/projects/Alles/pclg-condominio";
-//			target = "C:/home/development/projects/Alles/pclg-compdel";
-//			target = "C:/home/development/projects/Alles/pclg-mp3updater";
-//			target = "C:/home/development/projects/Alles/pclg-new-module";
+            final String baseDir = "/home/pablo/";
+//            final String baseDir = "C:/home/";
+//			src = baseDir + "development/projects/Alles/pclg-template-tree";
+//			target = baseDir + "development/projects/Alles/pclg-condominio";
+//			target = baseDir + "development/projects/Alles/pclg-compdel";
+//			target = baseDir + "development/projects/Alles/pclg-mp3updater";
+//			target = baseDir + "development/projects/Alles/pclg-new-module";
             usage();
             return;
         }
-        new CopyTreeStruct(new File(src), new File(target));
+        copyTreeStruct(new File(src), new File(target));
     }
 
     private static void usage() {
