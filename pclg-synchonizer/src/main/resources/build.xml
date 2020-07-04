@@ -3,11 +3,16 @@
     <description>Builds pclg synchonizer</description>
 
     <property name="module_pclg_synchonizer" location="${basedir}/pclg-synchonizer"/>
+
     <property name="src" location="${module_pclg_synchonizer}/src/main/java"/>
+    <property name="resources" location="${module_pclg_synchonizer}/src/main/resources"/>
     <property name="lib_dir" value="${basedir}/../lib"/>
     <property name="build" location="${basedir}/../../build-synchonizer"/>
     <property name="dist" location="${basedir}/../../dist"/>
     <property name="pclg-synchonizer_jar_name" value="pclg-synchonizer.jar"/>
+
+    <property name="properties" value="DirectorySynchronizer*.properties"/>
+
     <property name="classpath" value="
         ${lib_dir}/velocity-1.7-dep.jar:
         ${lib_dir}/kunststoff.jar:
@@ -35,6 +40,17 @@
         <tstamp/>
         <mkdir dir="${build}"/>
         <mkdir dir="${dist}"/>
+
+        <copy todir="${build}" preservelastmodified="true">
+            <fileset dir="${resources}" includes="${properties}"/>
+        </copy>
+
+        <copy todir="${dist}" preservelastmodified="true">
+            <fileset dir="${resources}" includes="${properties}"/>
+        </copy>
+
+        <copy file="${resources}/${DirectorySynchronizer_technical.properties}" tofile="${build}/DirectorySynchronizer_technical.properties" preservelastmodified="true"/>
+        <copy file="${resources}/${DirectorySynchronizer_technical.properties}" tofile="${dist}/DirectorySynchronizer_technical.properties" preservelastmodified="true"/>
     </target>
 
     <target name="_compile" depends="_init" description="Compile the sources">

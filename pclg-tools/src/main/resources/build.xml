@@ -4,10 +4,22 @@
 
     <property name="module_pclg_tools" location="${basedir}/pclg-tools"/>
     <property name="src" location="${module_pclg_tools}/src/main/java"/>
+    <property name="resources" location="${module_pclg_tools}/src/main/resources"/>
     <property name="lib_dir" value="${basedir}/../lib"/>
     <property name="build" location="${basedir}/../../build-tools"/>
     <property name="dist" location="${basedir}/../../dist"/>
     <property name="pclg-tools_jar_name" value="pclg-tools.jar"/>
+    <property name="Icons_jar_name" value="Icons.jar"/>
+    <property name="Sounds_jar_name" value="Sounds.jar"/>
+    <property name="Alles_src_zip_name" value="Alles_src.zip"/>
+
+    <property name="properties" value="
+        log4j.properties
+        pclg.default.logging.properties
+        LoggerFactory.properties
+        LoggerFactory_messages.properties
+        Fortunes.properties"/>
+
     <property name="classpath" value="
         ${lib_dir}/velocity-1.7-dep.jar:
         ${lib_dir}/kunststoff.jar:
@@ -32,6 +44,16 @@
         <tstamp/>
         <mkdir dir="${build}"/>
         <mkdir dir="${dist}"/>
+
+        <copy todir="${build}" preservelastmodified="true">
+            <fileset dir="${resources}" includes="${properties}"/>
+            <fileset file="${resources}/images/Please_stand_by.png"/>
+        </copy>
+
+        <copy todir="${dist}" preservelastmodified="true">
+            <fileset dir="${resources}" includes="${properties}"/>
+            <fileset file="${resources}/images/Please_stand_by.png"/>
+        </copy>
     </target>
 
     <target name="_compile" depends="_init" description="Compile the sources">
@@ -62,7 +84,53 @@
         </jar>
     </target>
 
-    <target name="pclg-tools" depends="pclg-tools_jar">
+    <target name="Alles_src_zip" description="fuentes de la Alles">
+        <jar destfile="${dist}/${Alles_src_zip_name}" basedir="${build}" excludes="**">
+            <fileset dir="${basedir}" includes="**/src/**"/>
+        </jar>
+    </target>
+
+    <target name="Icons_jar">
+        <jar destfile="${dist}/${Icons_jar_name}"
+             excludes="**">
+            <fileset dir="${resources}" includes="images/Please_stand_by_2.png"/>
+            <fileset dir="${resources}" includes="images/Please_stand_by.png"/>
+            <fileset dir="${resources}" includes="images/unknown-**"/>
+            <fileset dir="${resources}" includes="images/128x128/**"/>
+            <fileset dir="${resources}" includes="images/48x48/**"/>
+            <fileset dir="${resources}" includes="images/32x32/**"/>
+            <fileset dir="${resources}" includes="images/24x24/**"/>
+            <fileset dir="${resources}" includes="images/16x16/**"/>
+
+            <fileset dir="${resources}"
+                     includes="
+					images/create.gif
+					images/mars.gif
+					images/question.gif
+					images/romb-cyan.gif
+					images/romb-red.gif
+					images/romb-violet.gif
+					images/zero.gif
+				"/>
+
+            <manifest>
+                <attribute name="Built-By" value="${user.name}"/>
+            </manifest>
+        </jar>
+    </target>
+
+    <target name="Sounds_jar">
+        <jar destfile="${dist}/${Sounds_jar_name}"
+             excludes="**">
+            <fileset dir="${resources}" includes="sounds/sbcdrop.wav"/>
+
+            <manifest>
+                <attribute name="Built-By" value="${user.name}"/>
+            </manifest>
+        </jar>
+    </target>
+
+    <target name="pclg-tools" depends="pclg-tools_jar, Icons_jar, Sounds_jar, Alles_src_zip">
 
     </target>
 </project>

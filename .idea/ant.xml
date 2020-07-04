@@ -2,7 +2,6 @@
 <project version="4">
   <component name="AntConfiguration">
     <buildFile url="file://$PROJECT_DIR$/pclg-apps/src/main/config/build.xml">
-      <antReference name="Apache Ant version 1.10.8" />
       <properties>
         <property name="DirectorySynchronizer_technical.properties" value="DirectorySynchronizer_technical-Minerva.properties" />
         <property name="Agenda_technical.properties" value="Agenda_technical-Minerva.properties" />
@@ -10,8 +9,16 @@
       </properties>
     </buildFile>
     <buildFile url="file://$PROJECT_DIR$/pclg-tools/src/main/resources/build.xml" />
-    <buildFile url="file://$PROJECT_DIR$/pclg-synchonizer/src/main/resources/build.xml" />
-    <buildFile url="file://$PROJECT_DIR$/pclg-agenda/src/main/resources/build.xml" />
+    <buildFile url="file://$PROJECT_DIR$/pclg-synchonizer/src/main/resources/build.xml">
+      <properties>
+        <property name="DirectorySynchronizer_technical.properties" value="DirectorySynchronizer_technical-ACME-II.properties" />
+      </properties>
+    </buildFile>
+    <buildFile url="file://$PROJECT_DIR$/pclg-agenda/src/main/resources/build.xml">
+      <properties>
+        <property name="Agenda_technical.properties" value="Agenda_technical-ACME-II.properties" />
+      </properties>
+    </buildFile>
     <buildFile url="file://$PROJECT_DIR$/pclg-alter/src/main/resources/build.xml" />
     <buildFile url="file://$PROJECT_DIR$/pclg-mp3updater/src/main/resources/build.xml" />
     <buildFile url="file://$PROJECT_DIR$/pclg-compdel/src/main/resources/build.xml" />
