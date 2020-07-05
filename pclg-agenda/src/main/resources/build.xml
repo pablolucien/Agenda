@@ -3,6 +3,7 @@
     <description>Builds pclg agenda</description>
 
     <property name="module_pclg_agenda" location="${basedir}/pclg-agenda"/>
+    <property file="${basedir}/local_config.properties"/>
 
     <property name="src" location="${module_pclg_agenda}/src/main/java"/>
     <property name="resources" location="${module_pclg_agenda}/src/main/resources"/>
@@ -49,8 +50,8 @@
             <fileset dir="${resources}" includes="${properties}"/>
         </copy>
 
-        <copy file="${resources}/${Agenda_technical.properties}" tofile="${build}/Agenda_technical.properties" preservelastmodified="true"/>
-        <copy file="${resources}/${Agenda_technical.properties}" tofile="${dist}/Agenda_technical.properties" preservelastmodified="true"/>
+        <copy file="${resources}/Agenda_technical-${local_config.host.name}.properties" tofile="${build}/Agenda_technical.properties" preservelastmodified="true"/>
+        <copy file="${resources}/Agenda_technical-${local_config.host.name}.properties" tofile="${dist}/Agenda_technical.properties" preservelastmodified="true"/>
     </target>
 
     <target name="_compile" depends="_init" description="Compile the sources">

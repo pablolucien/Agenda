@@ -22,7 +22,7 @@
                 "${ROOT_C_home}/development/projects/Alles",
                 "${ROOT_E}/home/development/projects/Alles"
             ],
-            "Exclude": "CVS/:.git/:.github/:target/:out/:.git*:.#*"
+            "Exclude": "CVS/:.git/:.github/:target/:out/:.git*:.#*:local_config.properties"
         },
         {
             "dirs": [
