@@ -28,7 +28,8 @@
             "dirs": [
                 "${ROOT_C_home}/",
                 "${ROOT_L}/dev/",
-                "${ROOT_E}/home/"
+                "${ROOT_E}/home/",
+                "${ROOT_C}/_Reise/"
             ],
             "files": [
                 "cvs-repository.tgz",

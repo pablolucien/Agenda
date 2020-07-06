@@ -3,6 +3,20 @@
         {
             "unidirectional": true,
             "dirs": [
+                "${ROOT_G}/bluetooth",
+                "${ROOT_F}/Películas/___Mobile-phone-files/bluetooth"
+            ]
+        },
+        {
+            "unidirectional": true,
+            "dirs": [
+                "${ROOT_H}/bluetooth",
+                "${ROOT_F}/Películas/___Mobile-phone-files/bluetooth"
+            ]
+        },
+        {
+            "unidirectional": true,
+            "dirs": [
                 "${ROOT_G}/DCIM/Camera",
                 "${ROOT_F}/Películas/___Mobile-phone-files/Camera"
             ]
