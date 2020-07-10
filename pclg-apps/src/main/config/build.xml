@@ -10,13 +10,10 @@
     <property name="src" location="${module_pclg_apps}/src/main/java"/>
     <property name="tests_dir" value="${module_pclg_apps}/src/test"/>
     <property name="config_dir" location="${module_pclg_apps}/src/main/config"/>
-    <property name="properties" value="Agenda*.properties Alter*.properties MP3Update*.properties Chrono.properties ProcessLauncher*.properties
-        Fortunes.properties CompDel*.properties FileView.properties pclg.default.logging.properties DirectorySynchronizer*.properties LoggerFactory.properties
-        LoggerFactory_messages.properties"/>
+    <property name="properties" value="ProcessLauncher*.properties FileView.properties"/>
     <property name="lib_dir" value="${basedir}/../lib"/>
     <property name="resources" location="${module_pclg_apps}/src/main/resources"/>
     <property name="test_resources" location="${module_pclg_apps}/src/test/resources"/>
-    <property name="img_dir" location="${resources}/images"/>
     <property name="java_home" location="C:/usr/local/Java/jdk/current"/>
     <property name="build" location="${basedir}/../../build"/>
     <property name="build_tests" location="${basedir}/../../classes_tests"/>
@@ -25,12 +22,7 @@
     <property name="JDK_API_dir" location="${java_home}/docs/api"/>
     <property name="clear_lukas_jar_name" value="${dist}/Lukas.jar"/>
     <property name="clear_migrator_jar_name" value="${dist}/Migrator.jar"/>
-    <property name="clear_compdel_jar_name" value="${dist}/CompDel.jar"/>
     <property name="clear_condominio_jar_name" value="${dist}/Condominio.jar"/>
-    <property name="clear_directorysynchronizer_jar_name" value="${dist}/DirectorySynchronizer.jar"/>
-    <property name="clear_alter_jar_name" value="${dist}/Alter.jar"/>
-    <property name="clear_mp3update_jar_name" value="${dist}/MP3Update.jar"/>
-    <property name="clear_Agenda_jar_name" value="${dist}/Agenda.jar"/>
     <property name="test.path" value=""/>
     <property name="classpath" value="
         ${lib_dir}/velocity-1.7-dep.jar:
@@ -140,12 +132,6 @@
                      includes="org/pclg/compdel/CompDel.log.cfg"/>
         </copy>
 
-        <copy file="${config_dir}/Agenda_technical-${local_config.host.name}.properties" tofile="${build}/Agenda_technical.properties" preservelastmodified="true"/>
-        <copy file="${config_dir}/Agenda_technical-${local_config.host.name}.properties" tofile="${dist}/Agenda_technical.properties" preservelastmodified="true"/>
-
-        <copy file="${config_dir}/DirectorySynchronizer_technical-${local_config.host.name}.properties" tofile="${build}/DirectorySynchronizer_technical.properties" preservelastmodified="true"/>
-        <copy file="${config_dir}/DirectorySynchronizer_technical-${local_config.host.name}.properties" tofile="${dist}/DirectorySynchronizer_technical.properties" preservelastmodified="true"/>
-
         <copy file="${config_dir}/ProcessLauncher_technical-${local_config.host.name}.properties" tofile="${build}/ProcessLauncher_technical.properties" preservelastmodified="true"/>
         <copy file="${config_dir}/ProcessLauncher_technical-${local_config.host.name}.properties" tofile="${dist}/ProcessLauncher_technical.properties" preservelastmodified="true"/>
     </target>
@@ -215,10 +201,9 @@
     </target>
 
     <target name="_dist_unsafe" depends="_compile, Lukas_jar,
-                CompDel_jar, Condominio_jar, Migrator_jar, Alter_jar, ProcessLauncher_jar,
-                OuvrirSuivi_jar, MP3Update_jar, Agenda_jar, DirectorySynchronizer_jar,
-                Icons_jar, Sounds_jar, JavaShell_jar, JavaShellSwing_Deprecated_jar,
-                Alles_src_zip"
+                Condominio_jar, Migrator_jar, ProcessLauncher_jar,
+                OuvrirSuivi_jar,
+                JavaShell_jar, JavaShellSwing_Deprecated_jar"
             description="generate the distribution WITHOUT THE TESTS!!!">
 
         <!-- Put everything in ${build} into the MyProject-${DSTAMP}.jar file -->
@@ -364,183 +349,6 @@
         <delete dir="${docs_dir}"/>
     </target>
 
-    <target name="Alter_jar" depends="_compile" description="generar Alter">
-        <jar destfile="${clear_alter_jar_name}"
-             basedir="${build}"
-             includes="org/pclg/alter/**">
-
-            <!-- Los temas -->
-            <fileset dir="${build}" includes=" org/pclg/gui/temas/**.class"/>
-
-            <!-- Clases auxiliares -->
-            <fileset dir="${build}"
-                     includes="
-                org/pclg/filelist/FileListCellRenderer*.class
-                org/pclg/filelist/FileListModel*.class
-                org/pclg/filelist/FileListObserver*.class
-                org/pclg/filelist/FileListPanel*.class
-                org/pclg/filelist/SortSelector*.class
-                org/pclg/filesystem/DirQueue*.class
-                org/pclg/gui/ColorChangerDocumentListener**.class
-                org/pclg/gui/DirTree*.class
-                org/pclg/gui/JLabeledField**.class
-                org/pclg/gui/LnFController**.class
-                org/pclg/gui/VersatileComboBox*.class
-                org/pclg/gui/VersatileJMenu*.class
-                org/pclg/log/*.class
-                org/pclg/runtime/RuntimeControl*.class
-                org/pclg/tools/ArrayTools*.class
-                org/pclg/tools/BoundsInfo*.class
-                org/pclg/tools/Chrono*.class
-                org/pclg/tools/Command*.class
-                org/pclg/tools/Comp*.class
-                org/pclg/tools/ConfigurableComparator*.class
-                org/pclg/tools/Consola*.class
-                org/pclg/tools/ConsoleOutputStream.class
-                org/pclg/tools/DatabaseTools.class
-                org/pclg/tools/DigestTools*.class
-                org/pclg/tools/Dir*.class
-                org/pclg/tools/FileComparator*.class
-                org/pclg/tools/FileTools*.class
-                org/pclg/tools/GUITools**.class
-                org/pclg/tools/ImageTools*.class
-                org/pclg/tools/LabeledComponent.class
-                org/pclg/tools/LengthControlledField**.class
-                org/pclg/tools/StringTools*.class
-                org/pclg/tools/PCLGTools*.class
-                org/pclg/tools/PropertiesHelper*.class
-                org/pclg/tools/RegexFilter*.class
-                org/pclg/tools/SortedProperties*.class
-                org/pclg/tools/ToolBox.class
-                org/pclg/xtras/ClassPathHacker.class
-                org/pclg/xtras/Colortable.class
-                "/>
-
-            <!-- Archivos de configuracion -->
-            <fileset dir="${src}"
-                     includes="org/pclg/alter/*.properties
-                     		   org/pclg/alter/Alter.log.cfg"/>
-
-            <manifest>
-                <attribute name="Built-By" value="${user.name}"/>
-                <attribute name="Main-Class" value="org.pclg.alter.Alter"/>
-                <attribute name="Class-Path"
-                           value="toolbarButtonGraphics.jar : kunststoff.jar : log4j-1.2.15.jar : Icons.jar : ."/>
-            </manifest>
-        </jar>
-    </target>
-
-
-    <target name="CompDel_jar" depends="_compile" description="generar CompDel">
-        <jar destfile="${clear_compdel_jar_name}"
-             basedir="${build}"
-             includes="org/pclg/compdel/**">
-
-            <!-- Clases auxiliares -->
-            <fileset dir="${build}"
-                     includes="
-                    org/pclg/filesystem/DirectoryCleaner*.class
-    				org/pclg/filesystem/fileattributes/*.class
-                    org/pclg/gui/ColorChangerDocumentListener*.class
-                    org/pclg/gui/DirSelectorField*.class
-                    org/pclg/gui/DirTree*.class
-                    org/pclg/gui/FancyButtonPanel*.class
-                    org/pclg/gui/JLabeledField*.class
-                    org/pclg/gui/ManagedScrollPane*.class
-                    org/pclg/gui/MemoryPanel*.class
-                    org/pclg/gui/ScrollBarManager*.class
-                    org/pclg/gui/VersatileJMenu*.class
-				    org/pclg/log/*.class
-                    org/pclg/runtime/RuntimeControl*.class
-                    org/pclg/security/Digest*.class
-                    org/pclg/tools/ArrayTools*.class
-                    org/pclg/tools/BoundsInfo*.class
-                    org/pclg/tools/Chrono*.class
-                    org/pclg/tools/ComponentMutator*.class
-                    org/pclg/tools/Consola*.class
-                    org/pclg/tools/ConsoleOutputStream.class
-                    org/pclg/tools/Constants*.class
-                    org/pclg/tools/DatabaseTools.class
-                    org/pclg/tools/DigestTools*.class
-                    org/pclg/tools/Dir*.class
-                    org/pclg/tools/FileTools*.class
-                    org/pclg/tools/GUITools**.class
-                    org/pclg/tools/ImageTools**.class
-                    org/pclg/tools/LabeledComponent.class
-                    org/pclg/tools/LengthControlledField**.class
-                    org/pclg/tools/StringTools*.class
-                    org/pclg/tools/PCLGTools*.class
-                    org/pclg/tools/PrintlnTarget*.class
-                    org/pclg/tools/PropertiesHelper*.class
-                    org/pclg/tools/SortedProperties*.class
-                    org/pclg/tools/ToolBox.class
-                    org/pclg/xtras/ClassPathHacker.class
-                    org/pclg/xtras/Colortable.class
-                    "
-                     excludes="**/*Test*.class"/>
-
-            <!-- Archivos de configuracion -->
-            <fileset dir="${src}"
-                     includes="org/pclg/compdel/CompDel.log.cfg
-                               org/pclg/compdel/*.info
-				               org/pclg/tools/Chrono.properties"/>
-
-            <manifest>
-                <attribute name="Built-By" value="${user.name}"/>
-                <attribute name="Main-Class" value="org.pclg.compdel.CompDel"/>
-                <attribute name="Class-Path"
-                           value="toolbarButtonGraphics.jar : log4j-1.2.15.jar : Icons.jar : ."/>
-            </manifest>
-        </jar>
-    </target>
-
-    <target name="DirectorySynchronizer_jar" depends="_compile" description="generar DirectorySynchronizer">
-        <jar destfile="${clear_directorysynchronizer_jar_name}"
-             basedir="${build}"
-             includes="org/pclg/filesystem/synchonizer/**/**.class">
-            <!-- Clases auxiliares -->
-            <fileset dir="${build}"
-                     includes="
-                        org/pclg/dbutil/AuditPostprocessor*.class
-                        org/pclg/dbutil/DbManager*.class
-                        org/pclg/dbutil/VersatileConnection*.class
-                        org/pclg/dbutil/VersatilePreparedStatement*.class
-                        org/pclg/dbutil/VersatileStatement*.class
-                        org/pclg/dbutil/VersatileProcessor*.class
-                        org/pclg/dbutil/VersatileResultSet*.class
-                        org/pclg/gui/FancyButtonPanel*.class
-                        org/pclg/gui/JLabeledField*.class
-                        org/pclg/gui/Kaleidoscope*.class
-                        org/pclg/gui/ManagedScrollPane*.class
-                        org/pclg/gui/ScrollBarManager*.class
-                        org/pclg/gui/SplashWindow*.class
-                        org/pclg/gui/VersatileJMenu*.class
-                        org/pclg/gui/VersatileComboBox*.class
-                        org/pclg/log/*.class
-                        org/pclg/runtime/RuntimeControl*.class
-                        org/pclg/tools/ArrayTools*.class
-                        org/pclg/tools/BoundsInfo*.class
-                        org/pclg/tools/Command*.class
-                        org/pclg/tools/Chrono*.class
-                        org/pclg/tools/Dir*.class
-                        org/pclg/tools/FileTools*.class
-                        org/pclg/tools/GUITools*.class
-                        org/pclg/tools/ImageTools*.class
-                        org/pclg/tools/LabeledComponent*.class
-                        org/pclg/tools/PropertiesHelper*.class
-                        org/pclg/tools/StringTools*.class
-                        org/pclg/tools/VariableSubstitutionHelper*.class
-                        org/pclg/xtras/ClassPathHacker*.class
-                     "
-                     excludes="**/*Test*.class"/>
-
-            <manifest>
-                <attribute name="Built-By" value="${user.name}"/>
-                <attribute name="Main-Class" value="org.pclg.filesystem.synchonizer.DirectorySynchronizer"/>
-                <attribute name="Class-Path" value="log4j-1.2.15.jar : Icons.jar : json-20180130.jar : ."/>
-            </manifest>
-        </jar>
-    </target>
 
     <target name="Condominio_jar" depends="_compile" description="generar Condominio">
         <jar destfile="${clear_condominio_jar_name}"
@@ -776,131 +584,6 @@
         </jar>
     </target>
 
-    <target name="MP3Update_jar" depends="_compile"
-            description="generar MP3Update">
-        <jar destfile="${clear_mp3update_jar_name}"
-             basedir="${build}"
-             includes="org/pclg/media/**">
-            <!-- Clases auxiliares -->
-            <fileset dir="${build}"
-                     includes="
-                    org/pclg/filesystem/fileattributes/*.class
-                    org/pclg/gui/ColorChangerDocumentListener**.class
-                    org/pclg/gui/DirSelectorField**.class
-                    org/pclg/gui/DirTree*.class
-                    org/pclg/gui/JLabeledField**.class
-                    org/pclg/gui/VersatileJMenu**.class
-                    org/pclg/log/*.class
-                    org/pclg/runtime/RuntimeControl*.class
-                    org/pclg/tools/BoundsInfo*.class
-                    org/pclg/tools/Chrono**.class
-                    org/pclg/tools/Consola**.class
-                    org/pclg/tools/ConsoleOutputStream**.class
-                    org/pclg/tools/Dir**.class
-                    org/pclg/tools/FileTools**.class
-                    org/pclg/tools/GUITools**.class
-                    org/pclg/tools/ImageTools*.class
-                    org/pclg/tools/LabeledComponent**.class
-                    org/pclg/tools/LengthControlledField**.class
-                    org/pclg/tools/PropertiesHelper*.class
-                    org/pclg/tools/SortedProperties**.class
-                    org/pclg/tools/StringTools**.class
-                    org/pclg/tools/ToolBox**.class
-                "/>
-            <fileset file="${config_dir}/MP3Update.info"/>
-
-            <manifest>
-                <attribute name="Built-By" value="${user.name}"/>
-                <attribute name="Main-Class"
-                           value="org.pclg.media.mp3.MP3Update"/>
-                <attribute name="Class-Path"
-                           value="jid3lib-0.5.4.jar : . : Icons.jar : log4j-1.2.15.jar"/>
-            </manifest>
-        </jar>
-    </target>
-
-
-    <target name="Agenda_jar" depends="_compile" description="crear la agenda">
-        <jar destfile="${clear_Agenda_jar_name}" basedir="${build}"
-             excludes="**">
-            <fileset dir="${build}"
-                     includes=
-                     "org/pclg/agenda/**/**.class
-                      org/pclg/dbutil/AuditPostprocessor*.class
-                      org/pclg/dbutil/DbManager*.class
-                      org/pclg/dbutil/VersatileConnection*.class
-                      org/pclg/dbutil/VersatilePreparedStatement*.class
-                      org/pclg/dbutil/VersatileStatement*.class
-                      org/pclg/dbutil/VersatileProcessor*.class
-                      org/pclg/dbutil/VersatileResultSet*.class
-                      org/pclg/fortunes/FortuneTeller*.class
-                      org/pclg/fortunes/Manager*.class
-                      org/pclg/gui/BooleanChooser*.class
-                      org/pclg/gui/ColorChangerDocumentListener*.class
-                      org/pclg/gui/EditableJList*.class
-                      org/pclg/gui/FancyButtonPanel*.class
-                      org/pclg/gui/FileView*.class
-                      org/pclg/gui/FileSystemView*.class
-                      org/pclg/gui/I18NManager*.class
-                      org/pclg/gui/ImageButton*.class
-                      org/pclg/gui/ImageCache*.class
-                      org/pclg/gui/InfoPanel*.class
-                      org/pclg/gui/IntegerTextFieldLimiter*.class
-                      org/pclg/gui/JLabeledField*.class
-                      org/pclg/gui/JTabbedPaneWithCloseIcons*.class
-                      org/pclg/gui/ListSelector*.class
-                      org/pclg/gui/LnFController**.class
-                      org/pclg/gui/OptionsChooser*.class
-                      org/pclg/gui/MapEditor*.class
-                      org/pclg/gui/NumericTextFieldLimiter*.class
-                      org/pclg/gui/RadioButtonBooleanChooser*.class
-                      org/pclg/gui/SplashWindow*.class
-                      org/pclg/gui/TextFieldLimiter*.class
-                      org/pclg/gui/VersatileComboBox*.class
-                      org/pclg/gui/VersatileJMenu*.class
-                      org/pclg/log/*.class
-                      org/pclg/media/image/ThumbnailCreator*.class
-                      org/pclg/runtime/RuntimeControl*.class
-                      org/pclg/security/PasswordDialog*.class
-                      org/pclg/tools/BoundsInfo*.class
-                      org/pclg/tools/Change*.class
-                      org/pclg/tools/Chrono*.class
-                      org/pclg/tools/Command*.class
-                      org/pclg/tools/CompositeKey*.class
-                      org/pclg/gui/DirTree*.class
-                      org/pclg/tools/EmptyArrays*.class
-                      org/pclg/tools/ImageTools*.class
-                      org/pclg/tools/ObservableProperties*.class
-                      org/pclg/tools/StringTools*.class
-                      org/pclg/tools/PropertiesHelper*.class
-                      org/pclg/tools/PropertiesObserver*.class
-                      org/pclg/tools/StringTools*.class
-                      org/pclg/tools/ComponentMutator*.class
-                      org/pclg/tools/FileTools*.class
-                      org/pclg/tools/GUITools**.class
-                      org/pclg/tools/LabeledComponent*.class
-                      org/pclg/tools/SortedProperties*.class
-                      org/pclg/tools/ToolBox*.class
-                      org/pclg/xtras/ClassPathHacker*.class
-                      org/pclg/xtras/Colortable*.class
-                      org/pclg/xtras/DriverPropertiesPanel*.class
-                      org/pclg/xtras/JdbcTableModel*.class
-                     "
-                     excludes="org/pclg/agenda/crypto/**/**.class"/>
-
-            <!-- Los temas -->
-            <fileset dir="${build}" includes=" org/pclg/gui/temas/**.class"/>
-
-            <manifest>
-                <attribute name="Built-By" value="${user.name}"/>
-                <attribute name="Main-Class" value="org.pclg.agenda.Agenda"/>
-                <attribute name="Class-Path"
-                           value=". : toolbarButtonGraphics.jar : kunststoff.jar : log4j-1.2.15.jar : Icons.jar : Sounds.jar"/>
-            </manifest>
-        </jar>
-    </target>
-
-
     <property name="Alles_src_zip_name" value="Alles_src.zip"/>
     <target name="Alles_src_zip" description="fuentes de la Alles">
         <jar destfile="${dist}/${Alles_src_zip_name}" basedir="${build}"
@@ -909,45 +592,4 @@
         </jar>
     </target>
 
-    <property name="Icons_jar_name" value="Icons.jar"/>
-    <target name="Icons_jar">
-        <jar destfile="${dist}/${Icons_jar_name}"
-             excludes="**">
-            <fileset dir="${resources}" includes="images/Please_stand_by_2.png"/>
-            <fileset dir="${resources}" includes="images/Please_stand_by.png"/>
-            <fileset dir="${resources}" includes="images/unknown-**"/>
-            <fileset dir="${resources}" includes="images/128x128/**"/>
-            <fileset dir="${resources}" includes="images/48x48/**"/>
-            <fileset dir="${resources}" includes="images/32x32/**"/>
-            <fileset dir="${resources}" includes="images/24x24/**"/>
-            <fileset dir="${resources}" includes="images/16x16/**"/>
-
-            <fileset dir="${resources}"
-                includes="
-					images/create.gif
-					images/mars.gif
-					images/question.gif
-					images/romb-cyan.gif
-					images/romb-red.gif
-					images/romb-violet.gif
-					images/zero.gif
-				"/>
-
-            <manifest>
-                <attribute name="Built-By" value="${user.name}"/>
-            </manifest>
-        </jar>
-    </target>
-
-    <property name="Sounds_jar_name" value="Sounds.jar"/>
-    <target name="Sounds_jar">
-        <jar destfile="${dist}/${Sounds_jar_name}"
-             excludes="**">
-            <fileset dir="${resources}" includes="sounds/sbcdrop.wav"/>
-
-            <manifest>
-                <attribute name="Built-By" value="${user.name}"/>
-            </manifest>
-        </jar>
-    </target>
 </project>

@@ -15,7 +15,6 @@
                 "Backlog.txt",
                 "Bank.txt",
                 "Discworld.xls",
-                "Caminatas.xls",
                 "horas.xls",
                 "passwords.txt",
                 "PStart.xml",
@@ -80,6 +79,8 @@
             ],
             "files": [
                 "Datos vitales.xls",
+                "Deporte.xls",
+                "O.xls",
                 "MainView_ACME.qdr",
                 "MainView_Minerva.qdr",
                 "MainView_Regus.qdr"
