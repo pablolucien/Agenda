@@ -10,7 +10,7 @@
     <property name="pclg-compdel_jar_name" value="pclg-compdel.jar"/>
     <property name="classpath" value="
         ${lib_dir}/velocity-1.7-dep.jar:
-        ${lib_dir}/kunststoff.jar:
+        ${lib_dir}/lib_L&amp;F/kunststoff.jar:
         ${lib_dir}/gnu.getopt.jar:${lib_dir}/jdom-1.0.jar:
         ${lib_dir}/jpatterns-0.1.jar:${lib_dir}/itextpdf-5.3.4.jar:
         ${lib_dir}/jxl.jar:${lib_dir}/jid3lib-0.5.4.jar:

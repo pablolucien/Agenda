@@ -1,16 +1,16 @@
-<project name="pclg-synchonizer" default="pclg-synchonizer" basedir="../../../..">
+<project name="net-asintec-migrator" default="net-asintec-migrator" basedir="../../../..">
 
-    <description>Builds pclg synchonizer</description>
+    <description>Builds Migrator</description>
 
-    <property name="module_pclg_synchonizer" location="${basedir}/pclg-synchonizer"/>
+    <property name="module_net-asintec_migrator" location="${basedir}/net-asintec"/>
     <property file="${basedir}/local_config.properties"/>
     
-    <property name="src" location="${module_pclg_synchonizer}/src/main/java"/>
-    <property name="resources" location="${module_pclg_synchonizer}/src/main/resources"/>
+    <property name="src" location="${module_net-asintec_migrator}/src/main/java"/>
+    <property name="resources" location="${module_net-asintec_migrator}/src/main/resources"/>
     <property name="lib_dir" value="${basedir}/../lib"/>
-    <property name="build" location="${basedir}/../../build-synchonizer"/>
+    <property name="build" location="${basedir}/../../build-migrator"/>
     <property name="dist" location="${basedir}/../../dist"/>
-    <property name="pclg-synchonizer_jar_name" value="pclg-synchonizer.jar"/>
+    <property name="net-asintec-migrator_jar_name" value="net-asintec-migrator.jar"/>
 
     <property name="properties" value="DirectorySynchronizer*.properties"/>
 
@@ -36,8 +36,6 @@
             <fileset dir="${resources}" includes="${properties}"/>
         </copy>
 
-        <copy file="${resources}/DirectorySynchronizer_technical-${local_config.host.name}.properties" tofile="${build}/DirectorySynchronizer_technical.properties" preservelastmodified="true"/>
-        <copy file="${resources}/DirectorySynchronizer_technical-${local_config.host.name}.properties" tofile="${dist}/DirectorySynchronizer_technical.properties" preservelastmodified="true"/>
     </target>
 
     <target name="_compile" depends="_init" description="Compile the sources">
@@ -57,18 +55,18 @@
         </javac>
     </target>
 
-    <target name="pclg-synchonizer_jar" depends="_compile">
-        <jar destfile="${dist}/${pclg-synchonizer_jar_name}" basedir="${build}" excludes="**">
+    <target name="net-asintec-migrator_jar" depends="_compile">
+        <jar destfile="${dist}/${net-asintec-migrator_jar_name}" basedir="${build}" excludes="**">
             <fileset dir="${build}" includes="**/*.class"/>
             <manifest>
                 <attribute name="Built-By" value="${user.name}"/>
-                <attribute name="Main-Class" value="org.pclg.filesystem.synchonizer.DirectorySynchronizer"/>
-                <attribute name="Class-Path" value=". : pclg-tools.jar : Icons.jar : json-20180130.jar : log4j-1.2.15.jar"/>
+                <attribute name="Main-Class" value="net.asintec.migrator.Migrator"/>
+                <attribute name="Class-Path" value=". : pclg-tools.jar : toolbarButtonGraphics.jar : Icons.jar : kunststoff.jar : log4j-1.2.15.jar"/>
             </manifest>
         </jar>
     </target>
 
-    <target name="pclg-synchonizer" depends="pclg-synchonizer_jar">
+    <target name="net-asintec-migrator" depends="net-asintec-migrator_jar">
 
     </target>
 </project>

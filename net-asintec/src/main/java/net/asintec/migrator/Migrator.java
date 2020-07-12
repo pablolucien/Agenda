@@ -56,8 +56,8 @@ import java.util.List;
 import java.util.Properties;
 
 /**
- * Interfaz gráfica en interactiva para el
- * Migrador genérico de datos
+ * Interfaz grï¿½fica en interactiva para el
+ * Migrador genï¿½rico de datos
  * Copyright Asintec Gestion S.L. 2001
  *
  * @author El Coyote Cojo
@@ -67,7 +67,7 @@ public class Migrator extends JFrame implements ActionListener, ItemListener, Mi
 
     private static final long serialVersionUID = -8508198829617490125L;
     /**
-     * La extensión usual de los ficheros de configuracion
+     * La extensiï¿½n usual de los ficheros de configuracion
      */
     private static final String CONF_FILE_EXTENSION = ".conf";
 
@@ -113,7 +113,7 @@ public class Migrator extends JFrame implements ActionListener, ItemListener, Mi
      * Propiedades de configuracion de la aplicacion
      */
     private final Properties applicationProps = new SortedProperties();
-    // ------------- Los botones de control de la aplicación
+    // ------------- Los botones de control de la aplicaciï¿½n
     private final JPanel buttonPanel = new JPanel(new GridLayout(1, 0));
 
     // ------------- Propiedades de configuracion de la aplicacion
@@ -125,10 +125,10 @@ public class Migrator extends JFrame implements ActionListener, ItemListener, Mi
     // Menu 'Archivos'
     private final JMenu fileMenu = new JMenu("Archivo");
     private final JMenuItem kkMenuItem = GUITools.addMenuItem(this, fileMenu, "&Seleccionar Origen de Datos", ImageTools.getImageIcon("/toolbarButtonGraphics/general/" + "Import16.gif"));
-    private final JMenuItem loadMenuItem = GUITools.addMenuItem(this, fileMenu, "-&Cargar Configuración", ImageTools.getImageIcon("/toolbarButtonGraphics/general/" + "Open16.gif"));
+    private final JMenuItem loadMenuItem = GUITools.addMenuItem(this, fileMenu, "-&Cargar Configuraciï¿½n", ImageTools.getImageIcon("/toolbarButtonGraphics/general/" + "Open16.gif"));
     private final JMenuItem loadLastMenuItem = GUITools.addMenuItem(this, fileMenu, "Cargar configuracion &previa", ImageTools.getImageIcon("/toolbarButtonGraphics/general/" + "Open16.gif"));
-    private final JMenuItem saveMenuItem = GUITools.addMenuItem(this, fileMenu, "&Guardar Configuración", ImageTools.getImageIcon("/toolbarButtonGraphics/general/" + "Save16.gif"));
-    private final JMenuItem editMenuItem = GUITools.addMenuItem(this, fileMenu, "-&Editar el archivo de configuración", ImageTools.getImageIcon("/toolbarButtonGraphics/general/" + "Edit16.gif"));
+    private final JMenuItem saveMenuItem = GUITools.addMenuItem(this, fileMenu, "&Guardar Configuraciï¿½n", ImageTools.getImageIcon("/toolbarButtonGraphics/general/" + "Save16.gif"));
+    private final JMenuItem editMenuItem = GUITools.addMenuItem(this, fileMenu, "-&Editar el archivo de configuraciï¿½n", ImageTools.getImageIcon("/toolbarButtonGraphics/general/" + "Edit16.gif"));
     private final JMenuItem exitMenuItem = GUITools.addMenuItem(this, fileMenu, "-&Salir", ImageTools.getImageIcon("/toolbarButtonGraphics/general/" + "Stop16.gif"));
     // Menu 'Ver'
     private final JMenu viewMenu = new JMenu("Ver");
@@ -139,7 +139,7 @@ public class Migrator extends JFrame implements ActionListener, ItemListener, Mi
     // Menu 'Herramientas'
     private final JMenu utilMenu = new JMenu("Herramientas");
     private final JMenuItem browserMenuItem = GUITools.addMenuItem(this, utilMenu, "ResultSetBrowser", ImageTools.getImageIcon("/toolbarButtonGraphics/general/" + "History16.gif"));
-    private final JMenuItem creationMenuItem = GUITools.addMenuItem(this, utilMenu, "-Sentencia de creación", ImageTools.getImageIcon("/toolbarButtonGraphics/general/" + "TipOfTheDay16.gif"));
+    private final JMenuItem creationMenuItem = GUITools.addMenuItem(this, utilMenu, "-Sentencia de creaciï¿½n", ImageTools.getImageIcon("/toolbarButtonGraphics/general/" + "TipOfTheDay16.gif"));
     private final JMenuItem duplMenuItem = GUITools.addMenuItem(this, utilMenu, "Duplicar tabla", ImageTools.getImageIcon("/toolbarButtonGraphics/general/" + "Copy16.gif"));
     private JMenuItem dbUpdateMenuItem = GUITools.addMenuItem(null, utilMenu, "-dbUpdate", ImageTools.getImageIcon("/toolbarButtonGraphics/general/" + "Edit16.gif"));
     private final JMenuItem viewPreprocessorsMenuItem = GUITools.addMenuItem(this, utilMenu, "Ver preprocesadores", ImageTools.getImageIcon("/toolbarButtonGraphics/general/" + "Find16.gif"));
@@ -158,7 +158,7 @@ public class Migrator extends JFrame implements ActionListener, ItemListener, Mi
      */
     private final Consola err;
     /**
-     * El señor que realiza la migracion
+     * El seï¿½or que realiza la migracion
      */
     private MigratorArbeiter currentMigrator;
     /**
@@ -168,23 +168,23 @@ public class Migrator extends JFrame implements ActionListener, ItemListener, Mi
      */
     private int debugLevel;
     /**
-     * posicion y tamaño de la ventana
+     * posicion y tamaï¿½o de la ventana
      */
     private Rectangle bounds;
     /**
-     * posicion y tamaño de la ventana de salida
+     * posicion y tamaï¿½o de la ventana de salida
      */
     private Rectangle outputBounds;
     /**
-     * posicion y tamaño de la ventana de errores
+     * posicion y tamaï¿½o de la ventana de errores
      */
     private Rectangle errorsBounds;
     /**
-     * Indica si está visible la ventana de salida
+     * Indica si estï¿½ visible la ventana de salida
      */
     private boolean outputVisible;
     /**
-     * Indica si está visible la ventana de errores
+     * Indica si estï¿½ visible la ventana de errores
      */
     private boolean errorsVisible;
     /**
@@ -220,7 +220,7 @@ public class Migrator extends JFrame implements ActionListener, ItemListener, Mi
      */
     private DatabaseSelector sourceSelector;
     /**
-     * El nombre del archivo de configuracion que se está usando actualmente
+     * El nombre del archivo de configuracion que se estï¿½ usando actualmente
      */
     private String currentConfigurationFile;
 
@@ -256,7 +256,7 @@ public class Migrator extends JFrame implements ActionListener, ItemListener, Mi
 
 
         setTitle(className);
-        final URL imgResource = myClass.getResource("/create.gif");
+        final URL imgResource = myClass.getResource("/images/create.gif");
         if (imgResource != null) {
             setIconImage(Toolkit.getDefaultToolkit().getImage(imgResource));
         } else {
@@ -335,7 +335,7 @@ public class Migrator extends JFrame implements ActionListener, ItemListener, Mi
         // NO, EL PROBLEMA ES CUANDO CAMBIO DE L&F
         fileChooser.setFileFilter(fileFilter);
 
-        // Intentamos que el foco esté en la ventana principal y no en las consolas
+        // Intentamos que el foco estï¿½ en la ventana principal y no en las consolas
         requestFocus();
     }
 
@@ -362,7 +362,7 @@ public class Migrator extends JFrame implements ActionListener, ItemListener, Mi
     }
 
     /**
-     * Determina de donde se está ejecutando la aplicacion: un directorio o un jar
+     * Determina de donde se estï¿½ ejecutando la aplicacion: un directorio o un jar
      */
     File getExecutionPath() {
         final Class myClass = getClass();
@@ -375,7 +375,7 @@ public class Migrator extends JFrame implements ActionListener, ItemListener, Mi
             return null;
         }
 
-        // Determinar que jar o directorio se está ejecutando
+        // Determinar que jar o directorio se estï¿½ ejecutando
         final String path = appURL.getPath();
         int end = path.lastIndexOf('!');        // Si es un jar, termina con ! y el nombre de la clase
         if (end == -1) {
@@ -509,7 +509,7 @@ public class Migrator extends JFrame implements ActionListener, ItemListener, Mi
 				*/
 
                 if (file.exists()) {
-                    final int res = JOptionPane.showConfirmDialog(this, file.getName() + " ya existe \n ¿Machacar el fichero?", file.getName() + " ya existe", JOptionPane.YES_NO_OPTION);
+                    final int res = JOptionPane.showConfirmDialog(this, file.getName() + " ya existe \n ï¿½Machacar el fichero?", file.getName() + " ya existe", JOptionPane.YES_NO_OPTION);
                     if (res != JOptionPane.YES_OPTION) {
                         return;
                     }
@@ -652,7 +652,7 @@ public class Migrator extends JFrame implements ActionListener, ItemListener, Mi
             }
             sourceSelector.setSelectedTable(configurationData.sourceTable);
 
-            // FIXME: De momento está a pelo en el código
+            // FIXME: De momento estï¿½ a pelo en el cï¿½digo
             //targetSelector.setDataSource(configurationData.dataSink);
             targetSelector.setDbURL(configurationData.targetDbURL);
             targetSelector.setDriverName(configurationData.targetDriverName);
@@ -811,20 +811,20 @@ public class Migrator extends JFrame implements ActionListener, ItemListener, Mi
 													+ "Este programa es absolutamente intuitivo\n"
 													+ "Si usted cree que necesita ayuda es porque\n"
 													+ "no sabe utilizar ordenadores\n"
-													+ "¡Ded\u00EDquese a otra profesi\u00F3n!",
+													+ "ï¿½Ded\u00EDquese a otra profesi\u00F3n!",
 													"Acerca de Migrator",
 													JOptionPane.DEFAULT_OPTION, JOptionPane.INFORMATION_MESSAGE);
 	*/
                 JOptionPane.showConfirmDialog(this, "<HTML>"
                         + "<I>"
-                        + "Cómo realizar una migracion de datos:\n"
+                        + "Cï¿½mo realizar una migracion de datos:\n"
                         + "* Seleccione un origen y un destino de datos \n"
                         + "* Seleccione la tabla de destino y la de origen\n"
                         + "* Relacione los campos fuente con los de destino\n"
                         + "* Si lo desea puede dejar campos vacios, o con un valor constante\n"
                         + "* En caso necesario, hay preprocesadores disponibles\n"
                         + "    para preparar los datos\n"
-                        + "* Cuando esté todo listo, pulse el boton de migrar\n"
+                        + "* Cuando estï¿½ todo listo, pulse el boton de migrar\n"
                         + "* Si lo desea puede guardar la configuracion que ha creado\n"
                         + "    para ser usada en el futuro\n"
                         + "\n",
@@ -941,7 +941,7 @@ public class Migrator extends JFrame implements ActionListener, ItemListener, Mi
             applicationProps.load(in);
             in.close();
 
-            // Posicion y tamaño
+            // Posicion y tamaï¿½o
             bounds = loadBounds("applicationBounds");
             outputBounds = loadBounds("outputBounds");
             errorsBounds = loadBounds("errorsBounds");
@@ -1017,7 +1017,7 @@ public class Migrator extends JFrame implements ActionListener, ItemListener, Mi
      * @param msg El mensaje
      */
     public void showInfo(final String msg) {
-        JOptionPane.showMessageDialog(this, msg, "Información", JOptionPane.INFORMATION_MESSAGE);
+        JOptionPane.showMessageDialog(this, msg, "Informaciï¿½n", JOptionPane.INFORMATION_MESSAGE);
     }
 
     /**

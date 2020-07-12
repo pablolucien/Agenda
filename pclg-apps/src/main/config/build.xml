@@ -3,7 +3,9 @@
         Construye todos los proyectos.
     </description>
 
+    <property name="img_dir" value="${basedir}/pclg-tools/src/main/resources/images"/>  <!-- FIXME: this don't belongs here   -->
     <!-- set global properties for this build -->
+
     <property name="module_pclg_apps" location="${basedir}/pclg-apps"/>
     <property file="${basedir}/local_config.properties"/>
 
@@ -21,12 +23,10 @@
     <property name="docs_dir" location="${basedir}/../../docs"/>
     <property name="JDK_API_dir" location="${java_home}/docs/api"/>
     <property name="clear_lukas_jar_name" value="${dist}/Lukas.jar"/>
-    <property name="clear_migrator_jar_name" value="${dist}/Migrator.jar"/>
-    <property name="clear_condominio_jar_name" value="${dist}/Condominio.jar"/>
     <property name="test.path" value=""/>
     <property name="classpath" value="
         ${lib_dir}/velocity-1.7-dep.jar:
-        ${lib_dir}/kunststoff.jar:
+        ${lib_dir}/lib_L&amp;F/kunststoff.jar:
         ${lib_dir}/gnu.getopt.jar:${lib_dir}/jdom-1.0.jar:
         ${lib_dir}/jpatterns-0.1.jar:${lib_dir}/itextpdf-5.3.4.jar:
         ${lib_dir}/jxl.jar:${lib_dir}/jid3lib-0.5.4.jar:
@@ -42,7 +42,12 @@
         ${lib_dir}/testng-6.8.8.jar:
         ${lib_dir}/hamcrest-all-1.3.jar:
         ${lib_dir}/awaitility-3.1.6.jar:
-        ${lib_dir}/json-20180130.jar"/>
+        ${lib_dir}/json-20180130.jar:
+
+        ${dist}/pclg-tools.jar:
+        ${dist}/pclg-mp3updater_jar:
+        "
+    />
 
     <target name="_info">
         <echo>
@@ -51,9 +56,6 @@
             Relevant targets:
             dist build everything
             compile
-            compdel
-            alter
-            migrator
             Lukas
             docs build API docs for everything
             clean guess what...
@@ -77,9 +79,8 @@
 
         <!-- Copy the required libraries. -->
         <copy todir="${dist}" preservelastmodified="true">
-            <fileset file="${resources}/images/toolbarButtonGraphics.jar"/>
             <fileset file="${lib_dir}/derby.jar"/>
-            <fileset file="${lib_dir}/kunststoff.jar"/>
+            <fileset file="${lib_dir}/lib_L&amp;F/kunststoff.jar"/>
             <fileset file="${lib_dir}/gnu.getopt.jar"/>
             <fileset file="${lib_dir}/velocity-1.7-dep.jar"/>
             <fileset file="${lib_dir}/itextpdf-5.3.4.jar"/>
@@ -107,10 +108,6 @@
             <fileset file="${config_dir}/log4j.properties"/>
             <fileset file="${config_dir}/derby.properties"/>
             <fileset file="${src}/Magic.magic"/>
-            <fileset file="${resources}/condominio/Encajeras.properties"/>
-            <fileset file="${resources}/images/Please_stand_by.png"/>
-            <fileset dir="${src}/org/pclg/alter" includes="*.info"/>
-            <fileset dir="${src}/org/pclg/compdel" includes="*.info"/>
         </copy>
 
         <!-- Copiar los archivos necesarios al directorio build -->
@@ -124,12 +121,6 @@
             <fileset file="${config_dir}/log4j.properties"/>
             <fileset file="${config_dir}/derby.properties"/>
             <fileset file="${src}/Magic.magic"/>
-            <fileset dir="${src}/org/pclg/alter" includes="*.info"/>
-            <fileset dir="${src}/org/pclg/alter"
-                     includes="org/pclg/alter/Alter.log.cfg"/>
-            <fileset dir="${src}/org/pclg/compdel" includes="*.info"/>
-            <fileset dir="${src}/org/pclg/compdel"
-                     includes="org/pclg/compdel/CompDel.log.cfg"/>
         </copy>
 
         <copy file="${config_dir}/ProcessLauncher_technical-${local_config.host.name}.properties" tofile="${build}/ProcessLauncher_technical.properties" preservelastmodified="true"/>
@@ -201,7 +192,7 @@
     </target>
 
     <target name="_dist_unsafe" depends="_compile, Lukas_jar,
-                Condominio_jar, Migrator_jar, ProcessLauncher_jar,
+                ProcessLauncher_jar,
                 OuvrirSuivi_jar,
                 JavaShell_jar, JavaShellSwing_Deprecated_jar"
             description="generate the distribution WITHOUT THE TESTS!!!">
@@ -372,114 +363,6 @@
                 <attribute name="Built-By" value="${user.name}"/>
                 <attribute name="Main-Class" value="org.pclg.condominio.GenerateRecibosDocumentService"/>
                 <attribute name="Class-Path" value="xalan-2.7.2.jar : docx4j-3.3.1.jar : serializer-2.7.2.jar : guava-18.0.jar : docx4j-3.3.1.jar : commons-io-1.3.2.jar : log4j-1.2.15.jar : slf4j-api-1.7.7.jar : ."/>
-            </manifest>
-        </jar>
-    </target>
-
-
-    <target name="Migrator_jar" description="generar Migrator.jar">
-        <jar destfile="${clear_migrator_jar_name}" basedir="${build}"
-             includes="net/asintec/migrator/**">
-
-            <!-- Clases auxiliares -->
-            <fileset dir="${build}"
-                     includes="
-                dbinfo/DatabaseInfo*.class
-                dbinfo/TableInfo*.class
-                dbinfo/SQLMessages*.class
-                org/pclg/gui/ColorChangerDocumentListener**.class
-                org/pclg/gui/JLabeledField*.class
-                org/pclg/gui/LnFController*.class
-                org/pclg/gui/VersatileJMenu*.class
-                org/pclg/log/*.class
-                javaspecialists/ReflectionHelper*.class
-                org/pclg/tools/ArrayTools*.class
-                org/pclg/tools/BoundsInfo*.class
-                org/pclg/tools/DateTools*.class
-                org/pclg/tools/FileTools*.class
-                org/pclg/tools/GUITools**.class
-                org/pclg/tools/ToolBox.class
-                org/pclg/tools/Consola*.class
-                org/pclg/tools/ConsoleOutputStream.class
-                org/pclg/tools/ComponentMutator.class
-                org/pclg/tools/LabeledComponent.class
-                org/pclg/tools/LengthControlledField*.class
-                org/pclg/tools/PropertiesHelper*.class
-                org/pclg/tools/SortedProperties*.class
-            "/>
-
-            <!-- Utilities -->
-            <fileset dir="${build}"
-                     includes="
-                org.pclg.tools.JRadioButtonPanel.class
-                org.pclg.tools.TableMap.class
-                org.pclg.tools.TableSorter*.class
-            "/>
-
-
-            <!-- preprocessors -->
-            <fileset dir="${build}"
-                     includes="
-                org/pclg/agenda/crypto/PreprocessorClipAndCryptString*.class
-                org/pclg/agenda/crypto/PreprocessorCryptString*.class
-                org/pclg/agenda/crypto/DummyCrypto*.class
-                org/pclg/agenda/crypto/Cryptographer*.class
-                org/pclg/agenda/crypto/CryptoException*.class
-            "/>
-
-            <!-- data_sources  -->
-            <fileset dir="${build}"
-                     includes="
-                DataSource.class
-                DataSourceJDBC.class
-                DataSourceFile.class
-                DataSourceTextFile.class
-                DatabaseFileChooser.class
-                DatabaseSelector.class
-                DatabaseSelectorTarget.class
-                DatabaseSelectorOracle.class
-                DataSelector.class
-                OracleDialog.class
-            "/>
-
-            <!-- data_sinks  -->
-            <fileset dir="${build}"
-                     includes="
-                DataSink.class
-                DataSinkJDBC.class
-                DataSinkOracle.class
-            "/>
-
-            <!-- support_classes -->
-            <fileset dir="${build}"
-                     includes="
-                org/pclg/xtras/ClassPathHacker.class
-                org/pclg/xtras/EnhancedStringTokenizer.class
-                org/pclg/xtras/Function.class
-                org/pclg/xtras/Parser.class
-            "/>
-
-
-            <!-- Los temas -->
-            <fileset dir="${build}" includes=" org/pclg/gui/temas/**.class"/>
-
-            <!-- Las clases mias -->
-            <fileset dir="${build}"
-                     includes="
-				org/pclg/filesystem/fileattributes/*.class
-                org/pclg/migrator/**
-                org/pclg/tools/Chrono*.class
-                org/pclg/tools/ImageTools*.class
-                org/pclg/tools/PCLGTools.class
-                org/pclg/tools/StringTools.class
-            "/>
-
-            <manifest>
-                <attribute name="Built-By" value="${user.name}"/>
-                <attribute name="Main-Class"
-                           value="net.asintec.migrator.Migrator"/>
-                <attribute name="Class-Path"
-                           value="toolbarButtonGraphics.jar : kunststoff.jar : log4j-1.2.15.jar : Icons.jar : ."/>
             </manifest>
         </jar>
     </target>

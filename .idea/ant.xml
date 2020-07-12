@@ -8,6 +8,6 @@
     <buildFile url="file://$PROJECT_DIR$/pclg-alter/src/main/resources/build.xml" />
     <buildFile url="file://$PROJECT_DIR$/pclg-mp3updater/src/main/resources/build.xml" />
     <buildFile url="file://$PROJECT_DIR$/pclg-compdel/src/main/resources/build.xml" />
+    <buildFile url="file://$PROJECT_DIR$/net-asintec/src/main/resources/build.xml" />
   </component>
 </project>
-
