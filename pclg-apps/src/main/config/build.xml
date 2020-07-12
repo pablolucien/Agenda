@@ -36,7 +36,6 @@
         ${lib_dir}/docx4j-3.3.1.jar:
         ${lib_dir}/serializer-2.7.2.jar:
         ${lib_dir}/guava-18.0.jar:
-        ${lib_dir}/docx4j-3.3.1.jar:
         ${lib_dir}/commons-io-1.3.2.jar:
         ${lib_dir}/slf4j-api-1.7.7.jar:
         ${lib_dir}/testng-6.8.8.jar:
@@ -340,32 +339,6 @@
         <delete dir="${docs_dir}"/>
     </target>
 
-
-    <target name="Condominio_jar" depends="_compile" description="generar Condominio">
-        <jar destfile="${clear_condominio_jar_name}"
-             basedir="${build}"
-             includes="org/pclg/condominio/**">
-            <!-- Clases auxiliares -->
-            <fileset dir="${build}"
-                     includes="
-                        org/pclg/log/*.class
-                        org/pclg/tools/PropertiesHelper*.class
-                        org/pclg/tools/ToolBox*.class
-                        org/pclg/xtras/ClassPathHacker.class
-                     "
-                     excludes="**/*Test*.class"/>
-
-            <!-- Archivos de configuracion -->
-            <fileset file="${resources}/condominio/La_comunidad_recto_y_verso_template_v2.docx"/>
-            <fileset file="${resources}/condominio/La_comunidad_recibo_unico.doc"/>
-
-            <manifest>
-                <attribute name="Built-By" value="${user.name}"/>
-                <attribute name="Main-Class" value="org.pclg.condominio.GenerateRecibosDocumentService"/>
-                <attribute name="Class-Path" value="xalan-2.7.2.jar : docx4j-3.3.1.jar : serializer-2.7.2.jar : guava-18.0.jar : docx4j-3.3.1.jar : commons-io-1.3.2.jar : log4j-1.2.15.jar : slf4j-api-1.7.7.jar : ."/>
-            </manifest>
-        </jar>
-    </target>
 
     <target name="Finance" depends="_compile" description="generar Finance">
         <jar destfile="${dist}/Finance.jar"
