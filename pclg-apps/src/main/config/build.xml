@@ -44,7 +44,7 @@
         ${lib_dir}/json-20180130.jar:
 
         ${dist}/pclg-tools.jar:
-        ${dist}/pclg-mp3updater_jar:
+        ${dist}/pclg-mp3updater.jar:
         "
     />
 

@@ -1,0 +1,9 @@
+/.idea-old/
+/out/
+/test-output/
+/pclg-apps/test-output/
+/pclg-agenda/test-output/
+/pclg-synchonizer/test-output/
+/pclg-tools/test-output/
+/runant.bat
+/local_config.properties
