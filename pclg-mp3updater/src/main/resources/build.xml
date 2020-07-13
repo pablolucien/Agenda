@@ -1,4 +1,4 @@
-<project name="pclg-mp3updater" default="pclg-mp3updater" basedir="../../../..">
+<project name="pclg-mp3updater" default="build" basedir="../../../..">
 
     <description>Builds pclg mp3updater</description>
 
@@ -66,7 +66,12 @@
         </jar>
     </target>
 
-    <target name="pclg-mp3updater" depends="pclg-mp3updater_jar">
+    <target name="build" depends="pclg-mp3updater_jar"/>
 
+     <target name="clean">
+         <echo message="Cleaning ${ant.project.name}"/>
+         <delete includeEmptyDirs="true">
+             <fileset dir="${build}" includes="*/**"/>
+         </delete>
     </target>
 </project>

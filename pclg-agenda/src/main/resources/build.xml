@@ -1,4 +1,4 @@
-<project name="pclg-agenda" default="pclg-agenda" basedir="../../../..">
+<project name="pclg-agenda" default="build" basedir="../../../..">
 
     <description>Builds pclg agenda</description>
 
@@ -82,7 +82,12 @@
         </jar>
     </target>
 
-    <target name="pclg-agenda" depends="pclg-agenda_jar">
+    <target name="build" depends="pclg-agenda_jar"/>
 
+     <target name="clean">
+         <echo message="Cleaning ${ant.project.name}"/>
+         <delete includeEmptyDirs="true">
+             <fileset dir="${build}" includes="*/**"/>
+         </delete>
     </target>
 </project>

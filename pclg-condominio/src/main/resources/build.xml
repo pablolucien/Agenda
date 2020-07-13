@@ -1,4 +1,4 @@
-<project name="pclg-condominio" default="pclg-condominio" basedir="../../../..">
+<project name="pclg-condominio" default="build" basedir="../../../..">
 
     <description>Builds pclg condominio</description>
 
@@ -71,5 +71,12 @@
         </jar>
     </target>
 
-    <target name="pclg-condominio" depends="pclg-condominio_jar" description="generar Condominio"/>
+    <target name="build" depends="pclg-condominio_jar" description="generar Condominio"/>
+
+     <target name="clean">
+         <echo message="Cleaning ${ant.project.name}"/>
+         <delete includeEmptyDirs="true">
+             <fileset dir="${build}" includes="*/**"/>
+         </delete>
+    </target>
 </project>

@@ -1,4 +1,4 @@
-<project name="net-asintec-migrator" default="net-asintec-migrator" basedir="../../../..">
+<project name="net-asintec-migrator" default="build" basedir="../../../..">
 
     <description>Builds Migrator</description>
 
@@ -62,7 +62,12 @@
         </jar>
     </target>
 
-    <target name="net-asintec-migrator" depends="net-asintec-migrator_jar">
+    <target name="build" depends="net-asintec-migrator_jar"/>
 
+     <target name="clean">
+         <echo message="Cleaning ${ant.project.name}"/>
+         <delete includeEmptyDirs="true">
+             <fileset dir="${build}" includes="*/**"/>
+         </delete>
     </target>
 </project>

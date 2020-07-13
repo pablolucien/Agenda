@@ -1,4 +1,4 @@
-<project name="pclg-synchonizer" default="pclg-synchonizer" basedir="../../../..">
+<project name="pclg-synchonizer" default="build" basedir="../../../..">
 
     <description>Builds pclg synchonizer</description>
 
@@ -68,7 +68,12 @@
         </jar>
     </target>
 
-    <target name="pclg-synchonizer" depends="pclg-synchonizer_jar">
+    <target name="build" depends="pclg-synchonizer_jar"/>
 
+    <target name="clean">
+        <echo message="Cleaning ${ant.project.name}"/>
+        <delete includeEmptyDirs="true">
+            <fileset dir="${build}" includes="*/**"/>
+        </delete>
     </target>
 </project>

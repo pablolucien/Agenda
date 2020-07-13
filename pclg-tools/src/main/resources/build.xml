@@ -1,4 +1,4 @@
-<project name="pclg-tools" default="pclg-tools" basedir="../../../..">
+<project name="pclg-tools" default="build" basedir="../../../..">
 
     <description>Builds pclg tools</description>
 
@@ -11,7 +11,6 @@
     <property name="pclg-tools_jar_name" value="pclg-tools.jar"/>
     <property name="Icons_jar_name" value="Icons.jar"/>
     <property name="Sounds_jar_name" value="Sounds.jar"/>
-    <property name="Alles_src_zip_name" value="Alles_src.zip"/>
 
     <property name="properties" value="*.properties"/>
 
@@ -79,12 +78,6 @@
         </jar>
     </target>
 
-    <target name="Alles_src_zip" description="fuentes de la Alles">
-        <jar destfile="${dist}/${Alles_src_zip_name}" basedir="${build}" excludes="**">
-            <fileset dir="${basedir}" includes="**/src/**"/>
-        </jar>
-    </target>
-
     <target name="Icons_jar">
         <jar destfile="${dist}/${Icons_jar_name}"
              excludes="**">
@@ -125,7 +118,12 @@
         </jar>
     </target>
 
-    <target name="pclg-tools" depends="pclg-tools_jar, Icons_jar, Sounds_jar, Alles_src_zip">
+    <target name="build" depends="pclg-tools_jar, Icons_jar, Sounds_jar"/>
 
+     <target name="clean">
+         <echo message="Cleaning ${ant.project.name}"/>
+         <delete includeEmptyDirs="true">
+             <fileset dir="${build}" includes="*/**"/>
+         </delete>
     </target>
 </project>

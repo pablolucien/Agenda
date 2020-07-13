@@ -1,4 +1,4 @@
-<project name="pclg-compdel" default="pclg-compdel" basedir="../../../..">
+<project name="pclg-compdel" default="build" basedir="../../../..">
 
     <description>Builds pclg compdel</description>
 
@@ -65,7 +65,12 @@
         </jar>
     </target>
 
-    <target name="pclg-compdel" depends="pclg-compdel_jar">
+    <target name="build" depends="pclg-compdel_jar"/>
 
+     <target name="clean">
+         <echo message="Cleaning ${ant.project.name}"/>
+         <delete includeEmptyDirs="true">
+             <fileset dir="${build}" includes="*/**"/>
+         </delete>
     </target>
 </project>

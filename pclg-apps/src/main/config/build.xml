@@ -182,7 +182,7 @@
     </target>
 
 
-    <target name="_clean_dist" depends="_clean, _dist"
+    <target name="_clean_dist" depends="clean, _dist"
             description="generate the distribution from scratch">
     </target>
 
@@ -290,7 +290,7 @@
                 <attribute name="Built-By" value="${user.name}"/>
                 <attribute name="Main-Class" value="org.pclg.tools.Clean"/>
                 <attribute name="Class-Path"
-                           value=". : velocity-1.7-dep.jar : gnu.getopt.jar : itextpdf-5.3.4.jar : jxl.jar : log4j-1.2.15.jar"/>
+                           value=". : pclg-tools.jar : velocity-1.7-dep.jar : gnu.getopt.jar : itextpdf-5.3.4.jar : jxl.jar : log4j-1.2.15.jar"/>
                 <section name="common/class1.class">
                     <attribute name="Sealed" value="false"/>
                 </section>
@@ -325,17 +325,18 @@
         </javadoc>
     </target>
 
-    <target name="_clean" description="clean up">
+    <target name="clean" description="clean up">
         <delete includeEmptyDirs="true">
             <fileset dir="${build}" includes="**/**"/>
             <fileset dir="${build_tests}" includes="**/**"/>
-            <fileset dir="${dist}" includes="**/*.jar"/>
+            <fileset dir="${dist}" includes="**/pclg-*.jar"/>
+            <fileset dir="${dist}" includes="**/net-asintec-*.jar"/>
         </delete>
     </target>
 
 
     <target name="_cleanAll" description="borrar todo, todito, todito"
-            depends="_clean">
+            depends="clean">
         <delete dir="${docs_dir}"/>
     </target>
 
@@ -398,7 +399,7 @@
             <manifest>
                 <attribute name="Built-By" value="${user.name}"/>
                 <attribute name="Main-Class" value="org.pclg.runtime.ProcessLauncher"/>
-                <attribute name="Class-Path" value=". : log4j-1.2.15.jar : toolbarButtonGraphics.jar"/>
+                <attribute name="Class-Path" value=". : pclg-tools.jar : log4j-1.2.15.jar : toolbarButtonGraphics.jar"/>
             </manifest>
         </jar>
     </target>
@@ -418,7 +419,7 @@
             <manifest>
                 <attribute name="Built-By" value="${user.name}"/>
                 <attribute name="Main-Class" value="org.pclg.runtime.JavaShellSwing_Deprecated"/>
-                <attribute name="Class-Path" value=". : log4j-1.2.15.jar"/>
+                <attribute name="Class-Path" value=". : pclg-tools.jar : log4j-1.2.15.jar"/>
             </manifest>
         </jar>
     </target>
@@ -435,7 +436,7 @@
             <manifest>
                 <attribute name="Built-By" value="${user.name}"/>
                 <attribute name="Main-Class" value="org.pclg.runtime.JavaShell"/>
-                <attribute name="Class-Path" value=". : log4j-1.2.15.jar"/>
+                <attribute name="Class-Path" value=". : pclg-tools.jar : log4j-1.2.15.jar"/>
             </manifest>
         </jar>
     </target>

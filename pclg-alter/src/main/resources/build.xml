@@ -1,4 +1,4 @@
-<project name="pclg-alter" default="pclg-alter" basedir="../../../..">
+<project name="pclg-alter" default="build" basedir="../../../..">
 
     <description>Builds pclg alter</description>
 
@@ -65,7 +65,12 @@
         </jar>
     </target>
 
-    <target name="pclg-alter" depends="pclg-alter_jar">
+    <target name="build" depends="pclg-alter_jar"/>
 
+     <target name="clean">
+         <echo message="Cleaning ${ant.project.name}"/>
+         <delete includeEmptyDirs="true">
+             <fileset dir="${build}" includes="*/**"/>
+         </delete>
     </target>
 </project>

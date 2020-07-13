@@ -1,11 +1,18 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="62f5304d-a296-4cab-a90d-c12f3b4446c2" name="Default Changelist" comment="Default Changelist">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/.gitignore" afterPath="$PROJECT_DIR$/.idea/.gitignore" />
+    <list default="true" id="62f5304d-a296-4cab-a90d-c12f3b4446c2" name="Default Changelist" comment="Add workspace.xml to version control.">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/ant.xml" afterPath="$PROJECT_DIR$/.idea/ant.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/pclg-apps/pclg-apps.iml" afterPath="$PROJECT_DIR$/pclg-apps/pclg-apps.iml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/net-asintec/src/main/resources/build.xml" afterPath="$PROJECT_DIR$/net-asintec/src/main/resources/build.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/pclg-alter/src/main/resources/build.xml" afterPath="$PROJECT_DIR$/pclg-alter/src/main/resources/build.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/pclg-apps/src/main/config/build.xml" afterPath="$PROJECT_DIR$/pclg-apps/src/main/config/build.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/pclg-compdel/src/main/resources/build.xml" afterPath="$PROJECT_DIR$/pclg-compdel/src/main/resources/build.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/pclg-condominio/src/main/resources/build.xml" afterPath="$PROJECT_DIR$/pclg-condominio/src/main/resources/build.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/pclg-mp3updater/src/main/resources/build.xml" afterPath="$PROJECT_DIR$/pclg-mp3updater/src/main/resources/build.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/pclg-synchonizer/src/main/resources/build.xml" afterPath="$PROJECT_DIR$/pclg-synchonizer/src/main/resources/build.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/pclg-tools/src/main/resources/build.xml" afterPath="$PROJECT_DIR$/pclg-tools/src/main/resources/build.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/master-build.xml" afterPath="$PROJECT_DIR$/master-build.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <option name="TRACKING_ENABLED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -24,6 +31,100 @@
   <component name="FavoritesManager">
     <favorites_list name="Alles" />
   </component>
+  <component name="FileEditorManager">
+    <leaf>
+      <file leaf-file-name="master-build.xml" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/master-build.xml">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="765">
+              <caret line="39" column="122" selection-start-line="39" selection-start-column="0" selection-end-line="39" selection-end-column="0" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="build.xml" pinned="false" current="true" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/pclg-agenda/src/main/resources/build.xml">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="0.49485713" vertical-offset="791" max-vertical-offset="1666">
+              <caret line="72" column="60" selection-start-line="72" selection-start-column="0" selection-end-line="72" selection-end-column="0" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="build.xml" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/pclg-alter/src/main/resources/build.xml">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="0.0" vertical-offset="1007" max-vertical-offset="1377">
+              <caret line="70" column="9" selection-start-line="70" selection-start-column="9" selection-end-line="70" selection-end-column="9" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="build.xml" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/pclg-compdel/src/main/resources/build.xml">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="0.0" vertical-offset="956" max-vertical-offset="1377">
+              <caret line="74" column="0" selection-start-line="74" selection-start-column="0" selection-end-line="74" selection-end-column="0" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="build.xml" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/pclg-condominio/src/main/resources/build.xml">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="0.0" vertical-offset="1122" max-vertical-offset="1479">
+              <caret line="76" column="9" selection-start-line="76" selection-start-column="9" selection-end-line="76" selection-end-column="9" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="build.xml" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/pclg-mp3updater/src/main/resources/build.xml">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="0.0" vertical-offset="973" max-vertical-offset="1394">
+              <caret line="75" column="0" selection-start-line="75" selection-start-column="0" selection-end-line="75" selection-end-column="0" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="build.xml" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/pclg-tools/src/main/resources/build.xml">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="0.0" vertical-offset="880" max-vertical-offset="2278">
+              <caret line="96" column="100" selection-start-line="96" selection-start-column="39" selection-end-line="96" selection-end-column="39" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="build.xml" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/net-asintec/src/main/resources/build.xml">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="0.0" vertical-offset="905" max-vertical-offset="1326">
+              <caret line="71" column="0" selection-start-line="71" selection-start-column="0" selection-end-line="71" selection-end-column="0" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="build.xml" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/pclg-apps/src/main/config/build.xml">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="0.0" vertical-offset="5268" max-vertical-offset="7786">
+              <caret line="334" column="0" selection-start-line="328" selection-start-column="0" selection-end-line="334" selection-end-column="0" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+    </leaf>
+  </component>
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
@@ -31,12 +132,31 @@
       </list>
     </option>
   </component>
+  <component name="FindManager">
+    <FindUsagesManager>
+      <setting name="OPEN_NEW_TAB" value="true" />
+    </FindUsagesManager>
+  </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
     <option name="RECENT_BRANCH_BY_REPOSITORY">
       <map>
         <entry key="$PROJECT_DIR$" value="master" />
       </map>
+    </option>
+  </component>
+  <component name="IdeDocumentHistory">
+    <option name="changedFiles">
+      <list>
+        <option value="$PROJECT_DIR$/master-build.xml" />
+        <option value="$PROJECT_DIR$/pclg-agenda/src/main/resources/build.xml" />
+        <option value="$PROJECT_DIR$/pclg-alter/src/main/resources/build.xml" />
+        <option value="$PROJECT_DIR$/net-asintec/src/main/resources/build.xml" />
+        <option value="$PROJECT_DIR$/pclg-compdel/src/main/resources/build.xml" />
+        <option value="$PROJECT_DIR$/pclg-condominio/src/main/resources/build.xml" />
+        <option value="$PROJECT_DIR$/pclg-mp3updater/src/main/resources/build.xml" />
+        <option value="$PROJECT_DIR$/pclg-tools/src/main/resources/build.xml" />
+      </list>
     </option>
   </component>
   <component name="ProjectFrameBounds">
@@ -72,6 +192,8 @@
       <sortByType />
     </navigator>
     <panes>
+      <pane id="Scope" />
+      <pane id="PackagesPane" />
       <pane id="ProjectPane">
         <subPane>
           <PATH>
@@ -82,8 +204,6 @@
           </PATH>
         </subPane>
       </pane>
-      <pane id="Scope" />
-      <pane id="PackagesPane" />
     </panes>
   </component>
   <component name="ProjectViewState">
@@ -437,29 +557,29 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="-4" y="-4" width="1928" height="1058" extended-state="6" />
-    <editor active="false" />
+    <editor active="true" />
     <layout>
       <window_info id="Changes" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.14962727" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.40153173" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.14962727" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.27899343" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Kotlin Bytecode" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Application Servers" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.22044729" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.32932165" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.22044729" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32932165" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
-      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
     </layout>
@@ -513,7 +633,8 @@
     <MESSAGE value="Fix error done when enhancing of the Versatile db package" />
     <MESSAGE value="Reorganize project in modules (fix the project tree)" />
     <MESSAGE value="Reorganize project in modules (reorganize the project tree)" />
-    <option name="LAST_COMMIT_MESSAGE" value="Reorganize project in modules (reorganize the project tree)" />
+    <MESSAGE value="Add workspace.xml to version control." />
+    <option name="LAST_COMMIT_MESSAGE" value="Add workspace.xml to version control." />
     <option name="OPTIMIZE_IMPORTS_BEFORE_PROJECT_COMMIT" value="true" />
   </component>
   <component name="WindowStateProjectService">
@@ -689,6 +810,98 @@
   <component name="antWorkspaceConfiguration">
     <option name="IS_AUTOSCROLL_TO_SOURCE" value="false" />
     <option name="FILTER_TARGETS" value="false" />
+    <buildFile url="file://$PROJECT_DIR$/master-build.xml">
+      <targetFilters>
+        <filter targetName="all" isVisible="false" />
+        <filter targetName="_init" isVisible="false" />
+        <filter targetName="_compile" isVisible="true" />
+        <filter targetName="pclg-tools_jar" isVisible="false" />
+        <filter targetName="Alles_src_zip" isVisible="true" />
+        <filter targetName="Icons_jar" isVisible="false" />
+        <filter targetName="Sounds_jar" isVisible="false" />
+        <filter targetName="pclg-tools" isVisible="false" />
+        <filter targetName="pclg-synchonizer_jar" isVisible="false" />
+        <filter targetName="pclg-synchonizer" isVisible="false" />
+      </targetFilters>
+      <expanded value="true" />
+    </buildFile>
+    <buildFile url="file://$PROJECT_DIR$/net-asintec/src/main/resources/build.xml">
+      <targetFilters>
+        <filter targetName="_init" isVisible="false" />
+        <filter targetName="_compile" isVisible="true" />
+        <filter targetName="net-asintec-migrator_jar" isVisible="false" />
+        <filter targetName="net-asintec-migrator" isVisible="false" />
+      </targetFilters>
+      <expanded value="false" />
+    </buildFile>
+    <buildFile url="file://$PROJECT_DIR$/pclg-agenda/src/main/resources/build.xml">
+      <targetFilters>
+        <filter targetName="_init" isVisible="false" />
+        <filter targetName="_compile" isVisible="true" />
+        <filter targetName="pclg-agenda_jar" isVisible="false" />
+        <filter targetName="pclg-agenda" isVisible="false" />
+      </targetFilters>
+      <expanded value="false" />
+    </buildFile>
+    <buildFile url="file://$PROJECT_DIR$/pclg-alter/src/main/resources/build.xml">
+      <targetFilters>
+        <filter targetName="_init" isVisible="false" />
+        <filter targetName="_compile" isVisible="true" />
+        <filter targetName="pclg-alter_jar" isVisible="false" />
+        <filter targetName="pclg-alter" isVisible="false" />
+      </targetFilters>
+      <expanded value="false" />
+    </buildFile>
+    <buildFile url="file://$PROJECT_DIR$/pclg-compdel/src/main/resources/build.xml">
+      <targetFilters>
+        <filter targetName="_init" isVisible="false" />
+        <filter targetName="_compile" isVisible="true" />
+        <filter targetName="pclg-compdel_jar" isVisible="false" />
+        <filter targetName="build" isVisible="false" />
+        <filter targetName="clean" isVisible="false" />
+      </targetFilters>
+      <expanded value="false" />
+    </buildFile>
+    <buildFile url="file://$PROJECT_DIR$/pclg-condominio/src/main/resources/build.xml">
+      <targetFilters>
+        <filter targetName="_init" isVisible="false" />
+        <filter targetName="_compile" isVisible="true" />
+        <filter targetName="pclg-condominio_jar" isVisible="false" />
+        <filter targetName="pclg-condominio" isVisible="true" />
+      </targetFilters>
+      <expanded value="false" />
+    </buildFile>
+    <buildFile url="file://$PROJECT_DIR$/pclg-mp3updater/src/main/resources/build.xml">
+      <targetFilters>
+        <filter targetName="_init" isVisible="false" />
+        <filter targetName="_compile" isVisible="true" />
+        <filter targetName="pclg-mp3updater_jar" isVisible="false" />
+        <filter targetName="build" isVisible="false" />
+        <filter targetName="clean" isVisible="false" />
+      </targetFilters>
+      <expanded value="false" />
+    </buildFile>
+    <buildFile url="file://$PROJECT_DIR$/pclg-synchonizer/src/main/resources/build.xml">
+      <targetFilters>
+        <filter targetName="_init" isVisible="false" />
+        <filter targetName="_compile" isVisible="true" />
+        <filter targetName="pclg-synchonizer_jar" isVisible="false" />
+        <filter targetName="pclg-synchonizer" isVisible="false" />
+      </targetFilters>
+      <expanded value="false" />
+    </buildFile>
+    <buildFile url="file://$PROJECT_DIR$/pclg-tools/src/main/resources/build.xml">
+      <targetFilters>
+        <filter targetName="_init" isVisible="false" />
+        <filter targetName="_compile" isVisible="true" />
+        <filter targetName="pclg-tools_jar" isVisible="false" />
+        <filter targetName="Alles_src_zip" isVisible="true" />
+        <filter targetName="Icons_jar" isVisible="false" />
+        <filter targetName="Sounds_jar" isVisible="false" />
+        <filter targetName="pclg-tools" isVisible="false" />
+      </targetFilters>
+      <expanded value="false" />
+    </buildFile>
     <buildFile url="file://$PROJECT_DIR$/pclg-apps/src/main/config/build.xml">
       <targetFilters>
         <filter targetName="_info" isVisible="false" />
@@ -710,83 +923,82 @@
         <filter targetName="JavaShell_jar" isVisible="false" />
         <filter targetName="Alles_src_zip" isVisible="true" />
       </targetFilters>
-      <expanded value="true" />
+      <expanded value="false" />
     </buildFile>
-    <buildFile url="file://$PROJECT_DIR$/net-asintec/src/main/resources/build.xml">
-      <targetFilters>
-        <filter targetName="_init" isVisible="false" />
-        <filter targetName="_compile" isVisible="true" />
-        <filter targetName="net-asintec-migrator_jar" isVisible="false" />
-        <filter targetName="net-asintec-migrator" isVisible="false" />
-      </targetFilters>
-      <expanded value="true" />
-    </buildFile>
-    <buildFile url="file://$PROJECT_DIR$/pclg-agenda/src/main/resources/build.xml">
-      <targetFilters>
-        <filter targetName="_init" isVisible="false" />
-        <filter targetName="_compile" isVisible="true" />
-        <filter targetName="pclg-agenda_jar" isVisible="false" />
-        <filter targetName="pclg-agenda" isVisible="false" />
-      </targetFilters>
-      <expanded value="true" />
-    </buildFile>
-    <buildFile url="file://$PROJECT_DIR$/pclg-alter/src/main/resources/build.xml">
-      <targetFilters>
-        <filter targetName="_init" isVisible="false" />
-        <filter targetName="_compile" isVisible="true" />
-        <filter targetName="pclg-alter_jar" isVisible="false" />
-        <filter targetName="pclg-alter" isVisible="false" />
-      </targetFilters>
-      <expanded value="true" />
-    </buildFile>
-    <buildFile url="file://$PROJECT_DIR$/pclg-compdel/src/main/resources/build.xml">
-      <targetFilters>
-        <filter targetName="_init" isVisible="false" />
-        <filter targetName="_compile" isVisible="true" />
-        <filter targetName="pclg-compdel_jar" isVisible="false" />
-        <filter targetName="pclg-compdel" isVisible="false" />
-      </targetFilters>
-      <expanded value="true" />
-    </buildFile>
-    <buildFile url="file://$PROJECT_DIR$/pclg-condominio/src/main/resources/build.xml">
-      <targetFilters>
-        <filter targetName="_init" isVisible="false" />
-        <filter targetName="_compile" isVisible="true" />
-        <filter targetName="pclg-condominio_jar" isVisible="false" />
-        <filter targetName="pclg-condominio" isVisible="true" />
-      </targetFilters>
-      <expanded value="true" />
-    </buildFile>
-    <buildFile url="file://$PROJECT_DIR$/pclg-mp3updater/src/main/resources/build.xml">
-      <targetFilters>
-        <filter targetName="_init" isVisible="false" />
-        <filter targetName="_compile" isVisible="true" />
-        <filter targetName="pclg-mp3updater_jar" isVisible="false" />
-        <filter targetName="pclg-mp3updater" isVisible="false" />
-      </targetFilters>
-      <expanded value="true" />
-    </buildFile>
-    <buildFile url="file://$PROJECT_DIR$/pclg-synchonizer/src/main/resources/build.xml">
-      <targetFilters>
-        <filter targetName="_init" isVisible="false" />
-        <filter targetName="_compile" isVisible="true" />
-        <filter targetName="pclg-synchonizer_jar" isVisible="false" />
-        <filter targetName="pclg-synchonizer" isVisible="false" />
-      </targetFilters>
-      <expanded value="true" />
-    </buildFile>
-    <buildFile url="file://$PROJECT_DIR$/pclg-tools/src/main/resources/build.xml">
-      <targetFilters>
-        <filter targetName="_init" isVisible="false" />
-        <filter targetName="_compile" isVisible="true" />
-        <filter targetName="pclg-tools_jar" isVisible="false" />
-        <filter targetName="Alles_src_zip" isVisible="true" />
-        <filter targetName="Icons_jar" isVisible="false" />
-        <filter targetName="Sounds_jar" isVisible="false" />
-        <filter targetName="pclg-tools" isVisible="false" />
-      </targetFilters>
-      <expanded value="true" />
-    </buildFile>
+  </component>
+  <component name="editorHistoryManager">
+    <entry file="file://$PROJECT_DIR$/pclg-apps/src/main/config/build.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="5268" max-vertical-offset="7786">
+          <caret line="334" column="0" selection-start-line="328" selection-start-column="0" selection-end-line="334" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/master-build.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="765">
+          <caret line="39" column="122" selection-start-line="39" selection-start-column="0" selection-end-line="39" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/net-asintec/src/main/resources/build.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="905" max-vertical-offset="1326">
+          <caret line="71" column="0" selection-start-line="71" selection-start-column="0" selection-end-line="71" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/pclg-alter/src/main/resources/build.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="1007" max-vertical-offset="1377">
+          <caret line="70" column="9" selection-start-line="70" selection-start-column="9" selection-end-line="70" selection-end-column="9" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/pclg-compdel/src/main/resources/build.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="956" max-vertical-offset="1377">
+          <caret line="74" column="0" selection-start-line="74" selection-start-column="0" selection-end-line="74" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/pclg-condominio/src/main/resources/build.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="1122" max-vertical-offset="1479">
+          <caret line="76" column="9" selection-start-line="76" selection-start-column="9" selection-end-line="76" selection-end-column="9" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/pclg-mp3updater/src/main/resources/build.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="973" max-vertical-offset="1394">
+          <caret line="75" column="0" selection-start-line="75" selection-start-column="0" selection-end-line="75" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/pclg-tools/src/main/resources/build.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="880" max-vertical-offset="2278">
+          <caret line="96" column="100" selection-start-line="96" selection-start-column="39" selection-end-line="96" selection-end-column="39" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/pclg-agenda/src/main/resources/build.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.49485713" vertical-offset="791" max-vertical-offset="1666">
+          <caret line="72" column="60" selection-start-line="72" selection-start-column="0" selection-end-line="72" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
   </component>
 </project>
 
