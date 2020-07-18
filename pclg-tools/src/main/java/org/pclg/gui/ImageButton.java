@@ -304,6 +304,7 @@ public class ImageButton extends JButton {
 					}
 				});
 			} else {
+                setRawImage(null);
 				if (thumbnail == null) {
 					setText(PropertiesHelper.getStringFromProperties(properties,
 						"DataEntry.msg.image.not_found"));
