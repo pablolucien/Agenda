@@ -22,21 +22,21 @@
                 "${ROOT_C_home}/development/projects/Alles",
                 "${ROOT_E}/home/development/projects/Alles"
             ],
-            "Exclude": "CVS/:.git/:.github/:target/:out/:.git*:.#*:local_config.properties"
+            "Exclude": "CVS/:.git/:.github/:target/:out/:.git*:.#*:local_config.properties:workspace.xml"
         },
         {
             "dirs": [
                 "${ROOT_C_home}/development/projects/quotes",
                 "${ROOT_E}/home/development/projects/quotes"
             ],
-            "Exclude": "CVS/:.idea/:.git/:.github/:target/:out/:.git*:.#*"
+            "Exclude": "CVS/:.idea/:.git/:.github/:target/:out/:.git*:.#*:workspace.xml"
         },
         {
             "dirs": [
                 "${ROOT_C_home}/development/projects/TestsKotlin",
                 "${ROOT_E}/home/development/projects/TestsKotlin"
             ],
-            "Exclude": ".git/:.github/:target/:out/:.git*"
+            "Exclude": ".git/:.github/:target/:out/:.git*:workspace.xml"
         }
     ]
 }
