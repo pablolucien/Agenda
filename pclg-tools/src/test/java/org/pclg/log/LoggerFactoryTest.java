@@ -12,6 +12,7 @@ import org.testng.annotations.Test;
 import java.util.logging.Logger;
 
 import static org.testng.Assert.assertEquals;
+import static org.testng.Assert.assertNotEquals;
 import static org.testng.Assert.assertNotNull;
 import static org.testng.Assert.assertSame;
 
@@ -52,4 +53,15 @@ public class LoggerFactoryTest {
 	public void testConsistencia() {
 		assertSame(LoggerFactory.make(), LoggerFactory.make2());
 	}
+    
+	@Test
+	public void getRandomErrorMessage_SomeMessageExists() {
+		assertNotNull(LoggerFactory.getRandomErrorMessage());
+	}
+    
+	@Test
+	public void getRandomErrorMessage_SomeCustomMessageExists() {
+		assertNotEquals(LoggerFactory.getRandomErrorMessage(), LoggerFactory.COULD_NOT_LOAD_CUSTOM_MESSAGES);
+	}
+    
 }

@@ -1,5 +1,6 @@
 package org.pclg.agenda.plugins;
 
+import org.apache.log4j.Level;
 import org.apache.log4j.Logger;
 import org.pclg.agenda.AgendaUtil;
 import org.pclg.log.LoggerFactory;
@@ -42,19 +43,15 @@ public class ExecuteScript implements Plugin {
             final boolean autoCommit = conn.getAutoCommit();
             conn.setAutoCommit(false);
             final List<String> lines = Files.readAllLines(file.toPath());
-            for (String sql : lines) {
-                LOGGER.error(sql);
-                final String trimmedSql = sql.trim();
-                if (trimmedSql.startsWith("--") || trimmedSql.length() == 0) {
-                    LOGGER.error("Comment or empty line skipped");
+            for (final String sql : lines) {
+                LOGGER.log(Level.OFF, sql);
+                final String trimmedSql = cleanSQL(sql);
+                if (trimmedSql.length() == 0) {
+                    LOGGER.log(Level.OFF, "Comment or empty line skipped");
                 } else {
                     try (final Statement stmt = conn.createStatement()) {
-                        final int end = sql.length() - 1;
-                        if (sql.lastIndexOf(';') == end) {
-                            sql = sql.substring(0, end);
-                        }
-                        final int count = stmt.executeUpdate(sql);
-                        LOGGER.error("Update count: " + count);
+                        final int count = stmt.executeUpdate(trimmedSql);
+                        LOGGER.log(Level.OFF, "Update count: " + count);
                     } catch (final SQLException ex) {
                         final String errMsg = StringTools.wrapLine(AgendaUtil.printSQLError(ex));
                         LOGGER.error(LoggerFactory.ERROR_TAG, ex);
@@ -73,5 +70,14 @@ public class ExecuteScript implements Plugin {
        			ERROR_MESSAGE);
             LOGGER.error(LoggerFactory.ERROR_TAG, ex);
         }
+    }
+
+    private String cleanSQL(final String sql) {
+        String trimmedSql = sql.trim();
+        final int end = trimmedSql.length() - 1;
+        if (trimmedSql.lastIndexOf(';') == end) {
+            trimmedSql = trimmedSql.substring(0, end);
+         }
+        return trimmedSql.startsWith("--") || trimmedSql.length() == 0 ? "" : trimmedSql/*.replace("\\n", "\n")*/;
     }
 }

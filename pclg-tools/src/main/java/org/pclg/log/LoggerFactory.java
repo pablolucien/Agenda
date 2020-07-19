@@ -1,5 +1,7 @@
 package org.pclg.log;
 
+import org.pclg.tools.PropertiesHelper;
+
 import java.io.FileNotFoundException;
 import java.io.IOException;
 import java.io.PrintWriter;
@@ -22,24 +24,10 @@ public final class LoggerFactory {
     public static final String ENTER_METHOD = "Enter method";
     public static final String EXIT_METHOD = "Exit method";
 	private static final String MSG_CREATE = "Creando logger para: ";
-	private static final String[] ERR_MESSAGES;
+	private static String[] ERR_MESSAGES = null;
+    static final String COULD_NOT_LOAD_CUSTOM_MESSAGES = "Could not load custom messages";
 
     static {
-        final Properties properties = new Properties();
-        final String fileName = "LoggerFactory_messages.properties";
-//        try {
-//            PropertiesHelper.loadPropertiesFromClasspath(properties, fileName);
-//        } catch (final IOException ex) {
-//            LOGGER.log(Level.SEVERE, fileName, ex);
-//        }
-        final int size = properties.size();
-        if (size > 0) {
-            ERR_MESSAGES = new String[size];
-            properties.values().toArray(ERR_MESSAGES);
-        } else {
-            ERR_MESSAGES = new String[] {"Could not load custom messages"};
-        }
-
         try {
 			configure();
 		} catch (final IOException ignore) {
@@ -172,6 +160,20 @@ public final class LoggerFactory {
     }
 
 	public static String getRandomErrorMessage() {
-		return ERR_MESSAGES[new Random().nextInt(ERR_MESSAGES.length)];
+        if (ERR_MESSAGES == null || ERR_MESSAGES.length == 1) {
+            final Properties properties = new Properties();
+            final String fileName = "LoggerFactory_messages.properties";
+            try {
+                PropertiesHelper.loadPropertiesFromClasspath(properties, fileName);
+            } catch (final IOException ex) {
+                LOGGER.log(Level.SEVERE, fileName, ex);
+            }
+            final int size = properties.size();
+            if (size > 0) {
+                ERR_MESSAGES = new String[size];
+                properties.values().toArray(ERR_MESSAGES);
+            }
+        }
+		return ERR_MESSAGES == null ? COULD_NOT_LOAD_CUSTOM_MESSAGES : ERR_MESSAGES[new Random().nextInt(ERR_MESSAGES.length)];
 	}
 }
