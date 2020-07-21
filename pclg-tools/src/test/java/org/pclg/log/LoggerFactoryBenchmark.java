@@ -7,15 +7,12 @@ import java.lang.reflect.Field;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 
-/**
- * FIXME: Comnvert to test NG
- */
-public class TestLoggerFactory {
+public class LoggerFactoryBenchmark {
     /** El logger de esta clase. */
     private static final Logger LOGGER = LoggerFactory.makeSimpleLogger();
 	private static final int COUNT = 1000000;
 
-	private TestLoggerFactory() {
+	private LoggerFactoryBenchmark() {
 	}
 
 	public static void main(final String[] args) throws NoSuchFieldException, IllegalAccessException {
