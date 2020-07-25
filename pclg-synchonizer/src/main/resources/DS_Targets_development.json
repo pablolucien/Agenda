@@ -36,14 +36,14 @@
                 "${ROOT_C_home}/development/projects/VersoPerlaPlumaYFlor",
                 "${ROOT_E}/home/development/projects/VersoPerlaPlumaYFlor"
             ],
-            "Exclude": ".git/:.github/:target/:out/:.git*:workspace.xml"
+            "Exclude": ".git/:.github/:target/:out/:.git*:workspace.xml:.idea/"
         },
         {
             "dirs": [
                 "${ROOT_C_home}/development/projects/TestsKotlin",
                 "${ROOT_E}/home/development/projects/TestsKotlin"
             ],
-            "Exclude": ".git/:.github/:target/:out/:.git*:workspace.xml"
+            "Exclude": ".git/:.github/:target/:out/:.git*:workspace.xml:.idea/"
         }
     ]
 }
