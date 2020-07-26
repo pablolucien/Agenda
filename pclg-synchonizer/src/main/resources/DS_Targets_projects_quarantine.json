@@ -2,8 +2,8 @@
     "targets": [
         {
             "dirs": [
-                "${ROOT_C_home}/development/projects_quarantine",
-                "${ROOT_E}/projects_quarantine"
+                "${ROOT_C_home}/development/quarantine_projects",
+                "${ROOT_E}/quarantine_projects"
             ],
             "Exclude": ".idea/:.git/:.github/:target/:out/:.git*:.#*"
         }

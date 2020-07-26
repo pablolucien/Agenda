@@ -20,28 +20,28 @@
         {
             "dirs": [
                 "${ROOT_C_home}/development/projects/Alles",
-                "${ROOT_E}/home/development/projects/Alles"
+                "${ROOT_E}/home/pablo/development/projects/Alles"
             ],
             "Exclude": "CVS/:.git/:.github/:target/:out/:.git*:.#*:local_config.properties:workspace.xml"
         },
         {
             "dirs": [
                 "${ROOT_C_home}/development/projects/quotes",
-                "${ROOT_E}/home/development/projects/quotes"
+                "${ROOT_E}/home/pablo/development/projects/quotes"
             ],
             "Exclude": "CVS/:.idea/:.git/:.github/:target/:out/:.git*:.#*:workspace.xml"
         },
         {
             "dirs": [
                 "${ROOT_C_home}/development/projects/VersoPerlaPlumaYFlor",
-                "${ROOT_E}/home/development/projects/VersoPerlaPlumaYFlor"
+                "${ROOT_E}/home/pablo/development/projects/VersoPerlaPlumaYFlor"
             ],
             "Exclude": ".git/:.github/:target/:out/:.git*:workspace.xml:.idea/"
         },
         {
             "dirs": [
                 "${ROOT_C_home}/development/projects/TestsKotlin",
-                "${ROOT_E}/home/development/projects/TestsKotlin"
+                "${ROOT_E}/home/pablo/development/projects/TestsKotlin"
             ],
             "Exclude": ".git/:.github/:target/:out/:.git*:workspace.xml:.idea/"
         }

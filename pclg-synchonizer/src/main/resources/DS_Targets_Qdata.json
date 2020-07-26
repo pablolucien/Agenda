@@ -3,9 +3,9 @@
     {
       "dirs": [
         "${ROOT_C_home}/quickenw/qdata",
-        "${ROOT_F}/home/quickenw/qdata",
-        "${ROOT_E}/home/quickenw/qdata",
-        "${ROOT_L}/home/quickenw/qdata"
+        "${ROOT_F}/home/pablo/quickenw/qdata",
+        "${ROOT_E}/home/pablo/quickenw/qdata",
+        "${ROOT_L}/home/pablo/quickenw/qdata"
       ]
     }
   ]
