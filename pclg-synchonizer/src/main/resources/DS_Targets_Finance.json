@@ -2,7 +2,7 @@
   "targets": [
     {
       "dirs": [
-        "${ROOT_C_home}/Finance/",
+        "${ROOT_C}/home/pablo/Finance/",
         "${ROOT_E}/home/pablo/Finance/",
         "${ROOT_F}/home/pablo/Finance/",
         "${ROOT_L}/home/pablo/Finance/"
