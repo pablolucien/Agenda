@@ -333,7 +333,7 @@ final class RecordEditor extends JPanel {
 	}
 
 	String getImagePath() {
-		return btnImage.getImagePath();
+		return btnImage.getImagePath().replace("\\", "/");
 	}
 
 	String getTemporaryImagePath() {
