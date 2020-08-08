@@ -29,7 +29,8 @@ public class FindDuplicatesPlugin implements Plugin {
         final GeneralHelper generalHelper = new GeneralHelper(conn);
         final DbEngine dbEngine = new DbEngine(new TelephoneHelper(conn, generalHelper), new NoteHelper(conn, generalHelper),
 			new GroupHelper(conn, generalHelper), new AddressHelper(conn, generalHelper),
-			new ImageHelper(conn, generalHelper), new EmailHelper(conn, generalHelper));
+			new ImageHelper(conn, generalHelper, properties.getProperty("Agenda.images.root")),
+            new EmailHelper(conn, generalHelper));
 		dbEngine.setAutoretrieve(true);
         try (final PreparedStatement statement = conn.prepareStatement(sqlSelect)) {
             final List<AgendaRecord> records = dbEngine.executeTheQuery(statement);
@@ -58,7 +59,7 @@ public class FindDuplicatesPlugin implements Plugin {
                 lastKey = key;
                 LOGGER.error("------>  " + key);
             }
-            LOGGER.error(String.format("Clave = [%d], version = [%d], quién = [%s]",  key, duplicate.getVersion(), duplicate.fullName()));
+            LOGGER.error(String.format("Clave = [%d], version = [%d], quiï¿½n = [%s]",  key, duplicate.getVersion(), duplicate.fullName()));
         }
     }
 }

@@ -20,14 +20,14 @@ import static javax.swing.JOptionPane.showMessageDialog;
 import static org.pclg.tools.PropertiesHelper.getStringFromProperties;
 
 /**
- * Ejecuta un script sql. Version inicial: en el script cada instruiccion debe estar en una línea (puede terminar en ; o no)
+ * Ejecuta un script sql. Version inicial: en el script cada instruiccion debe estar en una lï¿½nea (puede terminar en ; o no)
  * Es transaccional.
  */
 public class ExecuteScript implements Plugin {
     private static final Logger LOGGER = LoggerFactory.makeLog4J();
 
     @Override
-    public void execute(final Properties properties, final Connection conn, final String... args) throws SQLException {
+    public void execute(final Properties properties, final Connection conn, final String... args) {
         try {
 			if (args.length == 0) {
 				showMessageDialog(null,
