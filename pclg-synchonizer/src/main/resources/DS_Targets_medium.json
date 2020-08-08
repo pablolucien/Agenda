@@ -6,8 +6,8 @@
     "targets": [
         {
             "dirs": [
-                "${ROOT_C_home}/img/fotos/",
-                "${ROOT_F}/home/img/fotos/"
+                "${ROOT_C}/home/pablo/img/fotos/",
+                "${ROOT_F}/home/pablo/img/fotos/"
             ]
         }
     ]

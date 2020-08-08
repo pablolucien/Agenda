@@ -6,7 +6,7 @@ classpathEntries=derby.jar
 driverName=org.apache.derby.jdbc.EmbeddedDriver
 
 #The URL to connect to the database
-dbURL=jdbc:derby:C:/home/databases/FileDataBase;create=true
+dbURL=jdbc:derby:C:/home/pablo/databases/FileDataBase;create=true
 #dbURL=jdbc:derby:memory:FileDataBase;create=true
 
 #Database user and password
