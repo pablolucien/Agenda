@@ -36,13 +36,11 @@ public final class ImageHelper implements FieldManagerHelper {
 
     private final Connection dbConnection;
     private final GeneralHelper generalHelper;
-    private final String imagesRoot;
     private final ThumbnailCreator thumbnailCreator = new ThumbnailCreator();
 
-    ImageHelper(final Connection dbConnection, final GeneralHelper generalHelper, final String imagesRoot) {
+    ImageHelper(final Connection dbConnection, final GeneralHelper generalHelper) {
         this.dbConnection = dbConnection;
         this.generalHelper = generalHelper;
-        this.imagesRoot = imagesRoot;
     }
 
     /**
@@ -58,8 +56,7 @@ public final class ImageHelper implements FieldManagerHelper {
             stmt.setInt(2, record.getVersionImage());
             final ResultSet rset = stmt.executeQuery();
             if (rset.next()) {
-                final String imagePath = imagesRoot + rset.getString(1);
-                record.setImagePath(imagePath);
+                record.setImagePath(rset.getString(1));
                 final InputStream stream = rset.getBinaryStream(2);
                 record.setThumbnail(new ImageIcon(ImageIO.read(stream)));
             }
@@ -76,15 +73,13 @@ public final class ImageHelper implements FieldManagerHelper {
             final int clave = record.getKey();
             final int newVersionImagen = generalHelper.obtainNextVersion("IMAGEN", clave);
             int index = 0;
-            String imagePath = record.getImagePath();
+            final String imagePath = record.getImagePath();
             if (!isEmptyOrBlank(imagePath)) {
                 final File originalImageFile = new File(imagePath);
                 if (originalImageFile.exists()) {
                     try (final InputStream stream = thumbnailCreator.getThumbnailAsStream(originalImageFile)) {
                         imageStmt.setInt(++index, clave);
                         imageStmt.setInt(++index, newVersionImagen);
-                        imagePath = imagePath.substring(imagesRoot.length());
-                        imagePath = imagePath.replace("\\", "/");
                         imageStmt.setString(++index, imagePath);
                         imageStmt.setBlob(++index, stream);
                         nrUpdates += imageStmt.executeUpdate();

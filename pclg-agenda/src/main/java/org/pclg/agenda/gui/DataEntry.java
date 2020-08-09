@@ -95,7 +95,8 @@ public final class DataEntry extends JPanel implements ActionListener {
 	private final I18NManager i18nManager;
 	private final RecordEditor recordEditor;
 	private DirTree dirTree;
-
+    private final String imagesRoot;
+  
 	public DataEntry(final Properties properties, final AgendaDb agendaDb,
 					 final JTabbedPane tabbedPane, final AgendaGUI agendaGUI,
 					 final AgendaRecord originalRecord) {
@@ -110,6 +111,7 @@ public final class DataEntry extends JPanel implements ActionListener {
 		add(buttonPanel, BorderLayout.SOUTH);
 		recordEditor = new RecordEditor(properties);
 		final ImageButton btnImage = recordEditor.getBtnImage();
+        imagesRoot = properties.getProperty("Agenda.images.root");
 		btnImage.addPopUpOption(PropertiesHelper.getStringFromProperties(properties, "DataEntry.MoveImage"), event -> {
             final String imagePath = recordEditor.getImagePath();
 
@@ -127,11 +129,12 @@ public final class DataEntry extends JPanel implements ActionListener {
 							final Path target = newDir.resolve(source.getFileName());
 							Files.move(source, target, REPLACE_EXISTING);
 							LOGGER.debug("Done");
-							final String strPath = target.toString();
-							agendaDb.updateImagePath(recordId, source.toString(), strPath);
-							btnImage.setImagePath(strPath);
-							if (originalRecord != null) {
-								originalRecord.setImagePath(strPath);
+							String newPath = target.toString();
+							btnImage.setImagePath(newPath);
+                            newPath = newPath.replace("\\", "/").substring(imagesRoot.length()); 
+                            agendaDb.updateImagePath(recordId, source.toString().replace("\\", "/").substring(imagesRoot.length()), newPath);
+                            if (originalRecord != null) {
+								originalRecord.setImagePath(newPath);
 							}
 						} catch (final IOException | SQLException ex) {
 							LOGGER.error(LoggerFactory.ERROR_TAG, ex);
@@ -453,7 +456,8 @@ public final class DataEntry extends JPanel implements ActionListener {
 	AgendaRecord getData() {
         final String sexItem = recordEditor.getSex();
         final Pais paisItem = recordEditor.getSelectedCountry();
-		final AgendaRecord record = new AgendaRecordImpl()
+        final String imagePath = recordEditor.getImagePath();
+        final AgendaRecord record = new AgendaRecordImpl()
             .setKey(intValue(clave))
             .setVersion(recordEditor.getVersion())
             .setDeleted(recordEditor.isDeleted())
@@ -470,7 +474,7 @@ public final class DataEntry extends JPanel implements ActionListener {
             .setListTelephones(recordEditor.isListable())
             .setNotes(recordEditor.getNotas())
 			.setImageDirty(recordEditor.isImageDirty())
-			.setImagePath(recordEditor.getImagePath())
+			.setImagePath(imagePath == null ? null : imagePath.replace("\\", "/").substring(imagesRoot.length()))
 			.setTemporaryImage(recordEditor.getTemporaryImagePath());
 
         final String tfEmailText = recordEditor.getEmails();
@@ -515,7 +519,8 @@ public final class DataEntry extends JPanel implements ActionListener {
 
 	public void fillData(final AgendaRecord record) throws SQLException {
 		final String sexo = record.getSex();
-		recordEditor.setVersion(record.getVersion())
+        final String imagePath = record.getImagePath();
+        recordEditor.setVersion(record.getVersion())
 			.setDeleted(record.isDeleted())
 			.setNombre(record.getFirstname())
 			.setApellido(record.getLastname())
@@ -531,7 +536,7 @@ public final class DataEntry extends JPanel implements ActionListener {
 			.setNotas(record.getNotes())
 			.setGroups(record.getGroups())
 			.setThumbnail(record.getThumbnail())	// Esto tiene que ir antes de setImagePath() para que est? cargada la thumbnail
-			.setImagePath(record.getImagePath(), sexo)
+			.setImagePath(isEmptyOrBlank(imagePath) ? imagePath : imagesRoot + imagePath, sexo)
 			.setTemporaryImagePath(record.getTemporaryImage())
 			.setEmails(record.getEmails())
 			.setImageDirty(record.isImageDirty());

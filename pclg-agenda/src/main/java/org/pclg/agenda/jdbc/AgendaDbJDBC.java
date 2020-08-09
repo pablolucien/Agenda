@@ -233,7 +233,7 @@ public final class AgendaDbJDBC implements AgendaDb, ChangeObserver<ObservablePr
         telephoneHelper = new TelephoneHelper(dbConnection, generalHelper);
         countryHelper = new CountryHelper(dbConnection);
         addressHelper = new AddressHelper(dbConnection, generalHelper);
-        imageHelper = new ImageHelper(dbConnection, generalHelper, appProperties.getProperty("Agenda.images.root"));
+        imageHelper = new ImageHelper(dbConnection, generalHelper);
         emailHelper = new EmailHelper(dbConnection, generalHelper);
         noteHelper = new NoteHelper(dbConnection, generalHelper);
         dbEngine = new DbEngine(telephoneHelper, noteHelper, groupHelper, addressHelper, imageHelper, emailHelper);
