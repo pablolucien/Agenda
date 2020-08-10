@@ -100,7 +100,7 @@ public final class AgendaDbJDBC implements AgendaDb, ChangeObserver<ObservablePr
      * pero s?lo los marcados. */
     private static final String SELECT_PREVAILING_SPECIAL_RECORD_SENTENCE =
         BASE_SELECT_RECORDS_SENTENCE
-            + "WHERE marca IS NOT NULL AND marca > ''"
+            + "WHERE marca IS NOT NULL AND marca <> ''"
             + GROUP_BY_CLAUSE
             + BASE_HAVING_CLAUSE;
 
