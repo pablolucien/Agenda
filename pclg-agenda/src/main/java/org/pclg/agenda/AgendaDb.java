@@ -138,5 +138,5 @@ public interface AgendaDb {
      */
     boolean isLastVersion(AgendaRecord record);
 
-    void updateImagePath(int recordId, String toString, String toString1) throws SQLException;
+    void updateImagePath(String oldPath, String newPath) throws SQLException;
 }

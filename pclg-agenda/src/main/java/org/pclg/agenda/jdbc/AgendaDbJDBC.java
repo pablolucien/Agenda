@@ -1032,12 +1032,11 @@ public final class AgendaDbJDBC implements AgendaDb, ChangeObserver<ObservablePr
     }
 
     @Override
-    public void updateImagePath(final int recordId, final String sourcePath, final String targetPath) throws SQLException {
+    public void updateImagePath(final String sourcePath, final String targetPath) throws SQLException {
         try (final PreparedStatement statement = dbConnection.prepareStatement(
-            "UPDATE root.imagen SET imagePath = ? WHERE clave = ? AND imagePath = ?")) {
+            "UPDATE root.imagen SET imagePath = ? WHERE imagePath = ?")) {
             statement.setString(1, targetPath);
-            statement.setInt(2, recordId);
-            statement.setString(3, sourcePath);
+            statement.setString(2, sourcePath);
             statement.executeUpdate();
         }
     }
