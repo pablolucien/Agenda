@@ -29,7 +29,7 @@ public class FindDuplicatesPlugin implements Plugin {
         final GeneralHelper generalHelper = new GeneralHelper(conn);
         final DbEngine dbEngine = new DbEngine(new TelephoneHelper(conn, generalHelper), new NoteHelper(conn, generalHelper),
 			new GroupHelper(conn, generalHelper), new AddressHelper(conn, generalHelper),
-			new ImageHelper(conn, generalHelper),
+			new ImageHelper(conn, generalHelper, properties.getProperty("Agenda.images.root")),
             new EmailHelper(conn, generalHelper));
 		dbEngine.setAutoretrieve(true);
         try (final PreparedStatement statement = conn.prepareStatement(sqlSelect)) {

@@ -36,11 +36,13 @@ public final class ImageHelper implements FieldManagerHelper {
 
     private final Connection dbConnection;
     private final GeneralHelper generalHelper;
+    private final String imagesRoot;
     private final ThumbnailCreator thumbnailCreator = new ThumbnailCreator();
 
-    ImageHelper(final Connection dbConnection, final GeneralHelper generalHelper) {
+    ImageHelper(final Connection dbConnection, final GeneralHelper generalHelper, String imagesRoot) {
         this.dbConnection = dbConnection;
         this.generalHelper = generalHelper;
+        this.imagesRoot = imagesRoot;
     }
 
     /**
@@ -75,7 +77,7 @@ public final class ImageHelper implements FieldManagerHelper {
             int index = 0;
             final String imagePath = record.getImagePath();
             if (!isEmptyOrBlank(imagePath)) {
-                final File originalImageFile = new File(imagePath);
+                final File originalImageFile = new File(imagesRoot + imagePath);
                 if (originalImageFile.exists()) {
                     try (final InputStream stream = thumbnailCreator.getThumbnailAsStream(originalImageFile)) {
                         imageStmt.setInt(++index, clave);
