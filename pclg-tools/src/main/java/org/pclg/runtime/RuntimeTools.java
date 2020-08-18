@@ -4,6 +4,8 @@ import org.apache.log4j.Logger;
 import org.pclg.log.LoggerFactory;
 
 import java.io.File;
+import java.io.IOException;
+import java.net.JarURLConnection;
 import java.net.URL;
 
 /**
@@ -22,23 +24,24 @@ public final class RuntimeTools {
     /**
      * Finds where the application is executing (a directory or a jar):
      */
-    public static File getExecutionPath(final Class<?> targetClass) {
-        final String myName = targetClass.getSimpleName();
-        final String packageName = targetClass.getPackage().getName();
+    public static File getExecutionPath(final Class<?> targetClass) throws IOException {
+        final String simpleClassName = targetClass.getSimpleName();
+        final String fullClassName = targetClass.getName();
 
-        final URL appURL = targetClass.getResource(myName + ".class");
+        final URL appURL = targetClass.getResource(simpleClassName + ".class");
         if (appURL == null) {
             LOGGER.error("Couldn't find the execution point");
             return null;
         }
-
-        final String path = appURL.getPath();
-        int end = path.lastIndexOf('!');        // If it's a jar, it ends with ! and the name of the class
-        if (end == -1) {
-            end = path.lastIndexOf('/');        // If it's a directory, it ends with / and the name of the class
+        final String protocol = appURL.getProtocol();
+        final String path;
+        final String baseDir;
+        if (protocol.equals("jar")) {
+            baseDir = ((JarURLConnection) appURL.openConnection()).getJarFile().getName();
+        } else {
+            path = appURL.getPath();
+            baseDir = path.substring(0, path.indexOf(fullClassName.replace('.', '/')));
         }
-        final String fullDir = path.substring(path.indexOf('/') + 1, end);
-        final String baseDir = fullDir.substring(0, fullDir.indexOf(packageName.replace('.', '/')));
         return new File(baseDir);
     }
 }
