@@ -1,0 +1,129 @@
+<project name="pclg-tools" default="build" basedir="../../../..">
+
+    <description>Builds pclg tools</description>
+
+    <property name="module_pclg_tools" location="${basedir}/pclg-tools"/>
+    <property name="src" location="${module_pclg_tools}/src/main/java"/>
+    <property name="resources" location="${module_pclg_tools}/src/main/resources"/>
+    <property name="lib_dir" value="${basedir}/../lib"/>
+    <property name="build" location="${basedir}/../../build-tools"/>
+    <property name="dist" location="${basedir}/../../dist"/>
+    <property name="pclg-tools_jar_name" value="pclg-tools.jar"/>
+    <property name="Icons_jar_name" value="Icons.jar"/>
+    <property name="Sounds_jar_name" value="Sounds.jar"/>
+
+    <property name="properties" value="*.properties"/>
+
+    <property name="classpath" value="
+        ${lib_dir}/velocity-1.7-dep.jar:
+        ${lib_dir}/lib_L&amp;F/kunststoff.jar:
+        ${lib_dir}/gnu.getopt.jar:${lib_dir}/jdom-1.0.jar:
+        ${lib_dir}/jpatterns-0.1.jar:${lib_dir}/itextpdf-5.3.4.jar:
+        ${lib_dir}/jxl.jar:${lib_dir}/jid3lib-0.5.4.jar:
+        ${lib_dir}/javaee.jar:${lib_dir}/log4j-1.2.15.jar:
+        ${lib_dir}/ez-vcard-0.9.5.jar:
+        ${lib_dir}/jcommander-1.27.jar:
+        ${lib_dir}/docx4j-3.3.1.jar:
+        ${lib_dir}/serializer-2.7.2.jar:
+        ${lib_dir}/guava-18.0.jar:
+        ${lib_dir}/docx4j-3.3.1.jar:
+        ${lib_dir}/commons-io-1.3.2.jar:
+        ${lib_dir}/slf4j-api-1.7.7.jar:
+        ${lib_dir}/testng-6.8.8.jar:
+        ${lib_dir}/hamcrest-all-1.3.jar:
+        ${lib_dir}/awaitility-3.1.6.jar:
+        ${lib_dir}/json-20180130.jar"/>
+
+    <target name="_init">
+        <tstamp/>
+        <mkdir dir="${build}"/>
+        <mkdir dir="${dist}"/>
+
+        <copy todir="${build}" preservelastmodified="true">
+            <fileset dir="${resources}" includes="${properties}"/>
+            <fileset file="${resources}/images/Please_stand_by.png"/>
+        </copy>
+
+        <copy todir="${dist}" preservelastmodified="true">
+            <fileset dir="${resources}" includes="${properties}"/>
+            <fileset file="${resources}/images/Please_stand_by.png"/>
+        </copy>
+    </target>
+
+    <target name="_compile" depends="_init" description="Compile the sources">
+        <!-- Compile the java code from ${src} into ${build} -->
+        <javac
+                classpath="${classpath}"
+                includeantruntime="false"
+                srcdir="${src}"
+                destdir="${build}"
+                deprecation="on"
+                debug="true"
+                verbose="no"
+                listfiles="yes"
+                source="1.8"
+                target="1.8"
+                encoding="ISO-8859-1">
+            <compilerarg value="-Xlint"/>
+        </javac>
+    </target>
+
+    <target name="pclg-tools_jar" depends="_compile">
+        <jar destfile="${dist}/${pclg-tools_jar_name}" basedir="${build}" excludes="**">
+            <fileset dir="${build}" includes="**/*.class"/>
+            <manifest>
+                <attribute name="Built-By" value="${user.name}"/>
+                <attribute name="Class-Path" value=". : log4j-1.2.15.jar"/>
+            </manifest>
+        </jar>
+    </target>
+
+    <target name="Icons_jar">
+        <jar destfile="${dist}/${Icons_jar_name}"
+             excludes="**">
+            <fileset dir="${resources}" includes="images/Please_stand_by_2.png"/>
+            <fileset dir="${resources}" includes="images/Please_stand_by.png"/>
+            <fileset dir="${resources}" includes="images/unknown-**"/>
+            <fileset dir="${resources}" includes="images/128x128/**"/>
+            <fileset dir="${resources}" includes="images/48x48/**"/>
+            <fileset dir="${resources}" includes="images/32x32/**"/>
+            <fileset dir="${resources}" includes="images/24x24/**"/>
+            <fileset dir="${resources}" includes="images/16x16/**"/>
+
+            <fileset dir="${resources}"
+                     includes="
+					images/create.gif
+					images/mars.gif
+					images/question.gif
+					images/romb-cyan.gif
+					images/romb-red.gif
+					images/romb-violet.gif
+					images/zero.gif
+				"/>
+
+            <manifest>
+                <attribute name="Built-By" value="${user.name}"/>
+            </manifest>
+        </jar>
+    </target>
+
+    <target name="Sounds_jar">
+        <jar destfile="${dist}/${Sounds_jar_name}"
+             excludes="**">
+            <fileset dir="${resources}" includes="sounds/sbcdrop.wav"/>
+
+            <manifest>
+                <attribute name="Built-By" value="${user.name}"/>
+            </manifest>
+        </jar>
+    </target>
+
+    <target name="build" depends="pclg-tools_jar, Icons_jar, Sounds_jar"/>
+
+     <target name="clean">
+         <echo message="Cleaning ${ant.project.name}"/>
+         <delete includeEmptyDirs="true">
+             <fileset dir="${build}" includes="*/**"/>
+         </delete>
+    </target>
+</project>

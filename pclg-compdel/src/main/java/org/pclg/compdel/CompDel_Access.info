@@ -1,0 +1,3 @@
+dbURL=jdbc\:odbc\:Driver\={Microsoft Access Driver (*.mdb)};DBQ\=c\:/home/pablo/databases/FileDataBase.mdb;PWD\=
+driverName=sun.jdbc.odbc.JdbcOdbcDriver
+supportsCompactTable=false

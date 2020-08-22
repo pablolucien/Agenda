@@ -1,0 +1,24 @@
+{
+    "import": [
+        "DS_Targets_medium.json",
+        "DS_Targets_repository.json"
+    ],
+    "targets": [
+        {
+            "unidirectional": true,
+            "dirs": [
+                "${ROOT_E}/workspace_Orange",
+                "${ROOT_F}/workspace_Orange"
+            ],
+            "Exclude": ".git/:.github/:target/:.idea/:.git*:.#*"
+        },
+        {
+            "unidirectional": true,
+            "dirs": [
+                "${ROOT_E}/workspace_EBU",
+                "${ROOT_F}/workspace_EBU"
+            ],
+            "Exclude": ".git/:.github/:target/:.idea/:.git*:.#*"
+        }
+    ]
+}

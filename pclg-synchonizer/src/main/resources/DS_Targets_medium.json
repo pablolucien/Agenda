@@ -1,0 +1,14 @@
+{
+    "import": [
+        "DS_Targets_light.json",
+        "DS_Targets_projects_quarantine.json"
+    ],
+    "targets": [
+        {
+            "dirs": [
+                "${ROOT_C}/home/pablo/img/fotos/",
+                "${ROOT_F}/home/pablo/img/fotos/"
+            ]
+        }
+    ]
+}

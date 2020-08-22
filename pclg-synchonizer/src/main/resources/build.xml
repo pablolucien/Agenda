@@ -1,0 +1,79 @@
+<project name="pclg-synchonizer" default="build" basedir="../../../..">
+
+    <description>Builds pclg synchonizer</description>
+
+    <property name="module_pclg_synchonizer" location="${basedir}/pclg-synchonizer"/>
+    <property file="${basedir}/local_config.properties"/>
+    
+    <property name="src" location="${module_pclg_synchonizer}/src/main/java"/>
+    <property name="resources" location="${module_pclg_synchonizer}/src/main/resources"/>
+    <property name="lib_dir" value="${basedir}/../lib"/>
+    <property name="build" location="${basedir}/../../build-synchonizer"/>
+    <property name="dist" location="${basedir}/../../dist"/>
+    <property name="pclg-synchonizer_jar_name" value="pclg-synchonizer.jar"/>
+
+    <property name="properties" value="DirectorySynchronizer*.properties"/>
+
+    <property name="classpath" value="
+        ${lib_dir}/lib_L&amp;F/kunststoff.jar:
+        ${lib_dir}/testng-6.8.8.jar:
+        ${lib_dir}/awaitility-3.1.6.jar:
+        ${lib_dir}/json-20180130.jar:
+
+        ${dist}/pclg-tools.jar:
+        "/>
+
+    <target name="_init">
+        <tstamp/>
+        <mkdir dir="${build}"/>
+        <mkdir dir="${dist}"/>
+
+        <copy todir="${build}" preservelastmodified="true">
+            <fileset dir="${resources}" includes="${properties}"/>
+        </copy>
+
+        <copy todir="${dist}" preservelastmodified="true">
+            <fileset dir="${resources}" includes="${properties}"/>
+        </copy>
+
+        <copy file="${resources}/DirectorySynchronizer_technical-${local_config.host.name}.properties" tofile="${build}/DirectorySynchronizer_technical.properties" preservelastmodified="true"/>
+        <copy file="${resources}/DirectorySynchronizer_technical-${local_config.host.name}.properties" tofile="${dist}/DirectorySynchronizer_technical.properties" preservelastmodified="true"/>
+    </target>
+
+    <target name="_compile" depends="_init" description="Compile the sources">
+        <javac
+                classpath="${classpath}"
+                includeantruntime="false"
+                srcdir="${src}"
+                destdir="${build}"
+                deprecation="on"
+                debug="true"
+                verbose="no"
+                listfiles="yes"
+                source="1.8"
+                target="1.8"
+                encoding="ISO-8859-1">
+            <compilerarg value="-Xlint"/>
+        </javac>
+    </target>
+
+    <target name="pclg-synchonizer_jar" depends="_compile">
+        <jar destfile="${dist}/${pclg-synchonizer_jar_name}" basedir="${build}" excludes="**">
+            <fileset dir="${build}" includes="**/*.class"/>
+            <manifest>
+                <attribute name="Built-By" value="${user.name}"/>
+                <attribute name="Main-Class" value="org.pclg.filesystem.synchonizer.DirectorySynchronizer"/>
+                <attribute name="Class-Path" value=". : pclg-tools.jar : Icons.jar : json-20180130.jar : log4j-1.2.15.jar"/>
+            </manifest>
+        </jar>
+    </target>
+
+    <target name="build" depends="pclg-synchonizer_jar"/>
+
+    <target name="clean">
+        <echo message="Cleaning ${ant.project.name}"/>
+        <delete includeEmptyDirs="true">
+            <fileset dir="${build}" includes="*/**"/>
+        </delete>
+    </target>
+</project>

@@ -1,0 +1,82 @@
+<project name="pclg-condominio" default="build" basedir="../../../..">
+
+    <description>Builds pclg condominio</description>
+
+    <property name="module_pclg_condominio" location="${basedir}/pclg-condominio"/>
+    <property file="${basedir}/local_config.properties"/>
+    
+    <property name="src" location="${module_pclg_condominio}/src/main/java"/>
+    <property name="resources" location="${module_pclg_condominio}/src/main/resources"/>
+    <property name="lib_dir" value="${basedir}/../lib"/>
+    <property name="build" location="${basedir}/../../build-condominio"/>
+    <property name="dist" location="${basedir}/../../dist"/>
+    <property name="pclg-condominio_jar_name" value="pclg-condominio.jar"/>
+
+    <property name="properties" value="DirectorySynchronizer*.properties"/>
+
+    <property name="classpath" value="
+        ${lib_dir}/docx4j-3.3.1.jar:
+        ${lib_dir}/serializer-2.7.2.jar:
+        ${lib_dir}/guava-18.0.jar:
+        ${lib_dir}/commons-io-1.3.2.jar:
+        ${lib_dir}/slf4j-api-1.7.7.jar:
+        ${lib_dir}/xalan-2.7.2.jar:
+
+       ${dist}/pclg-tools.jar:
+        "/>
+
+    <target name="_init">
+        <tstamp/>
+        <mkdir dir="${build}"/>
+        <mkdir dir="${dist}"/>
+
+        <copy todir="${build}" preservelastmodified="true">
+            <fileset dir="${resources}" includes="${properties}"/>
+            <fileset file="${resources}/Encajeras.properties"/>
+        </copy>
+
+        <copy todir="${dist}" preservelastmodified="true">
+            <fileset dir="${resources}" includes="${properties}"/>
+            <fileset file="${resources}/Encajeras.properties"/>
+        </copy>
+    </target>
+
+    <target name="_compile" depends="_init" description="Compile the sources">
+        <javac
+                classpath="${classpath}"
+                includeantruntime="false"
+                srcdir="${src}"
+                destdir="${build}"
+                deprecation="on"
+                debug="true"
+                verbose="no"
+                listfiles="yes"
+                source="1.8"
+                target="1.8"
+                encoding="ISO-8859-1">
+            <compilerarg value="-Xlint"/>
+        </javac>
+    </target>
+
+    <target name="pclg-condominio_jar" depends="_compile">
+        <jar destfile="${dist}/${pclg-condominio_jar_name}" basedir="${build}" excludes="**">
+            <fileset dir="${build}" includes="**/*.class"/>
+            <fileset file="${resources}/La_comunidad_recto_y_verso_template_v2.docx"/>
+            <fileset file="${resources}/La_comunidad_recibo_unico.doc"/>
+            <manifest>
+                <attribute name="Built-By" value="${user.name}"/>
+                <attribute name="Main-Class" value="org.pclg.condominio.GenerateRecibosDocumentService"/>
+                <attribute name="Class-Path" value="pclg-tools.jar : xalan-2.7.2.jar : docx4j-3.3.1.jar : serializer-2.7.2.jar : guava-18.0.jar : docx4j-3.3.1.jar : commons-io-1.3.2.jar : log4j-1.2.15.jar : slf4j-api-1.7.7.jar : ."/>
+            </manifest>
+        </jar>
+    </target>
+
+    <target name="build" depends="pclg-condominio_jar" description="generar Condominio"/>
+
+     <target name="clean">
+         <echo message="Cleaning ${ant.project.name}"/>
+         <delete includeEmptyDirs="true">
+             <fileset dir="${build}" includes="*/**"/>
+         </delete>
+    </target>
+</project>

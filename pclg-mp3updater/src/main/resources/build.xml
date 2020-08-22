@@ -1,0 +1,77 @@
+<project name="pclg-mp3updater" default="build" basedir="../../../..">
+
+    <description>Builds pclg mp3updater</description>
+
+    <property name="module_pclg_mp3updater" location="${basedir}/pclg-mp3updater"/>
+    <property name="src" location="${module_pclg_mp3updater}/src/main/java"/>
+    <property name="lib_dir" value="${basedir}/../lib"/>
+    <property name="build" location="${basedir}/../../build-mp3updater"/>
+    <property name="dist" location="${basedir}/../../dist"/>
+    <property name="pclg-mp3updater_jar_name" value="pclg-mp3updater.jar"/>
+    <property name="classpath" value="
+        ${lib_dir}/velocity-1.7-dep.jar:
+        ${lib_dir}/lib_L&amp;F/kunststoff.jar:
+        ${lib_dir}/gnu.getopt.jar:${lib_dir}/jdom-1.0.jar:
+        ${lib_dir}/jpatterns-0.1.jar:${lib_dir}/itextpdf-5.3.4.jar:
+        ${lib_dir}/jxl.jar:${lib_dir}/jid3lib-0.5.4.jar:
+        ${lib_dir}/javaee.jar:${lib_dir}/log4j-1.2.15.jar:
+        ${lib_dir}/ez-vcard-0.9.5.jar:
+        ${lib_dir}/jcommander-1.27.jar:
+        ${lib_dir}/docx4j-3.3.1.jar:
+        ${lib_dir}/serializer-2.7.2.jar:
+        ${lib_dir}/guava-18.0.jar:
+        ${lib_dir}/docx4j-3.3.1.jar:
+        ${lib_dir}/commons-io-1.3.2.jar:
+        ${lib_dir}/slf4j-api-1.7.7.jar:
+        ${lib_dir}/testng-6.8.8.jar:
+        ${lib_dir}/hamcrest-all-1.3.jar:
+        ${lib_dir}/awaitility-3.1.6.jar:
+        ${lib_dir}/json-20180130.jar:
+
+        ${dist}/pclg-tools.jar:
+        "/>
+
+    <target name="_init">
+        <tstamp/>
+        <mkdir dir="${build}"/>
+        <mkdir dir="${dist}"/>
+    </target>
+
+    <target name="_compile" depends="_init" description="Compile the sources">
+        <javac
+                classpath="${classpath}"
+                includeantruntime="false"
+                srcdir="${src}"
+                destdir="${build}"
+                deprecation="on"
+                debug="true"
+                verbose="no"
+                listfiles="yes"
+                source="1.8"
+                target="1.8"
+                encoding="ISO-8859-1">
+            <compilerarg value="-Xlint"/>
+        </javac>
+    </target>
+
+    <target name="pclg-mp3updater_jar" depends="_compile">
+        <jar destfile="${dist}/${pclg-mp3updater_jar_name}" basedir="${build}" excludes="**">
+            <!-- TODO: add only needed files -->
+            <fileset dir="${build}" includes="**/*.class"/>
+            <manifest>
+                <attribute name="Built-By" value="${user.name}"/>
+                <attribute name="Main-Class" value="org.pclg.media.mp3.MP3Update"/>
+                <attribute name="Class-Path" value=". : pclg-tools.jar : Icons.jar : jid3lib-0.5.4.jar : log4j-1.2.15.jar"/>
+            </manifest>
+        </jar>
+    </target>
+
+    <target name="build" depends="pclg-mp3updater_jar"/>
+
+     <target name="clean">
+         <echo message="Cleaning ${ant.project.name}"/>
+         <delete includeEmptyDirs="true">
+             <fileset dir="${build}" includes="*/**"/>
+         </delete>
+    </target>
+</project>

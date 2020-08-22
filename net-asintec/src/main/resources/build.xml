@@ -1,0 +1,73 @@
+<project name="net-asintec-migrator" default="build" basedir="../../../..">
+
+    <description>Builds Migrator</description>
+
+    <property name="module_net-asintec_migrator" location="${basedir}/net-asintec"/>
+    <property file="${basedir}/local_config.properties"/>
+    
+    <property name="src" location="${module_net-asintec_migrator}/src/main/java"/>
+    <property name="resources" location="${module_net-asintec_migrator}/src/main/resources"/>
+    <property name="lib_dir" value="${basedir}/../lib"/>
+    <property name="build" location="${basedir}/../../build-migrator"/>
+    <property name="dist" location="${basedir}/../../dist"/>
+    <property name="net-asintec-migrator_jar_name" value="net-asintec-migrator.jar"/>
+
+    <property name="properties" value="DirectorySynchronizer*.properties"/>
+
+    <property name="classpath" value="
+        ${lib_dir}/lib_L&amp;F/kunststoff.jar:
+        ${dist}/pclg-tools.jar:
+        "/>
+
+    <target name="_init">
+        <tstamp/>
+        <mkdir dir="${build}"/>
+        <mkdir dir="${dist}"/>
+
+        <copy todir="${build}" preservelastmodified="true">
+            <fileset dir="${resources}" includes="${properties}"/>
+        </copy>
+
+        <copy todir="${dist}" preservelastmodified="true">
+            <fileset dir="${resources}" includes="${properties}"/>
+        </copy>
+
+    </target>
+
+    <target name="_compile" depends="_init" description="Compile the sources">
+        <javac
+                classpath="${classpath}"
+                includeantruntime="false"
+                srcdir="${src}"
+                destdir="${build}"
+                deprecation="on"
+                debug="true"
+                verbose="no"
+                listfiles="yes"
+                source="1.8"
+                target="1.8"
+                encoding="ISO-8859-1">
+            <compilerarg value="-Xlint"/>
+        </javac>
+    </target>
+
+    <target name="net-asintec-migrator_jar" depends="_compile">
+        <jar destfile="${dist}/${net-asintec-migrator_jar_name}" basedir="${build}" excludes="**">
+            <fileset dir="${build}" includes="**/*.class"/>
+            <manifest>
+                <attribute name="Built-By" value="${user.name}"/>
+                <attribute name="Main-Class" value="net.asintec.migrator.Migrator"/>
+                <attribute name="Class-Path" value=". : pclg-tools.jar : toolbarButtonGraphics.jar : Icons.jar : kunststoff.jar : log4j-1.2.15.jar"/>
+            </manifest>
+        </jar>
+    </target>
+
+    <target name="build" depends="net-asintec-migrator_jar"/>
+
+     <target name="clean">
+         <echo message="Cleaning ${ant.project.name}"/>
+         <delete includeEmptyDirs="true">
+             <fileset dir="${build}" includes="*/**"/>
+         </delete>
+    </target>
+</project>

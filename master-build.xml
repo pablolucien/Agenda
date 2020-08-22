@@ -1,0 +1,38 @@
+<project name="Master build" basedir="." default="buildAll">
+
+    <property name="dist" location="${basedir}/../../dist"/>
+    <property name="Alles_src_zip_name" value="Alles_src.zip"/>
+
+    <target name="buildAll" description="Builds all modules">
+        <antcall target="executeTargetInModules">
+            <param name="target" value="build"/>
+        </antcall>
+        <antcall target="Alles_src_zip"/>
+    </target>
+
+    <target name="cleanAll">
+        <antcall target="executeTargetInModules">
+            <param name="target" value="clean"/>
+        </antcall>
+    </target>
+
+    <target name="executeTargetInModules">
+        <ant antfile="pclg-tools/src/main/resources/build.xml" target="${target}"/>
+        <ant antfile="pclg-agenda/src/main/resources/build.xml" target="${target}"/>
+        <ant antfile="pclg-alter/src/main/resources/build.xml" target="${target}"/>
+        <ant antfile="pclg-synchonizer/src/main/resources/build.xml" target="${target}"/>
+        <ant antfile="pclg-mp3updater/src/main/resources/build.xml" target="${target}"/>
+        <ant antfile="pclg-compdel/src/main/resources/build.xml" target="${target}"/>
+        <ant antfile="pclg-condominio/src/main/resources/build.xml" target="${target}"/>
+        <ant antfile="net-asintec/src/main/resources/build.xml" target="${target}"/>
+<!--        <ant antfile="pclg-apps/src/main/config/build.xml" target="${target}"/>-->
+    </target>
+
+    <target name="Alles_src_zip" description="fuentes de la Alles">
+        <jar destfile="${dist}/${Alles_src_zip_name}">
+            <fileset dir="${basedir}" includes="**/src/**"/>
+            <fileset dir="${basedir}" includes="master-build.xml"/>
+            <fileset dir="${basedir}" includes="local_config.properties"/>
+        </jar>
+    </target>
+</project>

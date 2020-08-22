@@ -1,7 +1,9 @@
 package org.pclg.disquisiciones;
 
+import org.apache.log4j.Level;
 import org.apache.log4j.Logger;
 import org.pclg.log.LoggerFactory;
+import org.pclg.tools.Pair;
 
 import java.util.Set;
 import java.util.TreeSet;
@@ -32,18 +34,10 @@ public final class CuadradosYTriangulares {
     private CuadradosYTriangulares() {
     }
 
-    static class IntegerPair implements Comparable<IntegerPair> {
-        final Integer x;
-        final Integer y;
+    static class IntegerPair extends Pair<Integer, Integer> implements Comparable<IntegerPair> {
 
         IntegerPair(final Integer x, final Integer y) {
-            this.x = x;
-            this.y = y;
-        }
-
-        @Override
-        public String toString() {
-            return "{" + x + ", " + y + '}';
+            super(x, y);
         }
 
         @Override
@@ -57,13 +51,13 @@ public final class CuadradosYTriangulares {
 
             final IntegerPair that = (IntegerPair) other;
 
-            return !(y != null ? !y.equals(that.y) : that.y != null);
+            return !(second() != null ? !second().equals(that.second()) : that.second() != null);
 
         }
 
         @Override
         public int hashCode() {
-            return y != null ? y.hashCode() : 0;
+            return second() != null ? second().hashCode() : 0;
         }
 
         /**
@@ -106,12 +100,12 @@ public final class CuadradosYTriangulares {
          */
         @Override
         public int compareTo(final IntegerPair other) {
-            return y.compareTo(other.y);
+            return second().compareTo(other.second());
         }
     }
 
     public static void main(final String[] args) {
-        final int total = 10000;
+        final int total = 100_000;
         final Set<IntegerPair> cuadrados = new TreeSet<>();
         final Set<IntegerPair> triangulares = new TreeSet<>();
         for (int n = 1; n < total; n++) {
@@ -120,8 +114,8 @@ public final class CuadradosYTriangulares {
         }
         triangulares.retainAll(cuadrados);
         cuadrados.retainAll(triangulares);
-        LOGGER.error(cuadrados);
-        LOGGER.error(triangulares);
+        LOGGER.log(Level.OFF, cuadrados);
+        LOGGER.log(Level.OFF, triangulares);
     }
 
     private static IntegerPair cuadrado(final int n) {

@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <module type="JAVA_MODULE" version="4">
+<<<<<<< HEAD
   <component name="FacetManager">
     <facet type="Python" name="Python">
       <configuration sdkName="" />
@@ -8,20 +9,24 @@
   <component name="NewModuleRootManager" inherit-compiler-output="false">
     <output url="file://$MODULE_DIR$/../../build/production/Alles" />
     <output-test url="file://$MODULE_DIR$/../../build/test/Alles" />
+=======
+  <component name="NewModuleRootManager" inherit-compiler-output="true">
+>>>>>>> modularize
     <exclude-output />
     <content url="file://$MODULE_DIR$">
-      <sourceFolder url="file://$MODULE_DIR$/src/main/config" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/src/main/html" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/src/main/java" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/src/main/sql" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/src/main/resources" type="java-resource" />
       <sourceFolder url="file://$MODULE_DIR$/src/test/java" isTestSource="true" />
       <sourceFolder url="file://$MODULE_DIR$/src/test/resources" type="java-test-resource" />
+      <sourceFolder url="file://$MODULE_DIR$/src/main/config" isTestSource="false" />
     </content>
     <orderEntry type="inheritedJdk" />
     <orderEntry type="sourceFolder" forTests="false" />
-    <orderEntry type="library" name="Python 2.7 (Quotes) interpreter library" level="application" />
     <orderEntry type="library" name="lib" level="project" />
+    <orderEntry type="module" module-name="pclg-tools" />
+    <orderEntry type="module" module-name="pclg-mp3updater" />
   </component>
 </module>
 
