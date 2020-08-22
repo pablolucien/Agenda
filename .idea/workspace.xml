@@ -3,6 +3,7 @@
   <component name="ChangeListManager">
     <list default="true" id="ca6eb6b6-6419-4d0e-a6aa-4254ec1c5806" name="Default" comment="Modularization (add Idea configuration files to version control)">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pclg-apps/pclg-apps.iml" beforeDir="false" afterPath="$PROJECT_DIR$/pclg-apps/pclg-apps.iml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -25,6 +26,7 @@
       </map>
     </option>
   </component>
+  <component name="JupyterTrust" id="792f9bbf-76c8-483f-bac3-8585c0c7845e" />
   <component name="ProjectId" id="1dGR5T6zfui34Fi3zHyNVNEEKlF" />
   <component name="ProjectInspectionProfilesVisibleTreeState">
     <entry key="Project Default">
@@ -1052,6 +1054,7 @@
       <AnalysisUIOptions />
     </option>
   </component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="SvnConfiguration">
     <configuration />
   </component>
@@ -1062,11 +1065,12 @@
       <option name="presentableId" value="Default" />
       <updated>1592049259464</updated>
       <workItem from="1592049262647" duration="489000" />
+      <workItem from="1598095003687" duration="70000" />
     </task>
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
-    <option name="version" value="2" />
+    <option name="version" value="3" />
   </component>
   <component name="Vcs.Log.UiProperties">
     <option name="RECENTLY_FILTERED_USER_GROUPS">
@@ -1112,22 +1116,22 @@
       <screen x="55" y="27" width="1865" height="1053" />
     </state>
     <state x="155" y="125" width="1665" height="855" key="DiffContextDialog/55.27.1865.1053@55.27.1865.1053" timestamp="1592049751004" />
-    <state width="1819" height="269" key="GridCell.Tab.0.bottom" timestamp="1592048489530">
+    <state width="1819" height="270" key="GridCell.Tab.0.bottom" timestamp="1598095070647">
       <screen x="55" y="27" width="1865" height="1053" />
     </state>
-    <state width="1819" height="269" key="GridCell.Tab.0.bottom/55.27.1865.1053@55.27.1865.1053" timestamp="1592048489530" />
-    <state width="1819" height="269" key="GridCell.Tab.0.center" timestamp="1592048489530">
+    <state width="1819" height="270" key="GridCell.Tab.0.bottom/55.27.1865.1053@55.27.1865.1053" timestamp="1598095070647" />
+    <state width="1819" height="270" key="GridCell.Tab.0.center" timestamp="1598095070647">
       <screen x="55" y="27" width="1865" height="1053" />
     </state>
-    <state width="1819" height="269" key="GridCell.Tab.0.center/55.27.1865.1053@55.27.1865.1053" timestamp="1592048489530" />
-    <state width="1819" height="269" key="GridCell.Tab.0.left" timestamp="1592048489529">
+    <state width="1819" height="270" key="GridCell.Tab.0.center/55.27.1865.1053@55.27.1865.1053" timestamp="1598095070647" />
+    <state width="1819" height="270" key="GridCell.Tab.0.left" timestamp="1598095070647">
       <screen x="55" y="27" width="1865" height="1053" />
     </state>
-    <state width="1819" height="269" key="GridCell.Tab.0.left/55.27.1865.1053@55.27.1865.1053" timestamp="1592048489529" />
-    <state width="1819" height="269" key="GridCell.Tab.0.right" timestamp="1592048489530">
+    <state width="1819" height="270" key="GridCell.Tab.0.left/55.27.1865.1053@55.27.1865.1053" timestamp="1598095070647" />
+    <state width="1819" height="270" key="GridCell.Tab.0.right" timestamp="1598095070647">
       <screen x="55" y="27" width="1865" height="1053" />
     </state>
-    <state width="1819" height="269" key="GridCell.Tab.0.right/55.27.1865.1053@55.27.1865.1053" timestamp="1592048489530" />
+    <state width="1819" height="270" key="GridCell.Tab.0.right/55.27.1865.1053@55.27.1865.1053" timestamp="1598095070647" />
     <state x="650" y="257" width="672" height="678" key="search.everywhere.popup" timestamp="1592049504279">
       <screen x="55" y="27" width="1865" height="1053" />
     </state>
