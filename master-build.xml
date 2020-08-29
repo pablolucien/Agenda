@@ -23,7 +23,7 @@
         <ant antfile="pclg-synchonizer/src/main/resources/build.xml" target="${target}"/>
         <ant antfile="pclg-mp3updater/src/main/resources/build.xml" target="${target}"/>
         <ant antfile="pclg-compdel/src/main/resources/build.xml" target="${target}"/>
-        <ant antfile="pclg-condominio/src/main/resources/build.xml" target="${target}"/>
+<!--        <ant antfile="pclg-condominio/src/main/resources/build.xml" target="${target}"/>-->
         <ant antfile="net-asintec/src/main/resources/build.xml" target="${target}"/>
 <!--        <ant antfile="pclg-apps/src/main/config/build.xml" target="${target}"/>-->
     </target>

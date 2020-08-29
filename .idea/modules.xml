@@ -7,7 +7,6 @@
       <module fileurl="file://$PROJECT_DIR$/pclg-alter/pclg-alter.iml" filepath="$PROJECT_DIR$/pclg-alter/pclg-alter.iml" />
       <module fileurl="file://$PROJECT_DIR$/pclg-apps/pclg-apps.iml" filepath="$PROJECT_DIR$/pclg-apps/pclg-apps.iml" />
       <module fileurl="file://$PROJECT_DIR$/pclg-compdel/pclg-compdel.iml" filepath="$PROJECT_DIR$/pclg-compdel/pclg-compdel.iml" />
-      <module fileurl="file://$PROJECT_DIR$/pclg-condominio/pclg-condominio.iml" filepath="$PROJECT_DIR$/pclg-condominio/pclg-condominio.iml" />
       <module fileurl="file://$PROJECT_DIR$/pclg-misc/pclg-misc.iml" filepath="$PROJECT_DIR$/pclg-misc/pclg-misc.iml" />
       <module fileurl="file://$PROJECT_DIR$/pclg-mp3updater/pclg-mp3updater.iml" filepath="$PROJECT_DIR$/pclg-mp3updater/pclg-mp3updater.iml" />
       <module fileurl="file://$PROJECT_DIR$/pclg-python/pclg-python.iml" filepath="$PROJECT_DIR$/pclg-python/pclg-python.iml" />
@@ -16,4 +15,3 @@
     </modules>
   </component>
 </project>
-

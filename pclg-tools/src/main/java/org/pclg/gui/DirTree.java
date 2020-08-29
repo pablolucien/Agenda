@@ -280,10 +280,10 @@ public final class DirTree extends JPanel {
 
     private static Optional<DefaultMutableTreeNode> searchNode(
             final DefaultMutableTreeNode startpoint, final String nodeStr) {
-        @SuppressWarnings("unchecked") final Enumeration<DefaultMutableTreeNode> enumer = startpoint.breadthFirstEnumeration();
+        @SuppressWarnings("unchecked") final Enumeration<TreeNode> enumer = startpoint.breadthFirstEnumeration();
 
         while (enumer.hasMoreElements()) {
-            final DefaultMutableTreeNode node = enumer.nextElement();
+            final DefaultMutableTreeNode node = (DefaultMutableTreeNode) enumer.nextElement();
             if (nodeStr.equalsIgnoreCase(node.getUserObject().toString())) {
                 return Optional.of(node);
             }

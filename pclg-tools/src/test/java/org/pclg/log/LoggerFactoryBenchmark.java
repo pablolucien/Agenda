@@ -1,6 +1,5 @@
 package org.pclg.log;
 
-import javaspecialists.ReflectionHelper;
 import org.pclg.tools.Chrono;
 
 import java.lang.reflect.Field;
@@ -18,7 +17,7 @@ public class LoggerFactoryBenchmark {
 	public static void main(final String[] args) throws NoSuchFieldException, IllegalAccessException {
 		final Field loggerField = LoggerFactory.class.getDeclaredField("LOGGER");
 		LOGGER.log(Level.INFO, "LoggerFactory.LOGGER = " + loggerField);
-		ReflectionHelper.setStaticFinalField(loggerField, null);
+//		ReflectionHelper.setStaticFinalField(loggerField, null);
 		LOGGER.log(Level.INFO, "LoggerFactory.LOGGER = " + loggerField);
 
 		final int chronHandle = Chrono.getChrono();

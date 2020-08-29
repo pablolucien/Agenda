@@ -2,6 +2,7 @@
 //import com.l2fprod.gui.plaf.skin.SkinLookAndFeel;
 import org.pclg.tools.ToolBox;
 
+import javax.swing.tree.TreeNode;
 import java.io.File;
 import java.sql.Connection;
 import java.sql.DriverManager;
@@ -101,9 +102,9 @@ public class FileTreeTest {
 		Busca en el arbol un nodo que corresponda al archivo
 	*/
 	private static FileNode find(final FileNode tree, final File file) {
-		final Enumeration<FileNode> nodes = tree.depthFirstEnumeration();
+		final Enumeration<TreeNode> nodes = tree.depthFirstEnumeration();
 		while(nodes.hasMoreElements()) {
-			final FileNode node = nodes.nextElement();
+			final FileNode node = (FileNode) nodes.nextElement();
 			if(node.represents(file)) {
 				return node;
 			}

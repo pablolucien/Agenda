@@ -35,7 +35,7 @@ import java.util.logging.Logger;
  */
 public class ClassPathHacker {
     // No puedo usar LoggerFactory.makeLog4J() porque el jar de log4j tal vez
-    // no está todavía en el classpath.
+    // no estï¿½ todavï¿½a en el classpath.
     private static final Logger LOGGER = LoggerFactory.make();
     private static final Class<?>[] parameters = { URL.class };
     private static final FileFilter ARCHIVE_FILE_FILTER = file -> {
@@ -102,10 +102,13 @@ public class ClassPathHacker {
         final Class<?> sysclass = URLClassLoader.class;
 
         try {
-            final Method method = sysclass.getDeclaredMethod("addURL", parameters);
-            method.setAccessible(true);
-			final URLClassLoader sysloader = (URLClassLoader) ClassLoader.getSystemClassLoader();
-            method.invoke(sysloader, url);
+			final ClassLoader systemClassLoader = ClassLoader.getSystemClassLoader();
+			if (systemClassLoader instanceof URLClassLoader) {
+				final Method method = sysclass.getDeclaredMethod("addURL", parameters);
+				method.setAccessible(true);
+				final URLClassLoader sysloader = (URLClassLoader) ClassLoader.getSystemClassLoader();
+				method.invoke(sysloader, url);
+			}
         } catch (final Throwable t) {
             LOGGER.log(Level.SEVERE, "ClassPathHacker: Error adding: " + url, t);
             throw new IOException(
@@ -114,7 +117,10 @@ public class ClassPathHacker {
     }
 
 	public static URL[] getClassPath() {
-		final URLClassLoader sysloader = (URLClassLoader) ClassLoader.getSystemClassLoader();
-		return sysloader.getURLs();
+		final ClassLoader systemClassLoader = ClassLoader.getSystemClassLoader();
+		if (systemClassLoader instanceof URLClassLoader) {
+			return ((URLClassLoader) systemClassLoader).getURLs();
+		}
+		return new URL[0];
 	}
 }

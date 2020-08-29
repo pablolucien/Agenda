@@ -1,7 +1,7 @@
 package javaspecialists;
 
-import sun.reflect.FieldAccessor;
-import sun.reflect.ReflectionFactory;
+//import sun.reflect.FieldAccessor;
+//import sun.reflect.ReflectionFactory;
 
 import java.lang.reflect.Field;
 import java.lang.reflect.Modifier;
@@ -9,8 +9,8 @@ import java.lang.reflect.Modifier;
 public class ReflectionHelper {
   private static final String MODIFIERS_FIELD = "modifiers";
 
-  private static final ReflectionFactory reflection =
-      ReflectionFactory.getReflectionFactory();
+//  private static final ReflectionFactory reflection =
+//      ReflectionFactory.getReflectionFactory();
 
 	private ReflectionHelper() {
 	}
@@ -29,9 +29,9 @@ public class ReflectionHelper {
 	  // blank out the final bit in the modifiers int
 	  modifiers &= ~Modifier.FINAL;
 	  modifiersField.setInt(field, modifiers);
-	  final FieldAccessor fa = reflection.newFieldAccessor(
-		  field, false
-	  );
-	  fa.set(null, value);
+//	  final FieldAccessor fa = reflection.newFieldAccessor(
+//		  field, false
+//	  );
+//	  fa.set(null, value);
 	}
 }

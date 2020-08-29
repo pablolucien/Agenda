@@ -50,8 +50,8 @@
                 debug="true"
                 verbose="no"
                 listfiles="yes"
-                source="1.8"
-                target="1.8"
+                source="11"
+                target="11"
                 encoding="ISO-8859-1">
             <compilerarg value="-Xlint"/>
         </javac>
@@ -63,7 +63,7 @@
             <manifest>
                 <attribute name="Built-By" value="${user.name}"/>
                 <attribute name="Main-Class" value="org.pclg.filesystem.synchonizer.DirectorySynchronizer"/>
-                <attribute name="Class-Path" value=". : pclg-tools.jar : Icons.jar : json-20180130.jar : log4j-1.2.15.jar"/>
+                <attribute name="Class-Path" value=". : pclg-tools.jar : Icons.jar : Sounds.jar : json-20180130.jar : log4j-1.2.15.jar : derby.jar"/>
             </manifest>
         </jar>
     </target>

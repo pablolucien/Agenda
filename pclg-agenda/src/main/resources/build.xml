@@ -64,8 +64,8 @@
                 debug="true"
                 verbose="no"
                 listfiles="yes"
-                source="1.8"
-                target="1.8"
+                source="11"
+                target="11"
                 encoding="ISO-8859-1">
             <compilerarg value="-Xlint"/>
         </javac>
@@ -77,7 +77,7 @@
             <manifest>
                 <attribute name="Built-By" value="${user.name}"/>
                 <attribute name="Main-Class" value="org.pclg.agenda.Agenda"/>
-                <attribute name="Class-Path" value=". : pclg-tools.jar : Icons.jar : Sounds.jar : toolbarButtonGraphics.jar : log4j-1.2.15.jar"/>
+                <attribute name="Class-Path" value=". : pclg-tools.jar : Icons.jar : Sounds.jar : toolbarButtonGraphics.jar : log4j-1.2.15.jar : derby.jar : javaee.jar : ez-vcard-0.9.5.jar"/>
             </manifest>
         </jar>
     </target>
