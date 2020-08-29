@@ -1,5 +1,6 @@
 package org.pclg.filesystem.synchonizer;
 
+import org.apache.log4j.Level;
 import org.apache.log4j.Logger;
 import org.pclg.gui.FancyButtonPanel;
 import org.pclg.gui.Kaleidoscope;
@@ -26,6 +27,8 @@ import javax.swing.SwingConstants;
 import javax.swing.SwingUtilities;
 import javax.swing.WindowConstants;
 import javax.swing.filechooser.FileNameExtensionFilter;
+import java.applet.Applet;
+import java.applet.AudioClip;
 import java.awt.BorderLayout;
 import java.awt.Component;
 import java.awt.event.ComponentAdapter;
@@ -34,6 +37,7 @@ import java.awt.event.WindowAdapter;
 import java.awt.event.WindowEvent;
 import java.io.File;
 import java.io.IOException;
+import java.net.URL;
 import java.util.Arrays;
 import java.util.Date;
 import java.util.Properties;
@@ -67,6 +71,7 @@ final class DirectorySynchronizerGUI {
     private final JCheckBox testCheckBox = new JCheckBox("Test!", true);
     private String lastDir;
     private String lastFile;
+    private static final String successSound = "/sounds/success_sound.wav";
 
     DirectorySynchronizerGUI() throws IOException {
         final Properties properties = new Properties();
@@ -291,13 +296,29 @@ final class DirectorySynchronizerGUI {
     private static void executeWithTiming(final Component frame, final Command command, final String extraInfo) {
         final int chrono = Chrono.getChrono();
         try {
-            LOGGER.warn(String.format("Start: %s. %s.%n", new Date().toString(), extraInfo));
+            LOGGER.log(Level.OFF, String.format("Start: %s. %s.%n", new Date().toString(), extraInfo));
             Chrono.start(chrono);
             GUITools.executeWithWaitCursor(frame, command);
         } finally {
             Chrono.mark(chrono);
-            LOGGER.warn(String.format("%nFinish: %s. Total time: %s%n", new Date().toString(),
+            signalEndOfWork();
+            LOGGER.log(Level.OFF, String.format("%nFinish: %s. Total time: %s%n", new Date().toString(),
                 Chrono.timeDetail(Chrono.elapsed(chrono))));
         }
+    }
+
+    private static void signalEndOfWork() {
+        final URL resource = DirectorySynchronizerGUI.class.getResource(successSound);
+        if (resource != null) {
+            AudioClip theSound;
+//                try {
+//                    theSound = Applet.newAudioClip(clipFile.toURL());
+                theSound = Applet.newAudioClip(resource);
+                theSound.play();
+//                } catch (final MalformedURLException e) {
+                // Ignore;
+//                }
+        }
+
     }
 }

@@ -16,7 +16,6 @@ import org.pclg.agenda.entities.TipoTelefono;
 import org.pclg.agenda.plugins.Plugin;
 import org.pclg.dbutil.DbManager;
 import org.pclg.log.LoggerFactory;
-import org.pclg.tools.ChangeObserver;
 import org.pclg.tools.ObservableProperties;
 import org.pclg.tools.PropertiesHelper;
 import org.pclg.tools.ToolBox;
@@ -56,7 +55,7 @@ import static org.pclg.tools.StringTools.isEmptyOrBlank;
  */
 @SuppressWarnings(
     {"FeatureEnvy", "ClassWithTooManyMethods", "OverlyComplexClass"})
-public final class AgendaDbJDBC implements AgendaDb, ChangeObserver<ObservableProperties> {
+public final class AgendaDbJDBC implements AgendaDb {
     /** El logger. */
     private static final Logger LOGGER = LoggerFactory.makeLog4J();
     // Si fuera posible eliminar estas dependencias de derby :(
@@ -195,11 +194,11 @@ public final class AgendaDbJDBC implements AgendaDb, ChangeObserver<ObservablePr
         "UPDATE ROOT.CONTACTO SET Deleted = ? WHERE Clave = ?";
 
     private Connection dbConnection;
-    private Properties appProperties;
     private int daysFork4Birthdays;
     private int daysFork4RecentlyModified;
     private int maxBackupHistory;
     private int daysFork4InterestingDates;
+    private int interestingDatesGap;
     private GroupHelper groupHelper;
     private TelephoneHelper telephoneHelper;
     private CountryHelper countryHelper;
@@ -215,9 +214,8 @@ public final class AgendaDbJDBC implements AgendaDb, ChangeObserver<ObservablePr
             final boolean forceCreateTables)
             throws InstantiationException, IllegalAccessException,
             ClassNotFoundException, SQLException {
-        this.appProperties = appProperties;
         if (appProperties instanceof ObservableProperties) {
-            ((ObservableProperties) appProperties).addChangeObserver(this);
+            ((ObservableProperties) appProperties).addChangeObserver(this::initializeMutableProperties);
         }
         final String password = appProperties.getProperty("AgendaDb.password");
         final String originalConnectString = appProperties.getProperty("AgendaDb.resolvedUrl");
@@ -227,7 +225,15 @@ public final class AgendaDbJDBC implements AgendaDb, ChangeObserver<ObservablePr
                 connectString, appProperties.getProperty("AgendaDb.user"), password);
         LOGGER.log(Level.INFO, "Connected to database: " + originalConnectString);
         dbConnection.setAutoCommit(false);
-        initializeMutableProperties();
+        initializeMutableProperties(appProperties);
+
+        // The tables must be created before the helpers if their prepared statements are to be initialized in the constructors.
+        if (forceCreateTables) {
+            dbManager.createTables(appProperties);    // Crea las tablas aunque existan.
+        } else if (checkTables) {
+            dbManager.checkAndCreateTables(appProperties);    // Las crea si no existen.
+        }
+
         generalHelper = new GeneralHelper(dbConnection);
         groupHelper = new GroupHelper(dbConnection, generalHelper);
         telephoneHelper = new TelephoneHelper(dbConnection, generalHelper);
@@ -237,52 +243,38 @@ public final class AgendaDbJDBC implements AgendaDb, ChangeObserver<ObservablePr
         emailHelper = new EmailHelper(dbConnection, generalHelper);
         noteHelper = new NoteHelper(dbConnection, generalHelper);
         dbEngine = new DbEngine(telephoneHelper, noteHelper, groupHelper, addressHelper, imageHelper, emailHelper);
-
-        if (forceCreateTables) {
-            dbManager.createTables(appProperties);    // Crea las tablas aunque existan.
-        } else if (checkTables) {
-            dbManager.checkAndCreateTables(appProperties);    // Las crea si no existen.
-      }
     }
 
     /** Inicializa ciertas variables a partir de las properties. */
-    private void initializeMutableProperties() {
+    private void initializeMutableProperties(final Properties properties) {
         daysFork4Birthdays = initializeNonNegativeIntFromProperties(
-            "AgendaDb.daysFork4Birthdays", 7);
+            properties, "AgendaDb.daysFork4Birthdays", 7);
         daysFork4InterestingDates = initializeNonNegativeIntFromProperties(
-            "AgendaDb.daysFork4InterestingDates", 10);
+            properties, "AgendaDb.daysFork4InterestingDates", 10);
         daysFork4RecentlyModified = initializeNonNegativeIntFromProperties(
-            "AgendaDb.daysFork4RecentlyModified", 1);
+            properties, "AgendaDb.daysFork4RecentlyModified", 1);
         maxBackupHistory = initializeNonNegativeIntFromProperties(
-            "AgendaDb.maxBackupHistory", 5);
+            properties, "AgendaDb.maxBackupHistory", 5);
+        interestingDatesGap = initializeNonNegativeIntFromProperties(
+            properties, "AgendaDb.interestingDatesDivisor", 1000);
     }
 
     /**
      * Utility method to get a positive integer value from the properties of
      * the application.
      *
+     *
+     * @param properties
      * @param key the key to search in the properties.
      * @param defaultValue a default value to return if the key is not found.
      *
      * @return a positive integer value from the properties or a default value
      * if the key's not found.
      */
-    private int initializeNonNegativeIntFromProperties(final String key, final int defaultValue) {
-        final String value = appProperties.getProperty(key, String.valueOf(defaultValue));
+    private int initializeNonNegativeIntFromProperties(final Properties properties, final String key, final int defaultValue) {
+        final String value = properties.getProperty(key, String.valueOf(defaultValue));
         final int retVal = ToolBox.isInteger(value) ? Integer.parseInt(value) : defaultValue;
         return retVal < 0 ? defaultValue : retVal;
-    }
-
-    /**
-     * This method is called whenever the observed object is changed.
-     * @param observableProperties the object that changed.
-     */
-    @Override
-    public void objectChanged(final ObservableProperties observableProperties) {
-        if (observableProperties == appProperties) {
-            LOGGER.log(Level.TRACE, "appProperties modificada");
-            initializeMutableProperties();
-        }
     }
 
     /**
@@ -709,8 +701,8 @@ public final class AgendaDbJDBC implements AgendaDb, ChangeObserver<ObservablePr
     }
 
     @Override
-    public void executePlugin(final Plugin plugin, final String... args) throws SQLException {
-        plugin.execute(appProperties, dbConnection, args);
+    public void executePlugin(final Plugin plugin, final Properties properties, final String... args) throws SQLException {
+        plugin.execute(properties, dbConnection, args);
     }
 
     // Use this date if last updated is unknown: assume last updated before the use of table 'CONTROL'.
@@ -734,7 +726,7 @@ public final class AgendaDbJDBC implements AgendaDb, ChangeObserver<ObservablePr
         final boolean parentVisible = parent.isVisible();
         final Date date1 = lastUpdated().orElse(theEpoch);
         try {
-            final Date date2 = obtainSecondaryLastUpdated();
+            final Date date2 = obtainSecondaryLastUpdated(properties);
             if (date2 == null) {
                 LOGGER.warn("Not checking last updated");
                 return true;
@@ -830,11 +822,11 @@ public final class AgendaDbJDBC implements AgendaDb, ChangeObserver<ObservablePr
             JOptionPane.QUESTION_MESSAGE);
     }
 
-    private Date obtainSecondaryLastUpdated() throws Exception {
+    private Date obtainSecondaryLastUpdated(final Properties properties) throws Exception {
         final Properties secondaryProperties = new Properties();
-        final String secondaryClassName = appProperties.getProperty("AgendaDb.secondary.className");
-        final String secondaryDriver = appProperties.getProperty("AgendaDb.secondary.driver");
-        final String secondaryURL = appProperties.getProperty("AgendaDb.secondary.url");
+        final String secondaryClassName = properties.getProperty("AgendaDb.secondary.className");
+        final String secondaryDriver = properties.getProperty("AgendaDb.secondary.driver");
+        final String secondaryURL = properties.getProperty("AgendaDb.secondary.url");
         if (secondaryClassName == null || secondaryDriver == null
                 || secondaryURL == null) {
             return null;
@@ -849,8 +841,7 @@ public final class AgendaDbJDBC implements AgendaDb, ChangeObserver<ObservablePr
         try {
             secondaryAgendaDb.initDb(secondaryProperties, false, false);
             final Date lastUpdated = secondaryAgendaDb.lastUpdated().orElse(theEpoch);
-            secondaryAgendaDb.stopDb(false,
-                appProperties.getProperty("AgendaDb.secondary.shutdown.url"));
+            secondaryAgendaDb.stopDb(false, properties.getProperty("AgendaDb.secondary.shutdown.url"));
             return lastUpdated;
         } catch (final SQLException ignored) {
             return null;
@@ -871,14 +862,6 @@ public final class AgendaDbJDBC implements AgendaDb, ChangeObserver<ObservablePr
     @Override
     public List<AgendaRecord> selectContactsByInterestingDates() throws SQLException {
         final List<AgendaRecord> todos = new ArrayList<>();
-        int interestingDatesGap;
-        try {
-            interestingDatesGap = Integer
-                .parseInt(appProperties.getProperty("AgendaDb.interestingDatesDivisor", "1000"));
-        } catch (final NumberFormatException e) {
-            LOGGER.warn("Property interestingDatesDivisor not set in properties file; using default (1000)");
-            interestingDatesGap = 1000;
-        }
         final int limit = 40_000 / interestingDatesGap;
         final String whereClause = "WHERE NOT Deleted AND (";
         final String inDatesClause = "(dia = ? AND mes = ? AND ano = ?) OR ";

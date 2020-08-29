@@ -100,6 +100,9 @@ final class TargetDef implements Iterator<File[]> {
         if (!dirA.isDirectory() || !dirB.isDirectory()) {
             throw new IllegalStateException();
         }
+        if (includedFileNames != null && includedFileNames.length != 0) {
+            return new OnlyIncludedFilesIterator(files, includedFileNames);
+        }
         final List<File> filesA;
         final List<File> filesB;
         if (recurse) {
@@ -332,5 +335,26 @@ final class TargetDef implements Iterator<File[]> {
             ", filePair=" + filePair +
             (files != null ? ", " + Arrays.asList(files) : "") +
             '}';
+    }
+
+    private static class OnlyIncludedFilesIterator implements Iterator<File[]> {
+        private final File[] dirs;
+        private final String[] fileNames;
+        private int index;
+
+        public OnlyIncludedFilesIterator(File[] dirs, String[] fileNames) {
+            this.dirs = dirs.clone();
+            this.fileNames = fileNames.clone();
+        }
+
+        @Override
+        public boolean hasNext() {
+            return index < fileNames.length;
+        }
+
+        @Override
+        public File[] next() {
+            return new File[] {new File(dirs[0], fileNames[index]), new File(dirs[1], fileNames[index++])};
+        }
     }
 }

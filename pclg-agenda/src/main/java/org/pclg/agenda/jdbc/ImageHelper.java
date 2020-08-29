@@ -34,13 +34,15 @@ public final class ImageHelper implements FieldManagerHelper {
     private static final String SELECT_FROM_IMAGEN_SENTENCE =
         "SELECT imagePath, thumbnail FROM IMAGEN WHERE clave = ? AND version = ? ";
 
-    private final Connection dbConnection;
+    private final PreparedStatement selectStatement;
+    private final PreparedStatement insertStatement;
     private final GeneralHelper generalHelper;
     private final String imagesRoot;
     private final ThumbnailCreator thumbnailCreator = new ThumbnailCreator();
 
-    ImageHelper(final Connection dbConnection, final GeneralHelper generalHelper, String imagesRoot) {
-        this.dbConnection = dbConnection;
+    ImageHelper(final Connection dbConnection, final GeneralHelper generalHelper, String imagesRoot) throws SQLException {
+        selectStatement = dbConnection.prepareStatement(SELECT_FROM_IMAGEN_SENTENCE);
+        insertStatement = dbConnection.prepareStatement(INSERT_INTO_IMAGEN_SENTENCE);
         this.generalHelper = generalHelper;
         this.imagesRoot = imagesRoot;
     }
@@ -53,10 +55,10 @@ public final class ImageHelper implements FieldManagerHelper {
      */
     @Override
     public void retrieve(final AgendaRecord record) throws SQLException {
-        try (final PreparedStatement stmt = dbConnection.prepareStatement(SELECT_FROM_IMAGEN_SENTENCE)) {
-            stmt.setInt(1, record.getKey());
-            stmt.setInt(2, record.getVersionImage());
-            final ResultSet rset = stmt.executeQuery();
+        try {
+            selectStatement.setInt(1, record.getKey());
+            selectStatement.setInt(2, record.getVersionImage());
+            final ResultSet rset = selectStatement.executeQuery();
             if (rset.next()) {
                 record.setImagePath(rset.getString(1));
                 final InputStream stream = rset.getBinaryStream(2);
@@ -70,7 +72,7 @@ public final class ImageHelper implements FieldManagerHelper {
 
     @Override
     public int persist(final AgendaRecord record) {
-        try (final PreparedStatement imageStmt = dbConnection.prepareStatement(INSERT_INTO_IMAGEN_SENTENCE)) {
+        try {
             int nrUpdates = 0;
             final int clave = record.getKey();
             final int newVersionImagen = generalHelper.obtainNextVersion("IMAGEN", clave);
@@ -80,11 +82,11 @@ public final class ImageHelper implements FieldManagerHelper {
                 final File originalImageFile = new File(imagesRoot + imagePath);
                 if (originalImageFile.exists()) {
                     try (final InputStream stream = thumbnailCreator.getThumbnailAsStream(originalImageFile)) {
-                        imageStmt.setInt(++index, clave);
-                        imageStmt.setInt(++index, newVersionImagen);
-                        imageStmt.setString(++index, imagePath);
-                        imageStmt.setBlob(++index, stream);
-                        nrUpdates += imageStmt.executeUpdate();
+                        insertStatement.setInt(++index, clave);
+                        insertStatement.setInt(++index, newVersionImagen);
+                        insertStatement.setString(++index, imagePath);
+                        insertStatement.setBlob(++index, stream);
+                        nrUpdates += insertStatement.executeUpdate();
                     }
                 }
             }

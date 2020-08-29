@@ -181,10 +181,11 @@
         <fail message="Test failure detected, check test results." if="test.failed"/>
     </target>
 
-
     <target name="_clean_dist" depends="clean, _dist"
             description="generate the distribution from scratch">
     </target>
+
+    <target name="build" depends="_dist_unsafe" />
 
     <target name="_dist" depends="_tests, _dist_unsafe"
             description="generate the distribution">

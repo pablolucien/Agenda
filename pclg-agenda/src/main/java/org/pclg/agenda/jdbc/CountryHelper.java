@@ -9,7 +9,7 @@ import java.sql.SQLException;
 
 /**
  * Premature optimization is the root of all evil.
- * —Donald E. Knuth
+ * ï¿½Donald E. Knuth
  *
  * @author El Coyote Cojo
  * @since 23/07/17 10:48
@@ -24,33 +24,30 @@ final class CountryHelper {
     private static final String UPDATE_PAIS =
         "UPDATE PAIS SET Nombre = ?, Formato_Telefono = ? WHERE Codigo = ?";
 
-    private final Connection dbConnection;
+    private final PreparedStatement selectStatement;
+    private final PreparedStatement insertStatement;
+    private final PreparedStatement updateStatement;
 
-    CountryHelper(final Connection dbConnection) {
-        this.dbConnection = dbConnection;
+    CountryHelper(final Connection dbConnection) throws SQLException {
+        selectStatement = dbConnection.prepareStatement(SELECT_FROM_PAIS);
+        insertStatement = dbConnection.prepareStatement(INSERT_INTO_PAIS);
+        updateStatement = dbConnection.prepareStatement(UPDATE_PAIS);
     }
 
     void loadCountries() throws SQLException {
-        try (final PreparedStatement stmt = dbConnection.prepareStatement(SELECT_FROM_PAIS);
-             final ResultSet rset = stmt.executeQuery()) {
+        try (final ResultSet rset = selectStatement.executeQuery()) {
             while (rset.next()) {
                 new Pais(rset.getString(1), rset.getString(2), rset.getString(3));
             }
         }
-
     }
 
     void addCountry(final String code, final String name, final String phoneMask) throws SQLException {
-        try (final PreparedStatement pstmt = dbConnection.prepareStatement(INSERT_INTO_PAIS)) {
-            persist(pstmt, code, name, phoneMask);
-        }
-
+        persist(insertStatement, code, name, phoneMask);
     }
 
     void updateCountry(final String code, final String name, final String phoneMask) throws SQLException {
-        try (final PreparedStatement pstmt = dbConnection.prepareStatement(UPDATE_PAIS)) {
-            persist(pstmt, name, phoneMask, code);
-        }
+        persist(updateStatement, name, phoneMask, code);
     }
 
     private void persist(final PreparedStatement pstmt, final String code, final String name,
@@ -60,6 +57,5 @@ final class CountryHelper {
         pstmt.setString(++ii, name);
         pstmt.setString(++ii, phoneMask);
         pstmt.execute();
-        dbConnection.commit();
     }
 }

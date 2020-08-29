@@ -95,7 +95,7 @@ public interface AgendaDb {
 
 	void updateCountry(String code, String name, final String phoneMask) throws SQLException;
 
-    void executePlugin(Plugin plugin, String... args) throws SQLException;
+    void executePlugin(Plugin plugin, Properties properties, String... args) throws SQLException;
     
     /**
      * Verifica la fecha de �ltima actulizaci�n compar�ndola con la del backup y

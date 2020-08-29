@@ -5,6 +5,12 @@
             "B": "${ROOT_L}/dev/Alles_src.zip"
         },
         {
+            "dirs": [
+                "${ROOT_C_home}/development/projects/Alles/pclg-apps/src/main/html",
+                "${ROOT_E}/links"
+            ]
+        },
+        {
             "A": "${ROOT_C_home}/development/dist/quotes_src.zip",
             "B": "${ROOT_L}/dev/quotes_src.zip"
         },

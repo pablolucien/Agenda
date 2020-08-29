@@ -1,34 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="ca6eb6b6-6419-4d0e-a6aa-4254ec1c5806" name="Default" comment="Manually resolve merge conficts">
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/modules.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/modules.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/master-build.xml" beforeDir="false" afterPath="$PROJECT_DIR$/master-build.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/net-asintec/src/main/resources/build.xml" beforeDir="false" afterPath="$PROJECT_DIR$/net-asintec/src/main/resources/build.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pclg-agenda/src/main/resources/build.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pclg-agenda/src/main/resources/build.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pclg-alter/src/main/resources/build.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pclg-alter/src/main/resources/build.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pclg-apps/src/main/config/build.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pclg-apps/src/main/config/build.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pclg-apps/src/main/java/FileTreeTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/pclg-apps/src/main/java/FileTreeTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pclg-apps/src/main/java/Magic.magic" beforeDir="false" afterPath="$PROJECT_DIR$/pclg-apps/src/main/java/Magic.magic" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pclg-apps/src/main/java/org/pclg/runtime/JavaShell.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/pclg-apps/src/main/java/org/pclg/security/PasswordDialogFX.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/pclg-compdel/src/main/resources/build.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pclg-compdel/src/main/resources/build.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pclg-misc/src/java/tests/TaskDemo.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/pclg-mp3updater/src/main/java/org/pclg/media/catalog/VideoCatalog.fxml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/pclg-mp3updater/src/main/java/org/pclg/media/catalog/VideoCatalog.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/pclg-mp3updater/src/main/java/org/pclg/media/catalog/VideoCatalogController.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/pclg-mp3updater/src/main/java/org/pclg/media/catalog/model/DBController.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/pclg-mp3updater/src/main/resources/build.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pclg-mp3updater/src/main/resources/build.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pclg-synchonizer/src/main/resources/DS_Targets_development.json" beforeDir="false" afterPath="$PROJECT_DIR$/pclg-synchonizer/src/main/resources/DS_Targets_development.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pclg-synchonizer/src/main/resources/build.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pclg-synchonizer/src/main/resources/build.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pclg-tools/src/main/java/javaspecialists/ReflectionHelper.java" beforeDir="false" afterPath="$PROJECT_DIR$/pclg-tools/src/main/java/javaspecialists/ReflectionHelper.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pclg-tools/src/main/java/org/pclg/gui/DirTree.java" beforeDir="false" afterPath="$PROJECT_DIR$/pclg-tools/src/main/java/org/pclg/gui/DirTree.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pclg-tools/src/main/java/org/pclg/xtras/ClassPathHacker.java" beforeDir="false" afterPath="$PROJECT_DIR$/pclg-tools/src/main/java/org/pclg/xtras/ClassPathHacker.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pclg-tools/src/main/resources/build.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pclg-tools/src/main/resources/build.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pclg-tools/src/test/java/org/pclg/log/LoggerFactoryBenchmark.java" beforeDir="false" afterPath="$PROJECT_DIR$/pclg-tools/src/test/java/org/pclg/log/LoggerFactoryBenchmark.java" afterDir="false" />
-    </list>
+    <list default="true" id="ca6eb6b6-6419-4d0e-a6aa-4254ec1c5806" name="Default" comment="Incorpore changes done in Minerva: &#10;  1-Signal end of work with sound&#10;  2-Fix TargetDef with OnlyIncludedFilesIterator&#10;  3-Reuse the PreparedStatement's in Agenda's Helpers&#10;  4-Encapsulate the use of Properties in AgendaDbJDBC" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -370,6 +343,7 @@
     <property name="MemberChooser.sorted" value="false" />
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
+    <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
     <property name="dynamic.classpath" value="false" />
@@ -380,7 +354,7 @@
     <property name="options.searchVisible" value="true" />
     <property name="options.splitter.details.proportions" value="0.2" />
     <property name="options.splitter.main.proportions" value="0.3" />
-    <property name="project.structure.last.edited" value="Project" />
+    <property name="project.structure.last.edited" value="Modules" />
     <property name="project.structure.proportion" value="0.15" />
     <property name="project.structure.side.proportion" value="0.39310345" />
     <property name="recentsLimit" value="5" />
@@ -405,7 +379,7 @@
       <recent name="C:\home\development\projects\Alles\src\test_resources\images\16x16" />
     </key>
   </component>
-  <component name="RunManager" selected="Application.Magic">
+  <component name="RunManager" selected="Application.DirectorySynchronizer (GUI)">
     <configuration default="true" type="Applet" factoryName="Applet">
       <module name="" />
       <option name="MAIN_CLASS_NAME" />
@@ -764,6 +738,17 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
+    <configuration default="true" type="ArquillianJUnit" factoryName="" nameIsGenerated="true">
+      <option name="arquillianRunConfiguration">
+        <value>
+          <option name="containerStateName" value="" />
+        </value>
+      </option>
+      <option name="TEST_OBJECT" value="class" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <configuration default="true" type="CucumberJavaRunConfigurationType" factoryName="Cucumber java">
       <method v="2">
         <option name="Make" enabled="true" />
@@ -1086,6 +1071,7 @@
       <workItem from="1598095096520" duration="4145000" />
       <workItem from="1598159922819" duration="5729000" />
       <workItem from="1598175038231" duration="1722000" />
+      <workItem from="1598683009625" duration="3799000" />
     </task>
     <task id="LOCAL-00001" summary="Manually resolve merge conficts">
       <created>1598095361969</created>
@@ -1094,7 +1080,35 @@
       <option name="project" value="LOCAL" />
       <updated>1598095361969</updated>
     </task>
-    <option name="localTasksCounter" value="2" />
+    <task id="LOCAL-00002" summary="Starting with JDK11">
+      <created>1598683757663</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1598683757663</updated>
+    </task>
+    <task id="LOCAL-00003" summary="Starting with JDK11: Delete (temporarily?) things that use JavaFX">
+      <created>1598683939741</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1598683939741</updated>
+    </task>
+    <task id="LOCAL-00004" summary="Starting with JDK11: Delete (temporarily?) things that use JavaFX">
+      <created>1598685331687</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1598685331687</updated>
+    </task>
+    <task id="LOCAL-00005" summary="Incorpore changes done in Minerva: &#10;  1-Signal end of work with sound&#10;  2-Fix TargetDef with OnlyIncludedFilesIterator&#10;  3-Reuse the PreparedStatement's in Agenda's Helpers&#10;  4-Encapsulate the use of Properties in AgendaDbJDBC">
+      <created>1598686823934</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1598686823934</updated>
+    </task>
+    <option name="localTasksCounter" value="6" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -1133,7 +1147,10 @@
     <MESSAGE value="Modularization (fourth  batch -&gt; asintec)" />
     <MESSAGE value="Modularization (add Idea configuration files to version control)" />
     <MESSAGE value="Manually resolve merge conficts" />
-    <option name="LAST_COMMIT_MESSAGE" value="Manually resolve merge conficts" />
+    <MESSAGE value="Starting with JDK11" />
+    <MESSAGE value="Starting with JDK11: Delete (temporarily?) things that use JavaFX" />
+    <MESSAGE value="Incorpore changes done in Minerva: &#10;  1-Signal end of work with sound&#10;  2-Fix TargetDef with OnlyIncludedFilesIterator&#10;  3-Reuse the PreparedStatement's in Agenda's Helpers&#10;  4-Encapsulate the use of Properties in AgendaDbJDBC" />
+    <option name="LAST_COMMIT_MESSAGE" value="Incorpore changes done in Minerva: &#10;  1-Signal end of work with sound&#10;  2-Fix TargetDef with OnlyIncludedFilesIterator&#10;  3-Reuse the PreparedStatement's in Agenda's Helpers&#10;  4-Encapsulate the use of Properties in AgendaDbJDBC" />
     <option name="OPTIMIZE_IMPORTS_BEFORE_PROJECT_COMMIT" value="true" />
   </component>
   <component name="WindowStateProjectService">
@@ -1153,54 +1170,62 @@
       <screen x="55" y="27" width="1865" height="1053" />
     </state>
     <state x="720" y="301" width="524" height="502" key="#com.intellij.refactoring.typeMigration.ui.FailedConversionsDialog/55.27.1865.1053@55.27.1865.1053" timestamp="1598164818497" />
-    <state x="508" y="100" width="948" height="904" key="CommitChangelistDialog2" timestamp="1598175336895">
+    <state x="74" y="100" width="1382" height="904" key="CommitChangelistDialog2" timestamp="1598686823809">
       <screen x="55" y="27" width="1865" height="1053" />
     </state>
-    <state x="508" y="100" width="948" height="904" key="CommitChangelistDialog2/55.27.1865.1053@55.27.1865.1053" timestamp="1598175336895" />
-    <state x="64" y="47" width="1665" height="855" key="DiffContextDialog" timestamp="1598166085767">
+    <state x="74" y="100" width="1382" height="904" key="CommitChangelistDialog2/55.27.1865.1053@55.27.1865.1053" timestamp="1598686823809" />
+    <state x="101" y="107" width="1665" height="855" key="DiffContextDialog" timestamp="1598686812593">
       <screen x="55" y="27" width="1865" height="1053" />
     </state>
-    <state x="64" y="47" width="1665" height="855" key="DiffContextDialog/55.27.1865.1053@55.27.1865.1053" timestamp="1598166085767" />
+    <state x="101" y="107" width="1665" height="855" key="DiffContextDialog/55.27.1865.1053@55.27.1865.1053" timestamp="1598686812593" />
     <state x="765" y="310" width="424" height="484" key="FileChooserDialogImpl" timestamp="1598164334234">
       <screen x="55" y="27" width="1865" height="1053" />
     </state>
     <state x="765" y="310" width="424" height="484" key="FileChooserDialogImpl/55.27.1865.1053@55.27.1865.1053" timestamp="1598164334234" />
-    <state width="1819" height="270" key="GridCell.Tab.0.bottom" timestamp="1598176785434">
+    <state width="1819" height="270" key="GridCell.Tab.0.bottom" timestamp="1598686837994">
       <screen x="55" y="27" width="1865" height="1053" />
     </state>
-    <state width="1819" height="270" key="GridCell.Tab.0.bottom/55.27.1865.1053@55.27.1865.1053" timestamp="1598176785434" />
-    <state width="1819" height="270" key="GridCell.Tab.0.center" timestamp="1598176785434">
+    <state width="1819" height="270" key="GridCell.Tab.0.bottom/55.27.1865.1053@55.27.1865.1053" timestamp="1598686837994" />
+    <state width="1819" height="270" key="GridCell.Tab.0.center" timestamp="1598686837993">
       <screen x="55" y="27" width="1865" height="1053" />
     </state>
-    <state width="1819" height="270" key="GridCell.Tab.0.center/55.27.1865.1053@55.27.1865.1053" timestamp="1598176785434" />
-    <state width="1819" height="270" key="GridCell.Tab.0.left" timestamp="1598176785433">
+    <state width="1819" height="270" key="GridCell.Tab.0.center/55.27.1865.1053@55.27.1865.1053" timestamp="1598686837993" />
+    <state width="1819" height="270" key="GridCell.Tab.0.left" timestamp="1598686837993">
       <screen x="55" y="27" width="1865" height="1053" />
     </state>
-    <state width="1819" height="270" key="GridCell.Tab.0.left/55.27.1865.1053@55.27.1865.1053" timestamp="1598176785433" />
-    <state width="1819" height="270" key="GridCell.Tab.0.right" timestamp="1598176785434">
+    <state width="1819" height="270" key="GridCell.Tab.0.left/55.27.1865.1053@55.27.1865.1053" timestamp="1598686837993" />
+    <state width="1819" height="270" key="GridCell.Tab.0.right" timestamp="1598686837993">
       <screen x="55" y="27" width="1865" height="1053" />
     </state>
-    <state width="1819" height="270" key="GridCell.Tab.0.right/55.27.1865.1053@55.27.1865.1053" timestamp="1598176785434" />
+    <state width="1819" height="270" key="GridCell.Tab.0.right/55.27.1865.1053@55.27.1865.1053" timestamp="1598686837993" />
     <state x="665" y="235" width="624" height="633" key="RollbackChangesDialog" timestamp="1598175331099">
       <screen x="55" y="27" width="1865" height="1053" />
     </state>
     <state x="665" y="235" width="624" height="633" key="RollbackChangesDialog/55.27.1865.1053@55.27.1865.1053" timestamp="1598175331099" />
-    <state x="470" y="130" width="1024" height="845" key="SettingsEditor" timestamp="1598175705405">
+    <state x="470" y="130" width="1024" height="845" key="SettingsEditor" timestamp="1598684517648">
       <screen x="55" y="27" width="1865" height="1053" />
     </state>
-    <state x="470" y="130" width="1024" height="845" key="SettingsEditor/55.27.1865.1053@55.27.1865.1053" timestamp="1598175705405" />
-    <state x="582" y="274" width="800" height="556" key="Vcs.Push.Dialog.v2" timestamp="1598095366729">
+    <state x="470" y="130" width="1024" height="845" key="SettingsEditor/55.27.1865.1053@55.27.1865.1053" timestamp="1598684517648" />
+    <state x="582" y="274" width="800" height="556" key="Vcs.Push.Dialog.v2" timestamp="1598683762865">
       <screen x="55" y="27" width="1865" height="1053" />
     </state>
-    <state x="582" y="274" width="800" height="556" key="Vcs.Push.Dialog.v2/55.27.1865.1053@55.27.1865.1053" timestamp="1598095366729" />
+    <state x="582" y="274" width="800" height="556" key="Vcs.Push.Dialog.v2/55.27.1865.1053@55.27.1865.1053" timestamp="1598683762865" />
+    <state x="739" y="269" width="486" height="566" key="VcsDiffUtil.ChangesDialog" timestamp="1598685169840">
+      <screen x="55" y="27" width="1865" height="1053" />
+    </state>
+    <state x="739" y="269" width="486" height="566" key="VcsDiffUtil.ChangesDialog/55.27.1865.1053@55.27.1865.1053" timestamp="1598685169840" />
     <state x="294" y="129" width="1308" height="805" key="find.popup" timestamp="1598175352601">
       <screen x="55" y="27" width="1865" height="1053" />
     </state>
     <state x="294" y="129" width="1308" height="805" key="find.popup/55.27.1865.1053@55.27.1865.1053" timestamp="1598175352601" />
-    <state x="650" y="257" width="672" height="678" key="search.everywhere.popup" timestamp="1598176406911">
+    <state x="603" y="154" width="748" height="796" key="new project wizard" timestamp="1598684509882">
       <screen x="55" y="27" width="1865" height="1053" />
     </state>
-    <state x="650" y="257" width="672" height="678" key="search.everywhere.popup/55.27.1865.1053@55.27.1865.1053" timestamp="1598176406911" />
+    <state x="603" y="154" width="748" height="796" key="new project wizard/55.27.1865.1053@55.27.1865.1053" timestamp="1598684509882" />
+    <state x="650" y="257" width="672" height="678" key="search.everywhere.popup" timestamp="1598686600173">
+      <screen x="55" y="27" width="1865" height="1053" />
+    </state>
+    <state x="650" y="257" width="672" height="678" key="search.everywhere.popup/55.27.1865.1053@55.27.1865.1053" timestamp="1598686600173" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>

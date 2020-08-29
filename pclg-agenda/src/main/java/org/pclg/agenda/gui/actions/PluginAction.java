@@ -21,16 +21,18 @@ public final class PluginAction extends AbstractAction {
     private final Frame parent;
     private final transient AgendaDb agendaDb;
 
-	/** Últimos plugins usados. */
+	/** ï¿½ltimos plugins usados. */
 	private static final String LAST_PLUGIN_KEY_BASE_NAME = "PluginAction";
     private final transient ActionCallback callback;
 	private final VersatileComboBox pluginsValues;
+    private final Properties properties;
 
-	public PluginAction(final Frame parent, final Properties properties,
+    public PluginAction(final Frame parent, final Properties properties,
 		    final AgendaDb agendaDb, final int numberOfPlugins, final ActionCallback callback) {
         this.parent = parent;
         this.agendaDb = agendaDb;
         this.callback = callback;
+        this.properties = properties;
 		pluginsValues = new VersatileComboBox(parent, properties, LAST_PLUGIN_KEY_BASE_NAME, numberOfPlugins);
 	}
 
@@ -49,9 +51,9 @@ public final class PluginAction extends AbstractAction {
                         if (args.length > 1) {
                             final String[] args2 = new String[args.length - 1];
                             System.arraycopy(args, 1, args2, 0, args2.length);
-                            agendaDb.executePlugin(plugin, args2);
+                            agendaDb.executePlugin(plugin, properties, args2);
                         } else {
-                            agendaDb.executePlugin(plugin);
+                            agendaDb.executePlugin(plugin, properties);
                         }
                     } catch (SQLException e) {
                         LOGGER.error(LoggerFactory.ERROR_TAG, e);

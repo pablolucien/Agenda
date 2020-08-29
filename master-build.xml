@@ -25,7 +25,7 @@
         <ant antfile="pclg-compdel/src/main/resources/build.xml" target="${target}"/>
 <!--        <ant antfile="pclg-condominio/src/main/resources/build.xml" target="${target}"/>-->
         <ant antfile="net-asintec/src/main/resources/build.xml" target="${target}"/>
-<!--        <ant antfile="pclg-apps/src/main/config/build.xml" target="${target}"/>-->
+        <ant antfile="pclg-apps/src/main/config/build.xml" target="${target}"/>
     </target>
 
     <target name="Alles_src_zip" description="fuentes de la Alles">

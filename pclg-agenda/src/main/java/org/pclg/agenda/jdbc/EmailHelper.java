@@ -13,7 +13,7 @@ import static org.pclg.tools.StringTools.isEmptyOrBlank;
 
 /**
  * Premature optimization is the root of all evil.
- * —Donald E. Knuth
+ * ï¿½Donald E. Knuth
  *
  * @author El Coyote Cojo
  * @since 23/07/17 11:54
@@ -27,12 +27,14 @@ final class EmailHelper implements FieldManagerHelper {
         "SELECT Email FROM EMAIL WHERE Clave = ? AND Version = ? "
             + GeneralHelper.ORDER_BY_SECUENCIA_CLAUSE;
 
-    private final Connection dbConnection;
+    private final PreparedStatement selectStatement;
+    private final PreparedStatement insertStatement;
     private final GeneralHelper generalHelper;
 
-    EmailHelper(final Connection dbConnection, final GeneralHelper generalHelper) {
-        this.dbConnection = dbConnection;
+    EmailHelper(final Connection dbConnection, final GeneralHelper generalHelper) throws SQLException {
         this.generalHelper = generalHelper;
+        selectStatement = dbConnection.prepareStatement(SELECT_FROM_EMAIL_SENTENCE);
+        insertStatement = dbConnection.prepareStatement(INSERT_INTO_EMAIL_SENTENCE);
     }
 
     /**
@@ -42,39 +44,32 @@ final class EmailHelper implements FieldManagerHelper {
      * @param record el registro a actualizar.
      */
     @Override
-	public void retrieve(final AgendaRecord record)
-        throws SQLException {
-        try (final PreparedStatement stmt = dbConnection.prepareStatement(
-            SELECT_FROM_EMAIL_SENTENCE)) {
-            final List<String> emailsList = new ArrayList<>();
-            stmt.setInt(1, record.getKey());
-            stmt.setInt(2, record.getVersionEmail());
-            final ResultSet rset = stmt.executeQuery();
-            while (rset.next()) {
-                emailsList.add(rset.getString(1));
-            }
-            record.setEmails(emailsList);
+    public void retrieve(final AgendaRecord record) throws SQLException {
+        final List<String> emailsList = new ArrayList<>(1);
+        selectStatement.setInt(1, record.getKey());
+        selectStatement.setInt(2, record.getVersionEmail());
+        final ResultSet rset = selectStatement.executeQuery();
+        while (rset.next()) {
+            emailsList.add(rset.getString(1));
         }
+        record.setEmails(emailsList);
     }
 
     @Override
-	public int persist(final AgendaRecord record) throws SQLException {
-        try (final PreparedStatement stmt = dbConnection.prepareStatement(
-            INSERT_INTO_EMAIL_SENTENCE)) {
-            int secuencia = 0;
-            int nrUpdates = 0;
-            final int clave = record.getKey();
-            final int newVersionEmail = generalHelper.obtainNextVersion("EMAIL", clave);
-            for (final String email : record.getEmails()) {
-                if (!isEmptyOrBlank(email)) {
-                    stmt.setInt(1, clave);
-                    stmt.setInt(2, newVersionEmail);
-                    stmt.setInt(3, ++secuencia);
-                    stmt.setString(4, email);
-                    nrUpdates += stmt.executeUpdate();
-                }
+    public int persist(final AgendaRecord record) throws SQLException {
+        int secuencia = 0;
+        int nrUpdates = 0;
+        final int clave = record.getKey();
+        final int newVersionEmail = generalHelper.obtainNextVersion("EMAIL", clave);
+        for (final String email : record.getEmails()) {
+            if (!isEmptyOrBlank(email)) {
+                insertStatement.setInt(1, clave);
+                insertStatement.setInt(2, newVersionEmail);
+                insertStatement.setInt(3, ++secuencia);
+                insertStatement.setString(4, email);
+                nrUpdates += insertStatement.executeUpdate();
             }
-            return nrUpdates > 0 ? newVersionEmail : record.getVersionEmail();
         }
+        return nrUpdates > 0 ? newVersionEmail : record.getVersionEmail();
     }
 }

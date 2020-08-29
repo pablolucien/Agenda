@@ -16,7 +16,7 @@ import static org.pclg.tools.StringTools.isEmptyOrBlank;
 
 /**
  * Premature optimization is the root of all evil.
- * —Donald E. Knuth
+ * ï¿½Donald E. Knuth
  *
  * @author El Coyote Cojo
  * @since 23/07/17 10:36
@@ -29,22 +29,28 @@ public final class TelephoneHelper implements FieldManagerHelper {
         "SELECT countryPrefix, Numero, Tipo FROM TELEFONO WHERE Clave = ? AND Version = ? "
             + GeneralHelper.ORDER_BY_SECUENCIA_CLAUSE;
 
-    private static final String SELECT_ALL_TIPOS_TELEFONO =
+    private static final String SELECT_FROM_TIPOTELEFONO =
         "SELECT Clave, NOMBRE, ForeGroundColor FROM TipoTelefono ORDER BY NOMBRE ";
 
     private static final String INSERT_INTO_TIPOTELEFONO =
         "INSERT INTO TIPOTELEFONO (Clave, Nombre, ForegroundColor) VALUES (?, ?, ?)";
 
-    private final Connection dbConnection;
+    private final PreparedStatement selectStatement;
+    private final PreparedStatement insertStatement;
+    private final PreparedStatement selectTipoTelefonoStatement;
+    private final PreparedStatement insertTipoTelefonoStatement;
     private final GeneralHelper generalHelper;
 
-    TelephoneHelper(final Connection dbConnection, final GeneralHelper generalHelper) {
-        this.dbConnection = dbConnection;
+    TelephoneHelper(final Connection dbConnection, final GeneralHelper generalHelper) throws SQLException {
+        selectStatement = dbConnection.prepareStatement(SELECT_FROM_TELEFONO_SENTENCE);
+        insertStatement = dbConnection.prepareStatement(INSERT_INTO_TELEFONO_SENTENCE);
+        selectTipoTelefonoStatement = dbConnection.prepareStatement(SELECT_FROM_TIPOTELEFONO);
+        insertTipoTelefonoStatement = dbConnection.prepareStatement(INSERT_INTO_TIPOTELEFONO);
         this.generalHelper = generalHelper;
     }
 
     /**
-     * Actualiza un contacto con los teléfonos que le corresponden por su clave,
+     * Actualiza un contacto con los telï¿½fonos que le corresponden por su clave,
      * y version.
      *
      * @param record el registro a actualizar.
@@ -52,35 +58,28 @@ public final class TelephoneHelper implements FieldManagerHelper {
     @Override
 	public void retrieve(final AgendaRecord record)
         throws SQLException {
-        try (final PreparedStatement statement = dbConnection.prepareStatement(SELECT_FROM_TELEFONO_SENTENCE)) {
             final List<Telefono> telefonoList = new ArrayList<>();
-            statement.setInt(1, record.getKey());
-            statement.setInt(2, record.getVersionTelephone());
-            final ResultSet rset = statement.executeQuery();
+            selectStatement.setInt(1, record.getKey());
+            selectStatement.setInt(2, record.getVersionTelephone());
+            final ResultSet rset = selectStatement.executeQuery();
             while (rset.next()) {
                 telefonoList.add(
                     new Telefono(rset.getString(1), rset.getString(2), rset.getInt(3)));
             }
             record.setTelephones(telefonoList);
-        }
     }
 
     int addTipoTelefono(final String typeName, final int fgColor) throws SQLException {
         final int clave = generalHelper.obtainNextKey("TIPOTELEFONO");
-        try (final PreparedStatement pstmt = dbConnection.prepareStatement(
-                INSERT_INTO_TIPOTELEFONO)) {
-            pstmt.setInt(1, clave);
-            pstmt.setString(2, typeName);
-            pstmt.setInt(3, fgColor);
-            pstmt.execute();
-            dbConnection.commit();
+            insertTipoTelefonoStatement.setInt(1, clave);
+            insertTipoTelefonoStatement.setString(2, typeName);
+            insertTipoTelefonoStatement.setInt(3, fgColor);
+            insertTipoTelefonoStatement.execute();
             return clave;
-        }
     }
 
     @Override
 	public int persist(final AgendaRecord record) throws SQLException {
-        try (final PreparedStatement stmt = dbConnection.prepareStatement(INSERT_INTO_TELEFONO_SENTENCE)) {
             int secuencia = 0;
             int nrUpdates = 0;
             final int clave = record.getKey();
@@ -90,29 +89,26 @@ public final class TelephoneHelper implements FieldManagerHelper {
                 final String countryPrefix = telefono.getCountryPrefix();
                 int ii = 0;
                 if (!isEmptyOrBlank(numero)) {
-                    stmt.setInt(++ii, clave);
-                    stmt.setInt(++ii, newVersionTelefono);
-                    stmt.setInt(++ii, ++secuencia);
-                    stmt.setString(++ii, countryPrefix == null ? record.getCountry().getCountryCode() : countryPrefix); // FIXME: chapucilla hasta controlar bien countryPrefix
-                    stmt.setString(++ii, numero);
+                    insertStatement.setInt(++ii, clave);
+                    insertStatement.setInt(++ii, newVersionTelefono);
+                    insertStatement.setInt(++ii, ++secuencia);
+                    insertStatement.setString(++ii, countryPrefix == null ? record.getCountry().getCountryCode() : countryPrefix); // FIXME: chapucilla hasta controlar bien countryPrefix
+                    insertStatement.setString(++ii, numero);
                     final int tipo = telefono.getTipo();
                     if (tipo == 0) {
-                        stmt.setNull(++ii, Types.INTEGER);
+                        insertStatement.setNull(++ii, Types.INTEGER);
                     } else {
-                        stmt.setInt(++ii, tipo);
+                        insertStatement.setInt(++ii, tipo);
                     }
-                    nrUpdates += stmt.executeUpdate();
+                    nrUpdates += insertStatement.executeUpdate();
                 }
             }
             return nrUpdates > 0 ? newVersionTelefono : record.getVersionTelephone();
-        }
     }
 
     List<TipoTelefono> getTelephoneTypes() throws SQLException {
         final List<TipoTelefono> telephoneTypes = new ArrayList<>(GeneralHelper.LIST_INITIAL_CAPACITY);
-        try (final PreparedStatement pstmt = dbConnection.prepareStatement(
-                SELECT_ALL_TIPOS_TELEFONO);
-            final ResultSet rset = pstmt.executeQuery()) {
+        try (final ResultSet rset = selectTipoTelefonoStatement.executeQuery()) {
             while (rset.next()) {
                 final TipoTelefono tipoTelefono = new TipoTelefono(rset.getInt(1),
                     rset.getString(2), rset.getInt(3));

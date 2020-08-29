@@ -14,7 +14,7 @@ import java.util.List;
 
 /**
  * Premature optimization is the root of all evil.
- * —Donald E. Knuth
+ * ï¿½Donald E. Knuth
  *
  * @author El Coyote Cojo
  * @since 23/07/17 10:11
@@ -24,7 +24,10 @@ final class GroupHelper implements FieldManagerHelper {
      * El logger.
      */
     private static final Logger LOGGER = LoggerFactory.makeLog4J();
-    private final Connection dbConnection;
+    private final PreparedStatement selectFromGrupoStatement;
+    private final PreparedStatement insertIntoGrupoStatement;
+    private final PreparedStatement selectFromContactoGrupoStatement;
+    private final PreparedStatement insertIntoContactoGrupoStatement;
     private final GeneralHelper generalHelper;
 
     private static final String INSERT_INTO_CONTACTO_GRUPO_SENTENCE =
@@ -35,21 +38,23 @@ final class GroupHelper implements FieldManagerHelper {
         "SELECT ClaveGrupo FROM ContactoGrupo WHERE Clave = ? "
             + "AND Version = ? ORDER BY Secuencia";
 
-    private static final String SELECT_ALL_GRUPOS =
+    private static final String SELECT_FROM_GRUPO =
         "SELECT Clave, NOMBRE FROM GRUPO ORDER BY NOMBRE ";
 
     private static final String INSERT_INTO_GRUPO =
         "INSERT INTO GRUPO (Clave, Nombre) VALUES (?, ?)";
 
-    GroupHelper(final Connection dbConnection, final GeneralHelper generalHelper) {
-        this.dbConnection = dbConnection;
+    GroupHelper(final Connection dbConnection, final GeneralHelper generalHelper) throws SQLException {
+        selectFromGrupoStatement = dbConnection.prepareStatement(SELECT_FROM_GRUPO);
+        insertIntoGrupoStatement = dbConnection.prepareStatement(INSERT_INTO_GRUPO);
+        selectFromContactoGrupoStatement = dbConnection.prepareStatement(SELECT_FROM_CONTACTO_GRUPO_SENTENCE);
+        insertIntoContactoGrupoStatement = dbConnection.prepareStatement(INSERT_INTO_CONTACTO_GRUPO_SENTENCE);
         this.generalHelper = generalHelper;
     }
 
     @Override
-	public int persist(final AgendaRecord record) throws SQLException {
-        try (final PreparedStatement stmt = dbConnection.prepareStatement(
-            INSERT_INTO_CONTACTO_GRUPO_SENTENCE)) {
+    public int persist(final AgendaRecord record) throws SQLException {
+        try {
             int secuencia = 0;
             int nrUpdates = 0;
             final int clave = record.getKey();
@@ -73,11 +78,11 @@ final class GroupHelper implements FieldManagerHelper {
                     }
                     grupos.add(ii, grupo);
                 }
-                stmt.setInt(1, clave);
-                stmt.setInt(2, newVersionContactoGrupo);
-                stmt.setInt(3, ++secuencia);
-                stmt.setInt(4, grupo.getClave());
-                nrUpdates += stmt.executeUpdate();
+                insertIntoContactoGrupoStatement.setInt(1, clave);
+                insertIntoContactoGrupoStatement.setInt(2, newVersionContactoGrupo);
+                insertIntoContactoGrupoStatement.setInt(3, ++secuencia);
+                insertIntoContactoGrupoStatement.setInt(4, grupo.getClave());
+                nrUpdates += insertIntoContactoGrupoStatement.executeUpdate();
             }
             return nrUpdates > 0 ? newVersionContactoGrupo : record.getVersionGroup();
         } catch (final NullPointerException ex) {
@@ -88,40 +93,33 @@ final class GroupHelper implements FieldManagerHelper {
 
     int addGroup(final String groupName) throws SQLException {
         final int clave = generalHelper.obtainNextKey("GRUPO");
-        try (final PreparedStatement pstmt = dbConnection.prepareStatement(
-            INSERT_INTO_GRUPO)) {
-            pstmt.setInt(1, clave);
-            pstmt.setString(2, groupName);
-            pstmt.execute();
-            dbConnection.commit();
-            return clave;
-        }
+        insertIntoGrupoStatement.setInt(1, clave);
+        insertIntoGrupoStatement.setString(2, groupName);
+        insertIntoGrupoStatement.execute();
+        return clave;
     }
 
-    /** Actualiza un contacto con los teléfonos que le corresponden por su clave,
-   	 *  y version.
-   	 * @param record el registro a actualizar.
-   	 */
+    /**
+     * Actualiza un contacto con los telï¿½fonos que le corresponden por su clave,
+     * y version.
+     *
+     * @param record el registro a actualizar.
+     */
     @Override
-	public void retrieve(final AgendaRecord record) throws SQLException {
-        try (final PreparedStatement statement = dbConnection.prepareStatement(
-                SELECT_FROM_CONTACTO_GRUPO_SENTENCE)) {
-            final List<Grupo> groups = new ArrayList<>();
-            statement.setInt(1, record.getKey());
-            statement.setInt(2, record.getVersionGroup());
-            final ResultSet rset = statement.executeQuery();
-            while (rset.next()) {
-                groups.add(Grupo.getGrupo(rset.getInt(1)));
-            }
-            record.setGroups(groups);
+    public void retrieve(final AgendaRecord record) throws SQLException {
+        final List<Grupo> groups = new ArrayList<>();
+        selectFromContactoGrupoStatement.setInt(1, record.getKey());
+        selectFromContactoGrupoStatement.setInt(2, record.getVersionGroup());
+        final ResultSet rset = selectFromContactoGrupoStatement.executeQuery();
+        while (rset.next()) {
+            groups.add(Grupo.getGrupo(rset.getInt(1)));
         }
+        record.setGroups(groups);
     }
 
     List<Grupo> getGroups() throws SQLException {
         final List<Grupo> grupos = new ArrayList<>(GeneralHelper.LIST_INITIAL_CAPACITY);
-        try (final PreparedStatement pstmt = dbConnection.prepareStatement(
-                SELECT_ALL_GRUPOS);
-                final ResultSet rset = pstmt.executeQuery()) {
+        try (final ResultSet rset = selectFromGrupoStatement.executeQuery()) {
             while (rset.next()) {
                 final Grupo grupo = new Grupo(rset.getInt(1), rset.getString(2));
                 grupos.add(grupo);
