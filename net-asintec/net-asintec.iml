@@ -9,6 +9,6 @@
     <orderEntry type="inheritedJdk" />
     <orderEntry type="sourceFolder" forTests="false" />
     <orderEntry type="module" module-name="pclg-tools" />
+    <orderEntry type="library" name="lib_L&amp;F" level="project" />
   </component>
 </module>
-

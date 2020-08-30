@@ -11,7 +11,7 @@ import static org.testng.Assert.assertTrue;
 
 public class RuntimeToolsTest {
 
-    @Test
+    @Test(enabled = false)
     public void testGetExecutionPath() throws IOException {
         final File executionPath = RuntimeTools.getExecutionPath(getClass());
         assertNotNull(executionPath);

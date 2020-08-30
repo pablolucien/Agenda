@@ -1,42 +1,39 @@
 <project name="pclg-alter" default="build" basedir="../../../..">
 
     <description>Builds pclg alter</description>
+    <property name="module-name" value="alter"/>
 
-    <property name="module_pclg_alter" location="${basedir}/pclg-alter"/>
+    <property name="module" location="${basedir}/pclg-${module-name}"/>
     <property file="${basedir}/local_config.properties"/>
 
-    <property name="src" location="${module_pclg_alter}/src/main/java"/>
+    <property name="src" location="${module}/src/main/java"/>
+    <property name="resources" location="${module}/src/main/resources"/>
     <property name="lib_dir" value="${basedir}/../lib"/>
-    <property name="build" location="${basedir}/../../build-alter"/>
+    <property name="build" location="${basedir}/../../build-${module-name}"/>
     <property name="dist" location="${basedir}/../../dist"/>
-    <property name="pclg-alter_jar_name" value="pclg-alter.jar"/>
+    <property name="module_jar" value="pclg-${module-name}.jar"/>
+
     <property name="classpath" value="
-        ${lib_dir}/velocity-1.7-dep.jar:
-        ${lib_dir}/lib_L&amp;F/kunststoff.jar:
-        ${lib_dir}/gnu.getopt.jar:${lib_dir}/jdom-1.0.jar:
-        ${lib_dir}/jpatterns-0.1.jar:${lib_dir}/itextpdf-5.3.4.jar:
-        ${lib_dir}/jxl.jar:${lib_dir}/jid3lib-0.5.4.jar:
-        ${lib_dir}/javaee.jar:${lib_dir}/log4j-1.2.15.jar:
-        ${lib_dir}/ez-vcard-0.9.5.jar:
-        ${lib_dir}/jcommander-1.27.jar:
-        ${lib_dir}/docx4j-3.3.1.jar:
-        ${lib_dir}/serializer-2.7.2.jar:
-        ${lib_dir}/guava-18.0.jar:
-        ${lib_dir}/docx4j-3.3.1.jar:
-        ${lib_dir}/commons-io-1.3.2.jar:
-        ${lib_dir}/slf4j-api-1.7.7.jar:
-        ${lib_dir}/testng-6.8.8.jar:
-        ${lib_dir}/hamcrest-all-1.3.jar:
-        ${lib_dir}/awaitility-3.1.6.jar:
-        ${lib_dir}/json-20180130.jar:
 
         ${dist}/pclg-tools.jar:
         "/>
+
+    <!--    Tests-->
+    <property name="tests_dir" value="${module}/src/test"/>
+    <property name="build_tests" location="${basedir}/../../build-${module-name}_tests"/>
+    <property name="test_resources" location="${module}/src/test/resources"/>
+    <property name="build.test.results.dir" value="/tmp/test_results"/>
+    <taskdef resource="testngtasks" classpath="${lib_dir}/testng-6.8.8.jar"/>
+    <property name="test_classpath" value="
+        ${lib_dir}/testng-6.8.8.jar:
+        ${lib_dir}/jcommander-1.27.jar:
+    "/>
 
     <target name="_init">
         <tstamp/>
         <mkdir dir="${build}"/>
         <mkdir dir="${dist}"/>
+        <mkdir dir="${build_tests}"/>
     </target>
 
     <target name="_compile" depends="_init" description="Compile the sources">
@@ -56,8 +53,40 @@
         </javac>
     </target>
 
-    <target name="pclg-alter_jar" depends="_compile">
-        <jar destfile="${dist}/${pclg-alter_jar_name}" basedir="${build}" excludes="**">
+    <target name="_compile_tests" depends="_compile"
+            description="compile the tests ">
+        <javac
+                classpath="${test_classpath} : ${classpath} : ${build}"
+                includeantruntime="false"
+                srcdir="${tests_dir}"
+                destdir="${build_tests}"
+                deprecation="on"
+                debug="true"
+                verbose="no"
+                listfiles="yes"
+                source="${local_config.jdk-version}"
+                target="${local_config.jdk-version}"
+                encoding="ISO-8859-1">
+            <compilerarg value="-Xlint"/>
+        </javac>
+    </target>
+
+    <target name="_tests" depends="_compile_tests">
+        <testng failureProperty="test.failed" dumpCommand="true" outputdir="${build.test.results.dir}">
+            <classpath>
+                <path path="${test_resources} : ${test_classpath} : ${classpath} : ${build} : ${dist}"/>
+            </classpath>
+            <classpath location="${build_tests}"/>
+            <classpath location="${tests_dir}"/>
+
+            <classfileset dir="${build_tests}" includes="**/*Test*.class"/>
+
+        </testng>
+        <fail message="Test failure detected, check test results." if="test.failed"/>
+    </target>
+
+    <target name="module_jar" depends="_compile">
+        <jar destfile="${dist}/${module_jar}" basedir="${build}" excludes="**">
             <fileset dir="${build}" includes="**/*.class"/>
             <manifest>
                 <attribute name="Built-By" value="${user.name}"/>
@@ -67,12 +96,15 @@
         </jar>
     </target>
 
-    <target name="build" depends="pclg-alter_jar"/>
+    <target name="build" depends="_tests, module_jar"/>
 
      <target name="clean">
          <echo message="Cleaning ${ant.project.name}"/>
          <delete includeEmptyDirs="true">
              <fileset dir="${build}" includes="*/**"/>
+         </delete>
+         <delete includeEmptyDirs="true">
+             <fileset dir="${build_tests}" includes="*/**"/>
          </delete>
     </target>
 </project>
