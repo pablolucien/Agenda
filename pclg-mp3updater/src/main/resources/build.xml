@@ -3,6 +3,8 @@
     <description>Builds pclg mp3updater</description>
 
     <property name="module_pclg_mp3updater" location="${basedir}/pclg-mp3updater"/>
+    <property file="${basedir}/local_config.properties"/>
+
     <property name="src" location="${module_pclg_mp3updater}/src/main/java"/>
     <property name="lib_dir" value="${basedir}/../lib"/>
     <property name="build" location="${basedir}/../../build-mp3updater"/>
@@ -47,8 +49,8 @@
                 debug="true"
                 verbose="no"
                 listfiles="yes"
-                source="11"
-                target="11"
+                source="${local_config.jdk-version}"
+                target="${local_config.jdk-version}"
                 encoding="ISO-8859-1">
             <compilerarg value="-Xlint"/>
         </javac>

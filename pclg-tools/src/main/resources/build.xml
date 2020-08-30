@@ -3,6 +3,8 @@
     <description>Builds pclg tools</description>
 
     <property name="module_pclg_tools" location="${basedir}/pclg-tools"/>
+    <property file="${basedir}/local_config.properties"/>
+
     <property name="src" location="${module_pclg_tools}/src/main/java"/>
     <property name="resources" location="${module_pclg_tools}/src/main/resources"/>
     <property name="lib_dir" value="${basedir}/../lib"/>
@@ -61,8 +63,8 @@
                 debug="true"
                 verbose="no"
                 listfiles="yes"
-                source="11"
-                target="11"
+                source="${local_config.jdk-version}"
+                target="${local_config.jdk-version}"
                 encoding="ISO-8859-1">
             <compilerarg value="-Xlint"/>
         </javac>

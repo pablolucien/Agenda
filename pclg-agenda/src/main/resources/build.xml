@@ -64,8 +64,8 @@
                 debug="true"
                 verbose="no"
                 listfiles="yes"
-                source="11"
-                target="11"
+                source="${local_config.jdk-version}"
+                target="${local_config.jdk-version}"
                 encoding="ISO-8859-1">
             <compilerarg value="-Xlint"/>
         </javac>
