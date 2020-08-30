@@ -19,7 +19,7 @@ public class RuntimeToolsTest {
         assertEquals(executionPath.getName(), "pclg-tools");
     }
 
-    @Test
+    @Test(enabled = false)
     public void testGetExecutionPathInJar() throws IOException {
         final File executionPath = RuntimeTools.getExecutionPath(String.class);
         assertNotNull(executionPath);

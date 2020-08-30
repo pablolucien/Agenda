@@ -29,7 +29,7 @@ public class ThumbnailCreatorTest {
 	public static void init() throws IOException, URISyntaxException {
 		final File resourcesDir = new File(RESOURCES_DIR);
 		if (resourcesDir.exists() || resourcesDir.mkdirs()) {
-			final File source = new File(Runtime.getRuntime().getClass()
+			final File source = new File(ThumbnailCreatorTest.class
 				.getResource("/images/unknown-man.png").toURI());
 			final File target = new File(resourcesDir, source.getName());
 			if (!target.exists()) {
