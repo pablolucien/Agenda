@@ -5,7 +5,7 @@
     </CLASSES>
     <JAVADOC />
     <SOURCES>
-      <root url="file://$PROJECT_DIR$/../lib/jxlsrc" />
+      <root url="jar://$PROJECT_DIR$/../lib/jakarta.xml.bind-api-2.3.3-sources.jar!/" />
     </SOURCES>
     <jarDirectory url="file://$PROJECT_DIR$/../lib" recursive="false" />
   </library>
