@@ -1,29 +1,29 @@
-<project name="Alle Projekte" default="_dist" basedir="../../../..">
-    <description>
-        Construye todos los proyectos.
-    </description>
+<project name="pclg-apps" default="_dist" basedir="../../../..">
+
+    <description>Builds pclg apps</description>
+    <property name="module-name" value="apps"/>
+
+    <property name="module" location="${basedir}/pclg-${module-name}"/>
+    <property file="${basedir}/local_config.properties"/>
 
     <property name="img_dir" value="${basedir}/pclg-tools/src/main/resources/images"/>  <!-- FIXME: this don't belongs here   -->
     <!-- set global properties for this build -->
 
-    <property name="module_pclg_apps" location="${basedir}/pclg-apps"/>
     <property file="${basedir}/local_config.properties"/>
 
-    <property name="src" location="${module_pclg_apps}/src/main/java"/>
-    <property name="tests_dir" value="${module_pclg_apps}/src/test"/>
-    <property name="config_dir" location="${module_pclg_apps}/src/main/config"/>
+    <property name="src" location="${module}/src/main/java"/>
+    <property name="config_dir" location="${module}/src/main/config"/>
     <property name="properties" value="ProcessLauncher*.properties FileView.properties"/>
     <property name="lib_dir" value="${basedir}/../lib"/>
-    <property name="resources" location="${module_pclg_apps}/src/main/resources"/>
-    <property name="test_resources" location="${module_pclg_apps}/src/test/resources"/>
+    <property name="resources" location="${module}/src/main/resources"/>
     <property name="java_home" location="C:/usr/local/Java/jdk/current"/>
-    <property name="build" location="${basedir}/../../build"/>
-    <property name="build_tests" location="${basedir}/../../classes_tests"/>
+    <property name="build" location="${basedir}/../../build/${module-name}"/>
+
+
     <property name="dist" location="${basedir}/../../dist"/>
     <property name="docs_dir" location="${basedir}/../../docs"/>
     <property name="JDK_API_dir" location="${java_home}/docs/api"/>
     <property name="clear_lukas_jar_name" value="${dist}/Lukas.jar"/>
-    <property name="test.path" value=""/>
     <property name="classpath" value="
         ${lib_dir}/velocity-1.7-dep.jar:
         ${lib_dir}/lib_L&amp;F/kunststoff.jar:
@@ -47,6 +47,17 @@
         ${dist}/pclg-mp3updater.jar:
         "
     />
+
+    <!--    Tests-->
+    <property name="tests_dir" value="${module}/src/test"/>
+    <property name="build_tests" location="${basedir}/../../build/${module-name}_tests"/>
+    <property name="test_resources" location="${module}/src/test/resources"/>
+    <property name="build.test.results.dir" value="/tmp/test_results"/>
+    <taskdef resource="testngtasks" classpath="${lib_dir}/testng-6.8.8.jar"/>
+    <property name="test_classpath" value="
+        ${lib_dir}/testng-6.8.8.jar:
+        ${lib_dir}/jcommander-1.27.jar:
+    "/>
 
     <target name="_info">
         <echo>

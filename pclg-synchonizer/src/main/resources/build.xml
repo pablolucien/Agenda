@@ -8,7 +8,7 @@
     <property name="src" location="${module_pclg_synchonizer}/src/main/java"/>
     <property name="resources" location="${module_pclg_synchonizer}/src/main/resources"/>
     <property name="lib_dir" value="${basedir}/../lib"/>
-    <property name="build" location="${basedir}/../../build-synchonizer"/>
+    <property name="build" location="${basedir}/../../build/synchonizer"/>
     <property name="dist" location="${basedir}/../../dist"/>
     <property name="pclg-synchonizer_jar_name" value="pclg-synchonizer.jar"/>
 

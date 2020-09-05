@@ -8,7 +8,7 @@
     <property name="src" location="${module_pclg_condominio}/src/main/java"/>
     <property name="resources" location="${module_pclg_condominio}/src/main/resources"/>
     <property name="lib_dir" value="${basedir}/../lib"/>
-    <property name="build" location="${basedir}/../../build-condominio"/>
+    <property name="build" location="${basedir}/../../build/condominio"/>
     <property name="dist" location="${basedir}/../../dist"/>
     <property name="pclg-condominio_jar_name" value="pclg-condominio.jar"/>
 

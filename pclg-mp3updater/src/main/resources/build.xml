@@ -7,7 +7,7 @@
 
     <property name="src" location="${module_pclg_mp3updater}/src/main/java"/>
     <property name="lib_dir" value="${basedir}/../lib"/>
-    <property name="build" location="${basedir}/../../build-mp3updater"/>
+    <property name="build" location="${basedir}/../../build/mp3updater"/>
     <property name="dist" location="${basedir}/../../dist"/>
     <property name="pclg-mp3updater_jar_name" value="pclg-mp3updater.jar"/>
     <property name="classpath" value="

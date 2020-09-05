@@ -9,7 +9,7 @@
     <property name="src" location="${module}/src/main/java"/>
     <property name="resources" location="${module}/src/main/resources"/>
     <property name="lib_dir" value="${basedir}/../lib"/>
-    <property name="build" location="${basedir}/../../build-${module-name}"/>
+    <property name="build" location="${basedir}/../../build/${module-name}"/>
     <property name="dist" location="${basedir}/../../dist"/>
     <property name="module_jar" value="pclg-${module-name}.jar"/>
 
@@ -24,7 +24,7 @@
 
     <!--    Tests-->
     <property name="tests_dir" value="${module}/src/test"/>
-    <property name="build_tests" location="${basedir}/../../build-${module-name}_tests"/>
+    <property name="build_tests" location="${basedir}/../../build/${module-name}_tests"/>
     <property name="test_resources" location="${module}/src/test/resources"/>
     <property name="build.test.results.dir" value="/tmp/test_results"/>
     <taskdef resource="testngtasks" classpath="${lib_dir}/testng-6.8.8.jar"/>

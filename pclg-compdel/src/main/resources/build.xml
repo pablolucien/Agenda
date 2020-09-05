@@ -7,7 +7,7 @@
 
     <property name="src" location="${module_pclg_compdel}/src/main/java"/>
     <property name="lib_dir" value="${basedir}/../lib"/>
-    <property name="build" location="${basedir}/../../build-compdel"/>
+    <property name="build" location="${basedir}/../../build/compdel"/>
     <property name="dist" location="${basedir}/../../dist"/>
     <property name="pclg-compdel_jar_name" value="pclg-compdel.jar"/>
     <property name="classpath" value="

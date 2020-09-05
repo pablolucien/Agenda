@@ -8,7 +8,7 @@
     <property name="src" location="${module_net-asintec_migrator}/src/main/java"/>
     <property name="resources" location="${module_net-asintec_migrator}/src/main/resources"/>
     <property name="lib_dir" value="${basedir}/../lib"/>
-    <property name="build" location="${basedir}/../../build-migrator"/>
+    <property name="build" location="${basedir}/../../build/migrator"/>
     <property name="dist" location="${basedir}/../../dist"/>
     <property name="net-asintec-migrator_jar_name" value="net-asintec-migrator.jar"/>
 
