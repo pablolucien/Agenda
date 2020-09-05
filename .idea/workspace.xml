@@ -1,22 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="ca6eb6b6-6419-4d0e-a6aa-4254ec1c5806" name="Default" comment="Modify build files to externalize the java version to use. In local_config.properties define">
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/lib_L_F.xml" afterDir="false" />
+    <list default="true" id="ca6eb6b6-6419-4d0e-a6aa-4254ec1c5806" name="Default" comment="Rationalize de build files (disable some test for the moment)">
+      <change afterPath="$PROJECT_DIR$/pclg-apps/src/test/resources/images/unknown-man.png" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/net-asintec/net-asintec.iml" beforeDir="false" afterPath="$PROJECT_DIR$/net-asintec/net-asintec.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pclg-agenda/pclg-agenda.iml" beforeDir="false" afterPath="$PROJECT_DIR$/pclg-agenda/pclg-agenda.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pclg-agenda/src/main/resources/build.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pclg-agenda/src/main/resources/build.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pclg-alter/pclg-alter.iml" beforeDir="false" afterPath="$PROJECT_DIR$/pclg-alter/pclg-alter.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pclg-alter/src/main/resources/build.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pclg-alter/src/main/resources/build.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pclg-apps/pclg-apps.iml" beforeDir="false" afterPath="$PROJECT_DIR$/pclg-apps/pclg-apps.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pclg-compdel/pclg-compdel.iml" beforeDir="false" afterPath="$PROJECT_DIR$/pclg-compdel/pclg-compdel.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pclg-misc/pclg-misc.iml" beforeDir="false" afterPath="$PROJECT_DIR$/pclg-misc/pclg-misc.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pclg-mp3updater/pclg-mp3updater.iml" beforeDir="false" afterPath="$PROJECT_DIR$/pclg-mp3updater/pclg-mp3updater.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pclg-synchonizer/pclg-synchonizer.iml" beforeDir="false" afterPath="$PROJECT_DIR$/pclg-synchonizer/pclg-synchonizer.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pclg-tools/pclg-tools.iml" beforeDir="false" afterPath="$PROJECT_DIR$/pclg-tools/pclg-tools.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pclg-tools/src/main/resources/build.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pclg-tools/src/main/resources/build.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pclg-tools/src/test/java/org/pclg/runtime/RuntimeToolsTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/pclg-tools/src/test/java/org/pclg/runtime/RuntimeToolsTest.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -371,7 +358,7 @@
     <property name="options.searchVisible" value="true" />
     <property name="options.splitter.details.proportions" value="0.2" />
     <property name="options.splitter.main.proportions" value="0.3" />
-    <property name="project.structure.last.edited" value="Global Libraries" />
+    <property name="project.structure.last.edited" value="Libraries" />
     <property name="project.structure.proportion" value="0.15" />
     <property name="project.structure.side.proportion" value="0.39310345" />
     <property name="recentsLimit" value="5" />
@@ -718,13 +705,15 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration default="true" type="ArquillianJUnit" factoryName="" nameIsGenerated="true">
+    <configuration default="true" type="ArquillianTestNG" factoryName="" nameIsGenerated="true">
       <option name="arquillianRunConfiguration">
         <value>
           <option name="containerStateName" value="" />
         </value>
       </option>
-      <option name="TEST_OBJECT" value="class" />
+      <option name="TEST_OBJECT" value="CLASS" />
+      <properties />
+      <listeners />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
@@ -1062,7 +1051,7 @@
       <workItem from="1598175038231" duration="1722000" />
       <workItem from="1598683009625" duration="3799000" />
       <workItem from="1598767144112" duration="2263000" />
-      <workItem from="1598771706563" duration="12234000" />
+      <workItem from="1598771706563" duration="12381000" />
     </task>
     <task id="LOCAL-00001" summary="Manually resolve merge conficts">
       <created>1598095361969</created>
@@ -1120,7 +1109,14 @@
       <option name="project" value="LOCAL" />
       <updated>1598779129040</updated>
     </task>
-    <option name="localTasksCounter" value="9" />
+    <task id="LOCAL-00009" summary="Rationalize de build files (disable some test for the moment)">
+      <created>1598784843526</created>
+      <option name="number" value="00009" />
+      <option name="presentableId" value="LOCAL-00009" />
+      <option name="project" value="LOCAL" />
+      <updated>1598784843526</updated>
+    </task>
+    <option name="localTasksCounter" value="10" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -1137,7 +1133,6 @@
   <component name="VcsManagerConfiguration">
     <option name="CHECK_CODE_SMELLS_BEFORE_PROJECT_COMMIT" value="false" />
     <option name="CHECK_NEW_TODO" value="false" />
-    <MESSAGE value="Embellecimiento de DirTree" />
     <MESSAGE value="Move the lib directory" />
     <MESSAGE value="Parametrize the properties according to the runtime system" />
     <MESSAGE value="Store file modification info to avoid superfluous comparisons (follow-up)" />
@@ -1162,7 +1157,8 @@
     <MESSAGE value="Modify build files to externalize the java version to use. In local_config.properties define 'local_config.jdk-version=11'" />
     <MESSAGE value="Enable tests in pclg-agenda" />
     <MESSAGE value="Fix or disable tests" />
-    <option name="LAST_COMMIT_MESSAGE" value="Fix or disable tests" />
+    <MESSAGE value="Rationalize de build files (disable some test for the moment)" />
+    <option name="LAST_COMMIT_MESSAGE" value="Rationalize de build files (disable some test for the moment)" />
     <option name="OPTIMIZE_IMPORTS_BEFORE_PROJECT_COMMIT" value="true" />
   </component>
   <component name="WindowStateProjectService">
@@ -1190,50 +1186,50 @@
       <screen x="55" y="27" width="1865" height="1053" />
     </state>
     <state x="967" y="538" width="929" height="519" key="#xdebugger.evaluate/55.27.1865.1053@55.27.1865.1053" timestamp="1598778588603" />
-    <state x="285" y="64" width="1382" height="904" key="CommitChangelistDialog2" timestamp="1598783302528">
+    <state x="285" y="64" width="1382" height="904" key="CommitChangelistDialog2" timestamp="1598784843262">
       <screen x="55" y="27" width="1865" height="1053" />
     </state>
-    <state x="285" y="64" width="1382" height="904" key="CommitChangelistDialog2/55.27.1865.1053@55.27.1865.1053" timestamp="1598783302528" />
-    <state x="101" y="107" width="1665" height="855" key="DiffContextDialog" timestamp="1598784362237">
+    <state x="285" y="64" width="1382" height="904" key="CommitChangelistDialog2/55.27.1865.1053@55.27.1865.1053" timestamp="1598784843262" />
+    <state x="101" y="107" width="1665" height="855" key="DiffContextDialog" timestamp="1598784841154">
       <screen x="55" y="27" width="1865" height="1053" />
     </state>
-    <state x="101" y="107" width="1665" height="855" key="DiffContextDialog/55.27.1865.1053@55.27.1865.1053" timestamp="1598784362237" />
+    <state x="101" y="107" width="1665" height="855" key="DiffContextDialog/55.27.1865.1053@55.27.1865.1053" timestamp="1598784841154" />
     <state x="765" y="310" width="735" height="484" key="FileChooserDialogImpl" timestamp="1598780439154">
       <screen x="55" y="27" width="1865" height="1053" />
     </state>
     <state x="765" y="310" width="735" height="484" key="FileChooserDialogImpl/55.27.1865.1053@55.27.1865.1053" timestamp="1598780439154" />
-    <state width="1819" height="270" key="GridCell.Tab.0.bottom" timestamp="1598784468363">
+    <state width="1819" height="270" key="GridCell.Tab.0.bottom" timestamp="1598784852968">
       <screen x="55" y="27" width="1865" height="1053" />
     </state>
-    <state width="1819" height="270" key="GridCell.Tab.0.bottom/55.27.1865.1053@55.27.1865.1053" timestamp="1598784468363" />
-    <state width="1819" height="270" key="GridCell.Tab.0.center" timestamp="1598784468362">
+    <state width="1819" height="270" key="GridCell.Tab.0.bottom/55.27.1865.1053@55.27.1865.1053" timestamp="1598784852968" />
+    <state width="1819" height="270" key="GridCell.Tab.0.center" timestamp="1598784852967">
       <screen x="55" y="27" width="1865" height="1053" />
     </state>
-    <state width="1819" height="270" key="GridCell.Tab.0.center/55.27.1865.1053@55.27.1865.1053" timestamp="1598784468362" />
-    <state width="1819" height="270" key="GridCell.Tab.0.left" timestamp="1598784468362">
+    <state width="1819" height="270" key="GridCell.Tab.0.center/55.27.1865.1053@55.27.1865.1053" timestamp="1598784852967" />
+    <state width="1819" height="270" key="GridCell.Tab.0.left" timestamp="1598784852967">
       <screen x="55" y="27" width="1865" height="1053" />
     </state>
-    <state width="1819" height="270" key="GridCell.Tab.0.left/55.27.1865.1053@55.27.1865.1053" timestamp="1598784468362" />
-    <state width="1819" height="270" key="GridCell.Tab.0.right" timestamp="1598784468363">
+    <state width="1819" height="270" key="GridCell.Tab.0.left/55.27.1865.1053@55.27.1865.1053" timestamp="1598784852967" />
+    <state width="1819" height="270" key="GridCell.Tab.0.right" timestamp="1598784852967">
       <screen x="55" y="27" width="1865" height="1053" />
     </state>
-    <state width="1819" height="270" key="GridCell.Tab.0.right/55.27.1865.1053@55.27.1865.1053" timestamp="1598784468363" />
-    <state width="1819" height="334" key="GridCell.Tab.1.bottom" timestamp="1598778949335">
+    <state width="1819" height="270" key="GridCell.Tab.0.right/55.27.1865.1053@55.27.1865.1053" timestamp="1598784852967" />
+    <state width="1819" height="334" key="GridCell.Tab.1.bottom" timestamp="1598784852964">
       <screen x="55" y="27" width="1865" height="1053" />
     </state>
-    <state width="1819" height="334" key="GridCell.Tab.1.bottom/55.27.1865.1053@55.27.1865.1053" timestamp="1598778949335" />
-    <state width="1819" height="334" key="GridCell.Tab.1.center" timestamp="1598778949335">
+    <state width="1819" height="334" key="GridCell.Tab.1.bottom/55.27.1865.1053@55.27.1865.1053" timestamp="1598784852964" />
+    <state width="1819" height="334" key="GridCell.Tab.1.center" timestamp="1598784852964">
       <screen x="55" y="27" width="1865" height="1053" />
     </state>
-    <state width="1819" height="334" key="GridCell.Tab.1.center/55.27.1865.1053@55.27.1865.1053" timestamp="1598778949335" />
-    <state width="1819" height="334" key="GridCell.Tab.1.left" timestamp="1598778949335">
+    <state width="1819" height="334" key="GridCell.Tab.1.center/55.27.1865.1053@55.27.1865.1053" timestamp="1598784852964" />
+    <state width="1819" height="334" key="GridCell.Tab.1.left" timestamp="1598784852964">
       <screen x="55" y="27" width="1865" height="1053" />
     </state>
-    <state width="1819" height="334" key="GridCell.Tab.1.left/55.27.1865.1053@55.27.1865.1053" timestamp="1598778949335" />
-    <state width="1819" height="334" key="GridCell.Tab.1.right" timestamp="1598778949335">
+    <state width="1819" height="334" key="GridCell.Tab.1.left/55.27.1865.1053@55.27.1865.1053" timestamp="1598784852964" />
+    <state width="1819" height="334" key="GridCell.Tab.1.right" timestamp="1598784852964">
       <screen x="55" y="27" width="1865" height="1053" />
     </state>
-    <state width="1819" height="334" key="GridCell.Tab.1.right/55.27.1865.1053@55.27.1865.1053" timestamp="1598778949335" />
+    <state width="1819" height="334" key="GridCell.Tab.1.right/55.27.1865.1053@55.27.1865.1053" timestamp="1598784852964" />
     <state x="665" y="235" width="624" height="633" key="RollbackChangesDialog" timestamp="1598775034162">
       <screen x="55" y="27" width="1865" height="1053" />
     </state>
