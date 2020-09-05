@@ -6,7 +6,6 @@ import org.pclg.tools.ImageTools;
 import org.pclg.tools.PropertiesHelper;
 
 import javax.swing.ButtonGroup;
-import javax.swing.ImageIcon;
 import javax.swing.JMenu;
 import javax.swing.JMenuBar;
 import java.awt.event.ActionListener;
@@ -23,7 +22,6 @@ final class AlterMenu extends JMenuBar {
 
 	AlterMenu(final Properties properties, final ActionListener listener) {
 		final ListenerHelper listenerHelper = new ListenerHelper(listener);
-		final Class<? extends AlterMenu> myClass = getClass();
 		final JMenu fileMenu = new JMenu(
 			PropertiesHelper.getStringFromProperties(properties, "menu.file"));
 		GUITools.addMenuItem(e -> listenerHelper.notifyEvent(e, AlterCommand.EXIT), fileMenu,
@@ -37,25 +35,25 @@ final class AlterMenu extends JMenuBar {
 			PropertiesHelper.getStringFromProperties(properties, "idiomaLbl"));
 		GUITools.addRadioButtonMenuItem(listener, localeMenu, localeGroup,
 			PropertiesHelper.getStringFromProperties(properties, "espanaLbl"),
-			new ImageIcon(myClass.getResource(
-				getStringFromProperties(properties, "flgspain1.image"))));
+			ImageTools.getImageIcon((
+				getStringFromProperties(properties, "flgspain1.image"))).orElse(null));
 		GUITools.addRadioButtonMenuItem(listener, localeMenu, localeGroup,
 				PropertiesHelper.getStringFromProperties(properties, "espanaLbl"),
-				new ImageIcon(myClass.getResource(
+				ImageTools.getImageIcon(
 					PropertiesHelper
-						.getStringFromProperties(properties, "espanaRepublicana.image"))));
+						.getStringFromProperties(properties, "espanaRepublicana.image")).orElse(null));
 		GUITools.addRadioButtonMenuItem(listener, localeMenu, localeGroup,
 				PropertiesHelper.getStringFromProperties(properties, "deutschlandLbl"),
-				new ImageIcon(myClass.getResource(
-					PropertiesHelper.getStringFromProperties(properties, "deutschland.image"))));
+				ImageTools.getImageIcon(
+					PropertiesHelper.getStringFromProperties(properties, "deutschland.image")).orElse(null));
 		GUITools.addRadioButtonMenuItem(listener, localeMenu, localeGroup,
 				PropertiesHelper.getStringFromProperties(properties, "englandLbl"),
-				new ImageIcon(myClass.getResource(
-					PropertiesHelper.getStringFromProperties(properties, "uk.image"))));
+				ImageTools.getImageIcon(
+					PropertiesHelper.getStringFromProperties(properties, "uk.image")).orElse(null));
 		GUITools.addRadioButtonMenuItem(listener, localeMenu, localeGroup,
 				PropertiesHelper.getStringFromProperties(properties, "franceLbl"),
-				new ImageIcon(myClass.getResource(
-					PropertiesHelper.getStringFromProperties(properties, "france.image"))));
+				ImageTools.getImageIcon(
+					PropertiesHelper.getStringFromProperties(properties, "france.image")).orElse(null));
 
 		//lafMenu.setMnemonic(KeyEvent.VK_R);
 		add(fileMenu);

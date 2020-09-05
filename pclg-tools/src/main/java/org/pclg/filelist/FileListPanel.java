@@ -7,10 +7,10 @@ import org.pclg.gui.JLabeledField;
 import org.pclg.gui.VersatileComboBox;
 import org.pclg.log.LoggerFactory;
 import org.pclg.tools.FileComparator;
+import org.pclg.tools.ImageTools;
 import org.pclg.tools.PropertiesHelper;
 import org.pclg.tools.RegexFilter;
 
-import javax.swing.ImageIcon;
 import javax.swing.JButton;
 import javax.swing.JDialog;
 import javax.swing.JList;
@@ -60,11 +60,11 @@ public class FileListPanel extends JPanel {
 	/** Directorio de imagenes de navegacion. */
 	private static final String NAVIGATION_DIR= "/toolbarButtonGraphics/navigation/";
 
-	private final JButton fwdBt = new JButton(new ImageIcon(getClass().getResource(NAVIGATION_DIR + "Forward16.gif")));
-	private final JButton backBt = new JButton(new ImageIcon(getClass().getResource(NAVIGATION_DIR + "Back16.gif")));
-	private final JButton treeBt = new JButton(new ImageIcon(getClass().getResource(GENERAL_DIR + "Open16.gif")));
-	private final JButton scanBt = new JButton(new ImageIcon(getClass().getResource(GENERAL_DIR + "Refresh16.gif")));
-	private final JButton sortBt = new JButton(new ImageIcon(getClass().getResource(IMAGES_DIR + "sort.gif")));
+	private final JButton fwdBt = new JButton(ImageTools.getImageIcon(NAVIGATION_DIR + "Forward16.gif").orElse(null));
+	private final JButton backBt = new JButton(ImageTools.getImageIcon(NAVIGATION_DIR + "Back16.gif").orElse(null));
+	private final JButton treeBt = new JButton(ImageTools.getImageIcon(GENERAL_DIR + "Open16.gif").orElse(null));
+	private final JButton scanBt = new JButton(ImageTools.getImageIcon(GENERAL_DIR + "Refresh16.gif").orElse(null));
+	private final JButton sortBt = new JButton(ImageTools.getImageIcon(IMAGES_DIR + "sort.gif").orElse(null));
 
 	private final FileListModel fileListModel = new FileListModel();
 	private final JList<File> fileList = new JList<>(fileListModel);

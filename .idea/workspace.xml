@@ -1,94 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="ca6eb6b6-6419-4d0e-a6aa-4254ec1c5806" name="Default" comment="Rationalize de build files (disable some test for the moment)">
-      <change afterPath="$PROJECT_DIR$/net-asintec/src/main/java/module-info.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/pclg-agenda/src/main/java/module-info.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/pclg-alter/src/main/java/module-info.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/pclg-apps/src/main/java/module-info.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/pclg-compdel/src/main/java/module-info.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/pclg-misc/src/java/module-info.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/pclg-mp3updater/src/main/java/module-info.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/pclg-synchonizer/src/main/java/module-info.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/pclg-tools/src/main/java/module-info.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/lib.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/lib.xml" afterDir="false" />
+    <list default="true" id="ca6eb6b6-6419-4d0e-a6aa-4254ec1c5806" name="Default" comment="Continue modularization and add module-info.java descriptors">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pclg-apps/pclg-apps.iml" beforeDir="false" afterPath="$PROJECT_DIR$/pclg-apps/pclg-apps.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pclg-apps/src/main/java/org/pclg/Elephants.java" beforeDir="false" afterPath="$PROJECT_DIR$/pclg-tools/src/main/java/org/pclg/Elephants.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pclg-apps/src/main/java/org/pclg/dbutil/DbInfo.java" beforeDir="false" afterPath="$PROJECT_DIR$/pclg-tools/src/main/java/org/pclg/dbutil/DbInfo.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pclg-apps/src/main/java/org/pclg/dbutil/DbUpdate.java" beforeDir="false" afterPath="$PROJECT_DIR$/pclg-tools/src/main/java/org/pclg/dbutil/DbUpdate.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pclg-apps/src/main/java/org/pclg/filesystem/CopyTreeStruct.java" beforeDir="false" afterPath="$PROJECT_DIR$/pclg-tools/src/main/java/org/pclg/filesystem/CopyTreeStruct.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pclg-apps/src/main/java/org/pclg/filesystem/EndOfLineChanger.java" beforeDir="false" afterPath="$PROJECT_DIR$/pclg-tools/src/main/java/org/pclg/filesystem/EndOfLineChanger.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pclg-apps/src/main/java/org/pclg/filesystem/FileSplitter.java" beforeDir="false" afterPath="$PROJECT_DIR$/pclg-tools/src/main/java/org/pclg/filesystem/FileSplitter.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pclg-apps/src/main/java/org/pclg/filesystem/Magic.java" beforeDir="false" afterPath="$PROJECT_DIR$/pclg-tools/src/main/java/org/pclg/filesystem/Magic.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pclg-apps/src/main/java/org/pclg/filesystem/MagicEntry.java" beforeDir="false" afterPath="$PROJECT_DIR$/pclg-tools/src/main/java/org/pclg/filesystem/MagicEntry.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pclg-apps/src/main/java/org/pclg/filesystem/Touch.java" beforeDir="false" afterPath="$PROJECT_DIR$/pclg-tools/src/main/java/org/pclg/filesystem/Touch.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pclg-apps/src/main/java/org/pclg/runtime/Executioner.java" beforeDir="false" afterPath="$PROJECT_DIR$/pclg-tools/src/main/java/org/pclg/runtime/Executioner.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pclg-apps/src/main/java/org/pclg/runtime/JavaShellSwing_Deprecated.java" beforeDir="false" afterPath="$PROJECT_DIR$/pclg-tools/src/main/java/org/pclg/runtime/JavaShellSwing_Deprecated.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pclg-apps/src/main/java/org/pclg/runtime/ProcessLauncher.java" beforeDir="false" afterPath="$PROJECT_DIR$/pclg-tools/src/main/java/org/pclg/runtime/ProcessLauncher.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pclg-apps/src/main/java/org/pclg/security/Crypto.java" beforeDir="false" afterPath="$PROJECT_DIR$/pclg-tools/src/main/java/org/pclg/security/Crypto.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pclg-apps/src/main/java/org/pclg/security/Rotations.java" beforeDir="false" afterPath="$PROJECT_DIR$/pclg-tools/src/main/java/org/pclg/security/Rotations.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pclg-apps/src/main/java/org/pclg/security/Stega.java" beforeDir="false" afterPath="$PROJECT_DIR$/pclg-tools/src/main/java/org/pclg/security/Stega.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pclg-apps/src/main/java/org/pclg/security/Steganograph.java" beforeDir="false" afterPath="$PROJECT_DIR$/pclg-tools/src/main/java/org/pclg/security/Steganograph.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pclg-apps/src/main/java/org/pclg/tools/Browser.java" beforeDir="false" afterPath="$PROJECT_DIR$/pclg-tools/src/main/java/org/pclg/tools/Browser.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pclg-apps/src/main/java/org/pclg/tools/BrowserAbstractTableModel.java" beforeDir="false" afterPath="$PROJECT_DIR$/pclg-tools/src/main/java/org/pclg/tools/BrowserAbstractTableModel.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pclg-apps/src/main/java/org/pclg/tools/Chismoso.java" beforeDir="false" afterPath="$PROJECT_DIR$/pclg-tools/src/main/java/org/pclg/tools/Chismoso.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pclg-apps/src/main/java/org/pclg/tools/Clean.java" beforeDir="false" afterPath="$PROJECT_DIR$/pclg-tools/src/main/java/org/pclg/tools/Clean.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pclg-apps/src/main/java/org/pclg/tools/Clean.properties" beforeDir="false" afterPath="$PROJECT_DIR$/pclg-tools/src/main/java/org/pclg/tools/Clean.properties" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pclg-apps/src/main/java/org/pclg/tools/Clean.targets" beforeDir="false" afterPath="$PROJECT_DIR$/pclg-tools/src/main/java/org/pclg/tools/Clean.targets" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pclg-apps/src/main/java/org/pclg/tools/ConfigurableComparator.java" beforeDir="false" afterPath="$PROJECT_DIR$/pclg-tools/src/main/java/org/pclg/tools/ConfigurableComparator.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pclg-apps/src/main/java/org/pclg/tools/ControlableThread.java" beforeDir="false" afterPath="$PROJECT_DIR$/pclg-tools/src/main/java/org/pclg/tools/ControlableThread.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pclg-apps/src/main/java/org/pclg/tools/Dump.java" beforeDir="false" afterPath="$PROJECT_DIR$/pclg-tools/src/main/java/org/pclg/tools/Dump.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pclg-apps/src/main/java/org/pclg/tools/FontDialog.java" beforeDir="false" afterPath="$PROJECT_DIR$/pclg-tools/src/main/java/org/pclg/tools/FontDialog.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pclg-apps/src/main/java/org/pclg/tools/LabeledComponentLayout.java" beforeDir="false" afterPath="$PROJECT_DIR$/pclg-tools/src/main/java/org/pclg/tools/LabeledComponentLayout.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pclg-apps/src/main/java/org/pclg/tools/LabeledComponentLayout1.java" beforeDir="false" afterPath="$PROJECT_DIR$/pclg-tools/src/main/java/org/pclg/tools/LabeledComponentLayout1.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pclg-apps/src/main/java/org/pclg/tools/NotADirException.java" beforeDir="false" afterPath="$PROJECT_DIR$/pclg-tools/src/main/java/org/pclg/tools/NotADirException.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pclg-apps/src/main/java/org/pclg/tools/NullPrintStream.java" beforeDir="false" afterPath="$PROJECT_DIR$/pclg-tools/src/main/java/org/pclg/tools/NullPrintStream.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pclg-apps/src/main/java/org/pclg/tools/NumberParser.java" beforeDir="false" afterPath="$PROJECT_DIR$/pclg-tools/src/main/java/org/pclg/tools/NumberParser.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pclg-apps/src/main/java/org/pclg/tools/Pool.java" beforeDir="false" afterPath="$PROJECT_DIR$/pclg-tools/src/main/java/org/pclg/tools/Pool.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pclg-apps/src/main/java/org/pclg/tools/SameName.java" beforeDir="false" afterPath="$PROJECT_DIR$/pclg-tools/src/main/java/org/pclg/tools/SameName.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pclg-apps/src/main/java/org/pclg/tools/Stack.java" beforeDir="false" afterPath="$PROJECT_DIR$/pclg-tools/src/main/java/org/pclg/tools/Stack.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pclg-apps/src/main/java/org/pclg/tools/TableMap.java" beforeDir="false" afterPath="$PROJECT_DIR$/pclg-tools/src/main/java/org/pclg/tools/TableMap.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pclg-apps/src/main/java/org/pclg/tools/TableSorter.java" beforeDir="false" afterPath="$PROJECT_DIR$/pclg-tools/src/main/java/org/pclg/tools/TableSorter.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pclg-apps/src/main/java/org/pclg/tools/UpdFileDatabase.java" beforeDir="false" afterPath="$PROJECT_DIR$/pclg-tools/src/main/java/org/pclg/tools/UpdFileDatabase.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pclg-apps/src/main/java/org/pclg/tools/WorldCalendar.java" beforeDir="false" afterPath="$PROJECT_DIR$/pclg-tools/src/main/java/org/pclg/tools/WorldCalendar.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pclg-apps/src/main/java/org/pclg/tools/productivity/CasesReplacer.java" beforeDir="false" afterPath="$PROJECT_DIR$/pclg-tools/src/main/java/org/pclg/tools/productivity/CasesReplacer.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pclg-apps/src/main/java/org/pclg/tools/productivity/ChainOfResponsibility.java" beforeDir="false" afterPath="$PROJECT_DIR$/pclg-tools/src/main/java/org/pclg/tools/productivity/ChainOfResponsibility.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pclg-apps/src/main/java/org/pclg/tools/productivity/DataLayerConverterReplacer.java" beforeDir="false" afterPath="$PROJECT_DIR$/pclg-tools/src/main/java/org/pclg/tools/productivity/DataLayerConverterReplacer.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pclg-apps/src/main/java/org/pclg/tools/productivity/FileUtil.java" beforeDir="false" afterPath="$PROJECT_DIR$/pclg-tools/src/main/java/org/pclg/tools/productivity/FileUtil.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pclg-apps/src/main/java/org/pclg/tools/productivity/Flecos que quedan pendientes.txt" beforeDir="false" afterPath="$PROJECT_DIR$/pclg-tools/src/main/java/org/pclg/tools/productivity/Flecos que quedan pendientes.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pclg-apps/src/main/java/org/pclg/tools/productivity/MethodReplacer.java" beforeDir="false" afterPath="$PROJECT_DIR$/pclg-tools/src/main/java/org/pclg/tools/productivity/MethodReplacer.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pclg-apps/src/main/java/org/pclg/tools/productivity/NegationsReplacer.java" beforeDir="false" afterPath="$PROJECT_DIR$/pclg-tools/src/main/java/org/pclg/tools/productivity/NegationsReplacer.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pclg-apps/src/main/java/org/pclg/tools/productivity/RegexReplacer.java" beforeDir="false" afterPath="$PROJECT_DIR$/pclg-tools/src/main/java/org/pclg/tools/productivity/RegexReplacer.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pclg-apps/src/main/java/org/pclg/tools/productivity/RegexTester.java" beforeDir="false" afterPath="$PROJECT_DIR$/pclg-tools/src/main/java/org/pclg/tools/productivity/RegexTester.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pclg-apps/src/main/java/org/pclg/tools/productivity/RegexTutor.java" beforeDir="false" afterPath="$PROJECT_DIR$/pclg-tools/src/main/java/org/pclg/tools/productivity/RegexTutor.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pclg-apps/src/main/java/org/pclg/tools/productivity/Replacer.java" beforeDir="false" afterPath="$PROJECT_DIR$/pclg-tools/src/main/java/org/pclg/tools/productivity/Replacer.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pclg-apps/src/main/java/org/pclg/tools/productivity/ServicesReplacer.java" beforeDir="false" afterPath="$PROJECT_DIR$/pclg-tools/src/main/java/org/pclg/tools/productivity/ServicesReplacer.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pclg-apps/src/main/java/org/pclg/tools/productivity/condominio/Recibos.java" beforeDir="false" afterPath="$PROJECT_DIR$/pclg-tools/src/main/java/org/pclg/tools/productivity/condominio/Recibos.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pclg-apps/src/main/java/org/pclg/tools/productivity/dicos_replacements.txt" beforeDir="false" afterPath="$PROJECT_DIR$/pclg-tools/src/main/java/org/pclg/tools/productivity/dicos_replacements.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pclg-apps/src/main/java/org/pclg/tools/productivity/javas_replacements.txt" beforeDir="false" afterPath="$PROJECT_DIR$/pclg-tools/src/main/java/org/pclg/tools/productivity/javas_replacements.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pclg-apps/src/main/java/org/pclg/tools/velocity/VelocityDriver.java" beforeDir="false" afterPath="$PROJECT_DIR$/pclg-tools/src/main/java/org/pclg/tools/velocity/VelocityDriver.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pclg-apps/src/main/java/org/pclg/xtras/CFtp.java" beforeDir="false" afterPath="$PROJECT_DIR$/pclg-tools/src/main/java/org/pclg/xtras/CFtp.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pclg-apps/src/main/java/org/pclg/xtras/CRoundedButton.java" beforeDir="false" afterPath="$PROJECT_DIR$/pclg-tools/src/main/java/org/pclg/xtras/CRoundedButton.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pclg-apps/src/main/java/org/pclg/xtras/CSystem.java" beforeDir="false" afterPath="$PROJECT_DIR$/pclg-tools/src/main/java/org/pclg/xtras/CSystem.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pclg-apps/src/main/java/org/pclg/xtras/DateField.java" beforeDir="false" afterPath="$PROJECT_DIR$/pclg-tools/src/main/java/org/pclg/xtras/DateField.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pclg-apps/src/main/java/org/pclg/xtras/MaskedField.java" beforeDir="false" afterPath="$PROJECT_DIR$/pclg-tools/src/main/java/org/pclg/xtras/MaskedField.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pclg-apps/src/main/java/org/pclg/xtras/leeme.txt" beforeDir="false" afterPath="$PROJECT_DIR$/pclg-tools/src/main/java/org/pclg/xtras/leeme.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pclg-apps/src/test/java/org/pclg/filesystem/MagicTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/pclg-tools/src/test/java/org/pclg/filesystem/MagicTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pclg-apps/src/test/java/org/pclg/filesystem/TouchTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/pclg-tools/src/test/java/org/pclg/filesystem/TouchTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pclg-apps/src/test/java/org/pclg/security/CryptoTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/pclg-tools/src/test/java/org/pclg/security/CryptoTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pclg-apps/src/test/java/org/pclg/security/DigestTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/pclg-tools/src/test/java/org/pclg/security/DigestTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pclg-apps/src/test/java/org/pclg/tools/LightweightMapTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/pclg-tools/src/test/java/org/pclg/tools/LightweightMapTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pclg-apps/src/test/java/org/pclg/tools/NumberParserTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/pclg-tools/src/test/java/org/pclg/tools/NumberParserTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pclg-apps/src/test/java/org/pclg/tools/PropertiesHelperTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/pclg-tools/src/test/java/org/pclg/tools/PropertiesHelperTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pclg-apps/src/test/java/org/pclg/tools/TestObservableProperties.java" beforeDir="false" afterPath="$PROJECT_DIR$/pclg-tools/src/test/java/org/pclg/tools/TestObservableProperties.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pclg-apps/src/test/java/org/pclg/tools/velocity/NextAvailableFileTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/pclg-tools/src/test/java/org/pclg/tools/velocity/NextAvailableFileTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pclg-mp3updater/src/main/java/org/pclg/media/image/DateTimeAdjuster.java" beforeDir="false" afterPath="$PROJECT_DIR$/pclg-tools/src/main/java/org/pclg/media/image/DateTimeAdjuster.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pclg-mp3updater/src/main/java/org/pclg/media/imagetools/ImageChooser.java" beforeDir="false" afterPath="$PROJECT_DIR$/pclg-tools/src/main/java/org/pclg/media/imagetools/ImageChooser.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pclg-mp3updater/src/main/java/org/pclg/media/imagetools/ImageFileView.java" beforeDir="false" afterPath="$PROJECT_DIR$/pclg-tools/src/main/java/org/pclg/media/imagetools/ImageFileView.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pclg-mp3updater/src/main/java/org/pclg/media/imagetools/ImageFilter.java" beforeDir="false" afterPath="$PROJECT_DIR$/pclg-tools/src/main/java/org/pclg/media/imagetools/ImageFilter.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pclg-mp3updater/src/main/java/org/pclg/media/imagetools/ImagePreview.java" beforeDir="false" afterPath="$PROJECT_DIR$/pclg-tools/src/main/java/org/pclg/media/imagetools/ImagePreview.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pclg-mp3updater/src/main/java/org/pclg/media/imagetools/Utils.java" beforeDir="false" afterPath="$PROJECT_DIR$/pclg-tools/src/main/java/org/pclg/media/imagetools/Utils.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pclg-alter/src/main/java/org/pclg/alter/AlterMenu.java" beforeDir="false" afterPath="$PROJECT_DIR$/pclg-alter/src/main/java/org/pclg/alter/AlterMenu.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pclg-tools/src/main/java/org/pclg/filelist/FileListPanel.java" beforeDir="false" afterPath="$PROJECT_DIR$/pclg-tools/src/main/java/org/pclg/filelist/FileListPanel.java" afterDir="false" />
     </list>
     <list id="6eaabc47-20b5-4622-b4b5-a86e15e7458f" name="Deactivated temporarily" comment="">
       <change beforePath="$PROJECT_DIR$/pclg-apps/src/main/java/misc/sopra/PomUpdater.java" beforeDir="false" afterPath="$PROJECT_DIR$/pclg-apps/src/main/java/misc/sopra/PomUpdater.java" afterDir="false" />
@@ -483,7 +399,7 @@
       <recent name="C:\home\development\projects\Alles\src\test_resources\images\16x16" />
     </key>
   </component>
-  <component name="RunManager" selected="Application.MP3Update">
+  <component name="RunManager" selected="Application.Alter">
     <configuration default="true" type="Applet" factoryName="Applet">
       <module name="" />
       <option name="MAIN_CLASS_NAME" />
@@ -1153,7 +1069,7 @@
       <workItem from="1598771706563" duration="12381000" />
       <workItem from="1599284558251" duration="2580000" />
       <workItem from="1599287344448" duration="4161000" />
-      <workItem from="1599298918866" duration="4713000" />
+      <workItem from="1599298918866" duration="5548000" />
     </task>
     <task id="LOCAL-00001" summary="Manually resolve merge conficts">
       <created>1598095361969</created>
@@ -1239,7 +1155,14 @@
       <option name="project" value="LOCAL" />
       <updated>1599289366134</updated>
     </task>
-    <option name="localTasksCounter" value="13" />
+    <task id="LOCAL-00013" summary="Continue modularization and add module-info.java descriptors">
+      <created>1599305446301</created>
+      <option name="number" value="00013" />
+      <option name="presentableId" value="LOCAL-00013" />
+      <option name="project" value="LOCAL" />
+      <updated>1599305446301</updated>
+    </task>
+    <option name="localTasksCounter" value="14" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -1256,7 +1179,6 @@
   <component name="VcsManagerConfiguration">
     <option name="CHECK_CODE_SMELLS_BEFORE_PROJECT_COMMIT" value="false" />
     <option name="CHECK_NEW_TODO" value="false" />
-    <MESSAGE value="Store file modification info: fix some bugs" />
     <MESSAGE value="Fix DirTree icons path" />
     <MESSAGE value="Enhancements" />
     <MESSAGE value="Fix the check of unmodified dates" />
@@ -1281,7 +1203,8 @@
     <MESSAGE value="Save workspace" />
     <MESSAGE value="Incorporate changes done in Minerva: &#10;  1-Get rid of ${ROOT_C_home}&#10;  2-Changes in links" />
     <MESSAGE value="Rationalize de build files (fix build paths)&#10;Add sonarlint" />
-    <option name="LAST_COMMIT_MESSAGE" value="Rationalize de build files (fix build paths)&#10;Add sonarlint" />
+    <MESSAGE value="Continue modularization and add module-info.java descriptors" />
+    <option name="LAST_COMMIT_MESSAGE" value="Continue modularization and add module-info.java descriptors" />
     <option name="OPTIMIZE_IMPORTS_BEFORE_PROJECT_COMMIT" value="true" />
   </component>
   <component name="WindowStateProjectService">
@@ -1317,34 +1240,34 @@
       <screen x="55" y="27" width="1865" height="1053" />
     </state>
     <state x="967" y="538" width="929" height="519" key="#xdebugger.evaluate/55.27.1865.1053@55.27.1865.1053" timestamp="1598778588603" />
-    <state x="285" y="64" width="1382" height="904" key="CommitChangelistDialog2" timestamp="1599291080279">
+    <state x="285" y="64" width="1382" height="904" key="CommitChangelistDialog2" timestamp="1599305689842">
       <screen x="55" y="27" width="1865" height="1053" />
     </state>
-    <state x="285" y="64" width="1382" height="904" key="CommitChangelistDialog2/55.27.1865.1053@55.27.1865.1053" timestamp="1599291080279" />
-    <state x="101" y="107" width="1665" height="855" key="DiffContextDialog" timestamp="1599291079235">
+    <state x="285" y="64" width="1382" height="904" key="CommitChangelistDialog2/55.27.1865.1053@55.27.1865.1053" timestamp="1599305689842" />
+    <state x="101" y="107" width="1665" height="855" key="DiffContextDialog" timestamp="1599305689121">
       <screen x="55" y="27" width="1865" height="1053" />
     </state>
-    <state x="101" y="107" width="1665" height="855" key="DiffContextDialog/55.27.1865.1053@55.27.1865.1053" timestamp="1599291079235" />
+    <state x="101" y="107" width="1665" height="855" key="DiffContextDialog/55.27.1865.1053@55.27.1865.1053" timestamp="1599305689121" />
     <state x="765" y="310" width="735" height="484" key="FileChooserDialogImpl" timestamp="1599290812154">
       <screen x="55" y="27" width="1865" height="1053" />
     </state>
     <state x="765" y="310" width="735" height="484" key="FileChooserDialogImpl/55.27.1865.1053@55.27.1865.1053" timestamp="1599290812154" />
-    <state width="1819" height="270" key="GridCell.Tab.0.bottom" timestamp="1599305149453">
+    <state width="1819" height="270" key="GridCell.Tab.0.bottom" timestamp="1599305914744">
       <screen x="55" y="27" width="1865" height="1053" />
     </state>
-    <state width="1819" height="270" key="GridCell.Tab.0.bottom/55.27.1865.1053@55.27.1865.1053" timestamp="1599305149453" />
-    <state width="1819" height="270" key="GridCell.Tab.0.center" timestamp="1599305149451">
+    <state width="1819" height="270" key="GridCell.Tab.0.bottom/55.27.1865.1053@55.27.1865.1053" timestamp="1599305914744" />
+    <state width="1819" height="270" key="GridCell.Tab.0.center" timestamp="1599305914744">
       <screen x="55" y="27" width="1865" height="1053" />
     </state>
-    <state width="1819" height="270" key="GridCell.Tab.0.center/55.27.1865.1053@55.27.1865.1053" timestamp="1599305149451" />
-    <state width="1819" height="270" key="GridCell.Tab.0.left" timestamp="1599305149450">
+    <state width="1819" height="270" key="GridCell.Tab.0.center/55.27.1865.1053@55.27.1865.1053" timestamp="1599305914744" />
+    <state width="1819" height="270" key="GridCell.Tab.0.left" timestamp="1599305914744">
       <screen x="55" y="27" width="1865" height="1053" />
     </state>
-    <state width="1819" height="270" key="GridCell.Tab.0.left/55.27.1865.1053@55.27.1865.1053" timestamp="1599305149450" />
-    <state width="1819" height="270" key="GridCell.Tab.0.right" timestamp="1599305149452">
+    <state width="1819" height="270" key="GridCell.Tab.0.left/55.27.1865.1053@55.27.1865.1053" timestamp="1599305914744" />
+    <state width="1819" height="270" key="GridCell.Tab.0.right" timestamp="1599305914744">
       <screen x="55" y="27" width="1865" height="1053" />
     </state>
-    <state width="1819" height="270" key="GridCell.Tab.0.right/55.27.1865.1053@55.27.1865.1053" timestamp="1599305149452" />
+    <state width="1819" height="270" key="GridCell.Tab.0.right/55.27.1865.1053@55.27.1865.1053" timestamp="1599305914744" />
     <state width="1819" height="334" key="GridCell.Tab.1.bottom" timestamp="1598784852964">
       <screen x="55" y="27" width="1865" height="1053" />
     </state>
