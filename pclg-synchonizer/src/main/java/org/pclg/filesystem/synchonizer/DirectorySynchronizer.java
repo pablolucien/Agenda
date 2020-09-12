@@ -115,9 +115,9 @@ public class DirectorySynchronizer {
     }
 
     void synchronizeDirectories(final TargetDef targetDef) {
-        targetDef.resetPairsCounter(); // chapucilla temporal (que como todo lo "temporal", durará para siempre :(
+        targetDef.resetPairsCounter(); // chapucilla temporal (que como todo lo "temporal", durarï¿½ para siempre :(
         Pair<File, File> filePair;
-        while ((filePair = targetDef.getFilePair()) != null) {    // FIXME: Repensar esto: no hay que darle más vueltas :) (al getFilePair())
+        while ((filePair = targetDef.getFilePair()) != null) {    // FIXME: Repensar esto: no hay que darle mï¿½s vueltas :) (al getFilePair())
             final File dir1 = filePair.first();
             final File dir2 = filePair.second();
             if (dir1.equals(dir2)) {

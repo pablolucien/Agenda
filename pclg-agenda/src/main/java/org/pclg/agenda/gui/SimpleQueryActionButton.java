@@ -14,8 +14,8 @@ import java.util.Properties;
 import static org.pclg.tools.PropertiesHelper.getStringFromProperties;
 
 /**
- * Una clase de acción que ejecuta el listado de los contactos con una
- * query simple (sin parámetros ni set-up.
+ * Una clase de acciï¿½n que ejecuta el listado de los contactos con una
+ * query simple (sin parï¿½metros ni set-up.
  * @since 2016.03.01
  */
 final class SimpleQueryActionButton extends JButton {
@@ -23,8 +23,8 @@ final class SimpleQueryActionButton extends JButton {
     private static final long serialVersionUID = 8064010355934180967L;
 
     /**
-     * Una clase de acción que ejecuta el listado de los contactos con una
-     * query simple (sin parámetros ni set-up.
+     * Una clase de acciï¿½n que ejecuta el listado de los contactos con una
+     * query simple (sin parï¿½metros ni set-up.
      * @since 2016.03.01
      */
     private final class SimpleQueryAction extends AbstractAction {
@@ -53,7 +53,7 @@ final class SimpleQueryActionButton extends JButton {
      *
      * @param criterium the <code>Action</code> used to specify the new button
      * @param i18nManager el manager a usar
-     * @param properties de dónde sacar los textos.
+     * @param properties de dï¿½nde sacar los textos.
 	 * @since 1.3
      */
     SimpleQueryActionButton(final AgendaGUI.ListCriterium criterium, final SimpleQueryExecutor executor,

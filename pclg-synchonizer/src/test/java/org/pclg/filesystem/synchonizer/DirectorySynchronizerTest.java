@@ -62,7 +62,7 @@ public class DirectorySynchronizerTest {
     }
 
     private void cleanUpSynchronizeTest() throws IOException {
-        LOGGER.debug("Debería estar limpiando...\n... pero estoy descansando");
+        LOGGER.debug("Deberï¿½a estar limpiando...\n... pero estoy descansando");
         FileTools.delTree(dir1, true, true);
         FileTools.delTree(dir2, true, true);
     }

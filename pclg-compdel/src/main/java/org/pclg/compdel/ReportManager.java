@@ -50,7 +50,7 @@ class ReportManager {
 				final int res = JOptionPane
 					.showConfirmDialog(parent, file.getName()
 							+ " ya existe "
-							+ LINE_SEPARATOR + " ¿Reemplazar el fichero?",
+							+ LINE_SEPARATOR + " ï¿½Reemplazar el fichero?",
 						file.getName() + " ya existe",
 						JOptionPane.YES_NO_OPTION);
 				if (res == JOptionPane.YES_OPTION) {

@@ -4,8 +4,9 @@ module pclg.tools {
     requires java.logging;
     requires java.sql;
     requires jpatterns;
-    requires log4j;
     requires velocity;
+    requires org.apache.log4j;
+    requires org.apache.logging.log4j;
 
     exports dbinfo;
     exports org.pclg.annotations;

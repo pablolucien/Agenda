@@ -35,7 +35,7 @@ public final class CountryMgtPanel extends JPanel {
     private static final long serialVersionUID = -1296845584355689930L;
     private final JList<Pais> listaPaises = new JList<>();
 	private final CountryPanel countryPanel;
-	private final AgendaDb agendaDb; // FIXME: no se si esto debe estar aquí o en Pais o dónde
+	private final AgendaDb agendaDb; // FIXME: no se si esto debe estar aquï¿½ o en Pais o dï¿½nde
 
 	public CountryMgtPanel(final Properties properties, final AgendaDb agendaDb) {
 		super(new BorderLayout());
@@ -105,14 +105,14 @@ public final class CountryMgtPanel extends JPanel {
 				message.setText("");
 				final String code = codeField.getText();
 				if (isEmptyOrBlank(code)) {
-					final String msg= "Tratando de agregar Pais con código vacío. No hago nada";
+					final String msg= "Tratando de agregar Pais con cï¿½digo vacï¿½o. No hago nada";
 					message.setText(msg);
 					LOGGER.warn(msg);
 						return;
 				}
 				final String name = nameField.getText();
 				if (isEmptyOrBlank(name)) {
-					final String msg = "Tratando de agregar Pais con nombre vacío. No hago nada";
+					final String msg = "Tratando de agregar Pais con nombre vacï¿½o. No hago nada";
 					message.setText(msg);
 					LOGGER.warn(msg);
 						return;
@@ -134,11 +134,11 @@ public final class CountryMgtPanel extends JPanel {
 				}
 				try {
 					if (countryExists) {
-						LOGGER.debug("Modificando País : " + name);
+						LOGGER.debug("Modificando Paï¿½s : " + name);
 						LOGGER.debug("Antes : " + Pais.getPaises());
 						agendaDb.updateCountry(code, name, phoneMask);
 					} else {
-						LOGGER.debug("Agregando País : " + name);
+						LOGGER.debug("Agregando Paï¿½s : " + name);
 						LOGGER.debug("Antes : " + Pais.getPaises());
 						agendaDb.addCountry(code, name, phoneMask);
 					}

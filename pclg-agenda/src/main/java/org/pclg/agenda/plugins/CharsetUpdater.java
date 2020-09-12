@@ -92,7 +92,7 @@ class CharsetUpdater implements Plugin {
 
 	/**
 	 * Convierte los strings con caracterers "raros" del formato de Clarion.
-	 * (Probablemente lo mejor sería hacer esto de una vez por todas en
+	 * (Probablemente lo mejor serï¿½a hacer esto de una vez por todas en
 	 * la BD)
 	 * @param string a convertir.
 	 * @return string convertido.

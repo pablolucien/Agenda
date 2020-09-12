@@ -23,7 +23,7 @@ import java.util.Properties;
 /**
  * Provides services for the management of the Look-n-Feel of swing applications.
  * Premature optimization is the root of all evil.
- * —Donald E. Knuth
+ * ï¿½Donald E. Knuth
  *
  * @author El Coyote Cojo
  * @since 19/08/17 13:10

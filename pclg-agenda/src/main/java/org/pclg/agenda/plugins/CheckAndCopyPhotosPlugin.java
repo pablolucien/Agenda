@@ -28,7 +28,7 @@ public class CheckAndCopyPhotosPlugin implements Plugin {
 
     /**
      * @param properties properties of the application.
-     * @param conn       la conexion a la base de datos para leer las imágenes.
+     * @param conn       la conexion a la base de datos para leer las imï¿½genes.
      * @param args       contiene la unidad donde leer la imagen, si no existe la
      */
     @Override

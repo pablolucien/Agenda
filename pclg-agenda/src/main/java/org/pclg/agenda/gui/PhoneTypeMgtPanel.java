@@ -34,7 +34,7 @@ public class PhoneTypeMgtPanel extends JPanel {
 	private static final Logger LOGGER = LoggerFactory.makeLog4J();
     public static final int TIPO_TELEFONO_NAME_LEN = 20;
     private final JList<TipoTelefono> listaTipoTelefonos = new JList<>();
-	private final AgendaDb agendaDb; // FIXME: no se si esto debe estar aquí o en TipoTelefono o dónde
+	private final AgendaDb agendaDb; // FIXME: no se si esto debe estar aquï¿½ o en TipoTelefono o dï¿½nde
 	private final JDialog colorChooseDialog;
 	private final JColorChooser tcc;
 
@@ -67,7 +67,7 @@ public class PhoneTypeMgtPanel extends JPanel {
 		final I18NManager i18nManager = I18NManager.getInstance(properties);
 		final JButton colorChooser = new JButton();
 		panel.add(i18nManager.configureI18NComponent(colorChooser, "AgendaGUI.colorButton"));
-		colorChooser.setToolTipText("Elección del color");
+		colorChooser.setToolTipText("Elecciï¿½n del color");
 		colorChooser.addActionListener(e -> colorChooseDialog.setVisible(true));
 		panel.add(colorChooser);
         tcc.getSelectionModel().addChangeListener(

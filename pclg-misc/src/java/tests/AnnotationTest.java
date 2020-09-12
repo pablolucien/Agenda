@@ -21,7 +21,7 @@ final class AnnotationTest {
 			LOGGER.error(annotation.toString());
 		}
 		final QuickAndDirty annotation = getClass().getAnnotation(QuickAndDirty.class);
-		// Ojo: Esto vale si la anotación tiene @Retention(RetentionPolicy.RUNTIME)
+		// Ojo: Esto vale si la anotaciï¿½n tiene @Retention(RetentionPolicy.RUNTIME)
 		if (annotation != null) {
 			LOGGER.error(annotation.reason());
 		}

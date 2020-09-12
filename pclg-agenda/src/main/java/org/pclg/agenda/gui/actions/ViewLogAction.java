@@ -1,7 +1,7 @@
 package org.pclg.agenda.gui.actions;
 
-import org.apache.log4j.Appender;
-import org.apache.log4j.FileAppender;
+//import org.apache.log4j.Appender;
+//import org.apache.log4j.FileAppender;
 import org.apache.log4j.Logger;
 import org.pclg.agenda.gui.AgendaGUI;
 import org.pclg.gui.JTabbedPaneWithCloseIcons;
@@ -58,14 +58,14 @@ public class ViewLogAction extends AbstractAction {
             }
         }
         final List<FileControl> logFiles = new ArrayList<>();
-        while (allAppenders.hasMoreElements()) {
-            final Appender appender = (Appender) allAppenders.nextElement();
-            if (appender instanceof FileAppender) {
-                final String fileName = ((FileAppender) appender).getFile();
-                logFiles.add(new FileControl(new File(fileName)));
-                fileNames.append(fileName).append(", ");
-            }
-        }
+//        while (allAppenders.hasMoreElements()) {
+//            final Appender appender = (Appender) allAppenders.nextElement();
+//            if (appender instanceof FileAppender) {
+//                final String fileName = ((FileAppender) appender).getFile();
+//                logFiles.add(new FileControl(new File(fileName)));
+//                fileNames.append(fileName).append(", ");
+//            }
+//        }
 
         final Timer timer = new Timer();
         timer.schedule(new TimerTask() {

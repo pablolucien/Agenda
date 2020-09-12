@@ -241,7 +241,7 @@ public final class ToolBox {
 //     * @since 2001.09.08 22:27
 //     */
 //    public static String formatNumber(int n) {
-//        return (formatNumber(n));    // ¿No hay que hacer el cast a long ?????
+//        return (formatNumber(n));    // ï¿½No hay que hacer el cast a long ?????
 //    }
 
 
@@ -262,8 +262,8 @@ public final class ToolBox {
 			final String msg =
 					"ToolBox.writeToFile(byte [] data, File file)\nEl archivo <"
 							+ file.getName()
-							+ "> existe.\n¿Qu\u00E9 desea hacer:";
-			final String title = "Atención";
+							+ "> existe.\nï¿½Qu\u00E9 desea hacer:";
+			final String title = "Atenciï¿½n";
 			choice = GUITools.showMessage(msg, title, options);
 			if (choice == 0) {
 				return false;
@@ -297,7 +297,7 @@ public final class ToolBox {
 
 
 	/**
-	 * Muestra la informacion relativa a una Exception dando más informacion cuando se puede
+	 * Muestra la informacion relativa a una Exception dando mï¿½s informacion cuando se puede
 	 * --author El Coyote cojo
 	 * @since 2001.07.13
 	 *
@@ -308,7 +308,7 @@ public final class ToolBox {
 	}
 
     /**
-     * Muestra la informacion relativa a una Exception dando más informacion cuando se puede
+     * Muestra la informacion relativa a una Exception dando mï¿½s informacion cuando se puede
      * --author El Coyote cojo
      * @since 2001.07.13
      *
@@ -318,11 +318,11 @@ public final class ToolBox {
     public static void showInfo(final Throwable ex, final boolean showStack) {
         LOGGER.error("\t\tSituation normal, all fucked up.");
         if (ex == null) {
-            LOGGER.error("\t\tYa es el colmo: pasar null como excepción.");
+            LOGGER.error("\t\tYa es el colmo: pasar null como excepciï¿½n.");
             return;
         }
         // si no es una de las excepciones que manejamos o se nos pide
-		// explícitamente mostramos el Stack Trace.
+		// explï¿½citamente mostramos el Stack Trace.
         if (!(ex instanceof SQLException) && !(ex instanceof ParseException)
 				|| showStack) {
             LOGGER.log(Level.ERROR, "Error", ex);
@@ -420,7 +420,7 @@ public final class ToolBox {
 
     /**
      * Lo que su nombre indica.
-     * @param path el directorio donde hacer la búsqueda.
+     * @param path el directorio donde hacer la bï¿½squeda.
      * @return un array con todas las clases que hay en este directorio o hijos.
      */
     private static Optional<String[]> findAllClassesInDirSubTree(final File path) {
@@ -463,7 +463,7 @@ public final class ToolBox {
 
 
     /**
-     * Cambia los caracteres extraños por '_'
+     * Cambia los caracteres extraï¿½os por '_'
      *
      * @param name El nombre a normalizar
      * @return El nombre normalizado
@@ -491,10 +491,10 @@ public final class ToolBox {
 
     /**
      * Devuelve un long, tratando de interpretar el String 'cant' que debe
-     * ser de la forma <n>[b|k|m|g|t] (bytes por omisión).
+     * ser de la forma <n>[b|k|m|g|t] (bytes por omisiï¿½n).
      *
      * @param cant El string
-     * @return El tamaño
+     * @return El tamaï¿½o
      * --author El Coyote Cojo
      * @since 2002.12.20
      */
@@ -536,10 +536,10 @@ public final class ToolBox {
     }
 
     /**
-     * Determina de donde se está ejecutando la aplicacion: un directorio o un jar.
+     * Determina de donde se estï¿½ ejecutando la aplicacion: un directorio o un jar.
      *
-     * @param requester el objeto que hace la petición
-     * @return el directorio o jar donde está la aplicación.
+     * @param requester el objeto que hace la peticiï¿½n
+     * @return el directorio o jar donde estï¿½ la aplicaciï¿½n.
      */
     public static Optional<File> getExecutionPath(final Object requester) {
         final URL appURL = requester.getClass()
@@ -549,7 +549,7 @@ public final class ToolBox {
             return Optional.empty();
         }
 
-        // Determinar que jar o directorio se está ejecutando
+        // Determinar que jar o directorio se estï¿½ ejecutando
         final String path = appURL.getPath();
         int end = path.lastIndexOf('!');		// Si es un jar, termina con ! y el nombre de la clase
         if(end == -1) {
@@ -559,16 +559,16 @@ public final class ToolBox {
         return Optional.of(new File(baseDir));
     }
 
-	/** Regex de sólo números. */
+	/** Regex de sï¿½lo nï¿½meros. */
 	private static final Pattern NUMERIC_PATTERN = Pattern.compile("(\\d+).*");
 
-	/** Regex de sólo números. */
+	/** Regex de sï¿½lo nï¿½meros. */
 	private static final Pattern INTEGER_PATTERN = Pattern.compile("\\d+");
 
 	/**
-	 * <code>true</code> si esta String representa un número.
+	 * <code>true</code> si esta String representa un nï¿½mero.
 	 * @param string la String a comprobar.
-	 * @return <code>true</code> si esta String representa un número <code>false</code> de lo contrario.
+	 * @return <code>true</code> si esta String representa un nï¿½mero <code>false</code> de lo contrario.
 	 */
 	public static boolean isNumber(final String string) {
 		return NUMERIC_PATTERN.matcher(string).matches();

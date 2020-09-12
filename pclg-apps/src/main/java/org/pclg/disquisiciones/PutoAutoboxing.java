@@ -13,13 +13,13 @@ import java.util.Map;
  * La igualdad se define como una relacion de equivalencia que cumple los siguientes axiomas:
  *
  *  Reflexividad o principio de identidad: x = x,
- *  Simetría: si x = y entonces y = x,
+ *  Simetrï¿½a: si x = y entonces y = x,
  *  Transitividad: si x = y e y = z, entonces x = z.
- *  Si dos símbolos son iguales, entonces uno puede ser sustituido por el otro.
+ *  Si dos sï¿½mbolos son iguales, entonces uno puede ser sustituido por el otro.
  *
  *
  * Premature optimization is the root of all evil.
- * —Donald E. Knuth
+ * ï¿½Donald E. Knuth
  *
  * @author El Coyote Cojo
  * @since 8/08/17 17:39
@@ -44,7 +44,7 @@ public final class PutoAutoboxing {
         LOGGER.info("b == c : " + (b == c));
         LOGGER.info("a == c : " + (a == c));
 		
-		// Si dos símbolos son iguales, entonces uno puede ser sustituido por el otro.
+		// Si dos sï¿½mbolos son iguales, entonces uno puede ser sustituido por el otro.
         LOGGER.info("a = " + a.toString());
 //        LOGGER.info("a = " + b.toString());
 

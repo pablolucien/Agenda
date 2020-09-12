@@ -69,7 +69,7 @@ public final class LoggerFactory {
 	 */
 	public static org.apache.log4j.Logger makeLog4J() {
         final String className = getTargetClassName();
-        return org.apache.log4j.Logger.getLogger(className);
+        return org.apache.log4j.LogManager.getLogger(className);
 	}
 
 	/**

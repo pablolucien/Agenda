@@ -50,7 +50,7 @@ final class ErrorIndicator extends JButton implements ActionListener {
 		final File audioClip = new File(audioClipName);
 		this.textToShow = textToShow;
 		try {
-			theSound = Applet.newAudioClip(audioClip.toURI().toURL());  // ¿¡¿¡¿¡ Applet !?!?!?
+			theSound = Applet.newAudioClip(audioClip.toURI().toURL());  // ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ Applet !?!?!?
 		} catch (final MalformedURLException ex) {
 			LOGGER.error("Not using sound", ex);
 		}

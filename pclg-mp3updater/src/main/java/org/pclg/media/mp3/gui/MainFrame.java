@@ -79,7 +79,7 @@ public class MainFrame {
 	private JLabeledField replaceCharsFld;
 	private JCheckBox deleteId3V2Choice;
 
-	/** La consola (aquí se redirigen System.out y System.err). */
+	/** La consola (aquï¿½ se redirigen System.out y System.err). */
 	private final Consola errConsole;
 
 	/** Propiedades de i18n. */
@@ -87,10 +87,10 @@ public class MainFrame {
 	/** Propiedades persistentes. */
 	private final Properties customProperties = new SortedProperties();
 
-    /** posicion y tamaño de la ventana de la aplicacion. */
+    /** posicion y tamaï¿½o de la ventana de la aplicacion. */
     private BoundsInfo applicationBounds;
 
-    /** posicion y tamaño de la ventana de la mensajes. */
+    /** posicion y tamaï¿½o de la ventana de la mensajes. */
     private BoundsInfo errConsoleBounds;
 
     /**

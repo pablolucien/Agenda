@@ -431,7 +431,7 @@ public final class DriverPropertiesPanel extends JPanel {
 						rowData.add(rs.wasNull() ? "" : ts93.toString());
 						break;
 					default:
-						rowData.add("¡" + rsmd.getColumnType(i + 1) + '!');
+						rowData.add("ï¿½" + rsmd.getColumnType(i + 1) + '!');
 						break;
 					}
 				}

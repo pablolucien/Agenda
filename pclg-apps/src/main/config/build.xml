@@ -1,9 +1,8 @@
 <project name="pclg-apps" default="_dist" basedir="../../../..">
 
     <description>Builds pclg apps</description>
-    <property name="module-name" value="apps"/>
 
-    <property name="module" location="${basedir}/pclg-${module-name}"/>
+    <property name="module" location="${basedir}/${ant.project.name}"/>
     <property file="${basedir}/local_config.properties"/>
 
     <property name="img_dir" value="${basedir}/pclg-tools/src/main/resources/images"/>  <!-- FIXME: this don't belongs here   -->
@@ -15,38 +14,30 @@
     <property name="config_dir" location="${module}/src/main/config"/>
     <property name="properties" value="ProcessLauncher*.properties FileView.properties"/>
     <property name="lib_dir" value="${basedir}/../lib"/>
+    <property name="libLAF_dir" value="${basedir}/../lib_L&amp;F"/>
+    <property name="libNoJ11_dir" value="${basedir}/../libs-que-causan-problemas-en-J11"/>
     <property name="resources" location="${module}/src/main/resources"/>
     <property name="java_home" location="C:/usr/local/Java/jdk/current"/>
-    <property name="build" location="${basedir}/../../build/${module-name}"/>
-
-
+    <property name="build" location="${basedir}/../../build/${ant.project.name}"/>
+    <property name="build_tests" location="${basedir}/../../classes_tests"/>
     <property name="dist" location="${basedir}/../../dist"/>
     <property name="docs_dir" location="${basedir}/../../docs"/>
     <property name="JDK_API_dir" location="${java_home}/docs/api"/>
     <property name="clear_lukas_jar_name" value="${dist}/Lukas.jar"/>
     <property name="classpath" value="
         ${lib_dir}/velocity-1.7-dep.jar:
-        ${lib_dir}/lib_L&amp;F/kunststoff.jar:
-        ${lib_dir}/gnu.getopt.jar:${lib_dir}/jdom-1.0.jar:
-        ${lib_dir}/jpatterns-0.1.jar:${lib_dir}/itextpdf-5.3.4.jar:
-        ${lib_dir}/jxl.jar:${lib_dir}/jid3lib-0.5.4.jar:
-        ${lib_dir}/javaee.jar:${lib_dir}/log4j-1.2.15.jar:
+        ${lib_dir}/gnu.getopt.jar:
+        ${lib_dir}/itextpdf-5.3.4.jar:
         ${lib_dir}/ez-vcard-0.9.5.jar:
-        ${lib_dir}/jcommander-1.27.jar:
-        ${lib_dir}/docx4j-3.3.1.jar:
-        ${lib_dir}/serializer-2.7.2.jar:
-        ${lib_dir}/guava-18.0.jar:
-        ${lib_dir}/commons-io-1.3.2.jar:
-        ${lib_dir}/slf4j-api-1.7.7.jar:
-        ${lib_dir}/testng-6.8.8.jar:
-        ${lib_dir}/hamcrest-all-1.3.jar:
-        ${lib_dir}/awaitility-3.1.6.jar:
-        ${lib_dir}/json-20180130.jar:
+        ${lib_dir}/jxl.jar:
+ 
+        ${libLAF_dir}/kunststoff.jar:
+
+        ${libNoJ11_dir}/jdom-1.0.jar:
+        ${libNoJ11_dir}/javaee.jar:
 
         ${dist}/pclg-tools.jar:
-        ${dist}/pclg-mp3updater.jar:
-        "
-    />
+        "/>
 
     <!--    Tests-->
     <property name="tests_dir" value="${module}/src/test"/>
@@ -90,13 +81,13 @@
         <!-- Copy the required libraries. -->
         <copy todir="${dist}" preservelastmodified="true">
             <fileset file="${lib_dir}/derby.jar"/>
-            <fileset file="${lib_dir}/lib_L&amp;F/kunststoff.jar"/>
+            <fileset file="${libLAF_dir}/kunststoff.jar"/>
             <fileset file="${lib_dir}/gnu.getopt.jar"/>
             <fileset file="${lib_dir}/velocity-1.7-dep.jar"/>
             <fileset file="${lib_dir}/itextpdf-5.3.4.jar"/>
             <fileset file="${lib_dir}/jxl.jar"/>
             <fileset file="${lib_dir}/jid3lib-0.5.4.jar"/>
-            <fileset file="${lib_dir}/log4j-1.2.15.jar"/>
+            <fileset file="${lib_dir}/log4j-api-2.13.3.jar"/>
             <fileset file="${lib_dir}/ez-vcard-0.9.5.jar"/>
             <fileset file="${lib_dir}/xalan-2.7.2.jar"/>
             <fileset file="${lib_dir}/docx4j-3.3.1.jar"/>
@@ -113,8 +104,6 @@
             <fileset dir="${config_dir}" includes="${properties}"/>
             <fileset file="${src}/Dw.properties"/>
             <fileset file="${src}/DbUpdate.help"/>
-            <fileset file="${src}/org/pclg/tools/Clean.properties"/>
-            <fileset file="${src}/org/pclg/tools/Clean.targets"/>
             <fileset file="${config_dir}/log4j.properties"/>
             <fileset file="${config_dir}/derby.properties"/>
             <fileset file="${src}/Magic.magic"/>
@@ -126,8 +115,6 @@
             <fileset file="${src}/Dw.properties"/>
             <fileset file="${src}/DbUpdate.help"/>
             <fileset file="${src}/Skel.properties"/>
-            <fileset file="${src}/org/pclg/tools/Clean.properties"/>
-            <fileset file="${src}/org/pclg/tools/Clean.targets"/>
             <fileset file="${config_dir}/log4j.properties"/>
             <fileset file="${config_dir}/derby.properties"/>
             <fileset file="${src}/Magic.magic"/>
@@ -141,6 +128,7 @@
         <!-- Compile the java code from ${src} into ${build} -->
         <javac
                 classpath="${classpath}"
+                modulepath="${classpath}"
                 includeantruntime="false"
                 srcdir="${src}"
                 destdir="${build}"
@@ -158,7 +146,7 @@
     <target name="_compile_tests" depends="_compile"
             description="compile the tests ">
         <javac
-                classpath="${classpath} : ${build}"
+                classpath="${test_classpath} : ${classpath} : ${build}"
                 includeantruntime="false"
                 srcdir="${tests_dir}"
                 destdir="${build_tests}"
@@ -181,7 +169,7 @@
 <!--        <testng failureProperty="test.failed" dumpCommand="true" outputdir="${build.test.results.dir}" haltOnfailure="false" configFailurePolicy="true">-->
         <testng failureProperty="test.failed" dumpCommand="true" outputdir="${build.test.results.dir}">
             <classpath>
-                <path path="${test_resources} : ${classpath} : ${build} : ${dist}"/>
+                <path path="${test_resources} : ${test_classpath} : ${classpath} : ${build} : ${dist}"/>
             </classpath>
             <classpath location="${build_tests}"/>
             <classpath location="${tests_dir}"/>
@@ -302,7 +290,7 @@
                 <attribute name="Built-By" value="${user.name}"/>
                 <attribute name="Main-Class" value="org.pclg.tools.Clean"/>
                 <attribute name="Class-Path"
-                           value=". : pclg-tools.jar : velocity-1.7-dep.jar : gnu.getopt.jar : itextpdf-5.3.4.jar : jxl.jar : log4j-1.2.15.jar"/>
+                           value=". : pclg-tools.jar : velocity-1.7-dep.jar : gnu.getopt.jar : itextpdf-5.3.4.jar : jxl.jar : log4j-api-2.13.3.jar"/>
                 <section name="common/class1.class">
                     <attribute name="Sealed" value="false"/>
                 </section>
@@ -376,7 +364,7 @@
             <manifest>
                 <attribute name="Built-By" value="${user.name}"/>
                 <attribute name="Main-Class" value="misc.sopra.OuvrirSuivi"/>
-                <attribute name="Class-Path" value=". : log4j-1.2.15.jar"/>
+                <attribute name="Class-Path" value="log4j-api-2.13.3.jar"/>
             </manifest>
         </jar>
     </target>
@@ -411,7 +399,7 @@
             <manifest>
                 <attribute name="Built-By" value="${user.name}"/>
                 <attribute name="Main-Class" value="org.pclg.runtime.ProcessLauncher"/>
-                <attribute name="Class-Path" value=". : pclg-tools.jar : log4j-1.2.15.jar : toolbarButtonGraphics.jar"/>
+                <attribute name="Class-Path" value="pclg-tools.jar : log4j-api-2.13.3.jar : toolbarButtonGraphics.jar"/>
             </manifest>
         </jar>
     </target>
@@ -431,7 +419,7 @@
             <manifest>
                 <attribute name="Built-By" value="${user.name}"/>
                 <attribute name="Main-Class" value="org.pclg.runtime.JavaShellSwing_Deprecated"/>
-                <attribute name="Class-Path" value=". : pclg-tools.jar : log4j-1.2.15.jar"/>
+                <attribute name="Class-Path" value="pclg-tools.jar : log4j-api-2.13.3.jar"/>
             </manifest>
         </jar>
     </target>
@@ -448,7 +436,7 @@
             <manifest>
                 <attribute name="Built-By" value="${user.name}"/>
                 <attribute name="Main-Class" value="org.pclg.runtime.JavaShell"/>
-                <attribute name="Class-Path" value=". : pclg-tools.jar : log4j-1.2.15.jar"/>
+                <attribute name="Class-Path" value="pclg-tools.jar : log4j-api-2.13.3.jar"/>
             </manifest>
         </jar>
     </target>
@@ -457,7 +445,7 @@
     <target name="Alles_src_zip" description="fuentes de la Alles">
         <jar destfile="${dist}/${Alles_src_zip_name}" basedir="${build}"
              excludes="**">
-            <fileset dir="${module_pclg_apps}" includes="src/**"/>
+            <fileset dir="${module}" includes="src/**"/>
         </jar>
     </target>
 

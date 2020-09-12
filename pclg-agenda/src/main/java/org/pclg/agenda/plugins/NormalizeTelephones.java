@@ -11,7 +11,7 @@ import java.util.Properties;
 
 
 /**
- * Quita al campo numero de los teléfonos todo lo que no sean dígitos. Paso previo al uso de
+ * Quita al campo numero de los telï¿½fonos todo lo que no sean dï¿½gitos. Paso previo al uso de
  * las mascaras en el renderer. Previo a esto hicimos:
  *
  * alter table root.telefono add numero_old VARCHAR(15);

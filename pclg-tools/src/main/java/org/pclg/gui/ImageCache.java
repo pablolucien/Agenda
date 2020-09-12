@@ -9,9 +9,9 @@ import java.util.HashMap;
 import java.util.Map;
 
 /**
- * Clase usada para cachear imágenes (usando SoftReference's).
- * De momento (2016.01.25) sólo es usada por ImageButton y la idea es no tener
- * un Map por cada instancia de ImageButtonen uso, sino una sola por aplicación.
+ * Clase usada para cachear imï¿½genes (usando SoftReference's).
+ * De momento (2016.01.25) sï¿½lo es usada por ImageButton y la idea es no tener
+ * un Map por cada instancia de ImageButtonen uso, sino una sola por aplicaciï¿½n.
  * @author Pablo
  * @since 25/01/16 20:08
  */
@@ -27,7 +27,7 @@ public class ImageCache {
 
 	/**
 	 * Devuelve una instancia de esta clase. De momento (2016.01.25) es un
-	 * singleton, pero podría variar.
+	 * singleton, pero podrï¿½a variar.
 	 *
 	 * @return una instancia de esta clase.
 	 */

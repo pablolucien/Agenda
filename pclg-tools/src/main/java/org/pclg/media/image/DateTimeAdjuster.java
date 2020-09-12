@@ -37,7 +37,7 @@ final class DateTimeAdjuster {
 			loadProperties(properties);
 			final String classpathEntries = properties.getProperty("classpathEntries");
 			ClassPathHacker.addFiles(classpathEntries);
-			final File dir = new File("C:/home/img/fotos/2016_Genève");
+			final File dir = new File("C:/home/img/fotos/2016_Genï¿½ve");
 
 			try (final Connection connection = openDatabase(properties)) {
 				//grabState(connection, dir);
@@ -113,7 +113,7 @@ final class DateTimeAdjuster {
 			throw new SQLException("Couldn't get dir code for " + absolutePath);
 		}
 
-		// FIXME: ¿Es mejor empezar por el filesystem o por la base de datos? Creo que por la db porque hago una sola SELECT.
+		// FIXME: ï¿½Es mejor empezar por el filesystem o por la base de datos? Creo que por la db porque hago una sola SELECT.
 		final String selectFiles = "SELECT Nombre, FechaModificacion FROM Archivos WHERE Camino = ?";
 		try (final PreparedStatement pstmtDirCode = conn.prepareStatement(selectFiles)) {
 			pstmtDirCode.setInt(1, dirCode);

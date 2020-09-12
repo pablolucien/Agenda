@@ -1,17 +1,24 @@
 <project name="pclg-tools" default="build" basedir="../../../..">
 
     <description>Builds pclg tools</description>
-    <property name="module-name" value="tools"/>
 
-    <property name="module" location="${basedir}/pclg-${module-name}"/>
+    <!-- Make sure Java 11 version is being used -->
+
+<!--    <condition property="java11">-->
+<!--        <javaversion atleast="11"/>-->
+<!--    </condition>-->
+<!--    <fail unless="java11">Java 11 runtime version is necessary to run this example</fail>-->
+
+
+    <property name="module" location="${basedir}/${ant.project.name}"/>
     <property file="${basedir}/local_config.properties"/>
 
     <property name="src" location="${module}/src/main/java"/>
     <property name="resources" location="${module}/src/main/resources"/>
     <property name="lib_dir" value="${basedir}/../lib"/>
-    <property name="build" location="${basedir}/../../build/${module-name}"/>
+    <property name="build" location="${basedir}/../../build/${ant.project.name}"/>
     <property name="dist" location="${basedir}/../../dist"/>
-    <property name="module_jar" value="pclg-${module-name}.jar"/>
+    <property name="module_jar" value="${ant.project.name}.jar"/>
     <property name="Icons_jar" value="Icons.jar"/>
     <property name="Sounds_jar" value="Sounds.jar"/>
 
@@ -22,12 +29,15 @@
         ${lib_dir}/ez-vcard-0.9.5.jar:
         ${lib_dir}/jcommander-1.27.jar:
         ${lib_dir}/jpatterns-0.1.jar:
-        ${lib_dir}/log4j-1.2.15.jar:
+        ${lib_dir}/log4j-1.2-api-2.13.3.jar:
+        ${lib_dir}/log4j-api-2.13.3.jar:
+        ${lib_dir}/log4j-core-2.13.3.jar:
+        ${lib_dir}/velocity-1.7-dep.jar:
     "/>
 
     <!--    Tests-->
     <property name="tests_dir" value="${module}/src/test"/>
-    <property name="build_tests" location="${basedir}/../../build/${module-name}_tests"/>
+    <property name="build_tests" location="${basedir}/../../build/${ant.project.name}_tests"/>
     <property name="test_resources" location="${module}/src/test/resources"/>
     <property name="build.test.results.dir" value="/tmp/test_results"/>
     <taskdef resource="testngtasks" classpath="${lib_dir}/testng-6.8.8.jar"/>
@@ -46,17 +56,22 @@
         <copy todir="${build}" preservelastmodified="true">
             <fileset dir="${resources}" includes="${properties}"/>
             <fileset file="${resources}/images/Please_stand_by.png"/>
+            <fileset file="${src}/org/pclg/tools/Clean.properties"/>
+            <fileset file="${src}/org/pclg/tools/Clean.targets"/>
         </copy>
 
         <copy todir="${dist}" preservelastmodified="true">
             <fileset dir="${resources}" includes="${properties}"/>
             <fileset file="${resources}/images/Please_stand_by.png"/>
+            <fileset file="${src}/org/pclg/tools/Clean.properties"/>
+            <fileset file="${src}/org/pclg/tools/Clean.targets"/>
         </copy>
     </target>
 
     <target name="_compile" depends="_init" description="Compile the sources">
         <javac
                 classpath="${classpath}"
+                modulepath="${classpath}"
                 includeantruntime="false"
                 srcdir="${src}"
                 destdir="${build}"
@@ -108,7 +123,7 @@
             <fileset dir="${build}" includes="**/*.class"/>
             <manifest>
                 <attribute name="Built-By" value="${user.name}"/>
-                <attribute name="Class-Path" value=". : log4j-1.2.15.jar"/>
+                <attribute name="Class-Path" value="log4j-api-2.13.3.jar"/>
             </manifest>
         </jar>
     </target>

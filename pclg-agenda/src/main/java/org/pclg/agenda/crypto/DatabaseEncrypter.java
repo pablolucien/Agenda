@@ -56,7 +56,7 @@ public class DatabaseEncrypter {
 	class FieldInfo {
 		String fieldName;
 		int fieldType;
-		String fieldTypeName;	// FIXME: esto no va aquí
+		String fieldTypeName;	// FIXME: esto no va aquï¿½
 		int fieldSize;
 		int fieldPrecision;
 		boolean isKeyField;
@@ -72,7 +72,7 @@ public class DatabaseEncrypter {
 
 	/**
 	 * Cifra una tabla.
-     * @param connection la conexión a la base de datos.
+     * @param connection la conexiï¿½n a la base de datos.
 	 * @param tableName la tabla a cifrar.
 	 * @throws SQLException si problemas haber.
 	 */
@@ -103,7 +103,7 @@ public class DatabaseEncrypter {
 		final String selectSQL = obtenirSelect(tableName, fields);
 
         if (selectSQL != null) {
-            // Aquí hacemos el cifrado.
+            // Aquï¿½ hacemos el cifrado.
             stmt = connection.createStatement(ResultSet.TYPE_SCROLL_INSENSITIVE,
                 ResultSet.CONCUR_UPDATABLE);
             final ResultSet rs = stmt.executeQuery(selectSQL);

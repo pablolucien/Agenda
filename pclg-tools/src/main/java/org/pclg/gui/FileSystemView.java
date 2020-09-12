@@ -9,7 +9,7 @@ import java.util.Arrays;
 
 /**
  * Premature optimization is the root of all evil.
- * —Donald E. Knuth
+ * ï¿½Donald E. Knuth
  *
  * @author El Coyote Cojo
  * @since 28-sep-2007 13:19:22

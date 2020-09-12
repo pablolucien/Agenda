@@ -36,7 +36,7 @@ public class UpdateContactosMovilVcards {
     }
 
     /**
-     * Rnombra los ficheros de vcard según el nombre de la persona.
+     * Rnombra los ficheros de vcard segï¿½n el nombre de la persona.
      */
     private void renameVcardFiles() {
         final File dir = new File(BASE_DIR);

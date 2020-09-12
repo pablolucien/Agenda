@@ -19,7 +19,7 @@ public class AlbumTest {
 
     private static final Pattern PATTERN_AGDREF = Pattern.compile("\\d{9,10}");
 
-	// TODO: Este método es solo para que el build no me falle
+	// TODO: Este mï¿½todo es solo para que el build no me falle
 	// con 'java.lang.Exception: No runnable methods'
 	public void testDummy() {
 		final Album album = Album.createAlbumFromFileSystem(

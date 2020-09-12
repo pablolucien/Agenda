@@ -39,7 +39,7 @@ public class OuvrirSuivi {
     private static final String COPY_GENERIC_FILE_KEY = "action.copyGenericFile";
     private static final String COPY_AND_OPEN_KEY = "action.copyEtPrevious";
     private static final String NO_RESOURCES_MSG =
-        "No puedo obtener recursos para la aplicación: ({0}.properties ({1}))";
+        "No puedo obtener recursos para la aplicaciï¿½n: ({0}.properties ({1}))";
 	private static final String IO_ERROR_MSG = "La torta!! No puedo copiar. Error: {0}";
     private static final  URL QUESTION_ICON_RESOURCE =
         ClassLoader.getSystemResource("dialog-question.png");
@@ -58,10 +58,10 @@ public class OuvrirSuivi {
 
     /**
      * Ouvre le fichier de suivi ou meurt.
-     * @param spanOffset le numéro de semaines ou mois en avance (> 0) ou en
-     * arrière (< 0) à ouvrir.
+     * @param spanOffset le numï¿½ro de semaines ou mois en avance (> 0) ou en
+     * arriï¿½re (< 0) ï¿½ ouvrir.
      * @param bundleBaseName the ressource bundle to use
-     * @return <code>true</code> si le fichier a été ouvert, <code>false</code> au contraire.
+     * @return <code>true</code> si le fichier a ï¿½tï¿½ ouvert, <code>false</code> au contraire.
      */
     private boolean openSuiviOrDie(final int spanOffset, final String bundleBaseName) {
         try {
@@ -177,9 +177,9 @@ public class OuvrirSuivi {
         	 	new FileOutputStream(targetFile).getChannel()) {
             inChannel.transferTo(0, inChannel.size(), outChannel);
         } 
-/* con un código como este se elimina el warning de Eclipse 
+/* con un cï¿½digo como este se elimina el warning de Eclipse 
    Resource leak: '<unassigned Closeable value>' is never closed, 
-   pero ¿es necesario?
+   pero ï¿½es necesario?
  		try (final FileInputStream inStream = new FileInputStream(sourceFile);
 			 final FileOutputStream outStream = new FileOutputStream(targetFile);
 			 final FileChannel inChannel = inStream.getChannel();

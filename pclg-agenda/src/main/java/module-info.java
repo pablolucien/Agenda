@@ -9,6 +9,6 @@ module pclg.agenda {
 //    requires jakarta.xml.bind.api;
     requires ez.vcard;
     requires jpatterns;
-    requires log4j;
+    requires org.apache.log4j;
     requires pclg.tools;
 }

@@ -4,7 +4,7 @@ import org.apache.log4j.Logger;
 import org.pclg.log.LoggerFactory;
 
 /**
- * Clase encargada de la criptografía, pero que no hace nada.
+ * Clase encargada de la criptografï¿½a, pero que no hace nada.
  *
  * @author El Coyote
  * @since 28-jul-2012 00:45:00
@@ -54,7 +54,7 @@ public final class DummyCrypto implements Cryptographer {
 	}
 
 	public static void main(final String[] args) {
-		final String sql = "('058','Venezuela'),('033','France'),('034','Espa±a'),('044','England'),('046','Sverige'),('001','USA'),('049','Deutschland'),('055','Brasil'),('054','Argentina'),('052','Mexico'),('043','Ísterreich')";
+		final String sql = "('058','Venezuela'),('033','France'),('034','Espaï¿½a'),('044','England'),('046','Sverige'),('001','USA'),('049','Deutschland'),('055','Brasil'),('054','Argentina'),('052','Mexico'),('043','ï¿½sterreich')";
 		final DummyCrypto crypto = new DummyCrypto("");
 		LOGGER.debug(crypto.cifrar_kk(sql));
 	}

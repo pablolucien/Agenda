@@ -101,9 +101,9 @@ public class I18NManager implements ChangeObserver<ObservableProperties> {
 	}
 
 	/**
-	 * Establece el texto y el icono de un botón.
+	 * Establece el texto y el icono de un botï¿½n.
 	 * 
-	 * @param button el botón cuyas propiedades se van a establecer.
+	 * @param button el botï¿½n cuyas propiedades se van a establecer.
 	 * @param keyLabel la clave del texto.
 	 * @param keyIcon la clave del icono.
 	 */

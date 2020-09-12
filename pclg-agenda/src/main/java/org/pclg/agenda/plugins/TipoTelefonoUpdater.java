@@ -13,7 +13,7 @@ import java.util.Properties;
 
 /**
  * Premature optimization is the root of all evil.
- * —Donald E. Knuth
+ * ï¿½Donald E. Knuth
  *
  * @author El Coyote Cojo
  * @since 11/02/17 11:11
@@ -34,12 +34,12 @@ public final class TipoTelefonoUpdater implements Plugin {
     }
 
     /**
-   	 * Actualiza lo tipos de los teléfonos a partir de una lista de tipo
-   	 * <nro de teléfono>:<tipo> contenida en un fichero (uno por línea).
+   	 * Actualiza lo tipos de los telï¿½fonos a partir de una lista de tipo
+   	 * <nro de telï¿½fono>:<tipo> contenida en un fichero (uno por lï¿½nea).
    	 *
    	 *
      *
-     * @param dbConnection la conexión a usar.
+     * @param dbConnection la conexiï¿½n a usar.
      * @param fileName nombre del fichero.
    	 * @throws java.io.IOException  si hay errores de I/O.
 	 * @throws SQLException si hay errores de acceso a la base de datos.

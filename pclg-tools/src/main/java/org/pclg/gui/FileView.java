@@ -23,7 +23,7 @@ import java.util.Set;
 /**
  * ****************************************************
  * Premature optimization is the root of all evil.     *
- * —Donald E. Knuth                                   *
+ * ï¿½Donald E. Knuth                                   *
  * *****************************************************
  * A convenience implementation of the FileView interface that
  * manages name, icon, traversable, and file type information.

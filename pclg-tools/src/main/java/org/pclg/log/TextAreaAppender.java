@@ -14,7 +14,7 @@ public class TextAreaAppender extends WriterAppender {
     public TextAreaAppender(final JTextArea textArea) {
         textArea.setFont(new Font("Monospaced", Font.PLAIN, 12));
         setName(toString());
-        setLayout(new PatternLayout());
+        setLayout(new PatternLayout("%level - %m%n"));
         setWriter(new Writer() {
             @Override
             public void write(final char[] cbuf, final int off, final int len) {
