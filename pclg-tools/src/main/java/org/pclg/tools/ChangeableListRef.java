@@ -41,7 +41,7 @@ class ChangeableListRef<T> extends ArrayList<T> implements Changeable<Changeable
 	}
 
 
-	//FIXME: Todo el código que sigue está duplicado en ObservableProperties. Factorizarlo!!!
+	//FIXME: Todo el cï¿½digo que sigue estï¿½ duplicado en ObservableProperties. Factorizarlo!!!
 	private boolean enabled = true;
 	private boolean somethingChanged;
 

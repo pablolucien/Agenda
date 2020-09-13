@@ -16,7 +16,7 @@ public class SimpleQueryPlugin implements Plugin {
 	@Override
 	public void execute(final Properties properties, final Connection conn, final String... args) throws SQLException {
 		if (args.length == 0) {
-			LOGGER.warn("No se han pasado parámetros");
+			LOGGER.warn("No se han pasado parï¿½metros");
 			return;
 		}
 		final StringBuilder builder = new StringBuilder();

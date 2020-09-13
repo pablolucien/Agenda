@@ -13,10 +13,10 @@ import java.util.Properties;
 
 
 /**
- * Migra las direcciones del formato antiguo en un solo tolete a varios pedazos pequeños.
+ * Migra las direcciones del formato antiguo en un solo tolete a varios pedazos pequeï¿½os.
  * Previo a esto hicimos:
  * rename table root.DIRECCION to DIRECCION_OLD;
- * y al ejecutar la aplicación se genera la tabla con el nuevo tamaño de tolete.
+ * y al ejecutar la aplicaciï¿½n se genera la tabla con el nuevo tamaï¿½o de tolete.
  */
 public class MigrateDirecciones implements Plugin {
 	  private static final Logger LOGGER = LoggerFactory.makeLog4J();

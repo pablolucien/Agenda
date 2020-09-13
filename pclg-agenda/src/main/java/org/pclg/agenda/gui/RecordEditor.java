@@ -375,7 +375,7 @@ final class RecordEditor extends JPanel {
 		return this;
 	}
 
-	/* Método generado por JGuiD */
+	/* Mï¿½todo generado por JGuiD */
 	private void setupGUI() {
 		final JPanel westPane = new JPanel(new BorderLayout());
 		final JPanel westUpperPane = new JPanel(null);

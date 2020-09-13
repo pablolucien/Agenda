@@ -8,6 +8,7 @@
     <property name="src" location="${module_pclg_synchonizer}/src/main/java"/>
     <property name="resources" location="${module_pclg_synchonizer}/src/main/resources"/>
     <property name="lib_dir" value="${basedir}/../lib"/>
+    <property name="libLAF_dir" value="${basedir}/../lib_L&amp;F"/>
     <property name="build" location="${basedir}/../../build/synchonizer"/>
     <property name="dist" location="${basedir}/../../dist"/>
     <property name="pclg-synchonizer_jar_name" value="pclg-synchonizer.jar"/>
@@ -15,10 +16,13 @@
     <property name="properties" value="DirectorySynchronizer*.properties"/>
 
     <property name="classpath" value="
-        ${lib_dir}/lib_L&amp;F/kunststoff.jar:
+        ${libLAF_dir}/kunststoff.jar:
         ${lib_dir}/testng-6.8.8.jar:
         ${lib_dir}/awaitility-3.1.6.jar:
         ${lib_dir}/json-20180130.jar:
+        ${lib_dir}/log4j-1.2-api-2.13.3.jar:
+        ${lib_dir}/log4j-api-2.13.3.jar:
+        ${lib_dir}/log4j-core-2.13.3.jar:
 
         ${dist}/pclg-tools.jar:
         "/>
@@ -43,6 +47,7 @@
     <target name="_compile" depends="_init" description="Compile the sources">
         <javac
                 classpath="${classpath}"
+                modulepath="${classpath}"
                 includeantruntime="false"
                 srcdir="${src}"
                 destdir="${build}"
@@ -63,7 +68,7 @@
             <manifest>
                 <attribute name="Built-By" value="${user.name}"/>
                 <attribute name="Main-Class" value="org.pclg.filesystem.synchonizer.DirectorySynchronizer"/>
-                <attribute name="Class-Path" value=". : pclg-tools.jar : Icons.jar : Sounds.jar : json-20180130.jar : log4j-1.2.15.jar : derby.jar"/>
+                <attribute name="Class-Path" value="pclg-tools.jar : Icons.jar : Sounds.jar : json-20180130.jar : log4j-api-2.13.3.jar : derby.jar"/>
             </manifest>
         </jar>
     </target>

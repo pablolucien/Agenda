@@ -239,7 +239,7 @@ public final class ImageTools {
 //	}
 
 //	/** Guarda una imagen en formato jpeg.
-//	 * TODO: Probar este método.
+//	 * TODO: Probar este mï¿½todo.
 //	 */
 //	public static boolean saveJPEG(final Image img, final String filename)
 //			throws IOException {
@@ -461,7 +461,7 @@ public final class ImageTools {
     public static Optional<ImageIcon> getImageIcon(final String resource) {
         return Optional.ofNullable(IMAGE_ICON_CACHE.computeIfAbsent(resource, path -> {
 			ImageIcon icon = null;
-			LOGGER.debug(path + " no está en cache; trato de crearlo");
+			LOGGER.debug(path + " no estï¿½ en cache; trato de crearlo");
 			final URL url = ImageTools.class.getResource(path);
 			if (url == null) {
 				LOGGER.warn("Imposible crear " + path);

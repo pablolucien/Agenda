@@ -1,0 +1,12 @@
+{
+    "targets": [
+        {
+            "dirs": [
+                "E:/home/pablo/development/projects/Alles",
+                "X:/home/pablo/development/projects/Alles"
+            ],
+            "Include": "build.xml",
+            "Exclude": "target/:out/:.idea/:.git/:local_config.properties"
+        }
+    ]
+}

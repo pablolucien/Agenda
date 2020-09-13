@@ -15,7 +15,7 @@ import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
 /**
- * Ajusta un fichero de subtítulos (.srt) para que coincida con los labios del
+ * Ajusta un fichero de subtï¿½tulos (.srt) para que coincida con los labios del
  * parlante.
  *
  * @author El Coyote Cojo
@@ -34,7 +34,7 @@ public class SrtAdjuster {
 			throws IOException, ParseException {
 		final File srcFile = new File(srcFilename);
 		if (!srcFile.exists()) {
-			LOGGER.warn(srcFile + " no existe. ¡Hasta luego Lucas!");
+			LOGGER.warn(srcFile + " no existe. ï¿½Hasta luego Lucas!");
 			System.exit(-1);
 		}
 		final File tgtFile = File.createTempFile("tmp", ".srt", srcFile.getParentFile());
@@ -46,7 +46,7 @@ public class SrtAdjuster {
 				// 00:02:36,323 --> 00:02:39,450
 				final Pattern pattern = Pattern.compile(SRT_REGEX);
 				final int adjustMSecs = Integer.parseInt(adjust);
-				LOGGER.warn("Echando " + (adjustMSecs < 0 ? "pa'trás " : "pa'lante ") + Math.abs(adjustMSecs) + " milisegundos");
+				LOGGER.warn("Echando " + (adjustMSecs < 0 ? "pa'trï¿½s " : "pa'lante ") + Math.abs(adjustMSecs) + " milisegundos");
 				String line;
 				while ((line = reader.readLine()) != null) {
 					final Matcher matcher = pattern.matcher(line);

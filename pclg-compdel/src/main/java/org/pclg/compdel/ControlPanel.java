@@ -37,9 +37,9 @@ final class ControlPanel {
 	private final JButton stopBt = GUITools.addButton(actionManager, null, "Stop");
 	private final JButton saveBt = GUITools.addButton(actionManager, null, "Save result");
 
-	/** Elimina de la bd lo que no esté en el disco */
+	/** Elimina de la bd lo que no estï¿½ en el disco */
 	private final JButton cleanDigestDBBt = GUITools.addButton(actionManager,
-		null, "Clean Digest DB", "Borra de la DB lo que no está en disco");
+		null, "Clean Digest DB", "Borra de la DB lo que no estï¿½ en disco");
 
 	private final JButton exitBt = GUITools.addButton(actionManager, null, EXIT,
 		"Das Ende der Anwendung");

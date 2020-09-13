@@ -131,7 +131,7 @@ public final class Digest {
      * @param algorithm the algorithm to use.
      *
      * @return the digest as a byte[].
-     * @since 2003.05.25	Dia de elecciones municipales en el Estado Español.
+     * @since 2003.05.25	Dia de elecciones municipales en el Estado Espaï¿½ol.
      */
     public static byte[] generateByteArrayDigest(final byte[] buf, final String algorithm) {
         try {

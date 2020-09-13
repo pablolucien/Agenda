@@ -1,6 +1,6 @@
 package org.pclg.tools;
 
-import org.apache.log4j.Category;
+import org.apache.log4j.Logger;
 import org.pclg.log.LoggerFactory;
 
 import java.util.LinkedList;
@@ -20,7 +20,7 @@ import java.util.concurrent.TimeUnit;
 public class ObservableProperties extends Properties implements Changeable<ObservableProperties> {
 	/** serialVersionUID. */
 	private static final long serialVersionUID = -2671331071912752130L;
-	private static final Category LOGGER = LoggerFactory.makeLog4J();
+	private static final Logger LOGGER = LoggerFactory.makeLog4J();
 	private final List<ChangeObserver<ObservableProperties>> observers = new LinkedList<>();
 	private boolean enabled = true;
 	private boolean somethingChanged;

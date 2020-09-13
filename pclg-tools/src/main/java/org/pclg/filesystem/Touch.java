@@ -14,7 +14,7 @@ import java.util.List;
 
 /**
  * Toca un o unos ficheros en el sentido de Unix (pone la fecha y hora actual
- * como fecha y hora de modificación.
+ * como fecha y hora de modificaciï¿½n.
  *
  * @since 20080530
  * @author EL Coyote Cojo
@@ -84,7 +84,7 @@ public final class Touch {
         	dateCalendar.set(Calendar.SECOND, timeCalendar.get(Calendar.SECOND));
         	time = dateCalendar.getTimeInMillis();
         } else {
-        	time = Long.MIN_VALUE;	// FIXME: ¿Qué caso de uso es este?
+        	time = Long.MIN_VALUE;	// FIXME: ï¿½Quï¿½ caso de uso es este?
         }
 
         LOGGER.debug(

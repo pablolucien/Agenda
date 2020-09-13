@@ -4,6 +4,6 @@ module pclg.misc {
     requires java.logging;
     requires java.sql;
     requires jid3lib;
-    requires log4j;
+    requires org.apache.log4j;
     requires pclg.tools;
 }

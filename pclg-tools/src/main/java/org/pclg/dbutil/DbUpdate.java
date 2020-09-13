@@ -39,10 +39,10 @@ import java.util.StringTokenizer;
  * # Las lineas en blanco no son consideradas
  * # Las lineas que terminan con '|' indican que la siguiente es
  * # continuacion de esta.
- * # El resto de las lineas deben ser instrucciones SQL válidas, salvo las
- * # siguentes directivas (una por línea)
+ * # El resto de las lineas deben ser instrucciones SQL vï¿½lidas, salvo las
+ * # siguentes directivas (una por lï¿½nea)
  * # &lt;CLASSPATH&gt;        La lista, separada por '|' de los archivos o directorios a
- * #                    agregar al classpath the la aplicación.
+ * #                    agregar al classpath the la aplicaciï¿½n.
  * # &lt;DRIVER&gt;           Driver de la base de datos
  * # &lt;URL&gt;              URL de conexion a la base de datos
  * # &lt;USER&gt; user        Establece el nombre de usuario de la base de datos.
@@ -51,7 +51,7 @@ import java.util.StringTokenizer;
  * #                    Si no se proporciona, la pide en stdin.
  * # &lt;EXIT&gt;             Finaliza la ejecucion
  * # &lt;SKIP&gt;             No procesa el script hasta que se encuentre un &lt;CONTINUE&gt;
- * # &lt;CONTINUE&gt;         Continúa el procesamiento del Script
+ * # &lt;CONTINUE&gt;         Continï¿½a el procesamiento del Script
  * # &lt;ZAP_DATA&gt;         Elimina todos los registros de todas las tablas salvo las
  * #                    META_*, REPO_* y SYS_*
  * # &lt;ZAP_DATABASE&gt;     Elimina todos los registros de todas las tablas INCUYENDO
@@ -67,7 +67,7 @@ import java.util.StringTokenizer;
  * # &lt;ASK&gt;              Pide nuevamante confirmacion en las instrucciones
  * #                    ZAP y DROP (NO IMPLEMENTADO)
  * #
- * # El Classpath, Driver y URL de la base de datos deben ser las primeras líneas
+ * # El Classpath, Driver y URL de la base de datos deben ser las primeras lï¿½neas
  * # salvo las instrucciones &lt;DO_BACKUP&gt; &lt;USER&gt; y &lt;PWD&gt;
  * #
  * #&lt;DO_BACKUP&gt;
@@ -98,12 +98,12 @@ import java.util.StringTokenizer;
  * </blockquote>
  *
  * @author El Coyote Cojo
- * @version 2002.03.27 (Cumplaños de Ricardo)
+ * @version 2002.03.27 (Cumplaï¿½os de Ricardo)
  */
 public final class DbUpdate {
 	private static final Logger LOGGER = LoggerFactory.makeLog4J();
 
-	/** Indica si se debe informar de lo que se está haciendo. */
+	/** Indica si se debe informar de lo que se estï¿½ haciendo. */
 	private static final boolean VERBOSE = true;
 
 	/** Indica que no se puede eliminar porque hay tablas relacionadas. */
@@ -112,21 +112,21 @@ public final class DbUpdate {
 
 	/** Mensaje. */
 	private static final String PROMPT_ZAP_ALL_DATA =
-			"Esta operacion BORRARÁ todos los datos, incluyendo "
-			+ "los META_DATA. ¿Desea continuar? ";
+			"Esta operacion BORRARï¿½ todos los datos, incluyendo "
+			+ "los META_DATA. ï¿½Desea continuar? ";
 
 	/** Mensaje. */
 	private static final String PROMPT_ZAP_DATA =
-		"Esta operacion BORRARÁ todos los datos. ¿Desea continuar? ";
+		"Esta operacion BORRARï¿½ todos los datos. ï¿½Desea continuar? ";
 
 	/** Mensaje. */
 	private static final String PROMPT_ZAP_ALL_TABLES =
 		"Esta operacion ELIMINARA todas las tablas, "
-		+ "incluyendo las META_DATA. ¿Desea continuar? ";
+		+ "incluyendo las META_DATA. ï¿½Desea continuar? ";
 
 	/** Mensaje. */
 	private static final String PROMPT_ZAP_TABLES =
-		"Esta operacion ELIMINARA todas las tablas. ¿Desea continuar? ";
+		"Esta operacion ELIMINARA todas las tablas. ï¿½Desea continuar? ";
 
 	/** Mensaje. */
 	private static final String MSG_SKIP =
@@ -164,9 +164,9 @@ public final class DbUpdate {
 	}
 
 	/**
-	 * lee una línea del archivo de entrada, descartando los comentarios.
+	 * lee una lï¿½nea del archivo de entrada, descartando los comentarios.
 	 * @param in de donde leer.
-	 * @param numberedLine dónde poner lo leído.
+	 * @param numberedLine dï¿½nde poner lo leï¿½do.
 	 * @throws IOException si hay problemas I/O.
 	 */
 	private static void readLine(final BufferedReader in,
@@ -202,7 +202,7 @@ public final class DbUpdate {
 	}
 
 	/**
-	 * Muestra una línea del archivo indicando el numero de esta.
+	 * Muestra una lï¿½nea del archivo indicando el numero de esta.
 	 * @param numberedLine la linea.
 	 */
 	private void displayLine(final NumberedLine numberedLine) {
@@ -374,13 +374,13 @@ public final class DbUpdate {
 	 * @param args  arguments to the app.
 	 */
 	private void update(final String[] args) {
-		String databaseName = null;	// Sólo para BDs Access
+		String databaseName = null;	// Sï¿½lo para BDs Access
 		try {
 			// Abrimos el archivo de Script
 			final BufferedReader in = new BufferedReader(
 				new InputStreamReader(new FileInputStream(args[0])));
 
-			// El Classpath, Driver y URL de la base de datos deben ser las primeras líneas
+			// El Classpath, Driver y URL de la base de datos deben ser las primeras lï¿½neas
 			// que no sean comentario salvo las instrucciones <DO_BACKUP> <USER> o <PWD>
 			boolean doBackup = false;
 			String user = "";
@@ -465,9 +465,9 @@ public final class DbUpdate {
 
 	/**
 	 * Obtiene el segundo token de una linea. Si no existe lo pide a stdin.
-	 * @param line la línea de donde obtener el token.
+	 * @param line la lï¿½nea de donde obtener el token.
 	 * @param prompt el prompt para pedir input.
-     * @return el token leído.
+     * @return el token leï¿½do.
      * @throws IOException si ha problemas deI/O.
 	 */
 	private static String getToken(final String line, final String prompt) throws
@@ -482,7 +482,7 @@ public final class DbUpdate {
 
 	/**
 	 * * Obtains magically the password.
-	 * @param line  la línea de dónde leer.
+	 * @param line  la lï¿½nea de dï¿½nde leer.
      * @return the password.
      * @throws IOException si ha problemas deI/O.
 	 */
@@ -492,7 +492,7 @@ public final class DbUpdate {
 
 	/**
 	 * Obtains magically the username.
-	 * @param line la línea de dónde obtener the username.
+	 * @param line la lï¿½nea de dï¿½nde obtener the username.
      * @return the username.
      * @throws IOException si ha problemas deI/O.
 	 */
@@ -505,7 +505,7 @@ public final class DbUpdate {
 	 * @param in el stream de donde leer el script.
 	 * @param connection la conexion con la bd
 	 * @param tables los nombres de las tablas a actualizar.
-     * @param numberedLine la línea donde se leen los comandos del script.
+     * @param numberedLine la lï¿½nea donde se leen los comandos del script.
      * @throws SQLException si hay problemas de base de datos.
 	 * @throws IOException si hay problemas de I/O.
 	 */

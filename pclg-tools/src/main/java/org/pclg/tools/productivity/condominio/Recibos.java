@@ -24,7 +24,7 @@ import java.util.Locale;
 
 /**
  * Premature optimization is the root of all evil.
- * —Donald E. Knuth
+ * ï¿½Donald E. Knuth
  *
  * @author El Coyote Cojo
  * @since 4/11/17 11:25
@@ -38,12 +38,12 @@ public final class Recibos extends JFrame {
     private static final Font PRINTER_FONT = new Font("Monospaced", Font.PLAIN, 8);
     private static final String[] lines = {
         "COMUNIDAD DE PROPIETARIOS",
-        "Núm: %s",
+        "Nï¿½m: %s",
         "Domicilio: Calle Encajeras 7, 28037, Madrid.",
         "He recibido de D. %s",
         "propietario del piso %s",
         "la cantidad de %s",
-        "como tanto alzado mensual y a posterior liquidación, correspondiente al mes de la fecha.",
+        "como tanto alzado mensual y a posterior liquidaciï¿½n, correspondiente al mes de la fecha.",
         "Madrid, a %s de %s de %s",
         "Importe %s",
         "I.V.A. %% %s",
@@ -54,7 +54,7 @@ public final class Recibos extends JFrame {
     private static final long serialVersionUID = 7040707892533995024L;
 
     public Recibos() throws HeadlessException {
-        super("¡Condominio de encajeras!");
+        super("ï¿½Condominio de encajeras!");
         setDefaultCloseOperation(WindowConstants.EXIT_ON_CLOSE);
         JTextArea taPrintPreview = new JTextArea();
         taPrintPreview.setFont(PREVIEW_FONT);
@@ -127,8 +127,8 @@ public final class Recibos extends JFrame {
     private class Data {
         String empfangNummer = "505";
         String nachbarnName = "El Propio";
-        String wohnung = "1º der";
-        String betrag = "veinte €";
+        String wohnung = "1ï¿½ der";
+        String betrag = "veinte ï¿½";
 //        String ;
 //        String ;
 //        String ;

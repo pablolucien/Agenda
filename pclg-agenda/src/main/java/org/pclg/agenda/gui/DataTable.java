@@ -97,7 +97,7 @@ final class DataTable extends JTable {
     int getGlobalColumnCount() {
     	// OJO, esto puede dar algo distinto a super.getColumnCount();
 		// puesto que considera todas las columnas, independientemente de
-		// que estén visibles o no.
+		// que estï¿½n visibles o no.
 		return tableModel.getColumnCount();
     }
 	
@@ -129,7 +129,7 @@ final class DataTable extends JTable {
 	/**
 	 * Es necesario para considerar los registros correctos independientemente
 	 * de que se haya hecho un sort.
-	 * @param rowNr el número de fila en la vista.
+	 * @param rowNr el nï¿½mero de fila en la vista.
 	 * @return el registro en el modelo.
 	 */
 	public AgendaRecord getValueAt(final int rowNr) {
@@ -139,7 +139,7 @@ final class DataTable extends JTable {
 	/**
 	 * Es necesario para considerar los registros correctos independientemente
 	 * de que se haya hecho un sort.
-	 * @param rowNr el número de fila en la vista.
+	 * @param rowNr el nï¿½mero de fila en la vista.
 	 */
 	public void removeDataAt(final int rowNr) {
 		tableModel.removeDataAt(convertRowIndexToModel(rowNr));

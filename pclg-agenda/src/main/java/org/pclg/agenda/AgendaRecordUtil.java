@@ -105,8 +105,8 @@ public class AgendaRecordUtil {
     }
 
     /**
-     * Procesa una lista. Si esta es parametrizada, la clase parámetro tiene que
-     * tener el método static valueOf(Object) para poder obtener un objeto de
+     * Procesa una lista. Si esta es parametrizada, la clase parï¿½metro tiene que
+     * tener el mï¿½todo static valueOf(Object) para poder obtener un objeto de
      * esa clase de su representacion en el xml.
      */
     @QuickAndDirty
@@ -125,8 +125,8 @@ public class AgendaRecordUtil {
             LOGGER.debug("fieldArgClass = " + listItemsClass);
             final Method valueOf;
             if (listItemsClass == String.class) {
-                // Parece una tontería, pero en definitiva devuelve el mismo
-                // objeto y el código no se complica.
+                // Parece una tonterï¿½a, pero en definitiva devuelve el mismo
+                // objeto y el cï¿½digo no se complica.
                 valueOf = listItemsClass.getDeclaredMethod("valueOf", Object.class);
             } else {
                 valueOf = listItemsClass.getDeclaredMethod("valueOf", String.class);
@@ -149,7 +149,7 @@ public class AgendaRecordUtil {
 
     /**
      * Procesa un elmento que tiene que
-     * tener el método static valueOf(String) para poder obtener un objeto de
+     * tener el mï¿½todo static valueOf(String) para poder obtener un objeto de
      * esa clase de su representacion en el xml.
      */
     @QuickAndDirty

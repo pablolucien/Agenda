@@ -32,7 +32,7 @@ import static java.lang.StrictMath.sin;
  * between S and C. This will be the new starting point. Repeat ad libitum.
  * <p>
  * Premature optimization is the root of all evil.
- * —Donald E. Knuth
+ * ï¿½Donald E. Knuth
  *
  * @author El Coyote Cojo
  * @since 15/08/17 8:32

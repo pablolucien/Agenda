@@ -10,7 +10,7 @@ import java.util.Map;
 import java.util.TreeMap;
 
 /**
- * Representa los países para el combo box.
+ * Representa los paï¿½ses para el combo box.
 * @author Pablo
 * @since 3/08/13 10:28
 */
@@ -27,7 +27,7 @@ public class Pais implements Serializable {
 	private String formatoTelefono;
 
 	/**
-     * El constructor lo pone en ATLAS. ¡qué cosas!
+     * El constructor lo pone en ATLAS. ï¿½quï¿½ cosas!
 	 */
 	public Pais(final String countryCode, final String countryName, final String formatoTelefono) {
 		this.countryCode = countryCode;
@@ -88,8 +88,8 @@ public class Pais implements Serializable {
 	}
 
 	/**
-	 * Devuelve la lista de los países.
-	 * @return  la lista de los países conocidos por esta clase.
+	 * Devuelve la lista de los paï¿½ses.
+	 * @return  la lista de los paï¿½ses conocidos por esta clase.
 	 */
 	public static Collection<Pais> getPaises() {
 		return Collections.unmodifiableCollection(ATLAS.values());

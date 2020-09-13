@@ -18,7 +18,7 @@ class DNI {
 		}
 		for (final String arg : args) {
 			if (!ToolBox.isInteger(arg)) {
-				LOGGER.error(arg + " no es numérico");
+				LOGGER.error(arg + " no es numï¿½rico");
 				continue;
 			}
 			LOGGER.warn(arg + ' ' + LETRA_DE_CONTROL.charAt(

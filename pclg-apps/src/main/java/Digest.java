@@ -18,7 +18,7 @@ import static org.pclg.security.Digest.getAlgorithms;
 import static org.pclg.security.Digest.verifyDigest;
 
 /**
- * Un acceso desde la línea de comandos a la clase
+ * Un acceso desde la lï¿½nea de comandos a la clase
  * org.pclg.security.Digest
  *
  * @author El Coyote.

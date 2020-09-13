@@ -189,7 +189,7 @@ public class GenerateRecibosDocumentService {
 
         if (startTotal.add(communityIn).add(waterIn).subtract(totalExpenses.value)
             .subtract(endTotal).compareTo(BigDecimal.ZERO) != 0) {
-            throw new RuntimeException("¡Danger, danger: inconsistencia en los valores!");
+            throw new RuntimeException("ï¿½Danger, danger: inconsistencia en los valores!");
         }
 
         return reportingData;

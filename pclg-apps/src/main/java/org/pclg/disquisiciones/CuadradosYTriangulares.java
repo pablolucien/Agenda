@@ -9,18 +9,18 @@ import java.util.Set;
 import java.util.TreeSet;
 
 /**
- * Clase para resolver el enigma de Numberphile de si hay más números a la vez
- * triangulares (x = m * (m + 1) / 2) y cuadrados (x = n * n) además del 36.
+ * Clase para resolver el enigma de Numberphile de si hay mï¿½s nï¿½meros a la vez
+ * triangulares (x = m * (m + 1) / 2) y cuadrados (x = n * n) ademï¿½s del 36.
  *
- * Si los hay, ¿cuál es el patrón?
+ * Si los hay, ï¿½cuï¿½l es el patrï¿½n?
  *
  * Puzzle Is 36 the only triangle-square number.mp4
  *
  * Para encontrarlos buscamos los puntos en que ambas funciones tomen
- * valores que estén en el rango de ambas.
+ * valores que estï¿½n en el rango de ambas.
  *
  * Premature optimization is the root of all evil.
- * —Donald E. Knuth
+ * ï¿½Donald E. Knuth
  *
  * @author El Coyote Cojo
  * @since 6/08/17 8:20

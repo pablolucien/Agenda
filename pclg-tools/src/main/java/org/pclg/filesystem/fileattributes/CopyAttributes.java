@@ -46,10 +46,10 @@ public class CopyAttributes {
 	}
 
 	/**
-	 * Copia los atributos de los archivos que están en sourceDir a los archivos
+	 * Copia los atributos de los archivos que estï¿½n en sourceDir a los archivos
 	 * de targetDir que tengan los mismos nombres.
 	 *
-	 * @param targetDir El directorio orígen.
+	 * @param targetDir El directorio orï¿½gen.
 	 * @param sourceDir El directorio destino.
 	 *
 	 * @return the undo file.
@@ -68,7 +68,7 @@ public class CopyAttributes {
 			for (final File targetFile : files) {
 				final File sourceFile = new File(sourceDir, targetFile.getName());
 				if (!sourceFile.exists()) {
-					LOGGER.warn(String.format("%s no existe: no hago ná de ná.", sourceFile));
+					LOGGER.warn(String.format("%s no existe: no hago nï¿½ de nï¿½.", sourceFile));
 					continue;
 				}
 				final FileAttributes tgtAttributes = FileAttributesFactory.newInstance();
@@ -80,7 +80,7 @@ public class CopyAttributes {
 				srcAttributes.applyAttributes(targetFile);
 			}
 			final File tempFile = File.createTempFile(CopyAttributes.class.getSimpleName(), ".ser");
-			LOGGER.warn(String.format("Almacenando la información de undo en %s.", tempFile));
+			LOGGER.warn(String.format("Almacenando la informaciï¿½n de undo en %s.", tempFile));
 			try (final ObjectOutputStream stream = new ObjectOutputStream(new FileOutputStream(tempFile))) {
 				stream.writeObject(modifications);
 			} catch (final IOException ex) {

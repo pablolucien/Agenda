@@ -71,7 +71,7 @@ public final class DbManager {
 	}
 
 	/**
-	 * Verifica la existencia de las tablas de la aplicación y las crea si no
+	 * Verifica la existencia de las tablas de la aplicaciï¿½n y las crea si no
 	 * existen.
 	 * @param properties de donde sacar las tablas, las sentencias SQL, etc.
 	 */
@@ -92,7 +92,7 @@ public final class DbManager {
 	/**
 	 * Verifica la existencia de una tabla.
 	 *
-	 * @param conn Conexión a la base de datos.
+	 * @param conn Conexiï¿½n a la base de datos.
 	 * @param tableName tabla a verificar.
 	 * @return <code>true</code> si existe, <code>false</code> si no.
 	 * @throws SQLException si pasan cosas malas.
@@ -118,7 +118,7 @@ public final class DbManager {
 	/**
 	 * Crea una tabla y eventualmente la inicializa con datos.
 	 *
-	 * @param conn la conexión a la base de datos.
+	 * @param conn la conexiï¿½n a la base de datos.
 	 * @param tableName la tabla a crear.
 	 * @param properties Propertiees que contiene las sentencias a usar en la
 	 *        forma AgendaDb.create<tableName>, AgendaDb.populate<tableName> y
