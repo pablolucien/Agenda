@@ -1,10 +1,10 @@
 package org.pclg.filesystem.synchonizer;
 
-import org.apache.log4j.Appender;
 import org.apache.log4j.Level;
-import org.apache.log4j.Logger;
 import org.pclg.filesystem.synchonizer.persistence.DataAccess;
 import org.pclg.log.LoggerFactory;
+import org.pclg.log.TextAreaAppender;
+import org.pclg.log.TextAreaLogger;
 import org.pclg.tools.ArrayTools;
 import org.pclg.tools.FileTools;
 import org.pclg.tools.Pair;
@@ -35,7 +35,7 @@ import static org.pclg.tools.StringTools.isEmptyOrBlank;
  */
 public class DirectorySynchronizer {
     static final String BASENAME = DirectorySynchronizer.class.getSimpleName();
-    private static final Logger LOGGER = LoggerFactory.makeLog4J();
+    private static final TextAreaLogger LOGGER = new TextAreaLogger(LoggerFactory.makeLog4J());
     static final String ADD_FILE_PAD = "++++++ ";
     private static final String MODIF_FILE_PAD = "****** ";
     private static final String ADD_DIR_PAD = "////// ";
@@ -103,7 +103,7 @@ public class DirectorySynchronizer {
                     }
                 }
             }
-            LOGGER.log(Level.OFF, counters);
+            LOGGER.log(Level.OFF, counters.toString());
             if (counters.filesWithSameContent() == 0) {
                 Files.delete(duplicatedFilesLogFile.toPath());
             } else {
@@ -225,7 +225,7 @@ public class DirectorySynchronizer {
         return !(dir.isDirectory() && dir.canExecute() && dir.canRead() && dir.canWrite());
     }
 
-    static void addAppender(final Appender appender) {
+    static void addAppender(final TextAreaAppender appender) {
         LOGGER.addAppender(appender);
         DataAccess.addAppender(appender);
     }

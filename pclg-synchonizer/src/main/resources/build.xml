@@ -68,7 +68,7 @@
             <manifest>
                 <attribute name="Built-By" value="${user.name}"/>
                 <attribute name="Main-Class" value="org.pclg.filesystem.synchonizer.DirectorySynchronizer"/>
-                <attribute name="Class-Path" value="pclg-tools.jar : Icons.jar : Sounds.jar : json-20180130.jar : log4j-api-2.13.3.jar : derby.jar"/>
+                <attribute name="Class-Path" value="pclg-tools.jar : Icons.jar : Sounds.jar : json-20180130.jar : log4j-api-2.13.3.jar : log4j-core-2.13.3 : log4j-1.2-api-2.13.3.jar : derby.jar : ."/>
             </manifest>
         </jar>
     </target>

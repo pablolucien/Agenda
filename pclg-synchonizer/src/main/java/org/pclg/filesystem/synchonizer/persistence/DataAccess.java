@@ -1,10 +1,10 @@
 package org.pclg.filesystem.synchonizer.persistence;
 
-import org.apache.log4j.Appender;
 import org.apache.log4j.Level;
-import org.apache.log4j.Logger;
 import org.pclg.dbutil.DbManager;
 import org.pclg.log.LoggerFactory;
+import org.pclg.log.TextAreaAppender;
+import org.pclg.log.TextAreaLogger;
 import org.pclg.runtime.RuntimeControl;
 
 import java.io.File;
@@ -21,7 +21,7 @@ import static org.pclg.tools.StringTools.isEmptyOrBlank;
  * @since 27/05/2020.
  */
 public class DataAccess {
-    private static final Logger LOGGER = LoggerFactory.makeLog4J();
+    private static final TextAreaLogger LOGGER = new TextAreaLogger(LoggerFactory.makeLog4J());
     private static final String PATH_PLACEHOLDER = "[[[PATH]]]";
     private Connection dbConnection;
     private boolean initialized;
@@ -43,7 +43,7 @@ public class DataAccess {
         }
     }
 
-    public static void addAppender(final Appender appender) {
+    public static void addAppender(final TextAreaAppender appender) {
         LOGGER.addAppender(appender);
     }
 

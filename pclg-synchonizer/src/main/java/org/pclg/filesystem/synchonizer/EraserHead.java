@@ -1,8 +1,8 @@
 package org.pclg.filesystem.synchonizer;
 
-import org.apache.log4j.Logger;
 import org.pclg.log.LoggerFactory;
 import org.pclg.log.TextAreaAppender;
+import org.pclg.log.TextAreaLogger;
 import org.pclg.tools.StringTools;
 
 import java.io.File;
@@ -19,7 +19,7 @@ import static org.pclg.filesystem.synchonizer.DirectorySynchronizer.ADD_FILE_PAD
  * @since 20/12/2018.
  */
 final class EraserHead {
-    private static final Logger LOGGER = LoggerFactory.makeLog4J();
+    private static final TextAreaLogger LOGGER = new TextAreaLogger(LoggerFactory.makeLog4J());
 
 	private EraserHead() {
 	}

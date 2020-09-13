@@ -1,13 +1,13 @@
 package org.pclg.filesystem.synchonizer;
 
 import org.apache.log4j.Level;
-import org.apache.log4j.Logger;
 import org.pclg.gui.FancyButtonPanel;
 import org.pclg.gui.Kaleidoscope;
 import org.pclg.gui.ManagedScrollPane;
 import org.pclg.gui.VersatileComboBox;
 import org.pclg.log.LoggerFactory;
 import org.pclg.log.TextAreaAppender;
+import org.pclg.log.TextAreaLogger;
 import org.pclg.tools.Chrono;
 import org.pclg.tools.Command;
 import org.pclg.tools.GUITools;
@@ -56,7 +56,7 @@ import static org.pclg.tools.PropertiesHelper.getStringFromProperties;
  * @since 6/09/18 18:20
  */
 final class DirectorySynchronizerGUI {
-    private static final Logger LOGGER = LoggerFactory.makeLog4J();
+    private static final TextAreaLogger LOGGER = new TextAreaLogger(LoggerFactory.makeLog4J());
     private static final String LAST_DIR_KEY = DirectorySynchronizer.BASENAME + ".lastDir";
     private static final String LAST_FILE_KEY = DirectorySynchronizer.BASENAME + ".lastFile";
     private static final String BUTTON_1_TEXT_KEY = DirectorySynchronizer.BASENAME + ".selectTargetsButton.text";

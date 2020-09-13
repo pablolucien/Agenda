@@ -32,6 +32,13 @@
         },
         {
             "dirs": [
+                "${ROOT_C}/home/pablo/development/projects/test-pdf",
+                "${ROOT_E}/home/pablo/development/projects/test-pdf"
+            ],
+            "Exclude": "target/:out/"
+        },
+        {
+            "dirs": [
                 "${ROOT_C}/home/pablo/development/projects/quotes",
                 "${ROOT_E}/home/pablo/development/projects/quotes"
             ],

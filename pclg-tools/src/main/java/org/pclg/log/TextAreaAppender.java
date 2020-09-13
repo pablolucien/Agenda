@@ -11,7 +11,10 @@ import java.io.Writer;
  * @since 08/08/2018.
  */
 public class TextAreaAppender extends WriterAppender {
+    private JTextArea textArea;
+
     public TextAreaAppender(final JTextArea textArea) {
+        this.textArea = textArea;
         textArea.setFont(new Font("Monospaced", Font.PLAIN, 12));
         setName(toString());
         setLayout(new PatternLayout("%level - %m%n"));
@@ -35,5 +38,9 @@ public class TextAreaAppender extends WriterAppender {
                 TextAreaAppender.this.close();
             }
         });
+    }
+
+    public void write(String message) {
+        textArea.append(message + '\n');
     }
 }

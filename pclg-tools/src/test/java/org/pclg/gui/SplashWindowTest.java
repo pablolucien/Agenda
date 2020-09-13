@@ -21,7 +21,8 @@ public class SplashWindowTest {
     public void testSplashWindow() throws Exception {
         final SplashWindow splashWindow = new SplashWindow(
             new ImageIcon(SplashWindowTest.class.getResource("/images/unknown-man.png")),
-            "/sounds/success_sound.wav"
+//            "/sounds/success_sound.wav"
+            null
         );
         splashWindow.setStatusColor(Color.red);
 
