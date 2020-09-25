@@ -24,6 +24,7 @@
             "Exclude": "*_custom.properties:*_technical.properties:Fortunes.properties"
         },
         {
+            "unidirectional": true,
             "dirs": [
                 "${ROOT_C}/home/pablo/development/projects/Alles",
                 "${ROOT_E}/home/pablo/development/projects/Alles"

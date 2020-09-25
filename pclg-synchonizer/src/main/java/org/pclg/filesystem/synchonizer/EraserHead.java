@@ -1,5 +1,6 @@
 package org.pclg.filesystem.synchonizer;
 
+import org.apache.log4j.Level;
 import org.pclg.log.LoggerFactory;
 import org.pclg.log.TextAreaAppender;
 import org.pclg.log.TextAreaLogger;
@@ -48,10 +49,10 @@ final class EraserHead {
         final File file = new File(filename);
         if (file.exists()) {
 			if (onlyTest) {
-				LOGGER.warn("Should have deleted = " + filename);
+				LOGGER.log(Level.OFF, "Should have deleted = " + filename);
 				return;
 			}
-            LOGGER.warn("Deleting = " + filename);
+            LOGGER.log(Level.OFF, "Deleting = " + filename);
             try {
                 Files.delete(file.toPath());
             } catch (final IOException ex) {

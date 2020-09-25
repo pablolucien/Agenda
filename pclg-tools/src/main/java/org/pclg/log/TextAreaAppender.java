@@ -42,5 +42,6 @@ public class TextAreaAppender extends WriterAppender {
 
     public void write(String message) {
         textArea.append(message + '\n');
+        textArea.repaint();
     }
 }
