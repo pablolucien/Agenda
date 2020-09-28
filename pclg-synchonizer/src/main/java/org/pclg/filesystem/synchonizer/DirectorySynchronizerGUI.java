@@ -1,6 +1,6 @@
 package org.pclg.filesystem.synchonizer;
 
-import org.apache.log4j.Level;
+import org.apache.logging.log4j.Level;
 import org.pclg.gui.FancyButtonPanel;
 import org.pclg.gui.Kaleidoscope;
 import org.pclg.gui.ManagedScrollPane;

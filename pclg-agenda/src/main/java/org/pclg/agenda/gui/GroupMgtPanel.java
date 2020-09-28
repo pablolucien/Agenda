@@ -1,6 +1,6 @@
 package org.pclg.agenda.gui;
 
-import org.apache.log4j.Logger;
+import org.apache.logging.log4j.Logger;
 import org.pclg.agenda.AgendaDb;
 import org.pclg.agenda.entities.Grupo;
 import org.pclg.gui.EditableJList;

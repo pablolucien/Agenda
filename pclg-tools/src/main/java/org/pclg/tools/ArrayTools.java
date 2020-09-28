@@ -7,8 +7,8 @@ import java.io.PrintStream;
 import java.lang.reflect.Array;
 
 /**
- * Provee algunas funciones de uso comun para manejo de arrays
- * Estos métodos antes estaban en ToolBox
+ * Provides some commonly used functions for handling arrays.
+ * These methods were previously in ToolBox.
  *
  * @author El Coyote Cojo
  * @version 2002.05.13
@@ -27,14 +27,12 @@ public final class ArrayTools {
 
 
 	/**
-	 * Busca la posicion un objeto en un array. Es una busqueda secuencial,
-	 * ergo, potencialmente lenta. Usa equals()
+	 * Finds the position of an object in an array. It's a sequential search, ergo, potentially slow. Uses equals().
 	 *
-	 * @param array  El arreglo donde vamos a buscar.
-	 * @param object El objeto que vamos a buscar
+	 * @param array  The array where we are going to search.
+	 * @param object The object that we are looking for.
 	 *
-	 * @return la primera posición del objeto en el array, o -1 si no está o
-	 * alguno de los parametros es null
+	 * @return the first position of the object in the array, or -1 if it is not there or any of the parameters is null.
 	 *
 	 * @since 2004.08.19
 	 */

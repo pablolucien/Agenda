@@ -1,6 +1,6 @@
 package org.pclg.media.image;
 
-import org.apache.log4j.Logger;
+import org.apache.logging.log4j.Logger;
 import org.pclg.dbutil.VersatileConnection;
 import org.pclg.log.LoggerFactory;
 import org.pclg.xtras.ClassPathHacker;

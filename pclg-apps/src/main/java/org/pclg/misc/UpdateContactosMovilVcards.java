@@ -11,7 +11,7 @@ import ezvcard.property.FormattedName;
 import ezvcard.property.Nickname;
 import ezvcard.property.StructuredName;
 import ezvcard.property.Telephone;
-import org.apache.log4j.Logger;
+import org.apache.logging.log4j.Logger;
 import org.pclg.log.LoggerFactory;
 import org.pclg.tools.Browser;
 

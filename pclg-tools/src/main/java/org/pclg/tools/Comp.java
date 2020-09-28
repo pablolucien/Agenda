@@ -37,7 +37,7 @@ import static org.pclg.tools.FileTools.NULL_FILE_ARRAY;
 // TODO: unificar las funcionalidades de esta clase y CompDel
 public class Comp extends JFrame {
 
-    private static final org.apache.log4j.Logger LOGGER = LoggerFactory.makeLog4J();
+    private static final org.apache.logging.log4j.Logger LOGGER = LoggerFactory.makeLog4J();
     private static final long serialVersionUID = 5526824526669141780L;
 
     //???????  Eliminar

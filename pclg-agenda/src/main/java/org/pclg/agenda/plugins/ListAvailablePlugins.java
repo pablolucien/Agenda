@@ -1,7 +1,7 @@
 package org.pclg.agenda.plugins;
 
-import org.apache.log4j.Level;
-import org.apache.log4j.Logger;
+import org.apache.logging.log4j.Level;
+import org.apache.logging.log4j.Logger;
 import org.pclg.log.LoggerFactory;
 import org.pclg.runtime.RuntimeTools;
 import org.pclg.tools.ToolBox;

@@ -1,6 +1,6 @@
 package org.pclg.alter;
 
-import org.apache.log4j.Logger;
+import org.apache.logging.log4j.Logger;
 import org.pclg.filelist.FileListPanel;
 import org.pclg.gui.JLabeledField;
 import org.pclg.gui.JLabeledFieldGroup;

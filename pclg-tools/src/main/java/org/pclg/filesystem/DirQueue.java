@@ -8,7 +8,7 @@ import java.util.Properties;
 import static org.pclg.tools.StringTools.isEmptyOrBlank;
 
 /**
- * Una cola de directorios para guardar la historia de navegación entre ellos.
+ * A directory queue to store the browsing history between them.
  * @author El Coyote Cojo
  * @since 2015.06.09
  */
@@ -37,7 +37,7 @@ public final class DirQueue {
 	}
 
 	/**
-	 * @return el tamaño de la cola.
+	 * @return the size of the queue.
 	 */
 	public int size() {
 		return queue.size();
@@ -52,8 +52,7 @@ public final class DirQueue {
 
 
 	/**
-	 * @return Se desplaza una posición hacia adelante si la hay y devuelve el 
-	 * directiorio que está en esa posicion.
+	 * @return It moves one position forward if there is one and returns the directory that is in that position.
 	 */
 	public File fwd() {
 		if (cwdPointer < queue.size() - 1) {
@@ -63,11 +62,13 @@ public final class DirQueue {
 	}
 
 	/**
-	 * @return Se desplaza una posición hacia adelante en la cola. Si hay un 
-	 * directiorio en esa posicion y es diferente del que se le pasa por 
-	 * parámetro lo substituye y elimina todo lo que haya de allí en adelante.
-	 * Si no hay nada lo agrega. Si es igual, no hace cambios. Devuelve el 
-	 * directiorio que está en esa posicion.
+	 * It moves one position forward in the queue.
+	 * If there is a directory in that position and it is different from the one passed as a parameter,
+	 * replaces it and removes everything from there on.
+	 * If there is nothing adds it.
+	 * If it is the same, it does not make changes.
+	 *
+	 * @return  the directory that is in that position.
 	 */
 	public File fwd(final File newDir) {
 		cwdPointer++;
@@ -90,8 +91,8 @@ public final class DirQueue {
 	}
 
 	/**
-	 * @return Se desplaza una posición hacia atrás si la hay y devuelve el 
-	 * directiorio que está en esa posicion.
+	 * @return Se desplaza una posiciï¿½n hacia atrï¿½s si la hay y devuelve el 
+	 * directiorio que estï¿½ en esa posicion.
 	 */
 	public File back() {
 		if (cwdPointer > 0) {

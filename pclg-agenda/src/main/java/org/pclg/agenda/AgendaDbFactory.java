@@ -1,7 +1,7 @@
 package org.pclg.agenda;
 
-import org.apache.log4j.Level;
-import org.apache.log4j.Logger;
+import org.apache.logging.log4j.Level;
+import org.apache.logging.log4j.Logger;
 import org.jpatterns.gof.AbstractFactoryPattern;
 import org.pclg.log.LoggerFactory;
 

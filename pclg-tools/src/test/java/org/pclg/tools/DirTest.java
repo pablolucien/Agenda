@@ -1,6 +1,6 @@
 package org.pclg.tools;
 
-import org.apache.log4j.Logger;
+import org.apache.logging.log4j.Logger;
 import org.pclg.filesystem.DirectoryCleaner;
 import org.pclg.log.LoggerFactory;
 import org.testng.annotations.Test;

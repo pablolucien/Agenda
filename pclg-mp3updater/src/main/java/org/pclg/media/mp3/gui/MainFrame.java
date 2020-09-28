@@ -1,6 +1,6 @@
 package org.pclg.media.mp3.gui;
 
-import org.apache.log4j.Logger;
+import org.apache.logging.log4j.Logger;
 import org.pclg.gui.DirSelectorField;
 import org.pclg.gui.JLabeledField;
 import org.pclg.gui.JLabeledFieldGroup;

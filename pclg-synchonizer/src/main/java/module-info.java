@@ -3,6 +3,6 @@ module pclg.synchonizer {
     requires java.desktop;
     requires java.sql;
     requires json;
-    requires org.apache.log4j;
+    requires org.apache.logging.log4j;
     requires pclg.tools;
 }

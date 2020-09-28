@@ -1,6 +1,6 @@
 package org.pclg.condominio;
 
-import org.apache.log4j.Logger;
+import org.apache.logging.log4j.Logger;
 import org.docx4j.Docx4J;
 import org.docx4j.openpackaging.exceptions.Docx4JException;
 import org.docx4j.openpackaging.packages.WordprocessingMLPackage;

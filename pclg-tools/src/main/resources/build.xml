@@ -56,6 +56,7 @@
         <copy todir="${build}" preservelastmodified="true">
             <fileset dir="${resources}" includes="${properties}"/>
             <fileset file="${resources}/images/Please_stand_by.png"/>
+            <fileset file="${resources}/Magic.magic"/>
             <fileset file="${src}/org/pclg/tools/Clean.properties"/>
             <fileset file="${src}/org/pclg/tools/Clean.targets"/>
         </copy>
@@ -63,6 +64,7 @@
         <copy todir="${dist}" preservelastmodified="true">
             <fileset dir="${resources}" includes="${properties}"/>
             <fileset file="${resources}/images/Please_stand_by.png"/>
+            <fileset file="${resources}/Magic.magic"/>
             <fileset file="${src}/org/pclg/tools/Clean.properties"/>
             <fileset file="${src}/org/pclg/tools/Clean.targets"/>
         </copy>

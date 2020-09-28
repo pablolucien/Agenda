@@ -1,7 +1,7 @@
 package org.pclg.disquisiciones;
 
-import org.apache.log4j.Level;
-import org.apache.log4j.Logger;
+import org.apache.logging.log4j.Level;
+import org.apache.logging.log4j.Logger;
 import org.pclg.log.LoggerFactory;
 import org.pclg.tools.GUITools;
 
@@ -214,7 +214,8 @@ public final class GameOfChaos extends JFrame {
     }
 
     public static void main(final String[] args) {
-        LOGGER.setLevel(Level.ALL);
+//        LOGGER.setLevel(Level.ALL);
+        LOGGER.atLevel(Level.ALL);  // FIXME: No se si este es el equivalente
         final GameOfChaos plotter = new GameOfChaos();
         GUITools.center(plotter, null);
         plotter.setVisible(true);

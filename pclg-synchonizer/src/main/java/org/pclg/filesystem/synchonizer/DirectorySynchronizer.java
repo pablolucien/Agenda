@@ -1,6 +1,6 @@
 package org.pclg.filesystem.synchonizer;
 
-import org.apache.log4j.Level;
+import org.apache.logging.log4j.Level;
 import org.pclg.filesystem.synchonizer.persistence.DataAccess;
 import org.pclg.log.LoggerFactory;
 import org.pclg.log.TextAreaAppender;

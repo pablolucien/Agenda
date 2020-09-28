@@ -1,6 +1,6 @@
 package org.pclg.agenda.plugins;
 
-import org.apache.log4j.Logger;
+import org.apache.logging.log4j.Logger;
 import org.pclg.agenda.entities.AgendaRecord;
 import org.pclg.log.LoggerFactory;
 

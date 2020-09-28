@@ -33,10 +33,10 @@
         },
         {
             "dirs": [
-                "${ROOT_C}/home/pablo/development/projects/test-pdf",
-                "${ROOT_E}/home/pablo/development/projects/test-pdf"
+                "${ROOT_C}/home/pablo/development/projects/portfolio",
+                "${ROOT_E}/home/pablo/development/projects/portfolio"
             ],
-            "Exclude": "target/:out/"
+            "Exclude": "target/:out/:.idea/:.git/"
         },
         {
             "dirs": [

@@ -1,7 +1,7 @@
 package org.pclg.log;
 
-import org.apache.log4j.Level;
-import org.apache.log4j.Logger;
+import org.apache.logging.log4j.Level;
+import org.apache.logging.log4j.Logger;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -59,14 +59,14 @@ public class TextAreaLogger {
 
     public void log(Level level, String message) {
         logger.log(level, message);
-        if (logger.isEnabledFor(level)) {
+        if (logger.isEnabled(level)) {
             appenders.forEach(appender -> appender.write(message));
         }
     }
 
     public void log(Level level, String message, Throwable throwable) {
         logger.log(level, message, throwable);
-        if (logger.isEnabledFor(level)) {
+        if (logger.isEnabled(level)) {
             appenders.forEach(appender -> appender.write(message));
         }
     }

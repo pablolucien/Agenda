@@ -1,7 +1,7 @@
 package org.pclg.tools.productivity.condominio;
 
-import org.apache.log4j.Level;
-import org.apache.log4j.Logger;
+import org.apache.logging.log4j.Level;
+import org.apache.logging.log4j.Logger;
 import org.pclg.log.LoggerFactory;
 import org.pclg.tools.GUITools;
 
@@ -113,7 +113,9 @@ public final class Recibos extends JFrame {
     }
 
     public static void main(String[] args) {
-        LOGGER.setLevel(Level.ALL);
+//        LOGGER.setLevel(Level.ALL);
+        LOGGER.atLevel(Level.ALL);  // FIXME: No se si este es el equivalente
+
         final Recibos plotter = new Recibos();
         plotter.setVisible(true);
         GUITools.scrollToCenter(plotter, null);

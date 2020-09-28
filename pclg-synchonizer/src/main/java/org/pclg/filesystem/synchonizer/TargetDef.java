@@ -1,6 +1,6 @@
 package org.pclg.filesystem.synchonizer;
 
-import org.apache.log4j.Logger;
+import org.apache.logging.log4j.Logger;
 import org.json.JSONArray;
 import org.json.JSONObject;
 import org.pclg.log.LoggerFactory;

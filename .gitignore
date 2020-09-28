@@ -4,8 +4,9 @@
 /pclg-apps/test-output/
 /pclg-agenda/test-output/
 /pclg-synchonizer/test-output/
-/pclg-tools/test-output/
+/pclg-tools/test-output/DatabaseEncrypter
 /runant.bat
 /pclg-keepass/
 /local_config.properties
 /.idea/sonarlint/
+/pclg-tools/target/

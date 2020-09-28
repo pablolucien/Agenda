@@ -1,6 +1,6 @@
 package org.pclg.agenda.gui;
 
-import org.apache.log4j.Logger;
+import org.apache.logging.log4j.Logger;
 import org.pclg.agenda.entities.Pais;
 import org.pclg.log.LoggerFactory;
 

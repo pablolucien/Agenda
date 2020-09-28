@@ -7,6 +7,6 @@ module pclg.apps {
     requires gnu.getopt;
     requires itextpdf;
     requires jxl;
-    requires org.apache.log4j;
+    requires org.apache.logging.log4j;
     requires pclg.tools;
 }

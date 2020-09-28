@@ -1,6 +1,6 @@
 package org.pclg.agenda.entities;
 
-import org.apache.log4j.Logger;
+import org.apache.logging.log4j.Logger;
 import org.pclg.agenda.AgendaRecordUtil;
 import org.pclg.log.LoggerFactory;
 import org.testng.annotations.BeforeClass;

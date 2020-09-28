@@ -1,6 +1,6 @@
 package org.pclg.tools;
 
-import org.apache.log4j.Category;
+import org.apache.logging.log4j.Logger;
 import org.pclg.log.LoggerFactory;
 
 import java.io.FileInputStream;
@@ -13,7 +13,7 @@ import java.util.Map;
  */
 @SuppressWarnings("deprecation")
 public class TestObservableProperties implements ChangeObserver<ObservableProperties> {
-	private static final Category LOGGER = LoggerFactory.makeLog4J();
+	private static final Logger LOGGER = LoggerFactory.makeLog4J();
 
 	private TestObservableProperties() throws Exception {
 		final ObservableProperties properties = new ObservableProperties();

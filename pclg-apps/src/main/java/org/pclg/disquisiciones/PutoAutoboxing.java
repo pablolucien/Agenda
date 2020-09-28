@@ -1,7 +1,7 @@
 package org.pclg.disquisiciones;
 
-import org.apache.log4j.Level;
-import org.apache.log4j.Logger;
+import org.apache.logging.log4j.Level;
+import org.apache.logging.log4j.Logger;
 import org.pclg.log.LoggerFactory;
 
 import java.util.Collections;
@@ -38,7 +38,8 @@ public final class PutoAutoboxing {
         Integer d = map.get("cantidad de dioses que realmente existen");
         int e = 0;
 
-        LOGGER.setLevel(Level.ALL);
+//        LOGGER.setLevel(Level.ALL);
+        LOGGER.atLevel(Level.ALL);  // FIXME: No se si este es el equivalente
 		// Transitividad
         LOGGER.info("a == b : " + (a == b));
         LOGGER.info("b == c : " + (b == c));

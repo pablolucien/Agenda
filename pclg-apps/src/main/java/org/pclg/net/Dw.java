@@ -1,6 +1,6 @@
 package org.pclg.net;
 
-import org.apache.log4j.Logger;
+import org.apache.logging.log4j.Logger;
 import org.pclg.log.LoggerFactory;
 import org.pclg.tools.ControlableThread;
 import org.pclg.tools.StringTools;

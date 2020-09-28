@@ -3,7 +3,7 @@ package org.pclg.tools;
 
 // ******************************** imports
 
-import org.apache.log4j.Logger;
+import org.apache.logging.log4j.Logger;
 import org.pclg.filesystem.fileattributes.FileAttributes;
 import org.pclg.filesystem.fileattributes.FileAttributesFactory;
 import org.pclg.log.LoggerFactory;

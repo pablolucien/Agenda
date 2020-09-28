@@ -30,69 +30,127 @@
       <change beforePath="$PROJECT_DIR$/pclg-alter/src/main/java/module-info.java" beforeDir="false" afterPath="$PROJECT_DIR$/pclg-alter/src/main/java/module-info.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/pclg-alter/src/main/java/org/pclg/alter/ErrorIndicator.java" beforeDir="false" afterPath="$PROJECT_DIR$/pclg-alter/src/main/java/org/pclg/alter/ErrorIndicator.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/pclg-alter/src/main/resources/build.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pclg-alter/src/main/resources/build.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pclg-apps/pclg-apps.iml" beforeDir="false" afterPath="$PROJECT_DIR$/pclg-apps/pclg-apps.iml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/pclg-apps/src/main/config/build.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pclg-apps/src/main/config/build.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pclg-apps/src/main/html/body.html" beforeDir="false" afterPath="$PROJECT_DIR$/pclg-apps/src/main/html/body.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pclg-apps/src/main/java/CatPDFs.java" beforeDir="false" afterPath="$PROJECT_DIR$/pclg-apps/src/main/java/CatPDFs.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/pclg-apps/src/main/java/DNI.java" beforeDir="false" afterPath="$PROJECT_DIR$/pclg-apps/src/main/java/DNI.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/pclg-apps/src/main/java/Digest.java" beforeDir="false" afterPath="$PROJECT_DIR$/pclg-apps/src/main/java/Digest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pclg-apps/src/main/java/FilenameNormalizer.java" beforeDir="false" afterPath="$PROJECT_DIR$/pclg-apps/src/main/java/FilenameNormalizer.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pclg-apps/src/main/java/Magic.magic" beforeDir="false" afterPath="$PROJECT_DIR$/pclg-tools/src/main/resources/Magic.magic" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pclg-apps/src/main/java/ThumbsViewer.java" beforeDir="false" afterPath="$PROJECT_DIR$/pclg-apps/src/main/java/ThumbsViewer.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/pclg-apps/src/main/java/misc/sopra/OuvrirSuivi.java" beforeDir="false" afterPath="$PROJECT_DIR$/pclg-apps/src/main/java/misc/sopra/OuvrirSuivi.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pclg-apps/src/main/java/misc/sopra/PomUpdater.java" beforeDir="false" afterPath="$PROJECT_DIR$/pclg-apps/src/main/java/misc/sopra/PomUpdater.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/pclg-apps/src/main/java/misc/terasystems/Trucks.java" beforeDir="false" afterPath="$PROJECT_DIR$/pclg-apps/src/main/java/misc/terasystems/Trucks.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/pclg-apps/src/main/java/module-info.java" beforeDir="false" afterPath="$PROJECT_DIR$/pclg-apps/src/main/java/module-info.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pclg-apps/src/main/java/org/pclg/dictionary/DictionaryStack.java" beforeDir="false" afterPath="$PROJECT_DIR$/pclg-apps/src/main/java/org/pclg/dictionary/DictionaryStack.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/pclg-apps/src/main/java/org/pclg/disquisiciones/CuadradosYTriangulares.java" beforeDir="false" afterPath="$PROJECT_DIR$/pclg-apps/src/main/java/org/pclg/disquisiciones/CuadradosYTriangulares.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/pclg-apps/src/main/java/org/pclg/disquisiciones/GameOfChaos.java" beforeDir="false" afterPath="$PROJECT_DIR$/pclg-apps/src/main/java/org/pclg/disquisiciones/GameOfChaos.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/pclg-apps/src/main/java/org/pclg/disquisiciones/PutoAutoboxing.java" beforeDir="false" afterPath="$PROJECT_DIR$/pclg-apps/src/main/java/org/pclg/disquisiciones/PutoAutoboxing.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/pclg-apps/src/main/java/org/pclg/misc/UpdateContactosMovilVcards.java" beforeDir="false" afterPath="$PROJECT_DIR$/pclg-apps/src/main/java/org/pclg/misc/UpdateContactosMovilVcards.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pclg-apps/src/test/resources/TestBook.xls" beforeDir="false" afterPath="$PROJECT_DIR$/pclg-tools/src/test/resources/TestBook.xls" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pclg-apps/src/test/resources/TestBook.xlsx" beforeDir="false" afterPath="$PROJECT_DIR$/pclg-tools/src/test/resources/TestBook.xlsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pclg-apps/src/test/resources/images/unknown-man.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/pclg-tools/src/test/resources/images/unknown-man.jpg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pclg-apps/src/test/resources/images/unknown-woman.png" beforeDir="false" afterPath="$PROJECT_DIR$/pclg-tools/src/test/resources/images/unknown-woman.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pclg-apps/src/test/resources/sounds/success_sound.wav" beforeDir="false" afterPath="$PROJECT_DIR$/pclg-tools/src/test/resources/sounds/success_sound.wav" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pclg-apps/src/main/java/org/pclg/net/Dw.java" beforeDir="false" afterPath="$PROJECT_DIR$/pclg-apps/src/main/java/org/pclg/net/Dw.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/pclg-compdel/src/main/java/module-info.java" beforeDir="false" afterPath="$PROJECT_DIR$/pclg-compdel/src/main/java/module-info.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pclg-compdel/src/main/java/org/pclg/compdel/CompDelWorker.java" beforeDir="false" afterPath="$PROJECT_DIR$/pclg-compdel/src/main/java/org/pclg/compdel/CompDelWorker.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/pclg-compdel/src/main/java/org/pclg/compdel/ControlPanel.java" beforeDir="false" afterPath="$PROJECT_DIR$/pclg-compdel/src/main/java/org/pclg/compdel/ControlPanel.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/pclg-compdel/src/main/java/org/pclg/compdel/ReportManager.java" beforeDir="false" afterPath="$PROJECT_DIR$/pclg-compdel/src/main/java/org/pclg/compdel/ReportManager.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pclg-compdel/src/main/resources/CompDel_technical.properties" beforeDir="false" afterPath="$PROJECT_DIR$/pclg-compdel/src/main/resources/CompDel_technical.properties" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pclg-compdel/src/main/resources/build.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pclg-compdel/src/main/resources/build.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pclg-compdel/src/main/java/org/pclg/compdel/UndoFileManager.java" beforeDir="false" afterPath="$PROJECT_DIR$/pclg-compdel/src/main/java/org/pclg/compdel/UndoFileManager.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pclg-condominio/src/main/java/org/pclg/condominio/GenerateEncajerasDocxService.java" beforeDir="false" afterPath="$PROJECT_DIR$/pclg-condominio/src/main/java/org/pclg/condominio/GenerateEncajerasDocxService.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/pclg-condominio/src/main/java/org/pclg/condominio/GenerateRecibosDocumentService.java" beforeDir="false" afterPath="$PROJECT_DIR$/pclg-condominio/src/main/java/org/pclg/condominio/GenerateRecibosDocumentService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pclg-condominio/src/main/resources/build.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pclg-condominio/src/main/resources/build.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/pclg-misc/src/java/module-info.java" beforeDir="false" afterPath="$PROJECT_DIR$/pclg-misc/src/java/module-info.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/pclg-misc/src/java/tests/AnnotationTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/pclg-misc/src/java/tests/AnnotationTest.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/pclg-misc/src/java/tests/TaskDemo.java" beforeDir="false" afterPath="$PROJECT_DIR$/pclg-misc/src/java/tests/TaskDemo.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/pclg-mp3updater/src/main/java/module-info.java" beforeDir="false" afterPath="$PROJECT_DIR$/pclg-mp3updater/src/main/java/module-info.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pclg-mp3updater/src/main/java/org/pclg/media/id3/ID3Tag.java" beforeDir="false" afterPath="$PROJECT_DIR$/pclg-mp3updater/src/main/java/org/pclg/media/id3/ID3Tag.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/pclg-mp3updater/src/main/java/org/pclg/media/mp3/gui/MainFrame.java" beforeDir="false" afterPath="$PROJECT_DIR$/pclg-mp3updater/src/main/java/org/pclg/media/mp3/gui/MainFrame.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/pclg-mp3updater/src/main/java/org/pclg/media/utils/SrtAdjuster.java" beforeDir="false" afterPath="$PROJECT_DIR$/pclg-mp3updater/src/main/java/org/pclg/media/utils/SrtAdjuster.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pclg-mp3updater/src/main/resources/build.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pclg-mp3updater/src/main/resources/build.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/pclg-mp3updater/src/test/java/org/pclg/media/AlbumTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/pclg-mp3updater/src/test/java/org/pclg/media/AlbumTest.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/pclg-synchonizer/src/main/java/module-info.java" beforeDir="false" afterPath="$PROJECT_DIR$/pclg-synchonizer/src/main/java/module-info.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/pclg-synchonizer/src/main/java/org/pclg/filesystem/synchonizer/DirectorySynchronizer.java" beforeDir="false" afterPath="$PROJECT_DIR$/pclg-synchonizer/src/main/java/org/pclg/filesystem/synchonizer/DirectorySynchronizer.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pclg-synchonizer/src/main/resources/build.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pclg-synchonizer/src/main/resources/build.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pclg-synchonizer/src/main/java/org/pclg/filesystem/synchonizer/DirectorySynchronizerGUI.java" beforeDir="false" afterPath="$PROJECT_DIR$/pclg-synchonizer/src/main/java/org/pclg/filesystem/synchonizer/DirectorySynchronizerGUI.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pclg-synchonizer/src/main/java/org/pclg/filesystem/synchonizer/EraserHead.java" beforeDir="false" afterPath="$PROJECT_DIR$/pclg-synchonizer/src/main/java/org/pclg/filesystem/synchonizer/EraserHead.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pclg-synchonizer/src/main/java/org/pclg/filesystem/synchonizer/TargetDef.java" beforeDir="false" afterPath="$PROJECT_DIR$/pclg-synchonizer/src/main/java/org/pclg/filesystem/synchonizer/TargetDef.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pclg-synchonizer/src/main/java/org/pclg/filesystem/synchonizer/persistence/DataAccess.java" beforeDir="false" afterPath="$PROJECT_DIR$/pclg-synchonizer/src/main/java/org/pclg/filesystem/synchonizer/persistence/DataAccess.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pclg-synchonizer/src/main/resources/DS_Targets_development.json" beforeDir="false" afterPath="$PROJECT_DIR$/pclg-synchonizer/src/main/resources/DS_Targets_development.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pclg-synchonizer/src/main/resources/DS_Targets_light.json" beforeDir="false" afterPath="$PROJECT_DIR$/pclg-synchonizer/src/main/resources/DS_Targets_light.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/pclg-synchonizer/src/test/java/org/pclg/filesystem/synchonizer/DirectorySynchronizerTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/pclg-synchonizer/src/test/java/org/pclg/filesystem/synchonizer/DirectorySynchronizerTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pclg-tools/pclg-tools.iml" beforeDir="false" afterPath="$PROJECT_DIR$/pclg-tools/pclg-tools.iml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/pclg-tools/src/main/java/module-info.java" beforeDir="false" afterPath="$PROJECT_DIR$/pclg-tools/src/main/java/module-info.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pclg-tools/src/main/java/org/pclg/dbutil/AuditPostprocessor.java" beforeDir="false" afterPath="$PROJECT_DIR$/pclg-tools/src/main/java/org/pclg/dbutil/AuditPostprocessor.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/pclg-tools/src/main/java/org/pclg/dbutil/DbManager.java" beforeDir="false" afterPath="$PROJECT_DIR$/pclg-tools/src/main/java/org/pclg/dbutil/DbManager.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/pclg-tools/src/main/java/org/pclg/dbutil/DbUpdate.java" beforeDir="false" afterPath="$PROJECT_DIR$/pclg-tools/src/main/java/org/pclg/dbutil/DbUpdate.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pclg-tools/src/main/java/org/pclg/dbutil/VersatileConnection.java" beforeDir="false" afterPath="$PROJECT_DIR$/pclg-tools/src/main/java/org/pclg/dbutil/VersatileConnection.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pclg-tools/src/main/java/org/pclg/dbutil/VersatilePreparedStatement.java" beforeDir="false" afterPath="$PROJECT_DIR$/pclg-tools/src/main/java/org/pclg/dbutil/VersatilePreparedStatement.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pclg-tools/src/main/java/org/pclg/dbutil/VersatileResultSet.java" beforeDir="false" afterPath="$PROJECT_DIR$/pclg-tools/src/main/java/org/pclg/dbutil/VersatileResultSet.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pclg-tools/src/main/java/org/pclg/dbutil/VersatileStatement.java" beforeDir="false" afterPath="$PROJECT_DIR$/pclg-tools/src/main/java/org/pclg/dbutil/VersatileStatement.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pclg-tools/src/main/java/org/pclg/filelist/FileListPanel.java" beforeDir="false" afterPath="$PROJECT_DIR$/pclg-tools/src/main/java/org/pclg/filelist/FileListPanel.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pclg-tools/src/main/java/org/pclg/filesystem/CopyTreeStruct.java" beforeDir="false" afterPath="$PROJECT_DIR$/pclg-tools/src/main/java/org/pclg/filesystem/CopyTreeStruct.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pclg-tools/src/main/java/org/pclg/filesystem/DirQueue.java" beforeDir="false" afterPath="$PROJECT_DIR$/pclg-tools/src/main/java/org/pclg/filesystem/DirQueue.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pclg-tools/src/main/java/org/pclg/filesystem/EndOfLineChanger.java" beforeDir="false" afterPath="$PROJECT_DIR$/pclg-tools/src/main/java/org/pclg/filesystem/EndOfLineChanger.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/pclg-tools/src/main/java/org/pclg/filesystem/Touch.java" beforeDir="false" afterPath="$PROJECT_DIR$/pclg-tools/src/main/java/org/pclg/filesystem/Touch.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/pclg-tools/src/main/java/org/pclg/filesystem/fileattributes/CopyAttributes.java" beforeDir="false" afterPath="$PROJECT_DIR$/pclg-tools/src/main/java/org/pclg/filesystem/fileattributes/CopyAttributes.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pclg-tools/src/main/java/org/pclg/fortunes/FortuneTeller.java" beforeDir="false" afterPath="$PROJECT_DIR$/pclg-tools/src/main/java/org/pclg/fortunes/FortuneTeller.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pclg-tools/src/main/java/org/pclg/fortunes/Loader.java" beforeDir="false" afterPath="$PROJECT_DIR$/pclg-tools/src/main/java/org/pclg/fortunes/Loader.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pclg-tools/src/main/java/org/pclg/fortunes/Manager.java" beforeDir="false" afterPath="$PROJECT_DIR$/pclg-tools/src/main/java/org/pclg/fortunes/Manager.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/pclg-tools/src/main/java/org/pclg/gui/FileSystemView.java" beforeDir="false" afterPath="$PROJECT_DIR$/pclg-tools/src/main/java/org/pclg/gui/FileSystemView.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/pclg-tools/src/main/java/org/pclg/gui/FileView.java" beforeDir="false" afterPath="$PROJECT_DIR$/pclg-tools/src/main/java/org/pclg/gui/FileView.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/pclg-tools/src/main/java/org/pclg/gui/I18NManager.java" beforeDir="false" afterPath="$PROJECT_DIR$/pclg-tools/src/main/java/org/pclg/gui/I18NManager.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pclg-tools/src/main/java/org/pclg/gui/ImageButton.java" beforeDir="false" afterPath="$PROJECT_DIR$/pclg-tools/src/main/java/org/pclg/gui/ImageButton.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/pclg-tools/src/main/java/org/pclg/gui/ImageCache.java" beforeDir="false" afterPath="$PROJECT_DIR$/pclg-tools/src/main/java/org/pclg/gui/ImageCache.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pclg-tools/src/main/java/org/pclg/gui/InfoPanel.java" beforeDir="false" afterPath="$PROJECT_DIR$/pclg-tools/src/main/java/org/pclg/gui/InfoPanel.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pclg-tools/src/main/java/org/pclg/gui/JLabeledFieldGroup.java" beforeDir="false" afterPath="$PROJECT_DIR$/pclg-tools/src/main/java/org/pclg/gui/JLabeledFieldGroup.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pclg-tools/src/main/java/org/pclg/gui/ListSelector.java" beforeDir="false" afterPath="$PROJECT_DIR$/pclg-tools/src/main/java/org/pclg/gui/ListSelector.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/pclg-tools/src/main/java/org/pclg/gui/LnFController.java" beforeDir="false" afterPath="$PROJECT_DIR$/pclg-tools/src/main/java/org/pclg/gui/LnFController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pclg-tools/src/main/java/org/pclg/gui/SplashWindow.java" beforeDir="false" afterPath="$PROJECT_DIR$/pclg-tools/src/main/java/org/pclg/gui/SplashWindow.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/pclg-tools/src/main/java/org/pclg/log/LoggerFactory.java" beforeDir="false" afterPath="$PROJECT_DIR$/pclg-tools/src/main/java/org/pclg/log/LoggerFactory.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/pclg-tools/src/main/java/org/pclg/log/TextAreaAppender.java" beforeDir="false" afterPath="$PROJECT_DIR$/pclg-tools/src/main/java/org/pclg/log/TextAreaAppender.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pclg-tools/src/main/java/org/pclg/log/TextAreaLogger.java" beforeDir="false" afterPath="$PROJECT_DIR$/pclg-tools/src/main/java/org/pclg/log/TextAreaLogger.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/pclg-tools/src/main/java/org/pclg/media/image/DateTimeAdjuster.java" beforeDir="false" afterPath="$PROJECT_DIR$/pclg-tools/src/main/java/org/pclg/media/image/DateTimeAdjuster.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pclg-tools/src/main/java/org/pclg/media/image/ThumbnailCreator.java" beforeDir="false" afterPath="$PROJECT_DIR$/pclg-tools/src/main/java/org/pclg/media/image/ThumbnailCreator.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pclg-tools/src/main/java/org/pclg/runtime/Executioner.java" beforeDir="false" afterPath="$PROJECT_DIR$/pclg-tools/src/main/java/org/pclg/runtime/Executioner.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pclg-tools/src/main/java/org/pclg/runtime/ProcessLauncher.java" beforeDir="false" afterPath="$PROJECT_DIR$/pclg-tools/src/main/java/org/pclg/runtime/ProcessLauncher.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pclg-tools/src/main/java/org/pclg/runtime/RuntimeTools.java" beforeDir="false" afterPath="$PROJECT_DIR$/pclg-tools/src/main/java/org/pclg/runtime/RuntimeTools.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pclg-tools/src/main/java/org/pclg/security/Crypto.java" beforeDir="false" afterPath="$PROJECT_DIR$/pclg-tools/src/main/java/org/pclg/security/Crypto.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/pclg-tools/src/main/java/org/pclg/security/Digest.java" beforeDir="false" afterPath="$PROJECT_DIR$/pclg-tools/src/main/java/org/pclg/security/Digest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pclg-tools/src/main/java/org/pclg/security/PasswordDialog.java" beforeDir="false" afterPath="$PROJECT_DIR$/pclg-tools/src/main/java/org/pclg/security/PasswordDialog.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pclg-tools/src/main/java/org/pclg/tools/ArrayTools.java" beforeDir="false" afterPath="$PROJECT_DIR$/pclg-tools/src/main/java/org/pclg/tools/ArrayTools.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/pclg-tools/src/main/java/org/pclg/tools/ChangeableList.java" beforeDir="false" afterPath="$PROJECT_DIR$/pclg-tools/src/main/java/org/pclg/tools/ChangeableList.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/pclg-tools/src/main/java/org/pclg/tools/ChangeableListRef.java" beforeDir="false" afterPath="$PROJECT_DIR$/pclg-tools/src/main/java/org/pclg/tools/ChangeableListRef.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pclg-tools/src/main/java/org/pclg/tools/Chrono.java" beforeDir="false" afterPath="$PROJECT_DIR$/pclg-tools/src/main/java/org/pclg/tools/Chrono.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pclg-tools/src/main/java/org/pclg/tools/Comp.java" beforeDir="false" afterPath="$PROJECT_DIR$/pclg-tools/src/main/java/org/pclg/tools/Comp.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pclg-tools/src/main/java/org/pclg/tools/FileTools.java" beforeDir="false" afterPath="$PROJECT_DIR$/pclg-tools/src/main/java/org/pclg/tools/FileTools.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pclg-tools/src/main/java/org/pclg/tools/GUITools.java" beforeDir="false" afterPath="$PROJECT_DIR$/pclg-tools/src/main/java/org/pclg/tools/GUITools.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/pclg-tools/src/main/java/org/pclg/tools/ImageTools.java" beforeDir="false" afterPath="$PROJECT_DIR$/pclg-tools/src/main/java/org/pclg/tools/ImageTools.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/pclg-tools/src/main/java/org/pclg/tools/ObservableProperties.java" beforeDir="false" afterPath="$PROJECT_DIR$/pclg-tools/src/main/java/org/pclg/tools/ObservableProperties.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pclg-tools/src/main/java/org/pclg/tools/PropertiesHelper.java" beforeDir="false" afterPath="$PROJECT_DIR$/pclg-tools/src/main/java/org/pclg/tools/PropertiesHelper.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/pclg-tools/src/main/java/org/pclg/tools/ToolBox.java" beforeDir="false" afterPath="$PROJECT_DIR$/pclg-tools/src/main/java/org/pclg/tools/ToolBox.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/pclg-tools/src/main/java/org/pclg/tools/productivity/condominio/Recibos.java" beforeDir="false" afterPath="$PROJECT_DIR$/pclg-tools/src/main/java/org/pclg/tools/productivity/condominio/Recibos.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pclg-tools/src/main/java/org/pclg/tools/velocity/VelocityDriver.java" beforeDir="false" afterPath="$PROJECT_DIR$/pclg-tools/src/main/java/org/pclg/tools/velocity/VelocityDriver.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/pclg-tools/src/main/java/org/pclg/xtras/DriverPropertiesPanel.java" beforeDir="false" afterPath="$PROJECT_DIR$/pclg-tools/src/main/java/org/pclg/xtras/DriverPropertiesPanel.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/pclg-tools/src/main/resources/build.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pclg-tools/src/main/resources/build.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pclg-tools/src/test/java/org/pclg/log/LoggerFactoryTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/pclg-tools/src/test/java/org/pclg/log/LoggerFactoryTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pclg-tools/src/test/java/org/pclg/media/image/ThumbnailCreatorTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/pclg-tools/src/test/java/org/pclg/media/image/ThumbnailCreatorTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pclg-tools/src/test/java/org/pclg/tools/DirTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/pclg-tools/src/test/java/org/pclg/tools/DirTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pclg-tools/src/test/java/org/pclg/tools/TestObservableProperties.java" beforeDir="false" afterPath="$PROJECT_DIR$/pclg-tools/src/test/java/org/pclg/tools/TestObservableProperties.java" afterDir="false" />
     </list>
-    <list id="6eaabc47-20b5-4622-b4b5-a86e15e7458f" name="Deactivated temporarily" comment="">
-      <change beforePath="$PROJECT_DIR$/pclg-apps/src/main/java/misc/terasystems/WDispatcher.java" beforeDir="false" afterPath="$PROJECT_DIR$/pclg-apps/src/main/java/misc/terasystems/WDispatcher.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pclg-misc/src/java/tests/TaskDemo.java" beforeDir="false" afterPath="$PROJECT_DIR$/pclg-misc/src/java/tests/TaskDemo.java" afterDir="false" />
+    <list id="6eaabc47-20b5-4622-b4b5-a86e15e7458f" name="Deactivated temporarily" comment="Deactivated temporarily" />
+    <list id="ec21d2e0-928c-4f78-ac61-b772ad98a08d" name="Idea's housekeeping" comment="">
+      <change afterPath="$PROJECT_DIR$/.idea/jarRepositories.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__com_beust_jcommander_1_27.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__commons_collections_commons_collections_3_2_1.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__commons_lang_commons_lang_2_4.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_apache_logging_log4j_log4j_api_2_13_3.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_apache_logging_log4j_log4j_core_2_13_3.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_apache_velocity_velocity_1_7.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_awaitility_awaitility_3_1_0.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_beanshell_bsh_2_0b4.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_hamcrest_hamcrest_2_2.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_hamcrest_hamcrest_core_1_3.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_hamcrest_hamcrest_library_1_3.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_jpatterns_jpatterns_0_0_1.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_objenesis_objenesis_2_6.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_testng_testng_6_8_8.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/compiler.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/compiler.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/encodings.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/encodings.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/lib.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/lib.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -106,6 +164,7 @@
     <option name="RECENT_TEMPLATES">
       <list>
         <option value="module-info" />
+        <option value="Class" />
       </list>
     </option>
   </component>
@@ -122,14 +181,122 @@
       </map>
     </option>
   </component>
-  <component name="JupyterTrust" id="7321b75e-101e-4fe5-8d49-a47d73f10d15" />
+  <component name="JupyterTrust" id="792f9bbf-76c8-483f-bac3-8585c0c7845e" />
   <component name="LineStatusTrackerManager">
-    <file path="$PROJECT_DIR$/pclg-misc/src/java/tests/TaskDemo.java">
+    <file path="$PROJECT_DIR$/.idea/workspace.xml">
       <ranges>
-        <range start1="2" end1="23" start2="2" end2="23" changelist="ca6eb6b6-6419-4d0e-a6aa-4254ec1c5806" />
-        <range start1="28" end1="137" start2="28" end2="137" changelist="6eaabc47-20b5-4622-b4b5-a86e15e7458f" />
+        <range start1="2" end1="2" start2="2" end2="9" changelist="ec21d2e0-928c-4f78-ac61-b772ad98a08d" />
+        <range start1="3" end1="8" start2="10" end2="13" changelist="ec21d2e0-928c-4f78-ac61-b772ad98a08d" />
+        <range start1="9" end1="9" start2="14" end2="15" changelist="ec21d2e0-928c-4f78-ac61-b772ad98a08d" />
+        <range start1="10" end1="11" start2="16" end2="16" changelist="ec21d2e0-928c-4f78-ac61-b772ad98a08d" />
+        <range start1="12" end1="12" start2="17" end2="19" changelist="ec21d2e0-928c-4f78-ac61-b772ad98a08d" />
+        <range start1="13" end1="13" start2="20" end2="21" changelist="ec21d2e0-928c-4f78-ac61-b772ad98a08d" />
+        <range start1="15" end1="15" start2="23" end2="24" changelist="ec21d2e0-928c-4f78-ac61-b772ad98a08d" />
+        <range start1="16" end1="16" start2="25" end2="26" changelist="ec21d2e0-928c-4f78-ac61-b772ad98a08d" />
+        <range start1="17" end1="17" start2="27" end2="28" changelist="ec21d2e0-928c-4f78-ac61-b772ad98a08d" />
+        <range start1="18" end1="18" start2="29" end2="34" changelist="ec21d2e0-928c-4f78-ac61-b772ad98a08d" />
+        <range start1="21" end1="21" start2="37" end2="43" changelist="ec21d2e0-928c-4f78-ac61-b772ad98a08d" />
+        <range start1="22" end1="22" start2="44" end2="50" changelist="ec21d2e0-928c-4f78-ac61-b772ad98a08d" />
+        <range start1="23" end1="23" start2="51" end2="52" changelist="ec21d2e0-928c-4f78-ac61-b772ad98a08d" />
+        <range start1="24" end1="24" start2="53" end2="55" changelist="ec21d2e0-928c-4f78-ac61-b772ad98a08d" />
+        <range start1="26" end1="26" start2="57" end2="59" changelist="ec21d2e0-928c-4f78-ac61-b772ad98a08d" />
+        <range start1="29" end1="29" start2="62" end2="64" changelist="ec21d2e0-928c-4f78-ac61-b772ad98a08d" />
+        <range start1="30" end1="30" start2="65" end2="66" changelist="ec21d2e0-928c-4f78-ac61-b772ad98a08d" />
+        <range start1="32" end1="33" start2="68" end2="68" changelist="ca6eb6b6-6419-4d0e-a6aa-4254ec1c5806" />
+        <range start1="34" end1="35" start2="69" end2="70" changelist="ca6eb6b6-6419-4d0e-a6aa-4254ec1c5806" />
+        <range start1="37" end1="37" start2="72" end2="75" changelist="ca6eb6b6-6419-4d0e-a6aa-4254ec1c5806" />
+        <range start1="38" end1="39" start2="76" end2="76" changelist="ca6eb6b6-6419-4d0e-a6aa-4254ec1c5806" />
+        <range start1="41" end1="41" start2="78" end2="79" changelist="ca6eb6b6-6419-4d0e-a6aa-4254ec1c5806" />
+        <range start1="45" end1="50" start2="83" end2="84" changelist="ca6eb6b6-6419-4d0e-a6aa-4254ec1c5806" />
+        <range start1="51" end1="51" start2="85" end2="86" changelist="ca6eb6b6-6419-4d0e-a6aa-4254ec1c5806" />
+        <range start1="53" end1="55" start2="88" end2="90" changelist="ca6eb6b6-6419-4d0e-a6aa-4254ec1c5806" />
+        <range start1="56" end1="57" start2="91" end2="91" changelist="ca6eb6b6-6419-4d0e-a6aa-4254ec1c5806" />
+        <range start1="61" end1="61" start2="95" end2="96" changelist="ca6eb6b6-6419-4d0e-a6aa-4254ec1c5806" />
+        <range start1="63" end1="64" start2="98" end2="98" changelist="ca6eb6b6-6419-4d0e-a6aa-4254ec1c5806" />
+        <range start1="67" end1="68" start2="101" end2="107" changelist="ca6eb6b6-6419-4d0e-a6aa-4254ec1c5806" />
+        <range start1="69" end1="69" start2="108" end2="109" changelist="ca6eb6b6-6419-4d0e-a6aa-4254ec1c5806" />
+        <range start1="70" end1="70" start2="110" end2="111" changelist="ca6eb6b6-6419-4d0e-a6aa-4254ec1c5806" />
+        <range start1="72" end1="72" start2="113" end2="121" changelist="ca6eb6b6-6419-4d0e-a6aa-4254ec1c5806" />
+        <range start1="74" end1="74" start2="123" end2="126" changelist="ca6eb6b6-6419-4d0e-a6aa-4254ec1c5806" />
+        <range start1="77" end1="77" start2="129" end2="130" changelist="ca6eb6b6-6419-4d0e-a6aa-4254ec1c5806" />
+        <range start1="78" end1="78" start2="131" end2="134" changelist="ca6eb6b6-6419-4d0e-a6aa-4254ec1c5806" />
+        <range start1="79" end1="79" start2="135" end2="136" changelist="ca6eb6b6-6419-4d0e-a6aa-4254ec1c5806" />
+        <range start1="81" end1="81" start2="138" end2="139" changelist="ca6eb6b6-6419-4d0e-a6aa-4254ec1c5806" />
+        <range start1="82" end1="82" start2="140" end2="145" changelist="ca6eb6b6-6419-4d0e-a6aa-4254ec1c5806" />
+        <range start1="83" end1="83" start2="146" end2="148" changelist="ca6eb6b6-6419-4d0e-a6aa-4254ec1c5806" />
+        <range start1="85" end1="85" start2="150" end2="154" changelist="ca6eb6b6-6419-4d0e-a6aa-4254ec1c5806" />
+        <range start1="87" end1="87" start2="156" end2="157" changelist="ca6eb6b6-6419-4d0e-a6aa-4254ec1c5806" />
+        <range start1="89" end1="89" start2="159" end2="160" changelist="ca6eb6b6-6419-4d0e-a6aa-4254ec1c5806" />
+        <range start1="91" end1="91" start2="162" end2="166" changelist="ca6eb6b6-6419-4d0e-a6aa-4254ec1c5806" />
+        <range start1="92" end1="95" start2="167" end2="189" changelist="ca6eb6b6-6419-4d0e-a6aa-4254ec1c5806" />
+        <range start1="108" end1="108" start2="202" end2="203" changelist="ca6eb6b6-6419-4d0e-a6aa-4254ec1c5806" />
+        <range start1="124" end1="125" start2="219" end2="220" changelist="ca6eb6b6-6419-4d0e-a6aa-4254ec1c5806" />
+        <range start1="126" end1="127" start2="221" end2="222" changelist="ca6eb6b6-6419-4d0e-a6aa-4254ec1c5806" />
+        <range start1="128" end1="130" start2="223" end2="326" changelist="ca6eb6b6-6419-4d0e-a6aa-4254ec1c5806" />
+        <range start1="132" end1="132" start2="328" end2="335" changelist="ca6eb6b6-6419-4d0e-a6aa-4254ec1c5806" />
+        <range start1="453" end1="454" start2="656" end2="657" changelist="ca6eb6b6-6419-4d0e-a6aa-4254ec1c5806" />
+        <range start1="459" end1="460" start2="662" end2="663" changelist="ca6eb6b6-6419-4d0e-a6aa-4254ec1c5806" />
+        <range start1="471" end1="472" start2="674" end2="675" changelist="ca6eb6b6-6419-4d0e-a6aa-4254ec1c5806" />
+        <range start1="479" end1="479" start2="682" end2="683" changelist="ca6eb6b6-6419-4d0e-a6aa-4254ec1c5806" />
+        <range start1="483" end1="484" start2="687" end2="687" changelist="ca6eb6b6-6419-4d0e-a6aa-4254ec1c5806" />
+        <range start1="490" end1="490" start2="693" end2="696" changelist="ca6eb6b6-6419-4d0e-a6aa-4254ec1c5806" />
+        <range start1="492" end1="492" start2="698" end2="699" changelist="ca6eb6b6-6419-4d0e-a6aa-4254ec1c5806" />
+        <range start1="496" end1="497" start2="703" end2="703" changelist="ca6eb6b6-6419-4d0e-a6aa-4254ec1c5806" />
+        <range start1="499" end1="500" start2="705" end2="706" changelist="ca6eb6b6-6419-4d0e-a6aa-4254ec1c5806" />
+        <range start1="819" end1="830" start2="1025" end2="1025" changelist="ca6eb6b6-6419-4d0e-a6aa-4254ec1c5806" />
+        <range start1="1107" end1="1107" start2="1302" end2="1310" changelist="ca6eb6b6-6419-4d0e-a6aa-4254ec1c5806" />
+        <range start1="1108" end1="1110" start2="1311" end2="1311" changelist="ca6eb6b6-6419-4d0e-a6aa-4254ec1c5806" />
+        <range start1="1111" end1="1113" start2="1312" end2="1313" changelist="ca6eb6b6-6419-4d0e-a6aa-4254ec1c5806" />
+        <range start1="1114" end1="1116" start2="1314" end2="1314" changelist="ca6eb6b6-6419-4d0e-a6aa-4254ec1c5806" />
+        <range start1="1117" end1="1123" start2="1315" end2="1318" changelist="ca6eb6b6-6419-4d0e-a6aa-4254ec1c5806" />
+        <range start1="1125" end1="1127" start2="1320" end2="1320" changelist="ca6eb6b6-6419-4d0e-a6aa-4254ec1c5806" />
+        <range start1="1129" end1="1129" start2="1322" end2="1324" changelist="ca6eb6b6-6419-4d0e-a6aa-4254ec1c5806" />
+        <range start1="1134" end1="1134" start2="1329" end2="1331" changelist="ca6eb6b6-6419-4d0e-a6aa-4254ec1c5806" />
+        <range start1="1135" end1="1136" start2="1332" end2="1332" changelist="ca6eb6b6-6419-4d0e-a6aa-4254ec1c5806" />
+        <range start1="1137" end1="1138" start2="1333" end2="1333" changelist="ca6eb6b6-6419-4d0e-a6aa-4254ec1c5806" />
+        <range start1="1153" end1="1153" start2="1348" end2="1349" changelist="ca6eb6b6-6419-4d0e-a6aa-4254ec1c5806" />
+        <range start1="1174" end1="1174" start2="1370" end2="1379" changelist="ca6eb6b6-6419-4d0e-a6aa-4254ec1c5806" />
+        <range start1="1266" end1="1267" start2="1471" end2="1493" changelist="ca6eb6b6-6419-4d0e-a6aa-4254ec1c5806" />
+        <range start1="1272" end1="1272" start2="1498" end2="1545" changelist="ca6eb6b6-6419-4d0e-a6aa-4254ec1c5806" />
+        <range start1="1282" end1="1286" start2="1555" end2="1555" changelist="ca6eb6b6-6419-4d0e-a6aa-4254ec1c5806" />
+        <range start1="1308" end1="1309" start2="1577" end2="1581" changelist="ca6eb6b6-6419-4d0e-a6aa-4254ec1c5806" />
+        <range start1="1312" end1="1312" start2="1584" end2="1588" changelist="ca6eb6b6-6419-4d0e-a6aa-4254ec1c5806" />
+        <range start1="1316" end1="1317" start2="1592" end2="1601" changelist="ca6eb6b6-6419-4d0e-a6aa-4254ec1c5806" />
+        <range start1="1319" end1="1320" start2="1603" end2="1604" changelist="ca6eb6b6-6419-4d0e-a6aa-4254ec1c5806" />
+        <range start1="1332" end1="1333" start2="1616" end2="1617" changelist="ca6eb6b6-6419-4d0e-a6aa-4254ec1c5806" />
+        <range start1="1335" end1="1336" start2="1619" end2="1620" changelist="ca6eb6b6-6419-4d0e-a6aa-4254ec1c5806" />
+        <range start1="1340" end1="1341" start2="1624" end2="1625" changelist="ca6eb6b6-6419-4d0e-a6aa-4254ec1c5806" />
+        <range start1="1343" end1="1346" start2="1627" end2="1630" changelist="ca6eb6b6-6419-4d0e-a6aa-4254ec1c5806" />
+        <range start1="1348" end1="1351" start2="1632" end2="1635" changelist="ca6eb6b6-6419-4d0e-a6aa-4254ec1c5806" />
+        <range start1="1353" end1="1356" start2="1637" end2="1640" changelist="ca6eb6b6-6419-4d0e-a6aa-4254ec1c5806" />
+        <range start1="1358" end1="1361" start2="1642" end2="1645" changelist="ca6eb6b6-6419-4d0e-a6aa-4254ec1c5806" />
+        <range start1="1363" end1="1366" start2="1647" end2="1650" changelist="ca6eb6b6-6419-4d0e-a6aa-4254ec1c5806" />
+        <range start1="1368" end1="1371" start2="1652" end2="1655" changelist="ca6eb6b6-6419-4d0e-a6aa-4254ec1c5806" />
+        <range start1="1373" end1="1376" start2="1657" end2="1660" changelist="ca6eb6b6-6419-4d0e-a6aa-4254ec1c5806" />
+        <range start1="1378" end1="1380" start2="1662" end2="1664" changelist="ca6eb6b6-6419-4d0e-a6aa-4254ec1c5806" />
+        <range start1="1382" end1="1384" start2="1666" end2="1668" changelist="ca6eb6b6-6419-4d0e-a6aa-4254ec1c5806" />
+        <range start1="1386" end1="1388" start2="1670" end2="1672" changelist="ca6eb6b6-6419-4d0e-a6aa-4254ec1c5806" />
+        <range start1="1390" end1="1392" start2="1674" end2="1676" changelist="ca6eb6b6-6419-4d0e-a6aa-4254ec1c5806" />
+        <range start1="1394" end1="1395" start2="1678" end2="1691" changelist="ca6eb6b6-6419-4d0e-a6aa-4254ec1c5806" />
+        <range start1="1399" end1="1401" start2="1695" end2="1697" changelist="ca6eb6b6-6419-4d0e-a6aa-4254ec1c5806" />
+        <range start1="1403" end1="1405" start2="1699" end2="1701" changelist="ca6eb6b6-6419-4d0e-a6aa-4254ec1c5806" />
+        <range start1="1407" end1="1409" start2="1703" end2="1705" changelist="ca6eb6b6-6419-4d0e-a6aa-4254ec1c5806" />
+        <range start1="1411" end1="1413" start2="1707" end2="1709" changelist="ca6eb6b6-6419-4d0e-a6aa-4254ec1c5806" />
+        <range start1="1415" end1="1416" start2="1711" end2="1712" changelist="ca6eb6b6-6419-4d0e-a6aa-4254ec1c5806" />
+        <range start1="1424" end1="1426" start2="1720" end2="1722" changelist="ca6eb6b6-6419-4d0e-a6aa-4254ec1c5806" />
+        <range start1="1428" end1="1429" start2="1724" end2="1725" changelist="ca6eb6b6-6419-4d0e-a6aa-4254ec1c5806" />
+        <range start1="1438" end1="1440" start2="1734" end2="1736" changelist="ec21d2e0-928c-4f78-ac61-b772ad98a08d" />
+        <range start1="1442" end1="1443" start2="1738" end2="1739" changelist="ec21d2e0-928c-4f78-ac61-b772ad98a08d" />
+        <range start1="1471" end1="1471" start2="1767" end2="1772" changelist="ec21d2e0-928c-4f78-ac61-b772ad98a08d" />
       </ranges>
     </file>
+  </component>
+  <component name="MavenImportPreferences">
+    <option name="generalSettings">
+      <MavenGeneralSettings>
+        <option name="mavenHome" value="$APPLICATION_HOME_DIR$/plugins/maven/lib/maven3" />
+      </MavenGeneralSettings>
+    </option>
   </component>
   <component name="ProjectId" id="1dGR5T6zfui34Fi3zHyNVNEEKlF" />
   <component name="ProjectInspectionProfilesVisibleTreeState">
@@ -451,13 +618,13 @@
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
-    <property name="SONARLINT_PRECOMMIT_ANALYSIS" value="true" />
+    <property name="SONARLINT_PRECOMMIT_ANALYSIS" value="false" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
     <property name="dynamic.classpath" value="false" />
     <property name="extract.method.default.visibility" value="private" />
     <property name="last_directory_selection" value="$PROJECT_DIR$/pclg-tools/src/main/java" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/pclg-apps/src/main/config" />
+    <property name="last_opened_file_path" value="$MAVEN_REPOSITORY$/org/apache/velocity/velocity/1.7/velocity-1.7.jar" />
     <property name="node.js.detected.package.eslint" value="true" />
     <property name="node.js.detected.package.tslint" value="true" />
     <property name="node.js.path.for.package.eslint" value="project" />
@@ -469,7 +636,7 @@
     <property name="options.searchVisible" value="true" />
     <property name="options.splitter.details.proportions" value="0.2" />
     <property name="options.splitter.main.proportions" value="0.3" />
-    <property name="project.structure.last.edited" value="Project" />
+    <property name="project.structure.last.edited" value="Libraries" />
     <property name="project.structure.proportion" value="0.15" />
     <property name="project.structure.side.proportion" value="0.39310345" />
     <property name="recentsLimit" value="5" />
@@ -477,11 +644,11 @@
   </component>
   <component name="RecentsManager">
     <key name="MoveClassesOrPackagesDialog.RECENTS_KEY">
+      <recent name="org.pclg.log" />
       <recent name="org.pclg" />
       <recent name="net.asintec.xtras" />
       <recent name="org.pclg.xtras" />
       <recent name="org.pclg.tools" />
-      <recent name="org.pclg.migrator.preprocessors" />
     </key>
     <key name="CopyFile.RECENT_KEYS">
       <recent name="E:\home\pablo\development\projects\Alles\pclg-apps\src\main\config" />
@@ -489,15 +656,18 @@
       <recent name="$PROJECT_DIR$/pclg-apps/src/test/resources/images" />
       <recent name="C:\home\development\projects\Alles\src\test_resources\images\16x16" />
     </key>
+    <key name="CreateClassDialog.RecentsKey">
+      <recent name="org.pclg.filesystem.synchonizer" />
+    </key>
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/pclg-tools/src/main/resources" />
       <recent name="E:\home\pablo\development\projects\Alles\pclg-tools\src\test\resources\sounds" />
       <recent name="E:\home\pablo\development\projects\Alles\pclg-tools\src\test\resources" />
       <recent name="E:\home\pablo\development\projects\Alles\pclg-tools\src\test\resources\images" />
       <recent name="$PROJECT_DIR$/pclg-tools/src/test/resources/images" />
-      <recent name="$PROJECT_DIR$/pclg-agenda/src/test/resources/images" />
     </key>
   </component>
-  <component name="RunManager" selected="Application.CompDel">
+  <component name="RunManager" selected="Application.Agenda">
     <configuration default="true" type="Applet" factoryName="Applet">
       <module name="" />
       <option name="MAIN_CLASS_NAME" />
@@ -817,17 +987,6 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration default="true" type="ArquillianJUnit" factoryName="" nameIsGenerated="true">
-      <option name="arquillianRunConfiguration">
-        <value>
-          <option name="containerStateName" value="" />
-        </value>
-      </option>
-      <option name="TEST_OBJECT" value="class" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
     <configuration default="true" type="CucumberJavaRunConfigurationType" factoryName="Cucumber java">
       <method v="2">
         <option name="Make" enabled="true" />
@@ -1105,37 +1264,37 @@
       <item itemvalue="Application.Alter" />
       <item itemvalue="Application.BigFileCreator" />
       <item itemvalue="Application.CompDel" />
-      <item itemvalue="Application.Migrator" />
-      <item itemvalue="Application.DbUpdate" />
-      <item itemvalue="Application.Tutor" />
-      <item itemvalue="Application.OuvrirSuivi" />
-      <item itemvalue="Application.VelocityDriver" />
-      <item itemvalue="Application.MP3Update" />
-      <item itemvalue="Application.Splitter" />
-      <item itemvalue="Application.UpdateFundsExcel" />
-      <item itemvalue="Application.Magic" />
-      <item itemvalue="Application.Touch" />
       <item itemvalue="Application.DatabaseEncrypter" />
+      <item itemvalue="Application.DbUpdate" />
       <item itemvalue="Application.DirectorySynchronizer (GUI)" />
-      <item itemvalue="Application.DirectorySynchronizer (light)" />
       <item itemvalue="Application.DirectorySynchronizer (full)" />
-      <item itemvalue="Application.ProcessLauncher -&gt; GnuCash" />
+      <item itemvalue="Application.DirectorySynchronizer (light)" />
       <item itemvalue="Application.JavaShellFX" />
+      <item itemvalue="Application.MP3Update" />
+      <item itemvalue="Application.Magic" />
+      <item itemvalue="Application.Migrator" />
+      <item itemvalue="Application.OuvrirSuivi" />
+      <item itemvalue="Application.ProcessLauncher -&gt; GnuCash" />
+      <item itemvalue="Application.Splitter" />
+      <item itemvalue="Application.Touch" />
+      <item itemvalue="Application.Tutor" />
+      <item itemvalue="Application.UpdateFundsExcel" />
+      <item itemvalue="Application.VelocityDriver" />
       <item itemvalue="JUnit.Tests JUnit en general" />
       <item itemvalue="TestNG.Tests NG en general" />
-      <item itemvalue="TestNG.&lt;default&gt; (1)" />
-      <item itemvalue="TestNG.&lt;default&gt; (2)" />
       <item itemvalue="TestNG.RuntimeToolsTest.testGetExecutionPathInJar" />
       <item itemvalue="TestNG.RuntimeToolsTest.testGetExecutionPath" />
+      <item itemvalue="TestNG.&lt;default&gt; (1)" />
+      <item itemvalue="TestNG.&lt;default&gt; (2)" />
       <item itemvalue="TestNG.&lt;default&gt;" />
     </list>
     <recent_temporary>
       <list>
         <item itemvalue="TestNG.&lt;default&gt;" />
-        <item itemvalue="TestNG.RuntimeToolsTest.testGetExecutionPath" />
         <item itemvalue="TestNG.&lt;default&gt; (2)" />
-        <item itemvalue="TestNG.RuntimeToolsTest.testGetExecutionPathInJar" />
         <item itemvalue="TestNG.&lt;default&gt; (1)" />
+        <item itemvalue="TestNG.RuntimeToolsTest.testGetExecutionPath" />
+        <item itemvalue="TestNG.RuntimeToolsTest.testGetExecutionPathInJar" />
       </list>
     </recent_temporary>
   </component>
@@ -1151,6 +1310,7 @@
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
       <changelist id="6eaabc47-20b5-4622-b4b5-a86e15e7458f" name="Deactivated temporarily" comment="" />
+      <changelist id="ec21d2e0-928c-4f78-ac61-b772ad98a08d" name="Idea's housekeeping" comment="" />
       <created>1592049259464</created>
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
@@ -1172,6 +1332,15 @@
       <workItem from="1599476941116" duration="674000" />
       <workItem from="1599477944418" duration="6049000" />
       <workItem from="1599563138744" duration="4784000" />
+      <workItem from="1599978942219" duration="5343000" />
+      <workItem from="1599986718270" duration="322000" />
+      <workItem from="1599993378358" duration="3420000" />
+      <workItem from="1599996868520" duration="137000" />
+      <workItem from="1601028579034" duration="248000" />
+      <workItem from="1601030102737" duration="3175000" />
+      <workItem from="1601203465403" duration="5008000" />
+      <workItem from="1601286773050" duration="3279000" />
+      <workItem from="1601291043826" duration="1994000" />
     </task>
     <task id="LOCAL-00001" summary="Manually resolve merge conficts">
       <created>1598095361969</created>
@@ -1264,11 +1433,79 @@
       <option name="project" value="LOCAL" />
       <updated>1599305446301</updated>
     </task>
-    <option name="localTasksCounter" value="14" />
+    <task id="LOCAL-00014" summary="Creation of class TextAreaLogger to workaround the new log4j API">
+      <created>1599996380884</created>
+      <option name="number" value="00014" />
+      <option name="presentableId" value="LOCAL-00014" />
+      <option name="project" value="LOCAL" />
+      <updated>1599996380884</updated>
+    </task>
+    <task id="LOCAL-00015" summary="Adjust the logging.&#10;Only copy Alles to Mercurio.">
+      <created>1601038026482</created>
+      <option name="number" value="00015" />
+      <option name="presentableId" value="LOCAL-00015" />
+      <option name="project" value="LOCAL" />
+      <updated>1601038026482</updated>
+    </task>
+    <task id="LOCAL-00016" summary="Body">
+      <created>1601206045041</created>
+      <option name="number" value="00016" />
+      <option name="presentableId" value="LOCAL-00016" />
+      <option name="project" value="LOCAL" />
+      <updated>1601206045041</updated>
+    </task>
+    <option name="localTasksCounter" value="17" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="3" />
+  </component>
+  <component name="Vcs.Log.History.Properties">
+    <option name="COLUMN_ORDER">
+      <list>
+        <option value="0" />
+        <option value="2" />
+        <option value="3" />
+        <option value="1" />
+      </list>
+    </option>
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="1">
+          <value>
+            <State>
+              <option name="SHOW_ONLY_AFFECTED_CHANGES" value="true" />
+              <option name="FILTERS">
+                <map>
+                  <entry key="branch">
+                    <value>
+                      <list>
+                        <option value="HEAD" />
+                      </list>
+                    </value>
+                  </entry>
+                  <entry key="roots">
+                    <value>
+                      <list>
+                        <option value="$PROJECT_DIR$" />
+                      </list>
+                    </value>
+                  </entry>
+                </map>
+              </option>
+            </State>
+          </value>
+        </entry>
+      </map>
+    </option>
+    <option name="OPEN_GENERIC_TABS">
+      <map>
+        <entry key="1" value="TOOL_WINDOW" />
+      </map>
+    </option>
+    <option name="oldMeFiltersMigrated" value="true" />
   </component>
   <component name="Vcs.Log.UiProperties">
     <option name="RECENTLY_FILTERED_USER_GROUPS">
@@ -1280,10 +1517,6 @@
   </component>
   <component name="VcsManagerConfiguration">
     <option name="CHECK_CODE_SMELLS_BEFORE_PROJECT_COMMIT" value="false" />
-    <option name="CHECK_NEW_TODO" value="false" />
-    <MESSAGE value="Fix DirTree icons path" />
-    <MESSAGE value="Enhancements" />
-    <MESSAGE value="Fix the check of unmodified dates" />
     <MESSAGE value="Enhancements of DirTree" />
     <MESSAGE value="Enhancements of the Versatile db package" />
     <MESSAGE value="Leave out DS_Targets_development.json for safety" />
@@ -1306,18 +1539,33 @@
     <MESSAGE value="Incorporate changes done in Minerva: &#10;  1-Get rid of ${ROOT_C_home}&#10;  2-Changes in links" />
     <MESSAGE value="Rationalize de build files (fix build paths)&#10;Add sonarlint" />
     <MESSAGE value="Continue modularization and add module-info.java descriptors" />
-    <option name="LAST_COMMIT_MESSAGE" value="Continue modularization and add module-info.java descriptors" />
+    <MESSAGE value="Creation of class TextAreaLogger to workaround the new log4j API" />
+    <MESSAGE value="Adjust the logging.&#10;Only copy Alles to Mercurio." />
+    <MESSAGE value="Body" />
+    <option name="LAST_COMMIT_MESSAGE" value="Body" />
     <option name="OPTIMIZE_IMPORTS_BEFORE_PROJECT_COMMIT" value="true" />
   </component>
   <component name="WindowStateProjectService">
+    <state x="680" y="377" width="604" height="350" key="#Notifications" timestamp="1599986768685">
+      <screen x="55" y="27" width="1865" height="1053" />
+    </state>
+    <state x="680" y="377" width="604" height="350" key="#Notifications/55.27.1865.1053@55.27.1865.1053" timestamp="1599986768685" />
     <state x="470" y="130" width="1024" height="845" key="#Project_Structure" timestamp="1598773594269">
       <screen x="55" y="27" width="1865" height="1053" />
     </state>
     <state x="470" y="130" width="1024" height="845" key="#Project_Structure/55.27.1865.1053@55.27.1865.1053" timestamp="1598773594269" />
-    <state x="445" y="136" width="1084" height="944" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1599305186466">
+    <state x="445" y="136" width="1084" height="944" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1601290597904">
       <screen x="55" y="27" width="1865" height="1053" />
     </state>
-    <state x="445" y="136" width="1084" height="944" key="#com.intellij.execution.impl.EditConfigurationsDialog/55.27.1865.1053@55.27.1865.1053" timestamp="1599305186466" />
+    <state x="445" y="136" width="1084" height="944" key="#com.intellij.execution.impl.EditConfigurationsDialog/55.27.1865.1053@55.27.1865.1053" timestamp="1601290597904" />
+    <state x="795" y="260" width="374" height="585" key="#com.intellij.ide.util.MemberChooser" timestamp="1599994076404">
+      <screen x="55" y="27" width="1865" height="1053" />
+    </state>
+    <state x="795" y="260" width="374" height="585" key="#com.intellij.ide.util.MemberChooser/55.27.1865.1053@55.27.1865.1053" timestamp="1599994076404" />
+    <state x="798" y="334" width="524" height="444" key="#com.intellij.ide.util.PackageChooserDialog" timestamp="1599995537618">
+      <screen x="55" y="27" width="1865" height="1053" />
+    </state>
+    <state x="798" y="334" width="524" height="444" key="#com.intellij.ide.util.PackageChooserDialog/55.27.1865.1053@55.27.1865.1053" timestamp="1599995537618" />
     <state x="719" y="383" width="525" height="416" key="#com.intellij.ide.util.TreeClassChooserDialog" timestamp="1598097234784">
       <screen x="55" y="27" width="1865" height="1053" />
     </state>
@@ -1330,90 +1578,102 @@
       <screen x="55" y="27" width="1865" height="1053" />
     </state>
     <state x="528" y="466" width="1061" height="173" key="#com.intellij.refactoring.move.MoveHandler.SelectRefactoringDialog/55.27.1865.1053@55.27.1865.1053" timestamp="1599304854774" />
-    <state x="732" y="420" width="511" height="272" key="#com.intellij.refactoring.move.moveClassesOrPackages.MoveClassesOrPackagesDialog.classes" timestamp="1599301434482">
+    <state x="732" y="420" width="667" height="272" key="#com.intellij.refactoring.move.moveClassesOrPackages.MoveClassesOrPackagesDialog.classes" timestamp="1599995541063">
       <screen x="55" y="27" width="1865" height="1053" />
     </state>
-    <state x="732" y="420" width="511" height="272" key="#com.intellij.refactoring.move.moveClassesOrPackages.MoveClassesOrPackagesDialog.classes/55.27.1865.1053@55.27.1865.1053" timestamp="1599301434482" />
+    <state x="732" y="420" width="667" height="272" key="#com.intellij.refactoring.move.moveClassesOrPackages.MoveClassesOrPackagesDialog.classes/55.27.1865.1053@55.27.1865.1053" timestamp="1599995541063" />
     <state x="720" y="301" width="524" height="502" key="#com.intellij.refactoring.typeMigration.ui.FailedConversionsDialog" timestamp="1598164818497">
       <screen x="55" y="27" width="1865" height="1053" />
     </state>
     <state x="720" y="301" width="524" height="502" key="#com.intellij.refactoring.typeMigration.ui.FailedConversionsDialog/55.27.1865.1053@55.27.1865.1053" timestamp="1598164818497" />
-    <state x="967" y="538" width="929" height="519" key="#xdebugger.evaluate" timestamp="1598778588603">
+    <state x="513" y="323" width="929" height="519" key="#xdebugger.evaluate" timestamp="1601031228849">
       <screen x="55" y="27" width="1865" height="1053" />
     </state>
-    <state x="967" y="538" width="929" height="519" key="#xdebugger.evaluate/55.27.1865.1053@55.27.1865.1053" timestamp="1598778588603" />
-    <state x="237" y="37" width="1382" height="904" key="CommitChangelistDialog2" timestamp="1599457517372">
-      <screen x="0" y="0" width="1920" height="1040" />
+    <state x="513" y="323" width="929" height="519" key="#xdebugger.evaluate/55.27.1865.1053@55.27.1865.1053" timestamp="1601031228849" />
+    <state x="285" y="64" width="1382" height="904" key="CommitChangelistDialog2" timestamp="1601290180759">
+      <screen x="55" y="27" width="1865" height="1053" />
     </state>
     <state x="237" y="37" key="CommitChangelistDialog2/0.0.1920.1040@0.0.1920.1040" timestamp="1599457517372" />
-    <state x="285" y="64" width="1382" height="904" key="CommitChangelistDialog2/55.27.1865.1053@55.27.1865.1053" timestamp="1599305689842" />
-    <state x="47" y="79" width="1838" height="869" key="DiffContextDialog" timestamp="1599568191827">
-      <screen x="0" y="0" width="1920" height="1040" />
+    <state x="285" y="64" width="1382" height="904" key="CommitChangelistDialog2/55.27.1865.1053@55.27.1865.1053" timestamp="1601290180759" />
+    <state x="101" y="107" width="1665" height="855" key="DiffContextDialog" timestamp="1601290180142">
+      <screen x="55" y="27" width="1865" height="1053" />
     </state>
     <state x="47" y="79" width="1838" height="869" key="DiffContextDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1599568191827" />
-    <state x="101" y="107" width="1665" height="855" key="DiffContextDialog/55.27.1865.1053@55.27.1865.1053" timestamp="1599305689121" />
-    <state x="731" y="280" width="735" height="484" key="FileChooserDialogImpl" timestamp="1599457117275">
-      <screen x="0" y="0" width="1920" height="1040" />
+    <state x="101" y="107" width="1665" height="855" key="DiffContextDialog/55.27.1865.1053@55.27.1865.1053" timestamp="1601290180142" />
+    <state x="765" y="310" width="907" height="484" key="FileChooserDialogImpl" timestamp="1601289326342">
+      <screen x="55" y="27" width="1865" height="1053" />
     </state>
     <state x="731" y="280" key="FileChooserDialogImpl/0.0.1920.1040@0.0.1920.1040" timestamp="1599457117275" />
-    <state x="765" y="310" width="735" height="484" key="FileChooserDialogImpl/55.27.1865.1053@55.27.1865.1053" timestamp="1599290812154" />
-    <state width="1877" height="282" key="GridCell.Tab.0.bottom" timestamp="1599488906326">
-      <screen x="0" y="0" width="1920" height="1040" />
+    <state x="765" y="310" width="907" height="484" key="FileChooserDialogImpl/55.27.1865.1053@55.27.1865.1053" timestamp="1601289326342" />
+    <state width="1819" height="351" key="GridCell.Tab.0.bottom" timestamp="1601292067181">
+      <screen x="55" y="27" width="1865" height="1053" />
     </state>
     <state width="1877" height="282" key="GridCell.Tab.0.bottom/0.0.1920.1040@0.0.1920.1040" timestamp="1599488906326" />
-    <state width="1819" height="270" key="GridCell.Tab.0.bottom/55.27.1865.1053@55.27.1865.1053" timestamp="1599305914744" />
-    <state width="1877" height="282" key="GridCell.Tab.0.center" timestamp="1599488906326">
-      <screen x="0" y="0" width="1920" height="1040" />
+    <state width="1819" height="351" key="GridCell.Tab.0.bottom/55.27.1865.1053@55.27.1865.1053" timestamp="1601292067181" />
+    <state width="1819" height="351" key="GridCell.Tab.0.center" timestamp="1601292067180">
+      <screen x="55" y="27" width="1865" height="1053" />
     </state>
     <state width="1877" height="282" key="GridCell.Tab.0.center/0.0.1920.1040@0.0.1920.1040" timestamp="1599488906326" />
-    <state width="1819" height="270" key="GridCell.Tab.0.center/55.27.1865.1053@55.27.1865.1053" timestamp="1599305914744" />
-    <state width="1877" height="282" key="GridCell.Tab.0.left" timestamp="1599488906326">
-      <screen x="0" y="0" width="1920" height="1040" />
+    <state width="1819" height="351" key="GridCell.Tab.0.center/55.27.1865.1053@55.27.1865.1053" timestamp="1601292067180" />
+    <state width="1819" height="351" key="GridCell.Tab.0.left" timestamp="1601292067179">
+      <screen x="55" y="27" width="1865" height="1053" />
     </state>
     <state width="1877" height="282" key="GridCell.Tab.0.left/0.0.1920.1040@0.0.1920.1040" timestamp="1599488906326" />
-    <state width="1819" height="270" key="GridCell.Tab.0.left/55.27.1865.1053@55.27.1865.1053" timestamp="1599305914744" />
-    <state width="1877" height="282" key="GridCell.Tab.0.right" timestamp="1599488906326">
-      <screen x="0" y="0" width="1920" height="1040" />
+    <state width="1819" height="351" key="GridCell.Tab.0.left/55.27.1865.1053@55.27.1865.1053" timestamp="1601292067179" />
+    <state width="1819" height="351" key="GridCell.Tab.0.right" timestamp="1601292067181">
+      <screen x="55" y="27" width="1865" height="1053" />
     </state>
     <state width="1877" height="282" key="GridCell.Tab.0.right/0.0.1920.1040@0.0.1920.1040" timestamp="1599488906326" />
-    <state width="1819" height="270" key="GridCell.Tab.0.right/55.27.1865.1053@55.27.1865.1053" timestamp="1599305914744" />
-    <state width="1819" height="334" key="GridCell.Tab.1.bottom" timestamp="1598784852964">
+    <state width="1819" height="351" key="GridCell.Tab.0.right/55.27.1865.1053@55.27.1865.1053" timestamp="1601292067181" />
+    <state width="1819" height="334" key="GridCell.Tab.1.bottom" timestamp="1601038069657">
       <screen x="55" y="27" width="1865" height="1053" />
     </state>
-    <state width="1819" height="334" key="GridCell.Tab.1.bottom/55.27.1865.1053@55.27.1865.1053" timestamp="1598784852964" />
-    <state width="1819" height="334" key="GridCell.Tab.1.center" timestamp="1598784852964">
+    <state width="1819" height="334" key="GridCell.Tab.1.bottom/55.27.1865.1053@55.27.1865.1053" timestamp="1601038069657" />
+    <state width="1819" height="334" key="GridCell.Tab.1.center" timestamp="1601038069655">
       <screen x="55" y="27" width="1865" height="1053" />
     </state>
-    <state width="1819" height="334" key="GridCell.Tab.1.center/55.27.1865.1053@55.27.1865.1053" timestamp="1598784852964" />
-    <state width="1819" height="334" key="GridCell.Tab.1.left" timestamp="1598784852964">
+    <state width="1819" height="334" key="GridCell.Tab.1.center/55.27.1865.1053@55.27.1865.1053" timestamp="1601038069655" />
+    <state width="1819" height="334" key="GridCell.Tab.1.left" timestamp="1601038069655">
       <screen x="55" y="27" width="1865" height="1053" />
     </state>
-    <state width="1819" height="334" key="GridCell.Tab.1.left/55.27.1865.1053@55.27.1865.1053" timestamp="1598784852964" />
-    <state width="1819" height="334" key="GridCell.Tab.1.right" timestamp="1598784852964">
+    <state width="1819" height="334" key="GridCell.Tab.1.left/55.27.1865.1053@55.27.1865.1053" timestamp="1601038069655" />
+    <state width="1819" height="334" key="GridCell.Tab.1.right" timestamp="1601038069656">
       <screen x="55" y="27" width="1865" height="1053" />
     </state>
-    <state width="1819" height="334" key="GridCell.Tab.1.right/55.27.1865.1053@55.27.1865.1053" timestamp="1598784852964" />
+    <state width="1819" height="334" key="GridCell.Tab.1.right/55.27.1865.1053@55.27.1865.1053" timestamp="1601038069656" />
+    <state x="520" y="210" width="924" height="684" key="Maven.ArtifactSearchDialog" timestamp="1601208338595">
+      <screen x="55" y="27" width="1865" height="1053" />
+    </state>
+    <state x="520" y="210" width="924" height="684" key="Maven.ArtifactSearchDialog/55.27.1865.1053@55.27.1865.1053" timestamp="1601208338595" />
+    <state x="231" y="117" width="1492" height="872" key="MergeDialog" timestamp="1599979123314">
+      <screen x="55" y="27" width="1865" height="1053" />
+    </state>
+    <state x="231" y="117" width="1492" height="872" key="MergeDialog/55.27.1865.1053@55.27.1865.1053" timestamp="1599979123314" />
+    <state x="400" y="315" width="946" height="475" key="MultipleFileMergeDialog" timestamp="1599979123319">
+      <screen x="55" y="27" width="1865" height="1053" />
+    </state>
+    <state x="400" y="315" width="946" height="475" key="MultipleFileMergeDialog/55.27.1865.1053@55.27.1865.1053" timestamp="1599979123319" />
     <state x="665" y="235" width="624" height="633" key="RollbackChangesDialog" timestamp="1599287856614">
       <screen x="55" y="27" width="1865" height="1053" />
     </state>
     <state x="665" y="235" width="624" height="633" key="RollbackChangesDialog/55.27.1865.1053@55.27.1865.1053" timestamp="1599287856614" />
-    <state x="427" y="102" width="1024" height="845" key="SettingsEditor" timestamp="1599458066995">
-      <screen x="0" y="0" width="1920" height="1040" />
+    <state x="470" y="130" width="1024" height="845" key="SettingsEditor" timestamp="1601289370880">
+      <screen x="55" y="27" width="1865" height="1053" />
     </state>
     <state x="427" y="102" key="SettingsEditor/0.0.1920.1040@0.0.1920.1040" timestamp="1599458066995" />
-    <state x="470" y="130" width="1024" height="845" key="SettingsEditor/55.27.1865.1053@55.27.1865.1053" timestamp="1599305144088" />
-    <state x="698" y="430" width="545" height="171" key="VCS.ChangelistChooser" timestamp="1599290878447">
+    <state x="470" y="130" width="1024" height="845" key="SettingsEditor/55.27.1865.1053@55.27.1865.1053" timestamp="1601289370880" />
+    <state x="698" y="430" width="545" height="171" key="VCS.ChangelistChooser" timestamp="1601290097719">
       <screen x="55" y="27" width="1865" height="1053" />
     </state>
-    <state x="698" y="430" width="545" height="171" key="VCS.ChangelistChooser/55.27.1865.1053@55.27.1865.1053" timestamp="1599290878447" />
-    <state x="582" y="274" width="800" height="556" key="Vcs.Push.Dialog.v2" timestamp="1599286341209">
+    <state x="698" y="430" width="545" height="171" key="VCS.ChangelistChooser/55.27.1865.1053@55.27.1865.1053" timestamp="1601290097719" />
+    <state x="582" y="274" width="800" height="556" key="Vcs.Push.Dialog.v2" timestamp="1601038032648">
       <screen x="55" y="27" width="1865" height="1053" />
     </state>
-    <state x="582" y="274" width="800" height="556" key="Vcs.Push.Dialog.v2/55.27.1865.1053@55.27.1865.1053" timestamp="1599286341209" />
-    <state x="739" y="269" width="486" height="566" key="VcsDiffUtil.ChangesDialog" timestamp="1599287826645">
+    <state x="582" y="274" width="800" height="556" key="Vcs.Push.Dialog.v2/55.27.1865.1053@55.27.1865.1053" timestamp="1601038032648" />
+    <state x="470" y="252" width="910" height="566" key="VcsDiffUtil.ChangesDialog" timestamp="1601206523716">
       <screen x="55" y="27" width="1865" height="1053" />
     </state>
-    <state x="739" y="269" width="486" height="566" key="VcsDiffUtil.ChangesDialog/55.27.1865.1053@55.27.1865.1053" timestamp="1599287826645" />
+    <state x="470" y="252" width="910" height="566" key="VcsDiffUtil.ChangesDialog/55.27.1865.1053@55.27.1865.1053" timestamp="1601206523716" />
     <state x="675" y="293" key="antBuildFilePropertiesDialogDimension" timestamp="1599487796854">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
@@ -1422,11 +1682,11 @@
       <screen x="55" y="27" width="1865" height="1053" />
     </state>
     <state x="759" y="332" width="446" height="440" key="chooseDestDirectoryDialog/55.27.1865.1053@55.27.1865.1053" timestamp="1599304858048" />
-    <state x="246" y="101" width="1347" height="796" key="find.popup" timestamp="1599566085052">
-      <screen x="0" y="0" width="1920" height="1040" />
+    <state x="434" y="275" width="1308" height="805" key="find.popup" timestamp="1601292320567">
+      <screen x="55" y="27" width="1865" height="1053" />
     </state>
     <state x="246" y="101" width="1347" height="796" key="find.popup/0.0.1920.1040@0.0.1920.1040" timestamp="1599566085052" />
-    <state x="294" y="129" width="1308" height="805" key="find.popup/55.27.1865.1053@55.27.1865.1053" timestamp="1599289753536" />
+    <state x="434" y="275" width="1308" height="805" key="find.popup/55.27.1865.1053@55.27.1865.1053" timestamp="1601292320567" />
     <state x="603" y="154" width="748" height="796" key="new project wizard" timestamp="1598684509882">
       <screen x="55" y="27" width="1865" height="1053" />
     </state>

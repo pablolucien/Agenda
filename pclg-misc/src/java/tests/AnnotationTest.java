@@ -1,6 +1,6 @@
 package tests;
 
-import org.apache.log4j.Logger;
+import org.apache.logging.log4j.Logger;
 import org.pclg.annotations.QuickAndDirty;
 import org.pclg.log.LoggerFactory;
 

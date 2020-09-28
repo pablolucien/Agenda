@@ -1,7 +1,7 @@
 package org.pclg.agenda.crypto;
 
-import org.apache.log4j.Level;
-import org.apache.log4j.Logger;
+import org.apache.logging.log4j.Level;
+import org.apache.logging.log4j.Logger;
 import org.pclg.log.LoggerFactory;
 
 import java.sql.Connection;

@@ -1,7 +1,7 @@
 package org.pclg.agenda.jdbc;
 
-import org.apache.log4j.Level;
-import org.apache.log4j.Logger;
+import org.apache.logging.log4j.Level;
+import org.apache.logging.log4j.Logger;
 import org.pclg.agenda.Agenda;
 import org.pclg.agenda.AgendaDb;
 import org.pclg.agenda.AgendaDbException;

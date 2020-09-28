@@ -1,6 +1,6 @@
 package org.pclg.gui;
 
-import org.apache.log4j.Logger;
+import org.apache.logging.log4j.Logger;
 import org.pclg.log.LoggerFactory;
 import org.pclg.tools.ChangeObserver;
 import org.pclg.tools.CompositeKey;

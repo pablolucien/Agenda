@@ -1,6 +1,6 @@
 package org.pclg.dbutil;
 
-import org.apache.log4j.Logger;
+import org.apache.logging.log4j.Logger;
 import org.jpatterns.gof.CommandPattern;
 import org.jpatterns.plopd.NullObjectPattern;
 import org.pclg.log.LoggerFactory;

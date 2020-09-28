@@ -1,6 +1,6 @@
 package org.pclg.agenda.entities;
 
-import org.apache.log4j.Logger;
+import org.apache.logging.log4j.Logger;
 import org.pclg.agenda.AgendaDbException;
 import org.pclg.agenda.TimestampAdapter;
 import org.pclg.agenda.jdbc.FieldManagerHelper;

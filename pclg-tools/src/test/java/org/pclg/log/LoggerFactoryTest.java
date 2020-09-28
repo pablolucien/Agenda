@@ -36,7 +36,7 @@ public class LoggerFactoryTest {
 
 	@Test
 	public void makeLog4J() {
-		final org.apache.log4j.Logger logger = LoggerFactory.makeLog4J();
+		final org.apache.logging.log4j.Logger logger = LoggerFactory.makeLog4J();
 		assertNotNull(logger);
         assertEquals(logger.getName(), getClass().getName());
 	}

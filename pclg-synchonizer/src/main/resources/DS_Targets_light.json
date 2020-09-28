@@ -41,7 +41,8 @@
                 "${ROOT_F}/home/pablo/security",
                 "${ROOT_E}/home/pablo/security",
                 "${ROOT_L}/home/pablo/security"
-            ]
+            ],
+            "Exclude": "*.lock"
         },
         {
             "unidirectional": true,
@@ -50,7 +51,6 @@
                 "${ROOT_C}/home/pablo/img/fotos/WhatsAppProfiles"
             ],
             "Exclude": "Sent/"
-
         },
         {
             "unidirectional": true,

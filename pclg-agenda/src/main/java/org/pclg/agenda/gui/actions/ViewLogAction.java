@@ -1,8 +1,9 @@
 package org.pclg.agenda.gui.actions;
 
-//import org.apache.log4j.Appender;
-//import org.apache.log4j.FileAppender;
-import org.apache.log4j.Logger;
+//import org.apache.logging.log4j.Appender;
+//import org.apache.logging.log4j.FileAppender;
+
+import org.apache.logging.log4j.Logger;
 import org.pclg.agenda.gui.AgendaGUI;
 import org.pclg.gui.JTabbedPaneWithCloseIcons;
 import org.pclg.gui.ManagedScrollPane;
@@ -11,7 +12,6 @@ import org.pclg.log.LoggerFactory;
 import org.pclg.tools.FileTools;
 
 import javax.swing.AbstractAction;
-import javax.swing.JScrollPane;
 import javax.swing.JTextArea;
 import java.awt.Component;
 import java.awt.event.ActionEvent;
@@ -19,7 +19,6 @@ import java.awt.event.ActionListener;
 import java.io.File;
 import java.io.IOException;
 import java.util.ArrayList;
-import java.util.Enumeration;
 import java.util.List;
 import java.util.Timer;
 import java.util.TimerTask;
@@ -42,7 +41,7 @@ public class ViewLogAction extends AbstractAction {
     public void actionPerformed(final ActionEvent ev) {
         final JTextArea textArea = new JTextArea();
         textArea.setEditable(false);
-        final Enumeration<?> allAppenders = Logger.getRootLogger().getAllAppenders();
+//        final Enumeration<?> allAppenders = Logger.getRootLogger().getAllAppenders();
         final StringBuilder fileNames = new StringBuilder();
         class FileControl {
             final File file;

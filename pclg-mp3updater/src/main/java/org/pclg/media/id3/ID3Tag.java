@@ -1,6 +1,6 @@
 package org.pclg.media.id3;
 
-import org.apache.log4j.Logger;
+import org.apache.logging.log4j.Logger;
 import org.pclg.log.LoggerFactory;
 
 /**

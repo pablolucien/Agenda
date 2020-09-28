@@ -2,8 +2,34 @@
 
     <property name="dist" location="${basedir}/../../dist"/>
     <property name="Alles_src_zip_name" value="Alles_src.zip"/>
+    <property name="lib_dir" value="${basedir}/../lib"/>
+    <property name="libLAF_dir" value="${basedir}/../lib_L&amp;F"/>
 
-    <target name="buildAll" description="Builds all modules">
+    <target name="init">
+        <copy todir="${dist}" preservelastmodified="true">
+            <fileset file="${lib_dir}/derby.jar"/>
+            <fileset file="${libLAF_dir}/kunststoff.jar"/>
+            <fileset file="${lib_dir}/gnu.getopt.jar"/>
+            <fileset file="${lib_dir}/velocity-1.7-dep.jar"/>
+            <fileset file="${lib_dir}/itextpdf-5.3.4.jar"/>
+            <fileset file="${lib_dir}/jxl.jar"/>
+            <fileset file="${lib_dir}/jid3lib-0.5.4.jar"/>
+            <fileset file="${lib_dir}/log4j-1.2-api-2.13.3.jar"/>
+            <fileset file="${lib_dir}/log4j-api-2.13.3.jar"/>
+            <fileset file="${lib_dir}/log4j-core-2.13.3.jar"/>
+            <fileset file="${lib_dir}/ez-vcard-0.9.5.jar"/>
+            <fileset file="${lib_dir}/xalan-2.7.2.jar"/>
+            <fileset file="${lib_dir}/docx4j-3.3.1.jar"/>
+            <fileset file="${lib_dir}/serializer-2.7.2.jar"/>
+            <fileset file="${lib_dir}/guava-18.0.jar"/>
+            <fileset file="${lib_dir}/docx4j-3.3.1.jar"/>
+            <fileset file="${lib_dir}/commons-io-1.3.2.jar"/>
+            <fileset file="${lib_dir}/slf4j-api-1.7.7.jar"/>
+            <fileset file="${lib_dir}/json-20180130.jar"/>
+        </copy>
+
+    </target>
+    <target name="buildAll" description="Builds all modules" depends="init">
         <antcall target="executeTargetInModules">
             <param name="target" value="build"/>
         </antcall>
@@ -18,14 +44,14 @@
 
     <target name="executeTargetInModules">
         <ant antfile="pclg-tools/src/main/resources/build.xml" target="${target}"/>
-        <ant antfile="pclg-agenda/src/main/resources/build.xml" target="${target}"/>
-        <ant antfile="pclg-alter/src/main/resources/build.xml" target="${target}"/>
         <ant antfile="pclg-synchonizer/src/main/resources/build.xml" target="${target}"/>
+        <ant antfile="pclg-alter/src/main/resources/build.xml" target="${target}"/>
         <ant antfile="pclg-mp3updater/src/main/resources/build.xml" target="${target}"/>
         <ant antfile="pclg-compdel/src/main/resources/build.xml" target="${target}"/>
-<!--        <ant antfile="pclg-condominio/src/main/resources/build.xml" target="${target}"/>-->
+        <!--        <ant antfile="pclg-condominio/src/main/resources/build.xml" target="${target}"/>-->
         <ant antfile="net-asintec/src/main/resources/build.xml" target="${target}"/>
-<!--        <ant antfile="pclg-apps/src/main/config/build.xml" target="${target}"/>-->
+        <ant antfile="pclg-agenda/src/main/resources/build.xml" target="${target}"/>
+        <!--        <ant antfile="pclg-apps/src/main/config/build.xml" target="${target}"/>-->
     </target>
 
     <target name="Alles_src_zip" description="fuentes de la Alles">

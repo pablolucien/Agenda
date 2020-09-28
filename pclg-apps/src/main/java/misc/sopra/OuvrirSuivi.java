@@ -1,6 +1,7 @@
 package misc.sopra;
 
-import org.apache.log4j.Logger;
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
 
 import javax.swing.Icon;
 import javax.swing.ImageIcon;
@@ -26,7 +27,7 @@ import java.util.ResourceBundle;
  * @version 1.0
  */
 public class OuvrirSuivi {
-	private static final Logger LOGGER = Logger.getLogger(OuvrirSuivi.class);
+	private static final Logger LOGGER = LogManager.getLogger(OuvrirSuivi.class);
     private static final String PATH_SEPARATOR = "/";
 	private static final String FILE_NOT_EXISTS_MSG_KEY = "file.not.exists.msg";
     private static final String FILE_PATTERN_KEY = "file.pattern";

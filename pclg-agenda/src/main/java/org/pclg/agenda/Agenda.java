@@ -1,7 +1,7 @@
 package org.pclg.agenda;
 
-import org.apache.log4j.Level;
-import org.apache.log4j.Logger;
+import org.apache.logging.log4j.Level;
+import org.apache.logging.log4j.Logger;
 import org.pclg.agenda.entities.Grupo;
 import org.pclg.agenda.entities.Pais;
 import org.pclg.agenda.entities.TipoTelefono;
@@ -229,13 +229,13 @@ public final class Agenda {
 	}
 
 	public static void main(final String[] args) {
-        LOGGER.log(Level.OFF, "************* Starting Agenda. My process ID is probably: "
-            + PROCESS_ID);
+        LOGGER.log(Level.OFF, "************* Starting Agenda. My process ID is: " + PROCESS_ID);
 		try {
 			new Agenda();
 		} catch (final MissingResourceException ex) {
 			//noinspection HardCodedStringLiteral
-			LOGGER.error("ERROR obteniendo recursos: " + ex);
+			LOGGER.error("ERROR obteniendo recursos: ", ex);
+			System.exit(-1);
 		} catch (final Throwable throwable) {
 			//noinspection HardCodedStringLiteral
 			LOGGER.log(Level.ERROR, "Error inicializando Agenda", throwable);

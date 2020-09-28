@@ -2,7 +2,7 @@ package org.pclg.tools;
 
 //import javafx.scene.layout.Region;
 
-import org.apache.log4j.Logger;
+import org.apache.logging.log4j.Logger;
 import org.pclg.gui.JLabeledField;
 import org.pclg.gui.VersatileJMenu;
 import org.pclg.log.LoggerFactory;

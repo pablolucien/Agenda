@@ -1,6 +1,6 @@
 package org.pclg.filelist;
 
-import org.apache.log4j.Logger;
+import org.apache.logging.log4j.Logger;
 import org.pclg.filesystem.DirQueue;
 import org.pclg.gui.DirTree;
 import org.pclg.gui.JLabeledField;
