@@ -1,0 +1,16 @@
+<component name="libraryTable">
+  <library name="Maven: org.jpatterns:jpatterns:0.0.1">
+    <CLASSES>
+      <root url="jar://$MAVEN_REPOSITORY$/org/jpatterns/jpatterns/0.0.1/jpatterns-0.0.1.jar!/" />
+    </CLASSES>
+    <JAVADOC>
+      <root url="jar://$MAVEN_REPOSITORY$/org/jpatterns/jpatterns/0.0.1/jpatterns-0.0.1-javadoc.jar!/" />
+    </JAVADOC>
+    <SOURCES>
+      <root url="jar://$MAVEN_REPOSITORY$/org/jpatterns/jpatterns/0.0.1/jpatterns-0.0.1-sources.jar!/" />
+    </SOURCES>
+    <excluded>
+      <root url="jar://$MAVEN_REPOSITORY$/org/jpatterns/jpatterns/0.0.1/jpatterns-0.0.1.jar!/" />
+    </excluded>
+  </library>
+</component>

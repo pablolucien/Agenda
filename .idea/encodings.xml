@@ -1,13 +1,15 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
-  <component name="Encoding" useUTFGuessing="false" native2AsciiForPropertiesFiles="false">
+  <component name="Encoding">
     <file url="file://$PROJECT_DIR$/pclg-alter/src/main/java/org/pclg/alter/Alter.java" charset="ISO-8859-1" />
     <file url="file://$PROJECT_DIR$/pclg-apps/src/main/java/misc/sopra/eci/LectorRemedy.java" charset="ISO-8859-1" />
     <file url="file://$PROJECT_DIR$/pclg-apps/src/test/java/org/pclg/misc/IndexerTest.java" charset="ISO-8859-1" />
     <file url="file://$PROJECT_DIR$/pclg-synchonizer/src/main/resources/DS_Targets_light.json" charset="US-ASCII" />
+    <file url="file://$PROJECT_DIR$/pclg-tools/src/main/java" charset="ISO-8859-1" />
     <file url="file://$PROJECT_DIR$/pclg-tools/src/main/java/org/pclg/tools/Constants.java" charset="ISO-8859-1" />
     <file url="file://$PROJECT_DIR$/pclg-tools/src/main/java/org/pclg/tools/DigestToolsCleaner.java" charset="ISO-8859-1" />
+    <file url="file://$PROJECT_DIR$/pclg-tools/src/main/java/org/pclg/tools/RegexFilter.java" charset="ISO-8859-1" />
+    <file url="file://$PROJECT_DIR$/pclg-tools/src/main/resources" charset="ISO-8859-1" />
     <file url="file://$PROJECT_DIR$/pclg-tools/src/test/java/org/pclg/log/LoggerFactoryTest.java" charset="ISO-8859-1" />
   </component>
 </project>
-
