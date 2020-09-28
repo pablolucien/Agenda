@@ -1,33 +1,69 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="SELECTIVE" />
+  </component>
+  <component name="BranchesTreeState">
+    <expand />
+    <select />
+  </component>
   <component name="ChangeListManager">
-    <list default="true" id="ca6eb6b6-6419-4d0e-a6aa-4254ec1c5806" name="Default" comment="Continue modularization and add module-info.java descriptors">
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/lib_Java_EE_6_Java_EE_6.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/pclg-apps/src/main/config/ProcessLauncher_technical-Manoteras.properties" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/pclg-synchonizer/src/main/resources/DirectorySynchronizer_technical-Manoteras.properties" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/modules.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/modules.xml" afterDir="false" />
+    <list default="true" id="ca6eb6b6-6419-4d0e-a6aa-4254ec1c5806" name="Default" comment="Creation of class TextAreaLogger to workaround the new log4j API">
+      <change afterPath="$PROJECT_DIR$/pclg-tools/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/full-project.iml" beforeDir="false" afterPath="$PROJECT_DIR$/full-project.iml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/master-build.xml" beforeDir="false" afterPath="$PROJECT_DIR$/master-build.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/net-asintec/src/main/resources/build.xml" beforeDir="false" afterPath="$PROJECT_DIR$/net-asintec/src/main/resources/build.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/pclg-agenda/src/main/java/module-info.java" beforeDir="false" afterPath="$PROJECT_DIR$/pclg-agenda/src/main/java/module-info.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pclg-agenda/src/main/java/org/pclg/agenda/Agenda.java" beforeDir="false" afterPath="$PROJECT_DIR$/pclg-agenda/src/main/java/org/pclg/agenda/Agenda.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pclg-agenda/src/main/java/org/pclg/agenda/AgendaDbFactory.java" beforeDir="false" afterPath="$PROJECT_DIR$/pclg-agenda/src/main/java/org/pclg/agenda/AgendaDbFactory.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/pclg-agenda/src/main/java/org/pclg/agenda/AgendaRecordUtil.java" beforeDir="false" afterPath="$PROJECT_DIR$/pclg-agenda/src/main/java/org/pclg/agenda/AgendaRecordUtil.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pclg-agenda/src/main/java/org/pclg/agenda/AgendaUtil.java" beforeDir="false" afterPath="$PROJECT_DIR$/pclg-agenda/src/main/java/org/pclg/agenda/AgendaUtil.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/pclg-agenda/src/main/java/org/pclg/agenda/crypto/DatabaseEncrypter.java" beforeDir="false" afterPath="$PROJECT_DIR$/pclg-agenda/src/main/java/org/pclg/agenda/crypto/DatabaseEncrypter.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/pclg-agenda/src/main/java/org/pclg/agenda/crypto/DummyCrypto.java" beforeDir="false" afterPath="$PROJECT_DIR$/pclg-agenda/src/main/java/org/pclg/agenda/crypto/DummyCrypto.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pclg-agenda/src/main/java/org/pclg/agenda/entities/AgendaRecordImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/pclg-agenda/src/main/java/org/pclg/agenda/entities/AgendaRecordImpl.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/pclg-agenda/src/main/java/org/pclg/agenda/entities/Pais.java" beforeDir="false" afterPath="$PROJECT_DIR$/pclg-agenda/src/main/java/org/pclg/agenda/entities/Pais.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pclg-agenda/src/main/java/org/pclg/agenda/gui/AgendaGUI.java" beforeDir="false" afterPath="$PROJECT_DIR$/pclg-agenda/src/main/java/org/pclg/agenda/gui/AgendaGUI.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/pclg-agenda/src/main/java/org/pclg/agenda/gui/CountryMgtPanel.java" beforeDir="false" afterPath="$PROJECT_DIR$/pclg-agenda/src/main/java/org/pclg/agenda/gui/CountryMgtPanel.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pclg-agenda/src/main/java/org/pclg/agenda/gui/DataEntry.java" beforeDir="false" afterPath="$PROJECT_DIR$/pclg-agenda/src/main/java/org/pclg/agenda/gui/DataEntry.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/pclg-agenda/src/main/java/org/pclg/agenda/gui/DataTable.java" beforeDir="false" afterPath="$PROJECT_DIR$/pclg-agenda/src/main/java/org/pclg/agenda/gui/DataTable.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pclg-agenda/src/main/java/org/pclg/agenda/gui/GroupMgtPanel.java" beforeDir="false" afterPath="$PROJECT_DIR$/pclg-agenda/src/main/java/org/pclg/agenda/gui/GroupMgtPanel.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pclg-agenda/src/main/java/org/pclg/agenda/gui/ListPaisesListModel.java" beforeDir="false" afterPath="$PROJECT_DIR$/pclg-agenda/src/main/java/org/pclg/agenda/gui/ListPaisesListModel.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pclg-agenda/src/main/java/org/pclg/agenda/gui/ListadoPanel.java" beforeDir="false" afterPath="$PROJECT_DIR$/pclg-agenda/src/main/java/org/pclg/agenda/gui/ListadoPanel.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pclg-agenda/src/main/java/org/pclg/agenda/gui/ListadoPanelController.java" beforeDir="false" afterPath="$PROJECT_DIR$/pclg-agenda/src/main/java/org/pclg/agenda/gui/ListadoPanelController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pclg-agenda/src/main/java/org/pclg/agenda/gui/PhoneTypeListModel.java" beforeDir="false" afterPath="$PROJECT_DIR$/pclg-agenda/src/main/java/org/pclg/agenda/gui/PhoneTypeListModel.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/pclg-agenda/src/main/java/org/pclg/agenda/gui/PhoneTypeMgtPanel.java" beforeDir="false" afterPath="$PROJECT_DIR$/pclg-agenda/src/main/java/org/pclg/agenda/gui/PhoneTypeMgtPanel.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/pclg-agenda/src/main/java/org/pclg/agenda/gui/RecordEditor.java" beforeDir="false" afterPath="$PROJECT_DIR$/pclg-agenda/src/main/java/org/pclg/agenda/gui/RecordEditor.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/pclg-agenda/src/main/java/org/pclg/agenda/gui/SimpleQueryActionButton.java" beforeDir="false" afterPath="$PROJECT_DIR$/pclg-agenda/src/main/java/org/pclg/agenda/gui/SimpleQueryActionButton.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pclg-agenda/src/main/java/org/pclg/agenda/gui/StatusPanel.java" beforeDir="false" afterPath="$PROJECT_DIR$/pclg-agenda/src/main/java/org/pclg/agenda/gui/StatusPanel.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pclg-agenda/src/main/java/org/pclg/agenda/gui/TelefonoCellEditor.java" beforeDir="false" afterPath="$PROJECT_DIR$/pclg-agenda/src/main/java/org/pclg/agenda/gui/TelefonoCellEditor.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pclg-agenda/src/main/java/org/pclg/agenda/gui/actions/PluginAction.java" beforeDir="false" afterPath="$PROJECT_DIR$/pclg-agenda/src/main/java/org/pclg/agenda/gui/actions/PluginAction.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pclg-agenda/src/main/java/org/pclg/agenda/gui/actions/QueryAction.java" beforeDir="false" afterPath="$PROJECT_DIR$/pclg-agenda/src/main/java/org/pclg/agenda/gui/actions/QueryAction.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pclg-agenda/src/main/java/org/pclg/agenda/gui/actions/VCardReaderAction.java" beforeDir="false" afterPath="$PROJECT_DIR$/pclg-agenda/src/main/java/org/pclg/agenda/gui/actions/VCardReaderAction.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pclg-agenda/src/main/java/org/pclg/agenda/gui/actions/VCardSaverAction.java" beforeDir="false" afterPath="$PROJECT_DIR$/pclg-agenda/src/main/java/org/pclg/agenda/gui/actions/VCardSaverAction.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/pclg-agenda/src/main/java/org/pclg/agenda/gui/actions/ViewLogAction.java" beforeDir="false" afterPath="$PROJECT_DIR$/pclg-agenda/src/main/java/org/pclg/agenda/gui/actions/ViewLogAction.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pclg-agenda/src/main/java/org/pclg/agenda/gui/print/PrintForm.java" beforeDir="false" afterPath="$PROJECT_DIR$/pclg-agenda/src/main/java/org/pclg/agenda/gui/print/PrintForm.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pclg-agenda/src/main/java/org/pclg/agenda/jdbc/AgendaDbJDBC.java" beforeDir="false" afterPath="$PROJECT_DIR$/pclg-agenda/src/main/java/org/pclg/agenda/jdbc/AgendaDbJDBC.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pclg-agenda/src/main/java/org/pclg/agenda/jdbc/DbEngine.java" beforeDir="false" afterPath="$PROJECT_DIR$/pclg-agenda/src/main/java/org/pclg/agenda/jdbc/DbEngine.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pclg-agenda/src/main/java/org/pclg/agenda/jdbc/FindDuplicatesPlugin.java" beforeDir="false" afterPath="$PROJECT_DIR$/pclg-agenda/src/main/java/org/pclg/agenda/jdbc/FindDuplicatesPlugin.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pclg-agenda/src/main/java/org/pclg/agenda/jdbc/GroupHelper.java" beforeDir="false" afterPath="$PROJECT_DIR$/pclg-agenda/src/main/java/org/pclg/agenda/jdbc/GroupHelper.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pclg-agenda/src/main/java/org/pclg/agenda/jdbc/ImageHelper.java" beforeDir="false" afterPath="$PROJECT_DIR$/pclg-agenda/src/main/java/org/pclg/agenda/jdbc/ImageHelper.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/pclg-agenda/src/main/java/org/pclg/agenda/plugins/CharsetUpdater.java" beforeDir="false" afterPath="$PROJECT_DIR$/pclg-agenda/src/main/java/org/pclg/agenda/plugins/CharsetUpdater.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pclg-agenda/src/main/java/org/pclg/agenda/plugins/CheckAgendaPhotos.java" beforeDir="false" afterPath="$PROJECT_DIR$/pclg-agenda/src/main/java/org/pclg/agenda/plugins/CheckAgendaPhotos.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/pclg-agenda/src/main/java/org/pclg/agenda/plugins/CheckAndCopyPhotosPlugin.java" beforeDir="false" afterPath="$PROJECT_DIR$/pclg-agenda/src/main/java/org/pclg/agenda/plugins/CheckAndCopyPhotosPlugin.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pclg-agenda/src/main/java/org/pclg/agenda/plugins/ExecuteScript.java" beforeDir="false" afterPath="$PROJECT_DIR$/pclg-agenda/src/main/java/org/pclg/agenda/plugins/ExecuteScript.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pclg-agenda/src/main/java/org/pclg/agenda/plugins/ListAvailablePlugins.java" beforeDir="false" afterPath="$PROJECT_DIR$/pclg-agenda/src/main/java/org/pclg/agenda/plugins/ListAvailablePlugins.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/pclg-agenda/src/main/java/org/pclg/agenda/plugins/MigrateDirecciones.java" beforeDir="false" afterPath="$PROJECT_DIR$/pclg-agenda/src/main/java/org/pclg/agenda/plugins/MigrateDirecciones.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/pclg-agenda/src/main/java/org/pclg/agenda/plugins/NormalizeTelephones.java" beforeDir="false" afterPath="$PROJECT_DIR$/pclg-agenda/src/main/java/org/pclg/agenda/plugins/NormalizeTelephones.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pclg-agenda/src/main/java/org/pclg/agenda/plugins/PopulateNombresPlugin.java" beforeDir="false" afterPath="$PROJECT_DIR$/pclg-agenda/src/main/java/org/pclg/agenda/plugins/PopulateNombresPlugin.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pclg-agenda/src/main/java/org/pclg/agenda/plugins/PopulateThumbnails.java" beforeDir="false" afterPath="$PROJECT_DIR$/pclg-agenda/src/main/java/org/pclg/agenda/plugins/PopulateThumbnails.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/pclg-agenda/src/main/java/org/pclg/agenda/plugins/SimpleQueryPlugin.java" beforeDir="false" afterPath="$PROJECT_DIR$/pclg-agenda/src/main/java/org/pclg/agenda/plugins/SimpleQueryPlugin.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/pclg-agenda/src/main/java/org/pclg/agenda/plugins/TipoTelefonoUpdater.java" beforeDir="false" afterPath="$PROJECT_DIR$/pclg-agenda/src/main/java/org/pclg/agenda/plugins/TipoTelefonoUpdater.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/pclg-agenda/src/main/resources/build.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pclg-agenda/src/main/resources/build.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pclg-agenda/src/test/java/org/pclg/agenda/AgendaUtilTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/pclg-agenda/src/test/java/org/pclg/agenda/AgendaUtilTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pclg-agenda/src/test/java/org/pclg/agenda/entities/AgendaRecordTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/pclg-agenda/src/test/java/org/pclg/agenda/entities/AgendaRecordTest.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/pclg-alter/src/main/java/module-info.java" beforeDir="false" afterPath="$PROJECT_DIR$/pclg-alter/src/main/java/module-info.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pclg-alter/src/main/java/org/pclg/alter/Alter.java" beforeDir="false" afterPath="$PROJECT_DIR$/pclg-alter/src/main/java/org/pclg/alter/Alter.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/pclg-alter/src/main/java/org/pclg/alter/ErrorIndicator.java" beforeDir="false" afterPath="$PROJECT_DIR$/pclg-alter/src/main/java/org/pclg/alter/ErrorIndicator.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/pclg-alter/src/main/resources/build.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pclg-alter/src/main/resources/build.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/pclg-apps/src/main/config/build.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pclg-apps/src/main/config/build.xml" afterDir="false" />
@@ -1696,11 +1732,11 @@
     </state>
     <state x="558" y="214" key="run.anything.popup/0.0.1920.1040@0.0.1920.1040" timestamp="1599459144781" />
     <state x="597" y="244" key="run.anything.popup/55.27.1865.1053@55.27.1865.1053" timestamp="1599288900348" />
-    <state x="613" y="227" width="1018" height="670" key="search.everywhere.popup" timestamp="1599567531005">
-      <screen x="0" y="0" width="1920" height="1040" />
+    <state x="650" y="257" width="988" height="678" key="search.everywhere.popup" timestamp="1601290187715">
+      <screen x="55" y="27" width="1865" height="1053" />
     </state>
     <state x="613" y="227" width="1018" height="670" key="search.everywhere.popup/0.0.1920.1040@0.0.1920.1040" timestamp="1599567531005" />
-    <state x="650" y="257" width="988" height="678" key="search.everywhere.popup/55.27.1865.1053@55.27.1865.1053" timestamp="1599304762823" />
+    <state x="650" y="257" width="988" height="678" key="search.everywhere.popup/55.27.1865.1053@55.27.1865.1053" timestamp="1601290187715" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -1729,6 +1765,11 @@
           <url>file://$PROJECT_DIR$/pclg-tools/src/main/java/org/pclg/runtime/RuntimeTools.java</url>
           <line>44</line>
           <option name="timeStamp" value="12" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/pclg-synchonizer/src/main/java/org/pclg/filesystem/synchonizer/EraserHead.java</url>
+          <line>50</line>
+          <option name="timeStamp" value="14" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>
