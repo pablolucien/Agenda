@@ -21,7 +21,7 @@
                 "${ROOT_L}/bin"
             ],
             "Include": "*.jar:*.properties",
-            "Exclude": "*_custom.properties:*_technical.properties:Fortunes.properties"
+            "Exclude": "*_custom.properties:*_technical.properties:Fortunes.properties:*.log"
         },
         {
             "unidirectional": true,
@@ -29,35 +29,35 @@
                 "${ROOT_C}/home/pablo/development/projects/Alles",
                 "${ROOT_E}/home/pablo/development/projects/Alles"
             ],
-            "Exclude": "target/:out/:.idea/:.git/:local_config.properties"
+            "Exclude": "target/:out/:.idea/:.git/:local_config.properties:*.log"
         },
         {
             "dirs": [
                 "${ROOT_C}/home/pablo/development/projects/portfolio",
                 "${ROOT_E}/home/pablo/development/projects/portfolio"
             ],
-            "Exclude": "target/:out/:.idea/:.git/"
+            "Exclude": "target/:out/:.idea/:.git/:*.log"
         },
         {
             "dirs": [
                 "${ROOT_C}/home/pablo/development/projects/quotes",
                 "${ROOT_E}/home/pablo/development/projects/quotes"
             ],
-            "Exclude": "CVS/:.idea/:.git/:.github/:target/:out/:.git*:.#*:workspace.xml"
+            "Exclude": "CVS/:.idea/:.git/:.github/:target/:out/:.git*:.#*:workspace.xml:*.log"
         },
         {
             "dirs": [
                 "${ROOT_C}/home/pablo/development/projects/VersoPerlaPlumaYFlor",
                 "${ROOT_E}/home/pablo/development/projects/VersoPerlaPlumaYFlor"
             ],
-            "Exclude": ".git/:.github/:target/:out/:.git*:workspace.xml:.idea/"
+            "Exclude": ".git/:.github/:target/:out/:.git*:workspace.xml:.idea/:*.log"
         },
         {
             "dirs": [
                 "${ROOT_C}/home/pablo/development/projects/TestsKotlin",
                 "${ROOT_E}/home/pablo/development/projects/TestsKotlin"
             ],
-            "Exclude": ".git/:.github/:target/:out/:.git*:workspace.xml:.idea/"
+            "Exclude": ".git/:.github/:target/:out/:.git*:workspace.xml:.idea/:*.log"
         }
     ]
 }

@@ -6,7 +6,7 @@
 
     <groupId>org.pclg</groupId>
     <artifactId>pclg-tools</artifactId>
-    <version>2.0</version>
+    <version>3.0</version>
 
     <properties>
         <project.build.sourceEncoding>ISO-8859-1</project.build.sourceEncoding>
