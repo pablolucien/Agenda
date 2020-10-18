@@ -7,4 +7,8 @@ import java.util.Properties;
 @FunctionalInterface
 public interface Plugin {
 	void execute(final Properties properties, Connection conn, String... args) throws SQLException;
+
+	default String getInfo() {
+		return " - [No info available]";
+	}
 }

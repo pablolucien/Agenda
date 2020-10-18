@@ -1,5 +1,6 @@
 package org.pclg.agenda.plugins;
 
+import org.apache.logging.log4j.Level;
 import org.apache.logging.log4j.Logger;
 import org.pclg.log.LoggerFactory;
 import org.pclg.media.image.ThumbnailCreator;
@@ -11,43 +12,60 @@ import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
-import java.sql.Statement;
 import java.util.Properties;
 
 
 public class PopulateThumbnails implements Plugin {
 	private static final Logger LOGGER = LoggerFactory.makeLog4J();
+	private static final String BASE_SELECT = "SELECT C.clave, C.versionImagen, I.imagePath "
+		+ "FROM root.CONTACTO C LEFT JOIN root.IMAGEN I "
+		+ "ON I.clave = C.clave AND I.version = C.versionImagen ";
+	private static final String WHERE_CLAVE = "WHERE C.clave = ?";
+	private static final String WHERE_CLAVE_AND_VERSION = "WHERE C.clave = ? AND C.version = ?";
+	private static final String UPDATE = "UPDATE root.IMAGEN SET thumbnail = ? WHERE clave = ? AND version = ?";
 
 	@Override
 	public void execute(final Properties properties, final Connection conn, final String... args) throws SQLException {
-		final String select = "SELECT I.clave, I.version, I.secuencia, I.imagen FROM root.IMAGEN I";
-		final String insert = "INSERT INTO Thumbnail (Clave, Version, Secuencia, Thumbnail) VALUES (?, ?, ?, ?)";
-		final String delete = "DELETE FROM Thumbnail";
-
-		LOGGER.warn("start");
-		try (final Statement selectStmt = conn.createStatement(
-				ResultSet.TYPE_FORWARD_ONLY, ResultSet.CONCUR_UPDATABLE);
-			 final ResultSet rset = selectStmt.executeQuery(select);
-			 final PreparedStatement insertStmt = conn.prepareStatement(insert);
-			 final PreparedStatement deleteStmt = conn.prepareStatement(delete)) {
-			deleteStmt.executeUpdate();
+		final String imagesRoot = properties.getProperty("Agenda.images.root");
+		final String select;
+		switch (args.length) {
+			case 0:
+				select = BASE_SELECT;
+				break;
+			case 1:
+				select = BASE_SELECT + WHERE_CLAVE;
+				break;
+			case 2:
+				select = BASE_SELECT + WHERE_CLAVE_AND_VERSION;
+				break;
+			default:
+				throw new IllegalArgumentException("Usage is: " + getInfo());
+		}
+		LOGGER.log(Level.OFF, "start with query: " + select);
+		try (final PreparedStatement selectStmt = conn.prepareStatement(select, ResultSet.TYPE_FORWARD_ONLY, ResultSet.CONCUR_UPDATABLE);
+			 final PreparedStatement updateStmt = conn.prepareStatement(UPDATE)) {
+			if (args.length == 1) {
+				selectStmt.setString(1, args[0]);
+			} else if (args.length == 2) {
+				selectStmt.setString(1, args[0]);
+				selectStmt.setString(2, args[1]);
+			}
+			final ResultSet rset = selectStmt.executeQuery();
 			final ThumbnailCreator thumbnailCreator = new ThumbnailCreator();
 			while (rset.next()) {
 				int ii = 0;
 				final int clave = rset.getInt(++ii);
 				final int version = rset.getInt(++ii);
-				final int secuencia = rset.getInt(++ii);
-				final String imagen = rset.getString(++ii);
-				final File imageFile = new File(imagen);
+				final String imagePath = rset.getString(++ii);
+				final File imageFile = new File(imagesRoot + imagePath);
 				if (imageFile.exists()) {
 					LOGGER.debug("creating thumbnail for " + imageFile);
 					ii = 0;
-					insertStmt.setInt(++ii, clave);
-					insertStmt.setInt(++ii, version);
-					insertStmt.setInt(++ii, secuencia);
 					try (final InputStream stream = thumbnailCreator.getThumbnailAsStream(imageFile)) {
-						insertStmt.setBlob(++ii, stream);
-						final long count = insertStmt.executeUpdate();
+						updateStmt.setBlob(++ii, stream);
+						updateStmt.setInt(++ii, clave);
+						updateStmt.setInt(++ii, version);
+						final long count = updateStmt.executeUpdate();
 						assert count == 1;
 					}
 				} else {
@@ -57,7 +75,12 @@ public class PopulateThumbnails implements Plugin {
 		} catch (final IOException ex) {
 			LOGGER.error(LoggerFactory.ERROR_TAG, ex);
 		} finally {
-			LOGGER.warn("end");
+			LOGGER.log(Level.OFF, "end");
 		}
+	}
+
+	@Override
+	public String getInfo() {
+		return getClass().getName() + " [clave [version]]";
 	}
 }

@@ -8,6 +8,7 @@ import org.pclg.tools.ToolBox;
 
 import java.io.File;
 import java.io.IOException;
+import java.lang.reflect.InvocationTargetException;
 import java.sql.Connection;
 import java.util.Properties;
 
@@ -29,7 +30,13 @@ public class ListAvailablePlugins implements Plugin {
             LOGGER.log(Level.OFF, ">> Preprocesadores disponibles en " + path + " <<");
             final Class<?>[] clases = ToolBox.findClasses(Plugin.class, path);
             for (final Class<?> clase : clases) {
-                LOGGER.log(Level.OFF, clase);
+                Plugin plugin = null;
+                try {
+                    plugin = (Plugin) clase.getDeclaredConstructor().newInstance();
+                } catch (final InstantiationException | IllegalAccessException | InvocationTargetException | NoSuchMethodException ex) {
+                    LOGGER.error(LoggerFactory.ERROR_TAG, ex);
+                }
+                LOGGER.log(Level.OFF, clase.getName() + (plugin == null ? " Can't get info" : plugin.getInfo()));
             /*
             // El problema con este approach es que instancia todas las clases que haya por el camino. FIXME: Buscar otra solución
             try {
