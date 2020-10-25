@@ -104,7 +104,6 @@
         <copy todir="${dist}" preservelastmodified="true">
             <fileset dir="${config_dir}" includes="${properties}"/>
             <fileset file="${src}/Dw.properties"/>
-            <fileset file="${src}/DbUpdate.help"/>
             <fileset file="${config_dir}/log4j.properties"/>
             <fileset file="${config_dir}/derby.properties"/>
         </copy>
@@ -113,7 +112,6 @@
         <copy todir="${build}" preservelastmodified="true">
             <fileset dir="${config_dir}" includes="${properties}"/>
             <fileset file="${src}/Dw.properties"/>
-            <fileset file="${src}/DbUpdate.help"/>
             <fileset file="${src}/Skel.properties"/>
             <fileset file="${config_dir}/log4j.properties"/>
             <fileset file="${config_dir}/derby.properties"/>
@@ -277,7 +275,6 @@
                      includes="
 				Magic.magic
 				org/pclg/tools/Chrono.properties
-				org/pclg/dbutil/DbUpdate.help
 				Dw.help
 				ExpensesSorter.conf
 				Skel.properties

@@ -648,7 +648,7 @@ public final class DbUpdate {
 	private static void checkArgs(final String[] args) {
 		if (args[0].equals("-help")) {
 			try {
-				FileTools.catStream(ClassLoader.getSystemClassLoader().getResourceAsStream("DbUpdate.help"), System.err);
+				FileTools.catStream(ClassLoader.getSystemClassLoader().getResourceAsStream("/DbUpdate.help"), System.err);
 			} catch (final IOException ex) {
 				LOGGER.error(LoggerFactory.ERROR_TAG, ex);
 			}

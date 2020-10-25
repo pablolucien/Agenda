@@ -63,13 +63,22 @@ public final class LoggerFactory {
 	}
 
 	/**
-	 * Crea un logger (de Log4j) adecuado para la clase que llama a este m?todo.
+	 * Creates a logger (from Log4j) suitable to the class that calls this method.
 	 *
 	 * @return un logger.
 	 */
 	public static org.apache.logging.log4j.Logger makeLog4J() {
         final String className = getTargetClassName();
         return org.apache.logging.log4j.LogManager.getLogger(className);
+	}
+
+	/**
+	 * Creates a logger (EnhancedLogger) suitable to the class that calls this method.
+	 *
+	 * @return un logger.
+	 */
+	public static EnhancedLogger makeEnhancedLogger() {
+        return new EnhancedLogger(makeLog4J());
 	}
 
 	/**
