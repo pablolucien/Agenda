@@ -5,7 +5,7 @@
                 "${ROOT_E}/m2_repository",
                 "${LOCAL_M2_REPOSITORY_DIR}"
             ],
-            "Exclude": "pclg/:ebu/"
+            "Exclude": "ebu/"
         }
     ]
 }

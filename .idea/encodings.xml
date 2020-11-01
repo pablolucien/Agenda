@@ -10,6 +10,7 @@
     <file url="file://$PROJECT_DIR$/pclg-tools/src/main/java/org/pclg/tools/DigestToolsCleaner.java" charset="ISO-8859-1" />
     <file url="file://$PROJECT_DIR$/pclg-tools/src/main/java/org/pclg/tools/RegexFilter.java" charset="ISO-8859-1" />
     <file url="file://$PROJECT_DIR$/pclg-tools/src/main/resources" charset="ISO-8859-1" />
+    <file url="file://$PROJECT_DIR$/pclg-tools/src/main/resources/DbUpdate.help" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/pclg-tools/src/test/java/org/pclg/log/LoggerFactoryTest.java" charset="ISO-8859-1" />
   </component>
 </project>
