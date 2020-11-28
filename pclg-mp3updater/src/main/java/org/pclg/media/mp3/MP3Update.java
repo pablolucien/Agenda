@@ -55,7 +55,7 @@ public final class MP3Update {
     private static final String MP3_SUFFIX = ".mp3";
 
 	public static final String REPLACE_CHARS_TEXT_DELIMITER = ",,";
-	public static final String DEFAULT_REPLACEMENT_CHARS = "��|?,,�|:";
+	public static final String DEFAULT_REPLACEMENT_CHARS = "\u00bf\u00bf|?,,\u00a8|:";
 
 	public static class Options {
         public int year;

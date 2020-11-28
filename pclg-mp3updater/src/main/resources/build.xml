@@ -51,7 +51,7 @@
             <manifest>
                 <attribute name="Built-By" value="${user.name}"/>
                 <attribute name="Main-Class" value="org.pclg.media.mp3.MP3Update"/>
-                <attribute name="Class-Path" value="pclg-tools.jar : Icons.jar : jid3lib-0.5.4.jar : log4j-api-2.13.3.jar : log4j-core-2.13.3.jar"/>
+                <attribute name="Class-Path" value="pclg-tools.jar : Icons.jar : jid3lib-0.5.4.jar : log4j-api-2.13.3.jar : log4j-core-2.13.3.jar : ."/>
             </manifest>
         </jar>
     </target>
