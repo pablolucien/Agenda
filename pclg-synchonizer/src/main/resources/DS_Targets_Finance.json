@@ -11,13 +11,14 @@
     },
     {
       "dirs": [
-        "${USER_PROFILE_DIR}/.gnucash/",
+        "${USER_PROFILE_DIR}/.local/share/gnucash",
         "${ROOT_E}/home/pablo/Finance/GnuCashData/",
         "${ROOT_F}/home/pablo/Finance/GnuCashData/",
         "${ROOT_L}/home/pablo/Finance/GnuCashData/"
       ],
       "files": [
         "saved-reports-2.4",
+        "saved-reports-2.8",
         "stylesheets-2.0"
       ]
     }
