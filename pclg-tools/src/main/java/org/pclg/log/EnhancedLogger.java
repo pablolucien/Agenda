@@ -23,6 +23,24 @@ public class EnhancedLogger {
         }
     }
 
+    public void error(final Throwable thr) {
+        if (delegate.isErrorEnabled()) {
+            delegate.error(thr);
+        }
+    }
+
+    public void warn(final String format, final Object... args) {
+        if (delegate.isWarnEnabled()) {
+            delegate.warn(resolve(format, args));
+        }
+    }
+
+    public void warn(final Throwable thr) {
+        if (delegate.isErrorEnabled()) {
+            delegate.error(thr);
+        }
+    }
+
     public void log(final Level level, final String format, final Object... args) {
         if (delegate.isEnabled(level)) {
             delegate.log(level, resolve(format, args));

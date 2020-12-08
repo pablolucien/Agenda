@@ -63,6 +63,14 @@
                 "${ROOT_E}/home/pablo/development/projects/TestsKotlin"
             ],
             "Exclude": ".git/:.github/:target/:out/:.git*:workspace.xml:.idea/:*.log"
+        },
+        {
+            "dirs": [
+                "${ROOT_C}/home/pablo/development/projects/TodoList",
+                "${ROOT_F}/home/pablo/development/projects/TodoList",
+                "${ROOT_E}/home/pablo/development/projects/TodoList"
+            ],
+            "Exclude": ".idea/:build/:.gradle/:*.log"
         }
     ]
 }

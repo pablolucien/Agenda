@@ -27,6 +27,7 @@
                 "${ROOT_C}/home/pablo/",
                 "${ROOT_L}/dev/",
                 "${ROOT_E}/home/pablo/",
+                "${ROOT_F}/home/pablo/",
                 "${ROOT_C}/_Reise/"
             ],
             "files": [
