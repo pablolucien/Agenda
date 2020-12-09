@@ -36,7 +36,7 @@ public class EnhancedLogger {
     }
 
     public void warn(final Throwable thr) {
-        if (delegate.isErrorEnabled()) {
+        if (delegate.isWarnEnabled()) {
             delegate.error(thr);
         }
     }
