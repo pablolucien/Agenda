@@ -44,11 +44,13 @@ public class CheckAndCopyPhotosPlugin implements Plugin {
             return;
         }
         LOGGER.info(name + ".execute() " + args[0] + ' ' + args[1]);
+        final String sourceImagesRoot = args[0].endsWith(File.separator) ? args[0] : args[0] + File.separatorChar;
+        final String targetImagesRoot = args[1].endsWith(File.separator) ? args[1] : args[1] + File.separatorChar;
         try (final PreparedStatement stmt = conn.prepareStatement(
             SELECT_FROM_IMAGEN_SENTENCE)) {
             final ResultSet rset = stmt.executeQuery();
             while (rset.next()) {
-                checkAndCopy(rset.getString(1), args[0], args[1]);
+                checkAndCopy(rset.getString(1), sourceImagesRoot, targetImagesRoot);
             }
         }
     }

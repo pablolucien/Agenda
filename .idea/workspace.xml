@@ -10,9 +10,16 @@
   <component name="ChangeListManager">
     <list default="true" id="ca6eb6b6-6419-4d0e-a6aa-4254ec1c5806" name="Default" comment="Added EnhancedLogger and move DbUpdate.help to correct place">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pclg-agenda/src/main/java/org/pclg/agenda/plugins/CheckAndCopyPhotosPlugin.java" beforeDir="false" afterPath="$PROJECT_DIR$/pclg-agenda/src/main/java/org/pclg/agenda/plugins/CheckAndCopyPhotosPlugin.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pclg-apps/src/main/html/body.html" beforeDir="false" afterPath="$PROJECT_DIR$/pclg-apps/src/main/html/body.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pclg-synchonizer/src/main/resources/DS_Targets_development.json" beforeDir="false" afterPath="$PROJECT_DIR$/pclg-synchonizer/src/main/resources/DS_Targets_development.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pclg-synchonizer/src/main/resources/DirectorySynchronizer_technical-ACME-II.properties" beforeDir="false" afterPath="$PROJECT_DIR$/pclg-synchonizer/src/main/resources/DirectorySynchronizer_technical-ACME-II.properties" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/pclg-tools/src/main/java/org/pclg/tools/velocity/VelocityDriver.java" beforeDir="false" afterPath="$PROJECT_DIR$/pclg-tools/src/main/java/org/pclg/tools/velocity/VelocityDriver.java" afterDir="false" />
     </list>
     <list id="6eaabc47-20b5-4622-b4b5-a86e15e7458f" name="Deactivated temporarily" comment="Deactivated temporarily" />
+    <list id="612e46b5-fca6-49a2-9631-d1491558aba4" name="Do-not-commit" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+    </list>
     <list id="ec21d2e0-928c-4f78-ac61-b772ad98a08d" name="Idea's housekeeping" comment="Idea's housekeeping for maven" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -44,12 +51,25 @@
     </option>
   </component>
   <component name="JupyterTrust" id="792f9bbf-76c8-483f-bac3-8585c0c7845e" />
-  <component name="MavenImportPreferences">
-    <option name="generalSettings">
-      <MavenGeneralSettings>
-        <option name="mavenHome" value="$APPLICATION_HOME_DIR$/plugins/maven/lib/maven3" />
-      </MavenGeneralSettings>
-    </option>
+  <component name="LineStatusTrackerManager">
+    <file path="$PROJECT_DIR$/.idea/workspace.xml">
+      <ranges>
+        <range start1="15" end1="15" start2="15" end2="18" changelist="612e46b5-fca6-49a2-9631-d1491558aba4" />
+        <range start1="46" end1="52" start2="49" end2="63" changelist="612e46b5-fca6-49a2-9631-d1491558aba4" />
+        <range start1="425" end1="426" start2="436" end2="437" changelist="ca6eb6b6-6419-4d0e-a6aa-4254ec1c5806" />
+        <range start1="439" end1="439" start2="450" end2="492" changelist="ca6eb6b6-6419-4d0e-a6aa-4254ec1c5806" />
+        <range start1="462" end1="462" start2="515" end2="582" changelist="ca6eb6b6-6419-4d0e-a6aa-4254ec1c5806" />
+        <range start1="757" end1="777" start2="877" end2="877" changelist="ca6eb6b6-6419-4d0e-a6aa-4254ec1c5806" />
+        <range start1="806" end1="828" start2="906" end2="906" changelist="ca6eb6b6-6419-4d0e-a6aa-4254ec1c5806" />
+        <range start1="934" end1="1001" start2="1012" end2="1012" changelist="ca6eb6b6-6419-4d0e-a6aa-4254ec1c5806" />
+        <range start1="1054" end1="1054" start2="1065" end2="1066" changelist="612e46b5-fca6-49a2-9631-d1491558aba4" />
+        <range start1="1100" end1="1100" start2="1112" end2="1117" changelist="612e46b5-fca6-49a2-9631-d1491558aba4" />
+        <range start1="1283" end1="1284" start2="1300" end2="1322" changelist="612e46b5-fca6-49a2-9631-d1491558aba4" />
+        <range start1="1346" end1="1349" start2="1384" end2="1384" changelist="612e46b5-fca6-49a2-9631-d1491558aba4" />
+        <range start1="1371" end1="1372" start2="1406" end2="1410" changelist="612e46b5-fca6-49a2-9631-d1491558aba4" />
+        <range start1="1373" end1="1549" start2="1411" end2="1411" changelist="612e46b5-fca6-49a2-9631-d1491558aba4" />
+      </ranges>
+    </file>
   </component>
   <component name="ProjectId" id="1dGR5T6zfui34Fi3zHyNVNEEKlF" />
   <component name="ProjectInspectionProfilesVisibleTreeState">
@@ -423,7 +443,7 @@
       <recent name="C:\home\development\projects\Alles\src\test_resources\images\16x16" />
     </key>
   </component>
-  <component name="RunManager" selected="Application.MP3Update">
+  <component name="RunManager" selected="Application.Agenda">
     <configuration default="true" type="Applet" factoryName="Applet">
       <module name="" />
       <option name="MAIN_CLASS_NAME" />
@@ -436,6 +456,48 @@
       <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
       <option name="ALTERNATIVE_JRE_PATH" />
       <method />
+    </configuration>
+    <configuration default="true" type="DjangoTestsConfigurationType">
+      <module name="pclg-apps" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="" />
+      <option name="IS_MODULE_SDK" value="false" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
+      <option name="TARGET" value="" />
+      <option name="SETTINGS_FILE" value="" />
+      <option name="CUSTOM_SETTINGS" value="false" />
+      <option name="USE_OPTIONS" value="false" />
+      <option name="OPTIONS" value="" />
+      <method v="2" />
+    </configuration>
+    <configuration default="true" type="PythonConfigurationType" factoryName="Python">
+      <module name="pclg-apps" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="" />
+      <option name="IS_MODULE_SDK" value="false" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
+      <option name="SCRIPT_NAME" value="" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
     </configuration>
     <configuration name="&lt;template&gt;" type="WebApp" default="true" selected="false">
       <Host>localhost</Host>
@@ -460,6 +522,73 @@
       <option name="PATTERN" value="" />
       <option name="USE_PATTERN" value="false" />
       <method />
+    </configuration>
+    <configuration default="true" type="tests" factoryName="Doctests">
+      <module name="pclg-apps" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="" />
+      <option name="IS_MODULE_SDK" value="false" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
+      <option name="SCRIPT_NAME" value="" />
+      <option name="CLASS_NAME" value="" />
+      <option name="METHOD_NAME" value="" />
+      <option name="FOLDER_NAME" value="" />
+      <option name="TEST_TYPE" value="TEST_SCRIPT" />
+      <option name="PATTERN" value="" />
+      <option name="USE_PATTERN" value="false" />
+      <method v="2" />
+    </configuration>
+    <configuration default="true" type="tests" factoryName="Nosetests">
+      <module name="pclg-apps" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="" />
+      <option name="IS_MODULE_SDK" value="false" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
+      <option name="_new_regexPattern" value="&quot;&quot;" />
+      <option name="_new_additionalArguments" value="&quot;&quot;" />
+      <option name="_new_target" value="&quot;&quot;" />
+      <option name="_new_targetType" value="&quot;PATH&quot;" />
+      <method v="2" />
+    </configuration>
+    <configuration default="true" type="tests" factoryName="Unittests">
+      <module name="pclg-apps" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="" />
+      <option name="IS_MODULE_SDK" value="false" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
+      <option name="_new_additionalArguments" value="&quot;&quot;" />
+      <option name="_new_target" value="&quot;&quot;" />
+      <option name="_new_targetType" value="&quot;PATH&quot;" />
+      <method v="2" />
+    </configuration>
+    <configuration default="true" type="tests" factoryName="py.test">
+      <module name="pclg-apps" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="" />
+      <option name="IS_MODULE_SDK" value="false" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
+      <option name="_new_keywords" value="&quot;&quot;" />
+      <option name="_new_parameters" value="&quot;&quot;" />
+      <option name="_new_additionalArguments" value="&quot;&quot;" />
+      <option name="_new_target" value="&quot;&quot;" />
+      <option name="_new_targetType" value="&quot;PATH&quot;" />
+      <method v="2" />
     </configuration>
     <configuration name="Agenda" type="Application" factoryName="Application">
       <option name="MAIN_CLASS_NAME" value="org.pclg.agenda.Agenda" />
@@ -756,26 +885,6 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration default="true" type="DjangoTestsConfigurationType">
-      <module name="pclg-apps" />
-      <option name="INTERPRETER_OPTIONS" value="" />
-      <option name="PARENT_ENVS" value="true" />
-      <envs>
-        <env name="PYTHONUNBUFFERED" value="1" />
-      </envs>
-      <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="" />
-      <option name="IS_MODULE_SDK" value="false" />
-      <option name="ADD_CONTENT_ROOTS" value="true" />
-      <option name="ADD_SOURCE_ROOTS" value="true" />
-      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
-      <option name="TARGET" value="" />
-      <option name="SETTINGS_FILE" value="" />
-      <option name="CUSTOM_SETTINGS" value="false" />
-      <option name="USE_OPTIONS" value="false" />
-      <option name="OPTIONS" value="" />
-      <method v="2" />
-    </configuration>
     <configuration name="Tests JUnit en general" type="JUnit" factoryName="JUnit">
       <module name="pclg-apps" />
       <option name="PACKAGE_NAME" value="" />
@@ -803,28 +912,6 @@
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
-    </configuration>
-    <configuration default="true" type="PythonConfigurationType" factoryName="Python">
-      <module name="pclg-apps" />
-      <option name="INTERPRETER_OPTIONS" value="" />
-      <option name="PARENT_ENVS" value="true" />
-      <envs>
-        <env name="PYTHONUNBUFFERED" value="1" />
-      </envs>
-      <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="" />
-      <option name="IS_MODULE_SDK" value="false" />
-      <option name="ADD_CONTENT_ROOTS" value="true" />
-      <option name="ADD_SOURCE_ROOTS" value="true" />
-      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
-      <option name="SCRIPT_NAME" value="" />
-      <option name="PARAMETERS" value="" />
-      <option name="SHOW_COMMAND_LINE" value="false" />
-      <option name="EMULATE_TERMINAL" value="false" />
-      <option name="MODULE_MODE" value="false" />
-      <option name="REDIRECT_INPUT" value="false" />
-      <option name="INPUT_FILE" value="" />
-      <method v="2" />
     </configuration>
     <configuration name="EnhancedLoggerTest" type="TestNG" temporary="true" nameIsGenerated="true">
       <module name="pclg-tools" />
@@ -933,73 +1020,6 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration default="true" type="tests" factoryName="Doctests">
-      <module name="pclg-apps" />
-      <option name="INTERPRETER_OPTIONS" value="" />
-      <option name="PARENT_ENVS" value="true" />
-      <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="" />
-      <option name="IS_MODULE_SDK" value="false" />
-      <option name="ADD_CONTENT_ROOTS" value="true" />
-      <option name="ADD_SOURCE_ROOTS" value="true" />
-      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
-      <option name="SCRIPT_NAME" value="" />
-      <option name="CLASS_NAME" value="" />
-      <option name="METHOD_NAME" value="" />
-      <option name="FOLDER_NAME" value="" />
-      <option name="TEST_TYPE" value="TEST_SCRIPT" />
-      <option name="PATTERN" value="" />
-      <option name="USE_PATTERN" value="false" />
-      <method v="2" />
-    </configuration>
-    <configuration default="true" type="tests" factoryName="Nosetests">
-      <module name="pclg-apps" />
-      <option name="INTERPRETER_OPTIONS" value="" />
-      <option name="PARENT_ENVS" value="true" />
-      <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="" />
-      <option name="IS_MODULE_SDK" value="false" />
-      <option name="ADD_CONTENT_ROOTS" value="true" />
-      <option name="ADD_SOURCE_ROOTS" value="true" />
-      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
-      <option name="_new_regexPattern" value="&quot;&quot;" />
-      <option name="_new_additionalArguments" value="&quot;&quot;" />
-      <option name="_new_target" value="&quot;&quot;" />
-      <option name="_new_targetType" value="&quot;PATH&quot;" />
-      <method v="2" />
-    </configuration>
-    <configuration default="true" type="tests" factoryName="Unittests">
-      <module name="pclg-apps" />
-      <option name="INTERPRETER_OPTIONS" value="" />
-      <option name="PARENT_ENVS" value="true" />
-      <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="" />
-      <option name="IS_MODULE_SDK" value="false" />
-      <option name="ADD_CONTENT_ROOTS" value="true" />
-      <option name="ADD_SOURCE_ROOTS" value="true" />
-      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
-      <option name="_new_additionalArguments" value="&quot;&quot;" />
-      <option name="_new_target" value="&quot;&quot;" />
-      <option name="_new_targetType" value="&quot;PATH&quot;" />
-      <method v="2" />
-    </configuration>
-    <configuration default="true" type="tests" factoryName="py.test">
-      <module name="pclg-apps" />
-      <option name="INTERPRETER_OPTIONS" value="" />
-      <option name="PARENT_ENVS" value="true" />
-      <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="" />
-      <option name="IS_MODULE_SDK" value="false" />
-      <option name="ADD_CONTENT_ROOTS" value="true" />
-      <option name="ADD_SOURCE_ROOTS" value="true" />
-      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
-      <option name="_new_keywords" value="&quot;&quot;" />
-      <option name="_new_parameters" value="&quot;&quot;" />
-      <option name="_new_additionalArguments" value="&quot;&quot;" />
-      <option name="_new_target" value="&quot;&quot;" />
-      <option name="_new_targetType" value="&quot;PATH&quot;" />
-      <method v="2" />
-    </configuration>
     <list>
       <item itemvalue="Application.Agenda" />
       <item itemvalue="Application.Alter" />
@@ -1052,6 +1072,7 @@
     <task active="true" id="Default" summary="Default task">
       <changelist id="6eaabc47-20b5-4622-b4b5-a86e15e7458f" name="Deactivated temporarily" comment="" />
       <changelist id="ec21d2e0-928c-4f78-ac61-b772ad98a08d" name="Idea's housekeeping" comment="" />
+      <changelist id="612e46b5-fca6-49a2-9631-d1491558aba4" name="Do-not-commit" comment="" />
       <created>1592049259464</created>
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
@@ -1098,6 +1119,12 @@
       <workItem from="1604311275453" duration="400000" />
       <workItem from="1605349126355" duration="70000" />
       <workItem from="1606550920295" duration="886000" />
+      <workItem from="1607242325938" duration="1338000" />
+      <workItem from="1607245709454" duration="561000" />
+      <workItem from="1607246515616" duration="358000" />
+      <workItem from="1607415159273" duration="1115000" />
+      <workItem from="1607506976939" duration="388000" />
+      <workItem from="1609933210252" duration="489000" />
     </task>
     <task id="LOCAL-00001" summary="Manually resolve merge conficts">
       <created>1598095361969</created>
@@ -1281,7 +1308,28 @@
       <option name="project" value="LOCAL" />
       <updated>1606551787983</updated>
     </task>
-    <option name="localTasksCounter" value="27" />
+    <task id="LOCAL-00027" summary="Varias cosillas">
+      <created>1607242489525</created>
+      <option name="number" value="00027" />
+      <option name="presentableId" value="LOCAL-00027" />
+      <option name="project" value="LOCAL" />
+      <updated>1607242489525</updated>
+    </task>
+    <task id="LOCAL-00028" summary="Add methods to EnhancedLogger. Add targets to DS">
+      <created>1607416251510</created>
+      <option name="number" value="00028" />
+      <option name="presentableId" value="LOCAL-00028" />
+      <option name="project" value="LOCAL" />
+      <updated>1607416251510</updated>
+    </task>
+    <task id="LOCAL-00029" summary="EnhancedLogger: fix Level check">
+      <created>1607507286952</created>
+      <option name="number" value="00029" />
+      <option name="presentableId" value="LOCAL-00029" />
+      <option name="project" value="LOCAL" />
+      <updated>1607507286952</updated>
+    </task>
+    <option name="localTasksCounter" value="30" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -1344,9 +1392,6 @@
   </component>
   <component name="VcsManagerConfiguration">
     <option name="CHECK_CODE_SMELLS_BEFORE_PROJECT_COMMIT" value="false" />
-    <MESSAGE value="Modularization (fourth  batch -&gt; asintec)" />
-    <MESSAGE value="Modularization (add Idea configuration files to version control)" />
-    <MESSAGE value="Manually resolve merge conficts" />
     <MESSAGE value="Starting with JDK11" />
     <MESSAGE value="Starting with JDK11: Delete (temporarily?) things that use JavaFX" />
     <MESSAGE value="Incorpore changes done in Minerva: &#10;  1-Signal end of work with sound&#10;  2-Fix TargetDef with OnlyIncludedFilesIterator&#10;  3-Reuse the PreparedStatement's in Agenda's Helpers&#10;  4-Encapsulate the use of Properties in AgendaDbJDBC" />
@@ -1369,184 +1414,11 @@
     <MESSAGE value="Compra de ferrovial" />
     <MESSAGE value="." />
     <MESSAGE value="Fix the replacement chars and the classpath" />
-    <option name="LAST_COMMIT_MESSAGE" value="Fix the replacement chars and the classpath" />
+    <MESSAGE value="Varias cosillas" />
+    <MESSAGE value="Add methods to EnhancedLogger. Add targets to DS" />
+    <MESSAGE value="EnhancedLogger: fix Level check" />
+    <option name="LAST_COMMIT_MESSAGE" value="EnhancedLogger: fix Level check" />
     <option name="OPTIMIZE_IMPORTS_BEFORE_PROJECT_COMMIT" value="true" />
-  </component>
-  <component name="WindowStateProjectService">
-    <state x="680" y="377" width="604" height="350" key="#Notifications" timestamp="1599986768685">
-      <screen x="55" y="27" width="1865" height="1053" />
-    </state>
-    <state x="680" y="377" width="604" height="350" key="#Notifications/55.27.1865.1053@55.27.1865.1053" timestamp="1599986768685" />
-    <state x="470" y="130" width="1024" height="845" key="#Project_Structure" timestamp="1598773594269">
-      <screen x="55" y="27" width="1865" height="1053" />
-    </state>
-    <state x="470" y="130" width="1024" height="845" key="#Project_Structure/55.27.1865.1053@55.27.1865.1053" timestamp="1598773594269" />
-    <state x="449" y="136" width="1084" height="944" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1603016624605">
-      <screen x="60" y="27" width="1860" height="1053" />
-    </state>
-    <state x="445" y="136" width="1084" height="944" key="#com.intellij.execution.impl.EditConfigurationsDialog/55.27.1865.1053@55.27.1865.1053" timestamp="1601290597904" />
-    <state x="449" y="136" key="#com.intellij.execution.impl.EditConfigurationsDialog/60.27.1860.1053@60.27.1860.1053" timestamp="1603016624605" />
-    <state x="798" y="260" width="374" height="585" key="#com.intellij.ide.util.MemberChooser" timestamp="1603016356033">
-      <screen x="60" y="27" width="1860" height="1053" />
-    </state>
-    <state x="795" y="260" width="374" height="585" key="#com.intellij.ide.util.MemberChooser/55.27.1865.1053@55.27.1865.1053" timestamp="1599994076404" />
-    <state x="798" y="260" key="#com.intellij.ide.util.MemberChooser/60.27.1860.1053@60.27.1860.1053" timestamp="1603016356033" />
-    <state x="798" y="334" width="524" height="444" key="#com.intellij.ide.util.PackageChooserDialog" timestamp="1599995537618">
-      <screen x="55" y="27" width="1865" height="1053" />
-    </state>
-    <state x="798" y="334" width="524" height="444" key="#com.intellij.ide.util.PackageChooserDialog/55.27.1865.1053@55.27.1865.1053" timestamp="1599995537618" />
-    <state x="719" y="383" width="525" height="416" key="#com.intellij.ide.util.TreeClassChooserDialog" timestamp="1598097234784">
-      <screen x="55" y="27" width="1865" height="1053" />
-    </state>
-    <state x="719" y="383" width="525" height="416" key="#com.intellij.ide.util.TreeClassChooserDialog/55.27.1865.1053@55.27.1865.1053" timestamp="1598097234784" />
-    <state x="670" y="289" width="624" height="526" key="#com.intellij.openapi.updateSettings.impl.PluginUpdateInfoDialog" timestamp="1598771476574">
-      <screen x="55" y="27" width="1865" height="1053" />
-    </state>
-    <state x="670" y="289" width="624" height="526" key="#com.intellij.openapi.updateSettings.impl.PluginUpdateInfoDialog/55.27.1865.1053@55.27.1865.1053" timestamp="1598771476574" />
-    <state x="528" y="466" width="1061" height="173" key="#com.intellij.refactoring.move.MoveHandler.SelectRefactoringDialog" timestamp="1599304854774">
-      <screen x="55" y="27" width="1865" height="1053" />
-    </state>
-    <state x="528" y="466" width="1061" height="173" key="#com.intellij.refactoring.move.MoveHandler.SelectRefactoringDialog/55.27.1865.1053@55.27.1865.1053" timestamp="1599304854774" />
-    <state x="732" y="420" width="667" height="272" key="#com.intellij.refactoring.move.moveClassesOrPackages.MoveClassesOrPackagesDialog.classes" timestamp="1599995541063">
-      <screen x="55" y="27" width="1865" height="1053" />
-    </state>
-    <state x="732" y="420" width="667" height="272" key="#com.intellij.refactoring.move.moveClassesOrPackages.MoveClassesOrPackagesDialog.classes/55.27.1865.1053@55.27.1865.1053" timestamp="1599995541063" />
-    <state x="720" y="301" width="524" height="502" key="#com.intellij.refactoring.typeMigration.ui.FailedConversionsDialog" timestamp="1598164818497">
-      <screen x="55" y="27" width="1865" height="1053" />
-    </state>
-    <state x="720" y="301" width="524" height="502" key="#com.intellij.refactoring.typeMigration.ui.FailedConversionsDialog/55.27.1865.1053@55.27.1865.1053" timestamp="1598164818497" />
-    <state x="513" y="323" width="929" height="519" key="#xdebugger.evaluate" timestamp="1601031228849">
-      <screen x="55" y="27" width="1865" height="1053" />
-    </state>
-    <state x="513" y="323" width="929" height="519" key="#xdebugger.evaluate/55.27.1865.1053@55.27.1865.1053" timestamp="1601031228849" />
-    <state x="92" y="27" width="1822" height="984" key="CommitChangelistDialog2" timestamp="1606551787656">
-      <screen x="60" y="27" width="1860" height="1053" />
-    </state>
-    <state x="237" y="37" key="CommitChangelistDialog2/0.0.1920.1040@0.0.1920.1040" timestamp="1599457517372" />
-    <state x="87" y="27" width="1810" height="988" key="CommitChangelistDialog2/55.27.1865.1053@55.27.1865.1053" timestamp="1601801669918" />
-    <state x="92" y="27" width="1822" height="984" key="CommitChangelistDialog2/60.27.1860.1053@60.27.1860.1053" timestamp="1606551787656" />
-    <state x="106" y="107" width="1488" height="879" key="DiffContextDialog" timestamp="1606551778690">
-      <screen x="60" y="27" width="1860" height="1053" />
-    </state>
-    <state x="47" y="79" width="1838" height="869" key="DiffContextDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1599568191827" />
-    <state x="101" y="107" width="1665" height="855" key="DiffContextDialog/55.27.1865.1053@55.27.1865.1053" timestamp="1601801665287" />
-    <state x="106" y="107" width="1488" height="879" key="DiffContextDialog/60.27.1860.1053@60.27.1860.1053" timestamp="1606551778690" />
-    <state x="765" y="310" width="907" height="484" key="FileChooserDialogImpl" timestamp="1601294488934">
-      <screen x="55" y="27" width="1865" height="1053" />
-    </state>
-    <state x="731" y="280" key="FileChooserDialogImpl/0.0.1920.1040@0.0.1920.1040" timestamp="1599457117275" />
-    <state x="765" y="310" width="907" height="484" key="FileChooserDialogImpl/55.27.1865.1053@55.27.1865.1053" timestamp="1601294488934" />
-    <state width="1814" height="261" key="GridCell.Tab.0.bottom" timestamp="1606551810034">
-      <screen x="60" y="27" width="1860" height="1053" />
-    </state>
-    <state width="1877" height="282" key="GridCell.Tab.0.bottom/0.0.1920.1040@0.0.1920.1040" timestamp="1599488906326" />
-    <state width="1819" height="351" key="GridCell.Tab.0.bottom/55.27.1865.1053@55.27.1865.1053" timestamp="1601453764132" />
-    <state width="1814" height="261" key="GridCell.Tab.0.bottom/60.27.1860.1053@60.27.1860.1053" timestamp="1606551810034" />
-    <state width="1814" height="261" key="GridCell.Tab.0.center" timestamp="1606551810034">
-      <screen x="60" y="27" width="1860" height="1053" />
-    </state>
-    <state width="1877" height="282" key="GridCell.Tab.0.center/0.0.1920.1040@0.0.1920.1040" timestamp="1599488906326" />
-    <state width="1819" height="351" key="GridCell.Tab.0.center/55.27.1865.1053@55.27.1865.1053" timestamp="1601453764132" />
-    <state width="1814" height="261" key="GridCell.Tab.0.center/60.27.1860.1053@60.27.1860.1053" timestamp="1606551810034" />
-    <state width="1814" height="261" key="GridCell.Tab.0.left" timestamp="1606551810034">
-      <screen x="60" y="27" width="1860" height="1053" />
-    </state>
-    <state width="1877" height="282" key="GridCell.Tab.0.left/0.0.1920.1040@0.0.1920.1040" timestamp="1599488906326" />
-    <state width="1819" height="351" key="GridCell.Tab.0.left/55.27.1865.1053@55.27.1865.1053" timestamp="1601453764132" />
-    <state width="1814" height="261" key="GridCell.Tab.0.left/60.27.1860.1053@60.27.1860.1053" timestamp="1606551810034" />
-    <state width="1814" height="261" key="GridCell.Tab.0.right" timestamp="1606551810034">
-      <screen x="60" y="27" width="1860" height="1053" />
-    </state>
-    <state width="1877" height="282" key="GridCell.Tab.0.right/0.0.1920.1040@0.0.1920.1040" timestamp="1599488906326" />
-    <state width="1819" height="351" key="GridCell.Tab.0.right/55.27.1865.1053@55.27.1865.1053" timestamp="1601453764132" />
-    <state width="1814" height="261" key="GridCell.Tab.0.right/60.27.1860.1053@60.27.1860.1053" timestamp="1606551810034" />
-    <state width="1814" height="330" key="GridCell.Tab.1.bottom" timestamp="1603021785942">
-      <screen x="60" y="27" width="1860" height="1053" />
-    </state>
-    <state width="1819" height="334" key="GridCell.Tab.1.bottom/55.27.1865.1053@55.27.1865.1053" timestamp="1601038069657" />
-    <state width="1814" height="330" key="GridCell.Tab.1.bottom/60.27.1860.1053@60.27.1860.1053" timestamp="1603021785942" />
-    <state width="1814" height="330" key="GridCell.Tab.1.center" timestamp="1603021785942">
-      <screen x="60" y="27" width="1860" height="1053" />
-    </state>
-    <state width="1819" height="334" key="GridCell.Tab.1.center/55.27.1865.1053@55.27.1865.1053" timestamp="1601038069655" />
-    <state width="1814" height="330" key="GridCell.Tab.1.center/60.27.1860.1053@60.27.1860.1053" timestamp="1603021785942" />
-    <state width="1814" height="330" key="GridCell.Tab.1.left" timestamp="1603021785941">
-      <screen x="60" y="27" width="1860" height="1053" />
-    </state>
-    <state width="1819" height="334" key="GridCell.Tab.1.left/55.27.1865.1053@55.27.1865.1053" timestamp="1601038069655" />
-    <state width="1814" height="330" key="GridCell.Tab.1.left/60.27.1860.1053@60.27.1860.1053" timestamp="1603021785941" />
-    <state width="1814" height="330" key="GridCell.Tab.1.right" timestamp="1603021785942">
-      <screen x="60" y="27" width="1860" height="1053" />
-    </state>
-    <state width="1819" height="334" key="GridCell.Tab.1.right/55.27.1865.1053@55.27.1865.1053" timestamp="1601038069656" />
-    <state width="1814" height="330" key="GridCell.Tab.1.right/60.27.1860.1053@60.27.1860.1053" timestamp="1603021785942" />
-    <state x="520" y="210" width="924" height="684" key="Maven.ArtifactSearchDialog" timestamp="1601208338595">
-      <screen x="55" y="27" width="1865" height="1053" />
-    </state>
-    <state x="520" y="210" width="924" height="684" key="Maven.ArtifactSearchDialog/55.27.1865.1053@55.27.1865.1053" timestamp="1601208338595" />
-    <state x="231" y="117" width="1492" height="872" key="MergeDialog" timestamp="1599979123314">
-      <screen x="55" y="27" width="1865" height="1053" />
-    </state>
-    <state x="231" y="117" width="1492" height="872" key="MergeDialog/55.27.1865.1053@55.27.1865.1053" timestamp="1599979123314" />
-    <state x="400" y="315" width="946" height="475" key="MultipleFileMergeDialog" timestamp="1599979123319">
-      <screen x="55" y="27" width="1865" height="1053" />
-    </state>
-    <state x="400" y="315" width="946" height="475" key="MultipleFileMergeDialog/55.27.1865.1053@55.27.1865.1053" timestamp="1599979123319" />
-    <state x="665" y="235" width="624" height="633" key="RollbackChangesDialog" timestamp="1599287856614">
-      <screen x="55" y="27" width="1865" height="1053" />
-    </state>
-    <state x="665" y="235" width="624" height="633" key="RollbackChangesDialog/55.27.1865.1053@55.27.1865.1053" timestamp="1599287856614" />
-    <state x="470" y="130" width="1024" height="845" key="SettingsEditor" timestamp="1601289370880">
-      <screen x="55" y="27" width="1865" height="1053" />
-    </state>
-    <state x="427" y="102" key="SettingsEditor/0.0.1920.1040@0.0.1920.1040" timestamp="1599458066995" />
-    <state x="470" y="130" width="1024" height="845" key="SettingsEditor/55.27.1865.1053@55.27.1865.1053" timestamp="1601289370880" />
-    <state x="698" y="430" width="545" height="171" key="VCS.ChangelistChooser" timestamp="1601290097719">
-      <screen x="55" y="27" width="1865" height="1053" />
-    </state>
-    <state x="698" y="430" width="545" height="171" key="VCS.ChangelistChooser/55.27.1865.1053@55.27.1865.1053" timestamp="1601290097719" />
-    <state x="586" y="274" width="800" height="563" key="Vcs.Push.Dialog.v2" timestamp="1606551792065">
-      <screen x="60" y="27" width="1860" height="1053" />
-    </state>
-    <state x="582" y="274" width="800" height="556" key="Vcs.Push.Dialog.v2/55.27.1865.1053@55.27.1865.1053" timestamp="1601801674246" />
-    <state x="586" y="274" width="800" height="563" key="Vcs.Push.Dialog.v2/60.27.1860.1053@60.27.1860.1053" timestamp="1606551792065" />
-    <state x="470" y="252" width="910" height="566" key="VcsDiffUtil.ChangesDialog" timestamp="1601206523716">
-      <screen x="55" y="27" width="1865" height="1053" />
-    </state>
-    <state x="470" y="252" width="910" height="566" key="VcsDiffUtil.ChangesDialog/55.27.1865.1053@55.27.1865.1053" timestamp="1601206523716" />
-    <state x="675" y="293" key="antBuildFilePropertiesDialogDimension" timestamp="1599487796854">
-      <screen x="0" y="0" width="1920" height="1040" />
-    </state>
-    <state x="675" y="293" key="antBuildFilePropertiesDialogDimension/0.0.1920.1040@0.0.1920.1040" timestamp="1599487796854" />
-    <state x="759" y="332" width="446" height="440" key="chooseDestDirectoryDialog" timestamp="1599304858048">
-      <screen x="55" y="27" width="1865" height="1053" />
-    </state>
-    <state x="759" y="332" width="446" height="440" key="chooseDestDirectoryDialog/55.27.1865.1053@55.27.1865.1053" timestamp="1599304858048" />
-    <state x="608" y="167" width="754" height="780" key="com.intellij.openapi.editor.actions.MultiplePasteAction$ClipboardContentChooser" timestamp="1603017645988">
-      <screen x="60" y="27" width="1860" height="1053" />
-    </state>
-    <state x="608" y="167" width="754" height="780" key="com.intellij.openapi.editor.actions.MultiplePasteAction$ClipboardContentChooser/60.27.1860.1053@60.27.1860.1053" timestamp="1603017645988" />
-    <state x="438" y="275" width="1305" height="805" key="find.popup" timestamp="1606550989292">
-      <screen x="60" y="27" width="1860" height="1053" />
-    </state>
-    <state x="246" y="101" width="1347" height="796" key="find.popup/0.0.1920.1040@0.0.1920.1040" timestamp="1599566085052" />
-    <state x="434" y="275" width="1308" height="805" key="find.popup/55.27.1865.1053@55.27.1865.1053" timestamp="1601371437918" />
-    <state x="438" y="275" width="1305" height="805" key="find.popup/60.27.1860.1053@60.27.1860.1053" timestamp="1606550989292" />
-    <state x="603" y="154" width="748" height="796" key="new project wizard" timestamp="1598684509882">
-      <screen x="55" y="27" width="1865" height="1053" />
-    </state>
-    <state x="603" y="154" width="748" height="796" key="new project wizard/55.27.1865.1053@55.27.1865.1053" timestamp="1598684509882" />
-    <state x="558" y="214" key="run.anything.popup" timestamp="1599459144781">
-      <screen x="0" y="0" width="1920" height="1040" />
-    </state>
-    <state x="558" y="214" key="run.anything.popup/0.0.1920.1040@0.0.1920.1040" timestamp="1599459144781" />
-    <state x="597" y="244" key="run.anything.popup/55.27.1865.1053@55.27.1865.1053" timestamp="1599288900348" />
-    <state x="653" y="257" width="986" height="678" key="search.everywhere.popup" timestamp="1604222758883">
-      <screen x="60" y="27" width="1860" height="1053" />
-    </state>
-    <state x="613" y="227" width="1018" height="670" key="search.everywhere.popup/0.0.1920.1040@0.0.1920.1040" timestamp="1599567531005" />
-    <state x="650" y="257" width="988" height="678" key="search.everywhere.popup/55.27.1865.1053@55.27.1865.1053" timestamp="1601801036725" />
-    <state x="653" y="257" width="986" height="678" key="search.everywhere.popup/60.27.1860.1053@60.27.1860.1053" timestamp="1604222758883" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -1585,6 +1457,16 @@
           <url>file://$PROJECT_DIR$/pclg-agenda/src/main/java/org/pclg/agenda/plugins/PopulateThumbnails.java</url>
           <line>60</line>
           <option name="timeStamp" value="20" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/pclg-agenda/src/main/java/org/pclg/agenda/plugins/CheckAndCopyPhotosPlugin.java</url>
+          <line>62</line>
+          <option name="timeStamp" value="21" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/pclg-agenda/src/main/java/org/pclg/agenda/plugins/CheckAndCopyPhotosPlugin.java</url>
+          <line>48</line>
+          <option name="timeStamp" value="22" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>
