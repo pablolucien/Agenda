@@ -71,6 +71,14 @@
                 "${ROOT_E}/home/pablo/development/projects/TodoList"
             ],
             "Exclude": ".idea/:build/:.gradle/:*.log"
+        },
+        {
+            "dirs": [
+                "${ROOT_C}/home/pablo/development/projects/RetrofitCrashCourse",
+                "${ROOT_F}/home/pablo/development/projects/RetrofitCrashCourse",
+                "${ROOT_E}/home/pablo/development/projects/RetrofitCrashCourse"
+            ],
+            "Exclude": ".idea/:build/:.gradle/:*.log"
         }
     ]
 }
