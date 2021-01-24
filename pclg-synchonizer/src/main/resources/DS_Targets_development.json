@@ -35,8 +35,9 @@
         {
             "dirs": [
                 "${ROOT_C}/home/pablo/development/projects/portfolio",
+                "${ROOT_E}/home/pablo/development/projects/portfolio",
                 "${ROOT_F}/home/pablo/development/projects/portfolio",
-                "${ROOT_E}/home/pablo/development/projects/portfolio"
+                "${ROOT_L}/home/pablo/development/projects/portfolio"
             ],
             "Exclude": "*_custom.properties:target/:out/:.idea/:.git/:*.log"
         },
@@ -52,6 +53,7 @@
             "dirs": [
                 "${ROOT_C}/home/pablo/development/projects/VersoPerlaPlumaYFlor",
                 "${ROOT_F}/home/pablo/development/projects/VersoPerlaPlumaYFlor",
+                "${ROOT_L}/home/pablo/development/projects/VersoPerlaPlumaYFlor",
                 "${ROOT_E}/home/pablo/development/projects/VersoPerlaPlumaYFlor"
             ],
             "Exclude": ".git/:.github/:target/:out/:.git*:workspace.xml:.idea/:*.log"
@@ -60,6 +62,7 @@
             "dirs": [
                 "${ROOT_C}/home/pablo/development/projects/TestsKotlin",
                 "${ROOT_F}/home/pablo/development/projects/TestsKotlin",
+                "${ROOT_L}/home/pablo/development/projects/TestsKotlin",
                 "${ROOT_E}/home/pablo/development/projects/TestsKotlin"
             ],
             "Exclude": ".git/:.github/:target/:out/:.git*:workspace.xml:.idea/:*.log"

@@ -48,7 +48,7 @@
         {
             "unidirectional": true,
             "dirs": [
-                "${ROOT_F}/Pel?culas/___Mobile-phone-files/Images/WhatsAppProfiles",
+                "${ROOT_F}/Pel�culas/___Mobile-phone-files/Images/WhatsAppProfiles",
                 "${ROOT_C}/home/pablo/img/fotos/WhatsAppProfiles"
             ],
             "Exclude": "Sent/"
@@ -56,7 +56,7 @@
         {
             "unidirectional": true,
             "dirs": [
-                "${ROOT_F}/Pel?culas/___Mobile-phone-files",
+                "${ROOT_F}/Pel�culas/___Mobile-phone-files",
                 "${ROOT_E}/home/___Mobile-phone-files"
             ]
         },
