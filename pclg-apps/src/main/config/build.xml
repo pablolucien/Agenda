@@ -285,8 +285,7 @@
             <manifest>
                 <attribute name="Built-By" value="${user.name}"/>
                 <attribute name="Main-Class" value="org.pclg.tools.Clean"/>
-                <attribute name="Class-Path"
-                           value=". : pclg-tools.jar : velocity-1.7-dep.jar : gnu.getopt.jar : itextpdf-5.3.4.jar : jxl.jar : log4j-api-2.13.3.jar : log4j-core-2.13.3.jar"/>
+                <attribute name="Class-Path" value=". : pclg-tools.jar : velocity-1.7-dep.jar : gnu.getopt.jar : itextpdf-5.3.4.jar : jxl.jar : log4j-api-2.13.3.jar : log4j-core-2.13.3.jar : ."/>
                 <section name="common/class1.class">
                     <attribute name="Sealed" value="false"/>
                 </section>
@@ -344,8 +343,7 @@
             <manifest>
                 <attribute name="Built-By" value="${user.name}"/>
                 <attribute name="Main-Class" value="org.pclg.finance.Main"/>
-                <attribute name="Class-Path"
-                           value="toolbarButtonGraphics.jar : ."/>
+                <attribute name="Class-Path" value="toolbarButtonGraphics.jar : ."/>
             </manifest>
         </jar>
     </target>
@@ -360,7 +358,7 @@
             <manifest>
                 <attribute name="Built-By" value="${user.name}"/>
                 <attribute name="Main-Class" value="misc.sopra.OuvrirSuivi"/>
-                <attribute name="Class-Path" value="log4j-api-2.13.3.jar : log4j-core-2.13.3.jar"/>
+                <attribute name="Class-Path" value="log4j-api-2.13.3.jar : log4j-core-2.13.3.jar : ."/>
             </manifest>
         </jar>
     </target>
@@ -415,7 +413,7 @@
             <manifest>
                 <attribute name="Built-By" value="${user.name}"/>
                 <attribute name="Main-Class" value="org.pclg.runtime.JavaShellSwing_Deprecated"/>
-                <attribute name="Class-Path" value="pclg-tools.jar : log4j-api-2.13.3.jar : log4j-core-2.13.3.jar"/>
+                <attribute name="Class-Path" value="pclg-tools.jar : log4j-api-2.13.3.jar : log4j-core-2.13.3.jar : ."/>
             </manifest>
         </jar>
     </target>
@@ -432,7 +430,7 @@
             <manifest>
                 <attribute name="Built-By" value="${user.name}"/>
                 <attribute name="Main-Class" value="org.pclg.runtime.JavaShell"/>
-                <attribute name="Class-Path" value="pclg-tools.jar : log4j-api-2.13.3.jar : log4j-core-2.13.3.jar"/>
+                <attribute name="Class-Path" value="pclg-tools.jar : log4j-api-2.13.3.jar : log4j-core-2.13.3.jar : ."/>
             </manifest>
         </jar>
     </target>

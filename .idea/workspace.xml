@@ -8,17 +8,19 @@
     <select />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="ca6eb6b6-6419-4d0e-a6aa-4254ec1c5806" name="Default" comment="Added EnhancedLogger and move DbUpdate.help to correct place">
+    <list default="true" id="ca6eb6b6-6419-4d0e-a6aa-4254ec1c5806" name="Default" comment="Add current directory to classpath in jars.&#10;Add method to cycle the files renaming them with numbers.">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pclg-agenda/src/main/java/org/pclg/agenda/plugins/CheckAndCopyPhotosPlugin.java" beforeDir="false" afterPath="$PROJECT_DIR$/pclg-agenda/src/main/java/org/pclg/agenda/plugins/CheckAndCopyPhotosPlugin.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/net-asintec/src/main/resources/build.xml" beforeDir="false" afterPath="$PROJECT_DIR$/net-asintec/src/main/resources/build.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pclg-apps/src/main/config/build.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pclg-apps/src/main/config/build.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/pclg-apps/src/main/html/body.html" beforeDir="false" afterPath="$PROJECT_DIR$/pclg-apps/src/main/html/body.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pclg-synchonizer/src/main/resources/DS_Targets_development.json" beforeDir="false" afterPath="$PROJECT_DIR$/pclg-synchonizer/src/main/resources/DS_Targets_development.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pclg-synchonizer/src/main/resources/DirectorySynchronizer_technical-ACME-II.properties" beforeDir="false" afterPath="$PROJECT_DIR$/pclg-synchonizer/src/main/resources/DirectorySynchronizer_technical-ACME-II.properties" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pclg-tools/src/main/java/org/pclg/tools/velocity/VelocityDriver.java" beforeDir="false" afterPath="$PROJECT_DIR$/pclg-tools/src/main/java/org/pclg/tools/velocity/VelocityDriver.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pclg-compdel/src/main/resources/build.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pclg-compdel/src/main/resources/build.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pclg-tools/src/main/java/org/pclg/tools/FileTools.java" beforeDir="false" afterPath="$PROJECT_DIR$/pclg-tools/src/main/java/org/pclg/tools/FileTools.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pclg-tools/src/main/resources/build.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pclg-tools/src/main/resources/build.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pclg-tools/src/test/java/org/pclg/tools/FileToolsTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/pclg-tools/src/test/java/org/pclg/tools/FileToolsTest.java" afterDir="false" />
     </list>
     <list id="6eaabc47-20b5-4622-b4b5-a86e15e7458f" name="Deactivated temporarily" comment="Deactivated temporarily" />
-    <list id="612e46b5-fca6-49a2-9631-d1491558aba4" name="Do-not-commit" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+    <list id="612e46b5-fca6-49a2-9631-d1491558aba4" name="Do-not-commit" comment="Do-not-commit">
+      <change beforePath="$PROJECT_DIR$/pclg-tools/src/main/java/org/pclg/tools/velocity/VelocityDriver.java" beforeDir="false" afterPath="$PROJECT_DIR$/pclg-tools/src/main/java/org/pclg/tools/velocity/VelocityDriver.java" afterDir="false" />
     </list>
     <list id="ec21d2e0-928c-4f78-ac61-b772ad98a08d" name="Idea's housekeeping" comment="Idea's housekeeping for maven" />
     <option name="SHOW_DIALOG" value="false" />
@@ -50,27 +52,15 @@
       </map>
     </option>
   </component>
-  <component name="JupyterTrust" id="792f9bbf-76c8-483f-bac3-8585c0c7845e" />
-  <component name="LineStatusTrackerManager">
-    <file path="$PROJECT_DIR$/.idea/workspace.xml">
-      <ranges>
-        <range start1="15" end1="15" start2="15" end2="18" changelist="612e46b5-fca6-49a2-9631-d1491558aba4" />
-        <range start1="46" end1="52" start2="49" end2="63" changelist="612e46b5-fca6-49a2-9631-d1491558aba4" />
-        <range start1="425" end1="426" start2="436" end2="437" changelist="ca6eb6b6-6419-4d0e-a6aa-4254ec1c5806" />
-        <range start1="439" end1="439" start2="450" end2="492" changelist="ca6eb6b6-6419-4d0e-a6aa-4254ec1c5806" />
-        <range start1="462" end1="462" start2="515" end2="582" changelist="ca6eb6b6-6419-4d0e-a6aa-4254ec1c5806" />
-        <range start1="757" end1="777" start2="877" end2="877" changelist="ca6eb6b6-6419-4d0e-a6aa-4254ec1c5806" />
-        <range start1="806" end1="828" start2="906" end2="906" changelist="ca6eb6b6-6419-4d0e-a6aa-4254ec1c5806" />
-        <range start1="934" end1="1001" start2="1012" end2="1012" changelist="ca6eb6b6-6419-4d0e-a6aa-4254ec1c5806" />
-        <range start1="1054" end1="1054" start2="1065" end2="1066" changelist="612e46b5-fca6-49a2-9631-d1491558aba4" />
-        <range start1="1100" end1="1100" start2="1112" end2="1117" changelist="612e46b5-fca6-49a2-9631-d1491558aba4" />
-        <range start1="1283" end1="1284" start2="1300" end2="1322" changelist="612e46b5-fca6-49a2-9631-d1491558aba4" />
-        <range start1="1346" end1="1349" start2="1384" end2="1384" changelist="612e46b5-fca6-49a2-9631-d1491558aba4" />
-        <range start1="1371" end1="1372" start2="1406" end2="1410" changelist="612e46b5-fca6-49a2-9631-d1491558aba4" />
-        <range start1="1373" end1="1549" start2="1411" end2="1411" changelist="612e46b5-fca6-49a2-9631-d1491558aba4" />
-      </ranges>
-    </file>
+  <component name="GitSEFilterConfiguration">
+    <file-type-list>
+      <filtered-out-file-type name="LOCAL_BRANCH" />
+      <filtered-out-file-type name="REMOTE_BRANCH" />
+      <filtered-out-file-type name="TAG" />
+      <filtered-out-file-type name="COMMIT_BY_MESSAGE" />
+    </file-type-list>
   </component>
+  <component name="JupyterTrust" id="792f9bbf-76c8-483f-bac3-8585c0c7845e" />
   <component name="ProjectId" id="1dGR5T6zfui34Fi3zHyNVNEEKlF" />
   <component name="ProjectInspectionProfilesVisibleTreeState">
     <entry key="Project Default">
@@ -443,7 +433,7 @@
       <recent name="C:\home\development\projects\Alles\src\test_resources\images\16x16" />
     </key>
   </component>
-  <component name="RunManager" selected="Application.Agenda">
+  <component name="RunManager" selected="TestNG.FileToolsTest">
     <configuration default="true" type="Applet" factoryName="Applet">
       <module name="" />
       <option name="MAIN_CLASS_NAME" />
@@ -456,48 +446,6 @@
       <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
       <option name="ALTERNATIVE_JRE_PATH" />
       <method />
-    </configuration>
-    <configuration default="true" type="DjangoTestsConfigurationType">
-      <module name="pclg-apps" />
-      <option name="INTERPRETER_OPTIONS" value="" />
-      <option name="PARENT_ENVS" value="true" />
-      <envs>
-        <env name="PYTHONUNBUFFERED" value="1" />
-      </envs>
-      <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="" />
-      <option name="IS_MODULE_SDK" value="false" />
-      <option name="ADD_CONTENT_ROOTS" value="true" />
-      <option name="ADD_SOURCE_ROOTS" value="true" />
-      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
-      <option name="TARGET" value="" />
-      <option name="SETTINGS_FILE" value="" />
-      <option name="CUSTOM_SETTINGS" value="false" />
-      <option name="USE_OPTIONS" value="false" />
-      <option name="OPTIONS" value="" />
-      <method v="2" />
-    </configuration>
-    <configuration default="true" type="PythonConfigurationType" factoryName="Python">
-      <module name="pclg-apps" />
-      <option name="INTERPRETER_OPTIONS" value="" />
-      <option name="PARENT_ENVS" value="true" />
-      <envs>
-        <env name="PYTHONUNBUFFERED" value="1" />
-      </envs>
-      <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="" />
-      <option name="IS_MODULE_SDK" value="false" />
-      <option name="ADD_CONTENT_ROOTS" value="true" />
-      <option name="ADD_SOURCE_ROOTS" value="true" />
-      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
-      <option name="SCRIPT_NAME" value="" />
-      <option name="PARAMETERS" value="" />
-      <option name="SHOW_COMMAND_LINE" value="false" />
-      <option name="EMULATE_TERMINAL" value="false" />
-      <option name="MODULE_MODE" value="false" />
-      <option name="REDIRECT_INPUT" value="false" />
-      <option name="INPUT_FILE" value="" />
-      <method v="2" />
     </configuration>
     <configuration name="&lt;template&gt;" type="WebApp" default="true" selected="false">
       <Host>localhost</Host>
@@ -522,73 +470,6 @@
       <option name="PATTERN" value="" />
       <option name="USE_PATTERN" value="false" />
       <method />
-    </configuration>
-    <configuration default="true" type="tests" factoryName="Doctests">
-      <module name="pclg-apps" />
-      <option name="INTERPRETER_OPTIONS" value="" />
-      <option name="PARENT_ENVS" value="true" />
-      <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="" />
-      <option name="IS_MODULE_SDK" value="false" />
-      <option name="ADD_CONTENT_ROOTS" value="true" />
-      <option name="ADD_SOURCE_ROOTS" value="true" />
-      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
-      <option name="SCRIPT_NAME" value="" />
-      <option name="CLASS_NAME" value="" />
-      <option name="METHOD_NAME" value="" />
-      <option name="FOLDER_NAME" value="" />
-      <option name="TEST_TYPE" value="TEST_SCRIPT" />
-      <option name="PATTERN" value="" />
-      <option name="USE_PATTERN" value="false" />
-      <method v="2" />
-    </configuration>
-    <configuration default="true" type="tests" factoryName="Nosetests">
-      <module name="pclg-apps" />
-      <option name="INTERPRETER_OPTIONS" value="" />
-      <option name="PARENT_ENVS" value="true" />
-      <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="" />
-      <option name="IS_MODULE_SDK" value="false" />
-      <option name="ADD_CONTENT_ROOTS" value="true" />
-      <option name="ADD_SOURCE_ROOTS" value="true" />
-      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
-      <option name="_new_regexPattern" value="&quot;&quot;" />
-      <option name="_new_additionalArguments" value="&quot;&quot;" />
-      <option name="_new_target" value="&quot;&quot;" />
-      <option name="_new_targetType" value="&quot;PATH&quot;" />
-      <method v="2" />
-    </configuration>
-    <configuration default="true" type="tests" factoryName="Unittests">
-      <module name="pclg-apps" />
-      <option name="INTERPRETER_OPTIONS" value="" />
-      <option name="PARENT_ENVS" value="true" />
-      <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="" />
-      <option name="IS_MODULE_SDK" value="false" />
-      <option name="ADD_CONTENT_ROOTS" value="true" />
-      <option name="ADD_SOURCE_ROOTS" value="true" />
-      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
-      <option name="_new_additionalArguments" value="&quot;&quot;" />
-      <option name="_new_target" value="&quot;&quot;" />
-      <option name="_new_targetType" value="&quot;PATH&quot;" />
-      <method v="2" />
-    </configuration>
-    <configuration default="true" type="tests" factoryName="py.test">
-      <module name="pclg-apps" />
-      <option name="INTERPRETER_OPTIONS" value="" />
-      <option name="PARENT_ENVS" value="true" />
-      <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="" />
-      <option name="IS_MODULE_SDK" value="false" />
-      <option name="ADD_CONTENT_ROOTS" value="true" />
-      <option name="ADD_SOURCE_ROOTS" value="true" />
-      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
-      <option name="_new_keywords" value="&quot;&quot;" />
-      <option name="_new_parameters" value="&quot;&quot;" />
-      <option name="_new_additionalArguments" value="&quot;&quot;" />
-      <option name="_new_target" value="&quot;&quot;" />
-      <option name="_new_targetType" value="&quot;PATH&quot;" />
-      <method v="2" />
     </configuration>
     <configuration name="Agenda" type="Application" factoryName="Application">
       <option name="MAIN_CLASS_NAME" value="org.pclg.agenda.Agenda" />
@@ -880,10 +761,41 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
+    <configuration default="true" type="ArquillianJUnit" factoryName="" nameIsGenerated="true">
+      <option name="arquillianRunConfiguration">
+        <value>
+          <option name="containerStateName" value="" />
+        </value>
+      </option>
+      <option name="TEST_OBJECT" value="class" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <configuration default="true" type="CucumberJavaRunConfigurationType" factoryName="Cucumber java">
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
+    </configuration>
+    <configuration default="true" type="DjangoTestsConfigurationType">
+      <module name="pclg-apps" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="" />
+      <option name="IS_MODULE_SDK" value="false" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
+      <option name="TARGET" value="" />
+      <option name="SETTINGS_FILE" value="" />
+      <option name="CUSTOM_SETTINGS" value="false" />
+      <option name="USE_OPTIONS" value="false" />
+      <option name="OPTIONS" value="" />
+      <method v="2" />
     </configuration>
     <configuration name="Tests JUnit en general" type="JUnit" factoryName="JUnit">
       <module name="pclg-apps" />
@@ -913,6 +825,28 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
+    <configuration default="true" type="PythonConfigurationType" factoryName="Python">
+      <module name="pclg-apps" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="" />
+      <option name="IS_MODULE_SDK" value="false" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
+      <option name="SCRIPT_NAME" value="" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
     <configuration name="EnhancedLoggerTest" type="TestNG" temporary="true" nameIsGenerated="true">
       <module name="pclg-tools" />
       <extension name="coverage">
@@ -924,6 +858,49 @@
       <option name="PACKAGE_NAME" value="org.pclg.log" />
       <option name="MAIN_CLASS_NAME" value="org.pclg.log.EnhancedLoggerTest" />
       <option name="TEST_OBJECT" value="CLASS" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <option name="TEST_SEARCH_SCOPE">
+        <value defaultName="moduleWithDependencies" />
+      </option>
+      <properties />
+      <listeners />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="FileToolsTest" type="TestNG" temporary="true" nameIsGenerated="true">
+      <module name="pclg-tools" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="org.pclg.tools.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="org.pclg.tools" />
+      <option name="MAIN_CLASS_NAME" value="org.pclg.tools.FileToolsTest" />
+      <option name="TEST_OBJECT" value="CLASS" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <option name="TEST_SEARCH_SCOPE">
+        <value defaultName="moduleWithDependencies" />
+      </option>
+      <properties />
+      <listeners />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="FileToolsTest.testCycleFile_with_extension" type="TestNG" temporary="true" nameIsGenerated="true">
+      <module name="pclg-tools" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="org.pclg.tools.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="org.pclg.tools" />
+      <option name="MAIN_CLASS_NAME" value="org.pclg.tools.FileToolsTest" />
+      <option name="METHOD_NAME" value="testCycleFile_with_extension" />
+      <option name="TEST_OBJECT" value="METHOD" />
       <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
       <option name="TEST_SEARCH_SCOPE">
         <value defaultName="moduleWithDependencies" />
@@ -953,34 +930,6 @@
       <listeners />
       <RunnerSettings RunnerId="Run" />
       <ConfigurationWrapper RunnerId="Run" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="&lt;default&gt; (1)" type="TestNG" temporary="true" nameIsGenerated="true">
-      <module name="pclg-apps" />
-      <option name="PACKAGE_NAME" value="" />
-      <option name="TEST_OBJECT" value="PACKAGE" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
-      <option name="TEST_SEARCH_SCOPE">
-        <value defaultName="moduleWithDependencies" />
-      </option>
-      <properties />
-      <listeners />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="&lt;default&gt; (2)" type="TestNG" temporary="true" nameIsGenerated="true">
-      <module name="pclg-tools" />
-      <option name="PACKAGE_NAME" value="" />
-      <option name="TEST_OBJECT" value="PACKAGE" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
-      <option name="TEST_SEARCH_SCOPE">
-        <value defaultName="moduleWithDependencies" />
-      </option>
-      <properties />
-      <listeners />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
@@ -1020,6 +969,73 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
+    <configuration default="true" type="tests" factoryName="Doctests">
+      <module name="pclg-apps" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="" />
+      <option name="IS_MODULE_SDK" value="false" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
+      <option name="SCRIPT_NAME" value="" />
+      <option name="CLASS_NAME" value="" />
+      <option name="METHOD_NAME" value="" />
+      <option name="FOLDER_NAME" value="" />
+      <option name="TEST_TYPE" value="TEST_SCRIPT" />
+      <option name="PATTERN" value="" />
+      <option name="USE_PATTERN" value="false" />
+      <method v="2" />
+    </configuration>
+    <configuration default="true" type="tests" factoryName="Nosetests">
+      <module name="pclg-apps" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="" />
+      <option name="IS_MODULE_SDK" value="false" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
+      <option name="_new_regexPattern" value="&quot;&quot;" />
+      <option name="_new_additionalArguments" value="&quot;&quot;" />
+      <option name="_new_target" value="&quot;&quot;" />
+      <option name="_new_targetType" value="&quot;PATH&quot;" />
+      <method v="2" />
+    </configuration>
+    <configuration default="true" type="tests" factoryName="Unittests">
+      <module name="pclg-apps" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="" />
+      <option name="IS_MODULE_SDK" value="false" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
+      <option name="_new_additionalArguments" value="&quot;&quot;" />
+      <option name="_new_target" value="&quot;&quot;" />
+      <option name="_new_targetType" value="&quot;PATH&quot;" />
+      <method v="2" />
+    </configuration>
+    <configuration default="true" type="tests" factoryName="py.test">
+      <module name="pclg-apps" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="" />
+      <option name="IS_MODULE_SDK" value="false" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
+      <option name="_new_keywords" value="&quot;&quot;" />
+      <option name="_new_parameters" value="&quot;&quot;" />
+      <option name="_new_additionalArguments" value="&quot;&quot;" />
+      <option name="_new_target" value="&quot;&quot;" />
+      <option name="_new_targetType" value="&quot;PATH&quot;" />
+      <method v="2" />
+    </configuration>
     <list>
       <item itemvalue="Application.Agenda" />
       <item itemvalue="Application.Alter" />
@@ -1044,18 +1060,18 @@
       <item itemvalue="Application.Digest" />
       <item itemvalue="JUnit.Tests JUnit en general" />
       <item itemvalue="TestNG.Tests NG en general" />
-      <item itemvalue="TestNG.&lt;default&gt; (1)" />
-      <item itemvalue="TestNG.&lt;default&gt; (2)" />
       <item itemvalue="TestNG.&lt;default&gt;" />
       <item itemvalue="TestNG.EnhancedLoggerTest" />
+      <item itemvalue="TestNG.FileToolsTest.testCycleFile_with_extension" />
+      <item itemvalue="TestNG.FileToolsTest" />
     </list>
     <recent_temporary>
       <list>
+        <item itemvalue="TestNG.FileToolsTest" />
+        <item itemvalue="TestNG.FileToolsTest.testCycleFile_with_extension" />
         <item itemvalue="TestNG.EnhancedLoggerTest" />
         <item itemvalue="Application.Digest" />
         <item itemvalue="TestNG.&lt;default&gt;" />
-        <item itemvalue="TestNG.&lt;default&gt; (2)" />
-        <item itemvalue="TestNG.&lt;default&gt; (1)" />
       </list>
     </recent_temporary>
   </component>
@@ -1124,7 +1140,14 @@
       <workItem from="1607246515616" duration="358000" />
       <workItem from="1607415159273" duration="1115000" />
       <workItem from="1607506976939" duration="388000" />
-      <workItem from="1609933210252" duration="489000" />
+      <workItem from="1609933210252" duration="1076000" />
+      <workItem from="1611402590387" duration="1359000" />
+      <workItem from="1611483688988" duration="1840000" />
+      <workItem from="1611993892232" duration="746000" />
+      <workItem from="1611994905173" duration="934000" />
+      <workItem from="1612082261209" duration="805000" />
+      <workItem from="1612603604483" duration="266000" />
+      <workItem from="1615012513664" duration="2081000" />
     </task>
     <task id="LOCAL-00001" summary="Manually resolve merge conficts">
       <created>1598095361969</created>
@@ -1329,7 +1352,35 @@
       <option name="project" value="LOCAL" />
       <updated>1607507286952</updated>
     </task>
-    <option name="localTasksCounter" value="30" />
+    <task id="LOCAL-00030" summary="Various little changes">
+      <created>1609934094751</created>
+      <option name="number" value="00030" />
+      <option name="presentableId" value="LOCAL-00030" />
+      <option name="project" value="LOCAL" />
+      <updated>1609934094751</updated>
+    </task>
+    <task id="LOCAL-00031" summary="Misc">
+      <created>1611404823337</created>
+      <option name="number" value="00031" />
+      <option name="presentableId" value="LOCAL-00031" />
+      <option name="project" value="LOCAL" />
+      <updated>1611404823337</updated>
+    </task>
+    <task id="LOCAL-00032" summary="Fix DS targets">
+      <created>1611485482299</created>
+      <option name="number" value="00032" />
+      <option name="presentableId" value="LOCAL-00032" />
+      <option name="project" value="LOCAL" />
+      <updated>1611485482299</updated>
+    </task>
+    <task id="LOCAL-00033" summary="DS: adjust targets and config">
+      <created>1611998003909</created>
+      <option name="number" value="00033" />
+      <option name="presentableId" value="LOCAL-00033" />
+      <option name="project" value="LOCAL" />
+      <updated>1611998003909</updated>
+    </task>
+    <option name="localTasksCounter" value="34" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -1392,11 +1443,6 @@
   </component>
   <component name="VcsManagerConfiguration">
     <option name="CHECK_CODE_SMELLS_BEFORE_PROJECT_COMMIT" value="false" />
-    <MESSAGE value="Starting with JDK11" />
-    <MESSAGE value="Starting with JDK11: Delete (temporarily?) things that use JavaFX" />
-    <MESSAGE value="Incorpore changes done in Minerva: &#10;  1-Signal end of work with sound&#10;  2-Fix TargetDef with OnlyIncludedFilesIterator&#10;  3-Reuse the PreparedStatement's in Agenda's Helpers&#10;  4-Encapsulate the use of Properties in AgendaDbJDBC" />
-    <MESSAGE value="Modify build files to externalize the java version to use. In local_config.properties define 'local_config.jdk-version=11'" />
-    <MESSAGE value="Enable tests in pclg-agenda" />
     <MESSAGE value="Fix or disable tests" />
     <MESSAGE value="Rationalize de build files (disable some test for the moment)" />
     <MESSAGE value="Save workspace" />
@@ -1417,7 +1463,12 @@
     <MESSAGE value="Varias cosillas" />
     <MESSAGE value="Add methods to EnhancedLogger. Add targets to DS" />
     <MESSAGE value="EnhancedLogger: fix Level check" />
-    <option name="LAST_COMMIT_MESSAGE" value="EnhancedLogger: fix Level check" />
+    <MESSAGE value="Various little changes" />
+    <MESSAGE value="Misc" />
+    <MESSAGE value="Fix DS targets" />
+    <MESSAGE value="DS: adjust targets and config" />
+    <MESSAGE value="Add current directory to classpath in jars.&#10;Add method to cycle the files renaming them with numbers." />
+    <option name="LAST_COMMIT_MESSAGE" value="Add current directory to classpath in jars.&#10;Add method to cycle the files renaming them with numbers." />
     <option name="OPTIMIZE_IMPORTS_BEFORE_PROJECT_COMMIT" value="true" />
   </component>
   <component name="XDebuggerManager">
@@ -1457,16 +1508,6 @@
           <url>file://$PROJECT_DIR$/pclg-agenda/src/main/java/org/pclg/agenda/plugins/PopulateThumbnails.java</url>
           <line>60</line>
           <option name="timeStamp" value="20" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/pclg-agenda/src/main/java/org/pclg/agenda/plugins/CheckAndCopyPhotosPlugin.java</url>
-          <line>62</line>
-          <option name="timeStamp" value="21" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/pclg-agenda/src/main/java/org/pclg/agenda/plugins/CheckAndCopyPhotosPlugin.java</url>
-          <line>48</line>
-          <option name="timeStamp" value="22" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>

@@ -59,7 +59,7 @@
             <manifest>
                 <attribute name="Built-By" value="${user.name}"/>
                 <attribute name="Main-Class" value="net.asintec.migrator.Migrator"/>
-                <attribute name="Class-Path" value="pclg-tools.jar : toolbarButtonGraphics.jar : Icons.jar : kunststoff.jar : log4j-api-2.13.3.jar : log4j-core-2.13.3.jar"/>
+                <attribute name="Class-Path" value="pclg-tools.jar : toolbarButtonGraphics.jar : Icons.jar : kunststoff.jar : log4j-api-2.13.3.jar : log4j-core-2.13.3.jar : ."/>
             </manifest>
         </jar>
     </target>
