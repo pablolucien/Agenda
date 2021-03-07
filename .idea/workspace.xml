@@ -9,13 +9,8 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="ca6eb6b6-6419-4d0e-a6aa-4254ec1c5806" name="Default" comment="Add current directory to classpath in jars.&#10;Add method to cycle the files renaming them with numbers.">
+      <change beforePath="$PROJECT_DIR$/.idea/inspectionProfiles/profiles_settings.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/inspectionProfiles/profiles_settings.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/net-asintec/src/main/resources/build.xml" beforeDir="false" afterPath="$PROJECT_DIR$/net-asintec/src/main/resources/build.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pclg-apps/src/main/config/build.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pclg-apps/src/main/config/build.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pclg-apps/src/main/html/body.html" beforeDir="false" afterPath="$PROJECT_DIR$/pclg-apps/src/main/html/body.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pclg-compdel/src/main/resources/build.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pclg-compdel/src/main/resources/build.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pclg-tools/src/main/java/org/pclg/tools/FileTools.java" beforeDir="false" afterPath="$PROJECT_DIR$/pclg-tools/src/main/java/org/pclg/tools/FileTools.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pclg-tools/src/main/resources/build.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pclg-tools/src/main/resources/build.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/pclg-tools/src/test/java/org/pclg/tools/FileToolsTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/pclg-tools/src/test/java/org/pclg/tools/FileToolsTest.java" afterDir="false" />
     </list>
     <list id="6eaabc47-20b5-4622-b4b5-a86e15e7458f" name="Deactivated temporarily" comment="Deactivated temporarily" />
@@ -399,11 +394,11 @@
     <property name="options.searchVisible" value="true" />
     <property name="options.splitter.details.proportions" value="0.2" />
     <property name="options.splitter.main.proportions" value="0.3" />
-    <property name="project.structure.last.edited" value="Libraries" />
+    <property name="project.structure.last.edited" value="Project" />
     <property name="project.structure.proportion" value="0.15" />
     <property name="project.structure.side.proportion" value="0.39310345" />
     <property name="recentsLimit" value="5" />
-    <property name="settings.editor.selected.configurable" value="preferences.pluginManager" />
+    <property name="settings.editor.selected.configurable" value="preferences.sourceCode.Java" />
   </component>
   <component name="RecentsManager">
     <key name="CopyClassDialog.RECENTS_KEY">
@@ -761,17 +756,6 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration default="true" type="ArquillianJUnit" factoryName="" nameIsGenerated="true">
-      <option name="arquillianRunConfiguration">
-        <value>
-          <option name="containerStateName" value="" />
-        </value>
-      </option>
-      <option name="TEST_OBJECT" value="class" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
     <configuration default="true" type="CucumberJavaRunConfigurationType" factoryName="Cucumber java">
       <method v="2">
         <option name="Make" enabled="true" />
@@ -911,6 +895,28 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
+    <configuration name="FileToolsTest.testCycleFile_without_ending_in_point_V2" type="TestNG" temporary="true" nameIsGenerated="true">
+      <module name="pclg-tools" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="org.pclg.tools.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="org.pclg.tools" />
+      <option name="MAIN_CLASS_NAME" value="org.pclg.tools.FileToolsTest" />
+      <option name="METHOD_NAME" value="testCycleFile_without_ending_in_point_V2" />
+      <option name="TEST_OBJECT" value="METHOD" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <option name="TEST_SEARCH_SCOPE">
+        <value defaultName="moduleWithDependencies" />
+      </option>
+      <properties />
+      <listeners />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <configuration name="Tests NG en general" type="TestNG">
       <option name="SUITE_NAME" value="" />
       <option name="PACKAGE_NAME" value="" />
@@ -930,20 +936,6 @@
       <listeners />
       <RunnerSettings RunnerId="Run" />
       <ConfigurationWrapper RunnerId="Run" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="&lt;default&gt;" type="TestNG" temporary="true" nameIsGenerated="true">
-      <module name="pclg-alter" />
-      <option name="PACKAGE_NAME" value="" />
-      <option name="TEST_OBJECT" value="PACKAGE" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
-      <option name="TEST_SEARCH_SCOPE">
-        <value defaultName="moduleWithDependencies" />
-      </option>
-      <properties />
-      <listeners />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
@@ -1060,18 +1052,18 @@
       <item itemvalue="Application.Digest" />
       <item itemvalue="JUnit.Tests JUnit en general" />
       <item itemvalue="TestNG.Tests NG en general" />
-      <item itemvalue="TestNG.&lt;default&gt;" />
       <item itemvalue="TestNG.EnhancedLoggerTest" />
       <item itemvalue="TestNG.FileToolsTest.testCycleFile_with_extension" />
       <item itemvalue="TestNG.FileToolsTest" />
+      <item itemvalue="TestNG.FileToolsTest.testCycleFile_without_ending_in_point_V2" />
     </list>
     <recent_temporary>
       <list>
         <item itemvalue="TestNG.FileToolsTest" />
+        <item itemvalue="TestNG.FileToolsTest.testCycleFile_without_ending_in_point_V2" />
         <item itemvalue="TestNG.FileToolsTest.testCycleFile_with_extension" />
         <item itemvalue="TestNG.EnhancedLoggerTest" />
         <item itemvalue="Application.Digest" />
-        <item itemvalue="TestNG.&lt;default&gt;" />
       </list>
     </recent_temporary>
   </component>
@@ -1147,7 +1139,10 @@
       <workItem from="1611994905173" duration="934000" />
       <workItem from="1612082261209" duration="805000" />
       <workItem from="1612603604483" duration="266000" />
-      <workItem from="1615012513664" duration="2081000" />
+      <workItem from="1615012513664" duration="2561000" />
+      <workItem from="1615017335266" duration="507000" />
+      <workItem from="1615103111905" duration="1871000" />
+      <workItem from="1615105038169" duration="229000" />
     </task>
     <task id="LOCAL-00001" summary="Manually resolve merge conficts">
       <created>1598095361969</created>
@@ -1380,7 +1375,35 @@
       <option name="project" value="LOCAL" />
       <updated>1611998003909</updated>
     </task>
-    <option name="localTasksCounter" value="34" />
+    <task id="LOCAL-00034" summary="Add current directory to classpath in jars.&#10;Add method to cycle the files renaming them with numbers.">
+      <created>1615014648210</created>
+      <option name="number" value="00034" />
+      <option name="presentableId" value="LOCAL-00034" />
+      <option name="project" value="LOCAL" />
+      <updated>1615014648210</updated>
+    </task>
+    <task id="LOCAL-00035" summary="Configure log for portfolio">
+      <created>1615017502134</created>
+      <option name="number" value="00035" />
+      <option name="presentableId" value="LOCAL-00035" />
+      <option name="project" value="LOCAL" />
+      <updated>1615017502134</updated>
+    </task>
+    <task id="LOCAL-00036" summary="DS: Add synchronization for my jars in repo">
+      <created>1615104320889</created>
+      <option name="number" value="00036" />
+      <option name="presentableId" value="LOCAL-00036" />
+      <option name="project" value="LOCAL" />
+      <updated>1615104320890</updated>
+    </task>
+    <task id="LOCAL-00037" summary="Add one test to FileTools.cycleFile">
+      <created>1615104948978</created>
+      <option name="number" value="00037" />
+      <option name="presentableId" value="LOCAL-00037" />
+      <option name="project" value="LOCAL" />
+      <updated>1615104948978</updated>
+    </task>
+    <option name="localTasksCounter" value="38" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -1443,9 +1466,6 @@
   </component>
   <component name="VcsManagerConfiguration">
     <option name="CHECK_CODE_SMELLS_BEFORE_PROJECT_COMMIT" value="false" />
-    <MESSAGE value="Fix or disable tests" />
-    <MESSAGE value="Rationalize de build files (disable some test for the moment)" />
-    <MESSAGE value="Save workspace" />
     <MESSAGE value="Incorporate changes done in Minerva: &#10;  1-Get rid of ${ROOT_C_home}&#10;  2-Changes in links" />
     <MESSAGE value="Rationalize de build files (fix build paths)&#10;Add sonarlint" />
     <MESSAGE value="Continue modularization and add module-info.java descriptors" />
@@ -1468,7 +1488,10 @@
     <MESSAGE value="Fix DS targets" />
     <MESSAGE value="DS: adjust targets and config" />
     <MESSAGE value="Add current directory to classpath in jars.&#10;Add method to cycle the files renaming them with numbers." />
-    <option name="LAST_COMMIT_MESSAGE" value="Add current directory to classpath in jars.&#10;Add method to cycle the files renaming them with numbers." />
+    <MESSAGE value="Configure log for portfolio" />
+    <MESSAGE value="DS: Add synchronization for my jars in repo" />
+    <MESSAGE value="Add one test to FileTools.cycleFile" />
+    <option name="LAST_COMMIT_MESSAGE" value="Add one test to FileTools.cycleFile" />
     <option name="OPTIMIZE_IMPORTS_BEFORE_PROJECT_COMMIT" value="true" />
   </component>
   <component name="XDebuggerManager">
@@ -1508,6 +1531,11 @@
           <url>file://$PROJECT_DIR$/pclg-agenda/src/main/java/org/pclg/agenda/plugins/PopulateThumbnails.java</url>
           <line>60</line>
           <option name="timeStamp" value="20" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/pclg-tools/src/test/java/org/pclg/tools/FileToolsTest.java</url>
+          <line>151</line>
+          <option name="timeStamp" value="24" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>

@@ -152,7 +152,8 @@ public class FileToolsTest {
         checkCycle(file, file1, file2, file3, file4);
     }
 
-    private void checkCycle(File file, File file1, File file2, File file3, File file4) throws IOException {
+    private void checkCycle(final File file, final File file1, final File file2, final File file3, final File file4)
+            throws IOException {
         assertTrue(file.exists());
         assertFalse(file1.exists());
         assertFalse(file2.exists());
