@@ -86,6 +86,12 @@
                 "MainView_Minerva.qdr",
                 "MainView_Regus.qdr"
             ]
+		},
+		{
+		  "dirs": [
+				"${ROOT_F}/m2_repository/org/pclg/",
+				"${LOCAL_M2_REPOSITORY_DIR}/org/pclg/"
+			]
         }
     ]
 }
