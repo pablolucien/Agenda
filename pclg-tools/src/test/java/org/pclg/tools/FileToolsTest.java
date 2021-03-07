@@ -138,6 +138,20 @@ public class FileToolsTest {
         checkCycle(file, file1, file2, file3, file4);
     }
 
+    @Test
+    public void testCycleFile_ending_in_point() throws IOException {
+        final File file = File.createTempFile("testCycleFile", ".");
+        final File dir = file.getParentFile();
+        final String name = file.getName();
+        final FileTools.SplittedName splittedName = FileTools.splittName(name);
+        // splittedName.base contains the trailing point
+        final File file1 = new File(dir, splittedName.base + "_1");
+        final File file2 = new File(dir, splittedName.base + "_2");
+        final File file3 = new File(dir, splittedName.base + "_3");
+        final File file4 = new File(dir, splittedName.base + "_4");
+        checkCycle(file, file1, file2, file3, file4);
+    }
+
     private void checkCycle(File file, File file1, File file2, File file3, File file4) throws IOException {
         assertTrue(file.exists());
         assertFalse(file1.exists());
