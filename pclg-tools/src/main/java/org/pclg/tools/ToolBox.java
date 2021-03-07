@@ -18,12 +18,9 @@ import java.sql.SQLException;
 import java.text.NumberFormat;
 import java.text.ParseException;
 import java.util.ArrayList;
-import java.util.Enumeration;
 import java.util.List;
 import java.util.Optional;
 import java.util.regex.Pattern;
-import java.util.zip.ZipEntry;
-import java.util.zip.ZipFile;
 
 /**
  * Provee algunas funciones de uso comun.
@@ -387,7 +384,7 @@ public final class ToolBox {
         }
 
         final Optional<String[]> files = path.isDirectory() ? 
-        	findAllClassesInDirSubTree(path) : listZip(path);    // suponemos que es un zip o un jar
+        	findAllClassesInDirSubTree(path) : ArchiveTools.listZip(path);    // suponemos que es un zip o un jar
 
         if (files.isPresent()) {
 			for (final String file : files.get()) {
@@ -431,34 +428,6 @@ public final class ToolBox {
             names[ii] = files[ii].getAbsolutePath().replace(basePath, "").substring(1); // .substring(1) para eliminar el separator que queda al principio. FIXME:
         }
         return Optional.of(names);
-    }
-
-
-    /**
-     * Devuelve el contenido de un archivo zip o jar
-     * --author El Coyote cojo
-     * @since 2001.11.13
-     *
-     * @param zipFile El archivo que queremos revisar
-     * @return el contenido del archivo
-     */
-    private static Optional<String[]> listZip(final File zipFile) {
-        final List<String> v = new ArrayList<>();
-        try (final ZipFile zf = new ZipFile(zipFile)) {
-            //System.out.println("contenido de: " + zipFile);
-            for (final Enumeration<? extends ZipEntry> entries = zf.entries(); entries.hasMoreElements();)
-            {
-                final ZipEntry entry = entries.nextElement();
-                v.add(entry.getName());
-                //System.out.println(entry.getName() + "\t\t" + entry.getSize() + "\t" + new Date(entry.getTime()));
-            }
-            String[] result = new String[v.size()];
-            result = v.toArray(result);
-            return Optional.of(result);
-        } catch (final IOException ex) {
-			showInfo(ex);
-            return Optional.empty();
-        }
     }
 
 

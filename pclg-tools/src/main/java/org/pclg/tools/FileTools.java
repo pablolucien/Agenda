@@ -891,7 +891,11 @@ public final class FileTools {
             final File newFile = new File(parent, base + '_' + (limit - ii - 1) + ext);
             if (newFile.exists()) {
                 if (oldFile.exists()) {
-                    Files.delete(oldFile.toPath());
+                    if (oldFile.isFile()) {
+                        Files.delete(oldFile.toPath());
+                    } else {
+                        delTree(oldFile, true, true);
+                    }
                     if (LOGGER.isDebugEnabled()) {
                         LOGGER.debug(String.format("Deleting '%s'", oldFile));
                     }

@@ -152,6 +152,19 @@ public class FileToolsTest {
         checkCycle(file, file1, file2, file3, file4);
     }
 
+    @Test
+    public void testCycleFile_directory() throws IOException {
+        final File dir = Files.createTempDirectory("testCycleFile_Directory").toFile();
+        // file used only to have a non empty dir.
+        final File ignored = File.createTempFile("testCycleFile", ".xyz", dir);
+        final File parentDir = dir.getParentFile();
+        final File dir1 = parentDir.toPath().resolve(dir.getName() + "_1").toFile();
+        final File dir2 = parentDir.toPath().resolve(dir.getName() + "_2").toFile();
+        final File dir3 = parentDir.toPath().resolve(dir.getName() + "_3").toFile();
+        final File dir4 = parentDir.toPath().resolve(dir.getName() + "_4").toFile();
+        checkCycle(dir, dir1, dir2, dir3, dir4);
+    }
+
     private void checkCycle(final File file, final File file1, final File file2, final File file3, final File file4)
             throws IOException {
         assertTrue(file.exists());
@@ -177,7 +190,7 @@ public class FileToolsTest {
         assertFalse(file4.exists());
 
         // create file and cycle one time
-        FileTools.copyFile(file1, file);
+        reCreateOldFileFromNew(file, file1);
         assertTrue(file.exists());
         FileTools.cycleFile(file, 3);
         assertFalse(file.exists());
@@ -187,7 +200,7 @@ public class FileToolsTest {
         assertFalse(file4.exists());
 
         // create file and cycle one time
-        FileTools.copyFile(file1, file);
+        reCreateOldFileFromNew(file, file1);
         assertTrue(file.exists());
         FileTools.cycleFile(file, 3);
         assertFalse(file.exists());
@@ -197,7 +210,7 @@ public class FileToolsTest {
         assertFalse(file4.exists());
 
         // create file and cycle one time the limit should be respected
-        FileTools.copyFile(file1, file);
+        reCreateOldFileFromNew(file, file1);
         assertTrue(file.exists());
         FileTools.cycleFile(file, 3);
         assertFalse(file.exists());
@@ -205,5 +218,13 @@ public class FileToolsTest {
         assertTrue(file2.exists());
         assertTrue(file3.exists());
         assertFalse(file4.exists());
+    }
+
+    private void reCreateOldFileFromNew(final File oldFile, final File newFile) throws IOException {
+        if (newFile.isFile()) {
+            FileTools.copyFile(newFile, oldFile);
+        } else {
+            Files.createDirectory(oldFile.toPath());
+        }
     }
 }
