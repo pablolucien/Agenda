@@ -37,45 +37,55 @@ public class ArchiveTools {
                 final Path sourceDir = sourceFile.toPath();
                 try (final Stream<Path> pathStream = Files.walk(sourceDir)) {
                     pathStream
-                        .filter(path -> !Files.isDirectory(path))
+                        .filter(path -> !path.equals(sourceDir))
                         .forEach(path -> {
-                            final ZipEntry zipEntry = new ZipEntry(sourceDir.relativize(path).toString());
+                            final Path relativize = sourceDir.relativize(path);
+                            final String name = relativize.toString().replace('\\', '/');
+                            final ZipEntry zipEntry;
                             try {
-                                zs.putNextEntry(zipEntry);
-                                Files.copy(path, zs);
+                                if (Files.isDirectory(path)) {
+                                    // FIXME: This dosn't seem to work
+                                    zipEntry = new ZipEntry(name + '/');
+                                    zs.putNextEntry(zipEntry);
+                                } else {
+                                    zipEntry = new ZipEntry(name);
+                                    zs.putNextEntry(zipEntry);
+                                    Files.copy(path, zs);
+                                }
                                 zs.closeEntry();
                             } catch (final IOException ex) {
-                                ex.printStackTrace();
                                 LOGGER.error(ex);
                             }
                         });
                 }
             }
         } catch (final IOException ex) {
-            ex.printStackTrace();
             LOGGER.error(ex);
         }
     }
 
-    public static void extractZip(final File backupFile, final File databaseDir) {
-        try (final ZipFile zipFile = new ZipFile(backupFile)) {
-            final Path databasePath = databaseDir.toPath();
-            if (!databaseDir.exists()) {
+    public static void extractZip(final File sourceFile, final File targetDir) {
+        try (final ZipFile zipFile = new ZipFile(sourceFile)) {
+            final Path databasePath = targetDir.toPath();
+            if (!targetDir.exists()) {
                 Files.createDirectories(databasePath);
             }
 
             final Enumeration<? extends ZipEntry> entries = zipFile.entries();
             while (entries.hasMoreElements()) {
                 final ZipEntry entry = entries.nextElement();
-                final String name = entry.getName();
+                final String name = entry.getName().replace("\\", "/");     // FIXME: Why do I have to do this and is it the best way? Should I do something in createZip()?
                 final Path resolvedTarget = databasePath.resolve(name);
-                final Path resolvedTargetParent = resolvedTarget.getParent();
-                Files.createDirectories(resolvedTargetParent);
-                final InputStream inputStream = zipFile.getInputStream(entry);
-                Files.copy(inputStream, resolvedTarget, StandardCopyOption.REPLACE_EXISTING);
+                if (entry.isDirectory()) {
+                    Files.createDirectories(resolvedTarget);
+                } else {
+                    final Path resolvedTargetParent = resolvedTarget.getParent();
+                    Files.createDirectories(resolvedTargetParent);
+                    final InputStream inputStream = zipFile.getInputStream(entry);
+                    Files.copy(inputStream, resolvedTarget, StandardCopyOption.REPLACE_EXISTING);
+                }
             }
         } catch (final IOException ex) {
-            ex.printStackTrace();
             LOGGER.error(ex);
         }
     }
