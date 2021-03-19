@@ -15,6 +15,7 @@ import java.lang.reflect.Array;
  */
 public final class ArrayTools {
 
+    public static final byte[] NULL_BYTE_ARRAY = new byte[0];
     private static final int CAPACITY = 1024;
 
     /**

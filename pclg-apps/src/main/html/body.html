@@ -5,6 +5,27 @@
 		<meta name="GENERATOR" content="Generado a mano por mí" />
 		<link rel="stylesheet" href="resources/links.css" type="text/css" />
 		<script src="resources/links.js"></script>
+    <script>
+      var xhttp = new XMLHttpRequest();
+      xhttp.onreadystatechange = function() {
+          if (this.readyState == 4 && this.status == 200) {
+console.log("xhttp.responseText = " + xhttp.responseText)
+            var response = JSON.parse(xhttp.responseText);
+            var people = response.people;
+
+            var output = '';
+            for(var i = 0;i < people.length;i++){
+              output += '<li>'+people[i].name+'</li>';
+            }
+			
+			output += 'ksksksksks';
+            document.getElementById('people').innerHTML = output;
+          }
+      };
+      xhttp.open("GET", "Matinale.json", true);
+      xhttp.send();
+
+    </script>
 	</head>
 
 	<BODY BGCOLOR="#AEAEAE">
@@ -24,6 +45,14 @@
 				</tr>
 			</table>
 <br><a href="#" target="_blank"> Abrir Agenda </a>
+   <ul id="people">
+	<li> uno </li>
+	<li> uno </li>
+   </ul>
+   <ul id="leute">
+	<li> dos </li>
+	<li> cuatro </li>
+   </ul>
 		</center>
 
 
