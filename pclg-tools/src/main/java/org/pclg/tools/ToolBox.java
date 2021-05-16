@@ -540,7 +540,7 @@ public final class ToolBox {
 	 * @return <code>true</code> si esta String representa un n�mero <code>false</code> de lo contrario.
 	 */
 	public static boolean isNumber(final String string) {
-		return NUMERIC_PATTERN.matcher(string).matches();
+		return string != null && NUMERIC_PATTERN.matcher(string).matches();
 	}
 
 	/**
@@ -549,6 +549,6 @@ public final class ToolBox {
 	 * @return <code>true</code> si esta String representa un entero <code>false</code> de lo contrario.
 	 */
 	public static boolean isInteger(final String string) {
-		return INTEGER_PATTERN.matcher(string).matches();
+		return string != null && INTEGER_PATTERN.matcher(string).matches();
 	}
 }
