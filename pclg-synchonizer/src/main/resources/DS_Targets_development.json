@@ -29,6 +29,7 @@
             "dirs": [
                 "${ROOT_C}/home/pablo/development/projects/Alles",
                 "${ROOT_F}/home/pablo/development/projects/Alles",
+                "${ROOT_L}/home/pablo/development/projects/Alles",
                 "${ROOT_E}/home/pablo/development/projects/Alles"
             ],
             "Exclude": "target/:out/:.idea/:.git/:local_config.properties:*.log"
@@ -46,6 +47,7 @@
             "dirs": [
                 "${ROOT_C}/home/pablo/development/projects/quotes",
                 "${ROOT_F}/home/pablo/development/projects/quotes",
+                "${ROOT_L}/home/pablo/development/projects/quotes",
                 "${ROOT_E}/home/pablo/development/projects/quotes"
             ],
             "Exclude": "CVS/:.idea/:.git/:.github/:target/:out/:.git*:.#*:workspace.xml:*.log"
