@@ -1,5 +1,5 @@
 module pclg.apps {
-    requires java.datatransfer;
+//    requires java.datatransfer;
     requires java.desktop;
     requires java.logging;
     requires java.sql;

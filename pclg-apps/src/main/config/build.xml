@@ -103,7 +103,7 @@
         <!-- Copiar los archivos necesarios al directorio dist -->
         <copy todir="${dist}" preservelastmodified="true">
             <fileset dir="${config_dir}" includes="${properties}"/>
-            <fileset file="${src}/Dw.properties"/>
+            <fileset file="${src}/org/pclg/root/Dw.properties"/>
             <fileset file="${config_dir}/log4j.properties"/>
             <fileset file="${config_dir}/derby.properties"/>
         </copy>
@@ -111,8 +111,8 @@
         <!-- Copiar los archivos necesarios al directorio build -->
         <copy todir="${build}" preservelastmodified="true">
             <fileset dir="${config_dir}" includes="${properties}"/>
-            <fileset file="${src}/Dw.properties"/>
-            <fileset file="${src}/Skel.properties"/>
+            <fileset file="${src}/org/pclg/root/Dw.properties"/>
+            <fileset file="${src}/org/pclg/root/Skel.properties"/>
             <fileset file="${config_dir}/log4j.properties"/>
             <fileset file="${config_dir}/derby.properties"/>
         </copy>

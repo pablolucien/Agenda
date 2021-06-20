@@ -8,8 +8,49 @@
     <select />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="ca6eb6b6-6419-4d0e-a6aa-4254ec1c5806" name="Default" comment="Add current directory to classpath in jars.&#10;Add method to cycle the files renaming them with numbers.">
+    <list default="true" id="ca6eb6b6-6419-4d0e-a6aa-4254ec1c5806" name="Default" comment="Changes in links">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pclg-apps/pclg-apps.iml" beforeDir="false" afterPath="$PROJECT_DIR$/pclg-apps/pclg-apps.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pclg-apps/src/main/config/build.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pclg-apps/src/main/config/build.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pclg-apps/src/main/html/body.html" beforeDir="false" afterPath="$PROJECT_DIR$/pclg-apps/src/main/html/body.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pclg-apps/src/main/java/BigFileCreator.java" beforeDir="false" afterPath="$PROJECT_DIR$/pclg-apps/src/main/java/org/pclg/root/BigFileCreator.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pclg-apps/src/main/java/BinComp.java" beforeDir="false" afterPath="$PROJECT_DIR$/pclg-apps/src/main/java/org/pclg/root/BinComp.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pclg-apps/src/main/java/CatPDFs.java" beforeDir="false" afterPath="$PROJECT_DIR$/pclg-apps/src/main/java/org/pclg/root/CatPDFs.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pclg-apps/src/main/java/ChExt.java" beforeDir="false" afterPath="$PROJECT_DIR$/pclg-apps/src/main/java/org/pclg/root/ChExt.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pclg-apps/src/main/java/Cr.java" beforeDir="false" afterPath="$PROJECT_DIR$/pclg-apps/src/main/java/org/pclg/root/Cr.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pclg-apps/src/main/java/DNI.java" beforeDir="false" afterPath="$PROJECT_DIR$/pclg-apps/src/main/java/org/pclg/root/DNI.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pclg-apps/src/main/java/Diff.java" beforeDir="false" afterPath="$PROJECT_DIR$/pclg-apps/src/main/java/org/pclg/root/Diff.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pclg-apps/src/main/java/Digest.java" beforeDir="false" afterPath="$PROJECT_DIR$/pclg-apps/src/main/java/org/pclg/root/Digest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pclg-apps/src/main/java/Dw.help" beforeDir="false" afterPath="$PROJECT_DIR$/pclg-apps/src/main/java/org/pclg/root/Dw.help" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pclg-apps/src/main/java/Dw.java" beforeDir="false" afterPath="$PROJECT_DIR$/pclg-apps/src/main/java/org/pclg/root/Dw.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pclg-apps/src/main/java/Dw.properties" beforeDir="false" afterPath="$PROJECT_DIR$/pclg-apps/src/main/java/org/pclg/root/Dw.properties" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pclg-apps/src/main/java/ExpensesSorter.conf" beforeDir="false" afterPath="$PROJECT_DIR$/pclg-apps/src/main/java/org/pclg/root/ExpensesSorter.conf" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pclg-apps/src/main/java/ExpensesSorter.java" beforeDir="false" afterPath="$PROJECT_DIR$/pclg-apps/src/main/java/org/pclg/root/ExpensesSorter.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pclg-apps/src/main/java/FastCompDel.java" beforeDir="false" afterPath="$PROJECT_DIR$/pclg-apps/src/main/java/org/pclg/root/FastCompDel.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pclg-apps/src/main/java/FileNode.java" beforeDir="false" afterPath="$PROJECT_DIR$/pclg-apps/src/main/java/org/pclg/root/FileNode.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pclg-apps/src/main/java/FileTree.java" beforeDir="false" afterPath="$PROJECT_DIR$/pclg-apps/src/main/java/org/pclg/root/FileTree.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pclg-apps/src/main/java/FileTreeTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/pclg-apps/src/main/java/org/pclg/root/FileTreeTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pclg-apps/src/main/java/FilenameNormalizer.java" beforeDir="false" afterPath="$PROJECT_DIR$/pclg-apps/src/main/java/org/pclg/root/FilenameNormalizer.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pclg-apps/src/main/java/FixedGridLayout.java" beforeDir="false" afterPath="$PROJECT_DIR$/pclg-apps/src/main/java/org/pclg/root/FixedGridLayout.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pclg-apps/src/main/java/Grep.java" beforeDir="false" afterPath="$PROJECT_DIR$/pclg-apps/src/main/java/org/pclg/root/Grep.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pclg-apps/src/main/java/GrepNew.java" beforeDir="false" afterPath="$PROJECT_DIR$/pclg-apps/src/main/java/org/pclg/root/GrepNew.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pclg-apps/src/main/java/ImgCreator.java" beforeDir="false" afterPath="$PROJECT_DIR$/pclg-apps/src/main/java/org/pclg/root/ImgCreator.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pclg-apps/src/main/java/JWhich.java" beforeDir="false" afterPath="$PROJECT_DIR$/pclg-apps/src/main/java/org/pclg/root/JWhich.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pclg-apps/src/main/java/KazaaAppendix.java" beforeDir="false" afterPath="$PROJECT_DIR$/pclg-apps/src/main/java/org/pclg/root/KazaaAppendix.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pclg-apps/src/main/java/Magic.java" beforeDir="false" afterPath="$PROJECT_DIR$/pclg-apps/src/main/java/org/pclg/root/Magic.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pclg-apps/src/main/java/NoURL.java" beforeDir="false" afterPath="$PROJECT_DIR$/pclg-apps/src/main/java/org/pclg/root/NoURL.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pclg-apps/src/main/java/Point3D.java" beforeDir="false" afterPath="$PROJECT_DIR$/pclg-apps/src/main/java/org/pclg/root/Point3D.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pclg-apps/src/main/java/PrintLastModified.java" beforeDir="false" afterPath="$PROJECT_DIR$/pclg-apps/src/main/java/org/pclg/root/PrintLastModified.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pclg-apps/src/main/java/Skel.java" beforeDir="false" afterPath="$PROJECT_DIR$/pclg-apps/src/main/java/org/pclg/root/Skel.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pclg-apps/src/main/java/Skel.properties" beforeDir="false" afterPath="$PROJECT_DIR$/pclg-apps/src/main/java/org/pclg/root/Skel.properties" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pclg-apps/src/main/java/Splitter.help" beforeDir="false" afterPath="$PROJECT_DIR$/pclg-apps/src/main/java/org/pclg/root/Splitter.help" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pclg-apps/src/main/java/Splitter.java" beforeDir="false" afterPath="$PROJECT_DIR$/pclg-apps/src/main/java/org/pclg/root/Splitter.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pclg-apps/src/main/java/Tabifier.java" beforeDir="false" afterPath="$PROJECT_DIR$/pclg-apps/src/main/java/org/pclg/root/Tabifier.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pclg-apps/src/main/java/ThumbsViewer.java" beforeDir="false" afterPath="$PROJECT_DIR$/pclg-apps/src/main/java/org/pclg/root/ThumbsViewer.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pclg-apps/src/main/java/Tutor.java" beforeDir="false" afterPath="$PROJECT_DIR$/pclg-apps/src/main/java/org/pclg/root/Tutor.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pclg-apps/src/main/java/WordWrap.java" beforeDir="false" afterPath="$PROJECT_DIR$/pclg-apps/src/main/java/org/pclg/root/WordWrap.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pclg-apps/src/main/java/ZipComparator.java" beforeDir="false" afterPath="$PROJECT_DIR$/pclg-apps/src/main/java/org/pclg/root/ZipComparator.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pclg-apps/src/main/java/module-info.java" beforeDir="false" afterPath="$PROJECT_DIR$/pclg-apps/src/main/java/module-info.java" afterDir="false" />
     </list>
     <list id="6eaabc47-20b5-4622-b4b5-a86e15e7458f" name="Deactivated temporarily" comment="Deactivated temporarily" />
     <list id="612e46b5-fca6-49a2-9631-d1491558aba4" name="Do-not-commit" comment="Do-not-commit">
@@ -383,7 +424,7 @@
     <property name="dynamic.classpath" value="false" />
     <property name="extract.method.default.visibility" value="private" />
     <property name="last_directory_selection" value="$PROJECT_DIR$/pclg-tools/src/main/java" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/../portfolio" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/pclg-apps/src/main/java/org/pclg" />
     <property name="node.js.detected.package.eslint" value="true" />
     <property name="node.js.detected.package.tslint" value="true" />
     <property name="node.js.path.for.package.eslint" value="project" />
@@ -395,7 +436,7 @@
     <property name="options.searchVisible" value="true" />
     <property name="options.splitter.details.proportions" value="0.2" />
     <property name="options.splitter.main.proportions" value="0.3" />
-    <property name="project.structure.last.edited" value="Project" />
+    <property name="project.structure.last.edited" value="Modules" />
     <property name="project.structure.proportion" value="0.15" />
     <property name="project.structure.side.proportion" value="0.39310345" />
     <property name="recentsLimit" value="5" />
@@ -412,11 +453,11 @@
       <recent name="C:\home\development\projects\Alles\src\test_resources\images\16x16" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/pclg-apps/src/main/java/org/pclg/root" />
+      <recent name="$PROJECT_DIR$/pclg-apps/src/main/java/" />
+      <recent name="$PROJECT_DIR$/pclg-apps/src/main/java/org/pclg" />
       <recent name="$PROJECT_DIR$/pclg-tools/src/main/resources" />
       <recent name="E:\home\pablo\development\projects\Alles\pclg-tools\src\test\resources\sounds" />
-      <recent name="E:\home\pablo\development\projects\Alles\pclg-tools\src\test\resources" />
-      <recent name="E:\home\pablo\development\projects\Alles\pclg-tools\src\test\resources\images" />
-      <recent name="$PROJECT_DIR$/pclg-tools/src/test/resources/images" />
     </key>
     <key name="MoveMembersDialog.RECENTS_KEY">
       <recent name="org.pclg.tools.ArchiveTools" />
@@ -438,7 +479,7 @@
       <recent name="org.pclg.log" />
     </key>
   </component>
-  <component name="RunManager" selected="Application.DirectorySynchronizer (GUI)">
+  <component name="RunManager" selected="Application.Digest">
     <configuration default="true" type="Applet" factoryName="Applet">
       <module name="" />
       <option name="MAIN_CLASS_NAME" />
@@ -564,6 +605,16 @@
       <RunnerSettings RunnerId="Run" />
       <ConfigurationWrapper RunnerId="Debug" />
       <ConfigurationWrapper RunnerId="Run" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="Digest" type="Application" factoryName="Application">
+      <option name="ALTERNATIVE_JRE_PATH" value="11" />
+      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="true" />
+      <option name="MAIN_CLASS_NAME" value="org.pclg.root.Digest" />
+      <module name="pclg-apps" />
+      <option name="PROGRAM_PARAMETERS" value="$USER_HOME$/jdk-16.0.1_linux-x64_bin.deb" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
@@ -944,6 +995,7 @@
       <item itemvalue="Application.DatabaseEncrypter" />
       <item itemvalue="Application.DbUpdate" />
       <item itemvalue="Application.DirectorySynchronizer (GUI)" />
+      <item itemvalue="Application.Digest" />
       <item itemvalue="Application.DirectorySynchronizer (full)" />
       <item itemvalue="Application.DirectorySynchronizer (light)" />
       <item itemvalue="Application.JavaShellFX" />
@@ -1074,6 +1126,8 @@
       <workItem from="1621178849179" duration="27000" />
       <workItem from="1621696796195" duration="836000" />
       <workItem from="1621756552332" duration="551000" />
+      <workItem from="1622878698822" duration="179000" />
+      <workItem from="1624170067431" duration="1881000" />
     </task>
     <task id="LOCAL-00001" summary="Manually resolve merge conficts">
       <created>1598095361969</created>
@@ -1383,7 +1437,14 @@
       <option name="project" value="LOCAL" />
       <updated>1621757061558</updated>
     </task>
-    <option name="localTasksCounter" value="45" />
+    <task id="LOCAL-00045" summary="Changes in links">
+      <created>1622878865205</created>
+      <option name="number" value="00045" />
+      <option name="presentableId" value="LOCAL-00045" />
+      <option name="project" value="LOCAL" />
+      <updated>1622878865205</updated>
+    </task>
+    <option name="localTasksCounter" value="46" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -1446,7 +1507,6 @@
   </component>
   <component name="VcsManagerConfiguration">
     <option name="CHECK_CODE_SMELLS_BEFORE_PROJECT_COMMIT" value="false" />
-    <MESSAGE value="Sync: don't sync the logs&#10;pclg-tools will be version 3 for JDK11" />
     <MESSAGE value="Update PopulateThumbnailsPlugin&#10;Enhance Plugin&#10;Fix log4j classpath in the build.xml files" />
     <MESSAGE value="Added EnhancedLogger and move DbUpdate.help to correct place" />
     <MESSAGE value="Body" />
@@ -1471,7 +1531,8 @@
     <MESSAGE value="Fix NPE bug" />
     <MESSAGE value="Cambios varios" />
     <MESSAGE value="Add targets" />
-    <option name="LAST_COMMIT_MESSAGE" value="Add targets" />
+    <MESSAGE value="Changes in links" />
+    <option name="LAST_COMMIT_MESSAGE" value="Changes in links" />
     <option name="OPTIMIZE_IMPORTS_BEFORE_PROJECT_COMMIT" value="true" />
   </component>
   <component name="XDebuggerManager">
@@ -1516,6 +1577,36 @@
           <url>file://$PROJECT_DIR$/pclg-tools/src/main/java/org/pclg/tools/ArchiveTools.java</url>
           <line>59</line>
           <option name="timeStamp" value="24" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/pclg-apps/src/main/java/org/pclg/root/Digest.java</url>
+          <line>78</line>
+          <option name="timeStamp" value="26" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/pclg-apps/src/main/java/org/pclg/root/Digest.java</url>
+          <line>91</line>
+          <option name="timeStamp" value="27" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/pclg-tools/src/main/java/org/pclg/security/Digest.java</url>
+          <line>53</line>
+          <option name="timeStamp" value="28" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/pclg-tools/src/main/java/org/pclg/security/Digest.java</url>
+          <line>65</line>
+          <option name="timeStamp" value="30" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/pclg-tools/src/main/java/org/pclg/security/Digest.java</url>
+          <line>68</line>
+          <option name="timeStamp" value="31" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/pclg-tools/src/main/java/org/pclg/security/Digest.java</url>
+          <line>71</line>
+          <option name="timeStamp" value="32" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>
