@@ -10,8 +10,12 @@ import java.io.File;
 import java.io.IOException;
 import java.nio.file.Files;
 import java.util.Arrays;
+import java.util.List;
+import java.util.Map;
+import java.util.stream.Collectors;
 import java.util.stream.Stream;
 
+import static org.pclg.filesystem.synchonizer.DirectorySynchronizer.ADD_DIR_PAD;
 import static org.pclg.filesystem.synchonizer.DirectorySynchronizer.ADD_FILE_PAD;
 
 /**
@@ -26,13 +30,26 @@ final class EraserHead {
 	}
 
 	static void processStream(final Stream<String> lines, final String[] baseDirs, final boolean onlyTest) {
-        lines.filter(line -> line.contains(ADD_FILE_PAD))
-                .map(line -> line.replace(ADD_FILE_PAD, ""))
+        final Map<String, List<String>> listMap = lines.collect(Collectors.groupingBy(line -> {
+            if (line.contains(ADD_FILE_PAD)) {
+                return ADD_FILE_PAD;
+            } else if (line.contains(ADD_DIR_PAD)) {
+                return ADD_DIR_PAD;
+            } else {
+                return "Noise";
+            }
+        }));
+
+        listMap.get(ADD_FILE_PAD).stream().map(line -> line.replace(ADD_FILE_PAD, ""))
+                .forEach(line -> deleteFileAndSiblings(line, baseDirs, onlyTest));
+
+        // At this moment it should be possible to delete the directories
+        listMap.get(ADD_DIR_PAD).stream().map(line -> line.replace(ADD_DIR_PAD, ""))
                 .forEach(line -> deleteFileAndSiblings(line, baseDirs, onlyTest));
     }
 
     private static void deleteFileAndSiblings(final String filename, final String[] baseDirs,
-		final boolean onlyTest) {
+		    final boolean onlyTest) {
         Arrays.stream(baseDirs).filter(dirName -> !StringTools.isEmptyOrBlank(dirName) && filename.startsWith(dirName)).findFirst().ifPresent(dirName -> {
 			final String nameTail = filename.substring(dirName.length());
 			LOGGER.debug("\nnameTail = " + nameTail);

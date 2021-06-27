@@ -37,8 +37,8 @@ public class DirectorySynchronizer {
     static final String BASENAME = DirectorySynchronizer.class.getSimpleName();
     private static final TextAreaLogger LOGGER = new TextAreaLogger(LoggerFactory.makeLog4J());
     static final String ADD_FILE_PAD = "++++++ ";
+    static final String ADD_DIR_PAD = "////// ";
     private static final String MODIF_FILE_PAD = "****** ";
-    private static final String ADD_DIR_PAD = "////// ";
     private static final String SPACES_PAD = "       ";
     private static final String UPDATING_DIRS_TAG = "------ Updating {Dirs} ";
     private static final String UPDATING_FILES_TAG = "------ Updating {Files} ";
