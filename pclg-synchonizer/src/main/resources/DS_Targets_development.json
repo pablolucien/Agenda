@@ -16,9 +16,14 @@
             "B": "${ROOT_L}/dev/quotes_src.zip"
         },
         {
+            "A": "${ROOT_C}/home/pablo/development/projects/portfolio/target/portfolio-2.0-SNAPSHOT-jar-with-dependencies.jar",
+            "B": "${ROOT_C}/home/pablo/development/dist/portfolio-2.0-SNAPSHOT-jar-with-dependencies.jar"
+        },
+        {
             "dirs": [
                 "${ROOT_C}/home/pablo/development/dist",
                 "${ROOT_E}/bin",
+                "${ROOT_F}/bin",
                 "${ROOT_L}/bin"
             ],
             "Include": "*.jar:*.properties",
