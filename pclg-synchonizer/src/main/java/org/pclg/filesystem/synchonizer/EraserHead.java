@@ -10,6 +10,7 @@ import java.io.File;
 import java.io.IOException;
 import java.nio.file.Files;
 import java.util.Arrays;
+import java.util.Collections;
 import java.util.List;
 import java.util.Map;
 import java.util.stream.Collectors;
@@ -40,12 +41,19 @@ final class EraserHead {
             }
         }));
 
-        listMap.get(ADD_FILE_PAD).stream().map(line -> line.replace(ADD_FILE_PAD, ""))
+        final List<String> files = listMap.get(ADD_FILE_PAD);
+        if (files != null) {
+            files.stream().map(line -> line.replace(ADD_FILE_PAD, ""))
                 .forEach(line -> deleteFileAndSiblings(line, baseDirs, onlyTest));
+        }
 
-        // At this moment it should be possible to delete the directories
-        listMap.get(ADD_DIR_PAD).stream().map(line -> line.replace(ADD_DIR_PAD, ""))
+        // At this moment it should be possible to delete the directories (last created to first).
+        final List<String> dirs = listMap.get(ADD_DIR_PAD);
+        if (dirs != null) {
+            Collections.reverse(dirs);
+            dirs.stream().map(line -> line.replace(ADD_DIR_PAD, ""))
                 .forEach(line -> deleteFileAndSiblings(line, baseDirs, onlyTest));
+        }
     }
 
     private static void deleteFileAndSiblings(final String filename, final String[] baseDirs,

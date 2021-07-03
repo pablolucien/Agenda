@@ -154,18 +154,24 @@ public class DirectorySynchronizer {
         final Path sourcePath = srcFile.toPath();
         final Path targetPath = targetFile.toPath();
         try {
-            final File parentFile = targetFile.getParentFile();
-            if (!parentFile.exists()) {
-                Files.createDirectories(parentFile.toPath());
-                LOGGER.log(Level.OFF, ADD_DIR_PAD + parentFile);
-                counters.incrementDirsCreated();
-            }
+            checkAndCreateParentsFor(targetFile.getParentFile());
             Files.copy(sourcePath, targetPath);
             LOGGER.log(Level.OFF, ADD_FILE_PAD + targetFile);
             counters.incrementFilesCreated();
         } catch (final IOException ex) {
             LOGGER.warn(SPACES_PAD + "Could not create " + targetFile + ": " + ex);
         }
+    }
+
+    private void checkAndCreateParentsFor(final File targetDir) throws IOException {
+        if (targetDir.exists()) {
+            return;
+        }
+        final File parentDir = targetDir.getParentFile();
+        checkAndCreateParentsFor(parentDir);
+        Files.createDirectory(targetDir.toPath());
+        LOGGER.log(Level.OFF, ADD_DIR_PAD + parentDir);
+        counters.incrementDirsCreated();
     }
 
     private boolean updateFiles(final File srcFile, final File tgtFile) {
@@ -251,7 +257,7 @@ public class DirectorySynchronizer {
                 default:
                     final ByteArrayOutputStream out = new ByteArrayOutputStream();
                     ArrayTools.printArray(new PrintStream(out), args);
-                    throw new IllegalArgumentException(new String(out.toByteArray()));
+                    throw new IllegalArgumentException(out.toString());
             }
         } catch (final Throwable thr) {
             LOGGER.error(LoggerFactory.ERROR_TAG, thr);
