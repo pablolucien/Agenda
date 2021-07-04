@@ -168,9 +168,12 @@ public class DirectorySynchronizer {
             return;
         }
         final File parentDir = targetDir.getParentFile();
+        if (parentDir == null) {
+            throw new IOException(targetDir + ": Unable to determine if root directory exists");
+        }
         checkAndCreateParentsFor(parentDir);
         Files.createDirectory(targetDir.toPath());
-        LOGGER.log(Level.OFF, ADD_DIR_PAD + parentDir);
+        LOGGER.log(Level.OFF, ADD_DIR_PAD + targetDir);
         counters.incrementDirsCreated();
     }
 
