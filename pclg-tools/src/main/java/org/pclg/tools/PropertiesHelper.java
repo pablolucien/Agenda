@@ -10,6 +10,9 @@ import java.io.FileInputStream;
 import java.io.FileOutputStream;
 import java.io.IOException;
 import java.io.InputStream;
+import java.util.ArrayList;
+import java.util.Collections;
+import java.util.List;
 import java.util.Locale;
 import java.util.Map;
 import java.util.MissingResourceException;
@@ -35,7 +38,7 @@ public class PropertiesHelper {
 	private static final String BOUNDS_MAXIMIZED = "MAXIMIZED";
 	private static final String BOUNDS_MINIMIZED = "MINIMIZED";
 
-	private static class PropertiesFileHolder {
+    private static class PropertiesFileHolder {
         private final File propertiesFile;
         private final Properties properties;
         private final long lastModified;
@@ -313,5 +316,23 @@ public class PropertiesHelper {
 			LOGGER.warn("Error loading bounds", ex);
 		}
 		return boundsInfo;
+	}
+
+	public static List<Pair<String, String>> getPropertiesToPersist(final Properties properties, final String key) {
+		final var property = properties.getProperty(key);
+		if (property != null) {
+			final var keysAndvalues = property.split("\\|");
+			final List<Pair<String, String>> propertiesToPersist = new ArrayList<>(keysAndvalues.length);
+			for (final String string : keysAndvalues) {
+				final var split = string.split(":");
+				if (split.length > 1) {
+					propertiesToPersist.add(new Pair<>(split[0], split[1]));
+				} else {
+					propertiesToPersist.add(new Pair<>(split[0], ""));
+				}
+			}
+			return propertiesToPersist;
+		}
+		return Collections.emptyList();
 	}
 }
