@@ -4,28 +4,28 @@
             "unidirectional": true,
             "dirs": [
                 "${ROOT_G}/bluetooth",
-                "${ROOT_F}/Películas/___Mobile-phone-files/bluetooth"
+                "${ROOT_F}/Pelis/___Mobile-phone-files/bluetooth"
             ]
         },
         {
             "unidirectional": true,
             "dirs": [
                 "${ROOT_H}/bluetooth",
-                "${ROOT_F}/Películas/___Mobile-phone-files/bluetooth"
+                "${ROOT_F}/Pelis/___Mobile-phone-files/bluetooth"
             ]
         },
         {
             "unidirectional": true,
             "dirs": [
                 "${ROOT_G}/DCIM/Camera",
-                "${ROOT_F}/Películas/___Mobile-phone-files/Camera"
+                "${ROOT_F}/Pelis/___Mobile-phone-files/Camera"
             ]
         },
         {
             "unidirectional": true,
             "dirs": [
                 "${ROOT_G}/",
-                "${ROOT_F}/Películas/___Mobile-phone-files/VCF cards"
+                "${ROOT_F}/Pelis/___Mobile-phone-files/VCF cards"
             ],
             "Include": "*.vcf"
        },
@@ -33,21 +33,21 @@
             "unidirectional": true,
             "dirs": [
                 "${ROOT_H}/data",
-                "${ROOT_F}/Películas/___Mobile-phone-files/data"
+                "${ROOT_F}/Pelis/___Mobile-phone-files/data"
             ]
         },
        {
             "unidirectional": true,
             "dirs": [
                 "${ROOT_H}/DCIM",
-                "${ROOT_F}/Películas/___Mobile-phone-files/DCIM"
+                "${ROOT_F}/Pelis/___Mobile-phone-files/DCIM"
             ]
         },
         {
             "unidirectional": true,
             "dirs": [
                 "${ROOT_H}/WhatsApp",
-                "${ROOT_F}/Películas/___Mobile-phone-files/WhatsApp"
+                "${ROOT_F}/Pelis/___Mobile-phone-files/WhatsApp"
             ],
 	    "Exclude": "Sent/"
         },
@@ -55,14 +55,14 @@
             "unidirectional": true,
             "dirs": [
                 "${ROOT_H}/Signal",
-                "${ROOT_F}/Películas/___Mobile-phone-files/Signal"
+                "${ROOT_F}/Pelis/___Mobile-phone-files/Signal"
             ]
         },
         {
             "unidirectional": true,
             "dirs": [
                 "${ROOT_H}/Pictures",
-                "${ROOT_F}/Películas/___Mobile-phone-files/Pictures"
+                "${ROOT_F}/Pelis/___Mobile-phone-files/Pictures"
             ]
         }
     ]
