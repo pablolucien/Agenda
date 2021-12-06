@@ -6,6 +6,14 @@
     "targets": [
         {
             "dirs": [
+                "${ROOT_C}/home/pablo/Laboral/",
+                "${ROOT_E}/home/pablo/Laboral/",
+                "${ROOT_L}/home/pablo/Laboral/",
+                "${ROOT_F}/home/pablo/Laboral/"
+            ]
+        },
+        {
+            "dirs": [
                 "${ROOT_C}/home/pablo/img/fotos/",
                 "${ROOT_E}/home/pablo/img/fotos/",
                 "${ROOT_F}/home/pablo/img/fotos/"

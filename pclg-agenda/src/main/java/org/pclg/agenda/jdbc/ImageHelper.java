@@ -40,7 +40,7 @@ public final class ImageHelper implements FieldManagerHelper {
     private final String imagesRoot;
     private final ThumbnailCreator thumbnailCreator = new ThumbnailCreator();
 
-    ImageHelper(final Connection dbConnection, final GeneralHelper generalHelper, String imagesRoot) throws SQLException {
+    ImageHelper(final Connection dbConnection, final GeneralHelper generalHelper, final String imagesRoot) throws SQLException {
         selectStatement = dbConnection.prepareStatement(SELECT_FROM_IMAGEN_SENTENCE);
         insertStatement = dbConnection.prepareStatement(INSERT_INTO_IMAGEN_SENTENCE);
         this.generalHelper = generalHelper;
@@ -51,18 +51,18 @@ public final class ImageHelper implements FieldManagerHelper {
      * Actualiza un contacto con las imagenes que le corresponden por su clave,
      * y version.
      *
-     * @param record el registro a actualizar.
+     * @param agendaRecord el registro a actualizar.
      */
     @Override
-    public void retrieve(final AgendaRecord record) throws SQLException {
+    public void retrieve(final AgendaRecord agendaRecord) throws SQLException {
         try {
-            selectStatement.setInt(1, record.getKey());
-            selectStatement.setInt(2, record.getVersionImage());
+            selectStatement.setInt(1, agendaRecord.getKey());
+            selectStatement.setInt(2, agendaRecord.getVersionImage());
             final ResultSet rset = selectStatement.executeQuery();
             if (rset.next()) {
-                record.setImagePath(rset.getString(1));
+                agendaRecord.setImagePath(rset.getString(1));
                 final InputStream stream = rset.getBinaryStream(2);
-                record.setThumbnail(new ImageIcon(ImageIO.read(stream)));
+                agendaRecord.setThumbnail(new ImageIcon(ImageIO.read(stream)));
             }
         } catch (final IOException ex) {
             LOGGER.error(LoggerFactory.ERROR_TAG, ex);
@@ -71,13 +71,13 @@ public final class ImageHelper implements FieldManagerHelper {
     }
 
     @Override
-    public int persist(final AgendaRecord record) {
+    public int persist(final AgendaRecord agendaRecord) {
         try {
             int nrUpdates = 0;
-            final int clave = record.getKey();
+            final int clave = agendaRecord.getKey();
             final int newVersionImagen = generalHelper.obtainNextVersion("IMAGEN", clave);
             int index = 0;
-            final String imagePath = record.getImagePath();
+            final String imagePath = agendaRecord.getImagePath();
             if (!isEmptyOrBlank(imagePath)) {
                 final File originalImageFile = new File(imagesRoot + imagePath);
                 if (originalImageFile.exists()) {
@@ -90,7 +90,7 @@ public final class ImageHelper implements FieldManagerHelper {
                     }
                 }
             }
-            return nrUpdates > 0 ? newVersionImagen : record.getVersionImage();
+            return nrUpdates > 0 ? newVersionImagen : agendaRecord.getVersionImage();
         } catch (final SQLException | IOException ex) {
             LOGGER.error(LoggerFactory.ERROR_TAG, ex);
             throw new AgendaDbException(ex);

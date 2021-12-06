@@ -68,7 +68,13 @@ public class GroupMgtPanel extends JPanel {
 		button.addActionListener(e -> {
 			message.setText("");
 			final String name = nameField.getText();
-			for (Grupo group : Grupo.getValues()) {
+			if (name.isBlank()) {
+				final String msg = String.format("Tratando de agregar grupo con nombre en blanco : %s. No hago nada.", name);
+				message.setText(msg);
+				LOGGER.warn(msg);
+				return;
+			}
+			for (final Grupo group : Grupo.getValues()) {
 				if (name.equalsIgnoreCase(group.getNombre())) {
 					final String msg = String.format("Tratando de agregar grupo repetido : %s. No hago nada.", name);
 					message.setText(msg);
@@ -84,7 +90,7 @@ public class GroupMgtPanel extends JPanel {
 				nameField.setText("");
 				populateList();
 				LOGGER.debug("Despues : " + Grupo.getValues());
-			} catch (SQLException ex) {
+			} catch (final SQLException ex) {
 				LOGGER.error(LoggerFactory.ERROR_TAG, ex);
 			}
 		});
