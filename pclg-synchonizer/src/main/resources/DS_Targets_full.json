@@ -7,8 +7,8 @@
         {
             "unidirectional": true,
             "dirs": [
-                "${ROOT_E}/workspace_Orange",
-                "${ROOT_F}/workspace_Orange"
+                "${ROOT_F}/workspace_Orange",
+                "${ROOT_E}/workspace_Orange"
             ],
             "Exclude": ".git/:.github/:target/:.idea/:.git*:.#*"
         },
