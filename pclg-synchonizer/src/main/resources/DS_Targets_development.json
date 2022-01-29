@@ -17,6 +17,14 @@
             "B": "${ROOT_L}/dev/quotes_src.zip"
         },
         {
+            "A": "${ROOT_C}/home/pablo/development/idea-settings.zip",
+            "B": "${ROOT_F}/home/pablo/development/idea-settings.zip"
+        },
+        {
+            "A": "${ROOT_C}/home/pablo/development/idea-settings.zip",
+            "B": "${ROOT_L}/home/pablo/development/idea-settings.zip"
+        },
+        {
             "A": "${ROOT_C}/home/pablo/development/projects/portfolio/target/portfolio-3.0-SNAPSHOT-jar-with-dependencies.jar",
             "B": "${ROOT_C}/home/pablo/development/dist/portfolio-3.0-SNAPSHOT-jar-with-dependencies.jar"
         },
