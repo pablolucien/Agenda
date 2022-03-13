@@ -7,16 +7,10 @@
     "targets": [
         {
             "dirs": [
-                "${ROOT_C}/_Reise/",
                 "${ROOT_L}/home/",
-                "${ROOT_E}/home/"
+                "${ROOT_F}/home/"
             ],
             "files": [
-                "Backlog.txt",
-                "Bank.txt",
-                "horas.xls",
-                "passwords.txt",
-                "PStart.xml",
                 "Leer fuera o en casa.txt"
             ]
         },
