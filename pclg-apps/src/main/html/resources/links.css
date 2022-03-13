@@ -50,6 +50,15 @@ table {
 	font-weight:bold;
 }
 
+.SpecialLink {
+	color:SeaGreen;
+	font-weight:bold;
+}
+
+.SpecialLink:hover {
+	color:#3e5f8a;
+	font-weight:bold;
+}
 
 .SectionHeader {
     border: 0px solid;

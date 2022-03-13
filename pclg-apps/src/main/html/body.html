@@ -225,10 +225,6 @@ console.log("xhttp.responseText = " + xhttp.responseText)
 								<td><a href="https://www.paypal.com" target="_blank"> PayPal </a></td>
 							</tr>
 							<tr>
-								<td colspan="3"><a href="https://www.actionnaire.cic-marketsolutions.eu/fr/identification/authentification.html" target="_blank"> CM-CIC Securities </a></td>
-								<td>&nbsp;</td>
-							</tr>
-							<tr>
 								<td><a href="https://clientes.selfbank.es/conexion/?_ga=1.151424889.1540137033.1430903126" target="_blank" class="Sobre"> SelfBank </a></td>
 								<td>&nbsp;</td>
 								<td><a href="http://www.sabadellatlantico.com/" target="_blank" class="Sobre"> Sabadell </a></td>
@@ -296,64 +292,69 @@ console.log("xhttp.responseText = " + xhttp.responseText)
 					<td><a href="https://finance.yahoo.com/quote/ITX.MC/history" target="_blank" class="StockExchange"> Finance Yahoo </a></td>
 				</tr>
 			</table>
-			<table border="1" class="sameColumnWidth20">
-				<caption>
-					<div class="Wichtig"> Finance Yahoo (Hist&oacute;ricos) </div>
-				</caption>
-				<tr>
-					<td><a href="https://finance.yahoo.com/quote/ACS.MC/history" target="_blank" class="StockExchange"> ACS </a></td>
-					<td><a href="https://finance.yahoo.com/quote/CAF.MC/history" target="_blank" class="StockExchange"> C.A.F. </a></td>
-					<td><a href="https://finance.yahoo.com/quote/CABK.MC/history" target="_blank" class="StockExchange"> Caixa </a></td>
-					<td><a href="https://finance.yahoo.com/quote/CIE.MC/history" target="_blank" class="StockExchange"> CIE </a></td>
-					<td><a href="https://finance.yahoo.com/quote/DIA.MC/history" target="_blank" class="StockExchange"> DIA </a></td>
-				</tr>
-				<tr>
-					<td><a href="https://finance.yahoo.com/quote/EBRO.MC/history" target="_blank" class="StockExchange"> Ebro Foods </a></td>
-					<td><a href="https://finance.yahoo.com/quote/ENC.MC/history" target="_blank" class="StockExchange"> ENCE </a></td>
-					<td><a href="https://finance.yahoo.com/quote/GRF.MC/history" target="_blank" class="StockExchange"> Grifols </a></td>
-					<td><a href="https://finance.yahoo.com/quote/IAG.MC/history" target="_blank" class="StockExchange"> IAG </a></td>
-					<td><a href="https://finance.yahoo.com/quote/ITX.MC/history" target="_blank" class="StockExchange"> Inditex </a></td>
-				</tr>
-				<tr>
-					<td><a href="https://finance.yahoo.com/quote/MRL.MC/history" target="_blank" class="StockExchange"> Merlin </a></td>
-					<td><a href="https://finance.yahoo.com/quote/PRS.MC/history" target="_blank" class="StockExchange"> Prisa </a></td>
-					<td><a href="https://finance.yahoo.com/quote/SAB.MC/history" target="_blank" class="StockExchange"> Sabadell </a></td>
-					<td><a href="https://finance.yahoo.com/quote/SCYR.MC/history" target="_blank" class="StockExchange"> Sacyr </a></td>
-					<td><a href="https://finance.yahoo.com/quote/SAN.MC/history" target="_blank" class="StockExchange"> Santander </a></td>
-				</tr>
-				<tr>
-					<td><a href="https://finance.yahoo.com/quote/SOP.PA/history" target="_blank" class="StockExchange"> Sopra </a></td>
-					<td>&nbsp;</td>
-					<td>&nbsp;</td>
-					<td>&nbsp;</td>
-					<td>&nbsp;</td>
-				</tr>
-				<tr>
-					<td colspan="5">&nbsp;</td>
-				</tr>
-				<tr>
-					<td><a href="https://finance.yahoo.com/quote/ABG.MC/history" target="_blank" class="StockExchange"> Abengoa </a></td>
-					<td><a href="https://finance.yahoo.com/quote/ACX.MC/history" target="_blank" class="StockExchange"> Acerinox </a></td>
-					<td><a href="https://finance.yahoo.com/quote/MTS.MC/history" target="_blank" class="StockExchange"> Arcelormittal </a></td>
-					<td><a href="https://finance.yahoo.com/quote/BKIA.MC/history" target="_blank" class="StockExchange"> Bankia </a></td>
-					<td><a href="https://finance.yahoo.com/quote/BME.MC/history" target="_blank" class="StockExchange"> BME </a></td>
-				</tr>
-				<tr>
-					<td><a href="https://finance.yahoo.com/quote/ENG.MC/history" target="_blank" class="StockExchange"> Enagás </a></td>
-					<td><a href="https://finance.yahoo.com/quote/FER.MC/history" target="_blank" class="StockExchange"> Ferrovial </a></td>
-					<td><a href="https://finance.yahoo.com/quote/FDR.MC/history" target="_blank" class="StockExchange"> Fluidra </a></td>
-					<td><a href="https://finance.yahoo.com/quote/MEL.MC/history" target="_blank" class="StockExchange"> Meliá </a></td>
-					<td><a href="https://finance.yahoo.com/quote/PHM.MC/history" target="_blank" class="StockExchange"> Pharma </a></td>
-				</tr>
-				<tr>
-					<td><a href="https://finance.yahoo.com/quote/REP.MC/history" target="_blank" class="StockExchange"> Repsol </a></td>
-					<td><a href="https://finance.yahoo.com/quote/SLR.MC/history" target="_blank" class="StockExchange"> Solaria </a></td>
-					<td>&nbsp;</td>
-					<td>&nbsp;</td>
-					<td>&nbsp;</td>
-				</tr>
-			</table>
+			
 			<hr/>
+
+			<div class="SpecialLink" onClick="javascript:toggleWithoutSemaphore('Finance_Yahoo');">Finance Yahoo (Hist&oacute;ricos) </div>
+			<div id="Finance_Yahoo" style="display: none">
+				<table border="1" class="sameColumnWidth20">
+					<tr>
+						<td><a href="https://finance.yahoo.com/quote/ACS.MC/history" target="_blank" class="StockExchange"> ACS </a></td>
+						<td><a href="https://finance.yahoo.com/quote/CAF.MC/history" target="_blank" class="StockExchange"> C.A.F. </a></td>
+						<td><a href="https://finance.yahoo.com/quote/CABK.MC/history" target="_blank" class="StockExchange"> Caixa </a></td>
+						<td><a href="https://finance.yahoo.com/quote/CIE.MC/history" target="_blank" class="StockExchange"> CIE </a></td>
+						<td><a href="https://finance.yahoo.com/quote/DIA.MC/history" target="_blank" class="StockExchange"> DIA </a></td>
+					</tr>
+					<tr>
+						<td><a href="https://finance.yahoo.com/quote/EBRO.MC/history" target="_blank" class="StockExchange"> Ebro Foods </a></td>
+						<td><a href="https://finance.yahoo.com/quote/ENC.MC/history" target="_blank" class="StockExchange"> ENCE </a></td>
+						<td><a href="https://finance.yahoo.com/quote/GRF.MC/history" target="_blank" class="StockExchange"> Grifols </a></td>
+						<td><a href="https://finance.yahoo.com/quote/IAG.MC/history" target="_blank" class="StockExchange"> IAG </a></td>
+						<td><a href="https://finance.yahoo.com/quote/ITX.MC/history" target="_blank" class="StockExchange"> Inditex </a></td>
+					</tr>
+					<tr>
+						<td><a href="https://finance.yahoo.com/quote/MRL.MC/history" target="_blank" class="StockExchange"> Merlin </a></td>
+						<td><a href="https://finance.yahoo.com/quote/PRS.MC/history" target="_blank" class="StockExchange"> Prisa </a></td>
+						<td><a href="https://finance.yahoo.com/quote/SAB.MC/history" target="_blank" class="StockExchange"> Sabadell </a></td>
+						<td><a href="https://finance.yahoo.com/quote/SCYR.MC/history" target="_blank" class="StockExchange"> Sacyr </a></td>
+						<td><a href="https://finance.yahoo.com/quote/SAN.MC/history" target="_blank" class="StockExchange"> Santander </a></td>
+					</tr>
+					<tr>
+						<td><a href="https://finance.yahoo.com/quote/SOP.PA/history" target="_blank" class="StockExchange"> Sopra </a></td>
+						<td>&nbsp;</td>
+						<td>&nbsp;</td>
+						<td>&nbsp;</td>
+						<td>&nbsp;</td>
+					</tr>
+					<tr>
+						<td colspan="5">&nbsp;</td>
+					</tr>
+					<tr>
+						<td><a href="https://finance.yahoo.com/quote/ABG.MC/history" target="_blank" class="StockExchange"> Abengoa </a></td>
+						<td><a href="https://finance.yahoo.com/quote/ACX.MC/history" target="_blank" class="StockExchange"> Acerinox </a></td>
+						<td><a href="https://finance.yahoo.com/quote/MTS.MC/history" target="_blank" class="StockExchange"> Arcelormittal </a></td>
+						<td><a href="https://finance.yahoo.com/quote/BKIA.MC/history" target="_blank" class="StockExchange"> Bankia </a></td>
+						<td><a href="https://finance.yahoo.com/quote/BME.MC/history" target="_blank" class="StockExchange"> BME </a></td>
+					</tr>
+					<tr>
+						<td><a href="https://finance.yahoo.com/quote/ENG.MC/history" target="_blank" class="StockExchange"> Enagás </a></td>
+						<td><a href="https://finance.yahoo.com/quote/FER.MC/history" target="_blank" class="StockExchange"> Ferrovial </a></td>
+						<td><a href="https://finance.yahoo.com/quote/FDR.MC/history" target="_blank" class="StockExchange"> Fluidra </a></td>
+						<td><a href="https://finance.yahoo.com/quote/MEL.MC/history" target="_blank" class="StockExchange"> Meliá </a></td>
+						<td><a href="https://finance.yahoo.com/quote/PHM.MC/history" target="_blank" class="StockExchange"> Pharma </a></td>
+					</tr>
+					<tr>
+						<td><a href="https://finance.yahoo.com/quote/REP.MC/history" target="_blank" class="StockExchange"> Repsol </a></td>
+						<td><a href="https://finance.yahoo.com/quote/SLR.MC/history" target="_blank" class="StockExchange"> Solaria </a></td>
+						<td>&nbsp;</td>
+						<td>&nbsp;</td>
+						<td>&nbsp;</td>
+					</tr>
+				</table>
+			</div>				
+			
+			<hr/>
+
 			<table border="1" class="sameColumnWidth50 bodyWithStripes">
 				<tr>
 					<td><a href="http://www.eleconomista.es/mercados-cotizaciones/ecodividendo/calendario.php" target="_blank"> Calendario de dividendos </a></td>
@@ -361,7 +362,7 @@ console.log("xhttp.responseText = " + xhttp.responseText)
 				</tr>
 				<tr>
 					<td><a href="http://uk.finance.yahoo.com/q/ta?s=SOP.PA&t=1y&l=on&z=l&q=l&p=&a=&c=" target="_blank"> Sopra (a 1 año) </a></td>
-					<td><a href="http://www.cmcics-nominatif.com" target="_blank"> Gesti&oacute;n de acciones de Sopra </a></td>
+					<td>&nbsp;</td>
 				</tr>
 				<tr>
 					<td><a href="http://www.agenciatributaria.es/" target="_blank"> Agencia Tributaria  </a></td>
@@ -434,10 +435,6 @@ console.log("xhttp.responseText = " + xhttp.responseText)
 						<td><a href="http://callejero.paginasamarillas.es/home.asp" target="_blank"> El Callejero </a></td>
 						<td><a href="http://www.pagesjaunes.fr/" target="_blank"> Pages Jaunes</a></td>
 						<td><a href="http://www.ctm-madrid.es/" target="_blank"> Sistema de Informaci&oacute;n de Transportes de Madrid </a></td>
-					</tr>
-					<tr>
-						<td><a href="http://callejero.interbusca.com/rutas-urbanas-a-pie/MADRID/" target="_blank"> Rutas urbanas a pie de Madrid </a></td>
-						<td><a href="http://callejero.interbusca.com/rutas/" target="_blank"> Rutas urbanas </a></td>
 					</tr>
 				</table>
 			</center>
@@ -1273,10 +1270,11 @@ console.log("xhttp.responseText = " + xhttp.responseText)
 		<center>
 		<div id="Cartoons" style="display: none">
 		<div id="Cartoons_div_header"><a href="javascript:hide('Cartoons');" title="Cartoons"><img src="resources/adium.png" alt="Cartoons" class="SectionHeader"></a></div>
+			<a href="https://dilbert.com/" target="_blank" class="NewItem"> Dilbert</a><br>
 			<a href="http://www.mg.co.za/" target="_blank"> Zapiro</a><br>
 			<a href="http://www.garfield.com/" target="_blank"> Garfield</a><br>
 			<a href="http://www.mg.co.za/" target="_blank"> Madam and Eve</a><br>
-			<a href="http://www.pidjin.net/seasons/" target="_blank" class="NewItem"> Fredo&Pid'jin </a><br>
+			<a href="http://www.pidjin.net/seasons/" target="_blank"> Fredo&Pid'jin </a><br>
 			<a href="http://xkcd.com/" target="_blank"> xkcd (A webcomic of romance, sarcasm, math, and language.)</a><br>
 			<a href="https://chochox.com/" target="_blank"> Chochox</a><br>
 		</div>

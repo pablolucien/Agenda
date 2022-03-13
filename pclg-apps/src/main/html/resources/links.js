@@ -18,6 +18,18 @@ function toggle(elementId) {
     }
 }
 
+function toggleWithoutSemaphore(elementId) {
+    var ele = parent.body_frame.document.getElementById(elementId);
+    var semaphoreValue = + parent.body_frame.document.form1.semaphore.value;
+    if(ele.style.display == "block") {
+        ele.style.display = "none";
+    }
+    else {
+        ele.style.display = "block";
+        parent.body_frame.document.getElementById(elementId + '_div_header').scrollIntoView();
+    }
+}
+
 function toggle_test(elementId) {
     var ele = document.getElementById(elementId);
     if(ele.style.display == "block" || ele.style.display == "inline") {
