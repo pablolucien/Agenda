@@ -1,0 +1,10 @@
+{
+    "targets": [
+        {
+            "dirs": [
+                "${ROOT_C}/home/pablo/Biblioteca",
+                "${ROOT_F}/Biblioteca"
+            ]
+        }
+    ]
+}
