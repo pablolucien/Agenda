@@ -5,7 +5,6 @@ import org.pclg.log.LoggerFactory;
 
 import java.io.File;
 import java.io.IOException;
-import java.io.InputStream;
 import java.nio.file.Files;
 import java.nio.file.Path;
 import java.nio.file.StandardCopyOption;
@@ -18,12 +17,15 @@ import java.util.zip.ZipEntry;
 import java.util.zip.ZipFile;
 import java.util.zip.ZipOutputStream;
 
+import static org.pclg.tools.StringTools.EMPTY_STRING_ARRAY;
+
 /**
  * Archive tools such as zip, unzip, etc.
  */
 public class ArchiveTools {
     private static final EnhancedLogger LOGGER = LoggerFactory.makeEnhancedLogger();
     public static final String MANIFEST_NAME = "org.pclg.tools.ArchiveTools.manifest";
+    public static final String DOESN_T_EXIST_FORMAT = "Source file %s doesn't exist";
 
     private ArchiveTools() {
     }
@@ -34,19 +36,19 @@ public class ArchiveTools {
     
     public static void createZip(final File sourceFile, final File targetZipFile, final byte[] manifest) {
         if (!sourceFile.exists()) {
-            throw new RuntimeException("Source file " + sourceFile + " doesn't exist");
+            throw new ArchiveToolsException(String.format(DOESN_T_EXIST_FORMAT, sourceFile));
         }
         try {
             final Path target = Files.createFile(targetZipFile.toPath());
-            try (final ZipOutputStream zs = new ZipOutputStream(Files.newOutputStream(target))) {
+            try (final var zs = new ZipOutputStream(Files.newOutputStream(target))) {
                 if (manifest != null) {
-                    final ZipEntry zipEntry = new ZipEntry(MANIFEST_NAME);
+                    final var zipEntry = new ZipEntry(MANIFEST_NAME);
                     zs.putNextEntry(zipEntry);
                     zs.write(manifest);
                     zs.closeEntry();
                 }
 
-                final Path sourceDir = sourceFile.toPath();
+                final var sourceDir = sourceFile.toPath();
                 try (final Stream<Path> pathStream = Files.walk(sourceDir)) {
                     pathStream
                         .filter(path -> !path.equals(sourceDir))
@@ -72,16 +74,16 @@ public class ArchiveTools {
                 }
             }
         } catch (final IOException ex) {
-            LOGGER.error(ex);
+            throw new ArchiveToolsException(ex);
         }
     }
 
     public static void extractZip(final File sourceFile, final File targetDir) {
         if (!sourceFile.exists()) {
-            throw new RuntimeException("Source file " + sourceFile + " doesn't exist");
+            throw new ArchiveToolsException(String.format(DOESN_T_EXIST_FORMAT, sourceFile));
         }
-        try (final ZipFile zipFile = new ZipFile(sourceFile)) {
-            final Path databasePath = targetDir.toPath();
+        try (final var zipFile = new ZipFile(sourceFile)) {
+            final var databasePath = targetDir.toPath();
             if (!targetDir.exists()) {
                 Files.createDirectories(databasePath);
             }
@@ -94,13 +96,13 @@ public class ArchiveTools {
                     continue;
                 }
                 final String name = entryName.replace("\\", "/");     // FIXME: Why do I have to do this and is it the best way? Should I do something in createZip()?
-                final Path resolvedTarget = databasePath.resolve(name);
+                final var resolvedTarget = databasePath.resolve(name);
                 if (entry.isDirectory()) {
                     Files.createDirectories(resolvedTarget);
                 } else {
-                    final Path resolvedTargetParent = resolvedTarget.getParent();
+                    final var resolvedTargetParent = resolvedTarget.getParent();
                     Files.createDirectories(resolvedTargetParent);
-                    final InputStream inputStream = zipFile.getInputStream(entry);
+                    final var inputStream = zipFile.getInputStream(entry);
                     Files.copy(inputStream, resolvedTarget, StandardCopyOption.REPLACE_EXISTING);
                 }
             }
@@ -111,24 +113,24 @@ public class ArchiveTools {
 
     public static byte[] readManifest(final File sourceFile) {
         if (!sourceFile.exists()) {
-            throw new RuntimeException("Source file " + sourceFile + " doesn't exist");
+            throw new ArchiveToolsException(String.format(DOESN_T_EXIST_FORMAT, sourceFile));
         }
-        try (final ZipFile zipFile = new ZipFile(sourceFile)) {
+        try (final var zipFile = new ZipFile(sourceFile)) {
             final ZipEntry entry = zipFile.getEntry(MANIFEST_NAME);
             if (entry == null) {
                 return ArrayTools.NULL_BYTE_ARRAY;
             }
-            final InputStream inputStream = zipFile.getInputStream(entry);
+            final var inputStream = zipFile.getInputStream(entry);
             final int entrySize = (int) entry.getSize();
-            final byte[] bytes = new byte[entrySize];
+            final var bytes = new byte[entrySize];
             final int count;
             if ((count = inputStream.read(bytes)) != entrySize) {
-                throw new RuntimeException("Error reading manifest: read " + count + " bytes; expected " + entrySize);
+                throw new ArchiveToolsException("Error reading manifest: read " + count + " bytes; expected " + entrySize);
             }
             return bytes;
         } catch (final IOException ex) {
             LOGGER.error(ex);
-            throw new RuntimeException(ex);
+            throw new ArchiveToolsException(ex);
         }
     }
 
@@ -142,13 +144,12 @@ public class ArchiveTools {
      */
     public static Optional<String[]> listZip(final File archiveFile) {
         final List<String> strings = new ArrayList<>();
-        try (final ZipFile zipFile = new ZipFile(archiveFile)) {
+        try (final var zipFile = new ZipFile(archiveFile)) {
             for (final Enumeration<? extends ZipEntry> entries = zipFile.entries(); entries.hasMoreElements(); ) {
                 final ZipEntry entry = entries.nextElement();
                 strings.add(entry.getName());
             }
-            String[] result = new String[strings.size()];
-            result = strings.toArray(result);
+            final var result = strings.toArray(EMPTY_STRING_ARRAY);
             return Optional.of(result);
         } catch (final IOException ex) {
             ToolBox.showInfo(ex);
