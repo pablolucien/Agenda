@@ -145,11 +145,11 @@ public final class AgendaRecordImpl implements AgendaRecord {
 	public void populate() {
 		if (!isPopulated) {
 			LOGGER.debug(String.format("Populating record %d/%d", key, version));
-			otherFieldManagerHelpers.forEach(h -> {
+			otherFieldManagerHelpers.forEach(helper -> {
 				try {
-					h.retrieve(this);
-				} catch (SQLException e) {
-					throw new AgendaDbException(e);
+					helper.retrieve(this);
+				} catch (final SQLException ex) {
+					throw new AgendaDbException(ex);
 				}
 			});
 			isPopulated = true;

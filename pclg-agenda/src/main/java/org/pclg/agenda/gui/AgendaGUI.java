@@ -450,18 +450,18 @@ public final class AgendaGUI extends JFrame {
      * @param records los registros a mostrar.
      */
     void showSelectedRecords(final AgendaRecord[] records) {
-        for (final AgendaRecord record : records) {
-            showRecord(record);
+        for (final AgendaRecord agendaRecord : records) {
+            showRecord(agendaRecord);
         }
     }
 
-    void showRecord(final AgendaRecord record) {
+    void showRecord(final AgendaRecord agendaRecord) {
         // Si el registro ya est? en alguna pesta?a, seleccionamos esta.
         for (int ii = 0, tabCount = tabbedPane.getTabCount(); ii < tabCount; ii++) {
             final Component component = tabbedPane.getComponentAt(ii);
             if (component instanceof DataEntry) {
                 final DataEntry dataEntry = (DataEntry) component;
-                if (dataEntry.getRecordId() == record.getKey()) {
+                if (dataEntry.getRecordId() == agendaRecord.getKey()) {
                     tabbedPane.setSelectedIndex(ii);
                     return;
                 }
@@ -470,8 +470,8 @@ public final class AgendaGUI extends JFrame {
 
         // Si no est?, lo agregamos.
         final DataEntry dataEntry = new DataEntry(properties, agendaDb,
-            tabbedPane, this, record);
-        final String title = beautify(record.getFirstname()) + ' ' + beautify(record.getLastname());
+            tabbedPane, this, agendaRecord);
+        final String title = beautify(agendaRecord.getFirstname()) + ' ' + beautify(agendaRecord.getLastname());
         add2TabbedPane(title.trim().length() > 0 ? title :
             getStringFromProperties(properties, "no.name.tab.title"), dataEntry);
     }
