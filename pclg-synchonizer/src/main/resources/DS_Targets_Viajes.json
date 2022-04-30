@@ -1,0 +1,11 @@
+{
+    "targets": [
+        {
+            "dirs": [
+                "${ROOT_C}/home/pablo/Viajes",
+                "${ROOT_L}/home/pablo/Viajes",
+                "${ROOT_F}/home/pablo/Viajes"
+            ]
+        }
+    ]
+}

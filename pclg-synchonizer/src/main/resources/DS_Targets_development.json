@@ -108,6 +108,15 @@
                 "${ROOT_E}/home/pablo/development/projects/RetrofitCrashCourse"
             ],
             "Exclude": ".idea/:build/:.gradle/:*.log"
+        },
+        {
+            "dirs": [
+                "${ROOT_C}/home/pablo/development/procesia",
+                "${ROOT_F}/home/pablo/development/procesia",
+                "${ROOT_L}/home/pablo/development/procesia",
+                "${ROOT_E}/home/pablo/development/procesia"
+            ],
+            "Exclude": ".idea/:build/:.gradle/:*.log"
         }
     ]
 }
