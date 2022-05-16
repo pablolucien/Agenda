@@ -29,6 +29,10 @@ START		0		BYTES		ca-fe-ba-be						Java class file
 >START		6  BYTES	00-39										(Version 13)
 >START		6  BYTES	00-40										(Version 14)
 >START		6  BYTES	00-41										(Version 15)
+>START		6  BYTES	00-42										(Version 16)
+>START		6  BYTES	00-43										(Version 17)
+>START		6  BYTES	00-44										(Version 18)
+>START		6  BYTES	00-45										(Version 19)
 
 START		0		BYTES		FF-FE-57-00-69-00-6E-00-64-00-6F-00-77-00-73-00-20-00-52-00-65-00-67-00-69-00-73-00-74-00-72-00-79-00-20-00-45-00-64-00-69-00-74-00-6F-00-72	Windows Registry Configuration
 
@@ -86,7 +90,7 @@ START		0	BYTES	3f-5f-03-00								MS Windows Help Data
 
 #
 # si hay espacios en la string estamos jodidos
-# se podr�a hacer la comparaci�n en string case insensitive (StRiNg)
+# the comparation should be string case insensitive (StRiNg)
 #START		0		string	<!DOCTYPE HTML					Pagina HTML
 #START		0		string	<!DOCTYPE html					Pagina HTML
 # version de lo anterior en bytes
