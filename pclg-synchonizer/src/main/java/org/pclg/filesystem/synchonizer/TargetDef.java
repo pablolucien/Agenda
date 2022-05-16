@@ -48,7 +48,7 @@ final class TargetDef implements Iterator<File[]> {
     private final String excludePattern;
     private final String includePattern;
     private final boolean recurse;
-    private boolean unidirectional;
+    private final boolean unidirectional;
     private Pair<File, File> filePair;
     private final File[] files;
     private int filesPointer;
@@ -58,8 +58,8 @@ final class TargetDef implements Iterator<File[]> {
         this(true, false, null, null, null, files);
     }
 
-    TargetDef(final boolean recurse, boolean unidirectional, final String excludePattern,
-              final String includePattern, final String[] includedFileNames, final File... files) {
+    TargetDef(final boolean recurse, final boolean unidirectional, final String excludePattern,
+            final String includePattern, final String[] includedFileNames, final File... files) {
         this.recurse = recurse;
         this.unidirectional = unidirectional;
         this.excludePattern = excludePattern;
@@ -335,26 +335,5 @@ final class TargetDef implements Iterator<File[]> {
             ", filePair=" + filePair +
             (files != null ? ", " + Arrays.asList(files) : "") +
             '}';
-    }
-
-    private static class OnlyIncludedFilesIterator implements Iterator<File[]> {
-        private final File[] dirs;
-        private final String[] fileNames;
-        private int index;
-
-        public OnlyIncludedFilesIterator(File[] dirs, String[] fileNames) {
-            this.dirs = dirs.clone();
-            this.fileNames = fileNames.clone();
-        }
-
-        @Override
-        public boolean hasNext() {
-            return index < fileNames.length;
-        }
-
-        @Override
-        public File[] next() {
-            return new File[] {new File(dirs[0], fileNames[index]), new File(dirs[1], fileNames[index++])};
-        }
     }
 }
