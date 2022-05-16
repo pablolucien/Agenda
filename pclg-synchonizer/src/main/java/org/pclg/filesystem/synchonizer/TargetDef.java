@@ -100,9 +100,9 @@ final class TargetDef implements Iterator<File[]> {
         if (!dirA.isDirectory() || !dirB.isDirectory()) {
             throw new IllegalStateException();
         }
-//        if (includedFileNames != null && includedFileNames.length != 0) {
-//            return new OnlyIncludedFilesIterator(files, includedFileNames);
-//        }
+        if (includedFileNames != null && includedFileNames.length != 0) {
+            return new OnlyIncludedFilesIterator(files, includedFileNames);
+        }
         final List<File> filesA;
         final List<File> filesB;
         if (recurse) {
