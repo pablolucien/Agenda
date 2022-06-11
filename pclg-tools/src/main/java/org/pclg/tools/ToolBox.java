@@ -67,8 +67,7 @@ public final class ToolBox {
      * @return El string leido.
      */
     public static String getString(final String prompt) throws IOException {
-        final BufferedReader sysin =
-				new BufferedReader(new InputStreamReader(System.in));
+        final BufferedReader sysin = new BufferedReader(new InputStreamReader(System.in));
         System.out.print(prompt);
         return sysin.readLine();
     }
@@ -84,8 +83,7 @@ public final class ToolBox {
 	 * @return el String str completado con el padChar hasta la longitud exacta
 	 * len.
 	 */
-	public static String padAndClip(final String str, final int len,
-			final char padChar) {
+	public static String padAndClip(final String str, final int len, final char padChar) {
 		return pad(str, len, padChar).substring(0, len);
 	}
 
@@ -108,18 +106,12 @@ public final class ToolBox {
      * @param padChar El caracter de relleno
      * @return el String str completado por la derecha con el padChar hasta la longitud minima len
      */
-    public static String pad(final String str, final int len,
-			final char padChar) {
+    public static String pad(final String str, final int len, final char padChar) {
 		final int strLen = str.length();
 		if (strLen >= len) {
 			return str;
 		}
-		final StringBuilder builder = new StringBuilder(len);
-		builder.append(str);
-		for (int ii = 0; ii < len - strLen; ii++) {
-			builder.append(padChar);
-        }
-        return builder.toString();
+        return str + String.valueOf(padChar).repeat(len - strLen);
     }
 
     /**
@@ -138,12 +130,7 @@ public final class ToolBox {
 		if (strLen >= len) {
 			return str;
 		}
-		final StringBuilder builder = new StringBuilder(len);
-		for (int ii = 0; ii < len - strLen; ii++) {
-			builder.append(padChar);
-        }
-		builder.append(str);
-        return builder.toString();
+        return String.valueOf(padChar).repeat(len - strLen) + str;
     }
 
     /**
@@ -161,7 +148,7 @@ public final class ToolBox {
      * @return La string con los reemplazos.
      */
     public static String replace(final String oldString, int start, final int len,
-                                 final String replacement) {
+            final String replacement) {
         if (len < 0) {
             throw new IllegalArgumentException("len: " + len + " < 0");
         }
@@ -197,7 +184,7 @@ public final class ToolBox {
      * @return La string con los reemplazos.
      */
     public static String replaceAll(String oldString, final String notWanted,
-                                    final String replacement) {
+            final String replacement) {
         String newString = oldString;
         final int lenOld = notWanted.length();
         final int lenNew = replacement.length();
@@ -528,19 +515,22 @@ public final class ToolBox {
         return Optional.of(new File(baseDir));
     }
 
-	/** Regex de s�lo n�meros. */
-	private static final Pattern NUMERIC_PATTERN = Pattern.compile("(\\d+).*");
+	/** Regex for only decimal numbers (at least one digit after the decimal point). */
+	private static final Pattern NUMERIC_PATTERN_2 = Pattern.compile("\\d*\\.?\\d+");
 
-	/** Regex de s�lo n�meros. */
+    /** Regex for only decimal numbers (at least one digit before the decimal point). */
+    private static final Pattern NUMERIC_PATTERN_1 = Pattern.compile("\\d+\\.?\\d*");
+
+	/** Regex for only integer numbers. */
 	private static final Pattern INTEGER_PATTERN = Pattern.compile("\\d+");
 
-	/**
+    /**
 	 * <code>true</code> si esta String representa un n�mero.
 	 * @param string la String a comprobar.
 	 * @return <code>true</code> si esta String representa un n�mero <code>false</code> de lo contrario.
 	 */
 	public static boolean isNumber(final String string) {
-		return string != null && NUMERIC_PATTERN.matcher(string).matches();
+		return string != null && (NUMERIC_PATTERN_1.matcher(string).matches() || NUMERIC_PATTERN_2.matcher(string).matches());
 	}
 
 	/**
