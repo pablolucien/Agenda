@@ -29,9 +29,9 @@
         ${lib_dir}/ez-vcard-0.9.5.jar:
         ${lib_dir}/jcommander-1.27.jar:
         ${lib_dir}/jpatterns-0.1.jar:
-        ${lib_dir}/log4j-1.2-api-2.13.3.jar:
-        ${lib_dir}/log4j-api-2.13.3.jar:
-        ${lib_dir}/log4j-core-2.13.3.jar:
+        ${lib_dir}/log4j-1.2-api-2.17.2.jar:
+        ${lib_dir}/log4j-api-2.17.2.jar:
+        ${lib_dir}/log4j-core-2.17.2.jar:
         ${lib_dir}/velocity-1.7-dep.jar:
     "/>
 
@@ -125,7 +125,7 @@
             <fileset dir="${build}" includes="**/*.class"/>
             <manifest>
                 <attribute name="Built-By" value="${user.name}"/>
-                <attribute name="Class-Path" value="log4j-api-2.13.3.jar : log4j-core-2.13.3.jar : ."/>
+                <attribute name="Class-Path" value="log4j-api-2.17.2.jar : log4j-core-2.17.2.jar : ."/>
             </manifest>
         </jar>
     </target>

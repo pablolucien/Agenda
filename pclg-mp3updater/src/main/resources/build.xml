@@ -12,9 +12,9 @@
     <property name="dist" location="${basedir}/../../dist"/>
     <property name="pclg-mp3updater_jar_name" value="pclg-mp3updater.jar"/>
     <property name="classpath" value="
-        ${lib_dir}/log4j-1.2-api-2.13.3.jar:
-        ${lib_dir}/log4j-api-2.13.3.jar:
-        ${lib_dir}/log4j-core-2.13.3.jar:
+        ${lib_dir}/log4j-1.2-api-2.17.2.jar:
+        ${lib_dir}/log4j-api-2.17.2.jar:
+        ${lib_dir}/log4j-core-2.17.2.jar:
         ${lib_dir}/jid3lib-0.5.4.jar:
 
         ${dist}/pclg-tools.jar:
@@ -51,7 +51,7 @@
             <manifest>
                 <attribute name="Built-By" value="${user.name}"/>
                 <attribute name="Main-Class" value="org.pclg.media.mp3.MP3Update"/>
-                <attribute name="Class-Path" value="pclg-tools.jar : Icons.jar : jid3lib-0.5.4.jar : log4j-api-2.13.3.jar : log4j-core-2.13.3.jar : ."/>
+                <attribute name="Class-Path" value="pclg-tools.jar : Icons.jar : jid3lib-0.5.4.jar : log4j-api-2.17.2.jar : log4j-core-2.17.2.jar : ."/>
             </manifest>
         </jar>
     </target>
