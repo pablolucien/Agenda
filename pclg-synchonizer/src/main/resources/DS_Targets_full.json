@@ -1,7 +1,8 @@
 {
     "import": [
         "DS_Targets_medium.json",
-        "DS_Targets_repository.json"
+        "DS_Targets_repository.json",
+        "DS_Targets_Biblioteca.json"
     ],
     "targets": [
         {
