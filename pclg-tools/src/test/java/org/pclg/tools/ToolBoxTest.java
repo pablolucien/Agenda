@@ -3,7 +3,13 @@ package org.pclg.tools;
 import org.testng.annotations.DataProvider;
 import org.testng.annotations.Test;
 
+import java.math.BigDecimal;
+import java.math.RoundingMode;
+
 import static org.testng.Assert.assertEquals;
+import static org.testng.Assert.assertFalse;
+import static org.testng.Assert.assertNotEquals;
+import static org.testng.Assert.assertTrue;
 
 /**
  * @author Pablo
@@ -82,6 +88,43 @@ public class ToolBoxTest {
 	@Test(dataProvider = "numberDataProvider")
 	public void testIsNumber(final String testValue, final boolean expectedResult, final String reason) {
 		assertEquals(ToolBox.isNumber(testValue), expectedResult, '[' + testValue + "] " + reason);
+	}
+
+	@Test
+	public void testBigDecimalEquals_areEqual() {
+		final BigDecimal bigDecimal1 = new BigDecimal("1.5").setScale(5, RoundingMode.UNNECESSARY);
+		final BigDecimal bigDecimal2 = bigDecimal1.setScale(10, RoundingMode.UNNECESSARY);
+		assertNotEquals(bigDecimal2, bigDecimal1);
+		assertTrue(ToolBox.bigDecimalEquals(bigDecimal1, bigDecimal2));
+	}
+
+	@Test
+	public void testBigDecimalEquals_areNotEqual() {
+		final BigDecimal bigDecimal1 = new BigDecimal("1.5").setScale(5, RoundingMode.UNNECESSARY);
+		final BigDecimal bigDecimal2 = new BigDecimal("1.6").setScale(5, RoundingMode.UNNECESSARY);
+		assertNotEquals(bigDecimal2, bigDecimal1);
+		assertFalse(ToolBox.bigDecimalEquals(bigDecimal1, bigDecimal2));
+	}
+
+	@Test
+	public void testBigDecimalEquals_areNotEqual_WithNullValue1() {
+		final BigDecimal bigDecimal1 = null;
+		final BigDecimal bigDecimal2 = new BigDecimal("1.5").setScale(5, RoundingMode.UNNECESSARY);
+		assertFalse(ToolBox.bigDecimalEquals(bigDecimal1, bigDecimal2));
+	}
+
+	@Test
+	public void testBigDecimalEquals_areNotEqual_WithNullValue2() {
+		final BigDecimal bigDecimal1 = new BigDecimal("1.5").setScale(5, RoundingMode.UNNECESSARY);
+		final BigDecimal bigDecimal2 = null;
+		assertFalse(ToolBox.bigDecimalEquals(bigDecimal1, bigDecimal2));
+	}
+
+	@Test
+	public void testBigDecimalEquals_areNotEqual_WithNullValues() {
+		final BigDecimal bigDecimal1 = null;
+		final BigDecimal bigDecimal2 = null;
+		assertTrue(ToolBox.bigDecimalEquals(bigDecimal1, bigDecimal2));
 	}
 
 //	@Test

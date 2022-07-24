@@ -13,6 +13,7 @@ import java.io.IOException;
 import java.io.InputStreamReader;
 import java.io.PrintStream;
 import java.io.RandomAccessFile;
+import java.math.BigDecimal;
 import java.net.URL;
 import java.sql.SQLException;
 import java.text.NumberFormat;
@@ -541,4 +542,11 @@ public final class ToolBox {
 	public static boolean isInteger(final String string) {
 		return string != null && INTEGER_PATTERN.matcher(string).matches();
 	}
+
+    /**
+     * Compares numerically two BigDecimal objects.
+     */
+    public static boolean bigDecimalEquals(final BigDecimal bigDecimal1, final BigDecimal bigDecimal2) {
+        return bigDecimal1 == null ? bigDecimal2 == null : bigDecimal2 != null && bigDecimal1.compareTo(bigDecimal2) ==  0;
+    }
 }
