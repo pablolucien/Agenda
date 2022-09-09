@@ -18,6 +18,18 @@
             "unidirectional": true,
             "dirs": [
                 "${ROOT_C}/home/pablo/",
+                "${ROOT_L}/home/pablo/",
+                "${ROOT_E}/home/pablo/",
+                "${ROOT_F}/home/pablo/"
+            ],
+            "files": [
+                "Comandos_de_Ubuntu.txt"
+            ]
+        },
+        {
+            "unidirectional": true,
+            "dirs": [
+                "${ROOT_C}/home/pablo/",
                 "${ROOT_L}/dev/",
                 "${ROOT_E}/home/pablo/",
                 "${ROOT_F}/home/pablo/",
@@ -55,16 +67,6 @@
         },
         {
             "dirs": [
-                "${ROOT_C}/usr/local/Q-Dir/",
-                "${ROOT_C}/home/pablo/databases/"
-            ],
-            "files": [
-                "MainView_ACME.qdr",
-                "MainView_Minerva.qdr"
-            ]
-        },
-        {
-            "dirs": [
                 "${ROOT_C}/home/pablo/databases/",
                 "${ROOT_E}/home/pablo/databases",
                 "${ROOT_F}/home/pablo/databases",
@@ -83,12 +85,14 @@
         {
           "dirs": [
                 "${ROOT_F}/m2_repository/org/pclg/",
+                "${ROOT_L}/m2_repository/org/pclg/",
                 "${LOCAL_M2_REPOSITORY_DIR}/org/pclg/"
             ]
         },
         {
           "dirs": [
                 "${ROOT_F}/m2_repository/com/zoicapital/",
+                "${ROOT_L}/m2_repository/com/zoicapital/",
                 "${LOCAL_M2_REPOSITORY_DIR}/com/zoicapital/"
             ]
         }

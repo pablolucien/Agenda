@@ -55,7 +55,7 @@
                 "${ROOT_F}/home/pablo/development/projects/portfolio",
                 "${ROOT_L}/home/pablo/development/projects/portfolio"
             ],
-            "Exclude": "*_custom.properties:*_technical.properties:target/:out/:.idea/:.git/:*.log"
+            "Exclude": "*_custom.properties:target/:out/:.idea/:.git/:*.log"
         },
         {
             "dirs": [
