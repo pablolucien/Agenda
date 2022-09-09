@@ -39,7 +39,6 @@
             "Exclude": "*_custom.properties:*_technical.properties:Fortunes.properties:*.log"
         },
         {
-            "unidirectional": true,
             "dirs": [
                 "${ROOT_C}/home/pablo/development/projects/Alles",
                 "${ROOT_F}/home/pablo/development/projects/Alles",
