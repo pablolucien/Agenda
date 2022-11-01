@@ -159,6 +159,7 @@ public final class AgendaRecordImpl implements AgendaRecord {
     @Override
     public String toXML() {
 		try {
+			populate();
 			/* init jaxb marshaler */
 			final JAXBContext jaxbContext = JAXBContext.newInstance(AgendaRecordImpl.class);
 			final Marshaller jaxbMarshaller = jaxbContext.createMarshaller();

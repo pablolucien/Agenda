@@ -33,7 +33,7 @@ import java.io.File;
 import java.io.FileInputStream;
 import java.io.IOException;
 import java.io.InputStreamReader;
-import java.nio.charset.Charset;
+import java.nio.charset.StandardCharsets;
 import java.sql.SQLException;
 import java.sql.Timestamp;
 import java.text.MessageFormat;
@@ -185,6 +185,7 @@ public final class AgendaUtil {
 
 	public static void saveVCard(final AgendaRecord record, final File dir) throws IOException {
 		final VCard vcard = new VCard();
+		record.populate();
 
 		final StructuredName name = new StructuredName();
 		name.setGiven(record.getFirstname());
@@ -291,7 +292,7 @@ public final class AgendaUtil {
 		try {
 			final List<VCard> vcards;
 			try (final InputStreamReader reader = new InputStreamReader(
-				new FileInputStream(file), Charset.forName("UTF-8"))) {
+				new FileInputStream(file), StandardCharsets.UTF_8)) {
 				vcards = Ezvcard.parse(reader).all();
 			}
 			for (final VCard vcard : vcards) {
