@@ -28,6 +28,7 @@ import org.pclg.log.LoggerFactory;
 import org.pclg.tools.FileTools;
 import org.pclg.tools.GUITools;
 import org.pclg.tools.PropertiesHelper;
+import org.pclg.tools.StringTools;
 
 import java.io.File;
 import java.io.FileInputStream;
@@ -235,6 +236,7 @@ public final class AgendaUtil {
 			categories.addValue(grupo.getNombre());
 		}
 		vcard.setCategories(categories);
+		vcard.setOrganization(record.getGroups().stream().map(Grupo::getNombre).collect(Collectors.toList()).toArray(StringTools.EMPTY_STRING_ARRAY));
 
 		if (!isEmptyOrBlank(record.getMark())) {
 			vcard.addExtendedProperty(EXTENDED_MARCA, record.getMark());

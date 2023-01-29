@@ -62,7 +62,7 @@
     <target name="pclg-condominio_jar" depends="_compile">
         <jar destfile="${dist}/${pclg-condominio_jar_name}" basedir="${build}" excludes="**">
             <fileset dir="${build}" includes="**/*.class"/>
-            <fileset file="${resources}/La_comunidad_recto_y_verso_template_v2.docx"/>
+            <fileset file="${resources}/La_comunidad_recto_y_verso_template_v3.docx"/>
             <fileset file="${resources}/La_comunidad_recibo_unico.doc"/>
             <manifest>
                 <attribute name="Built-By" value="${user.name}"/>
