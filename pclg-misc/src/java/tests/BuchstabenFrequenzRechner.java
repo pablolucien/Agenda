@@ -16,7 +16,7 @@ import java.util.TreeMap;
 
 /*
  * We should forget about small efficiencies, say about 97% of the time: 
- * Premature optimization is the root of all evil. — Donald Knuth
+ * Premature optimization is the root of all evil. ï¿½ Donald Knuth
  * 
  * Creado el 10-Jul-2008
  */
@@ -126,6 +126,38 @@ final class BuchstabenFrequenzRechner {
      * @param name
      * @throws IOException
      */
+    private void processFile(final String name) throws IOException {
+        BufferedInputStream stream = null;
+        try {
+            stream = new BufferedInputStream(new FileInputStream(name));
+            int c;
+            while ((c = stream.read()) != -1) {
+                final char ch = Character.toLowerCase((char) c);
+                if (Character.isWhitespace(ch)) {
+                    continue;
+                }
+                final Character character = new Character(ch);
+                int[] count = almacenAlfabetico.get(character);
+                if (count == null) {
+                    count = new int[1];
+                    almacenAlfabetico.put(character, count);
+                }
+                count[0]++;
+                total++;
+            }
+        } finally {
+            if (stream != null) {
+                stream.close();
+            }
+        }
+        
+    }
+
+
+    /**
+     * @param name
+     * @throws IOException
+     */
     private void processFileNIO(final String name) throws IOException {
 		FileInputStream fin = null;
 		try {
@@ -161,37 +193,6 @@ final class BuchstabenFrequenzRechner {
         
     }
 
-    /**
-     * @param name
-     * @throws IOException
-     */
-    private void processFile(final String name) throws IOException {
-        BufferedInputStream stream = null;
-        try {
-            stream = new BufferedInputStream(new FileInputStream(name));
-            int c;
-            while ((c = stream.read()) != -1) {
-                final char ch = Character.toLowerCase((char) c);
-                if (Character.isWhitespace(ch)) {
-                    continue;
-                }
-                final Character character = new Character(ch);
-                int[] count = almacenAlfabetico.get(character);
-                if (count == null) {
-                    count = new int[1];
-                    almacenAlfabetico.put(character, count);
-                }
-                count[0]++;
-                total++;
-            }
-        } finally {
-            if (stream != null) {
-                stream.close();
-            }
-        }
-        
-    }
-
     public static void main(final String[] args) throws IOException {
         if (args.length == 0) {
             usage();
@@ -204,6 +205,6 @@ final class BuchstabenFrequenzRechner {
      * 
      */
     private static void usage() {
-        System.err.println("¿A qué le voy a calcular la frecuencia?");
+        System.err.println("Â¿A quÃ© le voy a calcular la frecuencia?");
     }
 }
