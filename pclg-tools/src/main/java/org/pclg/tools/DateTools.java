@@ -2,6 +2,7 @@ package org.pclg.tools;
 
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
+import java.time.LocalDate;
 import java.util.Calendar;
 import java.util.Date;
 import java.util.GregorianCalendar;
@@ -121,6 +122,21 @@ public final class DateTools {
         }
 
         // Si llegamos hasta aqui es que la cagamos
-        throw(theException);
+        throw theException;
+    }
+
+    public static Pair<LocalDate, LocalDate> getCorrespondingQuarter(final LocalDate date) {
+        final int startOfQuarterMonthNr = (date.getMonthValue() - 1) / 3 * 3 + 1;
+        final LocalDate start = LocalDate.of(date.getYear(), startOfQuarterMonthNr, 1);
+        LocalDate end = start.plusMonths(2);
+        end = end.plusDays(end.lengthOfMonth() - 1);
+        return new Pair<>(start, end);
+    }
+
+    public static Pair<LocalDate, LocalDate> getPreviousQuarter(final LocalDate date) {
+        final Pair<LocalDate, LocalDate> previousQuarter = getCorrespondingQuarter(date);
+        final LocalDate previousMonth = previousQuarter.second().minusMonths(3);
+        final LocalDate end = LocalDate.of(previousMonth.getYear(), previousMonth.getMonth(), previousMonth.lengthOfMonth());
+        return new Pair<>(previousQuarter.first().minusMonths(3), end);
     }
 }
