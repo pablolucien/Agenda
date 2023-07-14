@@ -4,7 +4,6 @@
 
     <property name="module_pclg_condominio" location="${basedir}/pclg-condominio"/>
     <property file="${basedir}/local_config.properties"/>
-    
     <property name="src" location="${module_pclg_condominio}/src/main/java"/>
     <property name="resources" location="${module_pclg_condominio}/src/main/resources"/>
     <property name="lib_dir" value="${basedir}/../lib"/>
