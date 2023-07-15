@@ -4,6 +4,7 @@ import org.apache.logging.log4j.Level;
 import org.apache.logging.log4j.Logger;
 import org.pclg.log.LoggerFactory;
 
+import java.lang.reflect.InvocationTargetException;
 import java.sql.Connection;
 import java.sql.Driver;
 import java.sql.DriverManager;
@@ -16,7 +17,7 @@ public final class DbManager {
 	private static final String DERBY_TABLE_INEXISTENT = "42X05";
 	private static final String DERBY_SCHEMA_INEXISTENT = "42Y07";
 	private static Connection dbConnection;
-	private String clientId;
+	private final String clientId;
 
 /*
 	String strUrl = "jdbc:datadirect:oracle://" + "129.158.229.21:1521;SID=ORCL9";
@@ -38,8 +39,8 @@ public final class DbManager {
 	}
 
 	public Connection getConnection(final String driverClassName, final String connectString, final String user, final String pwd)
-			throws SQLException, ClassNotFoundException, IllegalAccessException, InstantiationException {
-		final Driver driver = (Driver) Class.forName(driverClassName).newInstance();
+			throws SQLException, ClassNotFoundException, IllegalAccessException, InstantiationException, NoSuchMethodException, InvocationTargetException {
+		final Driver driver = (Driver) Class.forName(driverClassName).getDeclaredConstructor().newInstance();
 		LOGGER.warn(String.format("driver = %s -- %d.%d%n", driver.toString(), driver.getMajorVersion(), driver.getMinorVersion()));
 		final Properties props = new Properties();
 		props.put("user", user);

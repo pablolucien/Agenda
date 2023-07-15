@@ -27,7 +27,8 @@ public class AuditPostprocessor implements VersatileProcessor {
 
     @Override
     public void go() {
-        try (final PreparedStatement statement = connection.prepareStatement("UPDATE CONTROL SET FechaActualizacion = ?")){
+        try (final PreparedStatement statement = connection.prepareStatement(
+                "UPDATE CONTROL SET \"value\" = ? WHERE \"key\" = 'UpdateDateTime'")) {
             statement.setTimestamp(1, new Timestamp(new Date().getTime()));
             statement.execute();
         } catch (final SQLException ex) {

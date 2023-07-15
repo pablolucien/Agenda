@@ -26,6 +26,7 @@ import javax.swing.JOptionPane;
 import java.awt.Component;
 import java.io.File;
 import java.io.IOException;
+import java.lang.reflect.InvocationTargetException;
 import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.PreparedStatement;
@@ -210,10 +211,9 @@ public final class AgendaDbJDBC implements AgendaDb {
     private DbEngine dbEngine;
 
     @Override
-    public void initDb(final Properties appProperties, final boolean checkTables,
-            final boolean forceCreateTables)
-            throws InstantiationException, IllegalAccessException,
-            ClassNotFoundException, SQLException {
+    public void initDb(final Properties appProperties, final boolean checkTables, final boolean forceCreateTables)
+            throws InstantiationException, IllegalAccessException, ClassNotFoundException, SQLException,
+            InvocationTargetException, NoSuchMethodException {
         if (appProperties instanceof ObservableProperties) {
             ((ObservableProperties) appProperties).addChangeObserver(this::initializeMutableProperties);
         }
@@ -582,7 +582,7 @@ public final class AgendaDbJDBC implements AgendaDb {
     @Override
     public Optional<Timestamp> lastUpdated() throws SQLException {
         try (final PreparedStatement pstmt = dbConnection.prepareStatement(
-                  "SELECT FechaActualizacion FROM ROOT.CONTROL");
+                "SELECT \"value\" FROM ROOT.CONTROL WHERE \"key\" = 'UpdateDateTime'");
              final ResultSet resultSet = pstmt.executeQuery()) {
             return resultSet.next() ? Optional.ofNullable(resultSet.getTimestamp(1)) : Optional.empty();
         }
@@ -785,7 +785,8 @@ public final class AgendaDbJDBC implements AgendaDb {
             Pais.setDefaultCountry(Pais.getInstance(getStringFromProperties(properties, "Agenda.default.country")));
             Grupo.init(getListaGrupos());
             TipoTelefono.init(getListaTiposTelefono());
-        } catch (InstantiationException | IllegalAccessException | ClassNotFoundException ex) {
+        } catch (final InstantiationException | IllegalAccessException | ClassNotFoundException
+                       | InvocationTargetException | NoSuchMethodException ex) {
             LOGGER.error(LoggerFactory.ERROR_TAG, ex);
         }
     }

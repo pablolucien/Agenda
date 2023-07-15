@@ -7,6 +7,7 @@ import org.pclg.agenda.entities.TipoTelefono;
 import org.pclg.agenda.plugins.Plugin;
 
 import java.awt.Component;
+import java.lang.reflect.InvocationTargetException;
 import java.sql.SQLException;
 import java.sql.Timestamp;
 import java.util.List;
@@ -23,8 +24,8 @@ public interface AgendaDb {
 	String CONTACTO_TABLE = "CONTACTO";
 
 	void initDb(Properties properties, boolean checkTables,
-        boolean forceCreateTables) throws InstantiationException, 
-        IllegalAccessException, ClassNotFoundException, SQLException;
+        boolean forceCreateTables) throws InstantiationException, IllegalAccessException, ClassNotFoundException,
+			SQLException, InvocationTargetException, NoSuchMethodException;
 
 	void stopDb(boolean killDerby, String shutdownUrl) throws SQLException;
 
