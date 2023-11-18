@@ -2,6 +2,7 @@
     "import": [
         "DS_Targets_light.json",
         "DS_Targets_laboral.json",
+        "DS_Targets_Viajes.json",
         "DS_Targets_projects_quarantine.json"
     ],
     "targets": [
