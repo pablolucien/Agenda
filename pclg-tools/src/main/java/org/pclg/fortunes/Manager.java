@@ -8,6 +8,7 @@ import org.pclg.tools.PropertiesHelper;
 import org.pclg.xtras.ClassPathHacker;
 
 import java.io.IOException;
+import java.lang.reflect.InvocationTargetException;
 import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.PreparedStatement;
@@ -31,7 +32,7 @@ public class Manager {
 	private final Connection connection;
 
 	public Manager() throws ClassNotFoundException, SQLException, InstantiationException,
-			IllegalAccessException, IOException {
+			IllegalAccessException, IOException, InvocationTargetException, NoSuchMethodException {
         final Properties properties = new Properties();
 		PropertiesHelper.loadPropertiesFromFile(properties, "Fortunes.properties");
 		final String applicationClassPath =
@@ -74,10 +75,10 @@ public class Manager {
 	}
 
 	static Connection getConnection(final Properties appProperties)
-		    throws InstantiationException, IllegalAccessException,
-		    ClassNotFoundException, SQLException {
+			throws InstantiationException, IllegalAccessException,
+			ClassNotFoundException, SQLException, NoSuchMethodException, InvocationTargetException {
 		final String driver = appProperties.getProperty("FortunesDb.driver");
-		Class.forName(driver).newInstance();
+		Class.forName(driver).getDeclaredConstructor().newInstance();
 		LOGGER.log(Level.INFO, "Loaded the driver: " + driver);
 		final String connectString = appProperties.getProperty("FortunesDb.url");
 		final Connection dbConnection = DriverManager

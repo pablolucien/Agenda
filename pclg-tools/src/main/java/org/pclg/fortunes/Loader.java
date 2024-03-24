@@ -8,6 +8,7 @@ import java.io.BufferedReader;
 import java.io.File;
 import java.io.FileReader;
 import java.io.IOException;
+import java.lang.reflect.InvocationTargetException;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.SQLException;
@@ -34,7 +35,7 @@ public class Loader {
 	 * Loads the fortunes Unix-style into the database.
 	 */
 	private void loadFortunes() throws IOException, ClassNotFoundException,
-			IllegalAccessException, InstantiationException, SQLException {
+			IllegalAccessException, InstantiationException, SQLException, InvocationTargetException, NoSuchMethodException {
 		final Properties appProperties = new Properties();
         PropertiesHelper.loadPropertiesFromFile(appProperties, "Fortunes.properties");
 		try (final Connection connection = Manager.getConnection(appProperties)) {

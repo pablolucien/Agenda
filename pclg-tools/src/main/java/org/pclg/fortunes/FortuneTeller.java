@@ -3,18 +3,12 @@ package org.pclg.fortunes;
 import org.apache.logging.log4j.Logger;
 import org.pclg.log.LoggerFactory;
 
-import javax.swing.JDialog;
-import javax.swing.JFrame;
-import javax.swing.JOptionPane;
-import javax.swing.JTextArea;
-import javax.swing.WindowConstants;
-import java.awt.Color;
-import java.awt.Component;
-import java.awt.Dialog;
-import java.awt.Toolkit;
+import javax.swing.*;
+import java.awt.*;
 import java.awt.datatransfer.Clipboard;
 import java.awt.datatransfer.StringSelection;
 import java.io.IOException;
+import java.lang.reflect.InvocationTargetException;
 import java.sql.SQLException;
 import java.util.Random;
 
@@ -77,7 +71,7 @@ public class FortuneTeller {
 	
 	public static void main(final String[] args) throws ClassNotFoundException,
 			SQLException, InstantiationException, IOException,
-			IllegalAccessException {
+			IllegalAccessException, InvocationTargetException, NoSuchMethodException {
 		final JFrame frame = new JFrame("Testing FortuneTeller");
 		final FortuneTeller teller = new FortuneTeller(frame, new Manager());
 		frame.setDefaultCloseOperation(WindowConstants.EXIT_ON_CLOSE);
