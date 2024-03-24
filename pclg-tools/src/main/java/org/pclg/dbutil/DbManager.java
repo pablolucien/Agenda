@@ -38,10 +38,15 @@ public final class DbManager {
 		this.clientId = clientId;
 	}
 
+	/**
+	 * @param driverClassName Driver class may not need to be explicitly declared: the manager can/should infer if from URL.
+	 */
 	public Connection getConnection(final String driverClassName, final String connectString, final String user, final String pwd)
 			throws SQLException, ClassNotFoundException, IllegalAccessException, InstantiationException, NoSuchMethodException, InvocationTargetException {
-		final Driver driver = (Driver) Class.forName(driverClassName).getDeclaredConstructor().newInstance();
-		LOGGER.warn(String.format("driver = %s -- %d.%d%n", driver.toString(), driver.getMajorVersion(), driver.getMinorVersion()));
+		if (driverClassName != null) {
+			final Driver driver = (Driver) Class.forName(driverClassName).getDeclaredConstructor().newInstance();
+			LOGGER.warn(String.format("driver = %s -- %d.%d%n", driver, driver.getMajorVersion(), driver.getMinorVersion()));
+		}
 		final Properties props = new Properties();
 		props.put("user", user);
 		props.put("password", pwd);
