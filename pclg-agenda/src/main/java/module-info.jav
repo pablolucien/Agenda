@@ -5,7 +5,8 @@ module pclg.agenda {
     requires java.management;
     requires java.sql;
 //    requires java.xml;
-    requires java.xml.bind;
+//    requires java.xml.bind;
+    requires javaee;
 //    requires jakarta.xml.bind.api;
     requires ez.vcard;
     requires jpatterns;
