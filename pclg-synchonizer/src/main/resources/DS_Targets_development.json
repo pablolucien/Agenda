@@ -117,7 +117,7 @@
                 "${ROOT_E}/home/pablo/development/projects/android/ShoppingList",
                 "${ROOT_L}/home/pablo/development/projects/android/ShoppingList"
             ],
-            "Exclude": ".idea/:build/:.gradle/:*.log:.git/"
+            "Exclude": ":build/:*.log"
         },
         {
             "dirs": [
