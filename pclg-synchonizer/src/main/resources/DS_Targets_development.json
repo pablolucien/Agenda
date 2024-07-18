@@ -64,7 +64,16 @@
                 "${ROOT_F}/home/pablo/development/projects/portfolio",
                 "${ROOT_L}/home/pablo/development/projects/portfolio"
             ],
-            "Exclude": "*_custom.properties:target/:out/:.idea/:.git/:*.log"
+            "Exclude": "*_custom.properties:target/:out/:.idea/:.git/:*.log:*.jav:*_technical.properties"
+        },
+        {
+            "dirs": [
+                "${ROOT_C}/home/pablo/development/projects/portfolio/src/main/resources/",
+                "${ROOT_E}/home/pablo/development/projects/portfolio/src/main/resources/",
+                "${ROOT_F}/home/pablo/development/projects/portfolio/src/main/resources/",
+                "${ROOT_L}/home/pablo/development/projects/portfolio/src/main/resources/"
+            ],
+            "Include": "*_technical.properties"
         },
         {
             "dirs": [
