@@ -12,131 +12,166 @@ import java.util.Calendar;
 import java.util.Date;
 import java.util.List;
 
+import static java.util.Calendar.HOUR_OF_DAY;
+import static java.util.Calendar.MINUTE;
+import static java.util.Calendar.SECOND;
+import static java.util.Calendar.getInstance;
+
 /**
  * Toca un o unos ficheros en el sentido de Unix (pone la fecha y hora actual
- * como fecha y hora de modificaci�n.
+ * como fecha y hora de modificación).
  *
- * @since 20080530
  * @author EL Coyote Cojo
+ * @since 2008.05.30
  */
 public final class Touch {
-	/* Logger for this class. */
     private static final Logger LOGGER = LoggerFactory.makeLog4J();
-	static final int INCREMENT_TIME = 10000;
+    static final int INCREMENT_TIME = 10000;
 
     /* Usage message. */
     private static final String MSG_USAGE =
-            "Uso:\n java org.pclg.filesystem.Touch [-d dd/MM/yyyy | dd-MM-yyyy] [-t hh:mm:ss] [-i[nc[rement]]] <filename(s)>\n"
+        "Uso:\n java org.pclg.filesystem.Touch [-d dd/MM/yyyy | dd-MM-yyyy] [-t hh:mm:ss] [-i[nc[rement]]] <filename(s)>\n"
             + "\t(hh en formato de 24 horas)\n"
             + "\tSi no se especifican -d o -t se usa la fecha/hora del sistema\n\n"
             + "\tSi se especifica -i[nc[rement]] se incrementa el tiempo en 10 segundos para cada archivo.\n\n"
             + "\tjava org.pclg.filesystem.Touch [-h|-help] muestra esta ayuda";
 
+    static class Parameters {
+        final List<String> targets = new ArrayList<>();
+        Date userDate = null;
+        Date userTime = null;
+        long targetTime;
+        boolean incrementTime = false;
 
-	private Touch(final String[] args) throws IOException, ParseException {
+        boolean onlyUpdatingDate() {
+            return userDate != null && userTime == null;
+        }
+
+        boolean onlyUpdatingTime() {
+            return userDate == null && userTime != null;
+        }
+    }
+
+    public void executeTouch(final String[] args) throws IOException, ParseException {
         if (args.length == 0 || args[0].equals("-h") || args[0].equals("-help")) {
             usage();
         }
-        
-		final SimpleDateFormat dateFormat = new SimpleDateFormat("dd/MM/yyyy");
-		final SimpleDateFormat timeFormat = new SimpleDateFormat("hh:mm:ss");
-		final SimpleDateFormat globalFormat = new SimpleDateFormat("dd/MM/yyyy hh:mm:ss");
-		final List<String> targets = new ArrayList<>();
-		Date userDate = null;
-		Date userTime = null;
-		boolean incrementTime = false;
 
-		for (int argsIndex = 0; argsIndex < args.length; argsIndex++) {
-        //------------------------------------
-	        if (args[argsIndex].equals("-d")) {
-	            if (argsIndex + 1 >= args.length) {
-	                usage();
-	            }
-	            userDate = dateFormat.parse(args[++argsIndex].replaceAll("-", "/"));
-	            continue;
-	        }
+        final Parameters parameters = getParameters(args);
 
-	        if (args[argsIndex].equals("-t")) {
-	            if (argsIndex + 1 >= args.length) {
-	                usage();
-	            }
-	            userTime = timeFormat.parse(args[++argsIndex]);
-	            continue;
-	        }
-
-			if (args[argsIndex].equals("-i") || args[argsIndex].equals("-inc") || args[argsIndex].equals("-increment")) {
-				incrementTime = true;
-				continue;
-			}
-
-			targets.add(args[argsIndex]);
-		}
-        final long time;
-        if (userDate == null && userTime == null) {
-        	time = new Date().getTime();
-        } else if (userDate != null && userTime != null) {
-        	final Calendar dateCalendar = Calendar.getInstance();
-        	dateCalendar.setTime(userDate);
-        	final Calendar timeCalendar = Calendar.getInstance();
-        	timeCalendar.setTime(userTime);
-        	dateCalendar.set(Calendar.HOUR_OF_DAY, timeCalendar.get(Calendar.HOUR_OF_DAY));
-        	dateCalendar.set(Calendar.MINUTE, timeCalendar.get(Calendar.MINUTE));
-        	dateCalendar.set(Calendar.SECOND, timeCalendar.get(Calendar.SECOND));
-        	time = dateCalendar.getTimeInMillis();
-        } else {
-        	time = Long.MIN_VALUE;	// FIXME: �Qu� caso de uso es este?
-        }
-
-        LOGGER.debug(
-            String.format("userDate = %s, userTime = %s, time = %s, targets = %s",
-                userDate == null ? "null" : dateFormat.format(userDate),
-                userTime == null ? "null" : timeFormat.format(userTime),
-                time == Long.MIN_VALUE ? "null" : globalFormat.format(new Date(time)),
-                targets));
-
-        if (targets.isEmpty()) {
+        if (parameters.targets.isEmpty()) {
             usage();
         }
 
-		touchFiles(targets, time, userDate, incrementTime);
-	}
+        touchFiles(parameters);
+    }
 
-	private void touchFiles(final List<String> targets, long time, final Date userDate, final boolean incrementTime) throws IOException {
-		for (final String fileName : targets) {
-			touchFile(new File(fileName), time, userDate);
-			if (incrementTime) {
-				time += INCREMENT_TIME;
-			}
-		}
-	}
+    static Parameters getParameters(String[] args) throws ParseException {
+        final SimpleDateFormat dateFormat = new SimpleDateFormat("dd/MM/yyyy");
+        final SimpleDateFormat timeFormat = new SimpleDateFormat("HH:mm:ss");
 
-	static void touchFile(final File file, final long time, final Date userDate) throws IOException {
-		final boolean success;
-		if (file.exists()) {
-			if (time == Long.MIN_VALUE) {
-				final Calendar calendar = Calendar.getInstance();
-				calendar.setTimeInMillis(file.lastModified());
-				// FIXME: Si necesario mover esto a donde se define time = Long.MIN_VALUE
-				if (userDate != null) {
-					calendar.set(userDate.getYear() + 1900, userDate.getMonth(), userDate.getDate());
-				} else {
+        Parameters parameters = new Parameters();
+        for (int argsIndex = 0; argsIndex < args.length; argsIndex++) {
+            switch (args[argsIndex]) {
+            case "-d":
+                if (argsIndex + 1 >= args.length) {
+                    usage();
+                }
+                parameters.userDate = dateFormat.parse(args[++argsIndex].replaceAll("-", "/"));
+                continue;
+            case "-t":
+                if (argsIndex + 1 >= args.length) {
+                    usage();
+                }
+                parameters.userTime = timeFormat.parse(args[++argsIndex]);
+                continue;
+            case "-i":
+            case "-inc":
+            case "-increment":
+                parameters.incrementTime = true;
+                continue;
+            }
 
-				}
-				//calendar./
-				success = file.setLastModified(calendar.getTimeInMillis());
-			} else {
-				success = file.setLastModified(time);
-			}
-		} else {
-			success = file.createNewFile() && file.setLastModified(time);
-		}
+            parameters.targets.add(args[argsIndex]);
+        }
 
-		if (!success) {
-			LOGGER.warn("Could not touch: " + file.getAbsolutePath());
-		}
-	}
+        final SimpleDateFormat globalFormat = new SimpleDateFormat("dd/MM/yyyy hh:mm:ss");
+        LOGGER.debug(
+            String.format("userDate = %s, userTime = %s, time = %s, targets = %s",
+                parameters.userDate == null ? "null" : dateFormat.format(parameters.userDate),
+                parameters.userTime == null ? "null" : timeFormat.format(parameters.userTime),
+                globalFormat.format(new Date(parameters.targetTime)),
+                parameters.targets));
+        return parameters;
+    }
 
-	/**
+    private static void computeTargetTime(Parameters parameters, final Calendar dateCalendar, final Calendar timeCalendar) {
+        Date userDate = parameters.userDate;
+        Date userTime = parameters.userTime;
+        if (userDate == null && userTime == null) {
+            parameters.targetTime = new Date().getTime();
+        } else if (userDate != null && userTime != null) {
+            dateCalendar.setTime(userDate);
+            timeCalendar.setTime(userTime);
+            dateCalendar.set(HOUR_OF_DAY, timeCalendar.get(HOUR_OF_DAY));
+            dateCalendar.set(MINUTE, timeCalendar.get(MINUTE));
+            dateCalendar.set(SECOND, timeCalendar.get(SECOND));
+            parameters.targetTime = dateCalendar.getTimeInMillis();
+        } else if (userDate != null) {
+            dateCalendar.setTime(userDate);
+            dateCalendar.set(HOUR_OF_DAY, timeCalendar.get(HOUR_OF_DAY));
+            dateCalendar.set(MINUTE, timeCalendar.get(MINUTE));
+            dateCalendar.set(SECOND, timeCalendar.get(SECOND));
+            parameters.targetTime = dateCalendar.getTimeInMillis();
+        } else {
+            timeCalendar.setTime(userTime);
+            dateCalendar.set(HOUR_OF_DAY, timeCalendar.get(HOUR_OF_DAY));
+            dateCalendar.set(MINUTE, timeCalendar.get(MINUTE));
+            dateCalendar.set(SECOND, timeCalendar.get(SECOND));
+            parameters.targetTime = dateCalendar.getTimeInMillis();
+        }
+    }
+
+    private void touchFiles(final Parameters parameters) throws IOException {
+        final List<String> targets = parameters.targets;
+        final boolean incrementTime = parameters.incrementTime;
+        long time2Increment = 0;
+        final Calendar dateCalendar = getInstance();
+        final Calendar timeCalendar = getInstance();
+        computeTargetTime(parameters, dateCalendar, timeCalendar);
+        for (final String fileName : targets) {
+            long time = parameters.targetTime + time2Increment;
+            final File file = new File(fileName);
+            if (parameters.onlyUpdatingTime()) {
+                dateCalendar.setTimeInMillis(file.lastModified());
+                computeTargetTime(parameters, dateCalendar, timeCalendar);
+                time = parameters.targetTime;
+            } else if (parameters.onlyUpdatingDate()) {
+                timeCalendar.setTimeInMillis(file.lastModified());
+                computeTargetTime(parameters, dateCalendar, timeCalendar);
+                time = parameters.targetTime;
+            }
+            touchFile(file, time);
+            if (incrementTime) {
+                time2Increment += INCREMENT_TIME;
+            }
+        }
+    }
+
+    static void touchFile(final File file, final long time) throws IOException {
+        final boolean success;
+        if (file.exists()) {
+            success = file.setLastModified(time);
+        } else {
+            success = file.createNewFile() && file.setLastModified(time);
+        }
+
+        if (!success) {
+            LOGGER.warn("Could not touch: {}", file.getAbsolutePath());
+        }
+    }
+
+    /**
      * A little help to the friends.
      */
     private static void usage() {
@@ -144,8 +179,7 @@ public final class Touch {
         System.exit(1);
     }
 
-	@SuppressWarnings({"ResultOfMethodCallIgnored"})
     public static void main(final String[] args) throws IOException, ParseException {
-		new Touch(args);
-	}
+        new Touch().executeTouch(args);
+    }
 }
