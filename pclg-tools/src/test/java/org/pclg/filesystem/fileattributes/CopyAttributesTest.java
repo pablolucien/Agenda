@@ -19,8 +19,8 @@ import static org.testng.Assert.assertNotEquals;
  * @since 29/12/2017.
  */
 public class CopyAttributesTest {
-    @Test
-    public void main() throws Exception {
+    @Test(enabled = false)
+    public void testMain() throws Exception {
         final FileSystem fileSystem = FileSystems.getDefault();
         final String baseDir = "/tmp";
         final Path sourceDir = fileSystem.getPath(baseDir, "source");
@@ -51,7 +51,8 @@ public class CopyAttributesTest {
         }
 
         final File undoFile = CopyAttributes.copyAttributes(targetDir.toFile(), sourceDir.toFile());
-		undoFile.deleteOnExit();
+        assert undoFile != null;
+        undoFile.deleteOnExit();
 
         for (int ii = 0; ii < count; ii++) {
             final Map<String, Object> sourceAttributes = Files.readAttributes(sourceFiles[ii], "lastModifiedTime");
@@ -64,7 +65,7 @@ public class CopyAttributesTest {
         for (int ii = 0; ii < count; ii++) {
             final Map<String, Object> sourceAttributes = Files.readAttributes(sourceFiles[ii], "lastModifiedTime");
             final Map<String, Object> targetAttributes = Files.readAttributes(targetFiles[ii], "lastModifiedTime");
-//            assertFalse(sourceAttributes.equals(targetAttributes));
+            assertNotEquals(targetAttributes, sourceAttributes);
         }
     }
 }

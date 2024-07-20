@@ -55,7 +55,7 @@
                 "${ROOT_E}/home/pablo/development/projects/Alles",
                 "${ROOT_L}/home/pablo/development/projects/Alles"
             ],
-            "Exclude": "target/:out/:.idea/:.git/:local_config.properties:*.log"
+            "Exclude": "target/:out/:sonarlint/:.git/:local_config.properties:*.log"
         },
         {
             "dirs": [

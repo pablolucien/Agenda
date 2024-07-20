@@ -48,10 +48,10 @@ final class LectorRemedy {
 
         final byte[] lastRecord = new byte[c1.length];
         int numRecords = 0;
-        int numRecordsSegúnSopra = 0;
+        int numRecordsSegunSopra = 0;
         int numLongRecords = 0;
         while (fis.read(c1) == c1.length) {
-            numRecordsSegúnSopra++;
+            numRecordsSegunSopra++;
             if (!Arrays.equals(c1, lastRecord)) {
                 numRecords++;
                 System.arraycopy(c1, 0, lastRecord, 0, lastRecord.length);
@@ -90,7 +90,7 @@ final class LectorRemedy {
 
 		LOGGER.log(Level.SEVERE, "Total de incidencias: " +  numRecords);
 		LOGGER.log(Level.SEVERE, "Total de incidencias según Sopra: " 
-		        +  numRecordsSegúnSopra);
+		        +  numRecordsSegunSopra);
 		LOGGER.log(Level.SEVERE, "Total de incidencias largas: " 
 		        +  numLongRecords);
 

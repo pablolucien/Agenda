@@ -12,6 +12,6 @@
     <orderEntry type="sourceFolder" forTests="false" />
     <orderEntry type="library" name="lib" level="project" />
     <orderEntry type="module" module-name="pclg-tools" />
+    <orderEntry type="library" name="docx4j-3.3.1" level="project" />
   </component>
 </module>
-
