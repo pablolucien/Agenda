@@ -120,7 +120,13 @@ console.log("xhttp.responseText = " + xhttp.responseText)
 					<td><a href="https://chatgpt.akkodis.com" target="_blank" class="NewItem"> ChatGPT Akkodis </a></td>
 					<td><a href="" target="_blank" class="Sobre"> ForRent </a></td>
 					<td><a href="https://www.figma.com/team_invite/redeem/ItZJlXZDfjrKHcNezOpli1" target="_blank" class="NewItem"> Figma </a></td>
+					<td><a href="" target="_blank" class="Sobre"> ForRent </a></td>
+				</tr>
+				<tr>
 					<td><a href="https://forms.office.com/Pages/ResponsePage.aspx?id=FDQO7VZuTEWKguuAvvtzi3mfxlCoKzxPuSsL5eks949UOVVIWlFYRUw2Qk5NQVBRMUhZTEpSVDVMNyQlQCN0PWcu" target="_blank" class="NewItem"> Upskilling Tecnológico (Formaciones) </a></td>
+					<td><a href="https://akkodisacademy-int.learnupon.com/dashboard" target="_blank" class="NewItem"> Akkodis Academy dashboard </a></td>
+					<td><a href="" target="_blank" class="Sobre"> ForRent </a></td>
+					<td><a href="" target="_blank" class="Sobre"> ForRent </a></td>
 				</tr>
 
 				<tr>
@@ -224,30 +230,31 @@ console.log("xhttp.responseText = " + xhttp.responseText)
 		</div>
 
 <script language="javascript">
-	var pagesList = new Array(2);
-	var index = 0;
-	pagesList[index++] = "https://www.estrategiasdeinversion.com/cotizaciones/indices/mercado-continuo/caf";
-	pagesList[index++] = "https://www.estrategiasdeinversion.com/cotizaciones/indices/mercado-continuo/caixabank";
-	pagesList[index++] = "https://www.estrategiasdeinversion.com/cotizaciones/indices/mercado-continuo/cie-automotive";
-	pagesList[index++] = "https://www.estrategiasdeinversion.com/cotizaciones/indices/mercado-continuo/dia";
-	pagesList[index++] = "https://www.estrategiasdeinversion.com/cotizaciones/indices/mercado-continuo/ebro-foods";
-	pagesList[index++] = "https://www.estrategiasdeinversion.com/cotizaciones/indices/mercado-continuo/ence";
-	pagesList[index++] = "https://www.estrategiasdeinversion.com/cotizaciones/indices/mercado-continuo/fluidra";
-	pagesList[index++] = "https://www.estrategiasdeinversion.com/cotizaciones/indices/mercado-continuo/grifols-a";
-	pagesList[index++] = "https://www.estrategiasdeinversion.com/cotizaciones/indices/mercado-continuo/iag-iberia";
-	pagesList[index++] = "https://www.estrategiasdeinversion.com/cotizaciones/indices/mercado-continuo/melia-hotels";
-	pagesList[index++] = "https://www.estrategiasdeinversion.com/cotizaciones/indices/mercado-continuo/merlin-properties";
-	pagesList[index++] = "https://www.estrategiasdeinversion.com/cotizaciones/indices/mercado-continuo/pharmamar";
-	pagesList[index++] = "https://www.estrategiasdeinversion.com/cotizaciones/indices/mercado-continuo/prisa";
-	pagesList[index++] = "https://www.estrategiasdeinversion.com/cotizaciones/indices/mercado-continuo/repsol";
-	pagesList[index++] = "https://www.estrategiasdeinversion.com/cotizaciones/indices/mercado-continuo/banco-sabadell";
-	pagesList[index++] = "https://www.estrategiasdeinversion.com/cotizaciones/indices/mercado-continuo/sacyr";
-	pagesList[index++] = "https://www.estrategiasdeinversion.com/cotizaciones/indices/mercado-continuo/banco-santander";
-	pagesList[index++] = "https://www.estrategiasdeinversion.com/cotizaciones/indices/mercado-continuo/solaria";
-	pagesList[index++] = "https://www.estrategiasdeinversion.com/cotizaciones/indices/euronext-paris/sopra-steria";
-	pagesList[index++] = "https://xkcd.com/";
-//	pagesList[index++] = "https://www.estrategiasdeinversion.com/cotizaciones/indices/mercado-continuo/acs";
-//	pagesList[index++] = "https://www.estrategiasdeinversion.com/cotizaciones/indices/mercado-continuo/inditex";
+var pagesList = new Array(
+    "https://www.estrategiasdeinversion.com/cotizaciones/indices/mercado-continuo/caf",
+    "https://www.estrategiasdeinversion.com/cotizaciones/indices/mercado-continuo/caixabank",
+    "https://www.estrategiasdeinversion.com/cotizaciones/indices/mercado-continuo/cie-automotive",
+    "https://www.estrategiasdeinversion.com/cotizaciones/indices/mercado-continuo/dia",
+    "https://www.estrategiasdeinversion.com/cotizaciones/indices/mercado-continuo/ebro-foods",
+    "https://www.estrategiasdeinversion.com/cotizaciones/indices/mercado-continuo/ence",
+    "https://www.estrategiasdeinversion.com/cotizaciones/indices/mercado-continuo/fluidra",
+    "https://www.estrategiasdeinversion.com/cotizaciones/indices/mercado-continuo/grifols-a",
+    "https://www.estrategiasdeinversion.com/cotizaciones/indices/mercado-continuo/iag-iberia",
+    "https://www.estrategiasdeinversion.com/cotizaciones/indices/mercado-continuo/melia-hotels",
+    "https://www.estrategiasdeinversion.com/cotizaciones/indices/mercado-continuo/merlin-properties",
+    "https://www.estrategiasdeinversion.com/cotizaciones/indices/mercado-continuo/pharmamar",
+    "https://www.estrategiasdeinversion.com/cotizaciones/indices/mercado-continuo/prisa",
+    "https://www.estrategiasdeinversion.com/cotizaciones/indices/mercado-continuo/repsol",
+    "https://www.estrategiasdeinversion.com/cotizaciones/indices/mercado-continuo/banco-sabadell",
+    "https://www.estrategiasdeinversion.com/cotizaciones/indices/mercado-continuo/sacyr",
+    "https://www.estrategiasdeinversion.com/cotizaciones/indices/mercado-continuo/banco-santander",
+    "https://www.estrategiasdeinversion.com/cotizaciones/indices/mercado-continuo/solaria",
+    "https://www.estrategiasdeinversion.com/cotizaciones/indices/euronext-paris/sopra-steria",
+    "https://www.estrategiasdeinversion.com/cotizaciones/indices/mercado-continuo/vocento",
+    "https://xkcd.com/"
+);
+//    "https://www.estrategiasdeinversion.com/cotizaciones/indices/mercado-continuo/acs",
+//    "https://www.estrategiasdeinversion.com/cotizaciones/indices/mercado-continuo/inditex",
 </script>
 		<center>
 		<div id="Pasta" style="display: none">
@@ -258,20 +265,20 @@ console.log("xhttp.responseText = " + xhttp.responseText)
 						<table class="sameColumnWidth33">
 							<caption> Bancos </caption>
 							<tr>
-								<td><a href="https://www.openbank.es/" target="_blank"> OpenBank </a></td>
+								<td colspan="2"><a href="https://www.openbank.es/" target="_blank"> OpenBank </a></td>
 								<td>&nbsp;</td>
 								<td><a href="https://ing.ingdirect.es/pfm/#login/credentials" target="_blank"> ING </a></td>
 								<td><a href="https://bancaonline.bankinter.com/gestion/login.xhtml" target="_blank"> Bankinter </a></td>
 								<td><a href="https://banking.raisin.es/savingglobal/part/Welcome/content/loginEmail?locale=es" target="_blank"> Raisin </a> <br></td>
 							</tr>
 							<tr>
-								<td><a href="http://www.sabadellatlantico.com/" target="_blank"> Sabadell </a></td>
-								<td colspan="3"><a href="https://www.bankinterconsumerfinance.com/gestion/" target="_blank"> Visa AirEuropa </a> <br></td>
+								<td colspan="3"><a href="http://www.sabadellatlantico.com/" target="_blank"> Sabadell </a></td>
+								<td colspan="2"><a href="https://www.bankinterconsumerfinance.com/gestion/" target="_blank"> Visa AirEuropa </a> <br></td>
 								<td><a href="https://www.bbva.es/particulares/index.jsp" target="_blank"> uno-e </a></td>
 							</tr>
 							<tr>
 								<td colspan="3"><a href="https://holder.sharinbox.societegenerale.com/login" target="_blank"> Soci&eacute;t&eacute; G&eacute;n&eacute;rale </a></td>
-								<td>&nbsp;</td>
+								<td colspan="2"><a href="https://wwws.tesoro.es/index.aspx" target="_blank" class="NewItem"> Tesoro Público </a></td>
 								<td><a href="https://www.paypal.com" target="_blank"> PayPal </a></td>
 							</tr>
 							<tr>
@@ -314,8 +321,8 @@ console.log("xhttp.responseText = " + xhttp.responseText)
 					<td><a href="https://www.estrategiasdeinversion.com/cotizaciones/indices/mercado-continuo/sacyr" target="_blank"> Sacyr </a></td>
 					<td><a href="https://www.estrategiasdeinversion.com/cotizaciones/indices/mercado-continuo/banco-santander" target="_blank"> Santander </a></td>
 					<td><a href="https://www.estrategiasdeinversion.com/cotizaciones/indices/mercado-continuo/solaria" target="_blank"> Solaria </a></td>
+					<td><a href="https://www.estrategiasdeinversion.com/cotizaciones/indices/mercado-continuo/vocento" target="_blank"> Vocento </a></td>
 					<td><a href="https://www.estrategiasdeinversion.com/cotizaciones/indices/euronext-paris/sopra-steria" target="_blank"> Sopra </a></td>
-					<td>&nbsp;</td>
 				</tr>
 				<tr>
 					<td colspan="5">&nbsp;</td>
@@ -383,8 +390,8 @@ console.log("xhttp.responseText = " + xhttp.responseText)
 						<td><a href="https://finance.yahoo.com/quote/SCYR.MC/history" target="_blank" class="StockExchange"> Sacyr </a></td>
 						<td><a href="https://finance.yahoo.com/quote/SAN.MC/history" target="_blank" class="StockExchange"> Santander </a></td>
 						<td><a href="https://finance.yahoo.com/quote/SLR.MC/history" target="_blank" class="StockExchange"> Solaria </a></td>
+						<td><a href="https://finance.yahoo.com/quote/VOC.MC/history" target="_blank" class="StockExchange"> Vocento </a></td>
 						<td><a href="https://finance.yahoo.com/quote/SOP.PA/history" target="_blank" class="StockExchange"> Sopra </a></td>
-						<td>&nbsp;</td>
 					</tr>
 					<tr>
 						<td colspan="5">&nbsp;</td>
@@ -434,7 +441,7 @@ console.log("xhttp.responseText = " + xhttp.responseText)
 				</tr>
 				<tr>
 					<td><a href="http://cincodias.com/mercados/" target="_blank"> Cinco días (Mercados) </a></td>
-					<td><a href="https://wwws.tesoro.es/index.aspx" target="_blank" class="NewItem"> Servicio Compra y Venta de Valores del Tesoro Público </a></td>
+					<td>&nbsp;</td>
 				</tr>
 			</table>
 		</div>
@@ -895,7 +902,7 @@ console.log("xhttp.responseText = " + xhttp.responseText)
 				<tr>
 					<td><a href="https://www.travelclub.es/" target="_blank"> Travel Club </a> (6015470-185868358-5)</td>
 					<td><a href="http://www.trabber.fr/" target="_blank" class="SiteProfessional"> B&uacute;squeda de vuelos Trabber </a></td>
-					<td>&nbsp;</td>
+					<td><a href="http://www.turismosocial.com/" target="_blank" class="NewItem"> Turismo Social </a></td>
 				</tr>
 				<tr>
 					<td><a href="http://www.renfe.com/viajeros/index.html" target="_blank" class="SiteProfessional"> RENFE </a></td>
