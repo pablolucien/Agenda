@@ -10,6 +10,7 @@
                 "${ROOT_F}/home/pablo/development/projects/Alles/pclg-apps/src/main/html",
                 "${ROOT_E}/home/pablo/development/projects/Alles/pclg-apps/src/main/html",
                 "${ROOT_L}/home/pablo/development/projects/Alles/pclg-apps/src/main/html",
+                "${ROOT_V}/home/pablo/development/projects/Alles/pclg-apps/src/main/html",
                 "${ROOT_L}/links"
             ]
         },
@@ -34,7 +35,8 @@
                 "${ROOT_C}/home/pablo/development/dist",
                 "${ROOT_E}/bin",
                 "${ROOT_F}/bin",
-                "${ROOT_L}/bin"
+                "${ROOT_L}/bin",
+                "${ROOT_V}/bin"
             ],
             "Include": "*.jar:*.properties",
             "Exclude": "*_custom.properties:*_technical.properties:Fortunes.properties:*.log:portfolio*:Portfolio*:squirrel-sql-3.8.1/"
@@ -43,7 +45,8 @@
             "unidirectional": true,
             "dirs": [
                 "${ROOT_C}/home/pablo/development/projects/portfolio/target",
-                "${ROOT_L}/portfolio"
+                "${ROOT_L}/portfolio",
+                "${ROOT_V}/portfolio"
             ],
             "Include": "portfolio-3.0-SNAPSHOT-jar-with-dependencies.jar:*.properties",
             "Exclude": "classes/:test-classes/:maven-archiver/:surefire-reports/:*_custom.properties:*_technical.properties"
@@ -53,7 +56,8 @@
                 "${ROOT_C}/home/pablo/development/projects/Alles",
                 "${ROOT_F}/home/pablo/development/projects/Alles",
                 "${ROOT_E}/home/pablo/development/projects/Alles",
-                "${ROOT_L}/home/pablo/development/projects/Alles"
+                "${ROOT_L}/home/pablo/development/projects/Alles",
+                "${ROOT_V}/home/pablo/development/projects/Alles"
             ],
             "Exclude": "target/:out/:sonarlint/:test-output/:.git/:local_config.properties:*.log"
         },
@@ -62,7 +66,8 @@
                 "${ROOT_C}/home/pablo/development/projects/portfolio",
                 "${ROOT_E}/home/pablo/development/projects/portfolio",
                 "${ROOT_F}/home/pablo/development/projects/portfolio",
-                "${ROOT_L}/home/pablo/development/projects/portfolio"
+                "${ROOT_L}/home/pablo/development/projects/portfolio",
+                "${ROOT_V}/home/pablo/development/projects/portfolio"
             ],
             "Exclude": "*_custom.properties:target/:out/:.idea/:.git/:*.log:*.jav:*_technical.properties"
         },
@@ -71,78 +76,87 @@
                 "${ROOT_C}/home/pablo/development/projects/portfolio/src/main/resources/",
                 "${ROOT_E}/home/pablo/development/projects/portfolio/src/main/resources/",
                 "${ROOT_F}/home/pablo/development/projects/portfolio/src/main/resources/",
-                "${ROOT_L}/home/pablo/development/projects/portfolio/src/main/resources/"
+                "${ROOT_L}/home/pablo/development/projects/portfolio/src/main/resources/",
+                "${ROOT_V}/home/pablo/development/projects/portfolio/src/main/resources/"
             ],
             "Include": "*_technical.properties"
         },
         {
             "dirs": [
                 "${ROOT_C}/home/pablo/development/projects/quotes",
-                "${ROOT_F}/home/pablo/development/projects/quotes",
                 "${ROOT_E}/home/pablo/development/projects/quotes",
-                "${ROOT_L}/home/pablo/development/projects/quotes"
+                "${ROOT_F}/home/pablo/development/projects/quotes",
+                "${ROOT_L}/home/pablo/development/projects/quotes",
+                "${ROOT_V}/home/pablo/development/projects/quotes"
             ],
             "Exclude": "CVS/:.idea/:.git/:.github/:target/:out/:.git*:.#*:workspace.xml:*.log"
         },
         {
             "dirs": [
                 "${ROOT_C}/home/pablo/development/projects/VersoPerlaPlumaYFlor",
-                "${ROOT_F}/home/pablo/development/projects/VersoPerlaPlumaYFlor",
                 "${ROOT_E}/home/pablo/development/projects/VersoPerlaPlumaYFlor",
-                "${ROOT_L}/home/pablo/development/projects/VersoPerlaPlumaYFlor"
+                "${ROOT_F}/home/pablo/development/projects/VersoPerlaPlumaYFlor",
+                "${ROOT_L}/home/pablo/development/projects/VersoPerlaPlumaYFlor",
+                "${ROOT_V}/home/pablo/development/projects/VersoPerlaPlumaYFlor"
             ],
             "Exclude": ".git/:.github/:target/:out/:.git*:workspace.xml:.idea/:*.log"
         },
         {
             "dirs": [
                 "${ROOT_C}/home/pablo/development/projects/extern",
-                "${ROOT_F}/home/pablo/development/projects/extern",
                 "${ROOT_E}/home/pablo/development/projects/extern",
-                "${ROOT_L}/home/pablo/development/projects/extern"
+                "${ROOT_F}/home/pablo/development/projects/extern",
+                "${ROOT_L}/home/pablo/development/projects/extern",
+                "${ROOT_V}/home/pablo/development/projects/extern"
             ],
             "Exclude": ".git/:.github/:target/:out/:.git*:workspace.xml:.idea/:*.log"
         },
         {
             "dirs": [
                 "${ROOT_C}/home/pablo/development/projects/TestsKotlin",
+                "${ROOT_E}/home/pablo/development/projects/TestsKotlin",
                 "${ROOT_F}/home/pablo/development/projects/TestsKotlin",
                 "${ROOT_L}/home/pablo/development/projects/TestsKotlin",
-                "${ROOT_E}/home/pablo/development/projects/TestsKotlin"
+                "${ROOT_V}/home/pablo/development/projects/TestsKotlin"
             ],
             "Exclude": ".git/:.github/:target/:out/:.git*:workspace.xml:.idea/:*.log"
         },
         {
             "dirs": [
                 "${ROOT_C}/home/pablo/development/projects/android/TodoList",
+                "${ROOT_E}/home/pablo/development/projects/android/TodoList",
                 "${ROOT_F}/home/pablo/development/projects/android/TodoList",
-                "${ROOT_E}/home/pablo/development/projects/android/TodoList"
+                "${ROOT_V}/home/pablo/development/projects/android/TodoList"
             ],
             "Exclude": ".git/:.idea/:build/:.gradle/:*.log"
         },
         {
             "dirs": [
                 "${ROOT_C}/home/pablo/development/projects/android/ShoppingList",
-                "${ROOT_F}/home/pablo/development/projects/android/ShoppingList",
                 "${ROOT_E}/home/pablo/development/projects/android/ShoppingList",
-                "${ROOT_L}/home/pablo/development/projects/android/ShoppingList"
+                "${ROOT_F}/home/pablo/development/projects/android/ShoppingList",
+                "${ROOT_L}/home/pablo/development/projects/android/ShoppingList",
+                "${ROOT_V}/home/pablo/development/projects/android/ShoppingList"
             ],
             "Exclude": ":build/:*.log"
         },
         {
             "dirs": [
                 "${ROOT_C}/home/pablo/development/projects/android/RetrofitCrashCourse",
-                "${ROOT_F}/home/pablo/development/projects/android/RetrofitCrashCourse",
                 "${ROOT_E}/home/pablo/development/projects/android/RetrofitCrashCourse",
-                "${ROOT_L}/home/pablo/development/projects/android/RetrofitCrashCourse"
+                "${ROOT_F}/home/pablo/development/projects/android/RetrofitCrashCourse",
+                "${ROOT_L}/home/pablo/development/projects/android/RetrofitCrashCourse",
+                "${ROOT_V}/home/pablo/development/projects/android/RetrofitCrashCourse"
             ],
             "Exclude": ".idea/:build/:.gradle/:*.log.git/"
         },
         {
             "dirs": [
                 "${ROOT_C}/home/pablo/development/ZZ_procesia",
+                "${ROOT_E}/home/pablo/development/ZZ_procesia",
                 "${ROOT_F}/home/pablo/development/ZZ_procesia",
                 "${ROOT_L}/home/pablo/development/ZZ_procesia",
-                "${ROOT_E}/home/pablo/development/ZZ_procesia"
+                "${ROOT_V}/home/pablo/development/ZZ_procesia"
             ],
             "Exclude": ".idea/:build/:.gradle/:*.log"
         }

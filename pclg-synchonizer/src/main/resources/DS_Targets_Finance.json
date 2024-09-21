@@ -5,7 +5,8 @@
         "${ROOT_C}/home/pablo/Finance/",
         "${ROOT_E}/home/pablo/Finance/",
         "${ROOT_F}/home/pablo/Finance/",
-        "${ROOT_L}/home/pablo/Finance/"
+        "${ROOT_L}/home/pablo/Finance/",
+        "${ROOT_V}/home/pablo/Finance/"
       ],
       "Exclude": "*.log:*.gnucash.*.gnucash"
     },
@@ -14,7 +15,8 @@
         "${USER_PROFILE_DIR}/.local/share/gnucash",
         "${ROOT_E}/home/pablo/Finance/GnuCashData/",
         "${ROOT_F}/home/pablo/Finance/GnuCashData/",
-        "${ROOT_L}/home/pablo/Finance/GnuCashData/"
+        "${ROOT_L}/home/pablo/Finance/GnuCashData/",
+        "${ROOT_V}/home/pablo/Finance/GnuCashData/"
       ],
       "files": [
         "saved-reports-2.4",

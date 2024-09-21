@@ -10,7 +10,8 @@
         {
             "dirs": [
                 "${ROOT_C}/home/pablo/Viajes",
-                "${ROOT_F}/home/pablo/Viajes"
+                "${ROOT_F}/home/pablo/Viajes",
+                "${ROOT_V}/home/pablo/Viajes"
             ]
         }
     ]

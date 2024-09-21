@@ -3,7 +3,8 @@
         {
             "dirs": [
                 "${ROOT_C}/home/pablo/Biblioteca",
-                "${ROOT_F}/Biblioteca"
+                "${ROOT_F}/home/pablo/Biblioteca",
+                "${ROOT_V}/home/pablo/Biblioteca"
             ]
         }
     ]

@@ -3,7 +3,9 @@
         {
             "dirs": [
                 "${ROOT_C}/home/pablo/development/quarantine_projects",
-                "${ROOT_E}/quarantine_projects"
+                "${ROOT_E}/home/pablo/development/quarantine_projects",
+                "${ROOT_F}/home/pablo/development/quarantine_projects",
+                "${ROOT_V}/home/pablo/development/quarantine_projects"
             ],
             "Exclude": ".idea/:.git/:.github/:target/:out/:.git*:.#*:node_modules/"
         }

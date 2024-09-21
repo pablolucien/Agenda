@@ -5,7 +5,8 @@
                 "${ROOT_C}/home/pablo/Laboral",
                 "${ROOT_E}/home/pablo/Laboral",
                 "${ROOT_F}/home/pablo/Laboral",
-                "${ROOT_L}/home/pablo/Laboral"
+                "${ROOT_L}/home/pablo/Laboral",
+                "${ROOT_V}/home/pablo/Laboral"
             ]
         }
     ]

@@ -10,7 +10,8 @@
             "dirs": [
                 "${ROOT_C}/home/pablo/img/fotos/",
                 "${ROOT_E}/home/pablo/img/fotos/",
-                "${ROOT_F}/home/pablo/img/fotos/"
+                "${ROOT_F}/home/pablo/img/fotos/",
+                "${ROOT_V}/home/pablo/img/fotos/"
             ]
         }
     ]
