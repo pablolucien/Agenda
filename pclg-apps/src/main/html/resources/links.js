@@ -53,7 +53,7 @@ function hide(elementId) {
 
 /* Opens a list of pages (hopefully in new tabs) and displays the first one. */
 function showPages(pagesList) {
-	// Hay que hacer esta chapucilla porque a firefox (algunas versiones) le da por abrirlas en otro órden.
+	// Hay que hacer esta chapucilla porque a firefox (algunas versiones) le da por abrirlas en otro ï¿½rden.
     var isIE = /*@cc_on!@*/false || !!document.documentMode;
 	var isChrome = !!window.chrome; // && !!window.chrome.webstore;
 	//alert('!!window.chrome = ' + !!window.chrome);
@@ -70,7 +70,7 @@ function showPages(pagesList) {
     }
 }
 
-//  Para determinar qué browser es
+//  Para determinar quï¿½ browser es
 
 // // Opera 8.0+
 // var isOpera = (!!window.opr && !!opr.addons) || !!window.opera || navigator.userAgent.indexOf(' OPR/') >= 0;
