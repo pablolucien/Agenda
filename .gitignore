@@ -1,4 +1,3 @@
-/.idea-old/
 /out/
 /test-output/
 /pclg-apps/test-output/
@@ -10,5 +9,4 @@
 /local_config.properties
 /.idea/sonarlint/
 /pclg-tools/target/
-/.idea/
 /pclg-synchonizer/pclg-synchonizer.iml

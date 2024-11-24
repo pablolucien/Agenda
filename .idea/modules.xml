@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ProjectModuleManager">
+    <modules>
+      <module fileurl="file://$PROJECT_DIR$/.idea/Alles.iml" filepath="$PROJECT_DIR$/.idea/Alles.iml" />
+      <module fileurl="file://$PROJECT_DIR$/net-asintec/net-asintec.iml" filepath="$PROJECT_DIR$/net-asintec/net-asintec.iml" />
+      <module fileurl="file://$PROJECT_DIR$/pclg-agenda/pclg-agenda.iml" filepath="$PROJECT_DIR$/pclg-agenda/pclg-agenda.iml" />
+      <module fileurl="file://$PROJECT_DIR$/pclg-alter/pclg-alter.iml" filepath="$PROJECT_DIR$/pclg-alter/pclg-alter.iml" />
+      <module fileurl="file://$PROJECT_DIR$/pclg-apps/pclg-apps.iml" filepath="$PROJECT_DIR$/pclg-apps/pclg-apps.iml" />
+      <module fileurl="file://$PROJECT_DIR$/pclg-compdel/pclg-compdel.iml" filepath="$PROJECT_DIR$/pclg-compdel/pclg-compdel.iml" />
+      <module fileurl="file://$PROJECT_DIR$/pclg-condominio/pclg-condominio.iml" filepath="$PROJECT_DIR$/pclg-condominio/pclg-condominio.iml" />
+      <module fileurl="file://$PROJECT_DIR$/pclg-misc/pclg-misc.iml" filepath="$PROJECT_DIR$/pclg-misc/pclg-misc.iml" />
+      <module fileurl="file://$PROJECT_DIR$/pclg-mp3updater/pclg-mp3updater.iml" filepath="$PROJECT_DIR$/pclg-mp3updater/pclg-mp3updater.iml" />
+      <module fileurl="file://$PROJECT_DIR$/pclg-python/pclg-python.iml" filepath="$PROJECT_DIR$/pclg-python/pclg-python.iml" />
+      <module fileurl="file://$PROJECT_DIR$/pclg-synchonizer/pclg-synchonizer.iml" filepath="$PROJECT_DIR$/pclg-synchonizer/pclg-synchonizer.iml" />
+    </modules>
+  </component>
+</project>
