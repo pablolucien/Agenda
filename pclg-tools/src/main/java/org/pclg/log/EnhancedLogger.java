@@ -29,6 +29,12 @@ public class EnhancedLogger {
         }
     }
 
+    public void error(final String message, final Throwable thr) {
+        if (delegate.isErrorEnabled()) {
+            delegate.error(message, thr);
+        }
+    }
+
     public void warn(final String format, final Object... args) {
         if (delegate.isWarnEnabled()) {
             delegate.warn(resolve(format, args));
@@ -37,7 +43,13 @@ public class EnhancedLogger {
 
     public void warn(final Throwable thr) {
         if (delegate.isWarnEnabled()) {
-            delegate.error(thr);
+            delegate.warn(thr);
+        }
+    }
+
+    public void warn(final String message, final Throwable thr) {
+        if (delegate.isWarnEnabled()) {
+            delegate.warn(message, thr);
         }
     }
 
