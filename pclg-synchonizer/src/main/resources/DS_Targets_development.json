@@ -159,6 +159,16 @@
                 "${ROOT_V}/home/pablo/development/ZZ_procesia"
             ],
             "Exclude": ".idea/:build/:.gradle/:*.log"
+        },
+        {
+            "dirs": [
+                "${ROOT_C}/home/pablo/development/projects/curso_de_python",
+                "${ROOT_E}/home/pablo/development/projects/curso_de_python",
+                "${ROOT_F}/home/pablo/development/projects/curso_de_python",
+                "${ROOT_L}/home/pablo/development/projects/curso_de_python",
+                "${ROOT_V}/home/pablo/development/projects/curso_de_python"
+            ],
+            "Exclude": ".idea/:.venv/"
         }
     ]
 }
