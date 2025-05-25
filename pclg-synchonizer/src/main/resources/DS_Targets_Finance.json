@@ -12,7 +12,7 @@
     },
     {
       "dirs": [
-        "${USER_PROFILE_DIR}/.local/share/gnucash",
+        "${GNUCASH_USER_PROFILE_DIR}",
         "${ROOT_E}/home/pablo/Finance/GnuCashData/",
         "${ROOT_F}/home/pablo/Finance/GnuCashData/",
         "${ROOT_L}/home/pablo/Finance/GnuCashData/",

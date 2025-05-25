@@ -103,6 +103,16 @@
         },
         {
             "dirs": [
+                "${ROOT_C}/home/pablo/development/projects/AngularSkeleton",
+                "${ROOT_E}/home/pablo/development/projects/AngularSkeleton",
+                "${ROOT_F}/home/pablo/development/projects/AngularSkeleton",
+                "${ROOT_L}/home/pablo/development/projects/AngularSkeleton",
+                "${ROOT_V}/home/pablo/development/projects/AngularSkeleton"
+            ],
+            "Exclude": ".git/:.github/:target/:out/:.git*:workspace.xml:.idea/:*.log:.angular/:node_modules/:portfolioYanqui/"
+        },
+        {
+            "dirs": [
                 "${ROOT_C}/home/pablo/development/projects/extern",
                 "${ROOT_E}/home/pablo/development/projects/extern",
                 "${ROOT_F}/home/pablo/development/projects/extern",
