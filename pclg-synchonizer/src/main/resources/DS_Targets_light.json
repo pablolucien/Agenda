@@ -60,7 +60,7 @@
         },
         {
             "dirs": [
-                "${ROOT_C}/home/pablo/databases/",
+                "${ROOT_C}/home/pablo/databases",
                 "${ROOT_E}/home/pablo/databases",
                 "${ROOT_F}/home/pablo/databases",
                 "${ROOT_L}/home/pablo/databases",
@@ -91,6 +91,10 @@
                 "${ROOT_V}/m2_repository/com/zoicapital/",
                 "${LOCAL_M2_REPOSITORY_DIR}/com/zoicapital/"
             ]
+        },
+        {
+            "A": "${ROOT_C}/bin/PStart/PStart.xml",
+            "B": "${ROOT_F}/Pelis/00-([{Incoming}])/PStart.xml"
         }
     ]
 }

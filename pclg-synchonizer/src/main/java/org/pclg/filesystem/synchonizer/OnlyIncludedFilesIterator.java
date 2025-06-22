@@ -22,9 +22,7 @@ class OnlyIncludedFilesIterator implements Iterator<File[]> {
             final File dir2 = dirs[ii + 1];
             addPairs(items, dir1, dir2, fileNames);
         }
-        if (dirs.length > 2) {
-            addPairs(items, dirs[dirs.length - 1], dirs[0], fileNames);
-        }
+        addPairs(items, dirs[dirs.length - 1], dirs[0], fileNames);
         itemsIterator = items.iterator();
         assert items.size() == dirs.length * fileNames.length : "Initial capacity should equal size";
     }

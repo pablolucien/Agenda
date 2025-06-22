@@ -10,3 +10,4 @@
 /.idea/sonarlint/
 /pclg-tools/target/
 /pclg-synchonizer/pclg-synchonizer.iml
+/DirectorySynchronizer_custom.properties
