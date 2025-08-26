@@ -59,6 +59,14 @@
             ]
         },
         {
+            "A": "${ROOT_C}/bin/PStart/PStart.xml",
+            "B": "${ROOT_C}/home/pablo/databases/PStart.xml"
+        },
+        {
+            "A": "${ROOT_C}/bin/Q-Dir/Atenea.qdr",
+            "B": "${ROOT_C}/home/pablo/databases/Atenea.qdr"
+        },
+        {
             "dirs": [
                 "${ROOT_C}/home/pablo/databases",
                 "${ROOT_E}/home/pablo/databases",
@@ -71,9 +79,8 @@
                 "Deporte.xls",
                 "Discworld.xls",
                 "O.xls",
-                "MainView_ACME.qdr",
-                "MainView_Minerva.qdr",
-                "MainView_Regus.qdr"
+				"PStart.xml",
+				"Atenea.qdr"
             ]
         },
         {
@@ -91,10 +98,6 @@
                 "${ROOT_V}/m2_repository/com/zoicapital/",
                 "${LOCAL_M2_REPOSITORY_DIR}/com/zoicapital/"
             ]
-        },
-        {
-            "A": "${ROOT_C}/bin/PStart/PStart.xml",
-            "B": "${ROOT_F}/Pelis/00-([{Incoming}])/PStart.xml"
         }
     ]
 }

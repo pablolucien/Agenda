@@ -73,6 +73,16 @@
         },
         {
             "dirs": [
+                "${ROOT_C}/home/pablo/development/projects/JsonServer",
+                "${ROOT_E}/home/pablo/development/projects/JsonServer",
+                "${ROOT_F}/home/pablo/development/projects/JsonServer",
+                "${ROOT_L}/home/pablo/development/projects/JsonServer",
+                "${ROOT_V}/home/pablo/development/projects/JsonServer"
+            ],
+            "Exclude": "*_custom.properties:target/:out/:.idea/:.git/:*.log:*.jav:*_technical.properties:JsonServerDB/"
+        },
+        {
+            "dirs": [
                 "${ROOT_C}/home/pablo/development/projects/portfolio/src/main/resources/",
                 "${ROOT_E}/home/pablo/development/projects/portfolio/src/main/resources/",
                 "${ROOT_F}/home/pablo/development/projects/portfolio/src/main/resources/",
