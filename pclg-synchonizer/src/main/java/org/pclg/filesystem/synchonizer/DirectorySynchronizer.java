@@ -5,21 +5,18 @@ import org.pclg.filesystem.synchonizer.persistence.DataAccess;
 import org.pclg.log.LoggerFactory;
 import org.pclg.log.TextAreaAppender;
 import org.pclg.log.TextAreaLogger;
-import org.pclg.runtime.RuntimeControl;
 import org.pclg.tools.ArrayTools;
 import org.pclg.tools.FileTools;
 import org.pclg.tools.Pair;
 import org.pclg.tools.PropertiesHelper;
 import org.pclg.xtras.ClassPathHacker;
 
-import javax.swing.JOptionPane;
+import javax.swing.*;
 import java.io.ByteArrayOutputStream;
 import java.io.File;
 import java.io.IOException;
 import java.io.PrintStream;
 import java.io.RandomAccessFile;
-import java.net.BindException;
-import java.net.ServerSocket;
 import java.nio.file.AccessDeniedException;
 import java.nio.file.Files;
 import java.nio.file.Path;
@@ -33,6 +30,7 @@ import java.util.Properties;
 import static java.nio.file.StandardCopyOption.COPY_ATTRIBUTES;
 import static java.nio.file.StandardCopyOption.REPLACE_EXISTING;
 import static javax.swing.JOptionPane.ERROR_MESSAGE;
+import static org.pclg.runtime.RuntimeTools.check4RunningInstance;
 import static org.pclg.tools.StringTools.isEmptyOrBlank;
 
 /**
@@ -58,7 +56,6 @@ public class DirectorySynchronizer {
     static final int INSIGNIFICANT_DETAIL = 2_000;
 
     private final Properties properties;
-    private ServerSocket lockSocket;
 
     public DirectorySynchronizer() throws IOException {
         properties = new Properties();
@@ -67,35 +64,16 @@ public class DirectorySynchronizer {
 		// First thing to do: make sure we have all we need in the classpath.
 		updateClassPath();
 
-        if (!check4RunningInstance()) {
+        if (!check4RunningInstance(PropertiesHelper.getIntFromProperties(properties, "DirectorySynchronizer.lockPort", 1024))) {
+            JOptionPane.showMessageDialog(null,
+                PropertiesHelper.getStringFromProperties(properties, "DirectorySynchronizer.already.running.msg"),
+                "Error",
+                ERROR_MESSAGE);
             System.exit(42);
         }
 
         counters = new Counters(PropertiesHelper.getStringFromProperties(properties, "DirectorySynchronizer.status.msg"));
         dataAccess = new DataAccess(properties);
-    }
-
-    private boolean check4RunningInstance() throws IOException {
-        try {
-            final var lockPort = PropertiesHelper.getIntFromProperties(properties, "DirectorySynchronizer.lockPort", 1024);
-            lockSocket = new ServerSocket(lockPort);
-            RuntimeControl.registerShutdownHook(() -> {
-                try {
-                    LOGGER.log(Level.OFF, "Going to close lock socket");
-                    lockSocket.close();
-                } catch (final IOException ex) {
-                    LOGGER.log(Level.ERROR, "Error en ShutdownHook", ex);
-                }
-            });
-            return true;
-        } catch (BindException ex) {
-            LOGGER.log(Level.ERROR, "Error in check4RunningInstance(): " + ex.getMessage());
-            JOptionPane.showMessageDialog(null,
-                ex.getMessage(),
-                PropertiesHelper.getStringFromProperties(properties, "DirectorySynchronizer.already.running.msg"),
-                ERROR_MESSAGE);
-        }
-        return false;
     }
 
     private void updateClassPath() throws IOException {

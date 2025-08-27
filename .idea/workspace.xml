@@ -4,7 +4,18 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="ca6eb6b6-6419-4d0e-a6aa-4254ec1c5806" name="Default" comment="" />
+    <list default="true" id="ca6eb6b6-6419-4d0e-a6aa-4254ec1c5806" name="Default" comment="Some changes in dir sync related to Atenea (and Vishnu)">
+      <change beforePath="$PROJECT_DIR$/.idea/compiler.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/compiler.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/encodings.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/encodings.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/modules.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/modules.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pclg-agenda/pclg-agenda.iml" beforeDir="false" afterPath="$PROJECT_DIR$/pclg-agenda/pclg-agenda.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pclg-apps/src/main/java/misc/terasystems/Tracker.java" beforeDir="false" afterPath="$PROJECT_DIR$/pclg-apps/src/main/java/misc/terasystems/Tracker.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pclg-misc/src/java/tests/ReadAfterWrite.java" beforeDir="false" afterPath="$PROJECT_DIR$/pclg-misc/src/java/tests/ReadAfterWrite.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pclg-synchonizer/src/main/java/org/pclg/filesystem/synchonizer/DirectorySynchronizer.java" beforeDir="false" afterPath="$PROJECT_DIR$/pclg-synchonizer/src/main/java/org/pclg/filesystem/synchonizer/DirectorySynchronizer.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pclg-tools/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pclg-tools/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pclg-tools/src/main/java/org/pclg/runtime/RuntimeTools.java" beforeDir="false" afterPath="$PROJECT_DIR$/pclg-tools/src/main/java/org/pclg/runtime/RuntimeTools.java" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -321,7 +332,6 @@
       </profile-state>
     </entry>
   </component>
-  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="ProjectReloadState">
     <option name="STATE" value="0" />
   </component>
@@ -334,34 +344,41 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;Application.Alter.executor&quot;: &quot;Run&quot;,
-    &quot;Application.BigFileCreator.executor&quot;: &quot;Run&quot;,
-    &quot;Application.CompDel.executor&quot;: &quot;Run&quot;,
-    &quot;Application.DbUpdate.executor&quot;: &quot;Run&quot;,
-    &quot;Application.Migrator.executor&quot;: &quot;Run&quot;,
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.git.unshallow&quot;: &quot;true&quot;,
-    &quot;git-widget-placeholder&quot;: &quot;develop&quot;,
-    &quot;kotlin-language-version-configured&quot;: &quot;true&quot;,
-    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
-    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
-    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
-    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
-    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
-    &quot;project.structure.last.edited&quot;: &quot;Project&quot;,
-    &quot;project.structure.proportion&quot;: &quot;0.0&quot;,
-    &quot;project.structure.side.proportion&quot;: &quot;0.0&quot;,
-    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "Application.Alter.executor": "Run",
+    "Application.BigFileCreator.executor": "Run",
+    "Application.CompDel.executor": "Run",
+    "Application.DbUpdate.executor": "Run",
+    "Application.DirectorySynchronizer.executor": "Run",
+    "Application.Migrator.executor": "Run",
+    "Maven.pclg-tools [install].executor": "Run",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "RunOnceActivity.git.unshallow": "true",
+    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
+    "git-widget-placeholder": "develop",
+    "ignore.virus.scanning.warn.message": "true",
+    "kotlin-language-version-configured": "true",
+    "last_opened_file_path": "/home/pablo/development/dist",
+    "node.js.detected.package.eslint": "true",
+    "node.js.detected.package.tslint": "true",
+    "node.js.selected.package.eslint": "(autodetect)",
+    "node.js.selected.package.tslint": "(autodetect)",
+    "nodejs_package_manager_path": "npm",
+    "project.structure.last.edited": "Project",
+    "project.structure.proportion": "0.15",
+    "project.structure.side.proportion": "0.2",
+    "settings.editor.selected.configurable": "Errors",
+    "vue.rearranger.settings.migration": "true"
   }
-}</component>
-  <component name="PyConsoleOptionsProvider">
-    <option name="myPythonConsoleState">
-      <console-settings />
-    </option>
-  </component>
+}]]></component>
   <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$" />
+      <recent name="C:\home\pablo\development\projects\Alles\pclg-synchonizer\src\main\resources" />
+      <recent name="C:\home\pablo\development\projects\Alles" />
+      <recent name="C:\home\development\projects\Alles\src\test_resources\images\16x16" />
+    </key>
     <key name="MoveFile.RECENT_KEYS">
       <recent name="C:\home\development\projects\Alles\pclg-tools\src\main\resources" />
       <recent name="C:\home\development\projects\Alles\pclg-tools\src\main\sql" />
@@ -376,11 +393,8 @@
       <recent name="org.pclg.migrator.preprocessors" />
       <recent name="net.asintec" />
     </key>
-    <key name="CopyFile.RECENT_KEYS">
-      <recent name="C:\home\development\projects\Alles\src\test_resources\images\16x16" />
-    </key>
   </component>
-  <component name="RunManager" selected="Application.DbUpdate">
+  <component name="RunManager" selected="Application.DirectorySynchronizer">
     <configuration default="true" type="Applet" factoryName="Applet">
       <module name="" />
       <option name="MAIN_CLASS_NAME" />
@@ -575,6 +589,20 @@
       <option name="WORKING_DIRECTORY" value="file://$PROJECT_DIR$/../../dist" />
       <RunnerSettings RunnerId="Run" />
       <ConfigurationWrapper RunnerId="Run" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="DirectorySynchronizer" type="Application" factoryName="Application" singleton="false" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="org.pclg.filesystem.synchonizer.DirectorySynchronizer" />
+      <module name="pclg-synchonizer" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/../../dist" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="org.pclg.filesystem.synchonizer.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
@@ -824,36 +852,6 @@
       <option name="INPUT_FILE" value="" />
       <method v="2" />
     </configuration>
-    <configuration name="DirTreeTest" type="TestNG" temporary="true" nameIsGenerated="true">
-      <module name="pclg-apps" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="org.pclg.tools.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <option name="PACKAGE_NAME" value="org.pclg.tools" />
-      <option name="MAIN_CLASS_NAME" value="org.pclg.tools.DirTreeTest" />
-      <option name="TEST_OBJECT" value="CLASS" />
-      <option name="VM_PARAMETERS" />
-      <option name="WORKING_DIRECTORY" />
-      <option name="TEST_SEARCH_SCOPE">
-        <value defaultName="moduleWithDependencies" />
-      </option>
-      <properties />
-      <listeners />
-      <RunnerSettings RunnerId="Debug">
-        <option name="DEBUG_PORT" value="1900" />
-        <option name="TRANSPORT" value="0" />
-        <option name="LOCAL" value="true" />
-      </RunnerSettings>
-      <RunnerSettings RunnerId="Run" />
-      <ConfigurationWrapper RunnerId="Debug" />
-      <ConfigurationWrapper RunnerId="Run" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
     <configuration name="SplashWindowTest" type="TestNG" temporary="true" nameIsGenerated="true">
       <module name="pclg-apps" />
       <extension name="coverage">
@@ -1028,31 +1026,23 @@
       <item itemvalue="Application.DirectorySynchronizer (full)" />
       <item itemvalue="Application.ProcessLauncher -&gt; GnuCash" />
       <item itemvalue="Application.JavaShellFX" />
+      <item itemvalue="Application.DirectorySynchronizer" />
       <item itemvalue="Application.EndOfLineChanger" />
       <item itemvalue="Application.TestLoggerFactory" />
       <item itemvalue="JUnit.Tests JUnit en general" />
       <item itemvalue="TestNG.Tests NG en general" />
-      <item itemvalue="TestNG.DirTreeTest" />
       <item itemvalue="TestNG.SplashWindowTest.testSplashWindow" />
       <item itemvalue="TestNG.SplashWindowTest" />
     </list>
     <recent_temporary>
       <list>
+        <item itemvalue="Application.DirectorySynchronizer" />
         <item itemvalue="Application.TestLoggerFactory" />
         <item itemvalue="TestNG.SplashWindowTest" />
         <item itemvalue="TestNG.SplashWindowTest.testSplashWindow" />
         <item itemvalue="Application.EndOfLineChanger" />
-        <item itemvalue="TestNG.DirTreeTest" />
       </list>
     </recent_temporary>
-  </component>
-  <component name="SharedIndexes">
-    <attachedChunks>
-      <set>
-        <option value="bundled-jdk-9823dce3aa75-fdfe4dae3a2d-intellij.indexing.shared.core-IU-243.21565.193" />
-        <option value="bundled-js-predefined-d6986cc7102b-e768b9ed790e-JavaScript-IU-243.21565.193" />
-      </set>
-    </attachedChunks>
   </component>
   <component name="SliceManager">
     <option name="analysisUIOptions">
@@ -1091,11 +1081,62 @@
       <option name="project" value="LOCAL" />
       <updated>1732437517694</updated>
     </task>
-    <option name="localTasksCounter" value="3" />
+    <task id="LOCAL-00003" summary="Cambio en la URL de Raisin">
+      <option name="closed" value="true" />
+      <created>1750609527034</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1750609527034</updated>
+    </task>
+    <task id="LOCAL-00004" summary="Dir synchonizer: fix bug when changed file not in first directories; add root and target">
+      <option name="closed" value="true" />
+      <created>1750609937789</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1750609937789</updated>
+    </task>
+    <task id="LOCAL-00005" summary="Links: buy of Rovi">
+      <option name="closed" value="true" />
+      <created>1751625780630</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1751625780630</updated>
+    </task>
+    <task id="LOCAL-00006" summary="Links: buy of Miquel y Costas &amp; Prisa">
+      <option name="closed" value="true" />
+      <created>1756195813557</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1756195813557</updated>
+    </task>
+    <task id="LOCAL-00007" summary="Some changes in dir sync related to Atenea (and Vishnu)">
+      <option name="closed" value="true" />
+      <created>1756195915436</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1756195915436</updated>
+    </task>
+    <option name="localTasksCounter" value="8" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="3" />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
   </component>
   <component name="Vcs.Log.UiProperties">
     <option name="RECENTLY_FILTERED_USER_GROUPS">
@@ -1108,8 +1149,6 @@
   <component name="VcsManagerConfiguration">
     <option name="CHECK_CODE_SMELLS_BEFORE_PROJECT_COMMIT" value="false" />
     <option name="CHECK_NEW_TODO" value="false" />
-    <MESSAGE value="DirectorySynchronizer: store file modification info to avoid excesive comparisons" />
-    <MESSAGE value="Various unrelated changes" />
     <MESSAGE value="Store file modification info to avoid superfluous comparisons" />
     <MESSAGE value="Embellecimiento de DirTree" />
     <MESSAGE value="Move the lib directory" />
@@ -1130,7 +1169,12 @@
     <MESSAGE value="Modularization (fourth  batch -&gt; asintec)" />
     <MESSAGE value="Modularization (add Idea configuration files to version control)" />
     <MESSAGE value="Add Idea configuration files to version control (Is this a good idea?)" />
-    <option name="LAST_COMMIT_MESSAGE" value="Add Idea configuration files to version control (Is this a good idea?)" />
+    <MESSAGE value="Cambio en la URL de Raisin" />
+    <MESSAGE value="Dir synchonizer: fix bug when changed file not in first directories; add root and target" />
+    <MESSAGE value="Links: buy of Rovi" />
+    <MESSAGE value="Links: buy of Miquel y Costas &amp; Prisa" />
+    <MESSAGE value="Some changes in dir sync related to Atenea (and Vishnu)" />
+    <option name="LAST_COMMIT_MESSAGE" value="Some changes in dir sync related to Atenea (and Vishnu)" />
     <option name="OPTIMIZE_IMPORTS_BEFORE_PROJECT_COMMIT" value="true" />
   </component>
   <component name="XDebuggerManager">
@@ -1140,6 +1184,26 @@
           <url>file://$PROJECT_DIR$/pclg.apps/src/java/org/pclg/filesystem/EndOfLineChanger.java</url>
           <line>34</line>
           <option name="timeStamp" value="6" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/pclg-synchonizer/src/main/java/org/pclg/filesystem/synchonizer/TargetDef.java</url>
+          <line>204</line>
+          <option name="timeStamp" value="7" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/pclg-synchonizer/src/main/java/org/pclg/filesystem/synchonizer/OnlyIncludedFilesIterator.java</url>
+          <line>15</line>
+          <option name="timeStamp" value="8" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/pclg-synchonizer/src/main/java/org/pclg/filesystem/synchonizer/TargetDef.java</url>
+          <line>215</line>
+          <option name="timeStamp" value="10" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/pclg-synchonizer/src/main/java/org/pclg/filesystem/synchonizer/OnlyIncludedFilesIterator.java</url>
+          <line>25</line>
+          <option name="timeStamp" value="11" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>
