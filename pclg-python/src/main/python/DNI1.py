@@ -1,1 +1,0 @@
-print("La letra correspondiente es:", "TRWAGMYFPDXBNJZSQVHLCKE"[int(input("Introduzca el DNI: ")) % 23]) # one-liner that computes the control char of the spanish id number

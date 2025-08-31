@@ -1,1 +1,0 @@
-print("Soy un .exe")

@@ -57,7 +57,6 @@
 
     <target name="_compile" depends="_init" description="Compile the sources">
         <javac
-                classpath="${classpath}"
                 modulepath="${classpath}"
                 includeantruntime="false"
                 srcdir="${src}"

@@ -1,2 +1,0 @@
-Main-Class: misc.sopra.OuvrirSuivi
-Class-Path: .
