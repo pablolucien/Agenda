@@ -13,15 +13,15 @@ import org.w3c.dom.Node;
 
 import javax.swing.Icon;
 import javax.swing.ImageIcon;
-import javax.xml.bind.JAXBContext;
-import javax.xml.bind.JAXBException;
-import javax.xml.bind.Marshaller;
-import javax.xml.bind.annotation.XmlAttribute;
-import javax.xml.bind.annotation.XmlElement;
-import javax.xml.bind.annotation.XmlElementWrapper;
-import javax.xml.bind.annotation.XmlRootElement;
-import javax.xml.bind.annotation.XmlTransient;
-import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
+import jakarta.xml.bind.JAXBContext;
+import jakarta.xml.bind.JAXBException;
+import jakarta.xml.bind.Marshaller;
+import jakarta.xml.bind.annotation.XmlAttribute;
+import jakarta.xml.bind.annotation.XmlElement;
+import jakarta.xml.bind.annotation.XmlElementWrapper;
+import jakarta.xml.bind.annotation.XmlRootElement;
+import jakarta.xml.bind.annotation.XmlTransient;
+import jakarta.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
 import javax.xml.parsers.DocumentBuilder;
 import javax.xml.parsers.DocumentBuilderFactory;
 import javax.xml.parsers.ParserConfigurationException;
@@ -30,6 +30,7 @@ import javax.xml.transform.TransformerException;
 import javax.xml.transform.TransformerFactory;
 import javax.xml.transform.dom.DOMSource;
 import javax.xml.transform.stream.StreamResult;
+import java.io.Serial;
 import java.io.StringWriter;
 import java.lang.reflect.Field;
 import java.lang.reflect.Modifier;
@@ -52,7 +53,8 @@ import static org.pclg.tools.StringTools.equalEmptyOrBlank;
 @XmlRootElement( name = "AgendaRecord" )
 //@XmlType( propOrder = { "firstname", "lastname", "sex", "country" } )
 public final class AgendaRecordImpl implements AgendaRecord {
-	private static final long serialVersionUID = 7813309582392710335L;
+	@Serial
+    private static final long serialVersionUID = 7813309582392710335L;
 	/** El logger. */
 	private static final Logger LOGGER = LoggerFactory.makeLog4J();
 

@@ -6,10 +6,12 @@ module pclg.agenda {
     requires java.sql;
 //    requires java.xml;
 //    requires java.xml.bind;
-    requires javaee;
+//    requires javaee;
 //    requires jakarta.xml.bind.api;
-    requires ez.vcard;
+//    requires ez.vcard;
+    requires com.googlecode.ezvcard;
     requires jpatterns;
     requires org.apache.logging.log4j;
     requires pclg.tools;
+    requires jakarta.xml.bind;
 }

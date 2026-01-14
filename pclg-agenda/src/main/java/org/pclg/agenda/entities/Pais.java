@@ -3,10 +3,12 @@ package org.pclg.agenda.entities;
 import org.apache.logging.log4j.Logger;
 import org.pclg.log.LoggerFactory;
 
+import java.io.Serial;
 import java.io.Serializable;
 import java.util.Collection;
 import java.util.Collections;
 import java.util.Map;
+import java.util.Objects;
 import java.util.TreeMap;
 
 /**
@@ -17,7 +19,8 @@ import java.util.TreeMap;
 public class Pais implements Serializable {
 	/** El logger. */
 	private static final Logger LOGGER = LoggerFactory.makeLog4J();
-	private static final long serialVersionUID = -1436198872032766292L;
+	@Serial
+    private static final long serialVersionUID = -1436198872032766292L;
 	private static final Map<String, Pais> ATLAS = new TreeMap<>();
 	private static final Pais unknownCountry = new Pais("0", "Erewhon", "");
 	static final Pais NULL_INSTANCE = new Pais("", "", "");
@@ -87,6 +90,15 @@ public class Pais implements Serializable {
 		return unknownCountry;
 	}
 
+    public static Pais fromCountryCode(final String countryCode) {
+        for (final Pais pais : ATLAS.values()) {
+            if (pais.countryCode.equalsIgnoreCase(countryCode)) {
+                return pais;
+            }
+        }
+        return unknownCountry;
+    }
+
 	/**
 	 * Devuelve la lista de los pa�ses.
 	 * @return  la lista de los pa�ses conocidos por esta clase.
@@ -118,9 +130,7 @@ public class Pais implements Serializable {
 
 		final Pais pais = (Pais) o;
 
-        return !(countryCode != null ? !countryCode.equals(pais.countryCode)
-            : pais.countryCode != null);
-
+        return Objects.equals(countryCode, pais.countryCode);
     }
 
 	@Override

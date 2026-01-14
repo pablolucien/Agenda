@@ -1,18 +1,18 @@
 package org.pclg.agenda.entities;
 
-import javax.xml.bind.annotation.adapters.XmlAdapter;
+import jakarta.xml.bind.annotation.adapters.XmlAdapter;
 
 /**
  * @since 10/05/2017.
  */
 public class PaisAdapter extends XmlAdapter<String, Pais> {
     @Override
-    public Pais unmarshal(final String nombre) throws Exception {
+    public Pais unmarshal(final String nombre) {
         return Pais.valueOf(nombre);
     }
 
     @Override
-    public String marshal(final Pais pais) throws Exception {
+    public String marshal(final Pais pais) {
         return pais.toString();
     }
 }

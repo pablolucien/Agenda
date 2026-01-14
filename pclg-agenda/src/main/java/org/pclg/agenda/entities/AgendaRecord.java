@@ -3,8 +3,8 @@ package org.pclg.agenda.entities;
 import org.pclg.agenda.TimestampAdapter;
 
 import javax.swing.Icon;
-import javax.xml.bind.annotation.XmlTransient;
-import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
+import jakarta.xml.bind.annotation.XmlTransient;
+import jakarta.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
 import java.io.Serializable;
 import java.sql.Timestamp;
 import java.util.List;

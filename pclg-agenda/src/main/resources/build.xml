@@ -15,15 +15,17 @@
     <property name="properties" value="Agenda*.properties"/>
 
     <property name="classpath" value="
-        ${lib_dir}/log4j-1.2-api-2.17.2.jar:
-        ${lib_dir}/log4j-api-2.17.2.jar:
-        ${lib_dir}/log4j-core-2.17.2.jar:
-
-        ${lib_dir}/jakarta.activation-api-2.0.0-RC3.jar:
-        ${lib_dir}/jakarta.xml.bind-api-2.3.3.jar:
-        ${lib_dir}/ez-vcard-0.9.5.jar:
-        ${lib_dir}/jpatterns-0.1.jar:
         ${dist}/pclg-tools.jar:
+
+        ${lib_dir}/log4j-api-2.18.0.jar:
+        ${lib_dir}/log4j-core-2.18.0.jar:
+        ${lib_dir}/jakarta.xml.bind-api-4.0.4.jar:
+
+        ${lib_dir}/jakarta.activation-api-2.1.4.jar:
+        ${lib_dir}/jakarta.xml.bind-api-2.3.3.jar:
+        ${lib_dir}/ez-vcard-0.12.1.jar:
+        ${lib_dir}/vinnie-2.0.2.jar:
+        ${lib_dir}/jpatterns-0.1.jar:
     "/>
 
     <!--    Tests-->
@@ -110,7 +112,7 @@
             <manifest>
                 <attribute name="Built-By" value="${user.name}"/>
                 <attribute name="Main-Class" value="org.pclg.agenda.Agenda"/>
-                <attribute name="Class-Path" value="pclg-tools.jar : Icons.jar : Sounds.jar : toolbarButtonGraphics.jar : log4j-api-2.17.2.jar : log4j-core-2.17.2.jar : derby.jar : javaee.jar : ez-vcard-0.9.5.jar : lib_L&amp;F/kunststoff.jar : ."/>
+                <attribute name="Class-Path" value="pclg-tools.jar : Icons.jar : Sounds.jar : toolbarButtonGraphics.jar : log4j-api-2.17.2.jar : log4j-core-2.17.2.jar : derby.jar : jakarta.xml.bind-api-4.0.4.jar : ez-vcard-0.12.1.jar : vinnie-2.0.2.jar : lib_L&amp;F/kunststoff.jar"/>
             </manifest>
         </jar>
     </target>
