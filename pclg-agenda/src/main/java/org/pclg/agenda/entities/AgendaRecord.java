@@ -1,17 +1,17 @@
 package org.pclg.agenda.entities;
 
+import jakarta.xml.bind.annotation.XmlTransient;
+import jakarta.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
 import org.pclg.agenda.TimestampAdapter;
 
 import javax.swing.Icon;
-import jakarta.xml.bind.annotation.XmlTransient;
-import jakarta.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
 import java.io.Serializable;
 import java.sql.Timestamp;
 import java.util.List;
 
 /**
  * Premature optimization is the root of all evil.
- * 桪onald E. Knuth
+ * 锟紻onald E. Knuth
  *
  * @author El Coyote Cojo
  * @since 26/08/17 22:27
@@ -59,7 +59,7 @@ public interface AgendaRecord extends Serializable {
 
     /**
      * Verifica si las direcciones de un registro coinciden con los del otro.
-     * (De momento s髄o hay una, pero en un futuro ya veremos.
+     * (De momento s贸lo hay una, pero en un futuro ya veremos.
      *
      * @param record
      *            el registro a comparar.
@@ -69,7 +69,7 @@ public interface AgendaRecord extends Serializable {
 
     /**
      * Verifica si los emails de un registro coinciden con los del otro. (De
-     * momento s髄o hay uno, pero en un futuro ya veremos.
+     * momento s贸lo hay uno, pero en un futuro ya veremos.
      *
      * @param record
      *            el registro a comparar.
@@ -79,7 +79,7 @@ public interface AgendaRecord extends Serializable {
 
     /**
      * Verifica si las notas de un registro coinciden con los del otro. (De
-     * momento s髄o hay una, pero en un futuro ya veremos.
+     * momento s贸lo hay una, pero en un futuro ya veremos.
      *
      * @param record
      *            el registro a comparar.
@@ -89,7 +89,7 @@ public interface AgendaRecord extends Serializable {
 
     /**
      * Verifica si las imagenes de un registro coincide con las del otro. (De
-     * momento s髄o hay una, pero en un futuro ya veremos.
+     * momento s贸lo hay una, pero en un futuro ya veremos.
      *
      * @param record
      *            el registro a comparar.

@@ -37,13 +37,13 @@ public class AgendaUtilTest {
 		final File testFile = new File(dir, "kkk.vcf");
 		testFile.deleteOnExit();
 		if (testFile.exists() && !testFile.delete()) {
-			LOGGER.warn("Couldn't delete " + testFile);
+            LOGGER.warn("Couldn't delete {}", testFile);
 		}
         final AgendaRecord record = getAgendaRecord();
 		AgendaUtil.saveVCard(record, dir);
 		final List<AgendaRecord> agendaRecords = AgendaUtil.readVCards(testFile);
-		assertEquals(1, agendaRecords.size());
-		final AgendaRecord agendaRecord = agendaRecords.get(0);
+		assertEquals(agendaRecords.size(), 1);
+		final AgendaRecord agendaRecord = agendaRecords.getFirst();
 		assertNotSame(record, agendaRecord);
 		assertEquals(record, agendaRecord);
 		// Clean the temporary image created by readVCards
@@ -62,18 +62,18 @@ public class AgendaUtilTest {
         record.setMonth(9);
         record.setYear(2001);
         record.addEmail("pepe@isv.com");
-        record.addEmail("DonJos�@mail_provider.com");
+        record.addEmail("DonJosé@mail_provider.com");
         final List<Telefono> telephones = new ArrayList<>(2);
         telephones.add(new Telefono("34", "1234567", 0));     // usando 0 porque el lector de vCards no tiene el tipo (de Agenda)
         telephones.add(new Telefono("58", "9876543", 0));
         record.setTelephones(telephones);
         final List<Grupo> grupos = new ArrayList<>(2);
         grupos.add(new Grupo(-1, "Abeliano"));          // usando -1 porque el lector de vCards no tiene la clave
-        grupos.add(new Grupo(-1, "De simetr�as"));
+        grupos.add(new Grupo(-1, "De simetrías"));
         record.setGroups(grupos);
         record.setMark("42");
         record.setAddress("Calle Luna, calle Sol");
-        final String path = getClass().getResource("/images/unknown-man.png").getPath();
+        final String path = getClass().getResource("/img/unknown-man.png").getPath();
         record.setImagePath(path);
         record.setCountry(Pais.getUnknownCountry());
         return record;

@@ -6,12 +6,13 @@ import javax.crypto.IllegalBlockSizeException;
 import javax.crypto.NoSuchPaddingException;
 import javax.crypto.spec.SecretKeySpec;
 import java.io.UnsupportedEncodingException;
+import java.nio.charset.StandardCharsets;
 import java.security.InvalidKeyException;
 import java.security.NoSuchAlgorithmException;
 import java.util.Base64;
 
 /**
- * Clase encargada de la criptografía.
+ * Clase encargada de la criptografÃ­a.
  *
  * @author El Coyote
  * @since 12-sep-2007 11:43:27
@@ -24,7 +25,7 @@ public final class AgendaCrypto implements Cryptographer {
 	private final Cipher cipherD;
 
 	/** El algoritmo a usar. */
-    //FIXME: Qué significa cada uno?
+    //FIXME: QuÃ© significa cada uno?
 //	private static final String TRANSFORMATION = "Blowfish";
 //	private final String TRANSFORMATION = "DES";
 //	private final String TRANSFORMATION = "DES/CFB/NoPadding";
@@ -90,7 +91,7 @@ public final class AgendaCrypto implements Cryptographer {
 	}
 
 	private void initCipher(final String pwd) throws InvalidKeyException, UnsupportedEncodingException {
-		final SecretKeySpec skeySpec = new SecretKeySpec(pwd.getBytes("UTF-8"), transformation.getShortName());
+		final SecretKeySpec skeySpec = new SecretKeySpec(pwd.getBytes(StandardCharsets.UTF_8), transformation.getShortName());
 		cipherC.init(Cipher.ENCRYPT_MODE, skeySpec);
 		cipherD.init(Cipher.DECRYPT_MODE, skeySpec);
 	}
@@ -122,14 +123,14 @@ public final class AgendaCrypto implements Cryptographer {
 //				"1234567890123456789012345678901234567890123456789012345678901",
 //				"12345678901234567890123456789012345678901234567890123456789012",
 //				"123456789012345678901234567890123456789012345678901234567890123",
-//				"áedñopksku&574~+**óújjj++7844jjBNBJLAcPOLonrÑÑkkdpowiifjnskio^|",
+//				"Ã¡edÃ±opksku&574~+**Ã³Ãºjjj++7844jjBNBJLAcPOLonrÃ‘Ã‘kkdpowiifjnskio^|",
 //				"1234567890123456789012345678901234567890123456789012345678901234",
 //		};
 //		for (final String str : data) {
 //			System.out.println("Len = " + agendaCrypto.cifrar(str).length);
 //		}
 //		/*
-//		Tamaño del array cifrado en relacion con el tamaño del plaintext
+//		TamaÃ±o del array cifrado en relaciÃ³n con el tamaÃ±o del plaintext
 //		40 -> 48
 //		50 -> 56
 //		60 -> 64

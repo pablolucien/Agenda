@@ -3,10 +3,12 @@ package org.pclg.agenda.entities;
 import org.pclg.tools.ChangeObserver;
 import org.pclg.tools.ChangeableList;
 
+import java.io.Serial;
 import java.io.Serializable;
 import java.util.Collections;
 import java.util.Comparator;
 import java.util.List;
+import java.util.Objects;
 
 /**
  * Representa los grupos a los grupos a los que pertenece un usuario.
@@ -40,7 +42,8 @@ public class Grupo implements Comparable<Grupo>, Serializable {
 
 	private static final ChangeableList<Grupo> values
 		= new ChangeableList<>();
-	private static final long serialVersionUID = 6422010567371430538L;
+	@Serial
+    private static final long serialVersionUID = 6422010567371430538L;
 	private final int clave;
 	private final String nombre;
 	/** Instante de la �ltima actualizacion de la lista de grupos. */
@@ -92,7 +95,14 @@ public class Grupo implements Comparable<Grupo>, Serializable {
 
 	@Override
 	public boolean equals(final Object o) {
-		return this == o || o != null && getClass() == o.getClass() && clave == ((Grupo) o).clave;
+        if (this == o) {
+            return true;
+        }
+        if (o == null || getClass() != o.getClass()) {
+            return false;
+        }
+        final Grupo grupo = (Grupo) o;
+        return clave == grupo.clave && Objects.equals(nombre, grupo.nombre);
 	}
 
 	@Override

@@ -7,6 +7,7 @@ import org.pclg.tools.ToolBox;
 
 import javax.swing.JComponent;
 import javax.swing.table.AbstractTableModel;
+import java.io.Serial;
 import java.text.DateFormatSymbols;
 import java.util.ArrayList;
 import java.util.List;
@@ -17,7 +18,8 @@ import java.util.Properties;
  * @since 10-sep-2007 17:04:15
  */
 final class AgendaTableModel extends AbstractTableModel {
-	private static final long serialVersionUID = -8122550240258121062L;
+	@Serial
+    private static final long serialVersionUID = -8122550240258121062L;
 	private static final int KEY_COLUMN_INDEX = 0;
 	private static final int VERSION_COLUMN_INDEX = 1;
 	static final int DATE_COLUMN_INDEX = 2;
@@ -28,7 +30,7 @@ final class AgendaTableModel extends AbstractTableModel {
 	static final int NOTAS_COLUMN_INDEX = 7;
 	
 	private static final String[] FIELD_NAMES =
-		{"Clave", "Versión", "Fecha", "Nombre", "Apellido", "Teléfonos", "Marca", "Notas"};
+		{"Clave", "VersiÃ³n", "Fecha", "Nombre", "Apellido", "TelÃ©fonos", "Marca", "Notas"};
 	private static final Class<?>[] FIELD_TYPES =
 		{Integer.class, Integer.class, String.class, String.class, String.class, String.class, String.class, String.class};
 	private final List<AgendaRecord> data = new ArrayList<>();
@@ -87,27 +89,18 @@ final class AgendaTableModel extends AbstractTableModel {
 	@Override
 	public Object getValueAt(final int row, final int col) {
 		final AgendaRecord record = data.get(row);
-		switch (col) {
-		case KEY_COLUMN_INDEX:
-			return Integer.valueOf(record.getKey());
-		case VERSION_COLUMN_INDEX:
-			return Integer.valueOf(record.getVersion());
-		case DATE_COLUMN_INDEX:
-			return formatDate(record);
-		case NAME_COLUMN_INDEX:
-			return record.getFirstname();
-		case SURNAME_COLUMN_INDEX:
-			return record.getLastname();
-		case TELEFONOS_COLUMN_INDEX:
-			return AgendaUtil.concatenarTelefonos(record.getTelephones(),
+        return switch (col) {
+            case KEY_COLUMN_INDEX -> Integer.valueOf(record.getKey());
+            case VERSION_COLUMN_INDEX -> Integer.valueOf(record.getVersion());
+            case DATE_COLUMN_INDEX -> formatDate(record);
+            case NAME_COLUMN_INDEX -> record.getFirstname();
+            case SURNAME_COLUMN_INDEX -> record.getLastname();
+            case TELEFONOS_COLUMN_INDEX -> AgendaUtil.concatenarTelefonos(record.getTelephones(),
                 record.getCountry().getFormatoTelefono());
-		case MARCAS_COLUMN_INDEX:
-			return record.getMark();
-		case NOTAS_COLUMN_INDEX:
-			return record.getNotes();
-		default:
-			throw new IllegalStateException("Col: " + col + " no existe.");
-		}
+            case MARCAS_COLUMN_INDEX -> record.getMark();
+            case NOTAS_COLUMN_INDEX -> record.getNotes();
+            default -> throw new IllegalStateException("Col: " + col + " no existe.");
+        };
 	}
 
 	public AgendaRecord getValueAt(final int row) {
@@ -154,7 +147,7 @@ final class AgendaTableModel extends AbstractTableModel {
                 return;
             }
         }
-        // Si llegamos aquí es que es un registro nuevo
+        // Si llegamos aquÃ­ es que es un registro nuevo
         data.add(record);
     }
 }

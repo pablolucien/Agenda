@@ -7,10 +7,12 @@ import javax.swing.JTable;
 import javax.swing.table.TableCellRenderer;
 import java.awt.Component;
 import java.awt.Font;
+import java.io.Serial;
 
 final class PhoneTableCellRenderer implements TableCellRenderer {
 		private final JLabel rendererComponent = new JLabel() {
-			private static final long serialVersionUID = -4450223585232890122L;
+			@Serial
+            private static final long serialVersionUID = -4450223585232890122L;
 
             {
 				setFont(getFont().deriveFont(Font.ITALIC));
@@ -43,7 +45,7 @@ final class PhoneTableCellRenderer implements TableCellRenderer {
 					rendererComponent.setText(text);
 					rendererComponent.setForeground(DataTable.HIGHLIGHT_COLOR);
 				} else {
-					// Sólo para probar otra forma de hacerlo
+					// SÃ³lo para probar otra forma de hacerlo
 					rendererComponent.setText(
 						"<html><font color=#ffffdd>" + text + "</font></html>");
 				}

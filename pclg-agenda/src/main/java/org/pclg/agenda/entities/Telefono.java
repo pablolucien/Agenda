@@ -2,25 +2,27 @@ package org.pclg.agenda.entities;
 
 import ezvcard.parameter.TelephoneType;
 
+import java.io.Serial;
 import java.io.Serializable;
 import java.util.Objects;
 
 /**
- * Representa la informaci髇 del tel閒ono de un contacto. Clase inmutable, como
+ * Representa la informaci贸n del tel茅fono de un contacto. Clase inmutable, como
  * corresponde a gente de bien.
  *
  * @author El Coyote Cojo.
  * @since 1/08/14 8:37
  */
 public class Telefono implements Serializable {
+    @Serial
     private static final long serialVersionUID = 3474643837544140904L;
-    /** El n鷐ero del tel閒ono. */
+    /** El prefijo del pa铆s. */
 	private final String countryPrefix;
 
-    /** El n鷐ero del tel閒ono. */
+    /** El n煤mero del tel茅fono. */
 	private final String numero;
 
-	/** El tipo del tel閒ono. 0 = null. */
+	/** El tipo del tel茅fono. 0 = null. */
 	private final int tipo;
 
 	/** To be used for unknown telephones. */
@@ -84,10 +86,10 @@ public class Telefono implements Serializable {
 	}
 
 	/**
-	 * Devuelve un objeto de tipo Telefono a partir de su representaci髇
+	 * Devuelve un objeto de tipo Telefono a partir de su representaci贸n
 	 * como String
-	 * @param strTel la representaci髇 tal como la da toString()
-	 * @return un objeto de tipo Telefono a partir de su representaci髇
+	 * @param strTel la representaci贸n tal como la da toString()
+	 * @return un objeto de tipo Telefono a partir de su representaci贸n
 	 * como String
 	 */
 	public static Telefono valueOf(final String strTel) {

@@ -18,7 +18,7 @@ public class TipoTelefono implements Comparable<TipoTelefono> {
     private final String nombre;
     private final Color foreGroundColor;
     /**
-     * Instante de la última actualizacion de la lista de TipoTelefono.
+     * Instante de la Ãºltima actualizacion de la lista de TipoTelefono.
      */
     private static long lastUpdated;
     /**
@@ -107,7 +107,7 @@ public class TipoTelefono implements Comparable<TipoTelefono> {
     }
 
     /**
-     * Inicializa los valores de los tipos de teléfono.
+     * Inicializa los valores de los tipos de telÃ©fono.
      *
      * @param listaTiposTelefono los datos.
      */

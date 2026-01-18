@@ -13,7 +13,7 @@ package org.pclg.agenda.crypto;
 public class PreprocessorClipAndCryptString {
 //    implements Preprocessor {
 //	private static final DummyCrypto DUMMY_CRYPTO = new DummyCrypto(null);
-//	/** informa de lo que es capaz de hacer este seÒor */
+//	/** informa de lo que es capaz de hacer este se√±or */
 //	@Override
 //	public String getDescription() {
 //		return getClass().getName()
@@ -23,7 +23,7 @@ public class PreprocessorClipAndCryptString {
 //	}
 //
 //	/**
-//		Obtiene los posibles parametros que utilizar· este preprocesador
+//		Obtiene los posibles parametros que utilizar√° este preprocesador
 //		En esta clase no tiene utilidad
 //		@param param Los parametros
 //	*/

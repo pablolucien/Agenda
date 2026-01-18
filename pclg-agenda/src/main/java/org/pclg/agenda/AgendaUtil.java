@@ -660,10 +660,13 @@ public final class AgendaUtil {
             grupos = new ArrayList<>(existingGroups);
         }
         for (final String value : values) {
-            final Grupo grupo = Grupo.valueOf(value);
+            Grupo grupo = Grupo.valueOf(value);
+            if (grupo == null) {
+                grupo = new Grupo(Grupo.INVALID_KEY, value);
+                Grupo.add(grupo);
+            }
             if (!grupos.contains(grupo)) {
-                grupos.add(grupo == null ?
-                    new Grupo(Grupo.INVALID_KEY, value) : grupo);
+                grupos.add(grupo);
             }
         }
         record.setGroups(grupos);

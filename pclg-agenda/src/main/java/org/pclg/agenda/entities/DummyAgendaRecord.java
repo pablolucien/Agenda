@@ -1,17 +1,19 @@
 package org.pclg.agenda.entities;
 
 import javax.swing.Icon;
+import java.io.Serial;
 import java.sql.Timestamp;
 import java.util.List;
 
 /**
  * Premature optimization is the root of all evil.
- * —Donald E. Knuth
+ * ï¿½Donald E. Knuth
  *
  * @author El Coyote Cojo
  * @since 26/08/17 23:07
  */
 public final class DummyAgendaRecord implements AgendaRecord {
+    @Serial
     private static final long serialVersionUID = 5194124407610349938L;
 
     @Override

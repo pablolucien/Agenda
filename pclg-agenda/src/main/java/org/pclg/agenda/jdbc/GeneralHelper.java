@@ -7,7 +7,7 @@ import java.sql.SQLException;
 
 /**
  * Premature optimization is the root of all evil.
- * —Donald E. Knuth
+ * ï¿½Donald E. Knuth
  *
  * @author El Coyote Cojo
  * @since 23/07/17 11:31
@@ -22,10 +22,10 @@ final class GeneralHelper {
     }
 
     /**
-   	 * Obtiene la próxima clave a insertar, puesto que no podemos usar seqs.
-   	 * Este método lo más probable es que no funcione en un entorno multi,
-   	 * pero como dice la canción: ¿A quién le importa?
-   	 * @param tableName La tabla cuya próxima clave queremos
+   	 * Obtiene la prÃ³xima clave a insertar, puesto que no podemos usar seqs.
+   	 * Este mÃ©todo lo mÃ¡s probable es que no funcione en un entorno multi,
+   	 * pero como dice la canciÃ³n: Â¿A quiÃ©n le importa?
+   	 * @param tableName La tabla cuya prÃ³xima clave queremos
    	 * @return la nueva clave
    	 * @throws java.sql.SQLException si hay errores de acceso a la base de datos.
    	 */
@@ -38,10 +38,10 @@ final class GeneralHelper {
    	}
 
    	/**
-   	 * Obtiene la próxima version a insertar dada una clave, puesto que no
+   	 * Obtiene la prÃ³xima version a insertar dada una clave, puesto que no
    	 * podemos usar seqs.
-   	 * Este método lo más probable es que no funcione en un entorno multi,
-   	 * pero como dice la canción: ¿A quién le importa?
+   	 * Este mÃ©todo lo mÃ¡s probable es que no funcione en un entorno multi,
+   	 * pero como dice la canciÃ³n: Â¿A quiÃ©n le importa?
    	 * @param tabla La tabla en la que estamos interesados.
    	 * @param clave la clave cuya nueva version queremos.
    	 * @return la nueva version.
