@@ -1,0 +1,9 @@
+<component name="libraryTable">
+  <library name="pclg-tools">
+    <CLASSES>
+      <root url="jar://$MAVEN_REPOSITORY$/org/pclg/pclg-tools/25.0/pclg-tools-25.0.jar!/" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES />
+  </library>
+</component>

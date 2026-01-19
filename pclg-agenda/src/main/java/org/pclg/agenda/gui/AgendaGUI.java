@@ -83,7 +83,6 @@ import static org.pclg.tools.PropertiesHelper.getStringFromProperties;
  * @author El Coyote Cojo
  * @since 25-sep-2007 17:46:11
  */
-@SuppressWarnings("serial")
 public final class AgendaGUI extends JFrame {
 	/** El logger. */
 	private static final Logger LOGGER = LoggerFactory.makeLog4J();
@@ -125,7 +124,7 @@ public final class AgendaGUI extends JFrame {
     /** Para cut -n- paste sin el clipboard global. */
     //final Clipboard clipboard = new Clipboard("Agenda.clipboard");
 
-	public AgendaGUI(final Properties properties, final AgendaDb agendaDb, SplashWindow splashWindow)
+	public AgendaGUI(final Properties properties, final AgendaDb agendaDb, final SplashWindow splashWindow)
             throws SQLException {
 		super(getStringFromProperties(properties, "AgendaDb.title"));
         splashWindow.setStatus("AgendaGUI");
@@ -290,9 +289,8 @@ public final class AgendaGUI extends JFrame {
 			@Override
 			public void actionPerformed(final ActionEvent event) {
 				final Component selectedComponent = tabbedPane.getSelectedComponent();
-				if (selectedComponent instanceof DataEntry) {
-					final DataEntry dataEntry = (DataEntry) selectedComponent;
-					final String xmlRecord = dataEntry.getData().toXML();
+				if (selectedComponent instanceof final DataEntry dataEntry) {
+                    final String xmlRecord = dataEntry.getData().toXML();
 					LOGGER.debug("Copy record: " + xmlRecord);
 					clipboard.setContents(new StringSelection(xmlRecord), null);
 				}
@@ -305,9 +303,8 @@ public final class AgendaGUI extends JFrame {
 			@Override
 			public void actionPerformed(final ActionEvent event) {
 				final Component selectedComponent = tabbedPane.getSelectedComponent();
-				 if (selectedComponent instanceof DataEntry) {
-					 final DataEntry dataEntry = (DataEntry) selectedComponent;
-					 //odd: the Object param of getContents is not currently used
+				 if (selectedComponent instanceof final DataEntry dataEntry) {
+                     //odd: the Object param of getContents is not currently used
 					 final Transferable contents = clipboard.getContents(null);
 					 if (contents != null && contents.isDataFlavorSupported(DataFlavor.stringFlavor)) {
 						try {
@@ -315,12 +312,12 @@ public final class AgendaGUI extends JFrame {
 							LOGGER.debug("Paste record: " + xmlRecord);
 							dataEntry.fillData(AgendaRecordUtil.xml2AgendaRecord(xmlRecord));
 						//highly unlikely since we are using a standard DataFlavor
-						} catch (UnsupportedFlavorException | IOException
-							| ParserConfigurationException | SAXException
-							| IllegalAccessException | NoSuchFieldException
-							| IllegalArgumentException | SecurityException
-							| DOMException | NoSuchMethodException
-							| InvocationTargetException | SQLException ex) {
+						} catch (final UnsupportedFlavorException | IOException
+                           | ParserConfigurationException | SAXException
+                           | IllegalAccessException | NoSuchFieldException
+                           | IllegalArgumentException | SecurityException
+                           | DOMException | NoSuchMethodException
+                           | InvocationTargetException | SQLException ex) {
 								LOGGER.error(LoggerFactory.ERROR_TAG, ex);
 						}
 					 }
@@ -354,9 +351,8 @@ public final class AgendaGUI extends JFrame {
 	private boolean closeAll() {
 		boolean allAreClosed = true;
 		for (final Component component : tabbedPane.getComponents()) {
-            if (component instanceof DataEntry) {
+            if (component instanceof final DataEntry dataEntry) {
                 // El fucking compilator deber?a saber que no tengo que hacer el cast
-                final DataEntry dataEntry = (DataEntry) component;
                 tabbedPane.setSelectedComponent(dataEntry);
                 if (dataEntry.willClose()) {
                     tabbedPane.remove(dataEntry);
@@ -437,11 +433,9 @@ public final class AgendaGUI extends JFrame {
 		tabbedPane.setSelectedComponent(component);
 		final Component tabComponentAt = tabbedPane
 			.getTabComponentAt(tabbedPane.getSelectedIndex());
-		if (tabComponentAt instanceof JTabbedPaneWithCloseIcons.CloseTabPanel
+		if (tabComponentAt instanceof final JTabbedPaneWithCloseIcons.CloseTabPanel closeTabPanel
 				&& component instanceof ActionListener) {
-			final JTabbedPaneWithCloseIcons.CloseTabPanel closeTabPanel
-				= (JTabbedPaneWithCloseIcons.CloseTabPanel) tabComponentAt;
-			closeTabPanel.addActionListener((ActionListener) component);
+            closeTabPanel.addActionListener((ActionListener) component);
 		}
 	}
 
@@ -459,8 +453,7 @@ public final class AgendaGUI extends JFrame {
         // Si el registro ya est? en alguna pesta?a, seleccionamos esta.
         for (int ii = 0, tabCount = tabbedPane.getTabCount(); ii < tabCount; ii++) {
             final Component component = tabbedPane.getComponentAt(ii);
-            if (component instanceof DataEntry) {
-                final DataEntry dataEntry = (DataEntry) component;
+            if (component instanceof final DataEntry dataEntry) {
                 if (dataEntry.getRecordId() == agendaRecord.getKey()) {
                     tabbedPane.setSelectedIndex(ii);
                     return;
@@ -472,7 +465,7 @@ public final class AgendaGUI extends JFrame {
         final DataEntry dataEntry = new DataEntry(properties, agendaDb,
             tabbedPane, this, agendaRecord);
         final String title = beautify(agendaRecord.getFirstname()) + ' ' + beautify(agendaRecord.getLastname());
-        add2TabbedPane(title.trim().length() > 0 ? title :
+        add2TabbedPane(!title.trim().isEmpty() ? title :
             getStringFromProperties(properties, "no.name.tab.title"), dataEntry);
     }
 
