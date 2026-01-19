@@ -8,6 +8,6 @@
 /pclg-keepass/
 /local_config.properties
 /.idea/sonarlint/
-/pclg-tools/target/
+/pclg-agenda/target/
 /pclg-synchonizer/pclg-synchonizer.iml
 /DirectorySynchronizer_custom.properties
