@@ -39,6 +39,7 @@ import java.awt.event.InputEvent;
 import java.awt.event.KeyEvent;
 import java.io.File;
 import java.io.IOException;
+import java.io.Serial;
 import java.nio.file.Files;
 import java.nio.file.Path;
 import java.sql.SQLException;
@@ -60,9 +61,9 @@ import static org.pclg.tools.StringTools.isEmptyOrBlank;
  * @author El Coyote
  * @since 13-sep-2007 11:30:17
  */
-@SuppressWarnings("serial")
 public final class DataEntry extends JPanel implements ActionListener {
     /** serialVersionUID. */
+    @Serial
     private static final long serialVersionUID = 6196637337312154662L;
     /** El logger. */
     private static final Logger LOGGER = LoggerFactory.makeLog4J();
@@ -112,7 +113,7 @@ public final class DataEntry extends JPanel implements ActionListener {
         recordEditor = new RecordEditor(properties);
         final ImageButton btnImage = recordEditor.getBtnImage();
         imagesRoot = properties.getProperty("Agenda.images.root");
-        btnImage.addPopUpOption(PropertiesHelper.getStringFromProperties(properties, "DataEntry.MoveImage"), event -> {
+        btnImage.addPopUpOption(PropertiesHelper.getStringFromProperties(properties, "DataEntry.MoveImage"), _ -> {
             final String imagePath = recordEditor.getImagePath();
 
             if (imagePath != null) {
@@ -197,13 +198,13 @@ public final class DataEntry extends JPanel implements ActionListener {
             }
         });
 
-        btnAceptar.addActionListener(actionEvent -> {
+        btnAceptar.addActionListener(_ -> {
             if (saveData()) {
                 tabbedPane.setSelectedIndex(0);
             }
         });
 
-        btnVCard.addActionListener(actionEvent -> {
+        btnVCard.addActionListener(_ -> {
             getDirTree();
             final String dir = properties.getProperty("AgendaGUI.lastVCardsDirectory");
             if (dir != null) {
@@ -254,8 +255,8 @@ public final class DataEntry extends JPanel implements ActionListener {
         dateFormatStd = new SimpleDateFormat(PropertiesHelper
             .getStringFromProperties(properties, "Agenda.datePattern"), getLocale());
         if (properties instanceof ObservableProperties) {
-            ((ObservableProperties) properties).addChangeObserver(observable -> {
-                setLocale(new Locale(getStringFromProperties(properties, "Application.ForceLanguage")));
+            ((ObservableProperties) properties).addChangeObserver(_ -> {
+                setLocale(Locale.of(getStringFromProperties(properties, "Application.ForceLanguage")));
                 dateFormatStd = new SimpleDateFormat(getStringFromProperties(properties, "Agenda.datePattern"), getLocale());
                 // FIXME: updateRecordStats(getData());
             });
@@ -297,7 +298,7 @@ public final class DataEntry extends JPanel implements ActionListener {
             }
         }
 
-        if (msg.length() > 0) {
+        if (!msg.isEmpty()) {
             JOptionPane.showMessageDialog(this, msg.toString(),
                 PropertiesHelper.getStringFromProperties(properties, "warning.title"),
                 JOptionPane.ERROR_MESSAGE);
@@ -478,7 +479,7 @@ public final class DataEntry extends JPanel implements ActionListener {
             .setTemporaryImage(recordEditor.getTemporaryImagePath());
 
         final String tfEmailText = recordEditor.getEmails();
-        if (tfEmailText.trim().length() > 0) {
+        if (!tfEmailText.trim().isEmpty()) {
             final List<String> emails = new ArrayList<>();
             Collections.addAll(emails, tfEmailText.split("[,; ]+"));
             record.setEmails(emails);
@@ -497,7 +498,7 @@ public final class DataEntry extends JPanel implements ActionListener {
     }
 
     private static int intValue(final String strVal) {
-        return strVal == null || strVal.trim().length() == 0 ? 0
+        return strVal == null || strVal.trim().isEmpty() ? 0
             : Integer.parseInt(strVal);
     }
 
@@ -557,8 +558,7 @@ public final class DataEntry extends JPanel implements ActionListener {
         recordEditor.setStats(stats);
     }
 
-    private void enableNavigationButtons(final AgendaRecord record)
-            throws SQLException {
+    private void enableNavigationButtons(final AgendaRecord record) {
         if (record == null) {
             recordEditor.enableContactChange(true);
             recordEditor.enablePrevious(false);

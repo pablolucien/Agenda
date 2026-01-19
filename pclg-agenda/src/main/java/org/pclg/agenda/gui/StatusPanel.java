@@ -10,6 +10,7 @@ import org.pclg.tools.PropertiesHelper;
 import javax.swing.JLabel;
 import javax.swing.JPanel;
 import java.awt.BorderLayout;
+import java.io.Serial;
 import java.sql.SQLException;
 import java.text.MessageFormat;
 import java.text.SimpleDateFormat;
@@ -24,6 +25,7 @@ final class StatusPanel extends JPanel {
      * El logger.
      */
     private static final Logger LOGGER = LoggerFactory.makeLog4J();
+    @Serial
     private static final long serialVersionUID = 8984335398984738396L;
     private final AgendaDb agendaDb;
     private final JLabel statusLine = new JLabel();
@@ -34,12 +36,12 @@ final class StatusPanel extends JPanel {
         this.agendaDb = agendaDb;
         linePattern = PropertiesHelper.getStringFromProperties(properties, "StatusPane.linePattern");
         datePattern = PropertiesHelper.getStringFromProperties(properties, "Agenda.datePattern");
-        setLocale(new Locale(getStringFromProperties(properties, "Application.ForceLanguage")));
+        setLocale(Locale.of(getStringFromProperties(properties, "Application.ForceLanguage")));
         if (properties instanceof ObservableProperties) {
             ((ObservableProperties) properties).addChangeObserver(observableProperties -> {
                 linePattern = PropertiesHelper.getStringFromProperties(observableProperties, "StatusPane.linePattern");
                 datePattern = PropertiesHelper.getStringFromProperties(observableProperties, "Agenda.datePattern");
-                setLocale(new Locale(getStringFromProperties(properties, "Application.ForceLanguage")));
+                setLocale(Locale.of(getStringFromProperties(properties, "Application.ForceLanguage")));
             });
         }
         setLayout(new BorderLayout());

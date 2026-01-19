@@ -213,7 +213,7 @@ public final class AgendaGUI extends JFrame {
                         "AgendaGUI.byInterestingDatesTitle");
 				final StringBuilder message = new StringBuilder();
 				message.append(titleFechasInteresantes);
-				final Locale locale = new Locale(
+				final Locale locale = Locale.of(
                     getStringFromProperties(properties, "Application.ForceLanguage"));
 				final MessageFormat format = new MessageFormat(
                     getStringFromProperties(properties,
