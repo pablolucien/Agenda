@@ -486,6 +486,10 @@ public final class AgendaUtil {
             if (streetAddress != null) {
                 addresses.append(streetAddress).append('\n');
             }
+            final List<String> extendedAddresses = address.getExtendedAddresses();
+            if (extendedAddresses != null) {
+                extendedAddresses.forEach(addr -> addresses.append(addr).append('\n'));
+            }
             record.setCountry(Pais.getValue(address.getCountry()));    // Solo vale uno
         }
         length = addresses.length();

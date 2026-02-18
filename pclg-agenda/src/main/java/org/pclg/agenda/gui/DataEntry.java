@@ -33,6 +33,9 @@ import javax.swing.filechooser.FileFilter;
 import javax.swing.filechooser.FileNameExtensionFilter;
 import java.awt.BorderLayout;
 import java.awt.Dialog;
+import java.awt.Toolkit;
+import java.awt.datatransfer.Clipboard;
+import java.awt.datatransfer.StringSelection;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.awt.event.InputEvent;
@@ -191,6 +194,11 @@ public final class DataEntry extends JPanel implements ActionListener {
                     LOGGER.log(Level.ERROR, LoggerFactory.ERROR_TAG, ex);
                     showErrorMessage(ex.getLocalizedMessage());
                 }
+                break;
+            case RecordEditor.COPY_FULL_NAME_COMMAND:
+                final Clipboard clipboard = Toolkit.getDefaultToolkit().getSystemClipboard();
+                clipboard.setContents(new StringSelection(
+                    (recordEditor.getNombre() + ' ' + recordEditor.getApellido()).trim()), null);
                 break;
             default:
                 throw new IllegalStateException(

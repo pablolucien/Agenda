@@ -60,8 +60,7 @@ public class Grupo implements Comparable<Grupo>, Serializable {
 	}
 
 	public static Grupo getGrupo(final int clave) {
-		final int index = values.indexOf(new Grupo(clave, null));
-		return index >= 0 ? values.get(index) : null;
+        return values.stream().filter(grupo -> grupo.clave == clave).findAny().orElse(null);
 	}
 
 	public static Grupo valueOf(final String nombre) {

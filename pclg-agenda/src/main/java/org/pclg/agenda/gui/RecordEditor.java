@@ -50,12 +50,12 @@ import java.awt.event.ComponentAdapter;
 import java.awt.event.ComponentEvent;
 import java.awt.event.FocusEvent;
 import java.awt.event.FocusListener;
+import java.io.Serial;
 import java.text.MessageFormat;
 import java.time.DateTimeException;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Properties;
-import java.util.stream.Collectors;
 
 import static org.pclg.tools.StringTools.isEmptyOrBlank;
 
@@ -72,12 +72,16 @@ final class RecordEditor extends JPanel {
 	/** Command action for btnNext button. */
 	public static final String NEXT_COMMAND = "NEXT";
 
+	/** Command action for btnCopyFullName button. */
+	public static final String COPY_FULL_NAME_COMMAND = "COPY_FULL_NAME";
+
 	/** El logger. */
 	private static final Logger LOGGER = LoggerFactory.makeLog4J();
 
 	private static final Color COLOR_MARKED = new Color(-13312);
 	private static final Color COLOR_UNMARKED = new Color(-1);
 	private static final Color COLOR_POST_IT = new Color(0xFFFD29);
+    @Serial
     private static final long serialVersionUID = 7663721325405668100L;
     private JTextArea taAddress;
 	private JTextField tfFirstName;
@@ -99,6 +103,7 @@ final class RecordEditor extends JPanel {
 	private JComboBox<String> comboSexo;
 	private JButton btnPrev;
 	private JButton btnNext;
+	private JButton btnCopyFullName;
 	private final Properties properties;
 	private final transient I18NManager i18nManager;
 	private final JLabel statsMessageLabel = new JLabel();
@@ -117,7 +122,7 @@ final class RecordEditor extends JPanel {
 			getStringFromProperties(properties, "DataEntry.lbl.recordStats"));
 		if (properties instanceof ObservableProperties) {
 			((ObservableProperties) properties).addChangeObserver(
-				arg -> {
+				_ -> {
                     statsMessageFormat.applyPattern(PropertiesHelper.
                         getStringFromProperties(properties,
                             "DataEntry.lbl.recordStats"));
@@ -212,7 +217,7 @@ final class RecordEditor extends JPanel {
 	}
 
 	private static int toInt(final String text) {
-		return text.trim().length() == 0 ? 0 :Integer.parseInt(text);
+		return text.trim().isEmpty() ? 0 :Integer.parseInt(text);
 	}
 
 	public String getDireccion() {
@@ -244,7 +249,7 @@ final class RecordEditor extends JPanel {
    	}
 
 	public RecordEditor setEmails(final List<String> emails) {
-        tfEmail.setText(emails.stream().collect(Collectors.joining(", ")));
+        tfEmail.setText(String.join(", ", emails));
 		return this;
 	}
 
@@ -415,7 +420,7 @@ final class RecordEditor extends JPanel {
 
 			@Override
 			public void focusLost(final FocusEvent e) {
-				if (previousValue.length() == 0) {
+				if (previousValue.isEmpty()) {
 					final JTextComponent textComponent = (JTextComponent) e
 						.getSource();
 					textComponent.setText(
@@ -444,14 +449,14 @@ final class RecordEditor extends JPanel {
 
 		label = new JLabel();
 		label.setHorizontalAlignment(SwingConstants.RIGHT);
-		label.setLocation(290, 30);
+		label.setLocation(260, 30);
 		label.setSize(90, 25);
 		i18nManager.configureI18NComponent(label, "DataEntry.lbl.apellido");
 		westUpperPane.add(label);
 
 		tfLastName = new JTextField();
-		tfLastName.setLocation(380, 30);
-		tfLastName.setSize(160, 25);
+		tfLastName.setLocation(360, 30);
+		tfLastName.setSize(150, 25);
 		tfLastName.setColumns(10);
 		tfLastName.setToolTipText(PropertiesHelper.getStringFromProperties(
 			properties, "DataEntry.tooltip.apellido"));
@@ -459,7 +464,19 @@ final class RecordEditor extends JPanel {
 		tfLastName.setDocument(new TextFieldLimiter(AgendaRecord.SURNAME_FIELD_LEN));
 		tfLastName.addFocusListener(focusListener);
 
-		comboSexo = new JComboBox<>(new String[]{"F", "M", "E"});
+        btnCopyFullName = new JButton();
+        btnCopyFullName.setLocation(360 + 155, 30);
+        btnCopyFullName.setSize(25, 25);
+        btnCopyFullName.setForeground(new Color(-13434625));
+        btnCopyFullName.setToolTipText(PropertiesHelper.getStringFromProperties(
+            properties, "DataEntry.btnCopyFullName"));
+        ImageTools.getImageIcon(PropertiesHelper
+                .getStringFromProperties(properties, "btnCopyFullNameImage"))
+            .ifPresent(btnCopyFullName::setIcon);
+        btnCopyFullName.setActionCommand(COPY_FULL_NAME_COMMAND);
+        westUpperPane.add(btnCopyFullName);
+
+        comboSexo = new JComboBox<>(new String[]{"F", "M", "E"});
 		comboSexo.setLocation(95, 60);
 		comboSexo.setSize(50, 25);
 		comboSexo.setEditable(false);
@@ -530,7 +547,7 @@ final class RecordEditor extends JPanel {
                             Integer.valueOf(dia), Integer.valueOf(mes) - 1, Integer.valueOf(year));
                         tfAge.setText(String.valueOf(ageInfo.getAge()));
                         tfDays.setText(String.valueOf(ageInfo.getDays()));
-                    } catch (NumberFormatException | DateTimeException ex) {
+                    } catch (final NumberFormatException | DateTimeException ex) {
                         LOGGER.error(LoggerFactory.ERROR_TAG, ex);
                     }
                 }
@@ -691,7 +708,7 @@ final class RecordEditor extends JPanel {
 		groupSelector.setSize(410, 135);
 		groupSelector.setBackground(background);
 		groupSelector.setListaElementos(Grupo.getValues());
-		Grupo.addChangeObserver(observable -> {
+		Grupo.addChangeObserver(_ -> {
             try {
                 groupSelector.setListaElementos(Grupo.getValues());
             } catch (final Exception e) {
@@ -823,6 +840,7 @@ final class RecordEditor extends JPanel {
 	public void addActionListener(final ActionListener listener) {
 		btnPrev.addActionListener(listener);
 		btnNext.addActionListener(listener);
+		btnCopyFullName.addActionListener(listener);
 	}
 
 	boolean isImageDirty() {

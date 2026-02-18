@@ -10,15 +10,17 @@ import javax.swing.JTable;
 import javax.swing.table.TableColumn;
 import javax.swing.table.TableRowSorter;
 import java.awt.Color;
+import java.io.Serial;
 import java.util.Enumeration;
 import java.util.Properties;
 
 final class DataTable extends JTable {
-	static final Color HIGHLIGHT_COLOR = Color.yellow;
+	static final Color HIGHLIGHT_COLOR = Color.blue;
 	static final Color NORMAL_FOREGROUND = Color.black;
 	static final Color SELECTION_FOREGROUND = Color.red;
 	/** El logger. */
 	private static final Logger LOGGER = LoggerFactory.makeLog4J();
+    @Serial
     private static final long serialVersionUID = -6155327035653191656L;
     private final AgendaTableModel tableModel;
 	private final GUITools.ColumnControl columnControl;
