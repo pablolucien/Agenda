@@ -62,7 +62,10 @@ public final class ImageHelper implements FieldManagerHelper {
             if (rset.next()) {
                 agendaRecord.setImagePath(rset.getString(1));
                 final InputStream stream = rset.getBinaryStream(2);
-                agendaRecord.setThumbnail(new ImageIcon(ImageIO.read(stream)));
+                final var thumbnail = ImageIO.read(stream);
+                if (thumbnail != null) {
+                    agendaRecord.setThumbnail(new ImageIcon(thumbnail));
+                }
             }
         } catch (final IOException ex) {
             LOGGER.error(LoggerFactory.ERROR_TAG, ex);

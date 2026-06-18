@@ -117,7 +117,7 @@ public final class Agenda {
 		parent.setStatus("Inicializando");
 
 		final String pwd = new String(passwordDialog.getPassword());
-        if (pwd.length() == 0) {
+        if (pwd.isEmpty()) {
             final String msgNoPassword =
                 getStringFromProperties(properties, "Agenda.pwd.errMsg");
             showMessageDialog(parent, msgNoPassword,
@@ -160,12 +160,11 @@ public final class Agenda {
 			} finally {
 				initDbPhase2(appProperties, parent);
 			}
-		} catch (final Throwable e) {
+		} catch (final Throwable throwable) {
 			//noinspection HardCodedStringLiteral
 			LOGGER.error("exception thrown:");
             final String errMsg;
-			if (e instanceof SQLException) {
-				final SQLException sqlException = (SQLException) e;
+			if (throwable instanceof final SQLException sqlException) {
                 final String sqlState = sqlException.getSQLState();
                 if ("XBM06".equals(sqlState)) {
 					errMsg = getStringFromProperties(appProperties, "Agenda.pwd.errMsg");
@@ -178,8 +177,8 @@ public final class Agenda {
                 }
 			} else {
 				//noinspection HardCodedStringLiteral
-				LOGGER.log(Level.ERROR, "Error en startApp()", e);
-                errMsg = e.toString();
+				LOGGER.log(Level.ERROR, "Error en startApp()", throwable);
+                errMsg = throwable.toString();
 			}
             showMessageDialog(parent, errMsg,
                 getStringFromProperties(appProperties, "Agenda.alert.title"),
@@ -219,7 +218,7 @@ public final class Agenda {
 				// evitamos generar infinitas notificaciones al cambiar de idioma.
 				observableProperties.enableNotifications(false);
 				PropertiesHelper.loadProperties4Language(
-					getClass().getSimpleName(), properties,
+					properties, getClass().getSimpleName(),
 					getStringFromProperties(properties,
 						"Application.ForceLanguage"));
 			} finally {
