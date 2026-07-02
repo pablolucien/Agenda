@@ -13,12 +13,14 @@ import javax.swing.JList;
 import javax.swing.JPanel;
 import javax.swing.JScrollPane;
 import javax.swing.JTextField;
+import javax.swing.SwingUtilities;
 import java.awt.BorderLayout;
 import java.awt.Color;
 import java.awt.Dimension;
 import java.awt.FlowLayout;
 import java.awt.event.MouseAdapter;
 import java.awt.event.MouseEvent;
+import java.io.Serial;
 import java.sql.SQLException;
 import java.util.Properties;
 
@@ -32,6 +34,7 @@ import static org.pclg.tools.StringTools.isEmptyOrBlank;
 public final class CountryMgtPanel extends JPanel {
 	/** Logger for this class. */
 	private static final Logger LOGGER = LoggerFactory.makeLog4J();
+    @Serial
     private static final long serialVersionUID = -1296845584355689930L;
     private final JList<Pais> listaPaises = new JList<>();
 	private final CountryPanel countryPanel;
@@ -67,7 +70,8 @@ public final class CountryMgtPanel extends JPanel {
 
 	private class CountryPanel extends JPanel {
 		private static final int STANDARD_FIELD_HEIGHT = 25;
-		private static final long serialVersionUID = -8820380264911047178L;
+		@Serial
+        private static final long serialVersionUID = -8820380264911047178L;
 		private final JTextField codeField = new JTextField();
 		private final JTextField nameField = new JTextField();
 		private final JTextField phoneMaskField = new JTextField();
@@ -97,11 +101,11 @@ public final class CountryMgtPanel extends JPanel {
 			panel.add(phoneMaskField);
 
 			message.setForeground(Color.red);
-			final I18NManager i18nManager = I18NManager.getInstance(properties);
+			final I18NManager i18nManager = I18NManager.getInstance(SwingUtilities::invokeLater, properties);
 			final JButton button = new JButton();
 			panel.add(i18nManager.configureI18NComponent(button, "AgendaGUI.addButton"),
 				BorderLayout.EAST);
-			button.addActionListener(e -> {
+			button.addActionListener(_ -> {
 				message.setText("");
 				final String code = codeField.getText();
 				if (isEmptyOrBlank(code)) {
@@ -148,7 +152,7 @@ public final class CountryMgtPanel extends JPanel {
 					nameField.setText("");
 					phoneMaskField.setText("");
 					LOGGER.debug("Despues : " + Pais.getPaises());
-				} catch (SQLException ex) {
+				} catch (final SQLException ex) {
 					LOGGER.error(LoggerFactory.ERROR_TAG, ex);
 				}
 			});

@@ -29,6 +29,7 @@ import javax.swing.JOptionPane;
 import javax.swing.JPanel;
 import javax.swing.JTabbedPane;
 import javax.swing.KeyStroke;
+import javax.swing.SwingUtilities;
 import javax.swing.filechooser.FileFilter;
 import javax.swing.filechooser.FileNameExtensionFilter;
 import java.awt.BorderLayout;
@@ -108,7 +109,7 @@ public final class DataEntry extends JPanel implements ActionListener {
         this.agendaDb = agendaDb;
         this.tabbedPane = tabbedPane;
         this.agendaGUI = agendaGUI;
-        i18nManager = I18NManager.getInstance(properties);
+        i18nManager = I18NManager.getInstance(SwingUtilities::invokeLater, properties);
         setLayout(new BorderLayout());
         setUpDateFormat(properties);
         final JPanel buttonPanel = createButtonPanel();

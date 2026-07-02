@@ -14,8 +14,10 @@ import javax.swing.JLabel;
 import javax.swing.JPanel;
 import javax.swing.JScrollPane;
 import javax.swing.JTextField;
+import javax.swing.SwingUtilities;
 import java.awt.BorderLayout;
 import java.awt.Color;
+import java.io.Serial;
 import java.sql.SQLException;
 import java.util.Properties;
 
@@ -26,6 +28,7 @@ import java.util.Properties;
 public class GroupMgtPanel extends JPanel {
 	/** Logger for this class. */
 	private static final Logger LOGGER = LoggerFactory.makeLog4J();
+    @Serial
     private static final long serialVersionUID = -2084657209309564903L;
 	private final EditableJList<Grupo> listaGrupos = new EditableJList<>(Grupo.NULL_VALUE);
 	private final AgendaDb agendaDb; // FIXME: no se si esto debe estar aqu? o en Grupo o d?nde
@@ -58,14 +61,14 @@ public class GroupMgtPanel extends JPanel {
 		final JTextField nameField = new JTextField();
 		nameField.setDocument(new TextFieldLimiter(40));
 		panel.add(nameField, BorderLayout.CENTER);
-		final I18NManager i18nManager = I18NManager.getInstance(properties);
+		final I18NManager i18nManager = I18NManager.getInstance(SwingUtilities::invokeLater, properties);
 		final JLabel message = new JLabel();
 		message.setForeground(Color.red);
 		panel.add(message, BorderLayout.SOUTH);
 		final JButton button = new JButton();
 		panel.add(i18nManager.configureI18NComponent(button, "AgendaGUI.addButton"), 
 			BorderLayout.EAST);
-		button.addActionListener(e -> {
+		button.addActionListener(_ -> {
 			message.setText("");
 			final String name = nameField.getText();
 			if (name.isBlank()) {

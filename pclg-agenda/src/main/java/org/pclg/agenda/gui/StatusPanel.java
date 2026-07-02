@@ -9,6 +9,7 @@ import org.pclg.tools.PropertiesHelper;
 
 import javax.swing.JLabel;
 import javax.swing.JPanel;
+import javax.swing.SwingUtilities;
 import java.awt.BorderLayout;
 import java.io.Serial;
 import java.sql.SQLException;
@@ -45,7 +46,7 @@ final class StatusPanel extends JPanel {
             });
         }
         setLayout(new BorderLayout());
-        final I18NManager i18nManager = I18NManager.getInstance(properties);
+        final I18NManager i18nManager = I18NManager.getInstance(SwingUtilities::invokeLater, properties);
         add(i18nManager.configureI18NComponent(new JLabel(), "StatusPane.title"), BorderLayout.WEST);
         add(statusLine, BorderLayout.CENTER);
     }

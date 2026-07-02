@@ -133,7 +133,7 @@ public final class AgendaGUI extends JFrame {
 		if (properties instanceof ObservableProperties) {
 			((ObservableProperties) properties).addChangeObserver(this::objectChanged);
 		}
-		i18nManager = I18NManager.getInstance(properties);
+		i18nManager = I18NManager.getInstance(SwingUtilities::invokeLater, properties);
 		ImageTools.getImageIcon(getStringFromProperties(properties, "Agenda.image"))
             .ifPresent(icon -> setIconImage(icon.getImage()));
 

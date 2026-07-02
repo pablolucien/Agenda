@@ -16,10 +16,12 @@ import javax.swing.JList;
 import javax.swing.JPanel;
 import javax.swing.JScrollPane;
 import javax.swing.JTextField;
+import javax.swing.SwingUtilities;
 import java.awt.BorderLayout;
 import java.awt.Color;
 import java.awt.Dimension;
 import java.awt.FlowLayout;
+import java.io.Serial;
 import java.sql.SQLException;
 import java.util.Properties;
 
@@ -29,7 +31,8 @@ import java.util.Properties;
  */
 public class PhoneTypeMgtPanel extends JPanel {
     /** */
-	private static final long serialVersionUID = -4313698848409803126L;
+	@Serial
+    private static final long serialVersionUID = -4313698848409803126L;
 	/** Logger for this class. */
 	private static final Logger LOGGER = LoggerFactory.makeLog4J();
     public static final int TIPO_TELEFONO_NAME_LEN = 20;
@@ -64,28 +67,28 @@ public class PhoneTypeMgtPanel extends JPanel {
 		nameField.setColumns(TIPO_TELEFONO_NAME_LEN);
 		panel.add(nameField);
 
-		final I18NManager i18nManager = I18NManager.getInstance(properties);
+		final I18NManager i18nManager = I18NManager.getInstance(SwingUtilities::invokeLater, properties);
 		final JButton colorChooser = new JButton();
 		panel.add(i18nManager.configureI18NComponent(colorChooser, "AgendaGUI.colorButton"));
 		colorChooser.setToolTipText("Elecci�n del color");
-		colorChooser.addActionListener(e -> colorChooseDialog.setVisible(true));
+		colorChooser.addActionListener(_ -> colorChooseDialog.setVisible(true));
 		panel.add(colorChooser);
         tcc.getSelectionModel().addChangeListener(
-			e -> colorChooser.setBackground(tcc.getColor()));
+			_ -> colorChooser.setBackground(tcc.getColor()));
 		final JLabel message = new JLabel();
 		message.setForeground(Color.red);
 		final JButton button = new JButton();
 		panel.add(i18nManager.configureI18NComponent(button, "AgendaGUI.addButton"));
-		button.addActionListener(e -> {
+		button.addActionListener(_ -> {
 			message.setText("");
 			final String name = nameField.getText();
-			if (name.trim().length() == 0) {
+			if (name.trim().isEmpty()) {
 				final String msg= "Tratando de agregar TipoTelefono en blanco. No hago nada";
 				message.setText(msg);
 				LOGGER.warn(msg);
 				return;
 			}
-			for (TipoTelefono tipoTelefono : TipoTelefono.getValues()) {
+			for (final TipoTelefono tipoTelefono : TipoTelefono.getValues()) {
 				if (name.equalsIgnoreCase(tipoTelefono.getNombre())) {
 					final String msg = String.format("Tratando de agregar TipoTelefono repetido : %s. No hago nada.", name);
 					message.setText(msg);
@@ -105,7 +108,7 @@ public class PhoneTypeMgtPanel extends JPanel {
                 listaTipoTelefonos.ensureIndexIsVisible(listaTipoTelefonos.getModel().getSize() - 1);
                 nameField.setText("");
 				LOGGER.debug("Despues : " + TipoTelefono.getValues());
-			} catch (SQLException ex) {
+			} catch (final SQLException ex) {
 				LOGGER.error(LoggerFactory.ERROR_TAG, ex);
 			}
 		});

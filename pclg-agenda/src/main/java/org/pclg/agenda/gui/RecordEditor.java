@@ -117,7 +117,7 @@ final class RecordEditor extends JPanel {
 
 	RecordEditor(final Properties properties) {
 		this.properties = properties;
-		i18nManager = I18NManager.getInstance(properties);
+		i18nManager = I18NManager.getInstance(SwingUtilities::invokeLater, properties);
 		statsMessageFormat = new MessageFormat(PropertiesHelper.
 			getStringFromProperties(properties, "DataEntry.lbl.recordStats"));
 		if (properties instanceof ObservableProperties) {
