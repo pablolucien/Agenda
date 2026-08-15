@@ -21,6 +21,7 @@ import java.awt.event.KeyAdapter;
 import java.awt.event.KeyEvent;
 import java.awt.event.MouseAdapter;
 import java.awt.event.MouseEvent;
+import java.io.Serial;
 import java.sql.SQLException;
 import java.text.MessageFormat;
 import java.time.MonthDay;
@@ -32,25 +33,26 @@ import static org.pclg.tools.PropertiesHelper.getStringFromProperties;
 
 /**
  * Premature optimization is the root of all evil.
- * �Donald E. Knuth
+ * -Donald E. Knuth
  *
  * @author El Coyote Cojo
  * @since 27/11/16 10:08
  */
 public final class ListadoPanel extends JPanel implements SimpleQueryExecutor, ChangeObserver<ObservableProperties> {
     private static final Logger LOGGER = LoggerFactory.makeLog4J();
+    @Serial
     private static final long serialVersionUID = -5079235848385292907L;
     private final AgendaGUI owner;
     private final AgendaDb agendaDb;
     private final Properties properties;
     private final DataTable dataTable;
-    /** Cantidad de registros que se est�n mostrando. */
+    /** Cantidad de registros que se están mostrando. */
    	private int recordsSize;
     private final JLabel reportTitle = new JLabel();
     private final JLabel recordsCount = new JLabel();
 
     /**
-     * �ltimo criterio de listado usado.
+     * Último criterio de listado usado.
      */
     private ListCriterium currentListCriterium;
     private String recordFilter;
@@ -82,7 +84,7 @@ public final class ListadoPanel extends JPanel implements SimpleQueryExecutor, C
             if (keyCode == KeyEvent.VK_DELETE) {
                 final int[] selectedRows = dataTable.getSelectedRows();
                 // Hay que hacerlo a la visconversa para mantener la consistencia
-                // en los �ndices.
+                // en los índices.
                 for (int ii = selectedRows.length - 1; ii >= 0; ii--) {
                     final AgendaRecord record = dataTable.getValueAt(selectedRows[ii]);
                     try {
@@ -99,8 +101,8 @@ public final class ListadoPanel extends JPanel implements SimpleQueryExecutor, C
     }
 
     /**
-     * @param owner La conexi�n con el usuario.
-     * @param agendaDb La conexi�n con los datos.
+     * @param owner La conexión con el usuario.
+     * @param agendaDb La conexión con los datos.
      * @param properties the properties
      */
     public ListadoPanel(final AgendaGUI owner, final AgendaDb agendaDb, final Properties properties) {
@@ -147,63 +149,34 @@ public final class ListadoPanel extends JPanel implements SimpleQueryExecutor, C
     }
 
     /**
-     * Muestra los datos seg�n el criterio de b�squeda que se le pase.
+     * Muestra los datos según el criterio de búsqueda que se le pase.
      *
-     * @param listCriterium el criterio de b�squeda.
-     * @throws SQLException si ocurre alg�n error.
+     * @param listCriterium el criterio de búsqueda.
+     * @throws SQLException si ocurre algún error.
      */
     @Override
-    public void showData(final ListCriterium listCriterium)
-        throws SQLException {
+    public void showData(final ListCriterium listCriterium) throws SQLException {
         dataTable.clear();
-        final List<AgendaRecord> records;
-        switch (listCriterium) {
-            case byDate:
-                dataTable.hideMarcasColumn();
-                records = agendaDb.selectAllContactsByBirthday();
-                break;
-            case byInterestingDate:
-                dataTable.hideMarcasColumn();
-                records = agendaDb.selectContactsByInterestingDates();
-                break;
-            case byName:
-                dataTable.hideMarcasColumn();
-                records = agendaDb.selectAllContactsByName();
-                break;
-            case byMark:
+        dataTable.fireTableDataChanged();
+        dataTable.hideMarcasColumn();
+        final List<AgendaRecord> records = switch (listCriterium) {
+            case byDate -> agendaDb.selectAllContactsByBirthday();
+            case byInterestingDate -> agendaDb.selectContactsByInterestingDates();
+            case byName -> agendaDb.selectAllContactsByName();
+            case byMark -> {
                 dataTable.showMarcasColumn();
-                records = agendaDb.selectSpecialContacts();
-                break;
-            case byBirthday:
-                dataTable.hideMarcasColumn();
-                records = agendaDb.selectContactsByNearBirthday();
-                break;
-            case deleted:
-                dataTable.hideMarcasColumn();
-                records = agendaDb.selectAllDeletedContactsByName();
-                break;
-            case byGroup:
-                dataTable.hideMarcasColumn();
-                records = agendaDb.selectContactsByGroups(
-                    groupSelectionPanel.getSelectedValues(),
-                    groupSelectionPanel.isSelectionIntersection(),
-                    groupSelectionPanel.isNegation());
-                break;
-            case recentlyModified:
-                dataTable.hideMarcasColumn();
-                records = agendaDb.selectRecentlyModifiedContacts();
-                break;
-            case filtered:
-                dataTable.hideMarcasColumn();
-                records = agendaDb.selectFilteredContacts(recordFilter);
-                break;
-            case customQuery:
-                dataTable.hideMarcasColumn();
-                records = agendaDb.selectContactsByCustomQuery(query, orderByClause);
-                break;
-            default:
-                throw new IllegalStateException("Criterium " + listCriterium + " unknown");
-        }
+                yield agendaDb.selectSpecialContacts();
+            }
+            case byBirthday -> agendaDb.selectContactsByNearBirthday();
+            case deleted -> agendaDb.selectAllDeletedContactsByName();
+            case byGroup -> agendaDb.selectContactsByGroups(
+                groupSelectionPanel.getSelectedValues(),
+                groupSelectionPanel.isSelectionIntersection(),
+                groupSelectionPanel.isNegation());
+            case recentlyModified -> agendaDb.selectRecentlyModifiedContacts();
+            case filtered -> agendaDb.selectFilteredContacts(recordFilter);
+            case customQuery -> agendaDb.selectContactsByCustomQuery(query, orderByClause);
+        };
 
         currentListCriterium = listCriterium;
         updateTitle();
@@ -262,7 +235,7 @@ public final class ListadoPanel extends JPanel implements SimpleQueryExecutor, C
     }
 
     /**
-     * Actualiza el t�tulo de la primera pesta�a del panel. Es necesario tenerlo
+     * Actualiza el título de la primera pestaña del panel. Es necesario tenerlo
      * separado de showData(final LIST_CRITERIA listCriterium) para poder
      * actualizarlo al cambiar el idioma :(
      */
