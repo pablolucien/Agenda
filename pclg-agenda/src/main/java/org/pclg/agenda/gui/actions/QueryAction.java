@@ -10,15 +10,23 @@ import org.pclg.tools.StringTools;
 
 import javax.swing.AbstractAction;
 import javax.swing.JComboBox;
+import javax.swing.JLabel;
 import javax.swing.JOptionPane;
 import javax.swing.JPanel;
+import java.awt.BorderLayout;
 import java.awt.Component;
+import java.awt.Dimension;
 import java.awt.GridLayout;
 import java.awt.event.ActionEvent;
+import java.io.Serial;
 import java.sql.SQLException;
+import java.util.ArrayList;
+import java.util.List;
 import java.util.Properties;
 import java.util.Vector;
 
+import static java.awt.BorderLayout.CENTER;
+import static java.awt.BorderLayout.WEST;
 import static javax.swing.JOptionPane.ERROR_MESSAGE;
 import static javax.swing.JOptionPane.showMessageDialog;
 import static org.pclg.tools.PropertiesHelper.getIntFromProperties;
@@ -26,6 +34,7 @@ import static org.pclg.tools.PropertiesHelper.getStringFromProperties;
 import static org.pclg.tools.StringTools.isEmptyOrBlank;
 
 public final class QueryAction extends AbstractAction {
+    @Serial
     private static final long serialVersionUID = -8894458740981171757L;
     private static final Logger LOGGER = LoggerFactory.makeLog4J();
     private static final String CUSTOM_QUERY_KEY_BASE_NAME = "QueryAction.query.";
@@ -34,7 +43,7 @@ public final class QueryAction extends AbstractAction {
     private final Properties properties;
     private final transient SimpleQueryExecutor executor;
     private final int numberOfQueries;
-    private final JPanel queryPanel = new JPanel(new GridLayout(2, 1));
+    private final QueryActionPanel queryPanel = new QueryActionPanel();
     private final JComboBox<String> orderValues;
     private final JComboBox<String> queriesValues;
 
@@ -51,11 +60,15 @@ public final class QueryAction extends AbstractAction {
             queriesValues.setSelectedIndex(0);
         }
         orderValues = new JComboBox<>(getItems(CUSTOM_QUERY_KEY_ORDER_BY_BASE_NAME));
-        orderValues.insertItemAt("", 0);
-        orderValues.setSelectedIndex(0);
         orderValues.setEditable(true);
-        queryPanel.add(queriesValues);
-        queryPanel.add(orderValues);
+        orderValues.insertItemAt("", 0);
+        if (orderValues.getItemCount() > 1) {
+            orderValues.setSelectedIndex(1);
+        } else {
+            orderValues.setSelectedIndex(0);
+        }
+        queryPanel.addLabeled("WHERE", queriesValues);
+        queryPanel.addLabeled("ORDER BY", orderValues);
     }
 
     private Vector<String> getItems(final String keyBaseName) {
@@ -126,6 +139,29 @@ public final class QueryAction extends AbstractAction {
             if (!isEmptyOrBlank(value)) {
                 properties.setProperty(keyBaseName + index++, value);
             }
+        }
+    }
+
+    private static class QueryActionPanel extends JPanel {
+        final List<JLabel> labels = new ArrayList<>();
+        int commonLabelWidth = 0;
+
+        public QueryActionPanel() {
+            super(new GridLayout(2, 1));
+        }
+
+        private void addLabeled(final String label, final JComboBox<String> comboBox) {
+            final JPanel panel = new JPanel(new BorderLayout());
+            final var jLabel = new JLabel(label);
+            labels.add(jLabel);
+            final var preferredWidth = jLabel.getPreferredSize().width;
+            if (commonLabelWidth < preferredWidth) {
+                commonLabelWidth = preferredWidth;
+                labels.forEach(l -> l.setPreferredSize(new Dimension(commonLabelWidth + 3, l.getPreferredSize().height)));
+            }
+            panel.add(jLabel, WEST);
+            panel.add(comboBox, CENTER);
+            add(panel);
         }
     }
 }
